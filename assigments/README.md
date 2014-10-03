@@ -10,3 +10,5 @@ Due Dates
 - Assignment #2: September 18, 2014
 - Assignment #3: September 25, 2014
 - Assignment #4: October 02, 2014
+- Assignment #5: October 09, 2014
+- Assignment #6: October 16, 2014
