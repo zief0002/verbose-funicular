@@ -1,0 +1,31 @@
+nels.csv
+Codebook
+
+-------------------------------
+
+BACKGROUND
+
+During the spring of 1988, NCES initiated a longitudinal study (National Educational Longitudinal Study) of 8th-grade students attending 1,052 high schools across the fifty states and the District of Columbia. These data constitute a representative sample of the original 27,394 participants.
+
+The data come from from the National Educational Longitudinal Study (NELS).
+-------------------------------
+DATA
+
+The data consist of 100 students.
+
+-------------------------------
+
+VARIABLES
+
+grades:     Eighth-grade students’ overall GPA in all subjects (on a 100-point scale)
+
+pared:      The level of education of the students’ parent (in years of schooling) with the most education
+
+hwork:      Average time spent on homework per week, in hours, for all subjects
+
+
+
+-------------------------------
+
+
+
