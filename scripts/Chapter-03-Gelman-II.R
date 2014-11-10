@@ -50,7 +50,7 @@ ggplot(data = mn, aes(x = tuition, y = gradRate, color = sector)) +
 
 # Create dummy predictor for sector
 mn$public = ifelse(mn$sector == "Public", 1, 0)
-
+head(mn)
 
 cor(mn[c("gradRate", "tuition", "public")])
 
@@ -140,7 +140,7 @@ summary(lm.1)
 ###################################################
 
 myData = data.frame(
-	tuition = 20000,
+	tuition = 10000,
 	public = 1
 	)
 
@@ -173,7 +173,31 @@ predict(lm.1, newdata = myData, interval = "prediction")
 
 
 
+ggplot(data = mn, aes(x = tuition, y = gradRate, group = sector, color = sector)) +
+	geom_point() +
+	geom_smooth(method = "lm") +
+	theme_bw()
 
 
+myData = expand.grid(
+	tuition = 16000:55000,
+	public = c(0, 1)
+	)
+#myData
 
+
+yhat = predict(lm.1, newdata = myData, interval = "prediction")
+head(yhat)
+
+myData = cbind(myData, yhat)
+head(myData)
+
+myData$public = factor(myData$public, labels = c("Private", "Public"))
+
+ggplot(data = myData, aes(x = tuition, y = fit, group = public, color = public)) +
+	geom_ribbon(aes(x = tuition, ymin = lwr, ymax = upr), fill = "grey", color = "grey", alpha = 0.3) +
+	geom_line() +
+	#geom_line(aes(x = tuition, y = lwr)) +
+	#geom_line(aes(x = tuition, y = upr)) +
+	theme_bw()
 
