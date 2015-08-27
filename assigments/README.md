@@ -1,23 +1,21 @@
 Homework Assignments
 =========
 
-Any data needed for the homework assignments are in the `data` folder.
+Any data needed for the homework assignments are in the `data` folder. The due dates are for Section 1 / Section 3 (T,R 11:15 AM&ndash;12:30 PM / M,W 04:40 PM&ndash;05:55 PM).
 
 Due Dates
 -------
 
-- Assignment #1: September 11, 2014
-- Assignment #2: September 18, 2014
-- Assignment #3: September 25, 2014
-- Assignment #4: October 02, 2014
-- Assignment #5: October 09, 2014
-- Assignment #6: October 16, 2014
-- Assignment #7: October 30, 2014
-- Assignment #8: November 06, 2014
-- Assignment #9: ~~November 13, 2014~~ Anytime before 12:00 p.m. on December 15
-	- Use the *FCI-2012.csv*, the *FCI-Team-Meta-Data.csv*, and the *FCI-Cost-of-Living.csv* data 
-- Assignment #10: November 25, 2014
-	- Use the *FCI-2014.csv*, the *FCI-Team-Meta-Data.csv*, and the *FCI-Cost-of-Living.csv* data 
-- Assignment #11: December 09, 2014
-	- Use the *FCI-2014.csv*, the *FCI-Team-Meta-Data.csv*, and the *FCI-Cost-of-Living.csv* data 
+- Assignment #01: September 22/23, 2015
+- Assignment #02: September 29/30, 2015
+- Assignment #03: October 06/07, 2015
+- Assignment #04: October 13/14, 2015
+- Assignment #05: October 22/26, 2015
+- Assignment #06: October 29/November 02, 2015
+- Assignment #07: November 10/11, 2015
+- Assignment #08: November 19/23, 2015
+- Assignment #09: December 01/November 30, 2015
+- Assignment #10: December 08/07, 2015
+- Assignment #11: December 15/14, 2015
+
 	
