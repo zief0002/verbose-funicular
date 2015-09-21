@@ -21,3 +21,10 @@ Andrew Zieffler [zief0002@umn.edu](mailto://zief0002@umn.edu)
 Purav Patel [patel307@umn.edu](mailto://patel307@umn.edu)
 
 **Office:** [Educational Sciences](https://www.google.com/maps/place/Education+Sciences+Building/@44.9784043,-93.2394586,15z/data=!4m2!3m1!1s0x0:0x45656dac481b9150) Building 194**Office Hours:** Thursday 10:00 AM–12:00 PM; and by appointment
+---
+
+### Student Resources
+
+- [ggplot2 Cheatsheet](https://www.rstudio.com/wp-content/uploads/2015/08/ggplot2-cheatsheet.pdf)
+- [dplyr Cheatsheet](https://www.rstudio.com/wp-content/uploads/2015/02/data-wrangling-cheatsheet.pdf)
+- [RStudio Keyboard Shortcuts](https://support.rstudio.com/hc/en-us/articles/200711853-Keyboard-Shortcuts)
