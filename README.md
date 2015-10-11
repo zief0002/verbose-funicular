@@ -27,4 +27,12 @@ Purav Patel [patel307@umn.edu](mailto://patel307@umn.edu)
 
 - [ggplot2 Cheatsheet](https://www.rstudio.com/wp-content/uploads/2015/08/ggplot2-cheatsheet.pdf)
 - [dplyr Cheatsheet](https://www.rstudio.com/wp-content/uploads/2015/02/data-wrangling-cheatsheet.pdf)
-- [RStudio Keyboard Shortcuts](https://support.rstudio.com/hc/en-us/articles/200711853-Keyboard-Shortcuts)
+- [RStudio Keyboard Shortcuts](https://support.rstudio.com/hc/en-us/articles/200711853-Keyboard-Shortcuts)---
+### Calendar
+|    Date    | Content                         | Reading                                                                                                               |
+|:----------:|---------------------------------|-----------------------------------------------------------------------------------------------------------------------|
+| Oct. 12/13 |    Multiple Linear Regression   | Keith pp. 26–76                                                                                                       |
+| Oct. 14/15 | Multiple Linear Regression      |                                                                                                                       |
+| Oct. 19/20 | Article Discussion              | Stack, S. (2014). [Teaching and salaries in Social Science: A research note.](http://onlinelibrary.wiley.com.ezp3.lib.umn.edu/doi/10.1111/ssqu.12087/epdf) Social Science Quarterly, 95(3), 785–794. |
+|            | [Assignment #4 Due](https://github.com/zief0002/EPsy-8251/blob/master/assigments/Assignment-04-introduction-to-multiple-regression.pdf)               |                                                                                                                       |
+| Oct. 21/22 | Prediction/Confidence Intervals | [When Should I Use Confidence,Intervals, Prediction Intervals, and Tolerance Intervals](http://blog.minitab.com/blog/adventures-in-statistics/when-should-i-use-confidence-intervals-prediction-intervals-and-tolerance-intervals)                                 |
