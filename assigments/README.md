@@ -6,7 +6,9 @@ Any data needed for the homework assignments are in the `data` folder. The due d
 Due Dates
 -------
 
-- Assignment #01: September 22/23, 2015
+See main page for calendar and due dates.
+
+<!--- Assignment #01: September 22/23, 2015
 - Assignment #02: September 29/30, 2015
 - Assignment #03: October 06/07, 2015
 - Assignment #04: October 13/14, 2015
@@ -16,6 +18,6 @@ Due Dates
 - Assignment #08: November 19/23, 2015
 - Assignment #09: December 01/November 30, 2015
 - Assignment #10: December 08/07, 2015
-- Assignment #11: December 15/14, 2015
+- Assignment #11: December 15/14, 2015-->
 
 	

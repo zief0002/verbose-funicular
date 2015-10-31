@@ -38,4 +38,10 @@ Purav Patel [patel307@umn.edu](mailto://patel307@umn.edu)
 | Oct. 21/22 | Confidence Intervals       | [When Should I Use Confidence,Intervals, Prediction Intervals, and Tolerance Intervals](http://blog.minitab.com/blog/adventures-in-statistics/when-should-i-use-confidence-intervals-prediction-intervals-and-tolerance-intervals)                                 |
 | Oct. 26/27 | Prediction Intervals       |                                                                                                                       |
 | Oct. 28/29 | Regression Assumptions     | Keith pp. 188–195                                                                                                     |
-|            | [Assignment #5 Due](https://github.com/zief0002/EPsy-8251/blob/master/assigments/Assignment-05-Confidence-and-Prediction-Intervals.pdf)          |                                                                                                                       |
+|            | [Assignment #5 Due](https://github.com/zief0002/EPsy-8251/blob/master/assigments/Assignment-05-Confidence-and-Prediction-Intervals.pdf)          |                                                                                                                       
+| Nov. 02/03 | Categorical Predictors     | Keith pp. 129–160                                                                                                     |
+| Nov. 04/05 | Categorical Predictors     |                                                                                                                       |
+|            | [Assignment #6 Due](https://github.com/zief0002/EPsy-8251/blob/master/assigments/Assignment-06-Regression-Assumptions.pdf)          |
+
+
+
