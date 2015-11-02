@@ -77,7 +77,7 @@ out_b = fortify(lm.b)
 head(out_b)
 
 # Residual plot
-ggplot(data = out_a, aes(x = .fitted, y = .stdresid)) +
+ggplot(data = out_b, aes(x = .fitted, y = .stdresid)) +
     geom_point(size = 4) +
     theme_bw() +
     geom_hline(yintercept = 0)
