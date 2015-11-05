@@ -39,9 +39,19 @@ Purav Patel [patel307@umn.edu](mailto://patel307@umn.edu)
 | Oct. 26/27 | Prediction Intervals       |                                                                                                                       |
 | Oct. 28/29 | Regression Assumptions     | Keith pp. 188–195                                                                                                     |
 |            | [Assignment #5 Due](https://github.com/zief0002/EPsy-8251/blob/master/assigments/Assignment-05-Confidence-and-Prediction-Intervals.pdf)          |                                                                                                                       
-| Nov. 02/03 | Categorical Predictors     | Keith pp. 129–160                                                                                                     |
-| Nov. 04/05 | Categorical Predictors     |                                                                                                                       |
-|            | [Assignment #6 Due](https://github.com/zief0002/EPsy-8251/blob/master/assigments/Assignment-06-Regression-Assumptions.pdf)          |
+| Nov. 02/03 | Categorical Predictors (2 groups)           | Keith pp. 129–160                                                                                                                                                                                    |
+| Nov. 04/05 | Categorical Predictors (2 groups)           |                                                                                                                                                                                                      |
+|            | [Assignment #6 Due](https://github.com/zief0002/EPsy-8251/blob/master/assigments/Assignment-06-Regression-Assumptions.pdf)                            |                                                                                                                                                                                                      |
+| Nov. 09/10 | Categorical Predictors (More than 2 groups) |                                                                                                                                                                                                      |
+| Nov. 11/12 | Post hoc tests                              |                                                                                                                                                                                                      |
+|            | [Assignment #7 Due](https://github.com/zief0002/EPsy-8251/blob/master/assigments/Assignment-07-ANCOVA.pdf)                           |                                                                                                                                                                                                      |
+| Nov. 16/17 | Article Discussion                          | Garcia, D. R., McIlroy, L., &amp; Barber, R. T. (2008). [Starting behind: A comparative analysis of the academic standing of students entering charter schools.](http://login.ezproxy.lib.umn.edu/login?url=http://search.ebscohost.com/login.aspx?direct=true&AuthType=ip,uid&db=a2h&AN=28520849&site=ehost-live) Social Science Quarterly, 89(1), 199&ndash;216. |
+| Nov. 18/19 | Interaction Models                          | Keith pp. 161–181                                                                                                                                                                                    |
+|            | [Assignment #8 Due](https://github.com/zief0002/EPsy-8251/blob/master/assigments/Assignment-08-ANCOVA-II.pdf)                           |                                                                                                                                                                                                      |
+| Nov. 23/24 | Interaction Models                          |                                                                                                                                                                                                      |
+| Nov. 25/26 | No Class (Thanksgiving Break)               |                                                                                                                                                                                                      |
+
+You can now import Markdown table code directly using File/Paste table data... dialog. 
 
 
 
