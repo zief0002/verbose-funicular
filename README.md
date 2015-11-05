@@ -51,7 +51,7 @@ Purav Patel [patel307@umn.edu](mailto://patel307@umn.edu)
 | Nov. 23/24 | Interaction Models                          |                                                                                                                                                                                                      |
 | Nov. 25/26 | No Class (Thanksgiving Break)               |                                                                                                                                                                                                      |
 
-You can now import Markdown table code directly using File/Paste table data... dialog. 
+
 
 
 
