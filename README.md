@@ -20,7 +20,7 @@ Andrew Zieffler [zief0002@umn.edu](mailto://zief0002@umn.edu)
 
 Purav Patel [patel307@umn.edu](mailto://patel307@umn.edu)
 
-**Office:** [Educational Sciences](https://www.google.com/maps/place/Education+Sciences+Building/@44.9784043,-93.2394586,15z/data=!4m2!3m1!1s0x0:0x45656dac481b9150) Building 194**Office Hours:** Thursday 10:00 AM–12:00 PM; and by appointment
+**Office:** [Educational Sciences](https://www.google.com/maps/place/Education+Sciences+Building/@44.9784043,-93.2394586,15z/data=!4m2!3m1!1s0x0:0x45656dac481b9150) Building 194**Office Hours:** Monday 10:00 AM–11:00 AM; Tuesday 10:00 AM–11:00 AM; and by appointment
 ---
 
 ### Student Resources
