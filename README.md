@@ -15,20 +15,23 @@ To download all of the materials at this site, click on the `Download ZIP` butto
 
 Andrew Zieffler [zief0002@umn.edu](mailto://zief0002@umn.edu)
 
-**Office:** [Educational Sciences](https://www.google.com/maps/place/Education+Sciences+Building/@44.9784043,-93.2394586,15z/data=!4m2!3m1!1s0x0:0x45656dac481b9150) Building 163**Office Hours:** Tuesday 1:00 PM–2:00 PM; and by appointment
-### Teaching Assistant
+**Office:** [Educational Sciences](https://www.google.com/maps/place/Education+Sciences+Building/@44.9784043,-93.2394586,15z/data=!4m2!3m1!1s0x0:0x45656dac481b9150) Building 163**Office Hours:** Tuesday 9:30 AM&ndash;10:30 AM; and by appointment
+<!--### Teaching Assistant
 
 Purav Patel [patel307@umn.edu](mailto://patel307@umn.edu)
 
 **Office:** [Educational Sciences](https://www.google.com/maps/place/Education+Sciences+Building/@44.9784043,-93.2394586,15z/data=!4m2!3m1!1s0x0:0x45656dac481b9150) Building 194**Office Hours:** Monday 10:00 AM–11:00 AM; Tuesday 10:00 AM–11:00 AM; and by appointment
----
+
+-->---
+
 
 ### Student Resources
 
 - [ggplot2 Cheatsheet](https://www.rstudio.com/wp-content/uploads/2015/08/ggplot2-cheatsheet.pdf)
 - [dplyr Cheatsheet](https://www.rstudio.com/wp-content/uploads/2015/02/data-wrangling-cheatsheet.pdf)
 - [RStudio Keyboard Shortcuts](https://support.rstudio.com/hc/en-us/articles/200711853-Keyboard-Shortcuts)---
-### Calendar
+
+<!--### Calendar
 |    Date    | Content                         | Reading                                                                                                               |
 |:----------:|---------------------------------|-----------------------------------------------------------------------------------------------------------------------|
 | Oct. 12/13 |    Multiple Linear Regression   | Keith pp. 26&ndash;76                                                                                                       |
@@ -60,5 +63,5 @@ Purav Patel [patel307@umn.edu](mailto://patel307@umn.edu)
 | Dec. 21         | [Assignment #11 Due](https://github.com/zief0002/EPsy-8251/blob/master/assigments/Assignment-11-Kitchen-Sink.pdf)                          | Turn this in no later than 9:00 AM (no email copies) to EdSciB 250.                                                                                                                                  |
 
 
-
+-->
 
