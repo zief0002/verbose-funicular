@@ -31,6 +31,15 @@ Purav Patel [patel307@umn.edu](mailto://patel307@umn.edu)
 - [dplyr Cheatsheet](https://www.rstudio.com/wp-content/uploads/2015/02/data-wrangling-cheatsheet.pdf)
 - [RStudio Keyboard Shortcuts](https://support.rstudio.com/hc/en-us/articles/200711853-Keyboard-Shortcuts)---
 
+### Introduction to R and RStudio
+
+One of the best ways to learn R is to work with data. Filtering rows, selecting columns, analsis by grouping, creating new columns, plotting&mdash;are all useful skills for an applied researcher. To this end, I would like you to become adept at using two packages: **dplyr** and **ggplot2**. The first two resources, below, will introduce you to the use of **dplyr** for data manipulation (i.e., data wrangling). The latter two will introduce the syntax to create many useful (even, beautiful) plots of your data using **ggplot2**.
+
+- [dplyr vignette](https://cran.rstudio.com/web/packages/dplyr/vignettes/introduction.html)
+- [Data wrangling with R and RStudio](https://www.rstudio.com/resources/webinars/data-wrangling-with-r-and-rstudio/)- [Plotting with ggplot2: Part 1](https://www.youtube.com/watch?v=HeqHMM4ziXA)- [Plotting with ggplot2: Part 2](https://www.youtube.com/watch?v=n8kYa9vu1l8)
+
+
+
 <!--### Calendar
 |    Date    | Content                         | Reading                                                                                                               |
 |:----------:|---------------------------------|-----------------------------------------------------------------------------------------------------------------------|
