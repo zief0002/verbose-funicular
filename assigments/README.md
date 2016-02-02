@@ -7,7 +7,7 @@ Due Dates
 -------
 
 
-
+- [View the Assignment 00 answer key](http://htmlpreview.github.com/?https://github.com/zief0002/EPsy-8251/blob/master/assigments/Assignment-00-Learning-R-AK.html)
 - Assignment #01: February 09, 2016
 - Assignment #02: February 16, 2016
 - Assignment #03: February 23, 2016
@@ -23,7 +23,7 @@ Due Dates
 <!---- Assignment #11: December 15/14, 2015-->
 
 
-- [View the Assignment 00 answer key](http://htmlpreview.github.com/?https://github.com/zief0002/EPsy-8251/blob/master/assigments/Assignment-00-Learning-R-AK.html)
+
 
 
 
