@@ -28,6 +28,7 @@ Purav Patel [patel307@umn.edu](mailto://patel307@umn.edu)
 ### Student Resources
 
 - [ggplot2 Cheatsheet](https://www.rstudio.com/wp-content/uploads/2015/08/ggplot2-cheatsheet.pdf)
+- [ggplot2 Extensions](http://ggplot2-exts.github.io/index.html)
 - [dplyr Cheatsheet](https://www.rstudio.com/wp-content/uploads/2015/02/data-wrangling-cheatsheet.pdf)
 - [RStudio Keyboard Shortcuts](https://support.rstudio.com/hc/en-us/articles/200711853-Keyboard-Shortcuts)---
 
@@ -37,6 +38,17 @@ One of the best ways to learn R is to work with data. Filtering rows, selecting 
 
 - [dplyr vignette](https://cran.rstudio.com/web/packages/dplyr/vignettes/introduction.html)
 - [Data wrangling with R and RStudio](https://www.rstudio.com/resources/webinars/data-wrangling-with-r-and-rstudio/)- [Plotting with ggplot2: Part 1](https://www.youtube.com/watch?v=HeqHMM4ziXA)- [Plotting with ggplot2: Part 2](https://www.youtube.com/watch?v=n8kYa9vu1l8)
+
+
+### Simple Linear Regression: Description
+
+- Keith pp. 3&ndash;25
+
+
+### Simple Linear Regression: Inference
+
+- Keith pp. 3&ndash;25
+
 
 
 
