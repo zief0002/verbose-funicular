@@ -50,6 +50,19 @@ One of the best ways to learn R is to work with data. Filtering rows, selecting 
 - Keith pp. 3&ndash;25
 
 
+### Centering and Scaling
+
+- [Centering](http://www.theanalysisfactor.com/center-on-the-mean/)
+- [Stack Overflow: Normalization vs. Standardization](http://stats.stackexchange.com/questions/10289/whats-the-difference-between-normalization-and-standardization)
+- Gelman, A. (2008). [Scaling regression inputs by dividing by two standard deviations.](http://www.stat.columbia.edu/~gelman/research/published/standardizing7.pdf) *Statistics in Medicine, 27,* 2865&ndash;2873.
+
+
+### Multiple Regression
+
+- Keith pp. 26&ndash;76
+- Stack, S. (2014). [Teaching and salaries in Social Science: A research note.](http://onlinelibrary.wiley.com.ezp3.lib.umn.edu/doi/10.1111/ssqu.12087/epdf) *Social Science Quarterly, 95*(3), 785&ndash;794.
+
+
 
 
 <!--### Calendar

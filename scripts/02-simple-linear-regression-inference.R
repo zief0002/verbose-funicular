@@ -13,7 +13,6 @@ tail(math)
 ### Load libraries
 ##################################################
 
-library(arm)
 library(ggplot2)
 
 
@@ -23,7 +22,7 @@ library(ggplot2)
 ##################################################
 
 lm.a = lm(achievement ~ homework, data = math)
-
+lm.a
 
 
 ##################################################
@@ -31,7 +30,7 @@ lm.a = lm(achievement ~ homework, data = math)
 ##################################################
 
 summary(lm.a)
-
+confint(lm.a)
 
 
 ##################################################
@@ -46,12 +45,10 @@ anova(lm.a)
 ### Plot the fitted model along with the confidence envelope
 ##################################################
 
-library(ggplot2)
-
 ggplot(data = math, aes(x = homework, y = achievement)) +
 	geom_smooth(method = "lm", se = TRUE) +
 	xlab("Time Spent on Homework") +
-    ylab("Mathematics Achievement Score") +
+  ylab("Mathematics Achievement Score") +
 	theme_bw()
 
 
