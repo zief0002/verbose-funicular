@@ -35,7 +35,7 @@ describe(multReg$homework)
 sm.density(multReg$parentEd)
 describe(multReg$parentEd)
 
-
+ggplot(data = multReg, aes(x = parentEd, y = gpa)) + geom_point(size = 3)
 
 
 
@@ -48,6 +48,7 @@ lm.b = lm(gpa ~  parentEd, data = multReg)
 summary(lm.b)
 
 
+cor(multReg[c("gpa", "homework", "parentEd")])
 
 
 ##################################################
@@ -62,6 +63,8 @@ lm.b = lm(gpa ~  parentEd + homework, data = multReg)
 summary(lm.b)
 
 
+anova(lm.a)
+anova(lm.b)
 
 ##################################################
 ### Fit the standardized multiple regression model
