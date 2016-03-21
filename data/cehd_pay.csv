@@ -1,0 +1,134 @@
+pay,dept,title,faculty,startU,experience
+60713.12,ICD,Lecturer,0,1995,20
+45265.17,ICD,Lecturer,0,2004,11
+112248.05,ICD,Professor,1,1968,47
+103763.4,ICD,Professor,1,1971,44
+200299.6,ICD,Professor,1,1979,36
+88913.33,ICD,Professor,1,1989,26
+107124.12,ICD,Professor,1,1993,22
+132638.25,ICD,Professor,1,1998,17
+68732.93,ICD,Associate Professor,1,1998,17
+320546.18,ICD,Professor,1,2005,10
+131077.8,ICD,Professor,1,2007,8
+170159.58,ICD,Professor,1,2007,8
+88926.6,ICD,Associate Professor,1,2007,8
+157351.35,ICD,Professor,1,2012,3
+78197.6,ICD,Assistant Professor,1,2013,2
+176080.58,ICD,Professor,1,1982,33
+160897.16,ICD,Professor,1,200,1815
+79876.86,CI,Senior Lecturer,0,1991,24
+59348.61,CI,Senior Lecturer,0,1997,18
+56244.45,CI,Lecturer,0,2003,12
+60000,CI,Lecturer,0,2003,12
+60600,CI,Lecturer,0,2004,11
+52060.91,CI,Teaching Specialist,0,2005,10
+56001.13,CI,Lecturer,0,2009,6
+63577.48,CI,Teaching Specialist,0,2011,4
+50658.66,CI,Teaching Specialist,0,2011,4
+57000,CI,Teaching Specialist,0,2012,3
+48058.14,CI,Lecturer,0,2014,1
+60000,CI,Lecturer,0,2015,0
+82004.91,CI,Associate Professor,1,1985,30
+94814.76,CI,Professor,1,1987,28
+85490.56,CI,Associate Professor,1,1990,25
+74955.93,CI,Associate Professor,1,1998,17
+87619.4,CI,Professor,1,2000,15
+110000,CI,Professor,1,2000,15
+80315.2,CI,Associate Professor,1,2000,15
+112927.09,CI,Professor,1,2001,14
+82254.4,CI,Associate Professor,1,2001,14
+85221.78,CI,Associate Professor,1,2001,14
+80001.2,CI,Associate Professor,1,2002,13
+78105.25,CI,Associate Professor,1,2002,13
+79697.48,CI,Associate Professor,1,2003,12
+90697.81,CI,Professor,1,2004,11
+76190.36,CI,Associate Professor,1,2004,11
+79659.57,CI,Associate Professor,1,2004,11
+83207.84,CI,Associate Professor,1,2004,11
+105030.91,CI,Professor,1,2005,10
+76758.99,CI,Associate Professor,1,2005,10
+77480.13,CI,Associate Professor,1,2005,10
+78253.79,CI,Associate Professor,1,2005,10
+110068.68,CI,Professor,1,2008,7
+79740,CI,Associate Professor,1,2009,6
+112774.43,CI,Professor,1,2011,4
+98348.75,CI,Associate Professor,1,2013,2
+68680,CI,Assistant Professor,1,2014,1
+68680,CI,Assistant Professor,1,2014,1
+70000,CI,Assistant Professor,1,2015,0
+38008.55,EPSY,Teaching Specialist,0,1984,31
+53519.9,EPSY,Senior Lecturer,0,2000,15
+56715.52,EPSY,Senior Lecturer,0,2002,13
+42084.12,EPSY,Lecturer,0,2004,11
+39399.18,EPSY,Teaching Specialist,0,2004,11
+56276.31,EPSY,Lecturer,0,2005,10
+53031.06,EPSY,Lecturer,0,2006,9
+51120.14,EPSY,Lecturer,0,2006,9
+38833.48,EPSY,Teaching Specialist,0,2006,9
+36931.66,EPSY,Teaching Specialist,0,2008,7
+48500,EPSY,Lecturer,0,2010,5
+47500,EPSY,Teaching Specialist,0,2011,4
+40640.38,EPSY,Teaching Specialist,0,2012,3
+58000,EPSY,Lecturer,0,2013,2
+39390,EPSY,Teaching Specialist,0,2014,1
+49999.95,EPSY,Teaching Specialist,0,2015,0
+40000,EPSY,Teaching Specialist,0,2015,0
+47454.56,EPSY,Teaching Specialist,0,2014,1
+83305,EPSY,Professor,1,1969,46
+120906,EPSY,Professor,1,1974,41
+86221,EPSY,Professor,1,1974,41
+78863.46,EPSY,Professor,1,1977,38
+105635.4,EPSY,Professor,1,1980,35
+94967.73,EPSY,Associate Professor,1,1983,32
+124107,EPSY,Professor,1,1984,31
+163920,EPSY,Professor,1,1986,29
+124529,EPSY,Professor,1,1986,29
+69057,EPSY,Associate Professor,1,1986,29
+81992,EPSY,Associate Professor,1,1992,23
+173367.48,EPSY,Professor,1,1998,17
+95822,EPSY,Professor,1,1999,16
+93833,EPSY,Professor,1,1999,16
+70965,EPSY,Assistant Professor,1,1999,16
+101458,EPSY,Professor,1,2000,15
+118099.3,EPSY,Professor,1,2000,15
+71859.12,EPSY,Associate Professor,1,2000,15
+99998,EPSY,Professor,1,2002,13
+87500,EPSY,Associate Professor,1,2002,13
+152850,EPSY,Professor,1,2005,10
+73850,EPSY,Assistant Professor,1,2005,10
+143463,EPSY,Professor,1,2008,7
+76413,EPSY,Associate Professor,1,2008,7
+81592,EPSY,Associate Professor,1,2008,7
+94070,EPSY,Associate Professor,1,2011,4
+70707,EPSY,Assistant Professor,1,2012,3
+85850,EPSY,Associate Professor,1,2014,1
+70350,EPSY,Assistant Professor,1,2014,1
+70350,EPSY,Assistant Professor,1,2014,1
+90000,EPSY,Associate Professor,1,2015,0
+87000,EPSY,Associate Professor,1,2015,0
+112610,EPSY,Professor,1,1985,30
+45283.39,KIN,Lecturer,0,1991,24
+64452.13,KIN,Senior Lecturer,0,1994,21
+79266.82,KIN,Senior Lecturer,0,1997,18
+64578.39,KIN,Lecturer,0,2002,13
+49490,KIN,Lecturer,0,2005,10
+81263.14,KIN,Senior Lecturer,0,2006,9
+67761.82,KIN,Lecturer,0,2009,6
+58820.83,KIN,Teaching Specialist,0,2009,6
+59179.74,KIN,Teaching Specialist,0,2009,6
+52632.44,KIN,Teaching Specialist,0,2009,6
+65958.46,KIN,Senior Lecturer,0,1998,17
+131295.96,KIN,Professor,1,1973,42
+145405.66,KIN,Professor,1,1986,29
+96641.44,KIN,Professor,1,1988,27
+133812.88,KIN,Professor,1,1989,26
+114297.66,KIN,Professor,1,1999,16
+103421.98,KIN,Professor,1,2000,15
+110625.3,KIN,Professor,1,2001,14
+71665.56,KIN,Associate Professor,1,2003,12
+140783.9,KIN,Professor,1,2007,8
+79028.46,KIN,Associate Professor,1,2007,8
+73384.58,KIN,Assistant Professor,1,2012,3
+89316.32,KIN,Assistant Professor,1,2012,3
+69690,KIN,Assistant Professor,1,2014,1
+75750,KIN,Assistant Professor,1,2006,9

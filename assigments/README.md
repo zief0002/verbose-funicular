@@ -13,9 +13,9 @@ Due Dates
 - Assignment #03: March 03, 2016
 - Assignment #04: March 22, 2016
 - Assignment #05: March 29, 2016
-- Assignment #06: April 05, 2016
-- Assignment #07: TBA
-- Assignment #08: TBA
+- Assignment #06: April 07, 2016
+- Assignment #07: April 14, 2016
+- Assignment #08: April 21, 2016
 - Assignment #09: TBA
 - Assignment #10: TBA
 
