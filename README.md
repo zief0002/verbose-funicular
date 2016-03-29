@@ -63,22 +63,20 @@ One of the best ways to learn R is to work with data. Filtering rows, selecting 
 - Stack, S. (2014). [Teaching and salaries in Social Science: A research note.](http://onlinelibrary.wiley.com.ezp3.lib.umn.edu/doi/10.1111/ssqu.12087/epdf) *Social Science Quarterly, 95*(3), 785&ndash;794.
 
 
+### Regression Assumptions 
+
+- Keith pp. 129&ndash;160
+- [When Should I Use Confidence,Intervals, Prediction Intervals, and Tolerance Intervals](http://blog.minitab.com/blog/adventures-in-statistics/when-should-i-use-confidence-intervals-prediction-intervals-and-tolerance-intervals)
+
+
+### Categorical Predictors
+
+- View the HTML file in the notes [here](https://cdn.rawgit.com/zief0002/EPsy-8251/master/notes/09-categorical-predictors.html)
 
 
 <!--### Calendar
 |    Date    | Content                         | Reading                                                                                                               |
-|:----------:|---------------------------------|-----------------------------------------------------------------------------------------------------------------------|
-| Oct. 12/13 |    Multiple Linear Regression   | Keith pp. 26&ndash;76                                                                                                       |
-| Oct. 14/15 | Multiple Linear Regression      |                                                                                                                       |
-| Oct. 19/20 | Article Discussion              | Stack, S. (2014). [Teaching and salaries in Social Science: A research note.](http://onlinelibrary.wiley.com.ezp3.lib.umn.edu/doi/10.1111/ssqu.12087/epdf) Social Science Quarterly, 95(3), 785–794. |
-|            | [Assignment #4 Due](https://github.com/zief0002/EPsy-8251/blob/master/assigments/Assignment-04-introduction-to-multiple-regression.pdf)               |                                                                                                                       |
-| Oct. 21/22 | Confidence Intervals       | [When Should I Use Confidence,Intervals, Prediction Intervals, and Tolerance Intervals](http://blog.minitab.com/blog/adventures-in-statistics/when-should-i-use-confidence-intervals-prediction-intervals-and-tolerance-intervals)                                 |
-| Oct. 26/27 | Prediction Intervals       |                                                                                                                       |
-| Oct. 28/29 | Regression Assumptions     | Keith pp. 188&ndash;195                                                                                                     |
-|            | [Assignment #5 Due](https://github.com/zief0002/EPsy-8251/blob/master/assigments/Assignment-05-Confidence-and-Prediction-Intervals.pdf)          |                                                                                                                       
-| Nov. 02/03 | Categorical Predictors (2 groups)           | Keith pp. 129&ndash;160                                                                                                                                                                                    |
-| Nov. 04/05 | Categorical Predictors (2 groups)           |                                                                                                                                                                                                      |
-|            | [Assignment #6 Due](https://github.com/zief0002/EPsy-8251/blob/master/assigments/Assignment-06-Regression-Assumptions.pdf)                            |                                                                                                                                                                                                      |
+|:----------:|---------------------------------|-----------------------------------------------------------------------------------------------------------------------|                                                                                                                                                                                                                                                                                                                                                                                   |
 | Nov. 09/10 | Categorical Predictors (More than 2 groups)/Post hoc tests  |                                                                                                                                                                                                      |
 | Nov. 11/12 | Categorical Predictors (More than 2 groups)/Sequential Regression                             |                                                                                                                                                                                                      Keith pp.77&ndash;94
 |            | [Assignment #7 Due](https://github.com/zief0002/EPsy-8251/blob/master/assigments/Assignment-07-ANCOVA.pdf) <br />Omit #11                          |                                                                                                                                                                                                      |
