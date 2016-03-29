@@ -57,7 +57,7 @@ library(sm)
 sm.density(out_a$.resid)
 
 # With error bands
-sm.density(out_a$.resid, model = "normal")
+sm.density(out_a$.stdresid, model = "normal")
 
 
 
@@ -106,6 +106,8 @@ sm.density(out_b$.stdresid, model = "normal")
 ### Residual showing observation number
 ##################################################
 
+out_b$id = 1:100
+
 ggplot(data = out_b, aes(x = .fitted, y = .stdresid)) +
     geom_text(aes(label = id), size = 4, hjust = 0, vjust = 0) +
     theme_bw() +
@@ -151,7 +153,7 @@ multReg$id = 1:100
 head(multReg)
 
 # Check that row 34 is the problematic observation
-multReg[34, ]
+multReg[c(34), ]
 
 # Create a new data frame that removes row 34
 multReg2 = multReg[-c(34), ]
@@ -202,5 +204,12 @@ cor(math$homework, out_a$achievement)
 cor(out_b$.fitted, out_b$gpa)
 
 
+# Fit the model
+lm.b  = lm(gpa ~ homework + parentEd, data = multReg)
+lm.b2 = lm(gpa ~ homework + parentEd, data = multReg, subset = -c(34, 22))
+
+summary(lm.b)
+summary(lm.b2)
 
 
+fl = read.csv(file.choose())
