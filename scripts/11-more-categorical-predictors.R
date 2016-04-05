@@ -2,7 +2,7 @@
 ### Read in the data
 ###################################################
 
-cehd = read.csv(file = "~/Desktop/cehd_pay.csv")
+cehd = read.csv(file = "~/Documents/epsy-8251/data/cehd_pay.csv")
 head(cehd)
 
 
