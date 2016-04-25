@@ -16,8 +16,7 @@ Due Dates
 - Assignment #06: April 07, 2016
 - Assignment #07: April 14, 2016
 - Assignment #08: April 21, 2016
-- Assignment #09: TBA
-- Assignment #10: TBA
+- Assignment #09: May 05, 2016 (by 12:30pm; turn assignment in to 250 EdSciB)
 
 <!--- See main page for calendar and due dates.-->
 <!---- Assignment #11: December 15/14, 2015-->
