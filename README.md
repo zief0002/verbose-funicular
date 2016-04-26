@@ -74,6 +74,12 @@ One of the best ways to learn R is to work with data. Filtering rows, selecting 
 - View the HTML file in the notes [here](https://cdn.rawgit.com/zief0002/EPsy-8251/master/notes/09-categorical-predictors.html)
 
 
+### Log-Transformations
+
+- [Interpreting log-transformed predictors/outcomes](http://www.cazaar.com/ta/econ113/interpreting-beta)
+
+
+
 <!--### Calendar
 |    Date    | Content                         | Reading                                                                                                               |
 |:----------:|---------------------------------|-----------------------------------------------------------------------------------------------------------------------|                                                                                                                                                                                                                                                                                                                                                                                   |
