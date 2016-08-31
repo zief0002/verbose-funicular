@@ -15,7 +15,7 @@ To download all of the materials at this site, click on the `Download ZIP` butto
 
 Andrew Zieffler [zief0002@umn.edu](mailto://zief0002@umn.edu)
 
-**Office:** [Educational Sciences Building 163](https://www.google.com/maps/place/Education+Sciences+Building/@44.9784043,-93.2394586,15z/data=!4m2!3m1!1s0x0:0x45656dac481b9150)**Office Hours:** Tuesday 1:00 PM&ndash;2:00 PM; and by appointment
+**Office:** [Educational Sciences Building 178](https://www.google.com/maps/place/Education+Sciences+Building/@44.9784043,-93.2394586,15z/data=!4m2!3m1!1s0x0:0x45656dac481b9150)**Office Hours:** Tuesday 1:00 PM&ndash;2:00 PM; and by appointment
 ### Teaching Assistant
 
 Jonathan Brown [brow3019@umn.edu](mailto://brow3019@umn.edu)
@@ -38,6 +38,7 @@ Jonathan Brown [brow3019@umn.edu](mailto://brow3019@umn.edu)
 - [ggplot2 Extensions](http://ggplot2-exts.github.io/index.html)
 - Wickham, H. (2010). [A layered grammar of graphics.](http://vita.had.co.nz/papers/layered-grammar.pdf) *Journal of Computational and Graphical Statistics, 19*(1), 3&ndash;28
 - [Data Stories podcast: ggplot2, R, and data toolmaking](http://datastori.es/67-ggplot2-r-and-data-toolmaking-with-hadley-wickham/) with Hadley Wickham
+- [R for Data Science](http://r4ds.had.co.nz/)
 
 
 ### Data Wrangling with dplyr
@@ -45,6 +46,7 @@ Jonathan Brown [brow3019@umn.edu](mailto://brow3019@umn.edu)
 - [Data wrangling with R and RStudio](https://www.rstudio.com/resources/webinars/data-wrangling-with-r-and-rstudio/)
 - [dplyr vignette](https://cran.rstudio.com/web/packages/dplyr/vignettes/introduction.html)
 - [dplyr Cheatsheet](https://www.rstudio.com/wp-content/uploads/2015/02/data-wrangling-cheatsheet.pdf)
+- [R for Data Science](http://r4ds.had.co.nz/)
 
 
 ### Simple Linear Regression: Description
@@ -78,6 +80,7 @@ Jonathan Brown [brow3019@umn.edu](mailto://brow3019@umn.edu)
 ### Regression Assumptions 
 
 - Re-read Lewis-Beck & Lewis-Beck (Chap. 2)
+- [Visualizing Residuals](https://drsimonj.svbtle.com/visualising-residuals)
 
 
 ### Categorical Predictors
