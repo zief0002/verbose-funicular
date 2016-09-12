@@ -5,8 +5,14 @@ Course materials for EPsy 8251
 
 This GitHub repository is the home for the book _EPsy 8251: Methods in Data Analysis for Educational Research I_. It includes many of the materials used in the course.
 
-To download all of the materials at this site, click on the `Download ZIP` button. This will download a ZIP file of the entire site on your local computer. 
 
+### Downloading the Materials
+
+To download all of the materials simultaneously from this site, click on the `Clone or Download` button and select `Download ZIP`. This will download a ZIP file of the entire site on your local computer. 
+
+To download individual PDF files, open the file link and then click on the `Download` button. CSV files can be individually download by opening their links, clicking on the `Raw` button. This should display the text of the CSV in your browser window. If you right-click on this text, you should be able to `Save as` or `Save page as` ()or something along those lines). 
+
+<br />
 
 ---
 
@@ -15,14 +21,16 @@ To download all of the materials at this site, click on the `Download ZIP` butto
 
 Andrew Zieffler [zief0002@umn.edu](mailto://zief0002@umn.edu)
 
-**Office:** [Educational Sciences Building 178](https://www.google.com/maps/place/Education+Sciences+Building/@44.9784043,-93.2394586,15z/data=!4m2!3m1!1s0x0:0x45656dac481b9150)**Office Hours:** Tuesday 1:00 PM&ndash;2:00 PM; and by appointment
-### Teaching Assistant
+**Office:** [Education Sciences Building 178](https://www.google.com/maps/place/Education+Sciences+Building/@44.9784043,-93.2394586,15z/data=!4m2!3m1!1s0x0:0x45656dac481b9150)**Office Hours:** Tuesday 1:00 PM&ndash;2:00 PM; and by appointment
+<br />### Teaching Assistant
 
 Jonathan Brown [brow3019@umn.edu](mailto://brow3019@umn.edu)
 
-**Office:** [Educational Sciences Building 192](https://www.google.com/maps/place/Education+Sciences+Building/@44.9784043,-93.2394586,15z/data=!4m2!3m1!1s0x0:0x45656dac481b9150)**Office Hours:** Monday 1:30 PM&ndash;2:30 PM; Wednesday 1:30 PM&ndash;2:30 PM; and by appointment
+**Office:** [Education Sciences Building 192](https://www.google.com/maps/place/Education+Sciences+Building/@44.9784043,-93.2394586,15z/data=!4m2!3m1!1s0x0:0x45656dac481b9150)**Office Hours:** Monday 1:30 PM&ndash;2:30 PM; Wednesday 1:30 PM&ndash;2:30 PM; and by appointment
 
----
+<br />---
+
+The resources below correspond to the content covered in the course (see the course syllabus). 
 
 ### Introduction to R and RStudio
 
@@ -93,7 +101,7 @@ Jonathan Brown [brow3019@umn.edu](mailto://brow3019@umn.edu)
 ### Post Hoc Tests
 
 - [538.com: p-Hacking](http://fivethirtyeight.com/features/science-isnt-broken/#part3)
-- Gelman, A., Hill, J., & Yajima, M. (2012). [Why We (Usually) Don’t Have to Worry about Multiple Comparisons.](http://www.stat.columbia.edu/~gelman/research/published/multiple2f.pdf) *Journal of Research on Educational Effectiveness, 5, 189&ndash;211.
+- Gelman, A., Hill, J., & Yajima, M. (2012). [Why We (Usually) Don’t Have to Worry about Multiple Comparisons.](http://www.stat.columbia.edu/~gelman/research/published/multiple2f.pdf) *Journal of Research on Educational Effectiveness, 5,* 189&ndash;211.
 
 ### Interaction Models
 
