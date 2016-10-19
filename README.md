@@ -21,18 +21,37 @@ To download individual PDF files, open the file link and then click on the `Down
 
 Andrew Zieffler [zief0002@umn.edu](mailto://zief0002@umn.edu)
 
-**Office:** [Education Sciences Building 178](https://www.google.com/maps/place/Education+Sciences+Building/@44.9784043,-93.2394586,15z/data=!4m2!3m1!1s0x0:0x45656dac481b9150)**Office Hours:** Tuesday 1:00 PM&ndash;2:00 PM; and by appointment
-<br />### Teaching Assistant
+**Office:** [Education Sciences Building 178](https://www.google.com/maps/place/Education+Sciences+Building/@44.9784043,-93.2394586,15z/data=!4m2!3m1!1s0x0:0x45656dac481b9150)
+
+**Office Hours:** Tuesday 1:00 PM&ndash;2:00 PM; and by appointment
+
+<br />
+
+### Teaching Assistant
 
 Jonathan Brown [brow3019@umn.edu](mailto://brow3019@umn.edu)
 
-**Office:** [Education Sciences Building 192](https://www.google.com/maps/place/Education+Sciences+Building/@44.9784043,-93.2394586,15z/data=!4m2!3m1!1s0x0:0x45656dac481b9150)**Office Hours:** Monday 1:30 PM&ndash;2:30 PM; Wednesday 1:30 PM&ndash;2:30 PM; and by appointment
+**Office:** [Education Sciences Building 192](https://www.google.com/maps/place/Education+Sciences+Building/@44.9784043,-93.2394586,15z/data=!4m2!3m1!1s0x0:0x45656dac481b9150)
 
-<br />---
-### Textbooks
+**Office Hours:** Monday 1:30 PM&ndash;2:30 PM; Wednesday 1:30 PM&ndash;2:30 PM; and by appointment
+
+<br />
+
+
+---
+
+
+### Textbooks
 
 Some of the required textbooks are available via the University of Minnesota library.
-- [Applied regression: An introduction](http://primo.lib.umn.edu/TWINCITIES:mncat_discovery:UMN_ALMA21533776460001701)- [Regression with dummy variables](https://www.lib.umn.edu/get?url=http://methods.sagepub.com%2Fbook%2Fregression-with-dummy-variables)<br />---
+
+- [Applied regression: An introduction](http://primo.lib.umn.edu/TWINCITIES:mncat_discovery:UMN_ALMA21533776460001701)
+- [Regression with dummy variables](https://www.lib.umn.edu/get?url=http://methods.sagepub.com%2Fbook%2Fregression-with-dummy-variables)
+
+<br />
+
+
+---
 
 The resources below correspond to the content covered in the course (see the course syllabus). 
 
@@ -46,7 +65,9 @@ The resources below correspond to the content covered in the course (see the cou
 
 ### Plotting with ggplot2
 
-- [Plotting with ggplot2: Part 1 [video]](https://www.youtube.com/watch?v=HeqHMM4ziXA)- [Plotting with ggplot2: Part 2 [video]](https://www.youtube.com/watch?v=n8kYa9vu1l8)- [ggplot2 Cheatsheet](https://www.rstudio.com/wp-content/uploads/2015/08/ggplot2-cheatsheet.pdf)
+- [Plotting with ggplot2: Part 1 [video]](https://www.youtube.com/watch?v=HeqHMM4ziXA)
+- [Plotting with ggplot2: Part 2 [video]](https://www.youtube.com/watch?v=n8kYa9vu1l8)
+- [ggplot2 Cheatsheet](https://www.rstudio.com/wp-content/uploads/2015/08/ggplot2-cheatsheet.pdf)
 - [ggplot2 Extensions](http://ggplot2-exts.github.io/index.html)
 - Wickham, H. (2010). [A layered grammar of graphics.](http://vita.had.co.nz/papers/layered-grammar.pdf) *Journal of Computational and Graphical Statistics, 19*(1), 3&ndash;28
 - [Data Stories podcast: ggplot2, R, and data toolmaking](http://datastori.es/67-ggplot2-r-and-data-toolmaking-with-hadley-wickham/) with Hadley Wickham
@@ -97,9 +118,11 @@ The resources below correspond to the content covered in the course (see the cou
 
 ### Categorical Predictors
 
+View the HTML notes [here](http://zieffler.com/epsy-8251-categorical-predictors.html)
+
 - [What is Dummy Coding?](http://www.ats.ucla.edu/stat/mult_pkg/faq/general/dummy.htm)
 - [What is Effect Coding?](http://www.ats.ucla.edu/stat/mult_pkg/faq/general/effect.htm)
-<!--- View the HTML file in the notes [here](https://cdn.rawgit.com/zief0002/EPsy-8251/master/notes/09-categorical-predictors.html)-->
+
 
 
 ### Post Hoc Tests
