@@ -133,10 +133,12 @@ View the HTML notes [here](http://zieffler.com/epsy-8251-more-categorical-predic
 - Gelman, A., Hill, J., & Yajima, M. (2012). [Why We (Usually) Don’t Have to Worry about Multiple Comparisons.](http://www.stat.columbia.edu/~gelman/research/published/multiple2f.pdf) *Journal of Research on Educational Effectiveness, 5,* 189&ndash;211.
 
 
-### Introduction to Interaction Models
+### Interaction Models
 
-View the HTML notes [here](http://zieffler.com/epsy-8251-introduction-to-interaction-models.nb.html)
+- View the HTML notes [Introduction to Interaction Models](http://zieffler.com/epsy-8251-introduction-to-interaction-models.nb.html)
+- View the HTML notes [More Interaction Models](http://zieffler.com/epsy-8251-more-interaction-models.nb.html)
 
+Read the following article:
 - [Going public: Writing about research in everyday language](ies.ed.gov/ncee/edlabs)
 
 
