@@ -137,6 +137,7 @@ View the HTML notes [here](http://zieffler.com/epsy-8251-more-categorical-predic
 
 - View the HTML notes [Introduction to Interaction Models](http://zieffler.com/epsy-8251-introduction-to-interaction-models.nb.html)
 - View the HTML notes [More Interaction Models](http://zieffler.com/epsy-8251-more-interaction-models.nb.html)
+- View the HTML notes [Still More Interaction Models](http://zieffler.com/epsy-8251-still-more-interaction-models.nb.html)
 
 Read the following article:
 - [Going public: Writing about research in everyday language](ies.ed.gov/ncee/edlabs)
