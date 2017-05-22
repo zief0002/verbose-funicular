@@ -3,23 +3,20 @@ title: "EPsy 8251"
 author: "Andrew Zieffler"
 site: bookdown::bookdown_site
 documentclass: book
-output:
-  bookdown::gitbook: default
-  bookdown::pdf_book: default
+output: bookdown::gitbook
+output_dir: docs
 ---
 
 # Course Description
 
-Hi.
-
-Bye.
+This is a test of Einstein
 
 
 # Assignments
 
-dgjkndfkg
+Aha
 
 
 # M
 
-
+WHat
