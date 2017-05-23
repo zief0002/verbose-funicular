@@ -2,12 +2,10 @@
 ### Read in data
 ##################################################
 
-cehd = read.csv("~/Desktop/cehd.csv")
+city = read.csv("~/Google Drive/andy/epsy-8251/data/riverside.csv")
 
-head(cehd)
-tail(cehd)
-
-summary(cehd)
+head(city)
+tail(city)
 
 
 
@@ -23,17 +21,17 @@ library(dplyr)
 ### Select a subset of rows (filter)
 ##################################################
 
-cehd %>% filter(department == "EPSY")
+city %>% filter(gender == "male")
 
 
 # Write output into an object
-epsy = cehd %>% filter(department == "EPSY")
-head(epsy)
-mean(epsy$annual_pay)
+males = city %>% filter(gender == "male")
+head(males)
+mean(males$income)
 
 
-assoc = cehd %>% filter(title == "Associate Professor")
-mean(assoc$annual_pay)
+high_school = city %>% filter(education <= 12)
+mean(high_school$income)
 
 
 
@@ -41,35 +39,28 @@ mean(assoc$annual_pay)
 ### Filter on multiple attributes
 ##################################################
 
-epsy_assoc = cehd %>% filter(department == "EPSY", title == "Associate Professor")
-epsy_assoc
-mean(epsy_assoc$annual_pay)
+# AND Logic
+males_high_school = city %>% filter(gender == "male", education <= 12)
+males_high_school
+mean(males_high_school$income)
 
 
-# AND
-cehd %>% filter(department == "EPSY" & title == "Associate Professor")
-
-
-# OR
-cehd %>% filter(department == "EPSY" | title == "Associate Professor")
-
-# Associate professors from EPSY and C&I
-cehd %>% 
-  filter(title == "Associate Professor") %>%
-  filter(department == "EPSY" | department == "C&I")
-
-
+# OR Logic
+males_OR_high_school = city %>% filter(gender == "male" | education <= 12)
+males_OR_high_school
 
 
 ##################################################
 ### Select a subset of columns (select)
 ##################################################
 
-cehd %>% select(name, department, annual_pay)
+city2 = city %>% select(education, income, gender)
+head(city2)
+
 
 # Rename a column
-cehd %>% select(name, dept = department, annual_pay)
-
+city2 = city %>% select(Edu = education, income, gender)
+head(city2)
 
 
 
@@ -77,7 +68,8 @@ cehd %>% select(name, dept = department, annual_pay)
 ### Helper functions for select()
 ##################################################
 
-cehd %>% select(ends_with("e"))
+city2 = city %>% select(ends_with("e"))
+head(city2)
 
 
 
@@ -85,17 +77,20 @@ cehd %>% select(ends_with("e"))
 ### Create new variables (nutate)
 ##################################################
 
-cehd %>% 
-  select(name, department, annual_pay) %>%
-  mutate(pay2 = annual_pay / 100000)
+city3 = city %>% 
+  mutate(income2 = income / 1000)
+
+head(city3)
 
 
 # Create multiple variables
-cehd %>% 
-  select(name, department, annual_pay) %>%
-  mutate(pay2 = annual_pay / 100000,
-         lastname = gsub(",.*$", "", as.character(name))
-  )
+city3 = city %>% 
+  mutate(
+    income2 = income / 1000,
+    educ_after_8 = education - 8
+    )
+
+head(city3)
 
 
 
@@ -103,27 +98,34 @@ cehd %>%
 ### Sort/reorder data (arrange)
 ##################################################
 
-cehd %>% arrange(department)
+city4 = city %>% arrange(income)
+city4
 
 # Sort by multiple variables
-cehd %>% arrange(department, title, hire_year)
+city4 = city %>% arrange(gender, income)
+city4
 
 # Arrange in descending order
-cehd %>% arrange(department, desc(hire_year))
+city4 = city %>% arrange(gender, desc(income))
+city4
 
 
 ##################################################
 ### Summarizing
 ##################################################
 
-cehd %>% summarize(M = mean(annual_pay))
+mySummaries = city %>% summarize(M = mean(income))
+mySummaries
+
 
 # Compute multiple summaries
-cehd %>% 
+mySummaries = city %>% 
   summarize(
-    M = mean(annual_pay),
-    SD = sd(annual_pay)
+    M = mean(income),
+    SD = sd(income)
   )
+
+mySummaries
 
 
 
@@ -131,45 +133,44 @@ cehd %>%
 ### Grouping
 ##################################################
 
-cehd %>% 
-  group_by(department) %>%
+mySummaries = city %>% 
+  group_by(gender) %>%
   summarize(
-    M = mean(annual_pay),
-    SD = sd(annual_pay)
+    M = mean(income),
+    SD = sd(income)
   )
+
+mySummaries
 
 
 
 ##################################################
-### Plotting group output
+### Using dplyr and ggplot2 together
 ##################################################
 
-dept_summaries = cehd %>% 
-  group_by(department) %>%
-  summarize(
-    M = mean(annual_pay),
-    SD = sd(annual_pay),
-    n = n()
-  ) %>%
-  mutate(
-    lower_limit = M - 2 * SD / sqrt(n),
-    upper_limit = M + 2 * SD / sqrt(n)
-  )
+# What if you  wanted to plot the relationship between income and education level for females?
 
-dept_summaries
+females = city %>% filter(gender == "female")
 
 
 library(ggplot2)
 
-ggplot(data = dept_summaries, aes(x = department, y = M)) +
-  geom_segment(aes(x = department, xend = department, y = lower_limit, yend = upper_limit)) +
-  geom_line(aes(group = 1), linetype = "dotted") +
+
+ggplot(data = females, aes(x = education, y = income)) +
   geom_point() +
   theme_bw() +
-  xlab("") +
-  ylab("Average Base Salary")
+  xlab("Education level") +
+  ylab("Income")
 
 
 
+# OPTION 2: Use piping to send the results directly to ggplot2.
+# The data=. syas use the data you just piped in.
 
-
+city %>% 
+  filter(gender == "female") %>%
+  ggplot(data = ., aes(x = education, y = income)) +
+    geom_point() +
+    theme_bw() +
+    xlab("Education level") +
+    ylab("Income")

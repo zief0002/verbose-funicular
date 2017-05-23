@@ -2,12 +2,12 @@
 ### Read in data
 ##################################################
 
-cehd = read.csv("~/Desktop/cehd.csv")
+city = read.csv("~/Google Drive/andy/epsy-8251/data/riverside.csv")
 
-head(cehd)
-tail(cehd)
+head(city)
+tail(city)
 
-summary(cehd)
+summary(city)
 
 
 
@@ -20,61 +20,74 @@ library(ggplot2)
 
 
 ##################################################
-### Boxplot of title versus annual pay
+### Scatterplot of income versus education
 ##################################################
 
-ggplot(data = cehd, aes(x = title, y = annual_pay)) +
-	geom_boxplot()
-
-
-
-##################################################
-### Add jittered points
-##################################################
-
-ggplot(data = cehd, aes(x = title, y = annual_pay)) +
-  geom_boxplot() +
-	geom_jitter()
-	
+ggplot(data = city, aes(x = education, y = income)) + geom_point()
 
 
 
 ##################################################
-### Colored boxplots
+### Add a loess smoother
+##################################################
+
+ggplot(data = city, aes(x = education, y = income)) + geom_point() + geom_smooth()
+
+
+
+##################################################
+### More readable syntax
+##################################################
+
+ggplot(data = city, aes(x = education, y = income)) +
+  geom_point() +
+  geom_smooth()
+
+
+
+##################################################
+### Global vs local aesthetics
 ##################################################
 
 # Global aesthetics
-ggplot(data = cehd, aes(x = title, y = annual_pay, color = title)) +
-  geom_boxplot() +
-  geom_jitter() 
+ggplot(data = city, aes(x = education, y = income, color = gender)) +
+  geom_point() +
+  geom_smooth()
 
 
 # local aesthetics
-ggplot(data = cehd, aes(x = title, y = annual_pay)) +
-  geom_boxplot(aes(color = title)) +
-  geom_jitter()
-
-
-# Fixed color
-ggplot(data = cehd, aes(x = title, y = annual_pay, color = title)) +
-  geom_boxplot(color = "black", fill = "steelblue") +
-  geom_jitter()+ guides(color = FALSE)
+ggplot(data = city, aes(x = education, y = income)) +
+  geom_point(aes(color = gender)) +
+  geom_smooth()
 
 
 
 ##################################################
-### Facet on department
+### Fixed aesthetics
 ##################################################
 
-ggplot(data = cehd, aes(x = years_at_u, y = annual_pay)) +
+ggplot(data = city, aes(x = education, y = income, color = gender)) +
   geom_point() +
-  facet_wrap(~ department)
+  geom_smooth(color = "yellow", fill = "darkblue") 
 
 
-# Put facets in a single row
-ggplot(data = cehd, aes(x = years_at_u, y = annual_pay)) +
+
+##################################################
+### Other useful point aesthetics
+##################################################
+
+ggplot(data = city, aes(x = seniority, y = education)) +
+  geom_point(aes(color = party, pch = gender), size = 5)
+
+
+
+##################################################
+### Facet on political party
+##################################################
+
+ggplot(data = city, aes(x = education, y = income)) +
   geom_point() +
-  facet_wrap(~ department, nrow = 2)
+  facet_wrap(~ party)
 
 
 
@@ -82,10 +95,10 @@ ggplot(data = cehd, aes(x = years_at_u, y = annual_pay)) +
 ### Add axis label
 ##################################################
 
-ggplot(data = cehd, aes(x = years_at_u, y = annual_pay)) +
+ggplot(data = city, aes(x = education, y = income)) +
   geom_point() +
-  facet_wrap(~ department, nrow = 2) +
-  xlab("Years at the University of Minnesota")
+  facet_wrap(~ party) +
+  xlab("Education level (in years)")
 
 
 
@@ -93,27 +106,10 @@ ggplot(data = cehd, aes(x = years_at_u, y = annual_pay)) +
 ### Change axis limits
 ##################################################
 
-ggplot(data = cehd, aes(x = years_at_u, y = annual_pay)) +
+ggplot(data = city, aes(x = education, y = income)) +
   geom_point() +
-  facet_wrap(~ department, nrow = 2) +
-  xlab("Years at the University of Minnesota") +
-        ylim(0, 200000)
-        
-
-
-
-##################################################
-### Adios-ing scientific notation
-##################################################
-
-options(scipen = 10000)
-
-ggplot(data = cehd, aes(x = years_at_u, y = annual_pay)) +
-  geom_point() +
-  facet_wrap(~ department, nrow = 2) +
-  xlab("Years at the University of Minnesota") +
-  scale_x_continuous(labels = comma)
-
+  facet_wrap(~ party) +
+  ylim(0, 100000)
 
 
 
@@ -121,13 +117,12 @@ ggplot(data = cehd, aes(x = years_at_u, y = annual_pay)) +
 ### Fine-tuning the axis scales
 ##################################################
 
-ggplot(data = cehd, aes(x = years_at_u, y = annual_pay)) +
+ggplot(data = city, aes(x = education, y = income)) +
   geom_point() +
-  facet_wrap(~ department, nrow = 2) +
-  xlab("Years at the University of Minnesota") +
-  scale_y_continuous(
-    name = "Annual Base Salary", 
-    breaks = c(50000, 100000, 150000, 200000, 250000, 300000)
+  facet_wrap(~ party) +
+  scale_x_continuous(
+    name = "Education level (in years)",
+    breaks = c(10, 12, 14, 16, 18, 20, 22, 24)
   )
 
 
@@ -138,14 +133,13 @@ ggplot(data = cehd, aes(x = years_at_u, y = annual_pay)) +
 
 library(scales)
 
-ggplot(data = cehd, aes(x = years_at_u, y = annual_pay)) +
+ggplot(data = city, aes(x = education, y = income)) +
   geom_point() +
-  facet_wrap(~ department, nrow = 2) +
-  xlab("Years at the University of Minnesota") +
+  facet_wrap(~ party) +
   scale_y_continuous(
-    name = "Annual Base Salary",
+    name = "Annual income",
     labels = dollar
-  )
+    )
 
 
 
@@ -153,11 +147,11 @@ ggplot(data = cehd, aes(x = years_at_u, y = annual_pay)) +
 ### Customize color
 ##################################################
 
-ggplot(data = cehd, aes(x = years_at_u, y = annual_pay)) +
-  geom_point(aes(color = title)) +
+ggplot(data = city, aes(x = education, y = income)) +
+  geom_point(aes(color = party)) +
   scale_color_manual(
-    values = c("#599ad3", "#f9a65a", "#9e66ab")
-    )
+    values = c("#00afbb", "#e7b800", "#fc4e07")
+  )
 
 
 
@@ -165,21 +159,12 @@ ggplot(data = cehd, aes(x = years_at_u, y = annual_pay)) +
 ### Change legend title
 ##################################################
 
-ggplot(data = cehd, aes(x = years_at_u, y = annual_pay)) +
-  geom_point(aes(color = title)) +
+ggplot(data = city, aes(x = education, y = income)) +
+  geom_point(aes(color = party)) +
   scale_color_manual(
-    values = c("#599ad3", "#f9a65a", "#9e66ab"),
-    name = "Faculty Title"
+    values = c("#00afbb", "#e7b800", "#fc4e07"),
+    name = "Political affiliation"
   )
-
-
-##################################################
-### Default palette
-##################################################
-
-ggplot(data = cehd, aes(x = years_at_u, y = annual_pay)) +
-  geom_point(aes(color = title)) +
-  scale_color_hue(name = "Faculty Title")
 
 
 
@@ -187,9 +172,9 @@ ggplot(data = cehd, aes(x = years_at_u, y = annual_pay)) +
 ### Greyscale palette
 ##################################################
 
-ggplot(data = cehd, aes(x = years_at_u, y = annual_pay)) +
-  geom_point(aes(color = title)) +
-  scale_color_grey(name = "Faculty Title")
+ggplot(data = city, aes(x = education, y = income)) +
+  geom_point(aes(color = party)) +
+  scale_color_grey(name = "Political affiliation")
 
 
 
@@ -197,10 +182,10 @@ ggplot(data = cehd, aes(x = years_at_u, y = annual_pay)) +
 ### Color brewer palette
 ##################################################
 
-ggplot(data = cehd, aes(x = years_at_u, y = annual_pay)) +
-  geom_point(aes(color = title)) +
+ggplot(data = city, aes(x = education, y = income)) +
+  geom_point(aes(color = party)) +
   scale_color_brewer(
-    name = "Faculty Title",
+    name = "Political affiliation",
     palette = "Set2"
     )
 
@@ -210,8 +195,8 @@ ggplot(data = cehd, aes(x = years_at_u, y = annual_pay)) +
 ### Changing theme elements
 ##################################################
 
-ggplot(data = cehd, aes(x = years_at_u, y = annual_pay)) +
-  geom_point(aes(color = title)) +
+ggplot(data = city, aes(x = education, y = income)) +
+  geom_point(aes(color = party)) +
   theme(
     axis.title.x = element_text(face = "bold"),
     axis.title.y = element_text(face = "italic"),
@@ -224,8 +209,8 @@ ggplot(data = cehd, aes(x = years_at_u, y = annual_pay)) +
 ### Black and white background
 ##################################################
 
-ggplot(data = cehd, aes(x = years_at_u, y = annual_pay)) +
-  geom_point(aes(color = title)) +
+ggplot(data = city, aes(x = education, y = income)) +
+  geom_point(aes(color = party)) +
   theme_bw()
 
 
@@ -238,10 +223,10 @@ ggplot(data = cehd, aes(x = years_at_u, y = annual_pay)) +
 library(ggthemes)
 
 # Wall Street Journal theme
-ggplot(data = cehd, aes(x = years_at_u, y = annual_pay)) +
-  geom_point(aes(color = title)) +
+ggplot(data = city, aes(x = education, y = income)) +
+  geom_point(aes(color = party)) +
   theme_wsj() +
-  scale_color_wsj(name = "Faculty Title", palette = "rgby")
+  scale_color_wsj(name = "Political affiliation", palette = "rgby")
 
 
 
@@ -249,14 +234,19 @@ ggplot(data = cehd, aes(x = years_at_u, y = annual_pay)) +
 ### Putting it all together
 ##################################################
 
-ggplot(data = cehd, aes(x = years_at_u, y = annual_pay)) +
-  geom_point(aes(color = title)) +
-  scale_color_brewer(name = "Faculty Title", palette = "Blues") +
-  xlab("Years at the University of Minnesota") +
-  scale_y_continuous(name = "Annual Base Salary", labels = dollar) +
+ggplot(data = city, aes(x = education, y = income)) +
+  geom_point(aes(color = party)) +
+  scale_color_manual(
+    name = "Political affiliation", 
+    values = c("#00afbb", "#e7b800", "#fc4e07")
+  ) +
+  xlab("Education level (in years)") +
+  scale_y_continuous(
+    name = "Annual income", 
+    labels = dollar
+  ) +
   theme_bw() +
-  facet_wrap(~ department, nrow = 2) +
-  guides(color = FALSE)
+  facet_wrap(~gender)
 
 
 

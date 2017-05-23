@@ -43,7 +43,7 @@ Jonathan Brown [brow3019@umn.edu](mailto://brow3019@umn.edu)
 
 ### Textbooks
 
-Some of the required textbooks are available via the University of Minnesota library.
+Some of the course textbooks are available via the University of Minnesota library.
 
 - [Applied regression: An introduction](http://primo.lib.umn.edu/TWINCITIES:mncat_discovery:UMN_ALMA21533776460001701)
 - [Regression with dummy variables](https://www.lib.umn.edu/get?url=http://methods.sagepub.com%2Fbook%2Fregression-with-dummy-variables)
@@ -52,7 +52,7 @@ Some of the required textbooks are available via the University of Minnesota lib
 
 
 ---
-
+<!--
 The resources below correspond to the content covered in the course (see the course syllabus). 
 
 ### Introduction to R and RStudio
@@ -152,4 +152,4 @@ Read the following article:
 
 
 
-
+-->
