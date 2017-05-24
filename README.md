@@ -1,4 +1,4 @@
-EPsy-8251
+EPsy 8251: Methods in Data Analysis for Educational Research I
 =========
 
 
