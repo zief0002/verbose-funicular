@@ -63,7 +63,7 @@ Additional resources
 
 Here is an R vignette that will help you learn dplyr:
 
-- [dplyr Vignette](https://cran.rstudio.com/web/packages/dplyr/vignettes/introduction.html)
+- [dplyr Package Vignette](https://cran.rstudio.com/web/packages/dplyr/vignettes/introduction.html)
 
 Additional dplyr resources
 
@@ -96,7 +96,7 @@ Read the following:
 
 Additional resources
 
-- [corrr package overview](https://github.com/drsimonj/corrr) [blog post]
+- [corrr Package Vignette](https://github.com/drsimonj/corrr)
 - [Guess the Correlation Game](http://guessthecorrelation.com/) [fun game]
 
 <br />
@@ -135,6 +135,7 @@ Re-read the following:
 
 Additional resources
 
+- [broom Package Vignette](https://cran.r-project.org/web/packages/broom/vignettes/broom.html)
 - [Visualizing Residuals](https://drsimonj.svbtle.com/visualising-residuals) [blog post]
 - Osborne, J. W., &amp; Overbay, A. (2004). [The power of outliers (and why researchers should ALWAYS check for them)](http://pareonline.net/getvn.asp?v=9&n=6). _Practical Assessment, Research &amp; Evaluation, 9_(6).
 
