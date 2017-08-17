@@ -1,19 +1,21 @@
 ##################################################
-### Read in data
-##################################################
-
-city = read.csv("~/Google Drive/andy/epsy-8251/data/riverside.csv")
-
-head(city)
-tail(city)
-
-
-
-##################################################
 ### Load dplyr library
 ##################################################
 
 library(dplyr)
+library(ggplot2)
+library(readr)
+
+
+
+##################################################
+### Read in data
+##################################################
+
+city = read_csv("~/Dropbox/epsy-8251/data/riverside.csv")
+
+head(city)
+tail(city)
 
 
 
@@ -110,6 +112,7 @@ city4 = city %>% arrange(gender, desc(income))
 city4
 
 
+
 ##################################################
 ### Summarizing
 ##################################################
@@ -151,10 +154,6 @@ mySummaries
 # What if you  wanted to plot the relationship between income and education level for females?
 
 females = city %>% filter(gender == "female")
-
-
-library(ggplot2)
-
 
 ggplot(data = females, aes(x = education, y = income)) +
   geom_point() +

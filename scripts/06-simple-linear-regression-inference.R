@@ -1,19 +1,20 @@
 ##################################################
-### Read in data
-##################################################
-
-city = read.csv(file = "~/Google Drive/andy/epsy-8251/data/riverside.csv") 
-
-head(city)
-tail(city)
-
-
-
-##################################################
 ### Load libraries
 ##################################################
 
 library(ggplot2)
+library(readr)
+
+
+
+##################################################
+### Read in data
+##################################################
+
+city = read_csv(file = "~/Dropbox/epsy-8251/data/riverside.csv") 
+
+head(city)
+tail(city)
 
 
 

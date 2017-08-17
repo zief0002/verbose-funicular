@@ -1,8 +1,17 @@
 ##################################################
+### Load libraries
+##################################################
+
+library(ggplot2)
+library(readr)
+
+
+
+##################################################
 ### Read in data
 ##################################################
 
-city = read.csv("~/Google Drive/andy/epsy-8251/data/riverside.csv")
+city = read_csv("~/Dropbox/epsy-8251/data/riverside.csv")
 
 head(city)
 tail(city)
@@ -12,18 +21,11 @@ summary(city)
 
 
 ##################################################
-### Load ggplot2 library
-##################################################
-
-library(ggplot2)
-
-
-
-##################################################
 ### Scatterplot of income versus education
 ##################################################
 
-ggplot(data = city, aes(x = education, y = income)) + geom_point()
+ggplot(data = city, aes(x = education, y = income)) + 
+  geom_point()
 
 
 
@@ -31,7 +33,9 @@ ggplot(data = city, aes(x = education, y = income)) + geom_point()
 ### Add a loess smoother
 ##################################################
 
-ggplot(data = city, aes(x = education, y = income)) + geom_point() + geom_smooth()
+ggplot(data = city, aes(x = education, y = income)) + 
+  geom_point() + 
+  geom_smooth()
 
 
 

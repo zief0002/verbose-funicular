@@ -1,21 +1,20 @@
-###################################################
-### Read in the data
-###################################################
-
-beauty = read.csv(file = "~/Google Drive/Documents/epsy-8251/data/beauty.csv")
-head(beauty)
-
-
-
-
-
 ##################################################
 ### Load libraries
 ##################################################
 
 library(dplyr)
 library(ggplot2)
+library(readr)
 library(sm)
+
+
+
+###################################################
+### Read in the data
+###################################################
+
+beauty = read_csv(file = "~/Dropbox/epsy-8251/data/beauty.csv")
+head(beauty)
 
 
 
@@ -27,7 +26,7 @@ summary(beauty)
 
 
 # Discretize the age variable into 3 categories
-beauty$age_discrete = cut(beauty$age, breaks = 3) 
+beauty = beauty %>% mutate( age_discrete = cut(beauty$age, breaks = 3) )
 summary(beauty)
 
 
@@ -37,12 +36,14 @@ summary(beauty)
 ### Examine effect of age
 ##################################################
 
-ggplot(data = beauty, aes(x = btystdave, y = avgeval, color = age_discrete)) + geom_point(alpha = 0.4) +
+ggplot(data = beauty, aes(x = btystdave, y = avgeval, color = age_discrete)) + 
+  geom_point(alpha = 0.6) +
   geom_smooth(method = "lm", se = FALSE) +
   theme_bw() +
   xlab("Beauty rating") +
   ylab("Average course evaluation score") +
-  scale_color_brewer(palette = "Set2") + facet_wrap(~age_discrete)
+  scale_color_brewer(palette = "Set2") + 
+  facet_wrap(~age_discrete)
 
 
 
@@ -130,17 +131,30 @@ myData = myData %>% mutate( yhat = predict(lm.2, newdata = myData) )
 
 
 # Convert female and age into factors for better plotting
-myData$Sex = factor(myData$female, levels = c(0, 1), labels = c("Males", "Females")) 
-myData$age = factor(myData$age, levels = c(40, 60), labels = c("40 year olds", "60 year olds"))                                            
+myData = myData %>% 
+  mutate(Sex = factor(female, 
+                      levels = c(0, 1), 
+                      labels = c("Males", "Females")
+                      )
+  )
+
+myData = myData %>% 
+  mutate(Age = factor(age, 
+                      levels = c(40, 60), 
+                      labels = c("40 year olds", "60 year olds")
+                      )
+  )
+
 head(myData)
 
               
 # Plot the fitted model
-ggplot(data = myData, aes(x = btystdave, y = yhat, color = age, linetype = Sex)) + 
+ggplot(data = myData, aes(x = btystdave, y = yhat, color = Age, linetype = Sex)) + 
   geom_line() +
   theme_bw() +
   xlab("Beauty score") +
-  ylab("Predicted average course evaluation score") + scale_color_brewer(name = "Age", palette = "Set1")                                                                                                                                      
+  ylab("Predicted average course evaluation score") + 
+  scale_color_brewer(name = "Age", palette = "Set1")                                                                                                                                      
 
 
 
@@ -170,8 +184,19 @@ myData = expand.grid(
 myData = myData %>% mutate( yhat = predict(lm.3, newdata = myData) )
 
 # Convert female and age into factors for better plotting
-myData$Sex = factor(myData$female, levels = c(0, 1), labels = c("Males", "Females"))
-myData$age = factor(myData$age, levels = c(40, 60), labels = c("40 year olds", "60 year olds"))
+myData = myData %>% 
+  mutate(Sex = factor(myData$female, 
+                      levels = c(0, 1), 
+                      labels = c("Males", "Females")
+                      )
+  )
+
+myData = myData %>% 
+  mutate(age = factor(myData$age, 
+                      levels = c(40, 60), 
+                      labels = c("40 year olds", "60 year olds")
+                      )
+  )
 
 head(myData)
 

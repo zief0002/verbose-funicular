@@ -1,20 +1,23 @@
 ##################################################
-### Read in data
-##################################################
-
-city = read.csv(file = "~/Google Drive/andy/epsy-8251/data/riverside.csv") 
-
-head(city)
-tail(city)
-
-
-
-##################################################
 ### Load libraries
 ##################################################
 
+library(corrr)
+library(dplyr)
 library(ggplot2)
+library(readr)
 library(sm)
+
+
+
+##################################################
+### Read in data
+##################################################
+
+city = read_csv(file = "~/Dropbox/epsy-8251/data/riverside.csv") 
+
+head(city)
+tail(city)
 
 
 
@@ -24,8 +27,7 @@ library(sm)
 
 sm.density(city$income)
 
-mean(city$income)
-sd(city$income)
+city %>% summarize(M = mean(income), SD = sd(income))
 
 
 
@@ -35,8 +37,7 @@ sd(city$income)
 
 sm.density(city$education)
 
-mean(city$education)
-sd(city$education)
+city %>% summarize(M = mean(education), SD = sd(education))
 
 
 
@@ -44,7 +45,8 @@ sd(city$education)
 ### Examine conditional distribution of income given edu
 ##################################################
 
-ggplot(data = city, aes(x = education, y = income)) + geom_point() +
+ggplot(data = city, aes(x = education, y = income)) + 
+  geom_point() +
   theme_bw() +
   xlab("Education (in years)") +
   ylab("Income (in U.S. dollars)")
@@ -55,7 +57,9 @@ ggplot(data = city, aes(x = education, y = income)) + geom_point() +
 ### Correlation
 ##################################################
 
-cor(city[ , c("income", "education")])
+city %>%
+  select(income, education) %>%
+  correlate()
 
 
 

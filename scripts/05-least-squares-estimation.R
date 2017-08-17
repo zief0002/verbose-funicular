@@ -1,19 +1,21 @@
 ##################################################
-### Read in data
-##################################################
-
-city = read.csv(file = "~/Google Drive/andy/epsy-8251/data/riverside.csv") 
-
-head(city)
-tail(city)
-
-
-
-##################################################
 ### Load libraries
 ##################################################
 
+library(corrr)
 library(ggplot2)
+library(readr)
+
+
+
+##################################################
+### Read in data
+##################################################
+
+city = read_csv(file = "~/Dropbox/epsy-8251/data/riverside.csv") 
+
+head(city)
+tail(city)
 
 
 
@@ -81,7 +83,11 @@ pre = (sse.0 - sse.1) / sse.0
 pre
 
 # Correlation ^ 2
-cor(city[ c("income", "education") ]) ^ 2
+city %>% 
+  select(income, education) %>%
+  correlate() 
+
+0.7947847 ^ 2
 
 
 # Unexplained variation

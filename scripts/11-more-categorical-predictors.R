@@ -1,20 +1,21 @@
-###################################################
-### Read in the data
-###################################################
-
-ecls = read.csv(file = "~/Google Drive/Documents/epsy-8251/data/ecls.csv")
-head(ecls)
-
-
-
-
-
 ##################################################
 ### Load libraries
 ##################################################
 
 library(dplyr)
 library(ggplot2)
+library(readr)
+
+
+
+###################################################
+### Read in the data
+###################################################
+
+ecls = read_csv(file = "~/Dropbox/epsy-8251/data/ecls.csv")
+head(ecls)
+
+
 
 
 
@@ -48,11 +49,11 @@ levels(ecls$race)
 
 
 # Create dummy variables
-ecls$asian    = ifelse(ecls$race == "Asian",    1, 0)
-ecls$black    = ifelse(ecls$race == "Black",    1, 0)
-ecls$hispanic = ifelse(ecls$race == "Hispanic", 1, 0)
-ecls$other    = ifelse(ecls$race == "Other",    1, 0)
-ecls$white    = ifelse(ecls$race == "White",    1, 0)
+ecls = ecls %>% mutate(asian    = ifelse(race == "Asian",    1, 0))
+ecls = ecls %>% mutate(black    = ifelse(race == "Black",    1, 0))
+ecls = ecls %>% mutate(hispanic = ifelse(race == "Hispanic", 1, 0))
+ecls = ecls %>% mutate(other    = ifelse(race == "Other",    1, 0))
+ecls = ecls %>% mutate(white    = ifelse(race == "White",    1, 0))
 
 
 

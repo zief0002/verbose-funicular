@@ -1,0 +1,52 @@
+state,postal,region,salary,sat,participation
+Alabama,AL,South,47949,1190,6
+Alaska,AK,West,65468,1040,52
+Arizona,AZ,South,49885,1140,34
+Arkansas,AR,South,46631,1210,4
+California,CA,West,69324,1080,60
+Colorado,CO,West,49844,1250,12
+Connecticut,CT,Northeast,69397,1090,89
+Delaware,DE,Northeast,59679,1000,100
+District of Columbia,DC,South,70906,950,100
+Florida,FL,South,46598,1040,74
+Georgia,GA,South,52880,1070,77
+Hawaii,HI,West,54300,1080,61
+Idaho,ID,West,49734,1000,100
+Illinois,IL,Midwest,59113,1300,4
+Indiana,IN,Midwest,50065,1070,71
+Iowa,IA,Midwest,50946,1280,3
+Kansas,KS,Midwest,47464,1270,5
+Kentucky,KY,South,50203,1280,4
+Louisiana,LA,South,51381,1240,5
+Maine,ME,Northeast,48430,1050,96
+Maryland,MD,Northeast,64248,1070,79
+Massachusetts,MA,Northeast,72334,1120,86
+Michigan,MI,Midwest,61560,1270,4
+Minnesota,MN,Midwest,56268,1300,5
+Mississippi,MS,South,41814,1260,3
+Missouri,MO,Midwest,47517,1290,4
+Montana,MT,West,48855,1200,15
+Nebraska,NE,Midwest,48997,1260,4
+Nevada,NV,West,55957,1100,50
+New Hampshire,NH,Northeast,55599,1140,70
+New Jersey,NJ,Northeast,68797,1090,81
+New Mexico,NM,South,45453,1170,12
+New York,NY,Northeast,75279,1070,75
+North Carolina,NC,South,45737,1090,63
+North Dakota,ND,Midwest,47344,1250,2
+Ohio,OH,Midwest,56307,1190,14
+Oklahoma,OK,South,44373,1230,4
+Oregon,OR,West,57612,1120,47
+Pennsylvania,PA,Northeast,62994,1090,71
+Rhode Island,RI,Northeast,63474,1070,73
+South Carolina,SC,South,48375,1060,65
+South Dakota,SD,Midwest,39018,1240,3
+Tennessee,TN,South,47563,1250,7
+Texas,TX,South,48819,1020,64
+Utah,UT,West,49393,1230,5
+Vermont,VT,Northeast,52526,1120,61
+Virginia,VA,South,48670,1120,72
+Washington,WA,West,52234,1090,66
+West Virginia,WV,South,45453,1120,15
+Wisconsin,WI,Midwest,53797,1290,4
+Wyoming,WY,West,56775,1280,3

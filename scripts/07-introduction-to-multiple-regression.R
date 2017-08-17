@@ -1,19 +1,21 @@
 ##################################################
-### Read in data
-##################################################
-
-city = read.csv(file = "~/Google Drive/andy/epsy-8251/data/riverside.csv") 
-head(city)
-
-
-
-##################################################
 ### Load libraries
 ##################################################
 
+library(corrr)
 library(dplyr)
 library(ggplot2)
+library(readr)
 library(sm)
+
+
+
+##################################################
+### Read in data
+##################################################
+
+city = read_csv(file = "~/Dropbox/epsy-8251/data/riverside.csv") 
+head(city)
 
 
 
@@ -52,7 +54,11 @@ ggplot(data = city, aes(x = seniority, y = income)) + geom_point() +
 
 
 # Correlation matrix
-cor(city[ , c("income", "education", "seniority")])
+city %>%
+  select(income, education, seniority) %>%
+  correlate() %>%
+  shave() %>%
+  fashion(decimals = 2)
 
 
 

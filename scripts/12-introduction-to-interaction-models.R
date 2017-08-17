@@ -1,21 +1,23 @@
-###################################################
-### Read in the data
-###################################################
-
-beauty = read.csv(file = "~/Google Drive/Documents/epsy-8251/data/beauty.csv")
-head(beauty)
-
-
-
-
-
 ##################################################
 ### Load libraries
 ##################################################
 
+library(broom)
 library(dplyr)
 library(ggplot2)
+library(readr)
 library(sm)
+
+
+
+###################################################
+### Read in the data
+###################################################
+
+beauty = read_csv(file = "~/Dropbox/epsy-8251/data/beauty.csv")
+head(beauty)
+
+
 
 
 
@@ -44,7 +46,12 @@ myData = myData %>% mutate(yhat = predict(lm.1, newdata = myData))
 
 
 # Coerce female into a factor
-myData$gender = factor(myData$female, levels = c(0, 1), labels = c("Male", "Female"))
+myData = myData %>% 
+  mutate(gender = factor(myData$female, 
+                         levels = c(0, 1), 
+                         labels = c("Male", "Female")
+                         )
+  )
 
 
 # Plot
@@ -161,16 +168,16 @@ ggplot(data = myData, aes(x = btystdave, y = yhat, color = factor(tenured))) +
 ##################################################
 
 # Create fortified data
-fort_lm3 = fortify(lm.3)
+fort_lm3 = augment(lm.3)
 head(fort_lm3)
 
 
 # Examine normality assumption
-sm.density(fort_lm3$.stdresid, model = "normal", xlab = "Studentized Residuals")
+sm.density(fort_lm3$.std.resid, model = "normal", xlab = "Studentized Residuals")
 
 
 # Examine other assumptions
-ggplot(data = fort_lm3, aes(x = .fitted, y = .stdresid)) +
+ggplot(data = fort_lm3, aes(x = .fitted, y = .std.resid)) +
   geom_point() +
   geom_hline(yintercept = 0) +
   geom_hline(yintercept = c(-2, 2), linetype = "dotted") +

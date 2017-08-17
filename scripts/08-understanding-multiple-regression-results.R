@@ -1,18 +1,19 @@
 ##################################################
-### Read in data
-##################################################
-
-city = read.csv(file = "~/Google Drive/Documents/epsy-8251/data/riverside.csv") 
-head(city)
-
-
-
-##################################################
 ### Load libraries
 ##################################################
 
 library(dplyr)
 library(ggplot2)
+library(readr)
+
+
+
+##################################################
+### Read in data
+##################################################
+
+city = read_csv(file = "~/Dropbox/epsy-8251/data/riverside.csv") 
+head(city)
 
 
 
@@ -22,7 +23,6 @@ library(ggplot2)
 
 lm.1 = lm(income ~ 1 + education + seniority, data = city) 
 summary(lm.1)
-
 
 
 
@@ -46,7 +46,8 @@ predict(lm.1, newdata = myData)
 
 
 # Add predicted values as a column in the data frame
-myData %>% mutate(yhat = predict(lm.1, newdata = myData))
+myData = myData %>% 
+  mutate(yhat = predict(lm.1, newdata = myData))
 
 
 
@@ -80,14 +81,20 @@ head(plotData)
 
 
 # Turn seniority into a factor for better plotting
-plotData = plotData %>% mutate(seniority2 = factor(seniority, 
-    levels = c(10, 15, 20), labels = c("Low seniority", "Moderate seniority", "High seniority" ) ) )
+plotData = plotData %>% 
+  mutate(seniority2 = 
+    factor(seniority, 
+      levels = c(10, 15, 20), 
+      labels = c("Low seniority", "Moderate seniority", "High seniority" ) 
+      ) 
+    )
   
 head(plotData)
 
 
 # Create the plot
-ggplot(data = plotData, aes(x = education, y = yhat, group = seniority2, color = seniority)) +
+ggplot(data = plotData, aes(x = education, y = yhat, group = seniority2, 
+                            color = seniority2)) +
   geom_line() +
   theme_bw() +
   xlab("Education level") +
@@ -106,7 +113,8 @@ expand.grid(
   education = c(12, 16)
   ) %>%
   mutate( yhat = predict(lm.1, newdata = .) ) %>% 
-  mutate( education2 = factor(education, levels = c(12, 16), labels = c("High school", "College" ) %>%
+  mutate( education2 = factor(education, 
+      levels = c(12, 16), labels = c("High school", "College" ))) %>%
   ggplot(data = ., aes(x = seniority, y = yhat, group = education2, color = education2)) +
     geom_line() +
     theme_bw() +
