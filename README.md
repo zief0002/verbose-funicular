@@ -38,6 +38,11 @@ Below is the required reading you will need to do for the course. Some are tradi
 
 #### General Resources
 
+Here is a link to the textbook via the UMN Library
+
+- Lewis-Beck, C., &amp; Lewis-Beck, M. (2016). [Applied regression: An introduction (2nd ed.)](https://primo.lib.umn.edu/primo-explore/fulldisplay?docid=UMN_ALMA21533776460001701&context=L&vid=TWINCITIES&search_scope=mncat_discovery&tab=article_discovery&lang=en_US). Thousand Oaks, CA: Sage.
+
+
 Here are some general resoucres:
 
 - [The Quartz Guide to Bad Data](https://github.com/Quartz/bad-data-guide) [web article]
