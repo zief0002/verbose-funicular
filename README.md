@@ -68,7 +68,7 @@ Additional resources
 
 Here is an R vignette that will help you learn dplyr:
 
-- [dplyr Package Vignette](https://cran.rstudio.com/web/packages/dplyr/vignettes/introduction.html)
+- [dplyr Tutorial](http://genomicsclass.github.io/book/pages/dplyr_tutorial.html)
 
 Additional dplyr resources
 
