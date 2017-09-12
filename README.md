@@ -27,6 +27,15 @@ Andrew Zieffler ([zief0002@umn.edu](mailto://zief0002@umn.edu)) <br />
 
 <br />
 
+### Teaching Assistants
+
+Alaa Houri ([houri005@umn](mailto://houri005@umn.edu)) <br />
+**Office:** [Education Sciences Building 225](https://www.google.com/maps/place/Education+Sciences+Building/@44.9784043,-93.2394586,15z/data=!4m2!3m1!1s0x0:0x45656dac481b9150)  <br />**Office Hours:** TBA
+
+<br />
+
+Jordan Thayer ([thaye053@umn.edu](mailto://thaye053@umn.edu)) <br />
+**Office:** [Education Sciences Building 225](https://www.google.com/maps/place/Education+Sciences+Building/@44.9784043,-93.2394586,15z/data=!4m2!3m1!1s0x0:0x45656dac481b9150)  <br />**Office Hours:** Tuesday and Thursday 10:15 AM&ndash;11:15 AM; and by appointment
 
 ---
 
