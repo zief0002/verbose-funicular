@@ -31,7 +31,7 @@ summary(lm.1)
 
 
 ##################################################
-### Fortify the model
+### Augment the model
 ##################################################
 
 out_1 = augment(lm.1)
@@ -100,7 +100,7 @@ out_1 %>% arrange(.std.resid)
 lm.2 = lm(income ~ 1 + education + seniority, data = city)
 
 
-# Fortify the data
+# Augment the model
 out_2 = augment(lm.2)
 head(out_2)
 
@@ -139,7 +139,7 @@ ggplot(data = out_2, aes(x = .fitted, y = .std.resid)) +
 ### Advanced plotting: Identify observations with extreme residuals
 ##################################################
 
-# Add an ID number to the fortified data for lm.1
+# Add an ID number to the augmented data for lm.1
 out_1 = out_1 %>% mutate( id = 1:nrow(out_1) ) 
 head(out_1)
 

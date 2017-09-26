@@ -46,7 +46,7 @@ city %>% summarize(M = mean(education), SD = sd(education))
 ##################################################
 
 ggplot(data = city, aes(x = education, y = income)) + 
-  geom_point(size = 5) +
+  geom_point() +
   theme_bw() +
   xlab("Education (in years)") +
   ylab("Income (in U.S. dollars)")
