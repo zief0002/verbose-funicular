@@ -3,6 +3,7 @@
 ##################################################
 
 library(broom)
+library(corrr)
 library(dplyr)
 library(ggplot2)
 library(readr)
@@ -25,7 +26,7 @@ head(stem)
 
 # Density plot of the median incomes
 sm.density(stem$income, xlab = "Median income")
-
+sm.density(stem$women, xlab = "Percentage of women")
 
 # Compute summary statistics for income
 stem %>% 
