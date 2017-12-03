@@ -1,0 +1,123 @@
+team,fci,league,stadium,capacity
+Anaheim Ducks,288.88,NHL,Honda Center,17174
+Arizona Cardinals,436.09,NFL,University of Phoenix Stadium,63400
+Arizona Coyotes,310.71,NHL,Jobing.com Arena,17125
+Arizona Diamondbacks,126.89,MLB,Chase Field,48633
+Atlanta Braves,171.62,MLB,Turner Field,49586
+Atlanta Falcons,437.33,NFL,Georgia Dome,71228
+Atlanta Hawks,245.39,NBA,Philips Arena,18118
+Baltimore Orioles,173.39,MLB,Oriole Park at Camden Yards,45971
+Baltimore Ravens,547.26,NFL,M&T Bank Stadium,71008
+Boston Bruins,509.8,NHL,TD Garden,17565
+Boston Celtics,444.16,NBA,TD Garden,18624
+Boston Red Sox,350.78,MLB,Fenway Park,37499
+Brooklyn Nets,404.6,NBA,Barclays Center,17732
+Buffalo Bills,383.05,NFL,Ralph Wilson Stadium,73079
+Buffalo Sabres,290.9,NHL,First Niagara Center,19070
+Calgary Flames,352.12,NHL,Scotiabank Saddledome,19289
+Carolina Hurricanes,341.17,NHL,PNC Arena,18680
+Carolina Panthers,404.78,NFL,Bank of America Stadium,73778
+Charlotte Hornets,212.4,NBA,Time Warner Cable Arena,19077
+Chicago Bears,596.76,NFL,Soldier Field,61500
+Chicago Blackhawks,463.2,NHL,United Center,19717
+Chicago Bulls,477.32,NBA,United Center,20917
+Chicago Cubs,304.64,MLB,Wrigley Field,41072
+Chicago White Sox,210.18,MLB,U.S. Cellular Field,40615
+Cincinnati Bengals,411.04,NFL,Paul Brown Stadium,65535
+Cincinnati Reds,168.12,MLB,Great American Ball Park,42319
+Cleveland Browns,348.8,NFL,FirstEnergy Stadium,73200
+Cleveland Cavaliers,271.74,NBA,Quicken Loans Arena,20562
+Cleveland Indians,162.24,MLB,Progressive Field,42487
+Colorado Avalanche,295.64,NHL,Pepsi Center,18007
+Colorado Rockies,201.6,MLB,Coors Field,50398
+Columbus Blue Jackets,288.62,NHL,Nationwide Arena,18144
+Dallas Cowboys,634.8,NFL,AT&T Stadium,80000
+Dallas Mavericks,312.2,NBA,American Airlines Center,19200
+Dallas Stars,263.11,NHL,American Airlines Center,18532
+Denver Broncos,482.22,NFL,Sports Authority Field at Mile High,76125
+Denver Nuggets,322.5,NBA,Pepsi Center,19155
+Detroit Lions,411.94,NFL,Ford Field,65000
+Detroit Pistons,261.2,NBA,The Palace of Auburn Hills,22076
+Detroit Red Wings,307.54,NHL,Joe Louis Arena,20066
+Detroit Tigers,219.88,MLB,Comerica Park,41681
+Edmonton Oilers,393.75,NHL,Rexall Place,16839
+Florida Panthers,255.55,NHL,BB&T Center,19250
+Golden State Warriors,336.52,NBA,Oracle Arena,19596
+Green Bay Packers,486.82,NFL,Lambeau Field,80978
+Houston Astros,215.9,MLB,Minute Maid Park,42060
+Houston Rockets,369.86,NBA,Toyota Center,18023
+Houston Texans,491.11,NFL,NRG Stadium,71054
+Indiana Pacers,232.44,NBA,Bankers Life Fieldhouse,18165
+Indianapolis Colts,458.27,NFL,Lucas Oil Stadium,62421
+Jacksonville Jaguars,345.58,NFL,EverBank Field,67246
+Kansas City Chiefs,419.5,NFL,Arrowhead Stadium,76416
+Kansas City Royals,191.91,MLB,Kauffman Stadium,37903
+Los Angeles Angels of Anaheim,195.6,MLB,Angel Stadium of Anaheim,45483
+Los Angeles Clippers,435.72,NBA,Staples Center,19060
+Los Angeles Dodgers,217.69,MLB,Dodger Stadium,56000
+Los Angeles Kings,384.99,NHL,Staples Center,18118
+Los Angeles Lakers,541,NBA,Staples Center,18997
+Memphis Grizzlies,223.92,NBA,FedExForum,18119
+Miami Dolphins,398.12,NFL,Sun Life Stadium,75540
+Miami Heat,468.2,NBA,American Airlines Arena,19600
+Miami Marlins,221.02,MLB,Marlins Park,36742
+Milwaukee Brewers,176.84,MLB,Miller Park,41900
+Milwaukee Bucks,325.85,NBA,BMO Harris Bradley Center,18717
+Minnesota Timberwolves,281.06,NBA,Target Center,19356
+Minnesota Twins,215.36,MLB,Target Field,39021
+Minnesota Vikings,490.62,NFL,TCF Bank Stadium,50805
+Minnesota Wild,383.25,NHL,Xcel Energy Center,17954
+Montreal Canadiens,410.04,NHL,Bell Centre,21273
+Nashville Predators,343.14,NHL,Bridgestone Arena,17113
+New England Patriots,624.7,NFL,Gillette Stadium,68756
+New Jersey Devils,313.85,NHL,Prudential Center,17625
+New Orleans Pelicans,221.8,NBA,Smoothie King Center,17003
+New Orleans Saints,507.49,NFL,Mercedes-Benz Superdome,73208
+New York Giants,582.76,NFL,MetLife Stadium,82566
+New York Islanders,299.59,NHL,Barclays Center,15795
+New York Jets,553.63,NFL,MetLife Stadium,82566
+New York Knicks,676.42,NBA,Madison Square Garden,19763
+New York Mets,229.68,MLB,Citi Field,41922
+New York Rangers,479.48,NHL,Madison Square Garden,18006
+New York Yankees,337.2,MLB,Yankee Stadium,49642
+Oakland Athletics,200.36,MLB,O.co Coliseum,35067
+Oakland Raiders,420.7,NFL,O.co Coliseum,53200
+Oklahoma City Thunder,295.4,NBA,Chesapeake Energy Arena,18203
+Orlando Magic,263.1,NBA,Amway Center,18846
+Ottawa Senators,296.19,NHL,Canadian Tire Centre,19153
+Philadelphia 76ers,278.9,NBA,Wells Fargo Center,20328
+Philadelphia Eagles,530.76,NFL,Lincoln Financial Field,68532
+Philadelphia Flyers,386.11,NHL,Wells Fargo Center,19537
+Philadelphia Phillies,258.18,MLB,Citizens Bank Park,43651
+Phoenix Suns,341.9,NBA,US Airways Center,18422
+Pittsburgh Penguins,390.84,NHL,Consol Energy Center,18387
+Pittsburgh Pirates,169.28,MLB,PNC Park,38362
+Pittsburgh Steelers,512.88,NFL,Heinz Field,65050
+Portland Trail Blazers,317.08,NBA,Moda Center,19980
+Sacramento Kings,280.28,NBA,Sleep Train Arena,17317
+San Antonio Spurs,340.6,NBA,AT&T Center,18581
+San Diego Chargers,478.19,NFL,Qualcomm Stadium,70561
+San Diego Padres,153.45,MLB,Petco Park,42302
+San Francisco 49ers,641.5,NFL,Levi's Stadium,68983
+San Francisco Giants,239.51,MLB,AT&T Park,41503
+San Jose Sharks,344.42,NHL,SAP Center at San Jose,17562
+Seattle Mariners,207.8,MLB,Safeco Field,47476
+Seattle Seahawks,472.1,NFL,CenturyLink Field,67000
+St. Louis Blues,233.86,MLB,Scottrade Center,19150
+St. Louis Cardinals,427.44,NFL,Busch Stadium,43975
+St. Louis Rams,327.32,NHL,Edward Jones Dome,66000
+Tampa Bay Buccaneers,388.36,NFL,Raymond James Stadium,65890
+Tampa Bay Lightning,281.02,NHL,Tampa Bay Times Forum,19204
+Tampa Bay Rays,170.02,MLB,Tropicana Field,31042
+Tennessee Titans,404.58,NFL,LP Field,69143
+Texas Rangers,203.14,MLB,Globe Life Park in Arlington,48114
+Toronto Blue Jays,217.69,MLB,Rogers Centre,49282
+Toronto Maple Leafs,572.58,NHL,Air Canada Centre,18819
+Toronto Raptors,289.71,NBA,Air Canada Centre,19800
+Utah Jazz,275.74,NBA,EnergySolutions Arena,19911
+Vancouver Canucks,456.35,NHL,Rogers Arena,18910
+Washington Capitals,411.94,NHL,Verizon Center,18506
+Washington Nationals,227.96,MLB,Nationals Park,41418
+Washington Redskins,597.51,NFL,FedExField,79000
+Washington Wizards,258.78,NBA,Verizon Center,20290
+Winnipeg Jets,413.04,NHL,MTS Centre,15004
