@@ -23,8 +23,10 @@ To download individual PDF files, open the file link and then click on the `Down
 ### Instructor
 
 Andrew Zieffler ([zief0002@umn.edu](mailto://zief0002@umn.edu)) <br />
-**Office:** [Education Sciences Building 178](https://www.google.com/maps/place/Education+Sciences+Building/@44.9784043,-93.2394586,15z/data=!4m2!3m1!1s0x0:0x45656dac481b9150)  <br />**Office Hours:** Tuesday 9:00 AM&ndash;10:00 AM; and by appointment
+**Office:** [Education Sciences Building 178](https://www.google.com/maps/place/Education+Sciences+Building/@44.9784043,-93.2394586,15z/data=!4m2!3m1!1s0x0:0x45656dac481b9150)  <br />
 
+
+<!--
 <br />
 
 ### Teaching Assistants
@@ -193,4 +195,4 @@ Read the following:
 
 <br />
 ---
-
+-->

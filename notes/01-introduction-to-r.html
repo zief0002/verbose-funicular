@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Introduction to R and RStudio</title>
+    <meta charset="utf-8">
+    <meta name="author" content="Andrew Zieffler“" />
+    <meta name="date" content="2018-06-18" />
+    <link href="css/remark-css/default.css" rel="stylesheet" />
+    <link href="css/remark-css/metropolis.css" rel="stylesheet" />
+    <link href="css/remark-css/metropolis-fonts.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/extra.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Introduction to R and RStudio
+## EPsy 8251
+### Andrew Zieffler“
+### 2018-06-18
+
+---
+
+
+
+
+
+# RStudio
+
+![](images/notes-01-rstudio.png)
+
+Console tab: Interactive typing
+
+---
+
+# Interactive Computation
+
+.pull-left[
+
+```r
+# Multiplication
+4 * 5
+```
+
+```
+## [1] 20
+```
+
+```r
+# Exponents
+10 ^ 3
+```
+
+```
+## [1] 1000
+```
+
+```r
+# Division
+1 / 0
+```
+
+```
+## [1] Inf
+```
+]
+
+.pull-right[
+Space is not important for the computation. All the following computations are the same in R:
+
+```
+&gt; 4 * 5
+&gt; 4*5
+&gt; 4  *5
+```
+
+Since it is easier to read (and debug) code that has spaces, you should use spaces in your code.
+]
+
+---
+
+# Functions
+
+.pull-left[
+Almost all commands in R are built around the use of a function. 
+
+Functions carry out operations on their inputs (called *arguments*) and produce an output (called a *returned value*).
+
+The application of a function to arguments follows a simple structure. The name of the function is followed by a pair of parentheses. Values for the arguments are specified inside the parentheses. For example, 
+
+```
+   function_name(argument)
+```
+
+]
+
+.pull-right[
+
+```r
+# Square root
+sqrt(100)
+```
+
+```
+## [1] 10
+```
+
+```r
+# Absolute value
+abs(-23)
+```
+
+```
+## [1] 23
+```
+
+```r
+# Factorial
+factorial(5)
+```
+
+```
+## [1] 120
+```
+]
+
+---
+
+# Multiple Arguments to a Function
+
+.pull-left[
+Functions can take multiple arguments (inputs).  If there is more than one argument, the arguments are always separated by a comma.
+
+```
+   function_name(argument_1, argument_2)
+```
+
+If the arguments are unnamed, the order matters.
+
+If the arguments are named, then the order does not matter.
+
+Conventionally, the first argument is often unnamed and any other arguments are named.
+]
+
+.pull-right[
+
+```r
+# Unnamed arguments; order matters
+seq(1, 5)
+```
+
+```
+## [1] 1 2 3 4 5
+```
+
+```r
+seq(5, 1)
+```
+
+```
+## [1] 5 4 3 2 1
+```
+
+```r
+# Named arguments; order does not matter
+seq(from = 1, to = 5)
+```
+
+```
+## [1] 1 2 3 4 5
+```
+
+```r
+seq(to = 5, from = 1)
+```
+
+```
+## [1] 1 2 3 4 5
+```
+]
+
+---
+
+# Connecting Computations: Chaining
+
+
+Functions can be inputs into other functions.
+
+```
+   g( f(x) )
+```
+
+&lt;br /&gt;
+
+For example, we can find the absolute value of all the integers between -5 and -1. 
+
+
+```r
+abs( seq(from = -5, to = -1) )
+```
+
+```
+## [1] 5 4 3 2 1
+```
+
+&lt;br /&gt;
+
+We can chain as many computations together as we would like.
+
+
+```r
+sqrt( abs( seq(from = -5, to = -1) ) )
+```
+
+```
+## [1] 2.236068 2.000000 1.732051 1.414214 1.000000
+```
+
+---
+
+# Connecting Computations: Assignment
+
+
+We can also connect computations through assignment. We store the output of a computation by assigning that computations to a *named object*. We then use that named object in another computation. 
+
+&lt;br /&gt;
+
+For example, here we first store the integers between -5 and -1 in an object called `chili`. Then we find the absolute value of them by using `chili` as the argument in the `abs()` function. 
+
+
+```r
+chili = seq(from = -5, to = -1) 
+abs(chili)
+```
+
+```
+## [1] 5 4 3 2 1
+```
+
+---
+
+# Naming Objects
+
+
+
+```r
+sadie = rep(3, times = 5) 
+sadie
+```
+
+```
+## [1] 3 3 3 3 3
+```
+
+```r
+chili + sadie
+```
+
+```
+## [1] -2 -1  0  1  2
+```
+
+&lt;br /&gt;
+
+Pretty much any name can be used, although names cannot begin with a digit nor include hyphens or spaces. Although legal, `chili` and `sadie` are not good object names because they do not describe their content.
+
+I tend to use all lowercase letters in my object names and use underscores for word breaks. For example,
+
+- `sex`, `race` `ses`, `gpa`
+- `act_math`, `mothers_educ`
+
+
+---
+
+# Assignment and the Environment
+
+.pull-left[
+We can continue to use `chili` and `sadie` in our computations, so long as they remain in our *Environment*. 
+
+![](images/notes-01-environment.png)
+
+
+```r
+sum(chili)
+```
+
+```
+## [1] -15
+```
+
+```r
+prod(sadie) #Product
+```
+
+```
+## [1] 243
+```
+]
+
+.pull-right[
+When an object name is re-used, the previous value of the object is lost.
+
+
+```r
+chili = seq(from = 1, to = 10)
+sum(chili)
+```
+
+```
+## [1] 55
+```
+]
+
+---
+
+# Script Files: Recording Your Work
+
+We record the R syntax we use in a *script file*. You can get a new script file by selecting `File &gt; New File &gt; R Script`. You can also obtain a new R script via the `New File` icon (document with the plus-sign) on the tool bar.
+
+.pull-left[
+![](images/notes-01-script-file.png)
+]
+
+.pull-right[
+![](images/notes-01-script-file-2.png)
+]
+
+---
+
+# Anatomy of a Script File
+
+Script files should only include your R syntax and comments. Script files should NOT include:
+
+- prompts (`&gt;`)
+- output
+
+&lt;img src="images/notes-01-my-first-scriptfile.png" width="400px" /&gt;
+
+
+Comments are indicated using the hashtag (\#). These can be placed on their own line in the script file, or can be placed at the end of a line with syntax.
+
+---
+
+# Executing Syntax in a Script File
+
+Syntax in the script file can be executed by highlighting it and pressing the `Run` button in the toolbar.
+
+&lt;img src="images/notes-01-run-button.png" width="1347" /&gt;
+
+---
+
+# Adding Functionality: Packages (Libraries)
+
+R functions are stored in packages (or libraries). There over 12,000 different packages available on CRAN (as of June 2018), and more on github, webpages, etc. 
+
+&lt;img src="images/notes-01-packages.png" width="971" /&gt;
+
+---
+
+To use the functions in a particular package, the package needs to be (1) installed, and (2) loaded into memory. 
+
+&lt;img src="images/notes-01-install-load.png" width="700px" /&gt;
+
+---
+
+Several packages are pre-installed when you download R. When you start an R session by opening RStudio, some of those packages are also loaded into memory.
+
+&lt;img src="images/notes-01-packages-2.png" width="600px" /&gt;
+
+---
+
+# Installing New Packages
+
+&lt;img src="images/notes-01-install-process.png" width="750px" /&gt;
+
+---
+
+# Loading an Installed Package
+
+The `library()` function is used to load packages that have previously been installed.
+
+
+```r
+# Here we load two pre-installed packages
+library(MASS)
+library(survival)
+```
+
+Some packages requires other packages (dependencies) to work. For example, the **survival** package is dependent on the **splines** package. Once the package is loaded, all of the functions, data sets, etc. in that package are available to you. Packages will need to be loaded every time you launch a new R session.
+
+---
+
+Sometimes you will get a message about objects being *masked*. This is not a problem. It is just informative and means that the more recently loaded package has a function that has the exact same name as a previously loaded package. If you use that function, the more recently loaded package's version will be used.
+
+.small[
+
+```r
+# Here we load the dpplyr package we just installed
+library(dplyr)
+```
+
+```
+## 
+## Attaching package: 'dplyr'
+```
+
+```
+## The following object is masked from 'package:MASS':
+## 
+##     select
+```
+
+```
+## The following objects are masked from 'package:stats':
+## 
+##     filter, lag
+```
+
+```
+## The following objects are masked from 'package:base':
+## 
+##     intersect, setdiff, setequal, union
+```
+]
+
+For example, both the **dplyr** package and the **stats** package (which is loaded by default when you start an R session) have a function called `filter()` and `lag()`. If we use either function, the one from the **dplyr** package will be used since **dplyr** was loaded more recently than **stats**.
+
+---
+
+# Data Structure: Vectors
+
+Vectors are the data structure R uses to store univariate collections of data (single variable). To create a vector we will use the `c()` function to input the individual elements, and assign this to an object.
+
+
+```r
+# Create an age variable
+age = c(44, 40, 12, 6)
+```
+
+Note that once we assign create `age` it shows up in our environment.
+
+
+```r
+# Find the mean age
+mean(age)
+```
+
+```
+## [1] 25.5
+```
+
+```r
+# Find the standard deviation of age
+sd(age)
+```
+
+```
+## [1] 19.27866
+```
+
+---
+
+# Vector Type: Logical Vector
+
+The `age` vector we created is a *numeric* vector: all the elements are numbers. Another vector type we will use in this class is a *logical* vector. Each element in a logical vector is either `TRUE` or `FALSE` (all uppercase letters). Although we could use the `c()` function to create these, they will almost always be the result of applying a computation to an existing vector. 
+
+
+```r
+# Which elements are &gt; 30
+age &gt; 30
+```
+
+```
+## [1]  TRUE  TRUE FALSE FALSE
+```
+
+Logical elements have numeric values associated with them, namely, `FALSE` = 0 and `TRUE` = 1. This means we can apply computations to a logical vector.
+
+
+```r
+sum(age &gt; 30)
+```
+
+```
+## [1] 2
+```
+
+```r
+mean(age &gt; 30)
+```
+
+```
+## [1] 0.5
+```
+
+---
+
+# Logical Operations
+
+.small[
+
+```r
+# Greater/less than
+age &gt; 30
+```
+
+```
+## [1]  TRUE  TRUE FALSE FALSE
+```
+
+```r
+age &lt; 30
+```
+
+```
+## [1] FALSE FALSE  TRUE  TRUE
+```
+
+```r
+# Greater/less than or equal to
+age &gt;= 12
+```
+
+```
+## [1]  TRUE  TRUE  TRUE FALSE
+```
+
+```r
+age &lt;= 40
+```
+
+```
+## [1] FALSE  TRUE  TRUE  TRUE
+```
+
+```r
+# Equal to
+age == 44
+```
+
+```
+## [1]  TRUE FALSE FALSE FALSE
+```
+
+```r
+# Not equal to
+age != 40
+```
+
+```
+## [1]  TRUE FALSE  TRUE  TRUE
+```
+]
+
+Note that we use two equal signs for the logical "is equal to". If you only use one equal sign, R will interpret that as assignment!
+
+
+---
+
+# Vector Type: Character Vector
+
+Another vector type we will use in this class are *character* vectors (a.k.a., strings, literals). Each element in a character vector is a string of characters delimited by quotation marks.
+
+
+```r
+sex = c("male", "female", "female", "female")
+```
+
+Many operations/functions that worked on numeric and logical vectors do not work on character vectors.
+
+
+```r
+mean(sex)
+```
+
+```
+## Warning in mean.default(sex): argument is not numeric or logical: returning
+## NA
+```
+
+```
+## [1] NA
+```
+
+---
+
+# Data Structure: Data Frames and Tibbles
+
+Data frames are the most common structures we will be working with in the course. For example, when we import data into RStudio, it will typically be stored as a data frame (or as a related structure called a tibble). 
+
+Data frames and tibbles have a tabular (rectangular) structure made up of rows (cases) and columns (variables).
+
+
+```
+## Parsed with column specification:
+## cols(
+##   name = col_character(),
+##   sat = col_integer(),
+##   gradRate = col_double()
+## )
+```
+
+```
+## # A tibble: 30 x 3
+##    name                                 sat gradRate
+##    &lt;chr&gt;                              &lt;int&gt;    &lt;dbl&gt;
+##  1 Carleton College                    1415     93.8
+##  2 Macalester College                  1365     89.8
+##  3 St. Olaf College                    1320     86.4
+##  4 Gustavus Adolphus College           1245     83  
+##  5 College of Saint Benedict           1165     81  
+##  6 Saint Johns University              1165     77.1
+##  7 University of St. Thomas            1165     74.4
+##  8 Martin Luther College               1145     73.2
+##  9 University of MinnesotaTwin Cities  1245     72.9
+## 10 Bethel University                   1145     70.6
+## # ... with 20 more rows
+```
+
+
+---
+
+# Importing External Data into RStudio
+
+&lt;img src="images/notes-01-import-data.png" width="750px" /&gt;
+
+---
+
+# Script File: Importing Data
+
+The syntax in the `Code Preview` window of the `Import` screen is what R actually uses to read in your data. The function `read_csv()` from the **readr** library is what is being used to import the data. This is then assigned to the object `school`. (Note that `&lt;-` can be used instead of `=` for assignment.) These two lines should be copied into your script file.
+
+&lt;img src="images/notes-01-script-import-data.png" width="500px" /&gt;
+
+**\#Protip:** The `~` in the path name is a shortcut for your home directory.
+
+**\#Protip:** The `View()` function only works with RStudio. This is not essential for importing the data.
+
+---
+
+# Working with a Variable in a Data Frame
+
+
+
+To access variables (columns) within the data frame, we need to identify that the variable is a column within the particular data frame. If we try to execute the syntax `mean(sat)` to find the mean SAT score in the data, we will get an error.
+
+```
+mean(sat)
+
+Error in mean(sat) : object 'sat' not found
+```
+
+R looks to the environment for an object alled `sat` and can't find it. `sat` is a column name within the `school` data frame. (`school` is in the environment; not `sat`.) So we need to indicate this by first giving the name of the data frame, and then the column name (`sat`), separated by the `$` operator.
+
+
+```r
+# Need to identify data frame with siblings
+mean(school$sat)
+```
+
+```
+## [1] 1124.167
+```
+
+---
+
+
+# To-Do List
+
+Before the next class period, carry out the following tasks.
+
+Install the following packages:
+
+- **dplyr**
+- **ggplot2**
+- **sm**
+
+Download the *riverside.csv* data set from the course website to your computer. Import the data into RStudio. If all goes well, the data frame should have six columns (variables) and 32 rows (cases).  Open a new script file and record and comment on the syntax for each of the following:
+
+- Compute the mean income for the 32 employees.
+- Compute the standard deviation of incomes for the 32 employees.
+- Load the **sm** package and use the `sm.density()` function to plot the incomes for the 32 employees. 
+- Export the plot of incomes you just created as a PDF file and import that PDF into a word-processing program.
+    </textarea>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function() {
+  var d = document, s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})();</script>
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+  }
+});
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
