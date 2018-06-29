@@ -1,0 +1,7 @@
+.small { font-size: 60% }
+.smaller { font-size: 50% }
+
+.tiny { font-size: 30% }
+
+@import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+.remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
