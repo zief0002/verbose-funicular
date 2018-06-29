@@ -1,0 +1,48 @@
+---
+title: "EPsy 8251: Methods in Data Analysis for Educational Research I"
+subtitle: "Fall 2018"
+author: "Andrew Zieffler"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+<br />
+
+This is the website for the Fall 2018 sections of EPsy 8251. It includes many of the materials used in the course. The GitHub repository for the course is available at https://github.com/zief0002/epsy-8251.
+
+<br />
+
+## Instructor
+
+**Andrew Zieffler** ([zief0002@umn.edu](mailto://zief0002@umn.edu)) <br />
+Office: [Education Sciences Building 178](https://www.google.com/maps/place/Education+Sciences+Building/@44.9784043,-93.2394586,15z/data=!4m2!3m1!1s0x0:0x45656dac481b9150)  <br />
+Office Hours: Tuesday 9:30 AM&ndash;10:30 AM; and by appointment
+
+<br />
+
+## Teaching Assistant
+
+**Kory Vue** ([vuexx199@umn.edu](mailto://vuexx199@umn.edu))  <br />
+Office: [Education Sciences Building 193](https://www.google.com/maps/place/Education+Sciences+Building/@44.9784043,-93.2394586,15z/data=!4m2!3m1!1s0x0:0x45656dac481b9150)  <br />
+Office Hours: Thursdays 1:30 PM&ndash;2:30 PM; and by appointment
+
+<br />
+
+## Classroom
+
+- Monday/Wednesday (9:45&ndash;11:00): [Peik Hall 215](http://campusmaps.umn.edu/peik-hall)
+- Tuesday/Thursday (11:15&ndash;12:30): [Elliott Hall N647](http://campusmaps.umn.edu/elliott-hall)
+
+<br />
+
+## Textbooks
+
+All of the course textbooks (required and optional) are available via the University of Minnesota library.
+
+- [Applied regression: An introduction](https://primo.lib.umn.edu/primo-explore/fulldisplay?docid=UMN_ALMA21533776460001701&context=L&vid=TWINCITIES&search_scope=mncat_discovery&tab=article_discovery&lang=en_US) [required]
+
+
+<br />
