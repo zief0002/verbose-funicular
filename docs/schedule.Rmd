@@ -46,7 +46,7 @@ Below is the weekly schedule for the class. The dates are subject to change at t
 <td>Mon, Sept. 10</td>
 <td>Introduction to R and RStudio</td>
 <td align="center"><font color="f1f1f1"><a href="reading-01.html"><i class="fa fa-book fa-lg"></i></a></font></td>
-<td align="center"><a href="http://www.datadreaming.org/files/01-introduction-to-r.html"><font color="f1f1f1"><i class="fas fa-file-pdf  fa-lg"></i></a></font></td>
+<td align="center"><font color="f1f1f1"><a href="http://www.datadreaming.org/files/01-introduction-to-r.html"><i class="fab fa-html5  fa-lg"></i></a></font></td>
 <td align="center"><font color="f1f1f1"><i class="fas fa-code fa-lg"></i></font></td>
 </tr>
 
@@ -55,7 +55,7 @@ Below is the weekly schedule for the class. The dates are subject to change at t
 <td>Wed, Sept. 12</td>
 <td>Data Wrangling with dplyr</td>
 <td align="center"><font color="f1f1f1"><a href="reading-02.html"><i class="fa fa-book fa-lg"></i></a></font></td>
-<td align="center"><font color="f1f1f1"><a href="http://www.datadreaming.org/files/02-data-wrangling-with-dplyr.html"><i class="fas fa-file-pdf  fa-lg"></i></a></font></td>
+<td align="center"><font color="f1f1f1"><a href="http://www.datadreaming.org/files/02-data-wrangling-with-dplyr.html"><i class="fab fa-html5  fa-lg"></i></a></font></td>
 <td align="center"><font color="f1f1f1"><a href="https://raw.githubusercontent.com/zief0002/epsy-8251/master/scripts/02-data-wrangling-with-dplyr.R"><i class="fas fa-code fa-lg"></i></a></font></td>
 </tr>
 
@@ -63,7 +63,7 @@ Below is the weekly schedule for the class. The dates are subject to change at t
 <td>Thr, Sept. 13</td>
 <td>Mon, Sept. 17</td>
 <td>Plotting with ggplot2</td>
-<td align="center"><font color="f1f1f1"><i class="fa fa-book fa-lg"></i></font></td>
+<td align="center"><font color="f1f1f1"><a href="reading-03.html"><i class="fa fa-book fa-lg"></i></a></font></td>
 <td align="center"><font color="f1f1f1"><i class="fas fa-file-pdf fa-lg"></i></font></td>
 <td align="center"><font color="f1f1f1"><i class="fas fa-code fa-lg"></i></font></td>
 </tr>
@@ -72,27 +72,27 @@ Below is the weekly schedule for the class. The dates are subject to change at t
 <td>Tue, Sept. 18</td>
 <td>Wed, Sept. 19</td>
 <td>Simple Linear Regression: Description</td>
-<td align="center"><font color="f1f1f1"><i class="fa fa-book fa-lg"></i></font></td>
-<td align="center"><font color="f1f1f1"><a href="https://github.com/zief0002/epsy-8252/raw/master/notes-pdf/s18-10-classical-methods-rm.pdf"><i class="fas fa-file-pdf  fa-lg"></i></a></font></td>
-<td align="center"><font color="f1f1f1"><a href="https://raw.githubusercontent.com/zief0002/epsy-8252/master/notes-rmarkdown/s18-10-classical-methods-rm.Rmd"><i class="fas fa-code fa-lg"></i></a></font></td>
+<td align="center"><font color="f1f1f1"><a href="reading-04.html"><i class="fa fa-book fa-lg"></i></a></font></td>
+<td align="center"><font color="f1f1f1"><a href="https://github.com/zief0002/epsy-8252/raw/master/notes/04-simple-linear-regression-description.pdf"><i class="fas fa-file-pdf  fa-lg"></i></a></font></td>
+<td align="center"><font color="f1f1f1"><a href="https://raw.githubusercontent.com/zief0002/epsy-8251/master/scripts/04-simple-linear-regression-description.R"><i class="fas fa-code fa-lg"></i></a></font></td>
 </tr>
 
 <tr>
 <td>Thr, Sept. 20</td>
 <td>Mon, Sept. 24</td>
 <td>Simple Linear Regression: Description</td>
-<td align="center"><font color="f1f1f1"><a href="reading-10.html"><i class="fa fa-book fa-lg"></i></a></font></td>
-<td align="center"><font color="f1f1f1"><a href="https://github.com/zief0002/epsy-8252/raw/master/notes-pdf/s18-11-lmer-methods-rm.pdf"><i class="fas fa-file-pdf  fa-lg"></i></a></font></td>
-<td align="center"><font color="f1f1f1"><a href="https://raw.githubusercontent.com/zief0002/epsy-8252/master/notes-rmarkdown/s18-11-lmer-methods-rm.Rmd"><i class="fas fa-code fa-lg"></i></a></font></td>
+<td align="center"><font color="f1f1f1"><i class="fa fa-book fa-lg"></i></font></td>
+<td align="center"><font color="f1f1f1"><i class="fas fa-file-pdf  fa-lg"></i></font></td>
+<td align="center"><font color="f1f1f1"><i class="fas fa-code fa-lg"></i></font></td>
 </tr>
 
 <tr>
 <td>Tue, Sept. 25</td>
 <td>Wed, Sept. 26</td>
-<td>Coefficient-Level Inference</td>
+<td>Least Squares Estimation</td>
 <td align="center"><font color="f1f1f1"><i class="fa fa-book fa-lg"></i></font></td>
-<td align="center"><font color="f1f1f1"><i class="fas fa-file-pdf  fa-lg"></i></font></td>
-<td align="center"><font color="f1f1f1"><i class="fas fa-code fa-lg"></i></font></td>
+<td align="center"><font color="f1f1f1"><a href="https://github.com/zief0002/epsy-8252/raw/master/notes/05-least-squares-estimation.pdf"><i class="fas fa-file-pdf  fa-lg"></i></a></font></td>
+<td align="center"><font color="f1f1f1"><a href="https://raw.githubusercontent.com/zief0002/epsy-8251/master/scripts/05-least-squares-estimation.R"><i class="fas fa-code fa-lg"></i></a></font></td>
 </tr>
 
 <tr>
@@ -107,7 +107,7 @@ Below is the weekly schedule for the class. The dates are subject to change at t
 <tr>
 <td>Tue, Oct. 02</td>
 <td>Wed, Oct. 03</td>
-<td>Model-Level Inference</td>
+<td>Coefficient-Level Inference</td>
 <td align="center"><font color="f1f1f1"><i class="fa fa-book fa-lg"></i></font></td>
 <td align="center"><font color="f1f1f1"><i class="fas fa-file-pdf  fa-lg"></i></font></td>
 <td align="center"><font color="f1f1f1"><i class="fas fa-code fa-lg"></i></font></td>
@@ -125,7 +125,7 @@ Below is the weekly schedule for the class. The dates are subject to change at t
 <tr>
 <td>Tue, Oct. 09</td>
 <td>Wed, Oct. 10</td>
-<td>Multiple Linear Regression</td>
+<td>Model-Level Inference</td>
 <td align="center"><font color="f1f1f1"><i class="fa fa-book fa-lg"></i></font></td>
 <td align="center"><font color="f1f1f1"><i class="fas fa-file-pdf  fa-lg"></i></font></td>
 <td align="center"><font color="f1f1f1"><i class="fas fa-code fa-lg"></i></font></td>
@@ -152,7 +152,7 @@ Below is the weekly schedule for the class. The dates are subject to change at t
 <tr>
 <td>Thr, Oct. 18</td>
 <td>Mon, Oct. 22</td>
-<td>Regression Assumptions</td>
+<td>Multiple Linear Regression</td>
 <td align="center"><font color="f1f1f1"><i class="fa fa-book fa-lg"></i></font></td>
 <td align="center"><font color="f1f1f1"><i class="fas fa-file-pdf fa-lg"></i></font></td>
 <td align="center"><font color="f1f1f1"><i class="fas fa-code fa-lg"></i></font></td>

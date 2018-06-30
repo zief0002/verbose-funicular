@@ -13,9 +13,12 @@ Watch the following video:
 - [R for Starters: R and R Studio Workspace](https://www.youtube.com/watch?v=uKyQyfenfvM) [video]
 
 
+<br />
+<br />
+
 ## Optional
 
-Additional resources
+Additional resources:
 
 - [RStudio Cheatsheets](https://www.rstudio.com/resources/cheatsheets/)
 - [RStudio Keyboard Shortcuts](https://support.rstudio.com/hc/en-us/articles/200711853-Keyboard-Shortcuts)
