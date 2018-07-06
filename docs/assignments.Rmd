@@ -14,22 +14,20 @@ Below are the due dates for the assignments, as well as links to PDF and data fi
 
 <thead>
 <tr>
-<th style="width:40%;">Assignment</th>
-<th style="width:20%;">Due Date (T/R)</th>
-<th style="width:20%;">Due Date (M/W)</th>
+<th style="width:60%;">Assignment</th>
+<th style="width:15%;">Due Date (T/R)</th>
+<th style="width:15%;">Due Date (M/W)</th>
 <th style="width:10%;text-align:center">PDF</th>
-<th style="width:10%;text-align:center">Data</th>
 </tr>
 </thead>
 
 <tbody>
 
 <tr>
-<td>Assignment \#1: *Introduction to R, RStudio, dplyr, and ggplot*</td>
+<td>Assignment \#1: *Introduction to R, RStudio, dplyr, and ggplot2*</td>
 <td>Thr, Oct. 18</td>
 <td>Mon, Oct. 22</td>
 <td align="center"><font color="f1f1f1"><a href="https://github.com/zief0002/epsy-8251/raw/master/assignments/assignment-01-intro-to-r.pdf"><i class="fas fa-file-pdf fa-lg"></i></a></font></td>
-<td align="center"><font color="f1f1f1"><a href="https://github.com/zief0002/epsy-8251/raw/master/data/goodreads.csv"><i class="fas fa-database fa-lg"></i></a></font><font color="f1f1f1"><a href="https://github.com/zief0002/epsy-8251/raw/master/data/beauty.csv"><i class="fas fa-database fa-lg" style="margin-left:2px;"></i></a></font></td>
 </tr>
 
 <tr>
@@ -37,7 +35,20 @@ Below are the due dates for the assignments, as well as links to PDF and data fi
 <td>Thr, Oct. 18</td>
 <td>Mon, Oct. 22</td>
 <td align="center"><font color="f1f1f1"><a href="https://github.com/zief0002/epsy-8251/raw/master/assignments/assignment-02-simple-regression-description.pdf"><i class="fas fa-file-pdf fa-lg"></i></a></font></td>
-<td align="center"><font color="f1f1f1"><a href="https://github.com/zief0002/epsy-8251/raw/master/data/state-education.csv"><i class="fas fa-database fa-lg"></i></a></font></td>
+</tr>
+
+<tr>
+<td>Assignment \#3: *Simple Linear Regression: Description*</td>
+<td>Thr, Oct. 18</td>
+<td>Mon, Oct. 22</td>
+<td align="center"><font color="f1f1f1"><a href="https://github.com/zief0002/epsy-8251/raw/master/assignments/assignment-03-simple-regression-inference.pdf"><i class="fas fa-file-pdf fa-lg"></i></a></font></td>
+</tr>
+
+<tr>
+<td>Assignment \#4: *Introduction to Multiple Regression*</td>
+<td>Thr, Oct. 18</td>
+<td>Mon, Oct. 22</td>
+<td align="center"><font color="f1f1f1"><a href="https://github.com/zief0002/epsy-8251/raw/master/assignments/assignment-04-introduction-to-multiple-regression.pdf"><i class="fas fa-file-pdf fa-lg"></i></a></font></td>
 </tr>
 
 </tbody>

@@ -9,7 +9,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 <br />
 
-Below is the weekly schedule for the class. The dates are subject to change at the instructor's discretion. Readings should be completed prior to class.
+Below is the tenative schedule for the class. The dates are subject to change at the instructor's discretion. Readings should be completed prior to class.
 
 <br />
 
@@ -33,8 +33,8 @@ Below is the weekly schedule for the class. The dates are subject to change at t
 <tbody>
 
 <tr>
-<td>Tue, Sept. 04</td>
-<td>Wed, Sept. 05</td>
+<td>Sept. 04</td>
+<td>Sept. 05</td>
 <td>Welcome to Epsy 8251</td>
 <td align="center"><font color="f1f1f1"><a href="reading-00.html"><i class="fa fa-book fa-lg"></i></a></font></td>
 <td align="center"><font color="f1f1f1"><i class="fas fa-file-pdf  fa-lg"></i></font></td>
@@ -42,8 +42,8 @@ Below is the weekly schedule for the class. The dates are subject to change at t
 </tr>
 
 <tr>
-<td>Thr, Sept. 06</td>
-<td>Mon, Sept. 10</td>
+<td>Sept. 06</td>
+<td>Sept. 10</td>
 <td>Introduction to R and RStudio</td>
 <td align="center"><font color="f1f1f1"><a href="reading-01.html"><i class="fa fa-book fa-lg"></i></a></font></td>
 <td align="center"><font color="f1f1f1"><a href="http://www.datadreaming.org/files/01-introduction-to-r.html"><i class="fab fa-html5  fa-lg"></i></a></font></td>
@@ -51,8 +51,8 @@ Below is the weekly schedule for the class. The dates are subject to change at t
 </tr>
 
 <tr>
-<td>Tue, Sept. 11</td>
-<td>Wed, Sept. 12</td>
+<td>Sept. 11</td>
+<td>Sept. 12</td>
 <td>Data Wrangling with dplyr</td>
 <td align="center"><font color="f1f1f1"><a href="reading-02.html"><i class="fa fa-book fa-lg"></i></a></font></td>
 <td align="center"><font color="f1f1f1"><a href="http://www.datadreaming.org/files/02-data-wrangling-with-dplyr.html"><i class="fab fa-html5  fa-lg"></i></a></font></td>
@@ -60,17 +60,17 @@ Below is the weekly schedule for the class. The dates are subject to change at t
 </tr>
 
 <tr>
-<td>Thr, Sept. 13</td>
-<td>Mon, Sept. 17</td>
+<td>Sept. 13</td>
+<td>Sept. 17</td>
 <td>Plotting with ggplot2</td>
 <td align="center"><font color="f1f1f1"><a href="reading-03.html"><i class="fa fa-book fa-lg"></i></a></font></td>
-<td align="center"><font color="f1f1f1"><i class="fas fa-file-pdf fa-lg"></i></font></td>
-<td align="center"><font color="f1f1f1"><i class="fas fa-code fa-lg"></i></font></td>
+<td align="center"><font color="f1f1f1"><a href="http://www.datadreaming.org/files/03-plotting-with-ggplot2.html"><i class="fab fa-html5  fa-lg"></i></a></font></td>
+<td align="center"><font color="f1f1f1"><a href="https://raw.githubusercontent.com/zief0002/epsy-8251/master/scripts/03-plotting-with-ggplot2.R"><i class="fas fa-code fa-lg"></i></a></font></td>
 </tr>
 
 <tr>
-<td>Tue, Sept. 18</td>
-<td>Wed, Sept. 19</td>
+<td>Sept. 18/20</td>
+<td>Sept. 19/24</td>
 <td>Simple Linear Regression: Description</td>
 <td align="center"><font color="f1f1f1"><a href="reading-04.html"><i class="fa fa-book fa-lg"></i></a></font></td>
 <td align="center"><font color="f1f1f1"><a href="https://github.com/zief0002/epsy-8251/raw/master/notes/04-simple-linear-regression-description.pdf"><i class="fas fa-file-pdf  fa-lg"></i></a></font></td>
@@ -78,17 +78,8 @@ Below is the weekly schedule for the class. The dates are subject to change at t
 </tr>
 
 <tr>
-<td>Thr, Sept. 20</td>
-<td>Mon, Sept. 24</td>
-<td>Simple Linear Regression: Description</td>
-<td align="center"><font color="f1f1f1"><i class="fa fa-book fa-lg"></i></font></td>
-<td align="center"><font color="f1f1f1"><i class="fas fa-file-pdf  fa-lg"></i></font></td>
-<td align="center"><font color="f1f1f1"><i class="fas fa-code fa-lg"></i></font></td>
-</tr>
-
-<tr>
-<td>Tue, Sept. 25</td>
-<td>Wed, Sept. 26</td>
+<td>Sept. 25</td>
+<td>Sept. 26</td>
 <td>Least Squares Estimation</td>
 <td align="center"><font color="f1f1f1"><i class="fa fa-book fa-lg"></i></font></td>
 <td align="center"><font color="f1f1f1"><a href="https://github.com/zief0002/epsy-8251/raw/master/notes/05-least-squares-estimation.pdf"><i class="fas fa-file-pdf  fa-lg"></i></a></font></td>
@@ -96,67 +87,32 @@ Below is the weekly schedule for the class. The dates are subject to change at t
 </tr>
 
 <tr>
-<td>Thr, Sept. 27</td>
-<td>Mon, Oct. 01</td>
+<td>Sept. 27/Oct. 02</td>
+<td>Oct. 01/03</td>
 <td>Coefficient-Level Inference</td>
-<td align="center"><font color="f1f1f1"><i class="fa fa-book fa-lg"></i></font></td>
-<td align="center"><font color="f1f1f1"><i class="fas fa-file-pdf  fa-lg"></i></font></td>
-<td align="center"><font color="f1f1f1"><i class="fas fa-code fa-lg"></i></font></td>
+<td align="center"><font color="f1f1f1"><a href="reading-06.html"><i class="fa fa-book fa-lg"></i></a></font></td>
+<td align="center"><font color="f1f1f1"><a href="https://github.com/zief0002/epsy-8251/raw/master/notes/06-coefficient-level-inference.pdf"><i class="fas fa-file-pdf  fa-lg"></i></a></font></td>
+<td align="center"><font color="f1f1f1"><a href="https://raw.githubusercontent.com/zief0002/epsy-8251/master/scripts/06-coefficient-level-inference.R"><i class="fas fa-code fa-lg"></i></a></font></td>
 </tr>
 
 <tr>
-<td>Tue, Oct. 02</td>
-<td>Wed, Oct. 03</td>
-<td>Coefficient-Level Inference</td>
-<td align="center"><font color="f1f1f1"><i class="fa fa-book fa-lg"></i></font></td>
-<td align="center"><font color="f1f1f1"><i class="fas fa-file-pdf  fa-lg"></i></font></td>
-<td align="center"><font color="f1f1f1"><i class="fas fa-code fa-lg"></i></font></td>
-</tr>
-
-<tr>
-<td>Thr, Oct. 04</td>
-<td>Mon, Oct. 08</td>
+<td>Oct. 04/09</td>
+<td>Oct. 08/10</td>
 <td>Model-Level Inference</td>
 <td align="center"><font color="f1f1f1"><i class="fa fa-book fa-lg"></i></font></td>
-<td align="center"><font color="f1f1f1"><i class="fas fa-file-pdf  fa-lg"></i></font></td>
-<td align="center"><font color="f1f1f1"><i class="fas fa-code fa-lg"></i></font></td>
+<td align="center"><font color="f1f1f1"><a href="https://github.com/zief0002/epsy-8251/raw/master/notes/07-model-level-inference.pdf"><i class="fas fa-file-pdf  fa-lg"></i></a></font></td>
+<td align="center"><font color="f1f1f1"><a href="https://raw.githubusercontent.com/zief0002/epsy-8251/master/scripts/07-model-level-inference.R"><i class="fas fa-code fa-lg"></i></a></font></td>
 </tr>
 
 <tr>
-<td>Tue, Oct. 09</td>
-<td>Wed, Oct. 10</td>
-<td>Model-Level Inference</td>
-<td align="center"><font color="f1f1f1"><i class="fa fa-book fa-lg"></i></font></td>
-<td align="center"><font color="f1f1f1"><i class="fas fa-file-pdf  fa-lg"></i></font></td>
-<td align="center"><font color="f1f1f1"><i class="fas fa-code fa-lg"></i></font></td>
-</tr>
-
-<tr>
-<td>Thr, Oct. 11</td>
-<td>Mon, Oct. 15</td>
+<td>Oct. 11/16/18</td>
+<td>Oct. 15/17/22</td>
 <td>Multiple Linear Regression</td>
 <td align="center"><font color="f1f1f1"><i class="fa fa-book fa-lg"></i></font></td>
 <td align="center"><font color="f1f1f1"><i class="fas fa-file-pdf  fa-lg"></i></font></td>
 <td align="center"><font color="f1f1f1"><i class="fas fa-code fa-lg"></i></font></td>
 </tr>
 
-<tr>
-<td>Tue, Oct. 16</td>
-<td>Wed, Oct. 17</td>
-<td>Multiple Linear Regression</td>
-<td align="center"><font color="f1f1f1"><i class="fa fa-book fa-lg"></i></font></td>
-<td align="center"><font color="f1f1f1"><i class="fas fa-file-pdf  fa-lg"></i></font></td>
-<td align="center"><font color="f1f1f1"><i class="fas fa-code fa-lg"></i></font></td>
-</tr>
-
-<tr>
-<td>Thr, Oct. 18</td>
-<td>Mon, Oct. 22</td>
-<td>Multiple Linear Regression</td>
-<td align="center"><font color="f1f1f1"><i class="fa fa-book fa-lg"></i></font></td>
-<td align="center"><font color="f1f1f1"><i class="fas fa-file-pdf fa-lg"></i></font></td>
-<td align="center"><font color="f1f1f1"><i class="fas fa-code fa-lg"></i></font></td>
-</tr>
 
 </tbody>
 </table>    
