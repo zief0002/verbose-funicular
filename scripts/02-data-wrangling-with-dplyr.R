@@ -11,7 +11,7 @@ library(readr)
 ### Read in data
 ##################################################
 
-city = read_csv("~/Dropbox/epsy-8251/data/riverside.csv")
+city = read_csv("~/Documents/github/epsy-8251/data/riverside.csv")
 
 head(city)
 tail(city)

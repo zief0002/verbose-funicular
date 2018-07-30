@@ -25,29 +25,29 @@ Below are the due dates for the assignments, as well as links to PDF and data fi
 
 <tr>
 <td>Assignment \#1: *Introduction to R, RStudio, dplyr, and ggplot2*</td>
-<td>Thr, Oct. 18</td>
-<td>Mon, Oct. 22</td>
+<td>Thr, Sept. 20</td>
+<td>Mon, Sept. 24</td>
 <td align="center"><font color="f1f1f1"><a href="https://github.com/zief0002/epsy-8251/raw/master/assignments/assignment-01-intro-to-r.pdf"><i class="fas fa-file-pdf fa-lg"></i></a></font></td>
 </tr>
 
 <tr>
 <td>Assignment \#2: *Simple Linear Regression: Description*</td>
-<td>Thr, Oct. 18</td>
-<td>Mon, Oct. 22</td>
+<td>Thr, Sept. 27</td>
+<td>Mon, Oct. 01</td>
 <td align="center"><font color="f1f1f1"><a href="https://github.com/zief0002/epsy-8251/raw/master/assignments/assignment-02-simple-regression-description.pdf"><i class="fas fa-file-pdf fa-lg"></i></a></font></td>
 </tr>
 
 <tr>
 <td>Assignment \#3: *Simple Linear Regression: Description*</td>
-<td>Thr, Oct. 18</td>
-<td>Mon, Oct. 22</td>
+<td>Tue, Oct. 16</td>
+<td>Wed, Oct. 17</td>
 <td align="center"><font color="f1f1f1"><a href="https://github.com/zief0002/epsy-8251/raw/master/assignments/assignment-03-simple-regression-inference.pdf"><i class="fas fa-file-pdf fa-lg"></i></a></font></td>
 </tr>
 
 <tr>
 <td>Assignment \#4: *Introduction to Multiple Regression*</td>
-<td>Thr, Oct. 18</td>
-<td>Mon, Oct. 22</td>
+<td>Tue, Oct. 30</td>
+<td>Wed, Oct. 31</td>
 <td align="center"><font color="f1f1f1"><a href="https://github.com/zief0002/epsy-8251/raw/master/assignments/assignment-04-introduction-to-multiple-regression.pdf"><i class="fas fa-file-pdf fa-lg"></i></a></font></td>
 </tr>
 

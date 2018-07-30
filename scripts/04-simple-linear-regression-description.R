@@ -14,7 +14,7 @@ library(sm)
 ### Read in data
 ##################################################
 
-city = read_csv(file = "~/Dropbox/epsy-8251/data/riverside.csv") 
+city = read_csv(file = "~/Documents/github/epsy-8251/data/riverside.csv") 
 
 head(city)
 tail(city)

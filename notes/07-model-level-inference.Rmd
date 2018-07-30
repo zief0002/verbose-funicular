@@ -1,0 +1,354 @@
+---
+title: "Model-Level Inference"
+date: "`r Sys.Date()`"
+header-includes:
+   - \usepackage{xcolor}
+   - \usepackage[framemethod=tikz]{mdframed}
+   - \usepackage{graphicx}
+   - \usepackage{rotating}
+   - \usepackage{booktabs}
+   - \usepackage{caption}
+   - \usepackage{float}
+   - \usepackage{xfrac}
+   - \definecolor{umn}{RGB}{153, 0, 85}
+   - \definecolor{umn2}{rgb}{0.1843137, 0.4509804, 0.5372549}
+   - \definecolor{myorange}{HTML}{EA6153}
+output: 
+  pdf_document:
+    highlight: tango
+urlcolor: "umn2"
+bibliography: epsy8251.bib
+csl: apa-single-spaced.csl
+---
+
+```{r knitr_init, echo=FALSE, cache=FALSE}
+library(knitr)
+library(rmdformats)
+
+## Global options
+options(max.print="75")
+opts_chunk$set(prompt=FALSE, comment=NA, message=FALSE, warning=FALSE, tidy=FALSE)
+opts_knit$set(width=85)
+options(scipen=5)
+```
+
+<!-- LaTeX definitions -->
+
+\mdfdefinestyle{mystyle}{userdefinedwidth=5in, align=center, backgroundcolor=yellow, roundcorner=10pt, skipabove=2em}
+
+\mdfdefinestyle{mystyle2}{userdefinedwidth=5.5in, align=center, skipabove=10pt, topline=false, bottomline=false, 
+linecolor=myorange, linewidth=5pt}
+
+\mdfdefinestyle{work}{userdefinedwidth=5in, linecolor=blue, align=center, roundcorner=10pt, skipabove=2em}
+
+
+
+# Introduction and Research Question
+
+In the last set of notes, we carried out an inferential analysis on the regression coefficients; testing whether the parameters were equal to zero and also computing confidence intervals to estimate the uncertainty in the coefficient estimates. In this set of notes, we will again consider statistical inference, but this time at the model level. To do so, we will again examine the question of whether education level is related to income using the *riverside.csv* data from @Lewis-Beck:2016.
+
+# Preparation
+
+```{r preparation, warning=FALSE, message=FALSE}
+# Load libraries
+library(broom)
+library(dplyr)
+library(ggplot2)
+library(readr)
+library(sm)
+
+# Read in data
+city = read_csv(file = "~/Dropbox/epsy-8251/data/riverside.csv")
+
+# Fit regression model
+lm.1 = lm(income ~ 1 + education, data = city)
+```
+
+
+Sometimes you are interested in the model as a whole, rather than the individual parameters. For example, you may be interested in whether a set of predictors *together* explains variation in the outcome. Recall that the model-level information is displayed using the `glance()` output from the **broom** package.
+
+```{r echo=FALSE}
+glance(lm.1)
+```
+
+The `r.squared` column indicates the proportion of variation in the outcome explained by differences in the predictor *in the sample*. Here, differences in education level explains 63\% of the variation in income level for the 32 employees. 
+
+\newpage
+
+## Model-Level Inference
+
+The inferential question at the model level is: *Does the model explain variation in the outcome, in the population?* This can formally be expressed in a statistical hypothesis as,
+
+$$
+H_0: \rho^2 = 0
+$$
+
+To test this, we need to be able to obtain the sampling distribution of $R^2$ to estimate the uncertainty in the sample estimate. The thought experiment for this goes something like this: Imagine you have a population that is infinitely large. The observations in this population have two attributes, call them $X$ and $Y$. There is NO relationship between these two attributes; $\rho^2 = 0$. Randomly sample $n$ observations from the population. Fit the regression and compute the $R^2$ value. Repeat the process an infinite number of times.
+
+
+```{r echo=FALSE, out.width='5in', fig.cap='Thought experiment for sampling samples of size n from the population to obtain the sampling distribution of R-squared.', fig.align='center', fig.pos='H'}
+include_graphics("images/notes-07-thought-experiment-r2.pdf")
+```
+
+
+
+Below is a density plot of the sampling distribution for $R^2$ based on 1,000 random samples. (Not an infinite number of draws, but large enough that we should have an idea of what the distribution might look like.)
+
+```{r fig.width=8, fig.height=6, out.width='4in', warning=FALSE, cache=TRUE, fig.cap="Sampling distribution based on 1000 simple random samples of size 32 drawn from a population where rho-squared = 0.", echo=FALSE, fig.pos='H'}
+r2 = rep(NA, 1000)
+
+for(i in 1:1000){
+  y = rnorm(n = 32, mean = 0, sd = 1)
+  x = rnorm(n = 32, mean = 0, sd = 1)
+  r2[i] = glance(lm(y~x))$r.squared
+}
+
+ggplot(data = data.frame(r2), aes(x = r2)) +
+  geom_density() +
+  xlab(expression(R^2)) +
+  ylab("Probability Density") +
+  theme_bw()
+```
+
+This sampling distribution is right-skewed. (WHY???) This means that we cannot use a $t$-distribution to model this distribution---remember the $t$-distribution is symmetric around zero. It turns out that this sampling distribution is better modeled using an $F$-distribution.
+
+### The F-Distribution
+
+In theoretical statistics the $F$-distribution is the ratio of two chi-squared statistics,
+
+$$
+F = \frac{\sfrac{\chi^2_1}{\mathit{df}_1}}{\sfrac{\chi^2_2}{\mathit{df}_2}}
+$$
+
+where $\mathit{df}_1$ and $\mathit{df}_2$ are the degrees of freedom associated with each of the chi-squared statistics, respectively. For our purposes, we don't need to pay much attention to this other than to the fact that an $F$-distribution is defined using TWO parameters: $\mathit{df}_1$ and $\mathit{df}_2$. Knowing these two values completely parameterize the $F$-distribution (they give the shape, expected value, and variation).
+
+In regression analysis, the $F$-distribution associated with model-level inference is based on the following degrees of freedom:
+
+$$
+\begin{split}
+\mathit{df}_1 &= p \\
+\mathit{df}_2 &= \mathit{df}_{\mathrm{Total}}-p
+\end{split}
+$$
+
+where $p$ is the number of predictors used in the model and $\mathrm{Total}$ is the total degrees of freedom in the data used in the regression model ($\mathrm{Total}=n-1$). In our example, $\mathit{df}_1=1$ and $\mathit{df}_2=31-1=30$. Using these values, we have defined the $F(1,30)$-distibution.
+
+The $F$-distribution is the sampling distribution of $F$-values (not $R^2$-values). But, it turns out that we can easily convert an $R^2$-value to an $F$-value using,
+
+$$
+F = \frac{R^2}{1 - R^2} \times \frac{\mathit{df}_2}{\mathit{df}_1}
+$$
+
+In our example,
+
+$$
+\begin{split}
+F &= \frac{0.63}{1 - 0.63} \times \frac{30}{1} \\
+&= 1.70 \times 30 \\
+&= 51.1
+\end{split}
+$$
+
+Thus, our observed $F$-value is: $F(1,30)=51.1$. To evaluate this under the null hypothesis, we find the area under the $F(1,30)$ density curve that corresponds to $F$-values *at least as extreme* as our observed $F$-value of 51.1.
+
+```{r echo=FALSE, out.width='3.5in', fig.cap='Plot of the probability curve for the F(1,30) distribution. The shaded area under the curve represents the p-value for a test evaluating whether the population rho-squared is zero using an observed F-value of 51.1.', fig.pos='H'}
+new = data.frame(
+  X = seq(from = 0, to = 60, by = 0.01)
+) %>%
+  rowwise() %>%
+  mutate( Y = df(x = X, df1 = 1, df2 = 30) )
+
+ggplot(data = new,  aes(x = X, y = Y)) +
+  theme_bw() +
+  scale_x_continuous(name = "", breaks = seq(from = 0, to = 60, by = 10)) +
+  scale_y_continuous(NULL, breaks = NULL) +
+  theme(
+    panel.grid.major.x = element_blank(),
+    panel.grid.minor.x = element_blank()
+  ) +
+  geom_ribbon(data = subset(new, X >= 51.1), ymin = -10, aes(ymax = Y),
+              color = "#bbbbbb", alpha = 0.4) +
+  geom_line(color = "#ff7f0e") +
+  geom_segment(x = 51.1, xend = 51.1, y = -10, yend = 0.1, color = "#1f77b4") +
+  annotate("text", x = 51.1, y = 0.4, label = "Observed\nF-value", size = 5)
+```
+
+This area (which is one-sided in the $F$-distribution) corresponds to the $p$-value. In our case this $p$-value is 0.0000000556211556703448. It suggests that the observed $F$-value we obtained of 51.1 is highly unlikely under the assumption that the null hypothesis that $\rho^2=0$ is true. 
+
+
+### Using the $F$-distribution in Practice
+
+In practice, all of this information is provided in the output of the `glance()` function.
+
+```{r}
+glance(lm.1)
+```
+
+The observed $F$-value is given in the `statistic` column and the associated degrees of freedom are provided in the `df` and `df.residual` columns. Lastly, the $p$-value is given in the `p.value` column. We can report the findings as follows:
+
+
+\begin{mdframed}[style=mystyle2]
+Based on the evidence ($p < .001$), we reject the hypothesis that the model does not explain variation in incomes in the population, $F(1,~30) = 51.45$. Our best guess for the amount of variation explained by the model is 63.2\%. 
+\end{mdframed}
+
+## ANOVA Decomposition
+
+We can also get the model-level inferential information from the `anova()` output. This gives us the ANOVA decomposition for the model.
+
+```{r}
+anova(lm.1)
+```
+
+Note that the two $df$ values for the model-level $F$-statistic correspond to the $df$ in each row of the ANOVA table. The first $df$ (in this case 1) is the model degrees-of-freedom, and the second $df$ (in this case 30) is the residual degrees-of-freedom. Note the $p$-value is the same as that from the `glance()` function.
+
+This ANOVA decomposition also breaks out the sum of squared values into the variation explained by the model (4147330491.907) and that which is unexplained by the model (residual variation; 2418196933.593). Summing these two values will give the total amount of variation which can be used to compute $R^2$; $R^2 = \sfrac{\mathrm{SS}_{\mathrm{Model}}}{\mathrm{SS}_{\mathrm{Total}}}$.
+
+This decomposition also gives us another way to consider the $F$-statistic. Recall that $F$ had a direct relationship to $R^2$
+
+$$
+F = \frac{R^2}{1 - R^2} \times \frac{\mathit{df}_2}{\mathit{df}_1}
+$$
+
+Using algebra, we could also express this as a ratio of two fractions
+
+$$
+F = \frac{\frac{R^2}{\mathit{df}_1}}{\frac{1 - R^2}{\mathit{df}_2}}
+$$
+
+Since $R^2 = \sfrac{\mathrm{SS}_{\mathrm{Model}}}{\mathrm{SS}_{\mathrm{Total}}}$ we can rewrite this as
+
+$$
+F = \frac{\frac{\mathrm{SS}_{\mathrm{Model}}}{\mathrm{SS}_{\mathrm{Total}}}}{1 - \frac{\mathrm{SS}_{\mathrm{Model}}}{\mathrm{SS}_{\mathrm{Total}}}} \times \frac{\mathit{df}_2}{\mathit{df}_1}
+$$
+
+Using simple algebra,
+
+$$
+\begin{split}
+F &= \frac{\frac{\mathrm{SS}_{\mathrm{Model}}}{\mathrm{SS}_{\mathrm{Total}}}}{\frac{\mathrm{SS}_{\mathrm{Total}}}{\mathrm{SS}_{\mathrm{Total}}} - \frac{\mathrm{SS}_{\mathrm{Model}}}{\mathrm{SS}_{\mathrm{Total}}}} \times \frac{\mathit{df}_2}{\mathit{df}_1} \\[2ex]
+&= \frac{\frac{\mathrm{SS}_{\mathrm{Model}}}{\mathrm{SS}_{\mathrm{Total}}}}{\frac{\mathrm{SS}_{\mathrm{Total}} - \mathrm{SS}_{\mathrm{Model}}}{\mathrm{SS}_{\mathrm{Total}}}} \times \frac{\mathit{df}_2}{\mathit{df}_1} \\[2ex]
+&= \frac{\mathrm{SS}_{\mathrm{Model}}}{\mathrm{SS}_{\mathrm{Total}} - \mathrm{SS}_{\mathrm{Model}}} \times \frac{\mathit{df}_2}{\mathit{df}_1} \\[2ex]
+&= \frac{\frac{\mathrm{SS}_{\mathrm{Model}}}{\mathit{df}_1}}{\frac{\mathrm{SS}_{\mathrm{Total}} - \mathrm{SS}_{\mathrm{Model}}}{\mathit{df}_2}}
+\end{split}
+$$
+
+This expression of $F$ helps us see two things: $F$ is a ratio of the explained and unexplained variances, and $F$ is distributed as a ratio of two chi-squared values. 
+
+#### F is a Ratio of the Explained and Unexplained Variances
+
+First, the numerator is a function of the explained variation and the denominator is a function of the unexplained variation. The two degrees of freedom are also related to the model (explained) and residual/error (unexplained). In fact, $\mathit{df}_1$ is often referred to as $\mathit{df}_\mathrm{Model}$, and $\mathit{df}_2$ is often referred to as $\mathit{df}_\mathrm{Error}$. Furthermore, since $\mathrm{SS}_{\mathrm{Total}} - \mathrm{SS}_{\mathrm{Model}} = \mathrm{SS}_{\mathrm{Error}}$, $F$ is often written as
+
+$$
+F = \frac{\frac{\mathrm{SS}_{\mathrm{Model}}}{\mathit{df}_\mathrm{Model}}}{\frac{\mathrm{SS}_{\mathrm{Error}}}{\mathit{df}_\mathrm{Error}}}
+$$
+
+In statistical theory, a sum of squares divided by a degrees of freedom is referred to as a *mean squared* value---the *average* amount of variation. Thus the $F$ value here is the ratio of the average variation explained by the model and the average variation that remains unexplained. In our example
+
+$$
+\begin{split}
+\mathrm{MS}_{\mathrm{Model}} &= \frac{4147330491.907}{1} = 4147330491.907 \\
+\mathrm{MS}_{\mathrm{Error}} &= \frac{2418196933.593}{30} = 80606564.453 \\
+\end{split}
+$$
+
+These values are also printed in the `anova()` output.
+
+```{r}
+anova(lm.1)
+```
+
+
+The observed $F$-value of 51.5 indicates that the average explained variation is 51.5 times that of the average unexplained vartiation. There is an awful lot more explained variation than unexplained variation, on average. 
+
+Another name for a mean squared value is a *variance estimate*; the average amount of variation (in the squared metric) is quantified as a variance. For example, go back to the introductory statistics formula for variance
+
+$$
+s^2_Y = \hat\sigma^2_Y = \frac{\sum(Y_i - \bar{Y})^2}{n-1}
+$$
+
+This numerator is a sum of squares; namely the $\mathrm{SS}_{\mathrm{Total}}$. The denomiator is the $\mathit{df}_{\mathrm{Total}}$,
+
+$$
+s^2_Y = \hat\sigma^2_Y = \frac{\mathrm{SS}_{\mathrm{Total}}}{\mathit{df}_{\mathrm{Total}}} = \mathrm{MS}_{\mathrm{Total}}
+$$
+
+Note that the $\mathrm{MS}_{\mathrm{Total}}$ is not printed in the `anova()` output. However, it can be computed from the values that are printed. The $\mathrm{SS}_{\mathrm{Total}}$ is just the sum of the printed sum of squares, and likewise the $$\mathit{df}_{\mathrm{Total}}$$ is the sum of the *df* values.
+
+$$
+\begin{split}
+\mathrm{SS}_{\mathrm{Total}} &= 4147330491.907 + 2418196933.593 = 6565527425.5 \\
+\mathit{df}_{\mathrm{Total}} &= 1 = 30 = 31
+\end{split}
+$$
+
+Then the $\mathrm{MS}_{\mathrm{Total}}$ is the ratio of these values,
+
+$$
+\mathrm{MS}_{\mathrm{Total}} = \frac{6565527425.5}{31} = 211791207.274194
+$$
+Since this is a variance estimate, we could also compute the sample variance of the outcome variable, `income` using the `var()` function.
+
+```{r}
+var(city$income)
+```
+
+### The F-Distribution is the Ratio of Two Chi-Squared Distributions
+
+Because mean square values are variance estimates, $F$ can also be expressed as
+
+$$
+F = \frac{\hat\sigma^2_{\mathrm{Model}}}{\hat\sigma^2_{\mathrm{Error}}}
+$$
+
+Now that we know the numerator and denominator of the $F$-value are variance estimates, we can turn to the second thing: namely that the $F$-distribution is the ratio of two $\chi^2$-distributions. Stat theory tells us that the sampling distribution for a variance is $\chi^2$-distributed with a particular *df*. The model explained variance estimate ($\hat\sigma^2_{\mathrm{Model}}$) is $\chi^2$-distributed with $\mathit{df}_{\mathrm{Total}} - p$ degrees of freedom, while the unexplained variance estimate ($\hat\sigma^2_{\mathrm{Error}}$) is $\chi^2$-distributed with $p$ degrees of freedom.
+
+
+### Relationship Between Coefficient-Level and Model-Level Inference
+
+Lastly, we point out that in simple regression models (models with only one predictor), the results of the model-level inference (i.e., the $p$-value) is exactly the same as that for the coefficient-level inference for the slope. 
+
+```{r}
+# Model-level inference
+glance(lm.1)
+
+# Coefficient-level inference
+tidy(lm.1)
+```
+
+
+That is because the model is composed of a single predictor, so asking whether the model accounts for variation in income level **is the same as** asking whether income level is different, on average, for employees with a one-unit difference in education level. *Once we have multiple predictors in the model, the model-level results and predictor-level results will not be the same.*
+
+
+## Confidence Envelope for the Model
+
+Re-consider our thought experiment. Again, imagine you have a population that is infinitely large. The observations in this population have two attributes, call them $X$ and $Y$. The relationship between these two attributes can be expressed via a regression equation as: $\hat{Y}=\beta_0 + \beta_1(X)$. Randomly sampe $n$ observations from the population, and compute the fitted regression equation, this time plotting the line (rather than only paying attention to the numerical estimates of the slope or intercept). Continue sampling from this population, each time drawing the fitted regression equation.
+
+
+
+```{r echo=FALSE, out.width='5in', fig.cap='Thought experiment for sampling samples of size n from the population to obtain the fitted regression line.', fig.align='center', fig.pos='H'}
+include_graphics("images/notes-07-thought-experiment-confidence-envelope.pdf")
+```
+
+Now, imagine superimposing all of these lines on the same plot. 
+
+```{r echo=FALSE, out.width='3in', fig.cap='Plot showing the fitted regression lines for many, many random samples of size n.', fig.align='center', fig.pos='H'}
+include_graphics("images/notes-07-superimposed-lines.pdf")
+```
+
+Examining where the sampled lines fall gives a visual interpretation of the uncertainty in the model. This two-dimensional display of uncertainty is referred to as a *confidence envelope*. In practice we estimate the uncertainty from the sample data and plot it around the fitted line from the sample.
+
+For simple regression models, we can plot this directly in `ggplot` by including the `geom_smooth()` layer. We will use the arguments `method="lm"` and `se=TRUE`. This will use the method of regression and adds a confidence enevelope.
+
+```{r fig.width=6, fig.height=6, out.width='3in'}
+ggplot(data = city, aes(x = education, y = income)) +
+  geom_smooth(method = "lm", se = TRUE) +
+  xlab("Education level") +
+  ylab("Income") +
+  theme_bw()
+```
+
+
+
+# References
+
+
