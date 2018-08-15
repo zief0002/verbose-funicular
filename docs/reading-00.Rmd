@@ -1,0 +1,24 @@
+---
+title: "Preparation"
+subtitle: "Introduction to EPsy 8251"
+output: html_document
+---
+
+<br />
+
+## Required
+
+Download and read through the course syllabus.
+
+- [Course Syllabus](https://github.com/zief0002/epsy-8251/raw/master/f18-8251-syllabus.pdf) [pdf]
+
+<br />
+<br />
+
+## Optional
+
+Download and install R and RStudio:
+
+- Download R from the [R Project website](https://www.r-project.org/) and install it on your computer. The course syllabus includes instructions ito do this.
+- Download the free version of RStudio from the [RStudio website](https://www.rstudio.com/) and install it on your computer.
+
