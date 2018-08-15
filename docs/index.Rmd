@@ -40,11 +40,20 @@ Office Hours: Wednesdays 9:00 PM&ndash;10:00 PM; and by appointment
 
 <br />
 
+## Syllabus
+
+The course syllabus is available  [here](https://github.com/zief0002/epsy-8251/raw/master/f18-8251-syllabus.pdf).
+
+<br />
+
 ## Textbooks
 
-All of the course textbooks (required and optional) are available via the University of Minnesota library.
+The primary course textbook is available via the University of Minnesota library.
 
 - [Applied regression: An introduction](https://primo.lib.umn.edu/primo-explore/fulldisplay?docid=UMN_ALMA21533776460001701&context=L&vid=TWINCITIES&search_scope=mncat_discovery&tab=article_discovery&lang=en_US) [required]
 
+The other course textbook (available via Amazon) is
+
+- [Presenting your findings: A practical guide for creating tables](https://www.amazon.com/Presenting-Your-Findings-Practical-Creating/dp/143380705X) [required] 
 
 <br />
