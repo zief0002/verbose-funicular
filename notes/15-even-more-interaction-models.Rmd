@@ -8,8 +8,8 @@ header-includes:
    - \usepackage{rotating}
    - \usepackage{booktabs}
    - \usepackage{float}
-   - \newcommand\T{\rule{0pt}{2.6ex}}       % Top strut
-   - \newcommand\B{\rule[-1.2ex]{0pt}{0pt}} % Bottom strut
+   - \newcommand\T{\rule{0pt}{2.6ex}}
+   - \newcommand\B{\rule[-1.2ex]{0pt}{0pt}} 
    - \usepackage{array}
    - \definecolor{umn}{RGB}{153, 0, 85}
    - \definecolor{umn2}{rgb}{0.1843137, 0.4509804, 0.5372549}
@@ -50,7 +50,7 @@ linecolor=myorange, linewidth=5pt}
 
 In this set of notes, we will focus on interaction effects between two categorical predictors. We will use the *iron-deficiency.csv* data in this set of notes. In particular, we are going to examine the question of whether cooking pots made of different materials explains variation in iron content 
 
-In less-developed countries, malnutrition is an ongoing problem. Iron-deficiency aneemia, one of the most common forms of malnutrition, affects about 50% of women and children and about 25% of men. The effects  of anemia have obvious implications for the health and welfare of a country's populace and can also lead to economic reprecussions. As such, many countries are interested in cost-effective and convenient strategies to alleviate this problem.
+In less-developed countries, malnutrition is an ongoing problem. Iron-deficiency aneemia, one of the most common forms of malnutrition, affects about 50\% of women and children and about 25\% of men. The effects  of anemia have obvious implications for the health and welfare of a country's populace and can also lead to economic reprecussions. As such, many countries are interested in cost-effective and convenient strategies to alleviate this problem.
 
 Adish et al. hypothesized that the use of iron cooking pots might be one potential solution, since cooking in an iron pot would leach iron into foods prepared in them. (Iron cooking pots were used routinely in many developing countries, but were generally abandoned in favor of cheaper and lighter aluminium pots.). What is the effect of cooking pot material on the iron content of cooked food? To study this, researchers cooked each of three typical Ethiopian meals---Shiro Wet' (Legumes), Yesiga Wet' (Meat), and Ye-atkilt Allych'a (Vegetables)---in an aluminium pot, a clay pot, and an iron pot. All dishes were prepared according to specified recipes from the Ethiopian Nutritional Institute. The meals were then analysed for the total iron leftover in the cooked food for absorption by the human body.
 
@@ -67,13 +67,16 @@ The data come from Adish, A. A., Esrey, S. A., Gyorkos, T. W., Jean-Baptiste, J.
 ```{r preparation, warning=FALSE, message=FALSE}
 # Load libraries
 library(broom)
+library(corrr)
+library(dotwhisker)
 library(dplyr)
 library(ggplot2)
 library(readr)
 library(sm)
+library(tidyr)
 
 # Read in data
-anemia = read_csv(file = "~/Dropbox/epsy-8251/data/iron-deficiency.csv")
+anemia = read_csv(file = "~/Documents/github/epsy-8251/data/iron-deficiency.csv")
 head(anemia)
 ```
 
@@ -102,15 +105,19 @@ When you have categorical predictors, it is common to organize the data into a t
 A quick examination of the data suggest that there are differences in the mean available iron content between pot types in the sample.
 
 ```{r}
-## Examine numeric evidence for race differences
+## Examine numeric evidence for pot differences
 pot_anemia = anemia %>%
   group_by(pot) %>%
-  summarize( M = mean(iron), SD = sd(iron), N = n() )
+  summarize(
+    M = mean(iron), 
+    SD = sd(iron), 
+    N = n()
+  )
 
 pot_anemia
 ```
 
-\newpage
+
 
 This is akin to collapsing the cross-classified table over food type.
 
@@ -133,7 +140,7 @@ This is akin to collapsing the cross-classified table over food type.
 We can also visualize these mean differences.
 
 ```{r fig.width=6, fig.height=6, out.width='3.5in'}
-# Create plot to examine race differences
+# Create plot to examine pot differences
 ggplot(data = pot_anemia, aes(x = pot, y = M)) +
   geom_line(aes(group = 1), color = "black", linetype = "dotted") +
   geom_point(size = 5, pch = 17) +
@@ -163,7 +170,7 @@ lm.1 = lm(iron ~ 1 + cl_pot + ir_pot, data = anemia)
 anova(lm.0, lm.1)
 ```
 
-The test suggests a statistically significant effect of pot type on iron content, $F(2,33)=26.36$, $p<.001$. (There are differences in the mean iron content in food cooked in the various types of pots.) Examining the summary output (not shown) we find that differences in pot type explain 61.5% of the variation in iron content available in food.
+The test suggests a statistically significant effect of pot type on iron content, $F(2,33)=26.36$, $p<.001$. (There are differences in the mean iron content in food cooked in the various types of pots.) Examining the model-level output (not shown) we find that differences in pot type explain 61.5\% of the variation in iron content available in food.
 
 
 # Examine Potential Main Effect of Food Type
@@ -174,7 +181,11 @@ Although we are primarily interested in the effect of pot type, it behooves us t
 ## Examine numeric evidence for race differences
 food_anemia = anemia %>%
   group_by(food) %>%
-  summarize( M = mean(iron), SD = sd(iron), N = n() )
+  summarize( 
+    M = mean(iron), 
+    SD = sd(iron), 
+    N = n() 
+    )
 
 food_anemia
 ```
@@ -230,7 +241,7 @@ lm.2 = lm(iron ~ 1 + meat + vegetable, data = anemia)
 anova(lm.0, lm.2)
 ```
 
-The test suggests a statistically significant effect of pot type on iron content, $F(2,33)=4.92$, $p=.013$. (There are differences in the mean iron content in the various types of food cooked.) Examining the summary output (from `lm.2` not shown) we find that differences in food type explain 23.0% of the variation in iron content available in food.
+The test suggests a statistically significant effect of pot type on iron content, $F(2,33)=4.92$, $p=.013$. (There are differences in the mean iron content in the various types of food cooked.) Examining the model-level output (from `lm.2` not shown) we find that differences in food type explain 23.0\% of the variation in iron content available in food.
 
 # Controlled Effect of Pot Type
 
@@ -242,7 +253,7 @@ lm.3 = lm(iron ~ 1 + meat + vegetable + cl_pot + ir_pot, data = anemia)
 anova(lm.2, lm.3)
 ```
 
-The test suggests a statistically significant effect of pot type on iron content, even after conrolling for differences in food type $F(2,31)=24.89$, $p<.001$. Examining the summary output (not shown) we find that differences in pot type and food type explain 84.48% of the variation in iron content available in food.
+The test suggests a statistically significant effect of pot type on iron content, even after conrolling for differences in food type $F(2,31)=24.89$, $p<.001$. Examining the model-level output (not shown) we find that differences in pot type and food type explain 84.48\% of the variation in iron content available in food.
 
 ## Plotting the Main-Effects Model
 
@@ -256,23 +267,20 @@ Then we can create our data using the categorical predictors and predict from th
 
 ```{r, fig.width=8, fig.height=6, out.width='4in'}
 # Create new data set
-plotData = expand.grid(
+crossing(
   pot = c("Aluminum", "Clay", "Iron"),
   food = c("Legumes", "Meat", "Vegetables")
-)
-
-# Use fitted model to compute fitted values for the data
-plotData$yhat = predict(lm.4, newdata = plotData)
-head(plotData)
-
-# Plot the fitted model
-ggplot(data = plotData, aes(x = pot, y = yhat, color = food)) +
-  geom_line(aes(group = food), linetype = "dotted") +
-  geom_point() +
-  theme_bw() +
-  xlab("Pot type") +
-  ylab("Predicted average iron content") +
-  ggsci::scale_color_d3(name = "")
+  ) %>%
+  mutate(
+    yhat = predict(lm.4, newdata = .)
+  ) %>%
+  ggplot(aes(x = pot, y = yhat, color = food)) +
+    geom_line(aes(group = food), linetype = "dotted") +
+    geom_point() +
+    theme_bw() +
+    xlab("Pot type") +
+    ylab("Predicted average iron content") +
+    ggsci::scale_color_d3(name = "")
 ```
 
 First note that the line segments are parallel. This suggests that the effect of pot type is exactly the same for each type of food. In general, the mean iron content available for consumption for food cooked in an iron pot is highest, followed by clay and aluminum pots, which seem to have similar percentages of iron, on average. (Note that since the two predictors are categorical, the only thing that matters are the points in this plot, because the only y-hat values that really exist are for a particular pot and food type. The lines are added only to help us interpret the effects.)
@@ -283,10 +291,14 @@ Another question a researcher might ask is whether the effect of pot type IS DIF
 
 
 ```{r, fig.width=8, fig.height=6, out.width='4in'}
-## Examine numerical evidence for interaction
+## Examine interaction effect in observed data
 pot_food_anemia = anemia %>%
   group_by(pot, food) %>%
-  summarize( M = mean(iron), SD = sd(iron), N = n() )
+  summarize( 
+    M = mean(iron), 
+    SD = sd(iron), 
+    N = n() 
+    )
 
 pot_food_anemia
 ```
@@ -354,7 +366,7 @@ anova(lm.3, lm.6)
 Researchers may want to dig deeper into which pot type/food type combinations statistically differ in their mean iron content. All we currently know is that there is an interaction effect, which means that at least one pot type/food type differs. To figure out which are different, we need to examine the `summary()` output from the model.
 
 ```{r}
-summary(lm.5)
+tidy(lm.5)
 ```
 
 The fitted equation is,
@@ -406,23 +418,21 @@ To understand this interaction better we can plot the model results.
 
 ```{r, fig.width=8, fig.height=6, out.width='4in'}
 # Create new data set with main effects
-plotData = expand.grid(
+crossing(
   pot = c("Aluminum", "Clay", "Iron"),
   food = c("Legumes", "Meat", "Vegetables")
-)
-
-# Use fitted model to compute fitted values for the data
-plotData$yhat = predict(lm.5, newdata = plotData)
-head(plotData)
-
-# Plot the fitted model
-ggplot(data = plotData, aes(x = pot, y = yhat, color = food)) +
-  geom_line(aes(group = food), linetype = "dotted") +
-  geom_point() +
-  theme_bw() +
-  xlab("Pot type") +
-  ylab("Predicted average iron content") +
-  ggsci::scale_color_d3(name = "")
+  ) %>%
+  mutate(
+    # Compute fitted values for the data
+    yhat = predict(lm.5, newdata = .)
+  ) %>%
+  ggplot(aes(x = pot, y = yhat, color = food)) +
+    geom_line(aes(group = food), linetype = "dotted") +
+    geom_point() +
+    theme_bw() +
+    xlab("Pot type") +
+    ylab("Predicted average iron content") +
+    ggsci::scale_color_d3(name = "")
 ```
 
 Cooking food in an iron pot leaves the highest percentage of iron content leftover for absorption by the human body, regardless of food type. This effect is even higher when cooking meat.
@@ -468,7 +478,10 @@ We would have to collect the remaining 32 different comparisons, and then we cou
 ```{r}
 ## Create pot x food combination
 anemia = anemia %>%
-  mutate(food_pot = paste0(food, "_", pot))
+  mutate(
+    food_pot = paste0(food, "_", pot)
+    )
+
 head(anemia)
 
 pairwise.t.test(x = anemia$iron, g = anemia$food_pot, p.adjust.method = "BH")

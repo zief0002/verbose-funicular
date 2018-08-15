@@ -3,10 +3,13 @@
 ##################################################
 
 library(broom)
+library(corrr)
+library(dotwhisker)
 library(dplyr)
 library(ggplot2)
 library(readr)
 library(sm)
+library(tidyr)
 
 
 
@@ -14,8 +17,8 @@ library(sm)
 ### Read in the data
 ###################################################
 
-beauty = read_csv(file = "~/Documents/github/epsy-8251/data/beauty.csv")
-head(beauty)
+evals = read_csv(file = "~/Documents/github/epsy-8251/data/evaluations.csv")
+head(evaluations)
 
 
 

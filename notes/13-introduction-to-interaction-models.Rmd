@@ -45,15 +45,16 @@ linecolor=myorange, linewidth=5pt}
 
 In this set of notes, you will learn about interaction models. To do so, we will examine the question of whether there is a differential effect of beauty by gender on course evaluation scores. The data we will use in this set of notes is collected from student evaluations of instructors' beauty and teaching quality for several courses at the University of Texas. The teaching evaluations were conducted at the end of the semester, and the beauty judgments were made later, by six students who had not attended the classes and were not aware of the course evaluations. The variables are:
 
-- `prof`: Professor ID number
-- `avgeval`: Average course rating
-- `btystdave`: Measure of the professor's beauty composed  of the average score on six standardized beauty ratings
-- `tenured`: 0 = non-tenured; 1 = tenured
-- `nonenglish`: 0 = native English speaker; 1 = non-native English speaker
+- `prof_id`: Professor ID number
+- `avg_eval`: Average course rating
+- `num_courses`: Number of courses for which the professor has evaluations
+- `num_students`: Number of students enrolled in the professor's courses
+- `perc_evaluating`: Average percentage of enrolled students who completed an evaluation
+- `beauty`: Measure of the professor's beauty composed  of the average score on six standardized beauty ratings
+- `tenured`: Is the professor tenured? (0 = non-tenured; 1 = tenured)
+- `native_english`: Is the professor a native English speaker? (0 = non-native English speaker; 1 = native English speaker)
 - `age`: Professor's age (in years)
-- `female`: 0 = male; 1 = female
-- `students`: Number of students enrolled in the course
-- `percentevaluating`: Percentage of enrolled students who completed an evaluation
+- `female`: Is the professor female? (0 = male; 1 = female)
 
 These source of these data is: Hamermesh, D. S. &amp; Parker, A. M. (2005). Beauty in the classroom: Instructors' pulchritude and putative pedagogical productivity. *Economics of Education Review, 24*, 369&ndash;376. The data were made available by: Gelman, A., &amp; Hill, J. (2007). *Data analysis using regression and multilevel/hierarchical models*. New York: Cambridge University Press. 
 
@@ -61,94 +62,106 @@ These source of these data is: Hamermesh, D. S. &amp; Parker, A. M. (2005). Beau
 ```{r preparation, warning=FALSE, message=FALSE}
 # Load libraries
 library(broom)
+library(corrr)
+library(dotwhisker)
 library(dplyr)
 library(ggplot2)
 library(readr)
 library(sm)
-
+library(tidyr)
 
 # Read in data
-beauty = read_csv(file = "~/Dropbox/epsy-8251/data/beauty.csv")
-head(beauty)
+evals = read_csv(file = "~/Documents/github/epsy-8251/data/evaluations.csv")
+head(evals)
 
 
 ```
 
 # Main-Effects Models
 
-We will explore the effects of beauty and gender on course evaluation scores. You might fit the regression model that includes both predictors. 
+We will explore the effects of beauty and tenure on course evaluation scores. You might fit the regression model that includes both predictors. 
 
 ```{r}
-lm.1 = lm(avgeval ~ 1 + btystdave + female, data = beauty)
-summary(lm.1)
+lm.1 = lm(avg_eval ~ 1 + beauty + tenured, data = evals)
+
+glance(lm.1)
+tidy(lm.1)
 ```
 
-Here there is an effect of gender ($p = .001$) controlling for differences in beauty, and there is also an effect of beauty after controlling for differences in gender ($p<.001$). Interpreting these effects:
+Here there is a statistically significant effect of gender ($p = .060$) controlling for differences in beauty. There is no effect of beauty after controlling for differences in gender ($p=.903$). Interpreting the magnitude of the effects:
 
-- Compared to professors who are rated as less beautiful, professors rated as more beautiful tend to have higher course evaluation scores, controlling for differences in gender. Each one-point difference in beauty is associated with a 0.15-point difference in course evaluation score, controlling for differences in gender,
-- Female professors have a lower average course evaluation than male professors controlling for differences in beauty. This difference is 0.19-points, on average,
+- Compared to professors who are rated as less beautiful, professors rated as more beautiful tend to have higher course evaluation scores, controlling for differences in gender. Each one-point difference in beauty is associated with a 0.11-point difference in course evaluation score, controlling for differences in gender.
+- Tenured professors have a slightly higher average course evaluations than non-tenured professors controlling for differences in beauty. This difference is 0.01-points, on average,
 
 Visually, we can display these effects by showing the fitted regression line for female and male professors that uses beauty to predict course evaluation scores.
 
-```{r out.width='3.5in'}
-myData = expand.grid(
-  btystdave = seq(from = -1.6, to = 1.9, by = 0.1),
-  female = c(0, 1)
-  )
-myData = myData %>% mutate(yhat = predict(lm.1, newdata = myData))
+```{r out.width='3.5in', fig.cap="Fitted regression lines showing the predicted course evaluation ratings as a function of professor's beauty rating for tenured and non-tenured professors."}
+profs = crossing(
+  beauty = seq(from = -1.6, to = 1.9, by = 0.1),
+  tenured = c(0, 1)
+  ) 
 
-myData$gender = factor(myData$female, levels = c(0, 1), labels = c("Male", "Female"))
-
-ggplot(data = myData, aes(x = btystdave, y = yhat, color = gender)) +
-  geom_line() +
-  theme_bw() +
-  xlab("Beauty score") +
-  ylab("Predicted average course evaluation score") +
-  scale_color_brewer(name = "", palette = "Set1")
+profs %>% 
+  mutate(
+    # Get y-hat values
+    yhat = predict(lm.1, newdata = profs),
+    # Make tenured a factor for better plotting
+    tenured = factor(tenured, levels = c(0, 1), labels = c("Non-Tenured", "Tenured"))
+    ) %>%
+  ggplot(aes(x = beauty, y = yhat, color = tenured)) +
+    geom_line() +
+    theme_bw() +
+    xlab("Beauty rating") +
+    ylab("Predicted average course evaluation score") +
+    scale_color_brewer(name = "", palette = "Set1")
 ```
 
-This display helps us see that the effect of beauty (slopes of the lines) is THE SAME for both males and females. We also see that the effect of gender (the vertical distance between the lines) is THE SAME for every level of beauty.
+This display helps us see that the effect of beauty (slopes of the lines) is THE SAME for both males and females. We also see that the effect of tenure (the vertical distance between the lines) is THE SAME for every level of beauty, and is essentially 0.
 
-This type of model where the effect of a predictor is THE SAME for eahc level of another predictor is referred to as a main-effects model. All the models we have fitted thus far have been main-effects models. 
+This type of model where the effect of a predictor is THE SAME for eahc level of another predictor is referred to as a **main-effects model**. All the models we have fitted thus far have been main-effects models. 
 
 # Differential Effects Models: Interaction Models
 
-Another question a researcher might have is whether the effect of beauty IS DIFFERENT for males and females. Examining the raw data suggests that this might be the case. In the scatterplots below, the samle data suggests that the effect of beauty on average course evaluation scores may be greater for male professors (steeper slope) than for female professors. 
+Another question a researcher might have is whether the effect of beauty IS DIFFERENT for tenured and non-tenured professors. Examining the raw data suggests that this might be the case. In the scatterplots below, the sample data suggests that the effect of beauty on average course evaluation scores may be greater for tenured professors (steeper slope) than for non-tenured professors. 
 
 
 ```{r fig.width=8, fig.height=6, out.width='4in'}
-ggplot(data = beauty, aes(x = btystdave, y = avgeval, color = factor(female))) +
+ggplot(data = evals, aes(x = beauty, y = avg_eval, color = factor(tenured))) +
   geom_point() +
   geom_smooth(method = "lm", se = FALSE) +
   theme_bw() +
-  xlab("Beauty score") +
+  xlab("Beauty rating") +
   ylab("Predicted average course evaluation score") +
-  scale_color_brewer(name = "", palette = "Set1", labels = c("Male", "Female")) +
-  facet_wrap(~female)
+  scale_color_brewer(name = "", palette = "Set1", labels = c("Non-Tenured", "Tenured")) +
+  facet_wrap(~tenured)
 ```
 
-Differential effects of beauty on course evaluation scores imply that the slopes of the regression lines for males and females are not equal (i.e., the lines are not parallel). This is in stark contrast to the main-effects model which implies parallel regression lines, or equal effects of beauty for both genders. In statistical terms we describe differential effects as *interaction effects*. We would say there is an interaction effect between beauty and gender on course evaluation scores.
+Differential effects of beauty on course evaluation scores imply that the slopes of the regression lines for tenured and non-tenured professors are not equal (i.e., the lines are not parallel). This is in stark contrast to the main-effects model which implies parallel regression lines, or equal effects of beauty for both genders. In statistical terms we describe differential effects as **interaction effects**. We would say there is an interaction effect between beauty and tenure status on course evaluation scores.
 
 ## Testing for an Interaction Effect
 
-The inferential question is whether the interaction effect that we are seeing in the sample data is real, or whether it is an artifact of samplng error. To examine this we need a way to test whether the slopes of the two regression lines are equal.
+The inferential question is whether the interaction effect that we are seeing in the sample data is real, or whether it is an artifact of sampling error. To examine this we need a way to test whether the slopes of the two regression lines are equal.
 
-To do this, we create another predictor that is the product of the two predictors we believe interact and include that product term in the regression model along with the original predictors we used to create it (i.e., also include the constituent main-effects). In our example, we multiply the gender predictor by the beauty predictor to create the interaction term. Then we fit a model that includes the original gender predictor, the original beauty predictor, and the newly created interaction term. We then pay attention to the coefficient and $p$-value for the interaction term.
+To do this, we create another predictor that is the product of the two predictors we believe interact and include that product term in the regression model along with the original predictors we used to create it (i.e., also include the constituent main-effects). In our example, we multiply the tenure predictor by the beauty predictor to create the interaction term. Then we fit a model that includes the original tenure predictor, the original beauty predictor, and the newly created interaction term. We then pay attention to the coefficient and $p$-value for the interaction term.
 
 
 ```{r}
 # Create interaction term
-beauty = beauty %>% mutate(bty_female = btystdave * female)
-head(beauty)
+evals = evals %>% 
+  mutate(
+    bty_tenured = beauty * tenured
+    )
+
+head(evals)
 ```
 
 ```{r}
 # Fit interaction model
-lm.2 = lm(avgeval ~ 1 + btystdave + female + bty_female, data = beauty)
-summary(lm.2)
+lm.2 = lm(avg_eval ~ 1 + beauty + tenured + bty_tenured, data = evals)
+tidy(lm.2)
 ```
 
-If we are using a strict cutoff of $\alpha=.05$ to evaluate the predictors, we would fail to reject the null hypothesis that the partial slope for the interaction term is zero (i.e., $H_0: \beta_{\mathrm{bty\_female}}=0$). This suggests that the differential effects we saw in the raw data are likely just an artifact of sampling error. 
+Using an alpha-value of $\alpha=.05$ to evaluate the predictors, we would fail to reject the null hypothesis that the partial slope for the interaction term is zero (i.e., $H_0: \beta_{\mathrm{bty\_tenured}}=0$, $p=.163$). This suggests that the differential effects we saw in the raw data are likely just an artifact of sampling error. 
 
 ## Mathematical Expression of the Interaction Model
 
@@ -169,26 +182,26 @@ In practice, if we fail to reject the null hypothesis that the coefficient for t
 To understand how testing whether the slope associated with the interaction term is equivalent to testing whether the regression lines are parallel, we will write out the interaction model for our example.
 
 $$
-Y = \beta_0 + \beta_1(X_{\mathrm{beauty}}) + \beta_2(X_{\mathrm{Female}}) + \beta_3\left(X_{\mathrm{Beauty}}X_{\mathrm{Female}}\right) + \epsilon.
+Y = \beta_0 + \beta_1(X_{\mathrm{beauty}}) + \beta_2(X_{\mathrm{Tenured}}) + \beta_3\left(X_{\mathrm{Beauty}} \times X_{\mathrm{Tenured}}\right) + \epsilon.
 $$
 
-Recall that the predictor $X_{\mathrm{Female}}$ is a dummy coded predictor that is 1 for females and 0 for males. We can use that to write individual regression equations, based on the interaction model, for both genders. For example, the regression model for males is,
+Recall that the predictor $X_{\mathrm{Tenured}}$ is a dummy coded predictor that is 1 for tenured professors and 0 for non-tenured professors. We can use that to write individual regression equations, based on the interaction model, for each tenure status. For example, the regression model for non-tenured professors is,
 
 $$
 \begin{split}
-Y &= \beta_0 + \beta_1(X_{\mathrm{beauty}}) + \beta_2(X_{\mathrm{Female}}) + \beta_3\left(X_{\mathrm{Beauty}}X_{\mathrm{Female}}\right) + \epsilon \\
+Y &= \beta_0 + \beta_1(X_{\mathrm{beauty}}) + \beta_2(X_{\mathrm{Tenured}}) + \beta_3\left(X_{\mathrm{Beauty}} \times X_{\mathrm{Tenured}}\right) + \epsilon \\
 &= \beta_0 + \beta_1(X_{\mathrm{beauty}}) + \beta_2(0) + \beta_3\left(X_{\mathrm{Beauty}}\times0\right) + \epsilon \\
 &= \beta_0 + \beta_1(X_{\mathrm{beauty}}) + \epsilon.
 \end{split}
 $$
 
-The intercept from the interaction model ($\beta_0$) turns out to be the intercept term for the reference group (males). The slope associated with beauty from the interaction model ($\beta_1$) turns out to be the beauty effect for the reference group (males).
+The intercept from the interaction model ($\beta_0$) turns out to be the intercept term for the reference group (non-tenured professors). The slope associated with beauty from the interaction model ($\beta_1$) turns out to be the beauty effect for the reference group (non-tenured professors).
 
-The regression model for females is,
+The regression model for tenured professors is,
 
 $$
 \begin{split}
-Y &= \beta_0 + \beta_1(X_{\mathrm{beauty}}) + \beta_2(X_{\mathrm{Female}}) + \beta_3\left(X_{\mathrm{Beauty}}X_{\mathrm{Female}}\right) + \epsilon \\
+Y &= \beta_0 + \beta_1(X_{\mathrm{beauty}}) + \beta_2(X_{\mathrm{Tenured}}) + \beta_3\left(X_{\mathrm{Beauty}} \times X_{\mathrm{Tenured}}\right) + \epsilon \\
 &= \beta_0 + \beta_1(X_{\mathrm{beauty}}) + \beta_2(1) + \beta_3\left(X_{\mathrm{Beauty}}\times1\right) + \epsilon \\
 &= \beta_0 + \beta_1(X_{\mathrm{beauty}}) + \beta_2 + \beta_3(X_{\mathrm{beauty}}) + \epsilon \\
 &= \left[\beta_0 + \beta_2\right] + \beta_1(X_{\mathrm{beauty}}) + \beta_3(X_{\mathrm{beauty}}) + \epsilon \\
@@ -196,9 +209,9 @@ Y &= \beta_0 + \beta_1(X_{\mathrm{beauty}}) + \beta_2(X_{\mathrm{Female}}) + \be
 \end{split}
 $$
 
-Now we can see that the other two terms used in the interaction model, $\beta_2$ and $\beta_3$, describe the differences in intercept and slope, respectively, between the non-reference group (females) and the reference group (males).
+Now we can see that the other two terms used in the interaction model, $\beta_2$ and $\beta_3$, describe the differences in intercept and slope, respectively, between the non-reference group (tenured professors) and the reference group (non-tenured professors).
 
-Consider if the interaction slope ($\beta_3$) were zero. Then the beauty effect for females which is $\left[\beta_1 + \beta_3\right]$ would be $\left[\beta_1 + 0\right] = \beta_1$. This would imply that the beauty effect for males and females would be exactly the same (i.e., they would have the same slope).
+Consider if the interaction slope ($\beta_3$) were zero. Then the beauty effect for tenured professors which is $\left[\beta_1 + \beta_3\right]$ would be $\left[\beta_1 + 0\right] = \beta_1$. This would imply that the beauty effect for tenured and non-tenured professors would be exactly the same (i.e., they would have the same slope).
 
 ## Interpreting the Fitted Model's Coefficients
 
@@ -208,112 +221,111 @@ Based on the fitted interaction model, we can write the equation for the fitted 
 
 
 $$
-\hat{\mathrm{Avg.~Course~Eval}} = 4.1 + 0.20(\mathrm{Beauty}) - 0.21(\mathrm{Female}) - 0.11(\mathrm{Beauty})(\mathrm{Female}).
+\hat{\mathrm{Avg.~Course~Eval}} = 3.91 + 0.03(\mathrm{Beauty}) + 0.01(\mathrm{Tenured}) + 0.16(\mathrm{Beauty})(\mathrm{Tenured}).
 $$
 
-The easiest way to determine how to interpret the coefficients is to actually compute the regression equations for males and females from the fitted interaction model.
+The easiest way to determine how to interpret the coefficients is to actually compute the regression equations for non-tenured and tenured from the fitted interaction model.
 
-Males:
-
-$$
-\begin{split}
-\hat{\mathrm{Avg.~Course~Eval}} &= 4.1 + 0.20(\mathrm{Beauty}) - 0.21(0) - 0.11(\mathrm{Beauty})(0) \\
-&= 4.1 + 0.20(\mathrm{Beauty})
-\end{split}
-$$
-
-The intercept from the interaction model ($\hat\beta_0 = 4.1$) is the estimated average course evaluation score for male professors who have an average beauty rating of zero. The beauty effect from the interaction model ($\hat\beta_1 = 0.20$) suggests that for male professors, a one-unit difference in beauty rating is generally associated with a 0.20-point difference in average course evaluation scores.
-
-Females:
+Non-Tenured Professors:
 
 $$
 \begin{split}
-\hat{\mathrm{Avg.~Course~Eval}} &= 4.1 + 0.20(\mathrm{Beauty}) - 0.21(1) - 0.11(\mathrm{Beauty})(1) \\
-&= 4.1 + 0.20(\mathrm{Beauty}) - 0.21 - 0.11(\mathrm{Beauty}) \\
-&= \left[4.1 - 0.21\right] + \left[0.20 - 0.11\right](\mathrm{Beauty})
+\hat{\mathrm{Avg.~Course~Eval}} &= 3.91 + 0.03(\mathrm{Beauty}) + 0.01(0) + 0.16(\mathrm{Beauty})(0) \\
+&= 3.91 + 0.03(\mathrm{Beauty})
 \end{split}
 $$
 
-The female effect from the interaction model ($\hat\beta_2 = -0.21$) indicates that female professors with a beauty rating of zero have average course evaluation scores that are 0.21-points lower than male professors with beauty ratings of zero, on average. The interaction effect ($\hat\beta_3 = -0.11$) indicates that for female professors, a one-unit difference in beauty rating is generally associated with a 0.11-point lower difference in average course evaluation scores than male professors for the same change in beauty rating. Put differently, a one-unit difference in beauty rating for male professors is associated with a 0.20-point difference in average course evaluation scores; but for female professors, a one-unit difference in beauty rating is only associated with a 0.09-point difference in average course evaluation scores.
+The intercept from the interaction model ($\hat\beta_0 = 3.91$) is the estimated average course evaluation score for non-tenured professors who have an average beauty rating of zero. The beauty effect from the interaction model ($\hat\beta_1 = 0.03$) suggests that for non-tenured professors, a one-unit difference in beauty rating is generally associated with a 0.03-point difference in average course evaluation scores.
 
-# Interaction Effect of Tenure and Beauty
+Tenured Professors:
 
-Let's examine whether there is a differential effect of beauty on course evaluation scores for professors with tenure status compared to those with non-tenured status. 
+$$
+\begin{split}
+\hat{\mathrm{Avg.~Course~Eval}} &= 3.91 + 0.03(\mathrm{Beauty}) + 0.01(1) - 0.16(\mathrm{Beauty})(1) \\
+&= 3.91 + 0.03(\mathrm{Beauty}) + 0.01 + 0.16(\mathrm{Beauty}) \\
+&= \left[3.91 + 0.01\right] + \left[0.03 + 0.16\right](\mathrm{Beauty})
+\end{split}
+$$
+
+The tenure effect from the interaction model ($\hat\beta_2 = 0.01$) indicates that tenured professors with a beauty rating of zero have average course evaluation scores that are 0.01-points higher than non-tenured professors with beauty ratings of zero, on average. The interaction effect ($\hat\beta_3 = 0.16$) indicates that for tenured professors, a one-unit difference in beauty rating is generally associated with a 0.16-point higher difference in average course evaluation scores than non-tenured professors for the same change in beauty rating. Put differently, a one-unit difference in beauty rating for non-tenured professors is associated with a 0.03-point difference in average course evaluation scores; but for tenured professors, athe same one-unit difference in beauty rating is associated with a 0.19-point difference in average course evaluation scores.
+
+# Interaction Effect of Gender and Beauty
+
+Let's examine whether there is a differential effect of beauty on course evaluation scores for female and male professors. 
 
 ```{r fig.width=8, fig.height=6, out.width='4in'}
-ggplot(data = beauty, aes(x = btystdave, y = avgeval, color = factor(tenured))) +
+ggplot(data = evals, aes(x = beauty, y = avg_eval, color = factor(female))) +
   geom_point() +
   geom_smooth(method = "lm", se = FALSE) +
   theme_bw() +
   xlab("Beauty score") +
   ylab("Predicted average course evaluation score") +
-  scale_color_brewer(name = "", palette = "Set1", labels = c("Non-tenured", "Tenured")) +
-  facet_wrap(~tenured)
+  scale_color_brewer(name = "", palette = "Set1", labels = c("Male", "Female")) +
+  facet_wrap(~female)
 ```
 
-Judging by the sample data, it appears that there is a larger effect of beauty on course evaluation scores for tenured professors than for non-tenured professors. To determine whether this difference in effects is just due to sampling error, we will fit the interaction model and evaluate the interaction term.
+Judging by the sample data, it appears that the effect of beauty on course evaluation scores for female and male professors is roughly the same. To further evaluate this, we will fit the interaction model and evaluate the interaction term.
 
 ```{r}
 # Create interaction predictor
-beauty = beauty %>% mutate(bty_tenured = btystdave * tenured)
-head(beauty)
+evals = evals %>% 
+  mutate(
+    bty_female = beauty * female
+    )
+
+head(evals)
 
 # Fit interaction model
-lm.3 = lm(avgeval ~ 1 + btystdave + tenured + bty_tenured, data = beauty)
-summary(lm.3)
+lm.3 = lm(avg_eval ~ 1 + beauty + female + bty_female, data = evals)
+tidy(lm.3)
 ```
 
-The $p$-value associated with the interaction term ($p=.015$) is statistically significant. This indicates the differential beauty effect we saw in the raw data is larger than we would expect because of sampling error. It is important to note that even though the main-effects of tenure and beauty are not statistically significant, we need to keep them in the model. This is because the interaction effect was composed of these two effects. So, to appropriately interpret the interaction effect we need to keep all constitutent main-effects in the model.
-
-To aid interpretation of the model, we will write the fitted regression equations for tenured and non-tenured professors based on the interaction model.
+The $p$-value associated with the interaction term ($p=.535$) is statistically significant. This indicates that it is likely the beauty effect is the same for male and female professors in the population. 
 
 
-$$
-\begin{split}
-\mathbf{Non-tenured:~~}\hat{\mathrm{Avg.~Course~Eval}} &= 4.03 + 0.05(\mathrm{Beauty}) \\
-\mathbf{Tenured:~~}\hat{\mathrm{Avg.~Course~Eval}} &= 4.01 + 0.21(\mathrm{Beauty}) 
-\end{split}
-$$
+<!-- It is important to note that even though the main-effects of tenure and beauty are not statistically significant, we need to keep them in the model. This is because the interaction effect was composed of these two effects. So, to appropriately interpret the interaction effect we need to keep all constitutent main-effects in the model. -->
 
-The average course evaluation scores for non-tenured professors (the reference group) with a beauty rating of zero is predicted to be 4.03. For tenured professors with the same beauty rating of zero, the average course evaluation score is 0.02-points lower ($p=.741$). For non-tenured professors, there is likely no effect of beauty on average course evaluation scores ($\hat\beta=0.05$, $p = .233$). For tenured professors, however, there is a slight effect of beauty on course evaluation scores. Each one-unit difference in beauty rating, is associated with a 0.21-point difference in average course evaluation scores for tenured professors. The difference in the effect of beauty between tenured and non-tenured professors is statistically significant ($p=.015$).
+<!-- To aid interpretation of the model, we will write the fitted regression equations for tenured and non-tenured professors based on the interaction model. -->
+
+
+<!-- $$ -->
+<!-- \begin{split} -->
+<!-- \mathbf{Non-tenured:~~}\hat{\mathrm{Avg.~Course~Eval}} &= 4.03 + 0.05(\mathrm{Beauty}) \\ -->
+<!-- \mathbf{Tenured:~~}\hat{\mathrm{Avg.~Course~Eval}} &= 4.01 + 0.21(\mathrm{Beauty})  -->
+<!-- \end{split} -->
+<!-- $$ -->
+
+<!-- The average course evaluation scores for non-tenured professors (the reference group) with a beauty rating of zero is predicted to be 4.03. For tenured professors with the same beauty rating of zero, the average course evaluation score is 0.02-points lower ($p=.741$). For non-tenured professors, there is likely no effect of beauty on average course evaluation scores ($\hat\beta=0.05$, $p = .233$). For tenured professors, however, there is a slight effect of beauty on course evaluation scores. Each one-unit difference in beauty rating, is associated with a 0.21-point difference in average course evaluation scores for tenured professors. The difference in the effect of beauty between tenured and non-tenured professors is statistically significant ($p=.015$). -->
 
 ## Visually Displaying the Model
 
-It is useful to visually display the fitted interaction model to aid model interpretation. To do this we need to create a dataset that includes the predictors `btystdave`, `tenured`, and `bty_tenured`. The last predictor, recall, was the product of the two main effects. So, when creating our data set, we use `expand.grid()` to create the data for the main effects and then we add the product term afterward.
-
-```{r}
-# Create new data set with main effects
-myData = expand.grid(
-  btystdave = seq(from = -1.6, to = 1.9, by = 0.1),
-  tenured = c(0, 1)
-)
-
-# Compute interaction effect
-myData = myData %>% mutate( bty_tenured = btystdave * tenured )
-
-# Note this can be done in one computation as well
-myData = expand.grid(
-    btystdave = seq(from = -1.6, to = 1.9, by = 0.1),
-    tenured = c(0, 1)
-  ) %>% 
-  mutate( bty_tenured = btystdave * tenured )
-
-# Use fitted model to compute fitted values for the data
-myData = myData %>% mutate( yhat = predict(lm.3, newdata = myData) )
-head(myData)
-```
-
-\newpage
+It is often useful to visually display the fitted interaction model to aid model interpretation. To do this for the last model we fitted, we need to create a dataset that includes the predictors `beauty`, `female`, and `bty_female`. The last predictor, recall, was the product of the two main effects. So, when creating our data set, we use `crossing()` we include the data for the main effects and then `mutate()` the product term afterward.
 
 ```{r fig.width=8, fig.height=6, out.width='4in'}
-# Plot the fitted model
-ggplot(data = myData, aes(x = btystdave, y = yhat, color = factor(tenured))) +
-  geom_line() +
-  theme_bw() +
-  xlab("Beauty score") +
-  ylab("Predicted average course evaluation score") +
-  scale_color_brewer(name = "", palette = "Set1", labels = c("Non-tenured", "Tenured")) +
-  ylim(0, 5)
+# Create new data set with main effects
+profs = crossing(
+  beauty = seq(from = -1.6, to = 1.9, by = 0.1),
+  female = c(0, 1)
+  ) %>%
+  # Mutate on product term
+  mutate( 
+    bty_female = beauty * female
+    )
+
+profs %>% 
+  mutate( 
+    # Compute fitted values for the data
+    yhat = predict(lm.3, newdata = profs),
+    # Make female a factor for better plotting
+    female = factor(female, levels = c(0, 1), labels = c("Male", "Female"))
+    ) %>%
+  ggplot(aes(x = beauty, y = yhat, color = female)) +
+    geom_line() +
+    theme_bw() +
+    xlab("Beauty rating") +
+    ylab("Predicted average course evaluation score") +
+    scale_color_brewer(name = "", palette = "Set1") +
+    ylim(0, 5)
 ```
 
 ## Model Assumptions
@@ -322,18 +334,18 @@ Just like main-effects models, we need to examine the assumptions for any fitted
 
 ```{r out.width='3.5in'}
 # Create fortified data
-fort_lm3 = augment(lm.3)
-head(fort_lm3)
+out.3 = augment(lm.3)
+head(out.3)
 ```
 
 \newpage
 
 ```{r out.width='3.5in'}
 # Examine normality assumption
-sm.density(fort_lm3$.std.resid, model = "normal", xlab = "Studentized Residuals")
+sm.density(out.3$.std.resid, model = "normal", xlab = "Studentized Residuals")
 
 # Examine other assumptions
-ggplot(data = fort_lm3, aes(x = .fitted, y = .std.resid)) +
+ggplot(data = out.3, aes(x = .fitted, y = .std.resid)) +
   geom_point() +
   geom_hline(yintercept = 0) +
   geom_hline(yintercept = c(-2, 2), linetype = "dotted") +
@@ -356,17 +368,24 @@ There are always two interpretations of an interaction effect.
 For example, in our tenure and beauty example, we interpreted the interaction as the effect of beauty on course evaluation scores is different for tenured and non-tenured faculty. In the visual display, this interpretation  focuses on the difference in slopes.
 
 ```{r echo=FALSE, fig.width=8, fig.height=6, out.width='4in'}
-ggplot(data = myData, aes(x = btystdave, y = yhat, color = factor(tenured))) +
-  geom_line() +
-  theme_bw() +
-  xlab("Beauty score") +
-  ylab("Predicted average course evaluation score") +
-  scale_color_brewer(name = "", palette = "Set1", labels = c("Non-tenured", "Tenured")) +
-  ylim(0, 5)
+profs %>% 
+  mutate( 
+    # Compute fitted values for the data
+    yhat = predict(lm.3, newdata = profs),
+    # Make female a factor for better plotting
+    female = factor(female, levels = c(0, 1), labels = c("Male", "Female"))
+    ) %>%
+  ggplot(aes(x = beauty, y = yhat, color = female)) +
+    geom_line() +
+    theme_bw() +
+    xlab("Beauty rating") +
+    ylab("Predicted average course evaluation score") +
+    scale_color_brewer(name = "", palette = "Set1") +
+    ylim(0, 5)
 ```
 
 
-We could also interpret the interaction as: the effect of tenure on course evaluation scores is different depending on professor's beauty rating. In the visual display, this interpretation  focuses on the vertical distance between the lines.
+We could also interpret the interaction as: the effect of gender on course evaluation scores is different depending on professor's beauty rating. In the visual display, this interpretation  focuses on the vertical distance between the lines.
 
 Which one you use is up to you. Try them both. Although they both describe the same interaction, trying the different interpretations can sometimes lead to more information about or better ways of describing the effect. 
 
