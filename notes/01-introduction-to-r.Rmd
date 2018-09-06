@@ -391,8 +391,8 @@ Data frames are the most common structures we will be working with in the course
 
 Data frames and tibbles have a tabular (rectangular) structure made up of rows (cases) and columns (variables).
 
-```{r, echo=FALSE}
-school = readr::read_csv("~/Dropbox/epsy-8251/data/colleges.csv")
+```{r, echo=FALSE, message=FALSE}
+school = readr::read_csv("~/Documents/github/epsy-8251/data/colleges.csv")
 school
 ```
 

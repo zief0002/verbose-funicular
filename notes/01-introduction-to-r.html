@@ -4,7 +4,7 @@
     <title>Introduction to R and RStudio</title>
     <meta charset="utf-8">
     <meta name="author" content="Andrew Zieffler“" />
-    <meta name="date" content="2018-06-29" />
+    <meta name="date" content="2018-09-06" />
     <link href="css/remark-css/default.css" rel="stylesheet" />
     <link href="css/remark-css/metropolis.css" rel="stylesheet" />
     <link href="css/remark-css/metropolis-fonts.css" rel="stylesheet" />
@@ -17,7 +17,7 @@ class: center, middle, inverse, title-slide
 # Introduction to R and RStudio
 ## EPsy 8251
 ### Andrew Zieffler“
-### 2018-06-29
+### 2018-09-06
 
 ---
 
@@ -592,29 +592,20 @@ Data frames and tibbles have a tabular (rectangular) structure made up of rows (
 
 
 ```
-## Parsed with column specification:
-## cols(
-##   name = col_character(),
-##   sat = col_integer(),
-##   gradRate = col_double()
-## )
-```
-
-```
-## # A tibble: 30 x 3
-##    name                                 sat gradRate
-##    &lt;chr&gt;                              &lt;int&gt;    &lt;dbl&gt;
-##  1 Carleton College                    1415     93.8
-##  2 Macalester College                  1365     89.8
-##  3 St. Olaf College                    1320     86.4
-##  4 Gustavus Adolphus College           1245     83  
-##  5 College of Saint Benedict           1165     81  
-##  6 Saint Johns University              1165     77.1
-##  7 University of St. Thomas            1165     74.4
-##  8 Martin Luther College               1145     73.2
-##  9 University of MinnesotaTwin Cities  1245     72.9
-## 10 Bethel University                   1145     70.6
-## # ... with 20 more rows
+## # A tibble: 33 x 6
+##       id name                              gradRate public   sat tuition
+##    &lt;int&gt; &lt;chr&gt;                                &lt;dbl&gt;  &lt;int&gt; &lt;int&gt;   &lt;int&gt;
+##  1     1 Augsburg College                      65.2      0  1030   39294
+##  2     3 Bethany Lutheran College              52.6      0  1065   30480
+##  3     4 Bethel University, Saint Paul, MN     73.3      0  1145   39400
+##  4     5 Carleton College                      92.6      0  1400   54265
+##  5     6 College of Saint Benedict             81.1      0  1185   43198
+##  6     7 Concordia College at Moorhead         69.4      0  1145   36590
+##  7     8 Concordia University-Saint Paul       47.9      0   990   37795
+##  8     9 Crossroads College                    26.9      0   970   25345
+##  9    10 Crown College                         51.3      0  1030   33210
+## 10    11 Gustavus Adolphus College             81.7      0  1225   43800
+## # ... with 23 more rows
 ```
 
 
@@ -659,7 +650,7 @@ mean(school$sat)
 ```
 
 ```
-## [1] 1124.167
+## [1] 1101.212
 ```
 
 ---
@@ -697,12 +688,23 @@ if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
   d.head.appendChild(s);
 })();</script>
 
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-  tex2jax: {
-    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+<script>
+(function() {
+  var i, text, code, codes = document.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
   }
-});
+})();
 </script>
 <!-- dynamically load mathjax for compatibility with self-contained -->
 <script>
