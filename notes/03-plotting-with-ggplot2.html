@@ -350,7 +350,7 @@ The layers `xlim()` and `ylim()` are used to set the limits on the `\(x\)`-axis 
 
 ```r
 ggplot(data = city, aes(x = education, y = income)) +
-  geom_point(size = 4) +
+  geom_point() +
   xlab("Education level (in years)") +
   ylab("Income level (in U.S. dollars)") +
   xlim(0, 30) +
@@ -646,7 +646,7 @@ ggplot(data = city, aes(x = education, y = income)) +
 
 # The scales Package
 
-We can get other options for labeling axes using the **scales** package. For example, we can add commas to separate by thousands in long numerical values, or add the \$ for monetary values.
+We can get other options for labeling axes using the **scales** package. For example, we can add commas to separate by thousands in long numerical values, or add the `$` for monetary values.
 
 .pull-left[
 .smallish[
