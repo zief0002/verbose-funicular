@@ -26,7 +26,7 @@ library(ggplot2)
 library(readr)
 
 # Import and view the city data 
-city = read_csv("~/Dropbox/epsy-8251/data/riverside.csv")
+city = read_csv("../data/riverside.csv")
 city
 ```
 
@@ -86,7 +86,7 @@ ggplot(data = city, aes(x = education, y = income)) +
 .pull-right[
 ```{r echo=FALSE}
 ggplot(data = city, aes(x = education, y = income)) + 
-  geom_point()
+  geom_point(size = 4)
 ```
 ]
 
@@ -128,7 +128,7 @@ Here the `geom_smooth()` layer (which adds a loess smoother) is drawn ON TOP of 
 .pull-right[
 ```{r echo=FALSE, message=FALSE}
 ggplot(data = city, aes(x = education, y = income)) + 
-  geom_point() + 
+  geom_point(size = 4) + 
   geom_smooth()
 ```
 ]
@@ -155,18 +155,31 @@ The `+` sign needs to be at the end of the line (not at the beginning). If you a
 Aesthetic mappings can be set globally (in `ggplot()` layer) or locally (set in a specific layer). Aesthetic mappings that are set in the `ggplot()` layer are applied to *all layers* in the plot; they are global. Aesthetic mappings set in a specific layer only apply to that particular layer.
 
 .pull-left[.smallisher[
-```{r message=FALSE, out.width='90%'}
+```{r message=FALSE, eval=FALSE}
 ggplot(data = city, aes(x = education, y = income, color = gender)) + 
   geom_point() +
   geom_smooth()
 ```
+
+```{r message=FALSE, out.width='90%', echo=FALSE}
+ggplot(data = city, aes(x = education, y = income, color = gender)) + 
+  geom_point(size = 4) +
+  geom_smooth()
+```
+
 ]]
 
 
 .pull-right[.smallisher[
-```{r message=FALSE, out.width='90%'}
+```{r message=FALSE, eval=FALSE}
 ggplot(data = city, aes(x = education, y = income)) + 
   geom_point(aes(color = gender)) +
+  geom_smooth()
+```
+
+```{r message=FALSE, out.width='90%', echo=FALSE}
+ggplot(data = city, aes(x = education, y = income)) + 
+  geom_point(aes(color = gender), size = 4) +
   geom_smooth()
 ```
 ]]
@@ -214,7 +227,7 @@ ggplot(data = city, aes(x = education, y = income, color = gender)) +
 .pull-right[
 ```{r echo=FALSE, out.width='90%', message=FALSE}
 ggplot(data = city, aes(x = education, y = income, color = gender)) +
-  geom_point(szie = 4) +
+  geom_point(size = 4) +
   geom_smooth(color = "yellow", fill = "darkblue")
 ```
 ]
@@ -237,7 +250,7 @@ ggplot(data = city, aes(x = gender, y = education)) +
 
 Two other useful aesthetics for points are `shape=` and `size=` for plotting the shapes and sizes of points, respectively. 
 
-.pull-left[smallish[
+.pull-left[.smallish[
 ```{r eval=FALSE}
 ggplot(data = city, aes(x = education, y = income)) +
   geom_point(aes(color = party, shape = gender), size = 4)
@@ -245,7 +258,7 @@ ggplot(data = city, aes(x = education, y = income)) +
 ]]
 
 .pull-right[
-```{r echo=FALSE, fig.width=8, fig.height=6, out.width='40%'}
+```{r echo=FALSE, fig.width=8, fig.height=6}
 ggplot(data = city, aes(x = education, y = income)) +
   geom_point(aes(color = party, shape = gender), size = 4)
 ```

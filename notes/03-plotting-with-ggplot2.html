@@ -4,7 +4,7 @@
     <title>Plotting with ggplot2</title>
     <meta charset="utf-8">
     <meta name="author" content="Andrew Zieffler“" />
-    <meta name="date" content="2018-07-06" />
+    <meta name="date" content="2018-09-13" />
     <link href="css/remark-css/default.css" rel="stylesheet" />
     <link href="css/remark-css/metropolis.css" rel="stylesheet" />
     <link href="css/remark-css/metropolis-fonts.css" rel="stylesheet" />
@@ -17,7 +17,7 @@ class: center, middle, inverse, title-slide
 # Plotting with ggplot2
 ## EPsy 8251
 ### Andrew Zieffler“
-### 2018-07-06
+### 2018-09-13
 
 ---
 
@@ -35,7 +35,7 @@ library(ggplot2)
 library(readr)
 
 # Import and view the city data 
-city = read_csv("~/Dropbox/epsy-8251/data/riverside.csv")
+city = read_csv("../data/riverside.csv")
 city
 ```
 
@@ -187,7 +187,8 @@ ggplot(data = city, aes(x = education, y = income, color = gender)) +
   geom_smooth()
 ```
 
-&lt;img src="03-plotting-with-ggplot2_files/figure-html/unnamed-chunk-10-1.png" width="90%" /&gt;
+&lt;img src="03-plotting-with-ggplot2_files/figure-html/unnamed-chunk-11-1.png" width="90%" /&gt;
+
 ]]
 
 
@@ -199,7 +200,7 @@ ggplot(data = city, aes(x = education, y = income)) +
   geom_smooth()
 ```
 
-&lt;img src="03-plotting-with-ggplot2_files/figure-html/unnamed-chunk-11-1.png" width="90%" /&gt;
+&lt;img src="03-plotting-with-ggplot2_files/figure-html/unnamed-chunk-13-1.png" width="90%" /&gt;
 ]]
 
 
@@ -219,7 +220,7 @@ ggplot(data = city, aes(x = education, y = income)) +
 ]]
 
 .pull-right[
-&lt;img src="03-plotting-with-ggplot2_files/figure-html/unnamed-chunk-13-1.png" width="90%" /&gt;
+&lt;img src="03-plotting-with-ggplot2_files/figure-html/unnamed-chunk-15-1.png" width="90%" /&gt;
 ]
 ---
 
@@ -241,12 +242,7 @@ ggplot(data = city, aes(x = education, y = income, color = gender)) +
 ]]
 
 .pull-right[
-
-```
-## Warning: Ignoring unknown parameters: szie
-```
-
-&lt;img src="03-plotting-with-ggplot2_files/figure-html/unnamed-chunk-15-1.png" width="90%" /&gt;
+&lt;img src="03-plotting-with-ggplot2_files/figure-html/unnamed-chunk-17-1.png" width="90%" /&gt;
 ]
 
 ---
@@ -256,7 +252,7 @@ ggplot(data = city, aes(x = education, y = income, color = gender)) +
 - Write the syntax to create this scatterplot.
 - How would we color the points by political party?
 
-&lt;img src="03-plotting-with-ggplot2_files/figure-html/unnamed-chunk-16-1.png" width="50%" /&gt;
+&lt;img src="03-plotting-with-ggplot2_files/figure-html/unnamed-chunk-18-1.png" width="50%" /&gt;
 
 ---
 
@@ -264,7 +260,7 @@ ggplot(data = city, aes(x = education, y = income, color = gender)) +
 
 Two other useful aesthetics for points are `shape=` and `size=` for plotting the shapes and sizes of points, respectively. 
 
-.pull-left[smallish[
+.pull-left[.smallish[
 
 ```r
 ggplot(data = city, aes(x = education, y = income)) +
@@ -273,7 +269,7 @@ ggplot(data = city, aes(x = education, y = income)) +
 ]]
 
 .pull-right[
-&lt;img src="03-plotting-with-ggplot2_files/figure-html/unnamed-chunk-18-1.png" width="40%" /&gt;
+![](03-plotting-with-ggplot2_files/figure-html/unnamed-chunk-20-1.png)&lt;!-- --&gt;
 ]
 
 Notice when we use non-positional aesthetic mappings (e.g., color, shape) a legend will be automatically added to our plot for each aesthetic mapping.
@@ -298,7 +294,7 @@ ggplot(data = city, aes(x = education, y = income)) +
 ]
 
 .pull-right[
-![](03-plotting-with-ggplot2_files/figure-html/unnamed-chunk-20-1.png)&lt;!-- --&gt;
+![](03-plotting-with-ggplot2_files/figure-html/unnamed-chunk-22-1.png)&lt;!-- --&gt;
 ]
 ---
 
@@ -318,7 +314,7 @@ ggplot(data = city, aes(x = education, y = income)) +
 ]
 
 .pull-right[
-&lt;img src="03-plotting-with-ggplot2_files/figure-html/unnamed-chunk-22-1.png" width="90%" /&gt;
+&lt;img src="03-plotting-with-ggplot2_files/figure-html/unnamed-chunk-24-1.png" width="90%" /&gt;
 ]
 
 ---
@@ -340,7 +336,7 @@ ggplot(data = city, aes(x = education, y = income)) +
 ]
 
 .pull-right[
-![](03-plotting-with-ggplot2_files/figure-html/unnamed-chunk-24-1.png)&lt;!-- --&gt;
+![](03-plotting-with-ggplot2_files/figure-html/unnamed-chunk-26-1.png)&lt;!-- --&gt;
 ]
 
 ---
@@ -364,7 +360,7 @@ ggplot(data = city, aes(x = education, y = income)) +
 ]
 
 .pull-right[
-![](03-plotting-with-ggplot2_files/figure-html/unnamed-chunk-26-1.png)&lt;!-- --&gt;
+![](03-plotting-with-ggplot2_files/figure-html/unnamed-chunk-28-1.png)&lt;!-- --&gt;
 ]
 
 ---
@@ -407,7 +403,7 @@ Here, `scale_color_manual()` allows you to manually set the attributes associate
 ]
 
 .pull-right[
-![](03-plotting-with-ggplot2_files/figure-html/unnamed-chunk-29-1.png)&lt;!-- --&gt;
+![](03-plotting-with-ggplot2_files/figure-html/unnamed-chunk-31-1.png)&lt;!-- --&gt;
 ]
 
 ---
@@ -434,7 +430,7 @@ The `name=` argument changes the title of the legend, and the `labels=` argument
 ]
 
 .pull-right[
-![](03-plotting-with-ggplot2_files/figure-html/unnamed-chunk-31-1.png)&lt;!-- --&gt;
+![](03-plotting-with-ggplot2_files/figure-html/unnamed-chunk-33-1.png)&lt;!-- --&gt;
 ]
 
 ---
@@ -526,7 +522,7 @@ ggplot(data = city, aes(x = education, y = income)) +
 ]
 
 .pull-right[
-![](03-plotting-with-ggplot2_files/figure-html/unnamed-chunk-36-1.png)&lt;!-- --&gt;
+![](03-plotting-with-ggplot2_files/figure-html/unnamed-chunk-38-1.png)&lt;!-- --&gt;
 ]
 
 ---
@@ -571,7 +567,7 @@ ggplot(data = city, aes(x = education, y = income)) +
 ]
 
 .pull-right[
-![](03-plotting-with-ggplot2_files/figure-html/unnamed-chunk-39-1.png)&lt;!-- --&gt;
+![](03-plotting-with-ggplot2_files/figure-html/unnamed-chunk-41-1.png)&lt;!-- --&gt;
 ]
 
 ---
@@ -594,7 +590,7 @@ The `theme_bw()` layer is a "built-in" theme that uses a black-and-white backgro
 ]
 
 .pull-right[
-![](03-plotting-with-ggplot2_files/figure-html/unnamed-chunk-41-1.png)&lt;!-- --&gt;
+![](03-plotting-with-ggplot2_files/figure-html/unnamed-chunk-43-1.png)&lt;!-- --&gt;
 ]
 
 ---
@@ -619,7 +615,7 @@ ggplot(data = city, aes(x = education, y = income)) +
 ]
 
 .pull-right[
-![](03-plotting-with-ggplot2_files/figure-html/unnamed-chunk-43-1.png)&lt;!-- --&gt;
+![](03-plotting-with-ggplot2_files/figure-html/unnamed-chunk-45-1.png)&lt;!-- --&gt;
 ]
 
 ---
@@ -643,7 +639,7 @@ ggplot(data = city, aes(x = education, y = income)) +
 ]
 
 .pull-right[
-![](03-plotting-with-ggplot2_files/figure-html/unnamed-chunk-45-1.png)&lt;!-- --&gt;
+![](03-plotting-with-ggplot2_files/figure-html/unnamed-chunk-47-1.png)&lt;!-- --&gt;
 ]
 
 ---
@@ -672,7 +668,7 @@ The `labels=dollar` option is a built-in formatter from the **scales** package t
 ]
 
 .pull-right[
-![](03-plotting-with-ggplot2_files/figure-html/unnamed-chunk-47-1.png)&lt;!-- --&gt;
+![](03-plotting-with-ggplot2_files/figure-html/unnamed-chunk-49-1.png)&lt;!-- --&gt;
 ]
 
 ---
@@ -713,7 +709,7 @@ ggplot(data = city, aes(x = education, y = income)) +
 
 *Figure 1.* Relationship between annual income (in U.S. dollars) and years of education for n=32 employees of the City of Riverside. This relationship is shown for both males and females.
 
-![](03-plotting-with-ggplot2_files/figure-html/unnamed-chunk-50-1.png)&lt;!-- --&gt;
+![](03-plotting-with-ggplot2_files/figure-html/unnamed-chunk-52-1.png)&lt;!-- --&gt;
 
 
 `#protip:` It is easier to use a word-processor (e.g., MS Word) to add the figure title and caption than to try and get it formatted correctly using R. 
@@ -740,7 +736,7 @@ city %&gt;%
 
 *Figure 2.* Relationship between annual income (in U.S. dollars) and years of education for n=18 female employees of the City of Riverside.
 
-&lt;img src="03-plotting-with-ggplot2_files/figure-html/unnamed-chunk-52-1.png" width="70%" /&gt;
+&lt;img src="03-plotting-with-ggplot2_files/figure-html/unnamed-chunk-54-1.png" width="70%" /&gt;
 ]
 
 ---
@@ -770,12 +766,23 @@ if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
   d.head.appendChild(s);
 })();</script>
 
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-  tex2jax: {
-    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+<script>
+(function() {
+  var i, text, code, codes = document.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
   }
-});
+})();
 </script>
 <!-- dynamically load mathjax for compatibility with self-contained -->
 <script>
