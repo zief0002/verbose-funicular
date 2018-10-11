@@ -1,0 +1,20 @@
+---
+title: "Reading"
+subtitle: "Multiple Regression"
+output: html_document
+---
+
+<br />
+
+## Required
+
+- Lewis-Beck &amp; Lewis-Beck [Chap. 3]
+
+<br />
+<br />
+
+## Optional
+
+Additional resources:
+
+- [Confounding Variables](http://www.icpsr.umich.edu/icpsrweb/instructors/setups2008/exercises/notes/confounding.jsp) [short web article]

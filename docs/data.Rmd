@@ -22,9 +22,23 @@ Below are the data sets used in the notes, scripts, and assignments.
 
 <tbody>
 
+<!--
 <tr>
 <td>beauty.csv</td>
 <td><font color="f1f1f1"><a href="https://github.com/zief0002/epsy-8251/raw/master/data/beauty.csv"><i class="fas fa-database fa-lg"></i></a></font></td>
+<td></td>
+</tr>
+-->
+
+<tr>
+<td>college-bordering-mn.csv</td>
+<td><font color="f1f1f1"><a href="https://github.com/zief0002/epsy-8251/raw/master/data/college-bordering-mn.csv"><i class="fas fa-database fa-lg"></i></a></font></td>
+<td></td>
+</tr>
+
+<tr>
+<td>evaluations.csv</td>
+<td><font color="f1f1f1"><a href="https://github.com/zief0002/epsy-8251/raw/master/data/evaluations.csv"><i class="fas fa-database fa-lg"></i></a></font></td>
 <td></td>
 </tr>
 
