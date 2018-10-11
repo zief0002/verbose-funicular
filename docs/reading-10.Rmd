@@ -1,6 +1,6 @@
 ---
 title: "Reading"
-subtitle: "Interaction Models"
+subtitle: "Categorical Predictors II"
 output: html_document
 ---
 
@@ -16,7 +16,7 @@ output: html_document
 
 Additional resources:
 
-- Long, J. D. (2012). _Longitudinal data analysis for the behavioral sciences using R_. Thousand Oaks, CA: Sage. [[Amazon]](http://www.amazon.com/Longitudinal-Analysis-Behavioral-Sciences-Using/dp/1412982685)
-- Swihart, B. J., Caffo, B., James, B. D., Strand, M., Schwartz, B. S., &amp; Punjabi, N. M. (2010). [Lasagna plots: A saucy alternative to spaghetti plots.](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2937254/) *Epidemiology, 21*(5), 621&ndash;625.
-
+- Gelman, A., Hill, J., & Yajima, M. (2012). [Why we (usually) don’t have to worry about multiple comparisons](http://www.stat.columbia.edu/~gelman/research/published/multiple2f.pdf). _Journal of Research on Educational Effectiveness, 5_, 189&ndash;211.
+- [Add p-Values and Significance Levels to ggplots](http://www.sthda.com/english/wiki/add-p-values-and-significance-levels-to-ggplots) [web article]
+- [Science isn't Broken](https://fivethirtyeight.com/features/science-isnt-broken/#part1) [web article]
 
