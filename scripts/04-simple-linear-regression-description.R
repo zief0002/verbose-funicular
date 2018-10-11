@@ -20,6 +20,8 @@ head(city)
 tail(city)
 
 
+options(scipen = 9999)
+
 
 ##################################################
 ### Examine outcome/response
@@ -30,7 +32,8 @@ sm.density(city$income)
 city %>% 
   summarize(
     M = mean(income), 
-    SD = sd(income)
+    SD = sd(income),
+    Med = median(income)
     )
 
 
@@ -39,7 +42,7 @@ city %>%
 ### Examine predictor
 ##################################################
 
-sm.density(city$education)
+sm.density(city$education, xlab = "Education")
 
 city %>% 
   summarize(
@@ -54,7 +57,7 @@ city %>%
 ##################################################
 
 ggplot(data = city, aes(x = education, y = income)) + 
-  geom_point() +
+  geom_point(size = 5) +
   theme_bw() +
   xlab("Education (in years)") +
   ylab("Income (in U.S. dollars)")
