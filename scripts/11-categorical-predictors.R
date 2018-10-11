@@ -17,7 +17,7 @@ library(tidyr)
 ### Read in data
 ##################################################
 
-mn = read_csv(file = "~/Documents/github/epsy-8251/data/mnSchools.csv")
+mn = read_csv(file = "~/Documents/github/epsy-8251/data/mn-schools.csv")
 head(mn)
 
 
