@@ -29,7 +29,7 @@ head(mn)
 
 # Scatterplot
 ggplot(data = mn, aes(x = as.factor(public), y = gradRate)) +
-  geom_point() +
+  geom_point(size = 5) +
   theme_bw() +
   scale_x_discrete(name = "Educational sector", labels = c("Private", "Public")) +
   ylab("Six-year graduation rate")

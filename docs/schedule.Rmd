@@ -149,6 +149,24 @@ Below is the tenative schedule for the class. The dates are subject to change at
 <td align="center"><font color="f1f1f1"><a href="https://raw.githubusercontent.com/zief0002/epsy-8251/master/scripts/12-more-categorical-predictors.R"><i class="fas fa-code fa-lg"></i></a></font></td>
 </tr>
 
+<tr>
+<td>Nov. 27/26</td>
+<td>Nov. 29/28</td>
+<td>Interaction Models I</td>
+<td align="center"><font color="f1f1f1"><a href="reading-11.html"><i class="fa fa-book fa-lg"></i></a></font></td>
+<td align="center"><font color="f1f1f1"><a href="https://github.com/zief0002/epsy-8251/raw/master/notes/13-introduction-to-interaction-models.pdf"><i class="fas fa-file-pdf  fa-lg"></i></a></font></td>
+<td align="center"><font color="f1f1f1"><a href="https://raw.githubusercontent.com/zief0002/epsy-8251/master/scripts/13-introduction-to-interaction-models.R"><i class="fas fa-code fa-lg"></i></a></font></td>
+</tr>
+
+<tr>
+<td>Dec. 04/03</td>
+<td>Dec. 06/05</td>
+<td>Interaction Models II</td>
+<td align="center"><font color="f1f1f1"><i class="fa fa-book fa-lg"></i></font></td>
+<td align="center"><font color="f1f1f1"><a href="https://github.com/zief0002/epsy-8251/raw/master/notes/14-more-interaction-models.pdf"><i class="fas fa-file-pdf  fa-lg"></i></a></font></td>
+<td align="center"><font color="f1f1f1"><a href="https://raw.githubusercontent.com/zief0002/epsy-8251/master/scripts/14-more-interaction-models.R"><i class="fas fa-code fa-lg"></i></a></font></td>
+</tr>
+
 </tbody>
 </table>    
 

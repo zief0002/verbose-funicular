@@ -13,7 +13,7 @@ library(sm)
 ### Read in the data
 ###################################################
 
-mn = read_csv(file = "~/Documents/github/epsy-8251/data/mnSchools.csv")
+mn = read_csv(file = "~/Documents/github/epsy-8251/data/mn-schools.csv")
 head(mn)
 
 
@@ -44,13 +44,13 @@ out = augment(lm.1)
 
 
 # Examine assumption of linearity
-ggplot(data = out, aes(x = .fitted, y = .std.resid)) +
-  geom_point() +
+ggplot(data = out, aes(x = sat, y = .std.resid)) +
+  geom_point(size = 5) +
   geom_hline(yintercept = 0) +
-  geom_smooth() +
+  geom_smooth(se = FALSE) +
   theme_bw()
 
-
+sm::sm.density(out$.std.resid, model = "normal")
 
 
 ###################################################
