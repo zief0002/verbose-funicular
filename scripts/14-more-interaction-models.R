@@ -2,10 +2,14 @@
 ### Load libraries
 ##################################################
 
+library(broom)
+library(corrr)
+library(dotwhisker)
 library(dplyr)
 library(ggplot2)
 library(readr)
 library(sm)
+library(tidyr)
 
 
 
@@ -13,8 +17,8 @@ library(sm)
 ### Read in the data
 ###################################################
 
-beauty = read_csv(file = "~/Documents/github/epsy-8251/data/beauty.csv")
-head(beauty)
+evals = read_csv(file = "~/Documents/github/epsy-8251/data/evaluations.csv")
+head(evals)
 
 
 
@@ -22,12 +26,16 @@ head(beauty)
 ### Examine data
 ##################################################
 
-summary(beauty)
+summary(evals)
 
 
 # Discretize the age variable into 3 categories
-beauty = beauty %>% mutate( age_discrete = cut(beauty$age, breaks = 3) )
-summary(beauty)
+evals = evals %>%
+  mutate(
+    age_discrete = cut(age, breaks = 3)
+  )
+
+summary(evals)
 
 
 
@@ -36,13 +44,13 @@ summary(beauty)
 ### Examine effect of age
 ##################################################
 
-ggplot(data = beauty, aes(x = btystdave, y = avgeval, color = age_discrete)) + 
-  geom_point(alpha = 0.6) +
+ggplot(data = evals, aes(x = beauty, y = avg_eval, color = age_discrete)) +
+  geom_point(alpha = 0.4) +
   geom_smooth(method = "lm", se = FALSE) +
   theme_bw() +
   xlab("Beauty rating") +
   ylab("Average course evaluation score") +
-  scale_color_brewer(palette = "Set2") + 
+  scale_color_brewer(palette = "Set2") +
   facet_wrap(~age_discrete)
 
 
@@ -51,23 +59,15 @@ ggplot(data = beauty, aes(x = btystdave, y = avgeval, color = age_discrete)) +
 ### Fit interaction model
 ##################################################
 
-lm.1 = lm(avgeval ~ 1 + btystdave + age + btystdave:age, data = beauty) 
-summary(lm.1)
+# Fit model
+lm.1 = lm(avg_eval ~ 1 + beauty + age + beauty:age, data = evals)
 
+# Model-level output
+glance(lm.1)
 
+# Coefficient-level output
+tidy(lm.1)
 
-##################################################
-### Delta F-test for nested models
-##################################################
-
-# Fit main-effects model
-lm.me = lm(avgeval ~ 1 + btystdave + age, data = beauty)
-
-# Fit interaction model
-lm.int = lm(avgeval ~ 1 + btystdave + age + btystdave:age, data = beauty)
-
-# Test effects
-anova(lm.me, lm.int)
 
 
 
@@ -76,24 +76,30 @@ anova(lm.me, lm.int)
 ##################################################
 
 # Create new data set with main effects
-myData = expand.grid(
-  btystdave = seq(from = -1.6, to = 1.9, by = 0.1), 
+plot_data = crossing(
+  beauty = seq(from = -1.6, to = 1.9, by = 0.1),
   age = c(40, 50, 60)
 )
 
-
 # Use fitted model to compute fitted values for the data
-myData = myData %>% mutate( yhat = predict(lm.1, newdata = myData) ) 
-head(myData)
+plot_data = plot_data %>% 
+  mutate(
+    yhat = predict(lm.1, newdata = plot_data)
+  )
 
+head(plot_data)
 
 # Plot the fitted model
-ggplot(data = myData, aes(x = btystdave, y = yhat, color = factor(age))) + 
+ggplot(data = plot_data, aes(x = beauty, y = yhat, color = factor(age))) +
   geom_line() +
   theme_bw() +
   xlab("Beauty score") +
   ylab("Predicted average course evaluation score") +
-  scale_color_brewer(name = "Age", palette = "Set1", labels = c("40 years old", "50 years old", "60 years old")) +
+  scale_color_brewer(
+    name = "Age", 
+    palette = "Set1", 
+    labels = c("40 years old", "50 years old", "60 years old")
+  ) +
   ylim(0, 5)
   
   
@@ -102,7 +108,7 @@ ggplot(data = myData, aes(x = btystdave, y = yhat, color = factor(age))) +
 ### Interpret interaction model effects
 ##################################################
 
-summary(lm.1)
+tidy(lm.1)
 
 
 
@@ -110,8 +116,14 @@ summary(lm.1)
 ### Include covariates in the model
 ##################################################
 
-lm.2 = lm(avgeval ~ 1 + btystdave + age + female + btystdave:age, data = beauty) 
-summary(lm.2)
+# Fit model
+lm.2 = lm(avg_eval ~ 1 + beauty + age + female + beauty:age, data = evals)
+
+# Model-level output
+glance(lm.2)
+
+# Coefficient-level output
+tidy(lm.2)
 
 
 
@@ -120,41 +132,35 @@ summary(lm.2)
 ##################################################
 
 # Create new data set with main effects
-myData = expand.grid(
-  btystdave = seq(from = -1.6, to = 1.9, by = 0.1), age = c(40, 60),
+plot_data = crossing(
+  beauty = seq(from = -1.6, to = 1.9, by = 0.1),
+  age = c(40, 50, 60),
   female = c(0, 1)
 )
 
-
 # Use fitted model to compute fitted values for the data
-myData = myData %>% mutate( yhat = predict(lm.2, newdata = myData) )
-
-
-# Convert female and age into factors for better plotting
-myData = myData %>% 
-  mutate(Sex = factor(female, 
-                      levels = c(0, 1), 
-                      labels = c("Males", "Females")
-                      )
+plot_data = plot_data %>% 
+  mutate(
+    yhat = predict(lm.2, newdata = plot_data),
+    age = factor(age),
+    female = factor(female, levels = c(0, 1), labels = c("Male", "Female"))
   )
 
-myData = myData %>% 
-  mutate(Age = factor(age, 
-                      levels = c(40, 60), 
-                      labels = c("40 year olds", "60 year olds")
-                      )
-  )
+head(plot_data)
 
-head(myData)
-
-              
 # Plot the fitted model
-ggplot(data = myData, aes(x = btystdave, y = yhat, color = Age, linetype = Sex)) + 
+ggplot(data = plot_data, aes(x = beauty, y = yhat, color = age)) +
   geom_line() +
   theme_bw() +
   xlab("Beauty score") +
-  ylab("Predicted average course evaluation score") + 
-  scale_color_brewer(name = "Age", palette = "Set1")                                                                                                                                      
+  ylab("Predicted average course evaluation score") +
+  scale_color_brewer(
+    name = "Age", 
+    palette = "Set1", 
+    labels = c("40 years old", "50 years old", "60 years old")
+  ) +
+  ylim(0, 5) +
+  facet_wrap(~female)                                                                                                                                    
 
 
 
@@ -162,10 +168,16 @@ ggplot(data = myData, aes(x = btystdave, y = yhat, color = Age, linetype = Sex))
 ### Higher order interactions
 ##################################################
 
-lm.3 = lm(avgeval ~ 1 + btystdave + age + female + 
-            btystdave:age + btystdave:female + female:age + 
-            btystdave:age:female, data = beauty)
-summary(lm.3)
+# Fit model
+lm.3 = lm(avg_eval ~ 1 + beauty + age + female + 
+            beauty:age + beauty:female + female:age + 
+            beauty:age:female, data = evals)
+
+# Model-level output
+glance(lm.3)
+
+# Coefficient-level output
+tidy(lm.3)
             
             
 
@@ -174,38 +186,42 @@ summary(lm.3)
 ##################################################
 
 # Create new data set with main effects
-myData = expand.grid(
-  btystdave = seq(from = -1.6, to = 1.9, by = 0.1),
+plot_data = crossing(
+  beauty = seq(from = -1.6, to = 1.9, by = 0.1),
   age = c(40, 60),
   female = c(0, 1)
 )
 
 # Use fitted model to compute fitted values for the data
-myData = myData %>% mutate( yhat = predict(lm.3, newdata = myData) )
+plot_data = plot_data %>% 
+  mutate(
+    yhat = predict(lm.3, newdata = plot_data)
+  )
 
 # Convert female and age into factors for better plotting
-myData = myData %>% 
-  mutate(Sex = factor(myData$female, 
-                      levels = c(0, 1), 
-                      labels = c("Males", "Females")
-                      )
+plot_data = plot_data %>%
+  mutate(
+    Sex = factor(female, levels = c(0, 1), labels = c("Males", "Females")),
+    Age = factor(age, levels = c(40, 60), labels = c("40 year olds", "60 year olds"))
   )
 
-myData = myData %>% 
-  mutate(age = factor(myData$age, 
-                      levels = c(40, 60), 
-                      labels = c("40 year olds", "60 year olds")
-                      )
-  )
-
-head(myData)
+head(plot_data)
 
 # Plot the fitted model
-ggplot(data = myData, aes(x = btystdave, y = yhat, color = age)) +
+ggplot(data = plot_data, aes(x = beauty, y = yhat, color = Age)) +
   geom_line() +
   theme_bw() +
   xlab("Beauty score") +
   ylab("Predicted average course evaluation score") +
   scale_color_brewer(name = "Age", palette = "Set1") +
   facet_wrap(~Sex)
+
+# Plot 2
+ggplot(data = plot_data, aes(x = beauty, y = yhat, color = Sex)) +
+  geom_line() +
+  theme_bw() +
+  xlab("Beauty score") +
+  ylab("Predicted average course evaluation score") +
+  scale_color_brewer(name = "Age", palette = "Set1") +
+  facet_wrap(~Age)
 
