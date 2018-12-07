@@ -1,0 +1,130 @@
+﻿rank,school,score,peer,expert_score,gre_verbal,gre_quant,doc_accept,phd_student_faculty_ratio,phd_granted_per_faculty,funded_research,funded_research_per_faculty,enroll
+1, Harvard University (MA),100,4.4,4.6,163,159,4.5,3.8,0.9,33.60,764.70,866
+2, Stanford University (CA),99,4.6,4.8,162,160,6.1,3.1,0.6,32.00,603.20,339
+3, University of California—Los Angeles,96,4.2,4.3,156,152,29.1,7.7,1.4,52.00,1239.10,674
+3, University of Pennsylvania,96,4.1,4.5,163,157,5,1.4,0.3,46.40,663.10,1106
+3, University of Wisconsin—Madison,96,4.3,4.5,155,153,26.1,3.1,0.4,78.60,491.10,1080
+6, Johns Hopkins University (MD),95,4.1,4.1,164,162,27.4,1.4,0.2,42.80,620.60,2393
+7," Teachers College, Columbia University (NY)",94,4.3,4.5,159,156,11.4,4.4,1.2,60.10,401.00,4892
+7, Vanderbilt University (Peabody) (TN),94,4.5,4.6,162,159,4.9,2.2,0.6,35.60,423.70,902
+9, University of Washington,92,4,4.4,155,152,23.7,3.6,0.9,42.40,831.50,1019
+10, Northwestern University (IL),89,3.9,4.3,162,158,8.3,1.9,0.3,23.40,709.30,329
+11, Arizona State University,88,3.6,3.8,157,150,20.1,1.7,0.5,60.10,607.20,2778
+11, University of Texas—Austin,88,4,4.3,155,153,26.5,5,0.7,57.00,527.80,1052
+13, New York University (Steinhardt),86,3.9,4.3,158,152,7.3,2.7,0.7,43.20,591.60,1431
+14, University of Oregon,85,3.6,4,156,153,16.5,3.8,1,37.50,915.20,544
+15, University of Michigan—Ann Arbor,81,4.4,4.6,154,152,15.1,4.6,0.7,18.90,378.00,526
+15, University of Southern California (Rossier),81,3.9,4.3,161,157,13.2,11.7,8.4,25.10,1196.80,1598
+17, University of Kansas,78,3.8,4.2,156,150,46.1,4.8,0.7,41.00,532.70,1390
+18, Ohio State University,77,3.8,4.3,157,155,41,3.4,0.5,30.00,248.30,1174
+18, University of California—Berkeley,77,4.2,4.6,157,154,8.4,7.4,1,11.60,446.50,303
+18, University of Virginia (Curry),77,4,4.3,159,154,16.4,2.3,0.7,22.30,323.70,983
+21, Michigan State University,76,4.2,4.5,156,152,37.4,4.7,1.1,28.70,263.20,1639
+21, University of Minnesota—Twin Cities,76,3.7,3.9,157,153,27.6,3.7,1.3,46.40,383.80,2164
+23, Boston College (Lynch) (MA),72,3.7,4.2,159,156,8,2.7,0.9,17.60,319.40,769
+24, University of Illinois—Urbana-Champaign,70,4,4.1,155,160,24.8,4.4,1,14.50,190.30,809
+25, University of California—Irvine,68,3.5,3.8,156,155,17.8,3,0.6,12.30,492.60,190
+26, Utah State University,67,2.9,3.2,155,153,25.2,1.1,0.3,46.70,362.00,876
+27, University of Connecticut (Neag),66,3.6,4.1,157,155,42.6,2.1,0.3,15.20,226.40,759
+27, University of Pittsburgh (PA),66,3.6,3.8,152,147,50,4.8,0.7,26.10,457.80,987
+29, University of Colorado—Boulder,65,3.6,3.9,161,154,17.2,2.5,0.6,7.70,239.80,355
+29, University of Florida,65,3.7,3.8,155,153,56.5,4.5,1.3,25.10,380.40,1146
+31, University of North Carolina—Chapel Hill,64,3.9,4.3,160,155,27.8,4.7,0.9,6.20,155.00,398
+32, Indiana University—Bloomington,63,3.8,4.1,153,150,47.2,3.1,0.9,18.60,208.90,869
+32, University of Delaware,63,3.3,3.4,155,156,40,1.8,0.4,14.70,407.20,274
+32, University of Maryland—College Park,63,3.9,4,159,155,23.9,4.1,0.8,8.10,96.20,905
+35, University of Georgia,61,3.7,4.2,154,152,33.7,3,0.7,13.00,80.10,1614
+36, Boston University (MA),60,3.5,3.8,163,156,25.4,2.4,0.7,3.70,146.10,561
+36, University of California—Davis,60,3.6,4.1,154,149,35,4.2,0.9,8.70,311.40,423
+38, George Washington University (DC),59,3.4,4,164,158,58.8,4.3,1.5,9.30,175.50,1514
+38, Pennsylvania State University—University Park,59,3.9,4.4,154,154,46.3,3.6,1,3.40,28.80,1656
+38, Texas A&M University—College Station,59,3.5,4,151,152,54.5,3.5,1,22.90,212.10,1643
+41, University of Massachusetts—Amherst,58,3.5,3.8,156,155,49.1,3.5,0.3,8.00,131.40,549
+41, Virginia Commonwealth University,58,3,3.6,154,148,65.4,2.4,0.8,24.70,588.80,807
+43, University of Iowa,57,3.5,4,153,153,44.9,5,0.9,11.90,198.00,631
+43, University of Missouri,57,3.4,3.7,153,151,22.2,4.9,1,16.20,215.70,1373
+43, University of Nebraska—Lincoln,57,3.5,3.5,154,150,25.8,2.6,1,16.80,212.50,978
+46, College of William and Mary (VA),56,3.4,4,156,152,56.5,2.3,0.8,6.70,171.00,536
+46, Purdue University—West Lafayette (IN),56,3.5,3.8,153,151,50.9,2,0.3,10.90,141.00,750
+48, Fordham University (NY),55,3,3.4,166,167,38.1,4.6,2,7.20,247.00,850
+48, Georgia State University,55,3,3.5,156,151,17.3,2.4,0.6,22.50,198.70,1327
+48, Temple University (PA),55,3.3,3.6,155,150,30.3,4.3,1.2,12.40,287.80,1004
+48, University of Illinois—Chicago,55,3.5,3.6,151,148,36.7,3.2,1,11.40,270.30,659
+52, Florida State University,54,3.3,3.7,150,151,37.9,4.1,0.9,13.30,181.90,1062
+52, Rutgers University,54,3.5,3.8,153,148,55,2.5,0.9,8.50,188.90,1068
+52, University of California—Santa Barbara (Gevirtz),54,3.4,3.8,156,152,17.3,4.1,1.2,3.80,87.10,273
+55, North Carolina State University—Raleigh,53,3.3,3.4,154,151,42.1,2.7,0.7,14.60,196.80,1034
+55, Washington University in St. Louis (MO),53,3.4,3.7,155,155,13,1.2,0.3,0.10,5.70,29
+57, Boise State University (ID),52,2.7,3.3,159,152,23.2,0.9,0.2,9.70,201.90,1801
+57, San Diego State University (CA),52,3.2,3.4,149,143,54.1,1.1,0.4,22.50,341.40,1378
+57, Syracuse University (NY),52,3.4,3.8,153,150,33.3,2.5,0.6,5.00,92.20,567
+57, University of Arizona,52,3.7,3.9,153,147,72.6,3.6,0.8,7.10,122.00,757
+57, University of Vermont,52,3.2,3.4,157,151,60,1,0.3,7.60,210.60,276
+62, George Mason University (VA),51,3.2,3.6,154,150,64.1,2.6,0.6,12.90,179.40,2286
+62, Loyola Marymount University (CA),51,2.9,3.7,155,152,29,2.1,0.8,6.70,216.00,1375
+62, University of Kentucky,51,3.2,3.3,154,149,49,3.2,0.5,19.90,223.90,807
+62, University of Tennessee—Knoxville,51,3.2,3.8,155,150,51.1,1.5,0.5,10.10,98.20,782
+66, University at Albany—SUNY (NY),50,3.2,3.6,153,153,35.2,2.3,0.7,5.70,98.20,852
+66, University of Arkansas—Fayetteville,50,2.8,3.1,154,150,17,2.8,0.5,21.00,239.00,612
+66, University of Utah,50,3.3,3.6,152,151,38.8,3.5,0.6,7.70,140.70,671
+69, University of California—San Diego,49,3.5,3.8,153,145,26.9,3.7,1.5,1.00,73.00,147
+69, University of Hawaii—Manoa,49,3,3.2,152,149,66.4,0.9,0.2,17.50,157.50,888
+69, University of North Carolina—Charlotte,49,3.2,3.6,155,149,58.6,1.4,0.3,8.50,96.40,1409
+72, Southern Illinois University—Carbondale,48,2.6,3.1,150,151,34.2,2.2,0.6,19.40,299.20,835
+72, University of California—Riverside,48,3.4,3.4,153,150,21.6,2.7,0.6,1.00,53.70,259
+74, Clemson University (SC),47,3.1,3.7,153,147,51.5,1.5,0.4,4.90,85.20,576
+74, Lehigh University (PA),47,2.7,3.3,156,150,18.3,3.4,0.8,6.10,209.80,503
+74, University of Massachusetts—Boston,47,3.1,3.1,155,151,36.5,1.7,0.3,4.90,102.70,835
+77, University of Northern Iowa,46,2.7,3.1,161,162,68.8,0.3,0,0.50,3.90,556
+77, University of Oklahoma (Rainbolt),46,3.1,3.6,152,145,39.4,3.8,0.5,7.10,117.90,765
+77, University of Wisconsin—Milwaukee,46,3.1,3.6,154,151,31.4,2.1,0.3,2.80,46.10,635
+80, Brigham Young University—Provo (McKay) (UT),45,2.9,3.3,157,153,28.2,1.4,0.2,1.00,11.70,326
+80, Iowa State University,45,3.1,3.9,152,146,48.1,1.5,0.5,1.80,40.30,324
+80, University at Buffalo—SUNY (NY),45,3.1,3.6,151,150,53.6,4.8,1,3.50,77.20,1010
+80, University of Miami (FL),45,3.1,3.6,153,147,26.3,3.9,0.6,3.30,103.00,490
+80, University of North Carolina—Greensboro,45,3.1,3.5,155,149,31.2,3,0.8,3.80,54.40,914
+85, Kansas State University,44,2.9,3.5,153,147,82.9,2.3,0.5,7.70,174.80,943
+85, Loyola University Chicago (IL),44,3.1,3.3,155,152,23.9,5.1,1.4,2.50,72.90,664
+85, University of Louisville (KY),44,3,3.3,154,149,38.4,1.8,0.3,4.40,63.10,1322
+85, Virginia Tech,44,3.1,3.9,152,149,69,4.4,1.3,4.80,100.80,671
+89, Auburn University (AL),43,3.3,3.4,149,147,45,3.1,0.8,5.50,61.70,972
+89, Baylor University (TX),43,2.9,3.5,156,150,35.7,1.4,0.4,0.40,13.40,174
+89, University of Cincinnati (OH),43,2.9,3.2,153,150,38.1,1.8,0.5,6.80,90.90,1439
+89, University of San Diego (CA),43,2.9,3.3,155,149,49.3,1.9,0.7,4.30,135.90,825
+93, Montclair State University (NJ),42,2.8,3.4,152,145,42.9,0.6,0.1,5.50,47.80,2212
+93, St. John's University (NY),42,2.7,3,163,165,92.7,2.5,1.1,2.40,55.00,1352
+93, University of Alabama,42,3.2,3.2,152,148,52.1,3.4,0.8,5.20,60.90,962
+93, University of Houston (TX),42,3,3.2,153,148,31.2,3.9,1.5,5.60,104.20,655
+93, University of South Carolina,42,3.1,3.6,151,148,51.6,3,0.7,3.00,38.60,1281
+93, University of South Florida,42,2.9,3,150,147,69.8,3.6,0.7,14.90,163.60,1159
+99, Kent State University (OH),41,2.9,3.4,151,149,41.8,3.1,0.5,5.80,51.90,1607
+99, University of Central Florida,41,2.9,3,154,150,43.1,2.6,1.1,5.70,79.70,1646
+101, Ball State University (IN),40,2.9,3.2,153,149,56.6,1.7,0.5,3.50,41.20,3303
+101, Marquette University (WI),40,2.9,3.2,158,148,75,0.9,0.1,0.10,9.00,141
+101, Miami University (OH),40,3.1,3.7,,,44.7,1.5,N/A,1.20,15.70,722
+101, New Mexico State University,40,2.6,2.4,156,152,47.1,2.4,0.5,13.30,221.10,705
+101, Portland State University (OR),40,2.9,3,,,62.5,1,0.4,7.40,163.40,1226
+101, University of Alabama—Birmingham,40,2.9,2.9,149,144,65.4,0.9,0.3,4.80,110.50,730
+101, University of California—Santa Cruz,40,2.7,3.1,157,147,42.4,2.8,0.6,1.40,117.90,111
+101, University of Dayton (OH),40,2.7,3.1,157,144,33.3,1.5,0.2,3.50,68.00,613
+101, University of Maine,40,3,3.1,154,147,86.4,1,0.3,0.90,36.30,414
+101, University of Mississippi,40,2.8,3.3,148,145,70.4,2,0.3,9.10,190.00,603
+101, University of Missouri—Kansas City,40,2.9,3.3,,,20.2,1.6,0.4,,,434
+112, Appalachian State University (NC),39,2.5,3.1,156,147,81.8,0,0,2.10,2.90,881
+112, Louisiana State University—Baton Rouge,39,3.1,3.5,149,142,64.4,2.4,0.7,,,725
+112, Old Dominion University (Darden) (VA),39,2.7,3.1,150,147,71.2,1.7,0.5,12.10,124.70,1514
+112, Texas Tech University,39,2.8,3.4,151,146,51.2,4.5,1.2,9.40,153.50,1426
+112, University of Nevada—Reno,39,2.6,2.8,154,147,81.8,1.4,0.5,9.10,228.40,540
+112, University of Texas—Arlington,39,2.8,3.4,150,146,48.6,1.2,0.2,0.60,19.90,2004
+112, University of Wyoming,39,2.8,3.3,156,149,70,1.7,0.4,2.80,52.40,563
+112, Wayne State University (MI),39,2.7,2.9,152,150,12.9,3.2,0.8,4.00,82.70,1419
+120, Claremont Graduate University (CA),38,3.1,3.7,152,145,67,11.3,2.7,1.70,130.80,383
+120, Howard University (DC),38,3,3.3,148,142,48.9,3.3,0.6,2.20,76.10,231
+120, Illinois State University,38,2.7,3.1,150,148,84.2,0.8,0.2,8.80,62.20,881
+120, Mills College (CA),38,2.7,3.4,,,85.2,3.3,0.5,2.70,248.40,202
+120, Ohio University,38,3,3.4,149,145,43,1.7,0.6,1.40,21.90,826
+120, Pennsylvania State University—Harrisburg,38,2.8,3.3,,,100,1.8,0.3,1.80,252.00,130
+120, University of Colorado—Denver,38,3.1,3.1,,,75,5.1,0.6,5.50,142.20,1323
+120, University of South Dakota,38,2.8,3.3,150,146,47.6,1.6,0.9,2.60,79.90,484
+120, Western Michigan University,38,2.8,3,152,147,34,1.7,0.4,3.70,38.40,1371
+120, West Virginia University,38,2.8,3,152,148,39.8,1.8,0.7,3.10,58.50,788

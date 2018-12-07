@@ -45,12 +45,17 @@ These source of these data is: [http://www.collegeresults.org](http://www.colleg
 
 
 ```{r message=FALSE}
-mn = read.csv(file = "~/Dropbox/epsy-8251/data/mnSchools.csv")
-head(mn)
-
 # Load libraries
+library(broom)
+library(dplyr)
 library(ggplot2)
+library(readr)
 library(sm)
+library(tidyr)
+
+# Read in data
+mn = read_csv(file = "~/Documents/github/epsy-8251/data/mn-schools.csv")
+head(mn)
 ```
 
 # Examine Relationship between Graduation Rate and SAT Scores
@@ -77,14 +82,16 @@ Sometimes, the nonlinear relationship is difficult to detect from the scatterplo
 lm.1 = lm(gradRate ~ 1 + sat, data = mn)
 
 # Obtain residuals
-out = fortify(lm.1)
+out = augment(lm.1)
 
 # Examine residuals for linearity
-ggplot(data = out, aes(x = .fitted, y = .stdresid)) +
+ggplot(data = out, aes(x = .fitted, y = .std.resid)) +
   geom_point() +
   geom_hline(yintercept = 0) +
-  geom_smooth() +
-  theme_bw()
+  geom_smooth(se = FALSE) +
+  theme_bw() +
+  xlab("Fitted values") +
+  ylab("Standardized residuals")
 ```
 
 This plot suggests that the assumption of linearity may be violated. There is systematic over-estimation for low fitted values, systematic under-estimation for moderate fitted values, and systematic over-estimation for high fitted values.
@@ -100,12 +107,22 @@ $$
 So the quadratic term, $x^2$ is a product of $x$ times itself. Recall that products are how we express interactions. Thus the quadratic term of $x^2$ is really the interaction of $x$ with itself. To model this, we simply (1) create the product term, and (2) include the product term and all constituent main-effects in the regression model.
 
 ```{r}
-mn$sat_quadratic = mn$sat * mn$sat
+# Create quadratic term in the data
+mn = mn %>%
+  mutate(
+    sat_quadratic = sat * sat
+  )
+
 head(mn)
 
 # Fit model
 lm.2 = lm(gradRate ~ 1 + sat + sat_quadratic, data = mn)
-summary(lm.2)
+
+# Model-level output
+glance(lm.2)
+
+# Coefficient-level output
+tidy(lm.2)
 ```
 
 Since this is an interaction model, we start by examining the interaction term; the quadratic coefficient. This term is statistically reliable ($p=.008$), suggesting that the quadratic term explains variation above and beyond the linear term. This suggests that we should keep the quadratic term in the model.
@@ -127,24 +144,32 @@ From algebra, you may remember that the coefficient in front of the quadratic te
 Before we create the plot, we use a different method of fitting polynomial terms in a regression. Rather than create a new variable in the data set, we insert the polynomial directly into the model using the `I()` function.
 
 ```{r}
+# Fit model using I() function
 lm.2 = lm(gradRate ~ 1 + sat + I(sat ^ 2), data = mn)
-summary(lm.2)
+
+# Model-level output
+glance(lm.2)
+
+# Coefficient-level output
+tidy(lm.2)
 ```
 
 The `I()` function forces R to create a separate term for the quadratic (which is essentially what we do by adding the product term to the model). Without it, R will do the computation `sat + sat^2` and use those values as a single variable\ldots not what we want. The other advantage for plotting is that we have only used a single predictor, `sat` in specifying the model. Thus we only need to include `sat` in our plot data rather than both `sat` and `sat_quadratic`. (Note: You cannot use the colon notation (`:`) to fit a polynomial term in the model.)
 
 
 ```{r tidy=FALSE, out.width='3.5in'}
-# Set up data
-plotData = expand.grid(
+# Set up data and predict
+plotData = crossing(
     sat = seq(from = 890, to = 1400, by = 10)
-    )
+    ) %>%
+  mutate(
+    yhat = predict(lm.2, newdata = .)
+  )
 
-# Predict
-plotData$yhat = predict(lm.2, newdata = plotData)
 
 # Examine data
 head(plotData)
+
 
 # Plot
 ggplot(data = plotData, aes(x = sat, y = yhat)) +
@@ -161,17 +186,19 @@ The quadratic relationship is expressed in the predicted values. Aside from plot
 Since we fitted a different model, we should examine the residuals to see whether the assumptions for the model seem satisfied.
 
 ```{r out.width='3.5in', out.height='5in', message=FALSE}
-out2 = fortify(lm.2)
+out2 = augment(lm.2)
 
 # Check normality
-sm.density(out2$.stdresid, model = "normal")
+sm.density(out2$.std.resid, model = "normal")
 
 # Check other assumptions
-ggplot(data = out2, aes(x = .fitted, y = .stdresid)) +
+ggplot(data = out2, aes(x = .fitted, y = .std.resid)) +
   geom_point() +
   geom_hline(yintercept = 0) +
   geom_smooth(se = FALSE) +
-  theme_bw()
+  theme_bw() +
+  xlab("Fitted values") +
+  ylab("Standardized residuals")
 ```
 
 Based on the plots, the quadratic model seems to meet the assumptions for regression. At the very least, it clearly does so better than the linear model.
@@ -181,35 +208,42 @@ Based on the plots, the quadratic model seems to meet the assumptions for regres
 We can also include covariates in a polynomial model (to control for other predictors), the same way we do in a linear model, by including them as additive terms in the `lm()` model. Below we include the `public` dummy-coded predictor to control for the effects of sector.
 
 ```{r}
+# Fit model
 lm.3 = lm(gradRate ~ 1 + sat + I(sat ^ 2) + public, data = mn)
-summary(lm.3)
+
+# Model-level output
+glance(lm.3)
+
+# Coefficient-level output
+tidy(lm.3)
 ```
 
-Here there is still a quadratic effect of SAT on graduation rates, even after controlling for differences in sector. Similarly, there are differences in sector (public schools have a graduation rate 9.1\% lower than private schools, on average), even after controlling for the linear and quadratic effects of SAT. Plot the fitted model to aid interpretation.
+Here there is still a quadratic effect of SAT on graduation rates, even after controlling for differences in sector ($p = 0.0005$). This means that after controlling for sector differences, the effect of SAT on graduation rate depends on SAT (the effect of SAT is differen for different levels of SAT). There are also statistically reliable differences in sector after controlling for the linear and quadratic effects of SAT ($p=0.003$). The sector effect can be interpreted as, after controlling for the effect of SAT, public schools have a graduation rate that is 9.1\% lower than private schools, on average. Plot the fitted model to aid interpretation.
 
 ```{r tidy=FALSE, out.width='4.5in'}
-# Set up data
-plotData = expand.grid(
+# Set up data; get predicted values, coerce public into a factor for better plotting
+plotData = crossing(
     sat = seq(from = 890, to = 1400, by = 10),
     public = c(0, 1)
-    )
+    ) %>%
+  mutate(
+    yhat = predict(lm.3, newdata = .),
+    public = factor(public, levels = c(0, 1), labels = c("Private", "Public"))
+  )
 
-# Predict
-plotData$yhat = predict(lm.3, newdata = plotData)
-
-# Coerce public into a factor for better plotting
-plotData$public = factor(plotData$public, levels = c(0, 1), labels = c("Private", "Public"))
 
 # Examine data
 head(plotData)
 
+
 # Plot
-ggplot(data = plotData, aes(x = sat, y = yhat, group = public, color = public)) +
+ggplot(data = plotData, aes(x = sat, y = yhat, group = public, color = public, linetype = public)) +
 	geom_line() +
   theme_bw() +
   xlab("Estimated median SAT score") +
   ylab("Predicted graduation rate") +
-  scale_color_brewer(name = "Sector", palette = "Set1")
+  scale_color_brewer(name = "Sector", palette = "Set1") +
+  scale_linetype_manual(name = "Sector", values = c(1, 2))
 ```
 
 The plot shows the quadratic effect of SAT scores on graduation rate; the effect of SAT on graduation rates is positive, but this effect declines for increasingly higher SAT scores, after controlling for sector differences. Private schools have higher graduation rates, on average, than public schools for all levels of SAT score.
