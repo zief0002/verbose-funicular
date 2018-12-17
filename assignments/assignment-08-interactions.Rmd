@@ -13,7 +13,7 @@ In this assignment, you are going to focus on the question of whether there are 
 - All graphics should be resized so that they do not take up more room than necessary and should have an appropriate caption and labels. 
 - Any typed mathematics (equations, matrices, vectors, etc.) should be appropriately typeset within the document using Equation Editor, Markdown, or \LaTeX. 
 
-This assignment is worth 15 points. Each question is worth one point unless otherwise noted. 
+This assignment is worth 16 points. Each question is worth one point unless otherwise noted. 
 
 \rule{0.5\linewidth}{\linethickness}
 
