@@ -1,52 +1,75 @@
 ---
-title: "EPsy 8251: Methods in Data Analysis for Educational Research I"
-subtitle: "Fall 2018"
-author: "Andrew Zieffler"
-output: html_document
+title: "EPsy 8251"
+output:
+  rmdformats::material:
+    highlight: kate
+    css: website-style.css
+    includes:
+      in_header: header.html
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+
+```{r knitr_init, echo=FALSE, cache=FALSE}
+library(knitr)
+library(rmdformats)
+library(fontawesome)
+
+## Global options
+options(max.print="75")
+opts_chunk$set(echo=FALSE,
+	             cache=TRUE,
+               prompt=FALSE,
+               tidy=TRUE,
+               comment=NA,
+               message=FALSE,
+               warning=FALSE)
+opts_knit$set(width=75)
 ```
 
-<br />
 
-This is the website for the Fall 2018 sections of EPsy 8251. It includes many of the materials used in the course. The GitHub repository for the course is available at https://github.com/zief0002/epsy-8251.
+# Welcome
 
-<br />
 
-## Instructor
+Welcome to *EPsy 8251: Methods in Data Analysis for Educational Research I*. This is the first course of a two-semester statistical methods sequence for doctoral students in education.  
 
-**Andrew Zieffler** ([zief0002@umn.edu](mailto://zief0002@umn.edu)) <br />
-Office: [Education Sciences Building 178](https://www.google.com/maps/place/Education+Sciences+Building/@44.9784043,-93.2394586,15z/data=!4m2!3m1!1s0x0:0x45656dac481b9150)  <br />
-Office Hours: Wednesday 9:00 AM&ndash;10:00 AM; and by appointment
+<!-- - **Syllabus, assignments, data, and script files:** [github repository](https://github.com/zief0002/epsy-8251) -->
+<!-- - **Course notes and readings:** [website](https://zief0002.github.io/book-8252/) | [github repository](https://github.com/zief0002/book-8252) -->
+
 
 <br />
 
-<!--
-## Teaching Assistant
+### Instructor {-}
 
-**Kory Vue** ([vuexx199@umn.edu](mailto://vuexx199@umn.edu))  <br />
-Office: [Education Sciences Building 193](https://www.google.com/maps/place/Education+Sciences+Building/@44.9784043,-93.2394586,15z/data=!4m2!3m1!1s0x0:0x45656dac481b9150)  <br />
-Office Hours: Wednesdays 9:00 PM&ndash;10:00 PM; and by appointment
+Andrew Zieffler ([zief0002@umn.edu](mailto://zief0002@umn.edu)) <br />
+**Office:** [Education Sciences Building 178](https://www.google.com/maps/place/Education+Sciences+Building/@44.9784043,-93.2394586,15z/data=!4m2!3m1!1s0x0:0x45656dac481b9150)  <br />
+**Office Hours:** Tuesday 9:30 AM&ndash;10:30 AM; and by appointment
 
-<br />
--->
 
-## Classroom
+### Teaching Assistant {-}
 
-- Monday/Wednesday (2:30&ndash;3:45): [Ford Hall 110](http://campusmaps.umn.edu/ford-hall)
-- Tuesday/Thursday (11:15&ndash;12:30): [Elliott Hall N647](http://campusmaps.umn.edu/elliott-hall)
+Jonathan Brown ([brow3019@umn.edu](mailto://brow3019@umn.edu))  <br />
+**Office:** [Education Sciences Building 192](https://www.google.com/maps/place/Education+Sciences+Building/@44.9784043,-93.2394586,15z/data=!4m2!3m1!1s0x0:0x45656dac481b9150)  <br />
+**Office Hours:** Thursdays 1:00 PM&ndash;3:00 PM; and by appointment
 
 <br />
 
-## Syllabus
+### Classroom
 
-The course syllabus is available  [here](https://github.com/zief0002/epsy-8251/raw/master/f18-8251-syllabus.pdf).
+- Monday/Wednesday (2:30&ndash;3:45): [Ford Hall 151](http://campusmaps.umn.edu/ford-hall)
+- Tuesday/Thursday (11:15&ndash;12:30): [Burton Hall 125](http://campusmaps.umn.edu/burton-hall)
 
 <br />
 
-## Textbooks
+
+### Course Content and Syllabus {-}
+
+The statistical content for EPsy 8251 includes rigorous coverage of estimation and hypothesis testing with a particular focus on ANOVA and multiple linear regression.
+
+- The course syllabus is available  [here](https://github.com/zief0002/epsy-8251/raw/master/syllabus/syllabus-8251-f19.pdf).
+
+<br />
+
+### Books and Other Reading Materials {-}
 
 The primary course textbook is available via the University of Minnesota library.
 
@@ -57,3 +80,22 @@ The other course textbook (available via Amazon) is
 - [Presenting your findings: A practical guide for creating tables](https://www.amazon.com/Presenting-Your-Findings-Practical-Creating/dp/143380705X) [required] 
 
 <br />
+
+
+```{r child = 'schedule.Rmd'}
+```
+
+
+```{r child = 'assignments.Rmd'}
+```
+
+
+```{r child = 'data.Rmd'}
+```
+
+
+
+
+
+
+

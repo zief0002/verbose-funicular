@@ -26,8 +26,8 @@ library(ggplot2)
 library(readr)
 
 # Import and view the city data 
-city = read_csv("../data/riverside.csv")
-city
+city = read_csv("~/Documents/github/epsy-8251/data/riverview.csv")
+head(city)
 ```
 
 
@@ -752,7 +752,7 @@ ggplot(data = city, aes(x = education, y = income)) +
 
 ---
 
-*Figure 1.* Relationship between annual income (in U.S. dollars) and years of education for n=32 employees of the City of Riverside. This relationship is shown for both males and females.
+*Figure 1.* Relationship between annual income (in U.S. dollars) and years of education for n=32 employees of the City of Riverview. This relationship is shown for both males and females.
 
 ```{r echo=FALSE, fig.width=11, fig.height=5}
 # Load scales library
@@ -795,7 +795,7 @@ city %>%
 
 .pull-right[
 
-*Figure 2.* Relationship between annual income (in U.S. dollars) and years of education for n=18 female employees of the City of Riverside.
+*Figure 2.* Relationship between annual income (in U.S. dollars) and years of education for n=18 female employees of the City of Riverview.
 
 ```{r message=FALSE, echo=FALSE, out.width='70%'}
 city %>%

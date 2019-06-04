@@ -12,8 +12,11 @@ output:
       countIncrementalSlides: false
 ---
 
-```{r setup, include=FALSE}
-options(htmltools.dir.version = FALSE, servr.daemon = TRUE)
+```{r setup, include=FALSE, message=FALSE}
+options(htmltools.dir.version = FALSE, servr.daemon = TRUE, scipen = 99)
+library(knitr)
+library(kableExtra)
+library(dplyr)
 ```
 
 
@@ -392,8 +395,14 @@ Data frames are the most common structures we will be working with in the course
 Data frames and tibbles have a tabular (rectangular) structure made up of rows (cases) and columns (variables).
 
 ```{r, echo=FALSE, message=FALSE}
-school = readr::read_csv("~/Documents/github/epsy-8251/data/colleges.csv")
-school
+school = readr::read_csv("~/Documents/github/epsy-8251/data/mn-schools.csv")
+
+school %>%
+  slice(1:6) %>%
+  kable(
+    caption = "First Six Rows of the Minnesota Schools Data",
+    format = "html"
+  )
 ```
 
 
@@ -409,13 +418,13 @@ knitr::include_graphics("images/notes-01-import-data.png")
 
 # Script File: Importing Data
 
-The syntax in the `Code Preview` window of the `Import` screen is what R actually uses to read in your data. The function `read_csv()` from the **readr** library is what is being used to import the data. This is then assigned to the object `school`. (Note that `<-` can be used instead of `=` for assignment.) These two lines should be copied into your script file.
+The syntax in the `Code Preview` window of the `Import` screen is what R actually uses to read in your data. The function `read_csv()` from the **readr** library is what is being used to import the data. This is then assigned to the object `school`. (Note that `<-` can be used instead of `=` for assignment.) The first two lines of syntax should be copied into your script file.
 
 ```{r, echo=FALSE, out.width='500px'}
 knitr::include_graphics("images/notes-01-script-import-data.png")
 ```
 
-**\#Protip:** The `~` in the path name is a shortcut for your home directory.
+**\#Protip:** On a Mac, you may need to add  `~/` to the beginning of the path name. For example, `school = read_csv("~/data/mn-schools.csv")`
 
 **\#Protip:** The `View()` function only works with RStudio. This is not essential for importing the data.
 

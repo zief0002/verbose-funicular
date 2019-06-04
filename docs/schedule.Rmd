@@ -1,15 +1,6 @@
----
-title: "Fall 2018 Schedule"
-subtitle: "Readings, Notes, and Resources"
----
+# Schedule
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
-
-<br />
-
-Below is the tenative schedule for the class. The dates are subject to change at the instructor's discretion. Readings should be completed prior to class.
+Below is the tenative schedule for the class. The dates are subject to change at the instructor's discretion. Readings (Unit Preparation) should be completed prior to class.
 
 <br />
 
@@ -21,165 +12,523 @@ Below is the tenative schedule for the class. The dates are subject to change at
 
 <thead>
 <tr>
-<th style="width:15%;">Date (T/R)</th>
-<th style="width:15%;">Date (M/W)</th>
-<th style="width:40%;">Topic</th>
+<th style="width:10%;text-align:center"></th>
+<th style="width:10%;">T/R</th>
+<th style="width:10%;">M/W</th>
 <th style="width:10%;text-align:center">Reading</th>
+<th style="width:40%;">Topic</th>
 <th style="width:10%;text-align:center">Notes</th>
-<th style="width:10%;text-align:center">R Script</th>
+<th style="width:10%;text-align:center">Script</th>
 </tr>
 </thead>
 
 <tbody>
 
 <tr>
+<td align="center" style="vertical-align:middle;">&nbsp;</td>
+<td>Sept. 03</td>
 <td>Sept. 04</td>
+<td align="center" style="vertical-align:middle;">
+  <span class="fa fa-book" style="color: #f1f1f1; font-size: 20px;"></span>
+</td>
+<td>Welcome to EPsy 8251</td>
+<td align="center" style="vertical-align:middle;">
+  <span class="fa fa-file-pdf" style="color: #f1f1f1; font-size: 20px;"></span>
+</td>
+<td align="center" style="vertical-align:middle;">
+  <span class="fab fa-r-project" style="color: #f1f1f1; font-size: 20px;"></span>
+</td>
+</tr>
+
+<tr>
+<td colspan="7"><b>Unit 01: Introduction to Statistical Computing</b></td>
+</tr>
+
+<tr>
+<td align="center" style="vertical-align:middle;"></td>
 <td>Sept. 05</td>
-<td>Welcome to Epsy 8251</td>
-<td align="center"><font color="f1f1f1"><a href="reading-00.html"><i class="fa fa-book fa-lg"></i></a></font></td>
-<td align="center"><font color="f1f1f1"><i class="fas fa-file-pdf  fa-lg"></i></font></td>
-<td align="center"><font color="f1f1f1"><i class="fas fa-code fa-lg"></i></font></td>
-</tr>
-
-<tr>
-<td>Sept. 06</td>
-<td>Sept. 10</td>
+<td>Sept. 09</td>
+<td align="center" style="vertical-align:middle;">
+  <a href="https://zief0002.github.io/book-8251/rmarkdown.html#preparation">
+    <span class="fa fa-book" style="color: #ff2600; font-size: 20px;"></span>
+  </a>
+</td>
 <td>Introduction to R and RStudio</td>
-<td align="center"><font color="f1f1f1"><a href="reading-01.html"><i class="fa fa-book fa-lg"></i></a></font></td>
-<td align="center"><font color="f1f1f1"><a href="http://www.datadreaming.org/files/01-introduction-to-r.html"><i class="fab fa-html5  fa-lg"></i></a></font></td>
-<td align="center"><font color="f1f1f1"><i class="fas fa-code fa-lg"></i></font></td>
+<td align="center" style="vertical-align:middle;">
+  <a href="https://zief0002.github.io/book-8251/rmarkdown.html">
+    <span class="fa fa-file-pdf" style="color: #ff2600; font-size: 20px;"></span>
+  </a>
+</td>
+<td align="center" style="vertical-align:middle;">
+  <a href="https://github.com/zief0002/epsy-8251/raw/master/scripts/03-log-transformations-outcome.R">
+    <span class="fab fa-r-project" style="color: #ff2600; font-size: 20px;"></span>
+  </a>
+</td>
 </tr>
 
 <tr>
+<td align="center" style="vertical-align:middle;"></td>
+<td>Sept. 10</td>
 <td>Sept. 11</td>
-<td>Sept. 12</td>
+<td align="center" style="vertical-align:middle;">
+  <a href="https://zief0002.github.io/book-8251/rmarkdown.html#preparation">
+    <span class="fa fa-book" style="color: #ff2600; font-size: 20px;"></span>
+  </a>
+</td>
 <td>Data Wrangling with dplyr</td>
-<td align="center"><font color="f1f1f1"><a href="reading-02.html"><i class="fa fa-book fa-lg"></i></a></font></td>
-<td align="center"><font color="f1f1f1"><a href="http://www.datadreaming.org/files/02-data-wrangling-with-dplyr.html"><i class="fab fa-html5  fa-lg"></i></a></font></td>
-<td align="center"><font color="f1f1f1"><a href="https://raw.githubusercontent.com/zief0002/epsy-8251/master/scripts/02-data-wrangling-with-dplyr.R"><i class="fas fa-code fa-lg"></i></a></font></td>
+<td align="center" style="vertical-align:middle;">
+  <a href="https://zief0002.github.io/book-8251/rmarkdown.html">
+    <span class="fa fa-file-pdf" style="color: #ff2600; font-size: 20px;"></span>
+  </a>
+</td>
+<td align="center" style="vertical-align:middle;">
+  <a href="https://github.com/zief0002/epsy-8251/raw/master/scripts/03-log-transformations-outcome.R">
+    <span class="fab fa-r-project" style="color: #ff2600; font-size: 20px;"></span>
+  </a>
+</td>
 </tr>
 
 <tr>
-<td>Sept. 13</td>
-<td>Sept. 17</td>
+<td align="center" style="vertical-align:middle;"></td>
+<td>Sept. 12</td>
+<td>Sept. 16</td>
+<td align="center" style="vertical-align:middle;">
+  <a href="https://zief0002.github.io/book-8251/rmarkdown.html#preparation">
+    <span class="fa fa-book" style="color: #ff2600; font-size: 20px;"></span>
+  </a>
+</td>
 <td>Plotting with ggplot2</td>
-<td align="center"><font color="f1f1f1"><a href="reading-03.html"><i class="fa fa-book fa-lg"></i></a></font></td>
-<td align="center"><font color="f1f1f1"><a href="http://www.datadreaming.org/files/03-plotting-with-ggplot2.html"><i class="fab fa-html5  fa-lg"></i></a></font></td>
-<td align="center"><font color="f1f1f1"><a href="https://raw.githubusercontent.com/zief0002/epsy-8251/master/scripts/03-plotting-with-ggplot2.R"><i class="fas fa-code fa-lg"></i></a></font></td>
+<td align="center" style="vertical-align:middle;">
+  <a href="https://zief0002.github.io/book-8251/rmarkdown.html">
+    <span class="fa fa-file-pdf" style="color: #ff2600; font-size: 20px;"></span>
+  </a>
+</td>
+<td align="center" style="vertical-align:middle;">
+  <a href="https://github.com/zief0002/epsy-8251/raw/master/scripts/03-log-transformations-outcome.R">
+    <span class="fab fa-r-project" style="color: #ff2600; font-size: 20px;"></span>
+  </a>
+</td>
 </tr>
 
-<tr>
-<td>Sept. 18/20</td>
-<td>Sept. 19/24</td>
-<td>Simple Linear Regression: Description</td>
-<td align="center"><font color="f1f1f1"><a href="reading-04.html"><i class="fa fa-book fa-lg"></i></a></font></td>
-<td align="center"><font color="f1f1f1"><a href="https://github.com/zief0002/epsy-8251/raw/master/notes/04-simple-linear-regression-description.pdf"><i class="fas fa-file-pdf  fa-lg"></i></a></font></td>
-<td align="center"><font color="f1f1f1"><a href="https://raw.githubusercontent.com/zief0002/epsy-8251/master/scripts/04-simple-linear-regression-description.R"><i class="fas fa-code fa-lg"></i></a></font></td>
-</tr>
 
-<tr>
-<td>Sept. 25</td>
-<td>Sept. 26</td>
-<td>Least Squares Estimation</td>
-<td align="center"><font color="f1f1f1"><i class="fa fa-book fa-lg"></i></font></td>
-<td align="center"><font color="f1f1f1"><a href="https://github.com/zief0002/epsy-8251/raw/master/notes/05-least-squares-estimation.pdf"><i class="fas fa-file-pdf  fa-lg"></i></a></font></td>
-<td align="center"><font color="f1f1f1"><a href="https://raw.githubusercontent.com/zief0002/epsy-8251/master/scripts/05-least-squares-estimation.R"><i class="fas fa-code fa-lg"></i></a></font></td>
-</tr>
 
-<tr>
-<td>Sept. 27/Oct. 02</td>
-<td>Oct. 01/03</td>
-<td>Coefficient-Level Inference</td>
-<td align="center"><font color="f1f1f1"><a href="reading-06.html"><i class="fa fa-book fa-lg"></i></a></font></td>
-<td align="center"><font color="f1f1f1"><a href="https://github.com/zief0002/epsy-8251/raw/master/notes/06-coefficient-level-inference.pdf"><i class="fas fa-file-pdf  fa-lg"></i></a></font></td>
-<td align="center"><font color="f1f1f1"><a href="https://raw.githubusercontent.com/zief0002/epsy-8251/master/scripts/06-coefficient-level-inference.R"><i class="fas fa-code fa-lg"></i></a></font></td>
-</tr>
 
-<tr>
-<td>Oct. 04/09</td>
-<td>Oct. 08/10</td>
-<td>Model-Level Inference</td>
-<td align="center"><font color="f1f1f1"><i class="fa fa-book fa-lg"></i></font></td>
-<td align="center"><font color="f1f1f1"><a href="https://github.com/zief0002/epsy-8251/raw/master/notes/07-model-level-inference.pdf"><i class="fas fa-file-pdf  fa-lg"></i></a></font></td>
-<td align="center"><font color="f1f1f1"><a href="https://raw.githubusercontent.com/zief0002/epsy-8251/master/scripts/07-model-level-inference.R"><i class="fas fa-code fa-lg"></i></a></font></td>
-</tr>
+<!-- <tr> -->
+<!-- <td>Feb. 11</td> -->
+<!-- <td>Feb. 12</td> -->
+<!-- <td>Unit 03: Log-Transforming the Outcome</td> -->
+<!-- <td align="center" style="vertical-align:middle;"> -->
+<!--   <a href="https://zief0002.github.io/book-8251/nonlinearity-log-transforming-the-outcome.html#preparation-2"> -->
+<!--     <span class="fa fa-book" style="color: #ff2600; font-size: 20px;"></span> -->
+<!--   </a> -->
+<!-- </td> -->
+<!-- <td align="center" style="vertical-align:middle;"> -->
+<!--   <a href="https://zief0002.github.io/book-8251/nonlinearity-log-transforming-the-outcome.html"> -->
+<!--     <span class="fas fa-link" style="color: #ff2600; font-size: 20px;"></span> -->
+<!--   </a> -->
+<!-- </td> -->
+<!-- <td align="center" style="vertical-align:middle;"> -->
+<!--   <a href="https://github.com/zief0002/book-8251/raw/master/04-log-transformations-ii.Rmd"> -->
+<!--     <span class="fab fa-markdown" style="color: #ff2600; font-size: 20px;"></span> -->
+<!--   </a> -->
+<!-- </td> -->
+<!-- <td align="center" style="vertical-align:middle;"> -->
+<!--   <a href="https://github.com/zief0002/epsy-8251/raw/master/scripts/03-log-transformations-outcome.R"> -->
+<!--     <span class="fa fa-code" style="color: #ff2600; font-size: 20px;"></span> -->
+<!--   </a> -->
+<!-- </td> -->
+<!-- </tr> -->
 
-<tr>
-<td>Oct. 11/16</td>
-<td>Oct. 15/17</td>
-<td>Multiple Linear Regression</td>
-<td align="center"><font color="f1f1f1"><a href="reading-07.html"><i class="fa fa-book fa-lg"></i></a></font></td>
-<td align="center"><font color="f1f1f1"><a href="https://github.com/zief0002/epsy-8251/raw/master/notes/08-introduction-to-multiple-regression.pdf"><i class="fas fa-file-pdf  fa-lg"></i></a></font></td>
-<td align="center"><font color="f1f1f1"><a href="https://raw.githubusercontent.com/zief0002/epsy-8251/master/scripts/08-introduction-to-multiple-regression.R"><i class="fas fa-code fa-lg"></i></a></font></td>
-</tr>
+<!-- <tr> -->
+<!-- <td>Feb. 18</td> -->
+<!-- <td>Feb. 19</td> -->
+<!-- <td>Unit 04: Probability Distributions</td> -->
+<!-- <td align="center" style="vertical-align:middle;"> -->
+<!--   <a href="https://zief0002.github.io/book-8251/probability-distributions.html#preparation-3"> -->
+<!--     <span class="fa fa-book" style="color: #ff2600; font-size: 20px;"></span> -->
+<!--   </a> -->
+<!-- </td> -->
+<!-- <td align="center" style="vertical-align:middle;"> -->
+<!--   <a href="https://zief0002.github.io/book-8251/probability-distributions.html"> -->
+<!--     <span class="fas fa-link" style="color: #ff2600; font-size: 20px;"></span> -->
+<!--   </a> -->
+<!-- </td> -->
+<!-- <td align="center" style="vertical-align:middle;"> -->
+<!--   <a href="https://github.com/zief0002/book-8251/raw/master/06-probability-distributions.Rmd"> -->
+<!--     <span class="fab fa-markdown" style="color: #ff2600; font-size: 20px;"></span> -->
+<!--   </a> -->
+<!-- </td> -->
+<!-- <td align="center" style="vertical-align:middle;"> -->
+<!--   <a href="https://github.com/zief0002/epsy-8251/raw/master/scripts/04-probability-distributions.R"> -->
+<!--     <span class="fa fa-code" style="color: #ff2600; font-size: 20px;"></span> -->
+<!--   </a> -->
+<!-- </td> -->
+<!-- </tr> -->
 
-<tr>
-<td>Oct. 18/23</td>
-<td>Oct. 22/24</td>
-<td>Understanding Multiple Regression Results</td>
-<td align="center"><font color="f1f1f1"><i class="fa fa-book fa-lg"></i></font></td>
-<td align="center"><font color="f1f1f1"><a href="https://github.com/zief0002/epsy-8251/raw/master/notes/09-understanding-multiple-regression-results.pdf"><i class="fas fa-file-pdf  fa-lg"></i></a></font></td>
-<td align="center"><font color="f1f1f1"><a href="https://raw.githubusercontent.com/zief0002/epsy-8251/master/scripts/09-understanding-multiple-regression-results.R"><i class="fas fa-code fa-lg"></i></a></font></td>
-</tr>
+<!-- <tr> -->
+<!-- <td>Feb. 25</td> -->
+<!-- <td>Feb. 26</td> -->
+<!-- <td>Unit 05: Maximum Likelihood Estimation</td> -->
+<!-- <td align="center" style="vertical-align:middle;"> -->
+<!--   <a href="https://zief0002.github.io/book-8251/maximum-likelihood-estimation.html#preparation-4"> -->
+<!--     <span class="fa fa-book" style="color: #ff2600; font-size: 20px;"></span> -->
+<!--   </a> -->
+<!-- </td> -->
+<!-- <td align="center" style="vertical-align:middle;"> -->
+<!--   <a href="https://zief0002.github.io/book-8251/maximum-likelihood-estimation.html"> -->
+<!--     <span class="fas fa-link" style="color: #ff2600; font-size: 20px;"></span> -->
+<!--   </a> -->
+<!-- </td> -->
+<!-- <td align="center" style="vertical-align:middle;"> -->
+<!--   <a href="https://github.com/zief0002/book-8251/raw/master/07-maximum-likelihood-estimation.Rmd"> -->
+<!--     <span class="fab fa-markdown" style="color: #ff2600; font-size: 20px;"></span> -->
+<!--   </a> -->
+<!-- </td> -->
+<!-- <td align="center" style="vertical-align:middle;"> -->
+<!--   <a href="https://github.com/zief0002/epsy-8251/raw/master/scripts/05-maximum-likelihood-estimation.R"> -->
+<!--     <span class="fa fa-code" style="color: #ff2600; font-size: 20px;"></span> -->
+<!--   </a> -->
+<!-- </td> -->
+<!-- </tr> -->
 
-<tr>
-<td>Oct. 25/27/Nov. 06</td>
-<td>Oct. 29/Nov. 05/07</td>
-<td>Regression Model Assumptions</td>
-<td align="center"><font color="f1f1f1"><a href="reading-08.html"><i class="fa fa-book fa-lg"></i></a></font></td>
-<td align="center"><font color="f1f1f1"><a href="https://github.com/zief0002/epsy-8251/raw/master/notes/10-regression-model-assumptions.pdf"><i class="fas fa-file-pdf  fa-lg"></i></a></font></td>
-<td align="center"><font color="f1f1f1"><a href="https://raw.githubusercontent.com/zief0002/epsy-8251/master/scripts/10-regression-model-assumptions.R"><i class="fas fa-code fa-lg"></i></a></font></td>
-</tr>
+<!-- <tr> -->
+<!-- <td>Mar. 04</td> -->
+<!-- <td>Mar. 05</td> -->
+<!-- <td>Unit 06: Information Criteria for Model Selection</td> -->
+<!-- <td align="center" style="vertical-align:middle;"> -->
+<!--   <a href="https://zief0002.github.io/book-8251/information-criteria-for-model-selection.html#preparation-5"> -->
+<!--     <span class="fa fa-book" style="color: #ff2600; font-size: 20px;"></span> -->
+<!--   </a> -->
+<!-- </td> -->
+<!-- <td align="center" style="vertical-align:middle;"> -->
+<!--   <a href="https://zief0002.github.io/book-8251/information-criteria-for-model-selection.html"> -->
+<!--     <span class="fas fa-link" style="color: #ff2600; font-size: 20px;"></span> -->
+<!--   </a> -->
+<!-- </td> -->
+<!-- <td align="center" style="vertical-align:middle;"> -->
+<!--   <a href="https://github.com/zief0002/book-8251/raw/master/08-information-criteria-for-model-selection.Rmd"> -->
+<!--     <span class="fab fa-markdown" style="color: #ff2600; font-size: 20px;"></span> -->
+<!--   </a> -->
+<!-- </td> -->
+<!-- <td align="center" style="vertical-align:middle;"> -->
+<!--   <a href="https://github.com/zief0002/epsy-8251/raw/master/scripts/06-information-criteria-for-model-selection.R"> -->
+<!--     <span class="fa fa-code" style="color: #ff2600; font-size: 20px;"></span> -->
+<!--   </a> -->
+<!-- </td> -->
+<!-- </tr> -->
 
-<tr>
-<td>Nov. 08/13</td>
-<td>Nov. 12/14</td>
-<td>Categorical Predictors I</td>
-<td align="center"><font color="f1f1f1"><a href="reading-09.html"><i class="fa fa-book fa-lg"></i></a></font></td>
-<td align="center"><font color="f1f1f1"><a href="https://github.com/zief0002/epsy-8251/raw/master/notes/11-categorical-predictors.pdf"><i class="fas fa-file-pdf  fa-lg"></i></a></font></td>
-<td align="center"><font color="f1f1f1"><a href="https://raw.githubusercontent.com/zief0002/epsy-8251/master/scripts/11-categorical-predictors.R"><i class="fas fa-code fa-lg"></i></a></font></td>
-</tr>
+<!-- <tr> -->
+<!-- <td>Mar. 11</td> -->
+<!-- <td>Mar. 12</td> -->
+<!-- <td>Unit 07: Model Evidence</td> -->
+<!-- <td align="center" style="vertical-align:middle;"> -->
+<!--   <a href="https://zief0002.github.io/book-8251/moreinfocrit.html#preparation-6"> -->
+<!--     <span class="fa fa-book" style="color: #ff2600; font-size: 20px;"></span> -->
+<!--   </a> -->
+<!-- </td> -->
+<!-- <td align="center" style="vertical-align:middle;"> -->
+<!--   <a href="https://zief0002.github.io/book-8251/moreinfocrit.html"> -->
+<!--     <span class="fas fa-link" style="color: #ff2600; font-size: 20px;"></span> -->
+<!--   </a> -->
+<!-- </td> -->
+<!-- <td align="center" style="vertical-align:middle;"> -->
+<!--   <a href="https://github.com/zief0002/book-8251/raw/master/09-model-evidence.Rmd"> -->
+<!--     <span class="fab fa-markdown" style="color: #ff2600; font-size: 20px;"></span> -->
+<!--   </a> -->
+<!-- </td> -->
+<!-- <td align="center" style="vertical-align:middle;"> -->
+<!--   <a href="https://github.com/zief0002/epsy-8251/raw/master/scripts/07-model-evidence.R"> -->
+<!--     <span class="fa fa-code" style="color: #ff2600; font-size: 20px;"></span> -->
+<!--   </a> -->
+<!-- </td> -->
+<!-- </tr> -->
 
-<tr>
-<td>Nov. 15/20</td>
-<td>Nov. 19/26</td>
-<td>Categorical Predictors II</td>
-<td align="center"><font color="f1f1f1"><a href="reading-10.html"><i class="fa fa-book fa-lg"></i></a></font></td>
-<td align="center"><font color="f1f1f1"><a href="https://github.com/zief0002/epsy-8251/raw/master/notes/12-more-categorical-predictors.pdf"><i class="fas fa-file-pdf  fa-lg"></i></a></font></td>
-<td align="center"><font color="f1f1f1"><a href="https://raw.githubusercontent.com/zief0002/epsy-8251/master/scripts/12-more-categorical-predictors.R"><i class="fas fa-code fa-lg"></i></a></font></td>
-</tr>
+<!-- <tr> -->
+<!-- <td>Mar. 13</td> -->
+<!-- <td>Mar. 14</td> -->
+<!-- <td>Unit 08: Introduction to Linear Mixed-Effects Models</td> -->
+<!-- <td align="center" style="vertical-align:middle;"> -->
+<!--   <a href="https://zief0002.github.io/book-8251/intro-lmer.html#preparation-7"> -->
+<!--     <span class="fa fa-book" style="color: #ff2600; font-size: 20px;"></span> -->
+<!--   </a> -->
+<!-- </td> -->
+<!-- <td align="center" style="vertical-align:middle;"> -->
+<!--   <a href="https://github.com/zief0002/epsy-8251/raw/master/notes/08-introduction-to-lmer.pdf"> -->
+<!--     <span class="fa fa-file-pdf" style="color: #ff2600; font-size: 20px;"></span> -->
+<!--   </a> -->
+<!-- </td> -->
+<!-- <td align="center" style="vertical-align:middle;"> -->
+<!--   <a href="https://github.com/zief0002/epsy-8251/raw/master/notes/08-introduction-to-lmer.Rmd"> -->
+<!--     <span class="fab fa-markdown" style="color: #ff2600; font-size: 20px;"></span> -->
+<!--   </a> -->
+<!-- </td> -->
+<!-- <td align="center" style="vertical-align:middle;"> -->
+<!--   <a href="https://github.com/zief0002/epsy-8251/raw/master/scripts/08-introduction-to-lmer.R"> -->
+<!--     <span class="fa fa-code" style="color: #ff2600; font-size: 20px;"></span> -->
+<!--   </a> -->
+<!-- </td> -->
+<!-- </tr> -->
 
-<tr>
-<td>Nov. 27/26</td>
-<td>Nov. 29/28</td>
-<td>Interaction Models I</td>
-<td align="center"><font color="f1f1f1"><a href="reading-11.html"><i class="fa fa-book fa-lg"></i></a></font></td>
-<td align="center"><font color="f1f1f1"><a href="https://github.com/zief0002/epsy-8251/raw/master/notes/13-introduction-to-interaction-models.pdf"><i class="fas fa-file-pdf  fa-lg"></i></a></font></td>
-<td align="center"><font color="f1f1f1"><a href="https://raw.githubusercontent.com/zief0002/epsy-8251/master/scripts/13-introduction-to-interaction-models.R"><i class="fas fa-code fa-lg"></i></a></font></td>
-</tr>
+<!-- <tr> -->
+<!-- <td>Mar. 18</td> -->
+<!-- <td>Mar. 19</td> -->
+<!-- <td>SPRING BREAK &mdash; NO CLASS</td> -->
+<!-- <td align="center"></td> -->
+<!-- <td align="center"></td> -->
+<!-- <td align="center"></td> -->
+<!-- <td align="center"></td> -->
+<!-- </tr> -->
 
-<tr>
-<td>Dec. 04/03</td>
-<td>Dec. 06/05</td>
-<td>Interaction Models II</td>
-<td align="center"><font color="f1f1f1"><i class="fa fa-book fa-lg"></i></font></td>
-<td align="center"><font color="f1f1f1"><a href="https://github.com/zief0002/epsy-8251/raw/master/notes/14-more-interaction-models.pdf"><i class="fas fa-file-pdf  fa-lg"></i></a></font></td>
-<td align="center"><font color="f1f1f1"><a href="https://raw.githubusercontent.com/zief0002/epsy-8251/master/scripts/14-more-interaction-models.R"><i class="fas fa-code fa-lg"></i></a></font></td>
-</tr>
+<!-- <tr> -->
+<!-- <td>Mar. 25</td> -->
+<!-- <td>Mar. 26</td> -->
+<!-- <td>Unit 08: Introduction to Linear Mixed-Effects Models</td> -->
+<!-- <td align="center" style="vertical-align:middle;"> -->
+<!--   <a href="https://zief0002.github.io/book-8251/intro-lmer.html#preparation-7"> -->
+<!--     <span class="fa fa-book" style="color: #ff2600; font-size: 20px;"></span> -->
+<!--   </a> -->
+<!-- </td> -->
+<!-- <td align="center" style="vertical-align:middle;"> -->
+<!--   <a href="https://github.com/zief0002/epsy-8251/raw/master/notes/08-introduction-to-lmer.pdf"> -->
+<!--     <span class="fa fa-file-pdf" style="color: #ff2600; font-size: 20px;"></span> -->
+<!--   </a> -->
+<!-- </td> -->
+<!-- <td align="center" style="vertical-align:middle;"> -->
+<!--   <a href="https://github.com/zief0002/epsy-8251/raw/master/notes/08-introduction-to-lmer.Rmd"> -->
+<!--     <span class="fab fa-markdown" style="color: #ff2600; font-size: 20px;"></span> -->
+<!--   </a> -->
+<!-- </td> -->
+<!-- <td align="center" style="vertical-align:middle;"> -->
+<!--   <a href="https://github.com/zief0002/epsy-8251/raw/master/scripts/08-introduction-to-lmer.R"> -->
+<!--     <span class="fa fa-code" style="color: #ff2600; font-size: 20px;"></span> -->
+<!--   </a> -->
+<!-- </td> -->
+<!-- </tr> -->
 
-<tr>
-<td>Dec. 11</td>
-<td>Dec. 10</td>
-<td>Nonlinearity: Polynomial Effects</td>
-<td align="center"><font color="f1f1f1"><i class="fa fa-book fa-lg"></i></font></td>
-<td align="center"><font color="f1f1f1"><a href="https://github.com/zief0002/epsy-8251/raw/master/notes/15-nonlinearity-polynomial-effects.pdf"><i class="fas fa-file-pdf  fa-lg"></i></a></font></td>
-<td align="center"><font color="f1f1f1"><a href="https://raw.githubusercontent.com/zief0002/epsy-8251/master/scripts/15-nonlinearity-polynomial-effects.R"><i class="fas fa-code fa-lg"></i></a></font></td>
-</tr>
+<!-- <tr> -->
+<!-- <td>Mar. 27</td> -->
+<!-- <td>Mar. 28</td> -->
+<!-- <td>Unit 09: Linear Mixed-Effects Models: Cross-Sectional Analysis</td> -->
+<!-- <td align="center" style="vertical-align:middle;"> -->
+<!--   <a href="https://zief0002.github.io/book-8251/lmer-cross-sectional.html#preparation-8"> -->
+<!--     <span class="fa fa-book" style="color: #ff2600; font-size: 20px;"></span> -->
+<!--   </a> -->
+<!-- </td> -->
+<!-- <td align="center" style="vertical-align:middle;"> -->
+<!--   <a href="https://github.com/zief0002/epsy-8251/raw/master/notes/09-lmer-cross-sectional.pdf"> -->
+<!--     <span class="fa fa-file-pdf" style="color: #ff2600; font-size: 20px;"></span> -->
+<!--   </a> -->
+<!-- </td> -->
+<!-- <td align="center" style="vertical-align:middle;"> -->
+<!--   <a href="https://github.com/zief0002/epsy-8251/raw/master/notes/09-lmer-cross-sectional.Rmd"> -->
+<!--     <span class="fab fa-markdown" style="color: #ff2600; font-size: 20px;"></span> -->
+<!--   </a> -->
+<!-- </td> -->
+<!-- <td align="center" style="vertical-align:middle;"> -->
+<!--   <a href="https://github.com/zief0002/epsy-8251/raw/master/scripts/09-lmer-cross-sectional.R"> -->
+<!--     <span class="fa fa-code" style="color: #ff2600; font-size: 20px;"></span> -->
+<!--   </a> -->
+<!-- </td> -->
+<!-- </tr> -->
+
+
+<!-- <tr> -->
+<!-- <td>Apr. 01</td> -->
+<!-- <td>Apr. 02</td> -->
+<!-- <td>Unit 10: Linear Mixed-Effects Models: Assumptions</td> -->
+<!-- <td align="center" style="vertical-align:middle;"> -->
+<!--   <a href="https://zief0002.github.io/book-8251/lmer-assumptions.html#preparation-9"> -->
+<!--     <span class="fa fa-book" style="color: #ff2600; font-size: 20px;"></span> -->
+<!--   </a> -->
+<!-- </td> -->
+<!-- <td align="center" style="vertical-align:middle;"> -->
+<!--   <a href="https://github.com/zief0002/epsy-8251/raw/master/notes/10-lmer-assumptions.pdf"> -->
+<!--     <span class="fa fa-file-pdf" style="color: #ff2600; font-size: 20px;"></span> -->
+<!--   </a> -->
+<!-- </td> -->
+<!-- <td align="center" style="vertical-align:middle;"> -->
+<!--   <a href="https://github.com/zief0002/epsy-8251/raw/master/notes/10-lmer-assumptions.Rmd"> -->
+<!--     <span class="fab fa-markdown" style="color: #ff2600; font-size: 20px;"></span> -->
+<!--   </a> -->
+<!-- </td> -->
+<!-- <td align="center" style="vertical-align:middle;"> -->
+<!--   <a href="https://github.com/zief0002/epsy-8251/raw/master/scripts/10-lmer-assumptions.R"> -->
+<!--     <span class="fa fa-code" style="color: #ff2600; font-size: 20px;"></span> -->
+<!--   </a> -->
+<!-- </td> -->
+<!-- </tr> -->
+
+
+<!-- <tr> -->
+<!-- <td>Apr. 03</td> -->
+<!-- <td>Apr. 04</td> -->
+<!-- <td>Unit 11: Linear Mixed-Effects Models: Longitudinal Analysis</td> -->
+<!-- <td align="center" style="vertical-align:middle;"> -->
+<!--   <a href="https://zief0002.github.io/book-8251/lmer-longitudinal.html#preparation-10"> -->
+<!--     <span class="fa fa-book" style="color: #ff2600; font-size: 20px;"></span> -->
+<!--   </a> -->
+<!-- </td> -->
+<!-- <td align="center" style="vertical-align:middle;"> -->
+<!--   <a href="https://github.com/zief0002/epsy-8251/raw/master/notes/11-lmer-longitudinal.pdf"> -->
+<!--     <span class="fa fa-file-pdf" style="color: #ff2600; font-size: 20px;"></span> -->
+<!--   </a> -->
+<!-- </td> -->
+<!-- <td align="center" style="vertical-align:middle;"> -->
+<!--   <a href="https://github.com/zief0002/epsy-8251/raw/master/notes/11-lmer-longitudinal.Rmd"> -->
+<!--     <span class="fab fa-markdown" style="color: #ff2600; font-size: 20px;"></span> -->
+<!--   </a> -->
+<!-- </td> -->
+<!-- <td align="center" style="vertical-align:middle;"> -->
+<!--   <a href="https://github.com/zief0002/epsy-8251/raw/master/scripts/11-lmer-longitudinal.R"> -->
+<!--     <span class="fa fa-code" style="color: #ff2600; font-size: 20px;"></span> -->
+<!--   </a> -->
+<!-- </td> -->
+<!-- </tr> -->
+
+
+<!-- <tr> -->
+<!-- <td>Apr. 08</td> -->
+<!-- <td>Apr. 09</td> -->
+<!-- <td>Unit 12: Linear Mixed-Effects Models: Longitudinal Analysis II</td> -->
+<!-- <td align="center" style="vertical-align:middle;"> -->
+<!--     <span class="fa fa-book" style="color: #f1f1f1; font-size: 20px;"></span> -->
+<!-- </td> -->
+<!-- <td align="center" style="vertical-align:middle;"> -->
+<!--   <a href="https://github.com/zief0002/epsy-8251/raw/master/notes/12-lmer-longitudinal-ii.pdf"> -->
+<!--     <span class="fa fa-file-pdf" style="color: #ff2600; font-size: 20px;"></span> -->
+<!--   </a> -->
+<!-- </td> -->
+<!-- <td align="center" style="vertical-align:middle;"> -->
+<!--   <a href="https://github.com/zief0002/epsy-8251/raw/master/notes/12-lmer-longitudinal-ii.Rmd"> -->
+<!--     <span class="fab fa-markdown" style="color: #ff2600; font-size: 20px;"></span> -->
+<!--   </a> -->
+<!-- </td> -->
+<!-- <td align="center" style="vertical-align:middle;"> -->
+<!--   <a href="https://github.com/zief0002/epsy-8251/raw/master/scripts/12-lmer-longitudinal-ii.R"> -->
+<!--     <span class="fa fa-code" style="color: #ff2600; font-size: 20px;"></span> -->
+<!--   </a> -->
+<!-- </td> -->
+<!-- </tr> -->
+
+<!-- <tr> -->
+<!-- <td>Apr. 11</td> -->
+<!-- <td>Apr. 16</td> -->
+<!-- <td>Unit 13: Linear Probability Models</td> -->
+<!-- <td align="center" style="vertical-align:middle;"> -->
+<!--     <span class="fa fa-book" style="color: #f1f1f1; font-size: 20px;"></span> -->
+<!-- </td> -->
+<!-- <td align="center" style="vertical-align:middle;"> -->
+<!--   <a href="https://github.com/zief0002/epsy-8251/raw/master/notes/13-linear-probability-models.pdf"> -->
+<!--     <span class="fa fa-file-pdf" style="color: #ff2600; font-size: 20px;"></span> -->
+<!--   </a> -->
+<!-- </td> -->
+<!-- <td align="center" style="vertical-align:middle;"> -->
+<!--   <a href="https://github.com/zief0002/epsy-8251/raw/master/notes/13-linear-probability-models.Rmd"> -->
+<!--     <span class="fab fa-markdown" style="color: #ff2600; font-size: 20px;"></span> -->
+<!--   </a> -->
+<!-- </td> -->
+<!-- <td align="center" style="vertical-align:middle;"> -->
+<!--   <a href="https://github.com/zief0002/epsy-8251/raw/master/scripts/13-linear-probability-models.R"> -->
+<!--     <span class="fa fa-code" style="color: #ff2600; font-size: 20px;"></span> -->
+<!--   </a> -->
+<!-- </td> -->
+<!-- </tr> -->
+
+<!-- <tr> -->
+<!-- <td>Apr. 15</td> -->
+<!-- <td>Apr. 16</td> -->
+<!-- <td>Unit 14: Logistic Regression Models</td> -->
+<!-- <td align="center" style="vertical-align:middle;"> -->
+<!--     <span class="fa fa-book" style="color: #f1f1f1; font-size: 20px;"></span> -->
+<!-- </td> -->
+<!-- <td align="center" style="vertical-align:middle;"> -->
+<!--   <a href="https://github.com/zief0002/epsy-8251/raw/master/notes/14-logistic-regression.pdf"> -->
+<!--     <span class="fa fa-file-pdf" style="color: #ff2600; font-size: 20px;"></span> -->
+<!--   </a> -->
+<!-- </td> -->
+<!-- <td align="center" style="vertical-align:middle;"> -->
+<!--   <a href="https://github.com/zief0002/epsy-8251/raw/master/notes/14-logistic-regression.Rmd"> -->
+<!--     <span class="fab fa-markdown" style="color: #ff2600; font-size: 20px;"></span> -->
+<!--   </a> -->
+<!-- </td> -->
+<!-- <td align="center" style="vertical-align:middle;"> -->
+<!--   <a href="https://github.com/zief0002/epsy-8251/raw/master/scripts/14-logistic-regression.R"> -->
+<!--     <span class="fa fa-code" style="color: #ff2600; font-size: 20px;"></span> -->
+<!--   </a> -->
+<!-- </td> -->
+<!-- </tr> -->
+
+<!-- <tr> -->
+<!-- <td>Apr. 22</td> -->
+<!-- <td>Apr. 23</td> -->
+<!-- <td>Unit 15: Generalized Linear Models</td> -->
+<!-- <td align="center" style="vertical-align:middle;"> -->
+<!--     <span class="fa fa-book" style="color: #f1f1f1; font-size: 20px;"></span> -->
+<!-- </td> -->
+<!-- <td align="center" style="vertical-align:middle;"> -->
+<!--   <a href="https://github.com/zief0002/epsy-8251/raw/master/notes/15-generalized-linear-models.pdf"> -->
+<!--     <span class="fa fa-file-pdf" style="color: #ff2600; font-size: 20px;"></span> -->
+<!--   </a> -->
+<!-- </td> -->
+<!-- <td align="center" style="vertical-align:middle;"> -->
+<!--   <a href="https://github.com/zief0002/epsy-8251/raw/master/notes/15-generalized-linear-models.Rmd"> -->
+<!--     <span class="fab fa-markdown" style="color: #ff2600; font-size: 20px;"></span> -->
+<!--   </a> -->
+<!-- </td> -->
+<!-- <td align="center" style="vertical-align:middle;"> -->
+<!--   <span class="fa fa-code" style="color: #f1f1f1; font-size: 20px;"></span> -->
+<!-- </td> -->
+<!-- </tr> -->
+
+<!-- <tr> -->
+<!-- <td>Apr. 24</td> -->
+<!-- <td>Apr. 25</td> -->
+<!-- <td>Unit 16: Poisson Regression Models</td> -->
+<!-- <td align="center" style="vertical-align:middle;"> -->
+<!--     <span class="fa fa-book" style="color: #f1f1f1; font-size: 20px;"></span> -->
+<!-- </td> -->
+<!-- <td align="center" style="vertical-align:middle;"> -->
+<!--   <a href="https://github.com/zief0002/epsy-8251/raw/master/notes/16-poisson-regression.pdf"> -->
+<!--     <span class="fa fa-file-pdf" style="color: #ff2600; font-size: 20px;"></span> -->
+<!--   </a> -->
+<!-- </td> -->
+<!-- <td align="center" style="vertical-align:middle;"> -->
+<!--   <a href="https://github.com/zief0002/epsy-8251/raw/master/notes/16-poisson-regression.Rmd"> -->
+<!--     <span class="fab fa-markdown" style="color: #ff2600; font-size: 20px;"></span> -->
+<!--   </a> -->
+<!-- </td> -->
+<!-- <td align="center" style="vertical-align:middle;"> -->
+<!--   <a href="https://github.com/zief0002/epsy-8251/raw/master/scripts/16-poisson-regression.R"> -->
+<!--     <span class="fa fa-code" style="color: #ff2600; font-size: 20px;"></span> -->
+<!--   </a> -->
+<!-- </td> -->
+<!-- </tr> -->
+
+<!-- <tr> -->
+<!-- <td>Apr. 29</td> -->
+<!-- <td>Apr. 30</td> -->
+<!-- <td>Unit 17: Mixed-Effects Logistic Regression Models</td> -->
+<!-- <td align="center" style="vertical-align:middle;"> -->
+<!--     <span class="fa fa-book" style="color: #f1f1f1; font-size: 20px;"></span> -->
+<!-- </td> -->
+<!-- <td align="center" style="vertical-align:middle;"> -->
+<!--   <a href="https://github.com/zief0002/epsy-8251/raw/master/notes/17-glmer-logistic-regression.pdf"> -->
+<!--     <span class="fa fa-file-pdf" style="color: #ff2600; font-size: 20px;"></span> -->
+<!--   </a> -->
+<!-- </td> -->
+<!-- <td align="center" style="vertical-align:middle;"> -->
+<!--   <a href="https://github.com/zief0002/epsy-8251/raw/master/notes/17-glmer-logistic-regression.Rmd"> -->
+<!--     <span class="fab fa-markdown" style="color: #ff2600; font-size: 20px;"></span> -->
+<!--   </a> -->
+<!-- </td> -->
+<!-- <td align="center" style="vertical-align:middle;"> -->
+<!--   <a href="https://github.com/zief0002/epsy-8251/raw/master/scripts/17-glmer-logistic-regression.R"> -->
+<!--     <span class="fa fa-code" style="color: #ff2600; font-size: 20px;"></span> -->
+<!--   </a> -->
+<!-- </td> -->
+<!-- </tr> -->
+
 
 </tbody>
 </table>    
 
-
-<!-- <td align="center"><font color="f1f1f1"><i class="fa fa-caret-up fa-lg"></i></font></td> -->
-<!-- <td align="center"><font color="f1f1f1"><i class="fa fa-check-square fa-lg"></i></font></td> -->
-<!-- <td align="center"><font color="f1f1f1"><i class="fa fa-file-powerpoint fa-lg"></i></font></td> -->

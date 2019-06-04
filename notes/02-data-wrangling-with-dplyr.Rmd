@@ -25,7 +25,7 @@ library(dplyr)
 library(readr)
 
 # Load the city data 
-city = read_csv("~/Dropbox/epsy-8251/data/riverside.csv")
+city = read_csv("~/Documents/github/epsy-8251/data/riverview.csv")
 
 # View data
 city
@@ -93,7 +93,7 @@ Here are some common operations that researchers use to prepare data for analysi
 
 Data Operation                                           | **dplyr**
 ---------------------------------------------------------|-------------------
-Select a subset of rows from a data frame.               | `filter()`
+Filter a subset of rows from a data frame.               | `filter()`
 Select a subset of columns from a data frame.            | `select()`
 Add new columns that are functions of existing columns.  | `mutate()`
 Sort and re-order data in a data frame.                  | `arrange()`
@@ -102,13 +102,13 @@ Group the data to carry out computations for each group. | `group_by()`
 
 ---
 
-# Select a Subset of Rows
+# Filter a Subset of Rows
 
 .pull-left[
-To select a subset of rows, we will use the `filter()` function. The argument(s) for this function are logical expressions that filter the data frame.
+To filter a subset of rows, we will use the `filter()` function. The argument(s) for this function are logical expressions that filter the data frame.
 
 ```{r eval=FALSE}
-# Select the female employees
+# Filter the female employees
 city %>% 
   filter(gender == "female")
 ```
@@ -130,7 +130,7 @@ as_hux(city2) %>%
   set_bold(1, everywhere, TRUE) %>%
   set_bottom_border(1, everywhere, 1) %>%
   set_top_border(1, everywhere, 1) %>%
-  set_caption('First 15 Rows of the Riverside Data') 
+  set_caption('First 15 Rows of the Riverview Data') 
 ```
 
 ]
@@ -140,7 +140,7 @@ as_hux(city2) %>%
 
 .pull-left[
 ```{r eval=FALSE}
-# Select the female employees
+# Filter the female employees
 city %>% 
   filter(gender == "female")
 ```
@@ -149,7 +149,7 @@ city %>%
 .pull-right[
 .small[
 ```{r echo=FALSE}
-# Select the female employees
+# Filter the female employees
 city %>% 
   filter(gender == "female")
 ```
@@ -163,7 +163,7 @@ city %>%
 Note the output is just printed to the screen. If you want to keep the filtered data or operate on it further, you need to assign the output into an object.
 
 ```{r}
-# Select the female employees
+# Filter the female employees
 females = city %>% filter(gender == "female")
 
 # Count the number of rows (females)
@@ -189,8 +189,8 @@ Here we use `filter()` to select the employees that have less than a high school
 
 ```{r}
 city %>% 
-  filter(education < 12) %>%  # Select employees with education values < 12
-  nrow()                      # Count rows
+  filter(education < 12) %>%
+  nrow()
 ```
 
 ]
@@ -205,7 +205,7 @@ as_hux(city2) %>%
   set_bold(1, everywhere, TRUE) %>%
   set_bottom_border(1, everywhere, 1) %>%
   set_top_border(1, everywhere, 1) %>%
-  set_caption('First 15 Rows of the Riverside Data') 
+  set_caption('First 15 Rows of the Riverview Data') 
 ```
 ]
 ]
@@ -234,7 +234,7 @@ as_hux(city2) %>%
   set_bold(1, everywhere, TRUE) %>%
   set_bottom_border(1, everywhere, 1) %>%
   set_top_border(1, everywhere, 1) %>%
-  set_caption('First 15 Rows of the Riverside Data') 
+  set_caption('First 15 Rows of the Riverview Data') 
 ```
 ]
 ]
@@ -267,7 +267,7 @@ as_hux(city2) %>%
   set_bold(1, everywhere, TRUE) %>%
   set_bottom_border(1, everywhere, 1) %>%
   set_top_border(1, everywhere, 1) %>%
-  set_caption('First 15 Rows of the Riverside Data') 
+  set_caption('First 15 Rows of the Riverview Data') 
 ```
 ]
 ]
@@ -297,7 +297,7 @@ as_hux(city2) %>%
   set_bold(1, everywhere, TRUE) %>%
   set_bottom_border(1, everywhere, 1) %>%
   set_top_border(1, everywhere, 1) %>%
-  set_caption('First 15 Rows of the Riverside Data') 
+  set_caption('First 15 Rows of the Riverview Data') 
 ```
 ]
 ]
@@ -331,7 +331,7 @@ as_hux(city2) %>%
   set_bold(1, everywhere, TRUE) %>%
   set_bottom_border(1, everywhere, 1) %>%
   set_top_border(1, everywhere, 1) %>%
-  set_caption('First 15 Rows of the Riverside Data after Selecting') 
+  set_caption('First 15 Rows of the Riverview Data after Selecting') 
 ```
 ]
 ]
@@ -341,12 +341,13 @@ as_hux(city2) %>%
 # Renaming Columns
 
 .pull-left[
-You can rename a column by assigning it a name in the `select()` function. Here we rename `education` to `edu`.
+You can rename a column by using the `rename()` function. Here we rename the `education` column to `educ`.
 
 
 ```{r eval=FALSE}
 city %>% 
-  select(edu = education, income, gender)
+  select(education, income, gender) %>%
+  rename(educ = education)
 ```
 ]
 
@@ -355,7 +356,8 @@ city %>%
 ```{r echo=FALSE, message=FALSE}
 
 city2 = city %>% 
-  select(edu = education, income, gender) %>%
+  select(education, income, gender)  %>%
+  rename(educ = education) %>%
   head(10)
 
 as_hux(city2) %>% 
@@ -364,7 +366,7 @@ as_hux(city2) %>%
   set_bold(1, everywhere, TRUE) %>%
   set_bottom_border(1, everywhere, 1) %>%
   set_top_border(1, everywhere, 1) %>%
-  set_caption('First 10 Rows of the Riverside Data after Selecting and Renaming') 
+  set_caption('First 10 Rows of the Riverview Data after Selecting and Renaming') 
 ```
 ]
 ]
@@ -398,7 +400,7 @@ as_hux(city2) %>%
   set_bold(1, everywhere, TRUE) %>%
   set_bottom_border(1, everywhere, 1) %>%
   set_top_border(1, everywhere, 1) %>%
-  set_caption('First 10 Rows of the Riverside Data after Selecting the Columns that End with E') 
+  set_caption('First 10 Rows of the Riverview Data after Selecting the Columns that End with E') 
 ```
 ]
 ]
@@ -413,7 +415,7 @@ To create new columns, we will use the `mutate()` function.
 ```{r eval=FALSE}
 city %>% 
   mutate(
-    income2 = income / 1000
+    income2 = income * 1000
     )
 ```
 
@@ -424,7 +426,7 @@ city %>%
 ```{r echo=FALSE}
 city2 = city %>% 
   mutate(
-    income2 = income / 1000
+    income2 = income * 1000
     ) %>%
   head(10)
 
@@ -434,10 +436,16 @@ as_hux(city2) %>%
   set_bold(1, everywhere, TRUE) %>%
   set_bottom_border(1, everywhere, 1) %>%
   set_top_border(1, everywhere, 1) %>%
-  set_caption('First 10 Rows of the Riverside Data after Mutating on a New Column')
+  set_caption('First 10 Rows of the Riverview Data after Mutating on a New Column')
 ```
 ]
+
+Note the scientific notation in the `income2` column. For example `3.74e+04` is equivalent to:
+
+$$3.74 \times 10^4 = 37400$$
 ]
+
+
 
 ---
 
@@ -449,8 +457,8 @@ Create multiple columns by including each new column as an argument in the  `mut
 ```{r eval=FALSE}
 city %>% 
   mutate(
-    income2 = income / 1000,
-    educ_after_8 = education - 8
+    income2 = income * 1000,
+    cent_educ = education - mean(education)
     )
 ```
 
@@ -461,8 +469,8 @@ city %>%
 ```{r echo=FALSE}
 city2 = city %>% 
   mutate(
-    income2 = income / 1000,
-    educ_after_8 = education - 8
+    income2 = income * 1000,
+    cent_educ = education - mean(education)
     ) %>%
   head(10)
 
@@ -472,7 +480,7 @@ as_hux(city2) %>%
   set_bold(1, everywhere, TRUE) %>%
   set_bottom_border(1, everywhere, 1) %>%
   set_top_border(1, everywhere, 1) %>%
-  set_caption('First 10 Rows of the Riverside Data after Mutating Two New Columns')
+  set_caption('First 10 Rows of the Riverview Data after Mutating Two New Columns')
 ```
 ]
 ]
@@ -504,7 +512,7 @@ as_hux(city2) %>%
   set_bold(1, everywhere, TRUE) %>%
   set_bottom_border(1, everywhere, 1) %>%
   set_top_border(1, everywhere, 1) %>%
-  set_caption('First 10 Rows of the Riverside Data Arranged by Income')
+  set_caption('First 10 Rows of the Riverview Data Arranged by Income')
 ```
 ]
 ]
@@ -536,7 +544,7 @@ as_hux(city2) %>%
   set_bold(1, everywhere, TRUE) %>%
   set_bottom_border(1, everywhere, 1) %>%
   set_top_border(1, everywhere, 1) %>%
-  set_caption('First 10 Rows of the Riverside Data Arranged by Gender and then Income')
+  set_caption('First 10 Rows of the Riverview Data Arranged by Gender and then Income')
 ```
 ]
 ]
@@ -568,7 +576,7 @@ as_hux(city2) %>%
   set_bold(1, everywhere, TRUE) %>%
   set_bottom_border(1, everywhere, 1) %>%
   set_top_border(1, everywhere, 1) %>%
-  set_caption('First 10 Rows of the Riverside Data Arranged by Gender and then Descending Income')
+  set_caption('First 10 Rows of the Riverview Data Arranged by Gender and then Descending Income')
 ```
 ]
 ]
