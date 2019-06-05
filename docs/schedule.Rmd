@@ -55,7 +55,7 @@ Below is the tenative schedule for the class. The dates are subject to change at
 </td>
 <td>Introduction to R and RStudio</td>
 <td align="center" style="vertical-align:middle;">
-  <a href="https://zief0002.github.io/book-8251/rmarkdown.html">
+  <a href="http://zief0002.github.io/epsy-8251/misc/01-introduction-to-r.html">
     <span class="fa fa-file-pdf" style="color: #ff2600; font-size: 20px;"></span>
   </a>
 </td>
