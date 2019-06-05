@@ -654,7 +654,7 @@ ggplot(data = city, aes(x = education, y = income)) +
 
 # The ggthemes Package
 
-The **ggthemes** package includes 20 additional themes that you can use to style your plot. See https://jrnold.github.io/ggthemes/
+The **ggthemes** package includes 20 additional themes that you can use to style your plot. See https://jrnold.github.io/ggthemes/. Here I use a theme similar to that from plots that appear in the Wall Street Journal.
 
 .pull-left[
 .smallish[
@@ -664,7 +664,7 @@ library(ggthemes)
 
 ggplot(data = city, aes(x = education, y = income)) +
   geom_point() +
-  theme_fivethirtyeight()
+  theme_wsj()
 ```
 ]
 ]
@@ -674,7 +674,7 @@ ggplot(data = city, aes(x = education, y = income)) +
 library(ggthemes)
 ggplot(data = city, aes(x = education, y = income)) +
   geom_point(size = 4) +
-  theme_fivethirtyeight()
+  theme_wsj()
 ```
 ]
 
@@ -816,6 +816,8 @@ city %>%
 - **Cookbook for R:** Web-based version of Winston Chang's R Graphics Cookbook http://www.cookbook-r.com/Graphs/ (The UMN library has electronic access to the actual book. Just search for "R Graphics Cookbook" and log-in with your x500.)
 
 - **extrafonts package:** Use almost any font on your computer in your plots. http://blog.revolutionanalytics.com/2012/09/how-to-use-your-favorite-fonts-in-r-charts.html
+
+- **paletteer package:** A comprehensive collection of color palettes in R using a common interface https://github.com/EmilHvitfeldt/paletteer
 
 
 
