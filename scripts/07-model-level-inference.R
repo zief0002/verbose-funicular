@@ -6,7 +6,6 @@ library(broom)
 library(dplyr)
 library(ggplot2)
 library(readr)
-library(sm)
 
 
 
@@ -14,18 +13,16 @@ library(sm)
 ### Read in data
 ##################################################
 
-city = read_csv(file = "~/Documents/github/epsy-8251/data/riverside.csv") 
-
-head(city)
-tail(city)
+keith = read_csv(file = "~/Documents/github/epsy-8251/data/keith-gpa.csv")
+head(keith)
 
 
 
 ##################################################
-### Regress income on edu
+### Fit regression model
 ##################################################
 
-lm.1 = lm(income ~ 1 + education, data = city)
+lm.1 = lm(gpa ~ 1 + homework, data = keith)
 
 
 
@@ -49,9 +46,18 @@ anova(lm.1)
 ### Plot of the fitted model and the model uncertainty
 ##################################################
 
-ggplot(data = city, aes(x = education, y = income)) +
-  geom_smooth(method = "lm", se = TRUE) +
-  xlab("Education level") +
-  ylab("Income") +
+# Install educate package (only need to do this once)
+# library(devtools)
+# install_github("zief0002/educate")
+
+# Load educate package
+library(educate)
+
+# Create plot with regression line and confidence envelope
+ggplot(data = keith, aes(x = homework, y = gpa)) +
+  stat_watercolor_smooth(method = "lm") +
+  geom_abline(intercept = 74.3, slope = 1.21) +
+  xlab("Time spent on homework") +
+  ylab("GPA (on a 100-pt. scale)") +
   theme_bw()
 

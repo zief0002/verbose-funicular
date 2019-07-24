@@ -3,49 +3,60 @@ title: "Model-Level Inference"
 date: "`r Sys.Date()`"
 header-includes:
    - \usepackage{xcolor}
+   - \definecolor{umn}{HTML}{FF2D21}
+   - \definecolor{myorange}{HTML}{EA6153}
    - \usepackage[framemethod=tikz]{mdframed}
    - \usepackage{graphicx}
    - \usepackage{rotating}
    - \usepackage{booktabs}
-   - \usepackage{caption}
    - \usepackage{float}
+   - \usepackage{caption}
+   - \captionsetup[table]{textfont={it}, labelfont={}, singlelinecheck=false, labelsep=newline}
+   - \captionsetup[figure]{textfont={}, labelfont={it}, singlelinecheck=false, labelsep=period}  
    - \usepackage{xfrac}
-   - \definecolor{umn}{RGB}{153, 0, 85}
-   - \definecolor{umn2}{rgb}{0.1843137, 0.4509804, 0.5372549}
-   - \definecolor{myorange}{HTML}{EA6153}
 output: 
   pdf_document:
-    highlight: tango
-urlcolor: "umn2"
+    latex_engine: xelatex
+    highlight: zenburn
+    fig_width: 6
+    fig_height: 6
+mainfont: "Sabon"
+sansfont: "Futura"
+monofont: Inconsolata    
+urlcolor: "umn"
 bibliography: epsy8251.bib
 csl: apa-single-spaced.csl
 ---
 
-```{r knitr_init, echo=FALSE, cache=FALSE}
-library(knitr)
-library(rmdformats)
-
-## Global options
-options(max.print="75")
-opts_chunk$set(prompt=FALSE, comment=NA, message=FALSE, warning=FALSE, tidy=FALSE)
-opts_knit$set(width=85)
-options(scipen=5)
-```
+\frenchspacing
 
 <!-- LaTeX definitions -->
 
 \mdfdefinestyle{mystyle}{userdefinedwidth=5in, align=center, backgroundcolor=yellow, roundcorner=10pt, skipabove=2em}
 
-\mdfdefinestyle{mystyle2}{userdefinedwidth=5.5in, align=center, skipabove=10pt, topline=false, bottomline=false, 
+\mdfdefinestyle{mystyle2}{userdefinedwidth=5.5in, align=center, skipabove=10pt, topline=false, bottomline=false,
 linecolor=myorange, linewidth=5pt}
 
 \mdfdefinestyle{work}{userdefinedwidth=5in, linecolor=blue, align=center, roundcorner=10pt, skipabove=2em}
 
 
+```{r knitr_init, echo=FALSE, cache=FALSE, message=FALSE}
+library(knitr)
+library(kableExtra)
+library(rmdformats)
+
+## Global options
+options(max.print="75")
+opts_chunk$set(prompt=FALSE, comment=NA, message=FALSE, warning=FALSE, tidy=FALSE, fig.width=6, fig.height=6,
+               fig.pos='H', fig.align='center')
+opts_knit$set(width=85)
+options(scipen=5)
+```
+
 
 # Introduction and Research Question
 
-In the last set of notes, we carried out an inferential analysis on the regression coefficients; testing whether the parameters were equal to zero and also computing confidence intervals to estimate the uncertainty in the coefficient estimates. In this set of notes, we will again consider statistical inference, but this time at the model level. To do so, we will again examine the question of whether education level is related to income using the *riverside.csv* data from @Lewis-Beck:2016.
+In the last set of notes, we carried out an inferential analysis on the regression coefficients; testing whether the parameters were equal to zero and also computing confidence intervals to estimate the uncertainty in the coefficient estimates. In this set of notes, we will again consider statistical inference, but this time at the model level. To do so, we will again examine the question of whether time spent on homework is related to GPA using the *keith-gpa.csv* data (see the [data codebook](http://zief0002.github.io/epsy-8251/codebooks/keith-gpa.html)). To begin, we will load several libraries and import the data into an object called `keith`. 
 
 # Preparation
 
@@ -55,14 +66,17 @@ library(broom)
 library(dplyr)
 library(ggplot2)
 library(readr)
-library(sm)
+library(educate)
 
 # Read in data
-city = read_csv(file = "~/Dropbox/epsy-8251/data/riverside.csv")
+keith = read_csv(file = "~/Documents/github/epsy-8251/data/keith-gpa.csv")
+head(keith)
 
 # Fit regression model
-lm.1 = lm(income ~ 1 + education, data = city)
+lm.1 = lm(gpa ~ 1 + homework, data = keith)
 ```
+
+
 
 
 Sometimes you are interested in the model as a whole, rather than the individual parameters. For example, you may be interested in whether a set of predictors *together* explains variation in the outcome. Recall that the model-level information is displayed using the `glance()` output from the **broom** package.
@@ -71,9 +85,8 @@ Sometimes you are interested in the model as a whole, rather than the individual
 glance(lm.1)
 ```
 
-The `r.squared` column indicates the proportion of variation in the outcome explained by differences in the predictor *in the sample*. Here, differences in education level explains 63\% of the variation in income level for the 32 employees. 
+The `r.squared` column indicates the proportion of variation in the outcome explained by differences in the predictor *in the sample*. Here, differences in time spent on homework explains 10.7\% of the variation in students' GPAs for the 100 students in the sample. 
 
-\newpage
 
 ## Model-Level Inference
 
@@ -131,7 +144,7 @@ $$
 \end{split}
 $$
 
-where $p$ is the number of predictors used in the model and $\mathrm{Total}$ is the total degrees of freedom in the data used in the regression model ($\mathrm{Total}=n-1$). In our example, $\mathit{df}_1=1$ and $\mathit{df}_2=31-1=30$. Using these values, we have defined the $F(1,30)$-distibution.
+where $p$ is the number of predictors used in the model and $\mathrm{Total}$ is the total degrees of freedom in the data used in the regression model ($\mathrm{Total}=n-1$). In our example, $\mathit{df}_1=1$ and $\mathit{df}_2=99-1=98$. Using these values, we have defined the $F(1,98)$-distibution.
 
 The $F$-distribution is the sampling distribution of $F$-values (not $R^2$-values). But, it turns out that we can easily convert an $R^2$-value to an $F$-value using,
 
@@ -143,38 +156,39 @@ In our example,
 
 $$
 \begin{split}
-F &= \frac{0.63}{1 - 0.63} \times \frac{30}{1} \\
-&= 1.70 \times 30 \\
-&= 51.1
+F &= \frac{0.107}{1 - 0.107} \times \frac{98}{1} \\
+&= 0.1198 \times 98 \\
+&= 11.74
 \end{split}
 $$
 
-Thus, our observed $F$-value is: $F(1,30)=51.1$. To evaluate this under the null hypothesis, we find the area under the $F(1,30)$ density curve that corresponds to $F$-values *at least as extreme* as our observed $F$-value of 51.1.
+Thus, our observed $F$-value is: $F(1,98)=11.74$. To evaluate this under the null hypothesis, we find the area under the $F(1,98)$ density curve that corresponds to $F$-values *at least as extreme* as our observed $F$-value of 11.74.
 
-```{r echo=FALSE, out.width='3.5in', fig.cap='Plot of the probability curve for the F(1,30) distribution. The shaded area under the curve represents the p-value for a test evaluating whether the population rho-squared is zero using an observed F-value of 51.1.', fig.pos='H'}
+```{r echo=FALSE, out.width='3.5in', fig.cap='Plot of the probability curve for the F(1,98) distribution. The shaded area under the curve represents the p-value for a test evaluating whether the population rho-squared is zero using an observed F-value of 11.74.', fig.pos='H'}
 new = data.frame(
-  X = seq(from = 0, to = 60, by = 0.01)
+  X = seq(from = 0, to = 20, by = 0.01)
 ) %>%
   rowwise() %>%
-  mutate( Y = df(x = X, df1 = 1, df2 = 30) )
+  mutate( Y = df(x = X, df1 = 1, df2 = 98) )
 
 ggplot(data = new,  aes(x = X, y = Y)) +
   theme_bw() +
-  scale_x_continuous(name = "", breaks = seq(from = 0, to = 60, by = 10)) +
+  scale_x_continuous(name = "", breaks = seq(from = 0, to = 20, by = 5)) +
   scale_y_continuous(NULL, breaks = NULL) +
   theme(
     panel.grid.major.x = element_blank(),
     panel.grid.minor.x = element_blank()
   ) +
-  geom_ribbon(data = subset(new, X >= 51.1), ymin = -10, aes(ymax = Y),
+  geom_ribbon(data = subset(new, X >= 11.74), ymin = -10, aes(ymax = Y),
               color = "#bbbbbb", alpha = 0.4) +
   geom_line(color = "#ff7f0e") +
-  geom_segment(x = 51.1, xend = 51.1, y = -10, yend = 0.1, color = "#1f77b4") +
-  annotate("text", x = 51.1, y = 0.4, label = "Observed\nF-value", size = 5)
+  geom_segment(x = 11.74, xend = 11.74, y = -10, yend = 0.1, color = "#1f77b4") +
+  annotate("text", x = 11.74, y = 0.4, label = "Observed\nF-value", size = 5)
 ```
 
-This area (which is one-sided in the $F$-distribution) corresponds to the $p$-value. In our case this $p$-value is 0.0000000556211556703448. It suggests that the observed $F$-value we obtained of 51.1 is highly unlikely under the assumption that the null hypothesis that $\rho^2=0$ is true. 
+This area (which is one-sided in the $F$-distribution) corresponds to the $p$-value. In our case this $p$-value is 0.000885. The probability of observing an $F$-value at least as extreme as we the one we observed ($F=11.74$) under the assumption that the null hypothesis is true is 0.000885. This suggests that the empirical data are inconsistent with the hypothesis that $\rho^2=0$, and it is unlikely that the model explains no variation in students' GPAs. 
 
+\newpage
 
 ### Using the $F$-distribution in Practice
 
@@ -184,12 +198,7 @@ In practice, all of this information is provided in the output of the `glance()`
 glance(lm.1)
 ```
 
-The observed $F$-value is given in the `statistic` column and the associated degrees of freedom are provided in the `df` and `df.residual` columns. Lastly, the $p$-value is given in the `p.value` column. We can report the findings as follows:
-
-
-\begin{mdframed}[style=mystyle2]
-Based on the evidence ($p < .001$), we reject the hypothesis that the model does not explain variation in incomes in the population, $F(1,~30) = 51.45$. Our best guess for the amount of variation explained by the model is 63.2\%. 
-\end{mdframed}
+The observed $F$-value is given in the `statistic` column and the associated degrees of freedom are provided in the `df` and `df.residual` columns. Lastly, the $p$-value is given in the `p.value` column.
 
 ## ANOVA Decomposition
 
@@ -199,9 +208,9 @@ We can also get the model-level inferential information from the `anova()` outpu
 anova(lm.1)
 ```
 
-Note that the two $df$ values for the model-level $F$-statistic correspond to the $df$ in each row of the ANOVA table. The first $df$ (in this case 1) is the model degrees-of-freedom, and the second $df$ (in this case 30) is the residual degrees-of-freedom. Note the $p$-value is the same as that from the `glance()` function.
+Note that the two $df$ values for the model-level $F$-statistic correspond to the $df$ in each row of the ANOVA table. The first $df$ (in this case 1) is the model degrees-of-freedom, and the second $df$ (in this case 98) is the residual degrees-of-freedom. Note the $p$-value is the same as that from the `glance()` function.
 
-This ANOVA decomposition also breaks out the sum of squared values into the variation explained by the model (4147330491.907) and that which is unexplained by the model (residual variation; 2418196933.593). Summing these two values will give the total amount of variation which can be used to compute $R^2$; $R^2 = \sfrac{\mathrm{SS}_{\mathrm{Model}}}{\mathrm{SS}_{\mathrm{Total}}}$.
+This ANOVA decomposition also breaks out the sum of squared values into the variation explained by the model (616.5) and that which is unexplained by the model (residual variation; 5136.4). Summing these two values will give the total amount of variation which can be used to compute $R^2$; $R^2 = \sfrac{\mathrm{SS}_{\mathrm{Model}}}{\mathrm{SS}_{\mathrm{Total}}}$.
 
 This decomposition also gives us another way to consider the $F$-statistic. Recall that $F$ had a direct relationship to $R^2$
 
@@ -214,6 +223,8 @@ Using algebra, we could also express this as a ratio of two fractions
 $$
 F = \frac{\frac{R^2}{\mathit{df}_1}}{\frac{1 - R^2}{\mathit{df}_2}}
 $$
+
+\newpage
 
 Since $R^2 = \sfrac{\mathrm{SS}_{\mathrm{Model}}}{\mathrm{SS}_{\mathrm{Total}}}$ we can rewrite this as
 
@@ -246,10 +257,12 @@ In statistical theory, a sum of squares divided by a degrees of freedom is refer
 
 $$
 \begin{split}
-\mathrm{MS}_{\mathrm{Model}} &= \frac{4147330491.907}{1} = 4147330491.907 \\
-\mathrm{MS}_{\mathrm{Error}} &= \frac{2418196933.593}{30} = 80606564.453 \\
+\mathrm{MS}_{\mathrm{Model}} &= \frac{616.5}{1} = 616.5 \\
+\mathrm{MS}_{\mathrm{Error}} &= \frac{5136.4}{98} = 52.41 \\
 \end{split}
 $$
+
+\newpage
 
 These values are also printed in the `anova()` output.
 
@@ -258,7 +271,7 @@ anova(lm.1)
 ```
 
 
-The observed $F$-value of 51.5 indicates that the average explained variation is 51.5 times that of the average unexplained vartiation. There is an awful lot more explained variation than unexplained variation, on average. 
+The observed $F$-value of 11.76 indicates that the average explained variation is 11.76 times that of the average unexplained vartiation. There is an awful lot more explained variation than unexplained variation, on average. 
 
 Another name for a mean squared value is a *variance estimate*; the average amount of variation (in the squared metric) is quantified as a variance. For example, go back to the introductory statistics formula for variance
 
@@ -276,20 +289,20 @@ Note that the $\mathrm{MS}_{\mathrm{Total}}$ is not printed in the `anova()` out
 
 $$
 \begin{split}
-\mathrm{SS}_{\mathrm{Total}} &= 4147330491.907 + 2418196933.593 = 6565527425.5 \\
-\mathit{df}_{\mathrm{Total}} &= 1 = 30 = 31
+\mathrm{SS}_{\mathrm{Total}} &= 616.5 + 5136.4 = 5752.9 \\
+\mathit{df}_{\mathrm{Total}} &= 1 + 98 = 99
 \end{split}
 $$
 
 Then the $\mathrm{MS}_{\mathrm{Total}}$ is the ratio of these values,
 
 $$
-\mathrm{MS}_{\mathrm{Total}} = \frac{6565527425.5}{31} = 211791207.274194
+\mathrm{MS}_{\mathrm{Total}} = \frac{5752.9}{99} = 58.11
 $$
-Since this is a variance estimate, we could also compute the sample variance of the outcome variable, `income` using the `var()` function.
+Since this is a variance estimate, we could also compute the sample variance of the outcome variable, `gpa`, using the `var()` function.
 
 ```{r}
-var(city$income)
+var(keith$gpa)
 ```
 
 ### The F-Distribution is the Ratio of Two Chi-Squared Distributions
@@ -335,20 +348,32 @@ Now, imagine superimposing all of these lines on the same plot.
 include_graphics("images/notes-07-superimposed-lines.pdf")
 ```
 
+\newpage
+
 Examining where the sampled lines fall gives a visual interpretation of the uncertainty in the model. This two-dimensional display of uncertainty is referred to as a *confidence envelope*. In practice we estimate the uncertainty from the sample data and plot it around the fitted line from the sample.
 
-For simple regression models, we can plot this directly in `ggplot` by including the `geom_smooth()` layer. We will use the arguments `method="lm"` and `se=TRUE`. This will use the method of regression and adds a confidence enevelope.
+For simple regression models, we can plot this directly using the layer `stat_watercolor_smooth()` from the **educate** package. You need to install the **educate** package from syntax since it is not currently available on CRAN. To do this you need to use the `install_github()` function from the **devtools** package. The syntax to install **educate** is:
 
-```{r fig.width=6, fig.height=6, out.width='3in'}
-ggplot(data = city, aes(x = education, y = income)) +
-  geom_smooth(method = "lm", se = TRUE) +
-  xlab("Education level") +
-  ylab("Income") +
+```{r eval=FALSE}
+library(devtools)
+install_github("zief0002/educate")
+```
+
+Once **educate** is installed and loaded we have access to the `stat_watercolor_smooth()` function. This function, which we will use as a layer in `ggplot()` will be used to create the confidence enevelope. We also include the argument `method="lm"` in this layer. Finally, we add the regression line from the observed data using `geom_abline()`.
+
+```{r fig.width=6, fig.height=6, out.width='4in', fig.align='center', fig.pos='H', fig.cap="GPA plotted as a function of time spent on homework. The OLS regression line (black) and regression lines for 700 bootstrapped samples (blue) are also displayed."}
+ggplot(data = keith, aes(x = homework, y = gpa)) +
+  stat_watercolor_smooth(method = "lm") +
+  geom_abline(intercept = 74.3, slope = 1.21) +
+  xlab("Time spent on homework") +
+  ylab("GPA (on a 100-pt. scale)") +
   theme_bw()
 ```
 
+\newpage
 
+Note that the confidence envelope is made up of many different regression lines. These are lines that we could have obtained had we drawn a different sample. Because of this, sometimes this plot is referred to as a *hypothetical outcomes plot*. These lines are based on fitted lines to a set of re-sampled, or bootstrapped, data. The level of transparency gives us an indication of the uncertainty based on the observed data. More probable locations for the regression lines are darker, while less probably locations are lighter.
 
-# References
+<!-- ## References -->
 
 

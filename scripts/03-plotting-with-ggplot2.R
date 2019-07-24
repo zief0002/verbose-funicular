@@ -12,7 +12,7 @@ library(readr)
 ### Read in data
 ##################################################
 
-city = read_csv("~/Documents/github/epsy-8251/data/riverside.csv")
+city = read_csv("~/Documents/github/epsy-8251/data/riverview.csv")
 
 head(city)
 
@@ -229,14 +229,16 @@ ggplot(data = city, aes(x = education, y = income)) +
 
 
 ##################################################
-### CThe ggthemes package
+### The ggthemes package
 ##################################################
 
 # Load ggthemes package
 library(ggthemes)
+
+# Plot with Wall Street Journal theme
 ggplot(data = city, aes(x = education, y = income)) +
   geom_point() +
-  theme_fivethirtyeight()
+  theme_wsj()
 
 
 
@@ -246,6 +248,8 @@ ggplot(data = city, aes(x = education, y = income)) +
 
 # Load the scales package
 library(scales)
+
+# Plot with dollar signs on the Y labels
 ggplot(data = city, aes(x = education, y = income)) +
   geom_point() +
   scale_y_continuous(
@@ -261,6 +265,8 @@ ggplot(data = city, aes(x = education, y = income)) +
 
 # Load scales library
 library(scales) # To format $ in the labels
+
+# Plot
 ggplot(data = city, aes(x = education, y = income)) +
   geom_point(aes(color = party), size = 4) +
   scale_color_manual(

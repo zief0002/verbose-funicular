@@ -76,7 +76,6 @@ library(corrr)
 library(dplyr)
 library(ggplot2)
 library(readr)
-library(sm)
 
 # Read in data
 keith = read_csv(file = "~/Documents/github/epsy-8251/data/keith-gpa.csv")
@@ -86,9 +85,23 @@ head(keith)
 As in previous analyses, we begin the regression analysis by looking at the marginal distributions of any predictors and the outcome, as well as summary statistics of center and variation. We also examine a scatterplot of the outcome versus each of the predictors and the bivariate correlations (syntax not shown).
 
 ```{r echo=FALSE, out.width='2in', fig.cap='Density plots of the marginal distributions of GPA and time spent on homework. The scatterplot showing the relationship between GPA and time spent on homework is also shown.', fig.show='hold'}
-# Density plots of the marginal distributions
-sm.density(keith$gpa, xlab = "GPA (on a 100-pt. scale)")
-sm.density(keith$homework, xlab = "Time spent on homework per week (in hours)")
+# Density plots of the marginal distribution of homework
+ggplot(data = keith, aes(x = gpa)) +
+  geom_histogram(aes(y = ..density..), color = "black", fill = "yellow") +
+  stat_density(geom = "line") +
+  theme_bw() +
+  xlab("GPA (on a 100-pt. scale)") +
+  ylab("Probability density") +
+  ggtitle("Outcome: GPA")
+
+# Density plots of the marginal distribution of homework
+ggplot(data = keith, aes(x = homework)) +
+  geom_histogram(aes(y = ..density..), color = "black", fill = "yellow") +
+  stat_density(geom = "line") +
+  theme_bw() +
+  xlab("Time spent on homework per week (in hours)") +
+  ylab("Probability density")  +
+  ggtitle("Predictor: Homework")
 
 # Scatterplot
 ggplot( data = keith, aes(x = homework, y = gpa) ) +
@@ -508,178 +521,79 @@ Confidence intervals help us keep an open-mind about uncertainty, after all they
 
 One plot that gives a great deal of information about the estimates of the regression coefficients and the associated uncertainty is a *coefficient plot*. This plot, recommended by @Gelman:2007, is a graphical representation of the information provided in the `tidy()` output.
 
-```{r fig.width=6, fig.height = 4, out.width='4in', fig.cap='Coefficient plot for the model regressing GPA on time spent on homework. Uncertainty based on the 95\\% confidence intervals are displayed.', echo=FALSE}
-# Add the lower- and upper-limits for the CIs
-my_reg = tidy(lm.1) %>%
-  mutate(
-    lwr_limit = estimate - 2 * std.error,
-    upr_limit = estimate + 2 * std.error
-    )
+```{r fig.width=6, fig.height = 3, out.width='4in', fig.cap='Coefficient plot for the model regressing GPA on time spent on homework. Uncertainty based on the 95\\% confidence intervals are displayed.', echo=FALSE}
+library(ungeviz)
 
-# View the output
-#my_reg
+tidy(lm.1) %>%
+  ggplot(aes(x = estimate, y = term)) +
+    stat_confidence_density(aes(moe = std.error, fill = stat(ndensity)), height = 0.15, confidence = 0.68) +
+    geom_point(aes(x = estimate), size = 2) +
+    xlim(0, 80) +
+    theme_bw() +
+    scale_fill_gradient(low = "#eff3ff", high = "#6baed6") +
+    theme(
+      panel.grid.major = element_blank(),
+      panel.grid.minor = element_blank()
+      ) +
+    scale_y_discrete(name = "Coefficients", labels = c("Intercept", "Time spent\non homework")) +
+    xlab("Estimate")
+```
 
-# Create the coefficient plot
-ggplot(data = my_reg, aes(x = estimate, y = term)) +
-  geom_segment(
-    aes(x = lwr_limit, xend = upr_limit, y = term, yend = term),
-    color = "red"
-    ) +
-  geom_point() +
+The coefficient plot shows the estimates of the regression coefficients (dots) and the uncertainty in those estimates via the confidence intervals (blue shading). Notice that darker shading is associated with parameter values that are more probable given the empirical data; the sample estimates are the most likely values for the regression parameters.
+
+To create a coefficient plot, we will use the `stat_confidence_density()` function from the **ungeviz** package. You need to install the **ungeviz** package from syntax since it is not currently available on CRAN. To do this you need to use the `install_github()` function from the **devtools** package. The syntax to install **ungeviz** is:
+
+```{r eval=FALSE}
+library(devtools)
+install_github("wilkelab/ungeviz")
+```
+
+Once **ungeviz** is installed and loaded we have access to the `stat_confidence_density()` function. This function, which we will use as a layer in `ggplot()` will be used to create the coefficient plot. The syntax I used to create the coefficient plot above is:
+
+```{r eval=FALSE}
+# Load ungeviz library
+library(ungeviz)
+
+# Create plot
+ggplot(data = tidy(lm.1), aes(x = estimate, y = term)) +
+  stat_confidence_density(aes(moe = std.error, confidence = 0.68, fill = stat(ndensity)), 
+                          height = 0.15) +
+  geom_point(aes(x = estimate), size = 2) +
+  scale_fill_gradient(low = "#eff3ff", high = "#6baed6") +
   theme_bw() +
   theme(
     panel.grid.major = element_blank(),
     panel.grid.minor = element_blank()
-  ) +
-  scale_y_discrete(name = "Coefficients", labels = c("Intercept", "Time spent\non homework")) +
-  xlab("Estimate")
+    ) +
+  scale_x_continuous(name = "Estimate", limits = c(0, 80)) +
+  scale_y_discrete(name = "Coefficients", labels = c("Intercept", "Time spent\non homework"))
 ```
 
-The coefficient plot shows the estimates of the regression coefficients (dots) and the uncertainty in those estimates via the confidence intervals (red lines).
+Note that the data we use in the `data=` argument to create the plot is the coefficient-level output from the `tidy()` function. The `stat_confidence_density()` layer requires an aesthetic mapping that relates `moe=` to some margin of error, in our case, the `std.error` column of the `tidy()` dataframe. Since one standard error is the margin of error on a 68\% confidence interval, we also include `confidence=0.68` in the `aes()` function. Lastly, the argument `fill = stat(ndensity)` is included in `aes()` to allow for colored shading in the interval.
 
-The pseudocode too create this plot is:
+The remainder of the syntax is making the plot pretty. The `scale_fill_gradient()` layer sets the two colors to interpolate between for the shading. In our case those give a light and dark blue color. You also may need to toy with the limits on the *x*-variable to encompass the entire interval in the plot.
 
-- Mutate new columns for the lower- and upper-limits for the CIs onto the `tidy()` output.
-- Plot line segments that correspond to the CIs.
-- Plot the estimates for the coefficients as a point.
-- Spruce up the plot.
+There are several variations of this plot. For example, below I omit the intercept from this plot. To do this, I use the `filter()` function to omit the row in the `tidy()` output that includes the intercept. I also change the limits on the *x*-axis to better fit the homework interval. Here I also dropped the `fill = stat(ndensity)` from the aesthetic mapping in the `stat_confidence_density()` layer, which gives a greyscale plot.
 
+```{r fig.width=6, fig.height = 3, out.width='4in', fig.cap='Coefficient plot for the model regressing income on education. Uncertainty based on the 95\\% confidence interval is displayed. Note that the intercept has been omitted.', fig.pos='H', echo=TRUE}
+# Omit intercept
+my_coefs = tidy(lm.1) %>%
+  filter(term != "(Intercept)")
 
-
-The syntax I used was:
-
-```{r eval=FALSE}
-# Add the lower- and upper-limits for the CIs
-my_reg = tidy(lm.1) %>%
-  mutate(
-    lwr_limit = estimate - 2 * std.error,
-    upr_limit = estimate + 2 * std.error
-    )
-
-# View the output
-my_reg
+# Create plot
+ggplot(data = my_coefs, aes(x = estimate, y = term)) +
+  stat_confidence_density(aes(moe = std.error, confidence = 0.68), height = 0.15) +
+  geom_point(aes(x = estimate), size = 2) +
+  theme_bw() +
+  theme(
+    panel.grid.major = element_blank(),
+    panel.grid.minor = element_blank()
+    ) +
+  scale_x_continuous(name = "Estimate", limits = c(0, 2)) +
+  scale_y_discrete(name = "Coefficients", labels = c("Time spent\non homework"))
 ```
 
 \newpage
-
-```{r eval=FALSE}
-# Create the coefficient plot
-ggplot(data = my_reg, aes(x = estimate, y = term)) +
-  geom_segment(
-    aes(x = lwr_limit, xend = upr_limit, y = term, yend = term),
-    color = "red"
-    ) +
-  geom_point() +
-  theme_bw() +
-  theme(
-    panel.grid.major = element_blank(),
-    panel.grid.minor = element_blank()
-  ) +
-  scale_y_discrete(name = "Coefficients", labels = c("Intercept", "Time spent\non homework")) +
-  xlab("Estimate")
-```
-
-There are several variations of this plot. For example, below I show a coefficient plot that shows the uncertainty based on the the 68\%, 95\%, and 99\% intervals. Since the coefficient of interest in the research question is the slope, I also omit the intercept from this plot.
-
-```{r fig.width=6, fig.height = 4, out.width='4in', fig.cap='Coefficient plot for the model regressing income on education. Uncertainty based on the 68\\% and 95\\% confidence intervals are displayed.', fig.pos='H', echo=FALSE}
-# Add the lower- and upper-limits for the CIs
-my_reg = tidy(lm.1) %>%
-  mutate(
-    LL_99 = estimate - 3 * std.error,
-    UL_99 = estimate + 3 * std.error,
-    LL_95 = estimate - 2 * std.error,
-    UL_95 = estimate + 2 * std.error,
-    LL_68 = estimate - 1 * std.error,
-    UL_68 = estimate + 1 * std.error
-    ) %>%
-  filter(term != "(Intercept)")
-
-# Create the coefficient plot
-ggplot(data = my_reg, aes(x = estimate, y = term)) +
-  geom_segment(
-    aes(x = LL_99, xend = UL_99, y = term, yend = term),
-    color = "#2C7FB8",
-    alpha = 0.3,
-    size = 1.1
-    ) +
-  geom_segment(
-    aes(x = LL_95, xend = UL_95, y = term, yend = term),
-    color = "#2C7FB8",
-    alpha = 0.6,
-    size = 1.1
-    ) +
-  geom_segment(
-    aes(x = LL_68, xend = UL_68, y = term, yend = term),
-    color = "#2C7FB8",
-    size = 1.1
-    ) +
-  geom_point(shape = 15, color = "#081D58") +
-  theme_bw() +
-  theme(
-    panel.grid.major = element_blank(),
-    panel.grid.minor = element_blank()
-  ) +
-  scale_y_discrete(name = "Coefficients", labels = c("Time spent\non homework")) +
-  xlab("Estimate")
-```
-
-The pseudocode to create this plot is:
-
-- Mutate new columns for the lower- and upper-limits for the 68\% CIs onto the `tidy()` output.
-- Mutate new columns for the lower- and upper-limits for the 95\% CIs onto the `tidy()` output.
-- Mutate new columns for the lower- and upper-limits for the 99\% CIs onto the `tidy()` output.
-- Filter to keep only the `homework` term.
-- Plot line segments that correspond to the 68\% CIs. Make this color mostly transparent.
-- Plot line segments that correspond to the 95\% CIs. Make this color somewhat transparent.
-- Plot line segments that correspond to the 99\% CIs. Make this color opaque.
-- Plot the estimates for the coefficients as a point.
-- Spruce up the plot.
-
-
-<!-- # Back to the Riverview Example -->
-
-<!-- ```{r} -->
-<!-- # Read in data -->
-<!-- city = read_csv(file = "~/Dropbox/epsy-8251/data/riverside.csv") -->
-
-<!-- # Fit regression model -->
-<!-- lm.1 = lm(income ~ 1 + education, data = city) -->
-
-<!-- # Coefficient-level inference -->
-<!-- tidy(lm.1) -->
-<!-- ``` -->
-
-
-<!-- ```{r out.width='4in', fig.cap='Coefficient plot for the model regressing income on education. Uncertainty based on the 95\\% confidence intervals are displayed.', fig.pos='H', echo=FALSE} -->
-<!-- # Add the lower- and upper-limits for the CIs -->
-<!-- my_reg = tidy(lm.1) %>% -->
-<!--   mutate( -->
-<!--     lwr_limit = estimate - 2 * std.error, -->
-<!--     upr_limit = estimate + 2 * std.error -->
-<!--     ) -->
-
-<!-- # View the output -->
-<!-- my_reg -->
-
-<!-- # Create the coefficient plot -->
-<!-- ggplot(data = my_reg, aes(x = estimate, y = term)) + -->
-<!--   geom_segment( -->
-<!--     aes(x = lwr_limit, xend = upr_limit, y = term, yend = term),  -->
-<!--     color = "red") + -->
-<!--   geom_point() + -->
-<!--   geom_vline( -->
-<!--     xintercept = 0,  -->
-<!--     linetype = "dashed" -->
-<!--     ) + -->
-<!--   theme_bw() + -->
-<!--   theme( -->
-<!--     panel.grid.major.x = element_blank(), -->
-<!--     panel.grid.minor.x = element_blank() -->
-<!--   ) + -->
-<!--   scale_y_discrete(name = "Coefficients", labels = c("Intercept", "Education")) + -->
-<!--   xlab("Estimate") -->
-<!-- ``` -->
-
 
 # References
 

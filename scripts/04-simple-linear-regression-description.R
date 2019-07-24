@@ -6,7 +6,6 @@ library(corrr)
 library(dplyr)
 library(ggplot2)
 library(readr)
-library(sm)
 
 
 
@@ -20,14 +19,18 @@ head(city)
 tail(city)
 
 
-options(scipen = 9999)
-
 
 ##################################################
 ### Examine outcome/response
 ##################################################
 
-sm.density(city$income)
+ggplot(data = city, aes(x = income)) +
+  geom_histogram(aes(y = ..density..), color = "black", fill = "yellow") +
+  stat_density(geom = "line") +
+  theme_bw() +
+  xlab("Income (in thousands of dollars)") +
+  ylab("Probability density")
+
 
 city %>% 
   summarize(
@@ -42,7 +45,13 @@ city %>%
 ### Examine predictor
 ##################################################
 
-sm.density(city$education, xlab = "Education")
+ggplot(data = city, aes(x = income)) +
+  geom_histogram(aes(y = ..density..), color = "black", fill = "yellow") +
+  stat_density(geom = "line") +
+  theme_bw() +
+  xlab("Education level") +
+  ylab("Probability density")
+
 
 city %>% 
   summarize(

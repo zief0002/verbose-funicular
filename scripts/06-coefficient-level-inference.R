@@ -3,10 +3,10 @@
 ##################################################
 
 library(broom)
+library(corrr)
 library(dplyr)
 library(ggplot2)
 library(readr)
-library(sm)
 
 
 
@@ -14,19 +14,68 @@ library(sm)
 ### Read in data
 ##################################################
 
-city = read_csv(file = "~/Documents/github/epsy-8251/data/riverside.csv") 
+keith = read_csv(file = "~/Documents/github/epsy-8251/data/keith-gpa.csv")
 
-head(city)
-tail(city)
+head(keith)
 
 
 
 ##################################################
-### Regress income on edu
+### Exploration
 ##################################################
 
-lm.1 = lm(income ~ 1 + education, data = city)
+# Density plots of the marginal distribution of homework
+ggplot(data = keith, aes(x = gpa)) +
+  geom_histogram(aes(y = ..density..), color = "black", fill = "yellow") +
+  stat_density(geom = "line") +
+  theme_bw() +
+  xlab("GPA (on a 100-pt. scale)") +
+  ylab("Probability density") +
+  ggtitle("Outcome: GPA")
+
+
+# Density plots of the marginal distribution of homework
+ggplot(data = keith, aes(x = homework)) +
+  geom_histogram(aes(y = ..density..), color = "black", fill = "yellow") +
+  stat_density(geom = "line") +
+  theme_bw() +
+  xlab("Time spent on homework per week (in hours)") +
+  ylab("Probability density")  +
+  ggtitle("Predictor: Homework")
+
+
+# Scatterplot
+ggplot( data = keith, aes(x = homework, y = gpa) ) +
+  geom_point() +
+  theme_bw() +
+  xlab("Time spent on homework per week (in hours)") +
+  ylab("GPA (on a 100-pt. scale)")
+
+
+# Summary statistics
+keith %>%
+  summarize(
+    M_gpa  = mean(gpa),
+    SD_gpa = sd(gpa),
+    M_hw   = mean(homework),
+    SD_hw  = sd(homework)
+    )
+
+
+# Correlation
+keith %>%
+  select(gpa, homework) %>%
+  correlate()
+
+
+
+##################################################
+### Fit regression model
+##################################################
+
+lm.1 = lm(gpa ~ 1 + homework, data = keith)
 lm.1
+
 
 
 ##################################################
@@ -49,33 +98,28 @@ confint(lm.1, level = 0.95)
 ### Coefficient plot
 ##################################################
 
-# Add the lower- and upper-limits for the CIs
-my_reg = tidy(lm.1) %>%
-  mutate(
-    lwr_limit = estimate - 2 * std.error,
-    upr_limit = estimate + 2 * std.error
-  )
+# Install ungeviz package (only need to do this once)
+# library(devtools)
+# install_github("wilkelab/ungeviz")
 
-# View the output
-my_reg
 
-# Create the coefficient plot
-ggplot(data = my_reg, aes(x = estimate, y = term)) +
-  geom_segment(
-    aes(x = lwr_limit, xend = upr_limit, y = term, yend = term), 
-    color = "red") +
-  geom_point() +
-  geom_vline(
-    xintercept = 0, 
-    linetype = "dashed"
-  ) +
+# Load ungeviz library
+library(ungeviz)
+
+
+# Create plot
+ggplot(data = tidy(lm.1), aes(x = estimate, y = term)) +
+  stat_confidence_density(aes(moe = std.error, confidence = 0.68, fill = stat(ndensity)), 
+                          height = 0.15) +
+  geom_point(aes(x = estimate), size = 2) +
+  scale_fill_gradient(low = "#eff3ff", high = "#6baed6") +
   theme_bw() +
   theme(
-    panel.grid.major.x = element_blank(),
-    panel.grid.minor.x = element_blank()
+    panel.grid.major = element_blank(),
+    panel.grid.minor = element_blank()
   ) +
-  scale_y_discrete(name = "Coefficients", labels = c("Intercept", "Education")) +
-  xlab("Estimate")
+  scale_x_continuous(name = "Estimate", limits = c(0, 80)) +
+  scale_y_discrete(name = "Coefficients", labels = c("Intercept", "Time spent\non homework"))
 
 
 

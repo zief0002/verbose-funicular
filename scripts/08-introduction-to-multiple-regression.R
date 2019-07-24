@@ -4,11 +4,11 @@
 
 library(broom)
 library(corrr)
-library(dotwhisker)
 library(dplyr)
 library(ggplot2)
 library(readr)
-library(sm)
+library(tidyr)
+library(ungeviz)
 
 
 
@@ -16,7 +16,7 @@ library(sm)
 ### Read in data
 ##################################################
 
-city = read_csv(file = "~/Documents/github/epsy-8251/data/riverside.csv") 
+city = read_csv(file = "~/Documents/github/epsy-8251/data/riverview.csv")
 head(city)
 
 
@@ -38,7 +38,12 @@ tidy(lm.1)   # Coefficient-level results
 ##################################################
 
 # Examine the marginal distribution
-sm.density(city$seniority, xlab = "Seniority (in years)")
+ggplot(data = city, aes(x = seniority)) +
+  geom_histogram(aes(y = ..density..), fill = "yellow", color = "black") +
+  stat_density(geom = "line") +
+  theme_bw() +
+  xlab("Seniority level (in years)") +
+  ylab("Probability density")
 
 
 # Compute mean and standard deviation
@@ -55,19 +60,17 @@ city %>%
 ##################################################
 
 # Scatterplot
-ggplot(data = city, aes(x = seniority, y = income)) + 
+ggplot(data = city, aes(x = seniority, y = income)) +
   geom_point() +
   theme_bw() +
   xlab("Seniority (in years)") +
-  ylab("Income (in dollars)")
+  ylab("Income (in thousands of dollars)")
 
 
 # Correlation matrix
 city %>%
   select(income, education, seniority) %>%
-  correlate() %>%
-  shave() %>%
-  fashion(decimals = 2)
+  correlate()
 
 
 
@@ -99,56 +102,59 @@ anova(lm.3)
 
 
 ##################################################
-### Coefficient plot with dw_plot(): Simple regression
+### Coefficient plot 1
 ##################################################
 
-m1 = tidy(lm.1) %>% mutate(model = "Model 1") # Create tidy model object
-dw_plot(m1, show_intercept = TRUE) # Create coefficient plot
+# Obtain tidy() output and filter out the intercept
+coef_output = tidy(lm.3) %>%
+  filter(term != "(Intercept)") 
 
 
-# Customize plot
-dw_plot(m1, show_intercept = TRUE, order_vars = c("education", "(Intercept)")) +
+# Plot
+ggplot(data = coef_output, aes(x = estimate, y = term)) +
+  stat_confidence_density(aes(moe = std.error, confidence = 0.68, 
+                              fill = stat(ndensity)), height = 0.15) +
+  geom_point(aes(x = estimate), size = 2) +
+  scale_fill_gradient(low = "#eff3ff", high = "#6baed6") +
   theme_bw() +
   theme(
-    panel.grid.major.x = element_blank(),
-    panel.grid.minor.x = element_blank()
+    panel.grid.major = element_blank(),
+    panel.grid.minor = element_blank()
   ) +
-  geom_vline(xintercept = 0, linetype = "dashed", alpha = 0.4) +
-  scale_y_discrete(name = "", labels = c("Intercept", "Education level")) +
-  scale_color_manual(
-    name = "", 
-    labels = c("Model 1"),
-    values = c("#999999")
-  )
+  scale_x_continuous(name = "Estimate", limits = c(-1, 4)) +
+  scale_y_discrete(name = "Coefficients", labels = c("Education level", "Seniority"))
 
 
 
 ##################################################
-### Coefficient plot with dw_plot(): Multiple regression
+### Coefficient plots from multiple models
 ##################################################
 
-# Create tidy model objects
+# Create tidy() objects and identify each with a model column
 m1 = tidy(lm.1) %>% mutate(model = "Model 1")
 m2 = tidy(lm.2) %>% mutate(model = "Model 2")
 m3 = tidy(lm.3) %>% mutate(model = "Model 3")
 
-# Bind into a single object
-all_models = rbind(m1, m2, m3)
 
-# Coefficient plot
-dw_plot(all_models, show_intercept = FALSE) +
+# Combine all three tidy() outputs, filter out intercepts, and drop missing values
+all_models = rbind(m1, m2, m3) %>%
+  filter(term != "(Intercept)") %>%
+  drop_na()
+
+
+# Create coefficient plots
+ggplot(data = all_models, aes(x = estimate, y = term)) +
+  stat_confidence_density(aes(moe = std.error, confidence = 0.68, 
+                              fill = stat(ndensity)), height = 0.15) +
+  geom_point(aes(x = estimate), size = 2) +
+  scale_fill_gradient(low = "#eff3ff", high = "#6baed6") +
   theme_bw() +
   theme(
-    panel.grid.major.x = element_blank(),
-    panel.grid.minor.x = element_blank()
+    panel.grid.major = element_blank(),
+    panel.grid.minor = element_blank()
   ) +
-  geom_vline(xintercept = 0, linetype = "dashed", alpha = 0.4) +
-  scale_y_discrete(
-    name = "", 
-    labels = c("Seniority level", "Education level")
-  ) +
-  scale_color_manual(
-    name = "", 
-    labels = c("Model 1", "Model 2", "Model 3"),
-    values = c("#999999", "#e69f00", "#56b4e9")
-  )
+  scale_x_continuous(name = "Estimate", limits = c(-1, 4)) +
+  scale_y_discrete(name = "Coefficients", labels = c("Education level", "Seniority")) +
+  facet_wrap(~model)
+
+

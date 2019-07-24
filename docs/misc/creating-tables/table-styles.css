@@ -1,0 +1,39 @@
+table{
+    border-collapse: collapse;
+    border-spacing: 0;
+    empty-cells: show;
+    margin: 0;
+    border-bottom: 1px solid #000000;
+}
+
+td{
+    vertical-align:top}
+
+table td,table th{
+    font-size: 90%;
+    margin: 0;
+    overflow: visible;
+    padding: 8px 16px;
+    background-color: white;
+    border: 0;
+}
+
+table thead th{
+    font-weight: normal;
+    border-top: 1px solid #000000;
+    border-bottom: 1px solid #000000;
+}
+
+table caption{
+    color: #000000;
+    font: 100% normal;
+    padding: 1em 0;
+}
+
+table tr:nth-child(2n-1) td{
+    background-color: white;
+}
+
+table tr:nth-child(2n) td{
+    background-color: white;
+}

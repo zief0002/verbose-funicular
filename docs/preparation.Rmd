@@ -1,0 +1,202 @@
+---
+title: "Preparation"
+output: 
+  rmdformats::html_docco:
+    css: 'codebooks/codebooks.css'
+---
+
+
+```{r knitr_init, echo=FALSE, cache=FALSE}
+library(knitr)
+library(rmdformats)
+library(fontawesome)
+
+## Global options
+options(max.print="75")
+opts_chunk$set(echo=FALSE,
+	             cache=TRUE,
+               prompt=FALSE,
+               tidy=TRUE,
+               comment=NA,
+               message=FALSE,
+               warning=FALSE)
+opts_knit$set(width=75)
+```
+
+
+As part of the course, there are several articles, papers and technical reports that you will need to read during the semester. Most of the articles themselves are accessible through the University of Minnesota library website (http://www.lib.umn.edu). In order to access the full text of some of the articles, you will need to log in using your University x500 username and password. More detailed information, including references or links to specific readings, are given below.
+
+
+## Welcome to EPsy 8251 {#welcome}
+
+**Required**
+
+Download and read through the course syllabus.
+
+- [Course Syllabus](https://github.com/zief0002/epsy-8251/raw/master/f19-8251-syllabus.pdf) [pdf]
+
+
+**Optional**
+
+Download and install R and RStudio:
+
+- Download R from the [R Project website](https://www.r-project.org/) and install it on your computer. The course syllabus includes instructions ito do this.
+- Download the free version of RStudio from the [RStudio website](https://www.rstudio.com/) and install it on your computer.
+
+---
+
+# Unit 01: Introduction to Statistical Computing
+
+
+## Introduction to R and RStudio {#rstudio}
+
+**Required**
+
+Watch the following video:
+
+- [R for Starters: R and R Studio Workspace](https://www.youtube.com/watch?v=uKyQyfenfvM) [video]
+
+
+**Additional Resources**
+
+- [RStudio Cheatsheets](https://www.rstudio.com/resources/cheatsheets/)
+- [RStudio Keyboard Shortcuts](https://support.rstudio.com/hc/en-us/articles/200711853-Keyboard-Shortcuts)
+- [R Cookbook](https://primo.lib.umn.edu/primo-explore/fulldisplay?docid=UMN_ALMA51642131760001701&context=L&vid=TWINCITIES&search_scope=mncat_discovery&tab=article_discovery&lang=en_US) [book; UMN Library]
+- [tidy data video](https://vimeo.com/33727555) [video]
+
+---
+
+## Data Wrangling with dplyr {#dplyr}
+
+**Required**
+
+Here is an R vignette that will help you learn dplyr:
+
+- [dplyr Tutorial](http://genomicsclass.github.io/book/pages/dplyr_tutorial.html)
+
+**Additional Resources**
+
+- [dplyr Cheatsheet](https://www.rstudio.com/wp-content/uploads/2015/02/data-wrangling-cheatsheet.pdf)
+- [tidy data video](https://vimeo.com/33727555) [video]
+
+---
+
+## Plotting with ggplot2 {#ggplot}
+
+**Required**
+
+Here are two videos to watch that will help you learn ggplot2:
+
+- [Plotting with ggplot: Part 1](https://www.youtube.com/watch?v=HeqHMM4ziXA) [video]
+- [Plotting with ggplot: Part 2](https://www.youtube.com/watch?v=n8kYa9vu1l8) [video]
+
+**Additional Resources**
+
+- [ggplot2 Cheatsheet](https://www.rstudio.com/wp-content/uploads/2015/08/ggplot2-cheatsheet.pdf)
+- [ggplot2 Extensions](http://ggplot2-exts.github.io/index.html)
+- [Cookbook for R: Graphs](http://www.cookbook-r.com/Graphs/)
+
+---
+
+# Unit 02: Introduction to Linear Regression
+
+## Simple Linear Regression: Description {#ols-description}
+
+**Required**
+
+- Lewis-Beck &amp; Lewis-Beck [Chap. 1]
+- [corrr Package Vignette](https://github.com/drsimonj/corrr)
+
+**Additional Resources**
+
+- [Guess the Correlation Game](http://guessthecorrelation.com/) [fun game]
+
+---
+
+# Unit 03: Statistical Uncertainty and Inference
+
+## Coefficient-Level Inference {#coefinf}
+
+**Required**
+
+- Lewis-Beck &amp; Lewis-Beck [Chap. 2]
+
+**Additional Resources**
+
+- [Dance of the p-values](https://www.youtube.com/watch?v=ez4DgdurRPg) [video]
+- [xkcd: p-values](https://xkcd.com/1478/) [cartoon]
+
+---
+
+# Unit 04: Multiple Linear Regression and Statistical Control
+
+## Multiple Regression {#multreg}
+
+**Required**
+
+- Lewis-Beck &amp; Lewis-Beck [Chap. 3]
+
+**Additional Resources**
+
+- [Confounding Variables](http://www.icpsr.umich.edu/icpsrweb/instructors/setups2008/exercises/notes/confounding.jsp) [short web article]
+
+---
+
+# Unit 05: Model Assumptions {#assump}
+
+**Required**
+
+- Re-read Lewis-Beck &amp; Lewis-Beck [Chap. 3]
+
+**Additional Resources**
+
+- [Visualizing Residuals](https://drsimonj.svbtle.com/visualising-residuals) [blog post]
+- Osborne, J. W., &amp; Overbay, A. (2004). [The power of outliers (and why researchers should ALWAYS check for them)](http://pareonline.net/getvn.asp?v=9&n=6). _Practical Assessment, Research &amp; Evaluation, 9_(6).
+
+---
+
+# Unit 06: Categorical Predictors
+
+## Dummy Coding a Categorical Predictor
+
+**Required**
+
+- [What is Dummy Coding?](https://stats.idre.ucla.edu/other/mult-pkg/faq/general/faqwhat-is-dummy-coding/) [web article]
+
+---
+
+## Effects Coding a Categorical Predictor
+
+**Required**
+
+- [What is Effect Coding?](https://stats.idre.ucla.edu/other/mult-pkg/faq/general/faqwhat-is-effect-coding/) [web article]
+
+---
+
+## More than Two Levels of a Categorical Predictor
+
+**Required**
+
+- Veazie, P. J. (2006). [When to combine hypotheses and adjust for multiple Tests](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1713204/). _Health Services Research, 41_(3 Pt 1), 804&ndash;818. doi:  10.1111/j.1475-6773.2006.00512.x 
+
+**Additional Resources**
+
+- Gelman, A., Hill, J., & Yajima, M. (2012). [Why we (usually) don’t have to worry about multiple comparisons](http://www.stat.columbia.edu/~gelman/research/published/multiple2f.pdf). _Journal of Research on Educational Effectiveness, 5_, 189&ndash;211.
+- [Add p-Values and Significance Levels to ggplots](http://www.sthda.com/english/wiki/add-p-values-and-significance-levels-to-ggplots) [web article]
+- [Science isn't Broken](https://fivethirtyeight.com/features/science-isnt-broken/#part1) [web article]
+
+---
+
+# Unit 07: Interaction Models {#intmodel}
+
+**Required**
+
+- Brambor, T., Clark, W. R., &amp; Golder, M. (2006). [Understanding interaction models:
+Improving empirical analyses](http://mattgolder.com/files/research/pa_final.pdf). *Political Analysis, 14*, 63&ndash;82.
+
+**Optional**
+
+Additional resources:
+
+- Frost, J. (2018). [Understanding Interaction Effects in Statistics](http://statisticsbyjim.com/regression/interaction-effects/). [blog post]
+

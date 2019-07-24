@@ -3,48 +3,61 @@ title: "Introduction to Multiple Regression"
 date: "`r Sys.Date()`"
 header-includes:
    - \usepackage{xcolor}
+   - \definecolor{umn}{HTML}{FF2D21}
+   - \definecolor{myorange}{HTML}{EA6153}
    - \usepackage[framemethod=tikz]{mdframed}
    - \usepackage{graphicx}
    - \usepackage{rotating}
    - \usepackage{booktabs}
    - \usepackage{float}
-   - \definecolor{umn}{RGB}{153, 0, 85}
-   - \definecolor{umn2}{rgb}{0.1843137, 0.4509804, 0.5372549}
-   - \definecolor{myorange}{HTML}{EA6153}
+   - \usepackage{caption}
+   - \captionsetup[table]{textfont={it}, labelfont={}, singlelinecheck=false, labelsep=newline}
+   - \captionsetup[figure]{textfont={}, labelfont={it}, singlelinecheck=false, labelsep=period}  
+   - \usepackage{xfrac}
 output: 
   pdf_document:
-    highlight: tango
-urlcolor: "umn2"
+    latex_engine: xelatex
+    highlight: zenburn
+    fig_width: 6
+    fig_height: 6
+mainfont: "Sabon"
+sansfont: "Futura"
+monofont: Inconsolata    
+urlcolor: "umn"
 bibliography: epsy8251.bib
 csl: apa-single-spaced.csl
-always_allow_html: yes
 ---
 
-```{r knitr_init, echo=FALSE, cache=FALSE}
-library(knitr)
-library(rmdformats)
-
-## Global options
-options(max.print="75")
-opts_chunk$set(prompt=FALSE, comment=NA, message=FALSE, warning=FALSE, tidy=FALSE)
-opts_knit$set(width=85)
-options(scipen=5)
-```
+\frenchspacing
 
 <!-- LaTeX definitions -->
 
 \mdfdefinestyle{mystyle}{userdefinedwidth=5in, align=center, backgroundcolor=yellow, roundcorner=10pt, skipabove=2em}
 
-\mdfdefinestyle{mystyle2}{userdefinedwidth=5.5in, align=center, skipabove=10pt, topline=false, bottomline=false, 
+\mdfdefinestyle{mystyle2}{userdefinedwidth=5.5in, align=center, skipabove=10pt, topline=false, bottomline=false,
 linecolor=myorange, linewidth=5pt}
 
 \mdfdefinestyle{work}{userdefinedwidth=5in, linecolor=blue, align=center, roundcorner=10pt, skipabove=2em}
 
 
+```{r knitr_init, echo=FALSE, cache=FALSE, message=FALSE}
+library(knitr)
+library(kableExtra)
+library(rmdformats)
+
+## Global options
+options(max.print="75")
+opts_chunk$set(prompt=FALSE, comment=NA, message=FALSE, warning=FALSE, tidy=FALSE, fig.width=6, fig.height=6,
+               fig.pos='H', fig.align='center')
+opts_knit$set(width=85)
+options(scipen=5)
+```
+
+
 
 # Introduction and Research Question
 
-In this set of notes, you will continue your foray into regression analysis. To do so, we will again examine the question of whether education level is related to income using the *riverside.csv* data from @Lewis-Beck:2016. Specifically we will ask,
+In this set of notes, you will continue your foray into regression analysis. To do so, we will go back to the *riverview.csv* data (see the [data codebook](http://zief0002.github.io/epsy-8251/codebooks/riverview.html)) and again examine the question of whether education level is related to income. Specifically we will ask,
 
 (1) Do differences in education level explain variation in incomes? *and* 
 (2) Do differences in education level explain variation in incomes even after accounting for differences in seniority?
@@ -55,14 +68,14 @@ In this set of notes, you will continue your foray into regression analysis. To 
 # Load libraries
 library(broom)
 library(corrr)
-library(dotwhisker)
 library(dplyr)
 library(ggplot2)
 library(readr)
-library(sm)
+library(tidyr)
+library(ungeviz)
 
 # Read in data
-city = read_csv(file = "~/Documents/github/epsy-8251/data/riverside.csv")
+city = read_csv(file = "~/Documents/github/epsy-8251/data/riverview.csv")
 head(city)
 ```
 
@@ -70,7 +83,7 @@ head(city)
 
 # Answering the First Research Question
 
-In previous notes, we fitted a model regressing employees' incomes on education level. 
+In previous notes, we fitted a model regressing employees' incomes on education level. We will do that again, and also look at the inferential evidence.
 
 ```{r}
 # Fit regression model
@@ -85,33 +98,61 @@ tidy(lm.1)
 
 
 The fitted equation,
-$$
-\hat{\mathrm{Income}} = 11,321 + 2,651(\mathrm{Education~Level}),
-$$
-suggests that the estimated mean income for employees with education levels that differ by one year varies by \$2,651. We also found that differences in education level explained 63.2\% of the variation in income, and that this was statistically significant, $p<.001$. All this suggests that education level is related to income.
 
-## Examining the Seniority Predictor
+$$
+\hat{\mathrm{Income}} = 11.321 + 2.651(\mathrm{Education~Level}),
+$$
 
-Let's do some analysis on the seniority predictor.
+suggests that the estimated mean income for employees with education levels that differ by one year varies by 2.651 thousand dollars, on average. We also found that differences in education level explained 63.2\% of the variation in income, and that the empirical evidence is inconsistent with the hypothesis that education level explains none of the variation in incomes ($p<.001$). All this suggests that education level is likely related to income.
+
+
+# Examining the Seniority Predictor
+
+Before we can tackle the second research question, it behooves us to explore the seniority predictor. Below we examine the marginal distribution of seniority for the 32 employees in the sample.
 
 ```{r fig.width=6, fig.height=6, out.width='3.5in', fig.align='center', fig.pos='H', fig.cap='Density plot of the marginal distribution of seniority.'}
 # Examine the marginal distribution
-sm.density(city$seniority, xlab = "Seniority level (in years)")
+ggplot(data = city, aes(x = seniority)) +
+  geom_histogram(aes(y = ..density..), fill = "yellow", color = "black") +
+  stat_density(geom = "line") +
+  theme_bw() +
+  xlab("Seniority level (in years)") +
+  ylab("Probability density")
 ```
 
 \vspace{2em}
 
-```{r}
+```{r eval=FALSE}
 # Compute mean and standard deviation
-city %>% 
+city %>%
   summarize(
-    M = mean(seniority), 
+    M = mean(seniority),
     SD = sd(seniority)
     )
 ```
 
+```{r echo=FALSE}
+# Compute mean and standard deviation
+city %>%
+  summarize(
+    M = mean(seniority),
+    SD = sd(seniority)
+    ) %>%
+  kable(
+    caption = "Mean (M) and Standard Deviation (SD) for the Seniority Predictor",
+    format = "latex",
+    booktabs = TRUE
+  ) %>%
+  kable_styling(latex_options = "HOLD_position")
+```
 
-Seniority is symmetric with a typical employee having roughly 15 years of seniority. There is quite a lot of variation in seniority, however, with most employees having between 8 and 22 years of seniority. After we examine the mariginal distribution, we should examine the relationships among all of three variables we are considering in the analysis. Typically researchers will examine the scatterplots between each predictor and the outcome (to evaluate the functional forms of the relationships with the outcome) and also examine the correlation matrix.
+\begin{mdframed}[style=mystyle2]
+Seniority is symmetric with a typical employee having roughly 15 years of seniority. There is quite a lot of variation in seniority, with most employees having between 8 and 22 years of seniority.
+\end{mdframed}
+
+After we examine the mariginal distribution, we should examine the relationships among all of three variables we are considering in the analysis. Typically researchers will examine the scatterplots between each predictor and the outcome (to evaluate the functional forms of the relationships with the outcome) and also examine the correlation matrix. Since we have already looked at the scatterplot between education-level and income, we focus here on the relationship between seniority and income.
+
+\newpage
 
 ```{r fig.width=6, fig.height=6, out.width='3.5in', fig.align='center', fig.pos='H', fig.cap='Scatterplot showing the relationship between seniority level and income.'}
 # Relationship between income and seniority
@@ -119,10 +160,10 @@ ggplot(data = city, aes(x = seniority, y = income)) +
   geom_point() +
   theme_bw() +
   xlab("Seniority (in years)") +
-  ylab("Income (in dollars)")
+  ylab("Income (in thousands of dollars)")
 ```
 
-\vspace{2em}
+The correlation matrix between all three variables is also examined.
 
 ```{r}
 # Correlation matrix
@@ -131,11 +172,18 @@ city %>%
   correlate()
 ```
 
-The relationship between seniority and income seems linear and positive ($r=0.58$). This suggests that employees with more seniority also tend to have higher incomes. Education level and seniority are also modestly correlated ($r=0.34$), indicating that employees with higher education levels tend to also have more seniority. 
+\begin{mdframed}[style=mystyle2]
+The relationship between seniority and income seems linear and positive ($r=0.58$). This suggests that employees with more seniority also tend to have higher incomes. Education level and seniority are also modestly correlated ($r=0.34$), indicating that employees with higher education levels tend to also have more seniority.
+\end{mdframed}
 
-Because the correlation between the two predictors is not 0, this calls into question our previous findings about whether there actually is a relationship between education level and income. It might be that this relationship is spurious. That really it is the fact that the reason we saw that employees with higher education levels tended to have higher incomes is that they also tend to have more seniority. What we need to know is whether **after we account for differences in seniority** is there is still a relationship between education level and income. To answer this question, we will need to fit a model that includes both predictors.
+\newpage
 
-\pagebreak
+Because there is a positive correlation between seniority and income in the sample, it suggests that city employees with more seniority level tend to have higher incomes. The correlation between the two predictors (education level and seniority) is also positive suggesting that city employees with higher education levels tend to have more seniority.
+
+Our research question is focused on examining the relationship between education level and income. Now that we have seen the correlation matrix, we may have some doubts about this relationship. It may be that employees with higher education levels have higher incomes, but that may be because the employees with higher education levels have more seniority which impacts their incomes.
+
+What we need to know in order to determine the effect of education on incomes is whether **after we account for differences in seniority** is there is still a relationship between education level and income. To answer this question, we will need to fit a model that includes both predictors.
+
 
 # Simple Regression Model: Seniority as a Predictor of Income
 
@@ -152,10 +200,12 @@ tidy(lm.2)
 ```
 
 The fitted equation,
+
 $$
-\hat{\mathrm{Income}} = 35,690 + 1,219(\mathrm{Seniority~Level}),
+\hat{\mathrm{Income}} = 35.690 + 1.219(\mathrm{Seniority~Level}),
 $$
-suggests that the estimated mean income for employees with seniority levels that differ by one year varies by \$1,219. We also find that differences in seniority level explain 33.9\% of the variation in income, and that this is statistically significant, $p<.001$. All this suggests that seniority level is related to income.
+
+suggests that the estimated mean income for employees with seniority levels that differ by one year varies by 1.219 thousand dollars. We also find that differences in seniority level explain 33.9\% of the variation in income, and that this empirical evidence is inconsistent with the hypothesis that seniority explains none of the variation in incomes ($p<.001$).
 
 \pagebreak
 
@@ -169,20 +219,24 @@ lm.3 = lm(income ~ 1 + education + seniority, data = city)
 
 ## Model-Level Results
 
-To interpret multiple regression results, begin with the model-level information. 
+To interpret multiple regression results, begin with the model-level information.
 
 ```{r}
 # Model-level results
 glance(lm.3)
 ```
 
-Together, differences in education level AND seniority explain 74.2\% of the variation in income, in the sample. We can test whether together these predictors explain variation in the population. The formal model-level null hypothesis that tests this can be written mathematically as,
+\begin{mdframed}[style=mystyle2]
+Together, differences in education level AND seniority explain 74.2\% of the variation in income, in the sample. 
+\end{mdframed}
+
+We can test whether together these predictors explain variation in the population. The formal model-level null hypothesis that tests this can be written mathematically as,
 
 $$
 H_0:\rho^2 = 0.
 $$
 
-This is a test of whether *all the predictors together* explain variation in the outcome variable. The results of this test, $F(3,29)=41.65$, $p<.001$, which is statistically significant, suggest that we should reject the null hypothesis; it is likely that together education level and seniority level explain variation in the population. 
+This is a test of whether *all the predictors together* explain variation in the outcome variable. The results of this test, $F(3,29)=41.65$, $p<.001$, suggest that the empirical evidence is inconsistent with the null hypothesis; it is likely that together education level and seniority level do explain variation in the population.
 
 Equivallently, we can also write the hypothesis as a function of the predictor effects, namely,
 
@@ -192,11 +246,11 @@ $$
 
 In plain English, this is akin to stating that there is NO EFFECT for every predictor included in the model. Rejection of this null hypothesis suggests that AT LEAST ONE of the predictor effects is likely not zero.
 
-Although the two expressions of the model-level null hypothesis look quite different, they are answering the same question, namely whether the model is worthwhile in predicting variation in income. 
+Although the two expressions of the model-level null hypothesis look quite different, they are answering the same question, namely whether the model is worthwhile in predicting variation in income.
 
-## Coefficient-Level Results 
+## Coefficient-Level Results
 
-Now we turn to the coefficient-level information produced in the `tidy()` output. 
+Now we turn to the coefficient-level information produced in the `tidy()` output.
 
 ```{r}
 # Coefficient-level results
@@ -207,31 +261,31 @@ tidy(lm.3)
 First we will write the fitted multiple regression equation,
 
 $$
-\hat{\mathrm{Income}} = 6,769 + 2,252(\mathrm{Education~Level}) + 739(\mathrm{Seniority~Level}).
+\hat{\mathrm{Income}} = 6.769 + 2.252(\mathrm{Education~Level}) + .739(\mathrm{Seniority~Level}).
 $$
 
 The slopes (of which there are now more than one) are referred to as *partial regression slopes* or *partial effects*. They represent the effect of the predictor *AFTER* accounting for the effects of the other predictors included in the model. For example,
 
-- The **partial effect of education level** is 2,252. This indicates that a one year difference in education level is associated with a \$2,252 difference in income (on average), after accounting for differences in seniority level.
-- The **partial effect of seniority** is 739. This indicates that a one year difference in seniority level is associated with a \$739 difference in income (on average), after accounting for differences in education level.
+- The **partial effect of education level** is 2.252. This indicates that a one year difference in education level is associated with a 2.252 thousand dollar difference in income (on average), after accounting for differences in seniority level.
+- The **partial effect of seniority** is 0.739. This indicates that a one year difference in seniority level is associated with a 0.739 thousand dollar difference in income (on average), after accounting for differences in education level.
 
 The language "after accounting for" is not ubiquitous in interpreting partial regression coefficients. Some researchers instead use "controlling for", "holding constant", or "partialling out the effects of". For example, the education effect could also be interpreted these ways:
 
 \begin{mdframed}[style=mystyle2]
-A one year difference in education level is associated with a \$2,252 difference in income (on average), after controlling for differences in seniority.
+A one year difference in education level is associated with a 2.252 thousand dollar difference in income (on average), after controlling for differences in seniority.
 
-A one year difference in education level is associated with a \$2,252 difference in income (on average), after holding the effect of seniority constant.
+A one year difference in education level is associated with a 2.252 thousand dollar difference in income (on average), after holding the effect of seniority constant.
 
-A one year difference in education level is associated with a \$2,252 difference in income (on average), after partialling out the effects of seniority.
+A one year difference in education level is associated with a 2.252 thousand dollar difference in income (on average), after partialling out the effects of seniority.
 \end{mdframed}
 
 Lastly, we can also interpret the intercept:
 
 \begin{mdframed}[style=mystyle2]
-The average income for all employees with 0 years of education AND 0 years of seniority is estimated to be \$6,769.
+The average income for all employees with 0 years of education AND 0 years of seniority is estimated to be 6.769 thousand dollars.
 \end{mdframed}
 
-This is the predicted avergage $Y$ value when ALL the predictors have a value of 0. As such, it is often an extrapolated prediction and is not of interest to most applied researchers. For example, in our data, education level ranges from 8 to 24 years and seniority level ranges from 1 to 27 years. We have no data that has a zero value for either predictor, let alone for both. This makes prediction tenuous.
+This is the predicted average $Y$ value when ALL the predictors have a value of 0. As such, it is often an extrapolated prediction and is not of interest to most applied researchers. For example, in our data, education level ranges from 8 to 24 years and seniority level ranges from 1 to 27 years. We have no data that has a zero value for either predictor, let alone for both. This makes prediction tenuous.
 
 ## Coefficient-Level Inference
 
@@ -247,7 +301,7 @@ $$
 H_0: \beta_{\mathrm{Education~Level}} = 0
 $$
 
-This is akin to stating there is NO EFFECT of education level on income after accounting for differences in seniority level. The null hypothesis would be rejected, $t(29)=6.73$, $p<.001$, suggesting that there is indeed an effect of education on income after controlling for differences in seniority level. (Note that the $df$ for the $t$-test for all of the coefficient tests is equivalent to the error, or denominator, $df$ for the model-level $F$-test.)
+This is akin to stating there is NO EFFECT of education level on income after accounting for differences in seniority level. The empirical evidence is inconsistent with this hypothesis, $t(29)=6.73$, $p<.001$, suggesting that there is likely an effect of education on income after controlling for differences in seniority level. (Note that the $df$ for the $t$-test for all of the coefficient tests is equivalent to the error, or denominator, $df$ for the model-level $F$-test.)
 
 It is important to note that the $p$-value at the model-level is different from any of the coefficient-level $p$-values. This is because when we include more than one predictor in a model, the hypotheses being tested at the model- and coefficient-levels are different. The model-level test is a simultaneous test of all the predictor effects, while the coefficient-level tests are testing the added effect of a particualr predictor.
 
@@ -264,24 +318,26 @@ As with simple regression we are interested in estimating the values for each of
 Since we have more than one $X$ term in the fitted equation, the structural part of the model no longer mathematically defines a line. For example, the fitted equation from earlier,
 
 $$
-\hat{Y} = 6,769 + 2,252(X1) + 739(X2),
+\hat{Y} = 6.769 + 2.252(X1) + 0.739(X2),
 $$
 
-mathematically defines a regression plane. (Note we have three dimensions, $Y$, $X1$, and $X2$. If we add predictors, we have four or more dimensions and we describe a hyperplane.) 
+mathematically defines a regression plane. (Note we have three dimensions, $Y$, $X1$, and $X2$. If we add predictors, we have four or more dimensions and we describe a hyperplane.)
 
-The data and regression plane defined by the education level, seniority level, and income for the City of Riverside employees is shown below. The regression plane is tilted up in both the education level direction (corresponding to a positive partial slope of education) and in the seniority level direction (corresponding to a positive partial slope of seniority). The blue points are above the plane (employees with a positive residual) and the yellow points are below the plane (employees with a negative residual). 
+The data and regression plane defined by the education level, seniority level, and income for the City of Riverside employees is shown below. The regression plane is tilted up in both the education level direction (corresponding to a positive partial slope of education) and in the seniority level direction (corresponding to a positive partial slope of seniority). The blue points are above the plane (employees with a positive residual) and the yellow points are below the plane (employees with a negative residual).
 
 ```{r message=FALSE, echo=FALSE, fig.width=6, fig.height=6, out.width='4in', fig.align='center', fig.pos='H', fig.cap='Three-dimensional scatterplot showing the relationship between education level, seniority, and income. The fitted regression plane is also shown. Blue observations have a positive residual and yellow observations have a negative residual.'}
 library("scatterplot3d")
 city$resid = ifelse(residuals(lm.3) < 0, "#F39D4177", "steelblue")
-s3d = scatterplot3d(x = city$education, y = city$seniority, z = city$income, type = "p", color = city$resid, 
-  angle = 60, pch = 16, box = FALSE, 
-  xlab = "Education level", ylab = "Seniority level", zlab = "Income", 
+s3d = scatterplot3d(x = city$education, y = city$seniority, z = city$income, type = "p", color = city$resid,
+  angle = 60, pch = 16, box = FALSE,
+  xlab = "Education level", ylab = "Seniority level", zlab = "Income",
   cex.symbols = 2, z.ticklabs = "", y.ticklabs = "", x.ticklabs = "")
 # Add regression plane
 my.lm = lm(city$income ~ city$education + city$seniority)
 s3d$plane3d(my.lm, lty = 1, col = "red")
 ```
+
+
 
 The residual sum of squares can be obtained using the `anova()` function to give the ANOVA decomposition of the model.
 
@@ -289,112 +345,127 @@ The residual sum of squares can be obtained using the `anova()` function to give
 anova(lm.3)
 ```
 
-Here the $\mathrm{SS}_{\mathrm{Residuals}} = 1,695,313,285$. Any other plane (i.e., different coefficient values for the intercept and predictors) would produce a higher sum of squared residuals value. Note that the $df$ value in the `Residuals` row of the ANOVA output is another way to find the $df$ associated with the $t$-tests for the coefficient tests we presented earlier.
+Here the $\mathrm{SS}_{\mathrm{Residuals}} = 1695.3$. Any other plane (i.e., different coefficient values for the intercept and predictors) would produce a higher sum of squared residuals value. Note that the $df$ value in the `Residuals` row of the ANOVA output is another way to find the $df$ associated with the $t$-tests for the coefficient tests we presented earlier.
 
 \newpage
+
 # Presenting Results
 
-It is quite common for researchers to present the results of their regression analyses in table form. Different models are typically presented in different columns and predictors are presented in rows. (Because it is generally of less substantive value, the intercept is often presented in the last row.)
+It is quite common for researchers to present the results of their regression analyses in table form. Different models are typically presented in different columns and predictors are presented in rows. (Because it is generally of less substantive value, the intercept is often presented in the last row.) 
 
-```{r, message=FALSE, results='asis', eval=FALSE, echo=FALSE}
-library(stargazer)
-stargazer(lm.1, lm.2, lm.3, 
-  column.labels = c("Model 1", "Model 2", "Model 3"), 
-  covariate.labels = c("Education level", "Seniority level"), 
-  dep.var.caption = NULL, 
-  dep.var.labels = NULL, 
-  dep.var.labels.include = FALSE
-  )
-```
+Note that we **DO NOT INCLUDE stars to indicate "statistical significance"** as is the recommendation of the American Statistical Association. [@Wasserstein:2019]
 
-Table 1. 
-*Regression Models Fitted to City Employee Data ($n=32$) Using Education Level and Seniority to Predict Income*
 
-\begin{table}[!htbp] \centering 
-\begin{tabular}{@{\extracolsep{5pt}}lccc} 
-\hline 
+<!-- ```{r, message=FALSE, results='asis', echo=FALSE} -->
+<!-- library(stargazer) -->
+
+<!-- stargazer(lm.1, lm.2, lm.3, -->
+<!--   column.labels = c("Model 1", "Model 2", "Model 3"), -->
+<!--   covariate.labels = c("Education level", "Seniority level"), -->
+<!--   dep.var.caption = "Outcome variable: Income (in thousands of dollars)", -->
+<!--   dep.var.labels = NULL, -->
+<!--   dep.var.labels.include = FALSE, -->
+<!--   type = "latex", -->
+<!--   keep.stat = c("rsq","ser"), -->
+<!--   star.cutoffs = NA, -->
+<!--   header = FALSE, -->
+<!--   table.placement = 'H', -->
+<!--   title = "Regression Models Fitted to City Employee Data ($n=32$) Using Education Level and Seniority to Predict Income", -->
+<!--   omit.table.layout = "n" -->
+<!--   ) -->
+<!-- ``` -->
+
+
+\begin{table}[H] \centering 
+  \caption{Coefficients (and SEs) for the OLS Regression Models Using Education Level and Seniority to Predict Income}
+  \label{} 
+\begin{tabular}{@{\hspace{5pt}}l@{\hspace{5pt}}ccc} 
+\toprule \\[0.75ex]
  & Model 1 & Model 2 & Model 3 \\ 
-\hline \\[-1.8ex] 
- Education level & 2,651$^{***}$ &  & 2,252$^{***}$ \\ 
-  & (370) &  & (335) \\ 
-  & & & \\ 
- Seniority &  & 1,219$^{***}$ & 739$^{***}$ \\ 
-  &  & (311) & (210) \\ 
-  & & & \\ 
- Intercept & 11,321.380$^{*}$ & 35,690.300$^{***}$ & 6,769.172 \\ 
-  & (6,123) & (5,073) & (5,373) \\ 
-  & & & \\ 
-\hline \\[-1.8ex] 
+\midrule  
+\\[-2.1ex] Education level & 2.651 &  & 2.252 \\ 
+  & (0.370) &  & (0.335) \\ 
+ \addlinespace 
+ Seniority level &  & 1.219 & 0.739 \\ 
+  &  & (0.311) & (0.210) \\ 
+ \addlinespace 
+ Constant & 11.321 & 35.690 & 6.769 \\ 
+  & (6.123) & (5.073) & (5.373) \\ 
+ \addlinespace 
+\midrule  
 R$^{2}$ & 0.632 & 0.339 & 0.742 \\ 
-RMSE & 8,978 & 12,031 & 7,646 \\ 
-\hline 
-\multicolumn{4}{l}{\textit{Note:} $^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
+RMSE & 8.978 (df = 30) & 12.031 (df = 30) & 7.646 \\ 
+\bottomrule 
+\multicolumn{4}{l}{\textit{Note.} All models used the city employee data ($n=32$). RMSE = Root mean squared error.}
 \end{tabular} 
 \end{table} 
 
-Based on these fitted models, we can now go back and answer our research questions. Do differences in education level explain variation in incomes? Based on Model 1 the answer is yes. Is this true even after accounting for differences in seniority? Model 3 suggests that, again, the answer is yes. (Since it is not germaine to answerig the RQs, Model 2 could just as easily be omitted from the table.)
+
+Based on the results of fitting the three models, we can now go back and answer our research questions. Do differences in education level explain variation in incomes? Based on Model 1, the empirical evidence suggests the answer is yes. Is this true even after accounting for differences in seniority? The empirical evidence from Model 3 suggests that, again, the answer is yes. (Since it is not germaine to answerig the RQs, Model 2 could just as easily be omitted from the table.)
+
+\newpage
 
 ## Coefficient Plot
 
-The `dw_plot()` function from the **dotwhisker** package automates much of the creation of regression coefficient plots. For example, to create the coefficient plot for Model 1 (`lm.1`), we (1) create the `tidy()` model object and then (2) submit that tidy object as an argument to the `dw_plot()` function. To also display the intercept, we also include the argument `show_intercept=TRUE`.
+To create a coefficient plot for a multiple regression, we will again use the `stat_confidence_density()` function from the **ungeviz** package. For example, to create the coefficient plot for Model 3 (`lm.3`), we (1) create the `tidy()` model object and filter out the intercept term, then (2) submit that filtered object as the data in `ggplot()`. (To also display the intercept, don't filter the `tidy()` object.)
 
-```{r out.width='4in', fig.cap='Coefficient plot for the model regressing income on education. Uncertainty based on the 95\\% confidence intervals are displayed.', fig.pos='H', echo=FALSE}
-# Obtain tidy() output
-m1 = tidy(lm.1) %>% mutate(model = "Model 1")
-
+```{r out.width='4in', fig.cap='Coefficient plot for the model regressing income on education. Uncertainty based on the 95\\% confidence intervals are displayed.', fig.pos='H', fig.align='center'}
 # Create coefficient plot
-dw_plot(m1, show_intercept = TRUE)
-```
+coef_output = tidy(lm.3) %>%
+  filter(term != "(Intercept)") 
 
-We can also re-arrange the order of the variables displayed by `dw_plot()` and, since the output is a ggplot object, we can customize it by adding ggplot layers.
-
-```{r out.width='4in', fig.cap='Coefficient plot for the model regressing income on education. Uncertainty based on the 95\\% confidence intervals are displayed.', fig.pos='H', echo=FALSE}
-# Create coefficient plot
-dw_plot(m1, show_intercept = TRUE, order_vars = c("education", "(Intercept)")) +
+ggplot(data = coef_output, aes(x = estimate, y = term)) +
+  stat_confidence_density(aes(moe = std.error, confidence = 0.68, fill = stat(ndensity)), 
+                          height = 0.15) +
+  geom_point(aes(x = estimate), size = 2) +
+  scale_fill_gradient(low = "#eff3ff", high = "#6baed6") +
   theme_bw() +
   theme(
-    panel.grid.major.x = element_blank(),
-    panel.grid.minor.x = element_blank()
-  ) +
-  geom_vline(xintercept = 0, linetype = "dashed", alpha = 0.4) +
-  scale_y_discrete(name = "", labels = c("Intercept", "Education level")) +
-  scale_color_manual(
-    name = "", 
-    labels = c("Model 1"),
-    values = c("#999999")
-    )
+    panel.grid.major = element_blank(),
+    panel.grid.minor = element_blank()
+    ) +
+  scale_x_continuous(name = "Estimate", limits = c(-1, 4)) +
+  scale_y_discrete(name = "Coefficients", labels = c("Education level", "Seniority"))
 ```
 
-It is critical when you are changing labels that you double-check the actual `tidy()` output so that you don't errantly label the coefficients. Here for example, the `tidy()` output indictaes that the intercept coefficient is 11,321 and the education coefficient is 2,651. This corresponds to what we see in the plot.
+\newpage
 
-We can also give the `dw_plot()` function tidy objects from multiple models. To do so, we (1) create each tidy model object, (2) bind the tidy model objects into a single object, and (3) use this object ib the `dw_plot()` function. Below we do not display the intercept as it is not of substantive interest.
+It is critical when you are changing labels that you double-check the actual `tidy()` output so that you don't errantly label the coefficients. Here for example, the `tidy()` output indicates that the coefficient for education level is 2.25 and the seniority coefficient is 0.739. This corresponds to what we see in the plot.
 
-```{r out.width='4in', fig.cap='Coefficient plot for three models regressing income on education and seniority. Uncertainty based on the 95\\% confidence intervals are displayed.', fig.pos='H', echo=FALSE}
+Although it is typical to create a coefficient plot for only the "final" adopted model, we can create coefficient plots for tidy objects from multiple models. To do so, we (1) create each tidy model object, (2) bind the tidy model objects into a single object, filter out the intercepts, and drop rows with missing values (not all models have the same subset of predictors) and (3) use this new combined object in the data argument of `ggplot()`. To get this to plot correctly, we also facet the plot on the `model` column.
 
+```{r fig.width=9, fig.height=3, out.width='6in', fig.cap='Coefficient plot for three models regressing income on education and seniority. Uncertainty based on the 95\\% confidence intervals are displayed. (The intercept is not displayed.)', fig.pos='H', fig.align='center'}
+# Create tidy() objects and identify each with a model column
 m1 = tidy(lm.1) %>% mutate(model = "Model 1")
 m2 = tidy(lm.2) %>% mutate(model = "Model 2")
 m3 = tidy(lm.3) %>% mutate(model = "Model 3")
 
-all_models = rbind(m1, m2, m3)
+# Combine all three tidy() outputs, filter out intercepts, and drop missing values
+all_models = rbind(m1, m2, m3) %>%
+  filter(term != "(Intercept)") %>%
+  drop_na()
 
-dw_plot(all_models, show_intercept = FALSE) +
+# Create coefficient plots
+ggplot(data = all_models, aes(x = estimate, y = term)) +
+  stat_confidence_density(aes(moe = std.error, confidence = 0.68, fill = stat(ndensity)), 
+                          height = 0.15) +
+  geom_point(aes(x = estimate), size = 2) +
+  scale_fill_gradient(low = "#eff3ff", high = "#6baed6") +
   theme_bw() +
   theme(
-    panel.grid.major.x = element_blank(),
-    panel.grid.minor.x = element_blank()
-  ) +
-  geom_vline(xintercept = 0, linetype = "dashed", alpha = 0.4) +
-  scale_y_discrete(
-    name = "", 
-    labels = c("Seniority level", "Education level")
+    panel.grid.major = element_blank(),
+    panel.grid.minor = element_blank()
     ) +
-  scale_color_manual(
-    name = "", 
-    labels = c("Model 1", "Model 2", "Model 3"),
-    values = c("#999999", "#e69f00", "#56b4e9")
-    )
+  scale_x_continuous(name = "Estimate", limits = c(-1, 4)) +
+  scale_y_discrete(name = "Coefficients", labels = c("Education level", "Seniority")) +
+  facet_wrap(~model)
 ```
 
 # References
+
+\setlength{\parindent}{-0.2in}
+\setlength{\leftskip}{0.2in}
+\setlength{\parskip}{8pt}
+\noindent
 
 

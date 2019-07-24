@@ -1,9 +1,9 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019) (preloaded format=xelatex 2019.5.24)  28 MAY 2019 09:50
+This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019) (preloaded format=xelatex 2019.5.24)  28 JUN 2019 16:31
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**assignment-01-intro-to-r.tex
-(./assignment-01-intro-to-r.tex
+**assignment-01-intro-to-statistical-computing.tex
+(./assignment-01-intro-to-statistical-computing.tex
 LaTeX2e <2018-12-01>
 (/Users/zief0002/Library/TinyTeX/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2018/09/03 v1.4i Standard LaTeX document class
@@ -924,8 +924,8 @@ Package: ltcaption 2018/08/26 v1.4-95 longtable captions (AR)
 )
 Package caption Info: threeparttable package is loaded.
 Package caption Info: wrapfig package is loaded.
-) (./assignment-01-intro-to-r.aux)
-\openout1 = `assignment-01-intro-to-r.aux'.
+) (./assignment-01-intro-to-statistical-computing.aux)
+\openout1 = `assignment-01-intro-to-statistical-computing.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 114.
 LaTeX Font Info:    ... okay on input line 114.
@@ -1295,9 +1295,10 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 LaTeX Info: Redefining \ref on input line 114.
 LaTeX Info: Redefining \pageref on input line 114.
 LaTeX Info: Redefining \nameref on input line 114.
-(./assignment-01-intro-to-r.out) (./assignment-01-intro-to-r.out)
+(./assignment-01-intro-to-statistical-computing.out) (./assignment-01-intro-to-
+statistical-computing.out)
 \@outlinefile=\write3
-\openout3 = `assignment-01-intro-to-r.out'.
+\openout3 = `assignment-01-intro-to-statistical-computing.out'.
 
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
@@ -1312,14 +1313,14 @@ LaTeX Font Info:    Font shape `TU/Sabon(0)/m/n' will be
 LaTeX Font Info:    Font shape `TU/Sabon(0)/bx/n' will be
 (Font)              scaled to size 13.66148pt on input line 129.
 LaTeX Font Info:    Font shape `TU/Inconsolata(0)/m/n' will be
-(Font)              scaled to size 9.4873pt on input line 151.
+(Font)              scaled to size 9.4873pt on input line 149.
 Font mapping `tex-ansi.tec' for font `Inconsolata' not found.
 LaTeX Font Info:    Font shape `TU/Sabon(0)/m/it' will be
-(Font)              scaled to size 9.4664pt on input line 170.
+(Font)              scaled to size 9.4664pt on input line 168.
 [1
 
 ]
-LaTeX Font Info:    Try loading font information for OT1+lmr on input line 185.
+LaTeX Font Info:    Try loading font information for OT1+lmr on input line 183.
 
 (/Users/zief0002/Library/TinyTeX/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
@@ -1329,63 +1330,63 @@ oman.cfg
 File: mt-LatinModernRoman.cfg 2013/03/13 v1.0 microtype config. file: Latin Mod
 ern Roman (RS)
 )
-LaTeX Font Info:    Try loading font information for OML+lmm on input line 185.
+LaTeX Font Info:    Try loading font information for OML+lmm on input line 183.
 
 (/Users/zief0002/Library/TinyTeX/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 185
+LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 183
 .
 (/Users/zief0002/Library/TinyTeX/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMX+lmex on input line 185
+LaTeX Font Info:    Try loading font information for OMX+lmex on input line 183
 .
 (/Users/zief0002/Library/TinyTeX/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 185.
+(Font)              <10> on input line 183.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 185.
+(Font)              <7> on input line 183.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 185.
-LaTeX Font Info:    Try loading font information for U+msa on input line 185.
+(Font)              <5> on input line 183.
+LaTeX Font Info:    Try loading font information for U+msa on input line 183.
 (/Users/zief0002/Library/TinyTeX/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 ) (/Users/zief0002/Library/TinyTeX/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 185.
+LaTeX Font Info:    Try loading font information for U+msb on input line 183.
 (/Users/zief0002/Library/TinyTeX/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) (/Users/zief0002/Library/TinyTeX/texmf-dist/tex/latex/microtype/mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
 LaTeX Font Info:    Font shape `TU/Sabon(0)/bx/n' will be
-(Font)              scaled to size 9.48715pt on input line 220.
+(Font)              scaled to size 9.48715pt on input line 218.
 [2] [3]
 
 Package caption Warning: Unused \captionsetup[figure] on input line 112.
 See the caption package documentation for explanation.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 349.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 346.
 [4]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 349.
-(./assignment-01-intro-to-r.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 349.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 349.
-Package rerunfilecheck Info: File `assignment-01-intro-to-r.out' has not change
-d.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 346.
+(./assignment-01-intro-to-statistical-computing.aux)
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 346.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 346.
+Package rerunfilecheck Info: File `assignment-01-intro-to-statistical-computing
+.out' has not changed.
 (rerunfilecheck)             Checksum: D8933CFF6E9C715AF78646B7C96B8E9A.
  ) 
 Here is how much of TeX's memory you used:
  26596 strings out of 494894
- 492027 string characters out of 6173843
- 616443 words of memory out of 5000000
+ 492287 string characters out of 6173843
+ 616503 words of memory out of 5000000
  30209 multiletter control sequences out of 15000+600000
  545307 words of font info for 73 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 53i,9n,116p,821b,446s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 53i,9n,116p,841b,446s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on assignment-01-intro-to-r.pdf (4 pages).
+Output written on assignment-01-intro-to-statistical-computing.pdf (4 pages).

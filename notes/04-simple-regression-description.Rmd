@@ -58,7 +58,6 @@ library(corrr)
 library(dplyr)
 library(ggplot2)
 library(readr)
-library(sm)
 
 # Read in data
 city = read_csv(file = "~/Documents/github/epsy-8251/data/riverview.csv")
@@ -78,7 +77,12 @@ It is typical to begin by exploring the distribution of each variable used in th
 To begin this exploration, we will examine the marginal distribution of employee incomes. We can plot a marginal distribution using the `sm.density()` function from the **sm** package.
 
 ```{r fig.width=6, fig.height=6, out.width='50%', fig.cap="Density plot of employee incomes.", fig.pos='H', fig.align='center'}
-sm.density(city$income, xlab = "Income (in thousands of dollars)")
+ggplot(data = city, aes(x = income)) +
+  geom_histogram(aes(y = ..density..), color = "black", fill = "yellow") +
+  stat_density(geom = "line") +
+  theme_bw() +
+  xlab("Income (in thousands of dollars)") +
+  ylab("Probability density")
 ```
 
 This plot suggests that the distribution of employee incomes is unimodal and most of the incomes are between roughly \$50,000 and \$70,000. The rug at the bottom of the plot (the small vertical line segments) show the actual sample incomes. The smallest income in the sample is about \$25,000 and the largest income is over \$80,000. (We could find the exact values using the `summary()` function.) This suggests there is a fair amount of variation in the data. 
@@ -108,7 +112,12 @@ We will also examine the distribution of the education level variable.
 
 ```{r fig.width=6, fig.height=6, out.width='50%', fig.cap="Density plot of employee education levels.", fig.pos='H', fig.align='center'}
 # Plot
-sm.density(city$education, xlab = "Education Level")
+ggplot(data = city, aes(x = income)) +
+  geom_histogram(aes(y = ..density..), color = "black", fill = "yellow") +
+  stat_density(geom = "line") +
+  theme_bw() +
+  xlab("Education level") +
+  ylab("Probability density")
 ```
 
 
@@ -186,7 +195,7 @@ There is a strong, positive, linear relationship between education level and inc
 Since the relationship's functional form seems reasonably linear, we will use a *linear model* to describe the data. We can express this model mathematically as,
 
 $$
-Y_i = \beta_0 + \beta_1(X_i) + \epsilon_i.
+Y_i = \beta_0 + \beta_1(X_i) + \epsilon_i
 $$
 
 \newpage
@@ -199,10 +208,7 @@ In this equation,
 - $X_i$ is the predictor value; it has an $i$ subscript because it can vary across cases/individuals.
 - $\epsilon_i$ is the error term; it has an $i$ subscript because it can vary across cases/individuals.
 
-
-## Regression Equation
-
-The regression model can be separated into two components: a *systematic* (or fixed) component and a *random* (or stochastic) component. 
+The linear statistical model (i.e., the regression model) can be separated into two components: a *systematic* (or fixed) component and a *random* (or stochastic) component. 
 
 $$
 Y_i = \underbrace{\beta_0 + \beta_1(X_i)}_{\substack{\text{Systematic} \\ \text{(Fixed)}}} + \underbrace{\epsilon_i}_{\substack{\text{Random} \\ \text{(Stochastic)}}} 
@@ -222,6 +228,18 @@ $$
 
 
 The terms $\beta_0$ and $\beta_1$ are referred to as the regression parameters. One of the primary goals of a regression analysis is to estimate the values of the regression parameters (i.e., the intercept and slope terms). (Note that the equation for the expected value does not include any error terms.) 
+
+## Conditional Means
+
+To help better understand the idea of conditional means, consider the following plot:
+
+```{r echo=FALSE, out.width='3.5in', out.height='3.5in', fig.align='center', fig.pos='H', fig.cap="Plot displaying conditional distribution of $Y$ at several $X$ values. The OLS fitted regression line (dotted) is also shown. The red points show the mean value of $Y$ for each conditional distribution."}
+include_graphics("images/conditional-means.png")
+```
+
+At each value of $X$ there is a distribution of $Y$. For example, there would be a distribution of incomes for the employees with an education level of 10 years (in the population). There would be another distribution of incomes for the employees with an education level of 11 years (in the population). And so on. 
+
+When we assume a linear functional form for the model, we are saying that *the mean value of $Y$ differs by a constant amount for each one-unit difference in $X$*. In other words, the difference between the mean income for those employees who have ten years of education and those that have 11 years of education *is the same as* the difference between the mean income for those employees who have 17 years of education and those that have 18 years of education.
 
 ## Residuals
 
@@ -260,35 +278,41 @@ Consider all the employees that have an education level of 10 years. For all thr
 
 Graphically, the residual is represented by the vertical distance between the line and a given point on the scatterplot. Some of those points are above the line (they have a positive residual) and some are below the line (they have a negative residual). Also note that for some observations the error term is smaller than for others.
 
-## Notation
+## Fitted Regression Model
 
-The regression model and the fitted regression equation describe the linear relationship in the *population*. Greek letters indicate a *parameter* (a summary of the population). That is why we use the Greek letter $\beta$ when we notate the regression model. It is important to note that outside of the $X$- and $Y$-values, the parameters ($\beta_0$ and $\beta_1$) and hence the residual values ($\epsilon_i$) are *unobserved*. 
+The regression model describes the linear relationship in the *population*. Greek letters indicate a *parameter* (a summary of the population). That is why we use the Greek letter $\beta$ when we notate the regression model. It is important to note that outside of the $X$- and $Y$-values, the parameters ($\beta_0$ and $\beta_1$) and hence the residual values ($\epsilon_i$) are *unobserved*. 
 
-In most statistical analyses, you will use a *sample* of data (not the entire population). When we summarize a sample, it is referred to as a *statistic*, and we use either Roman letters or a Greek letter with a hat. Moreover, we also tend to express the conditional mean using the notation $\hat{Y}_i$. This notation indicates that the summary measure is an estimate of the parameter that resulted from fitting the model to the data, also referred to as the *fitted equation*. 
-
-\newpage
-
-We can represent the fitted equation mathematically as:
+In most statistical analyses, you will use a *sample* of data (not the entire population). When we summarize a sample, it is referred to as a *statistic*, and we use either Roman letters or a Greek letter with a hat. Thus, after fitting the statistical model to the sample data we will get *parameter estimates* for all the unobserved values\footnote{Note that sometimes people use Roman letters when referring to sample estimates: $\hat{Y}_i = b_0 + b_1(X_i)$.},
 
 $$
-\hat{Y}_i = \hat{\beta}_0 + \hat{\beta}_1(X_i)
+Y_i = \hat\beta_0 + \hat\beta_1(X_i) + \hat\epsilon_i
 $$
 
-The regression parameter estimates are also referred to as *regression coefficients*. Some people use Roman letters when referring to sample estimates.
+This is referred to as the *fitted regression model*. The parameter estimates in the fitted model ($\hat\beta_0$ and $\hat\beta_1$) are typically referred to as *regression coefficients*. 
+
+## Fitted Regression Equation
+
+Applied researchers and statisticians tend to focus their analysis on the conditional means. After fitting the model to the data, the estimated conditional means can be expressed as:
 
 $$
-\hat{Y}_i = b_0 + b_1(X_i)
+\hat\mu_{Y \vert X_i} = \hat\beta_0 + \hat\beta_1(X_i)
 $$
 
-Sometimes $\hat{Y}$ is referred to as the predicted value of $Y$. We can also use the estimated regression coefficients to get estimates for the observed residuals,
+Applied researchers and statisticians also tend to express the conditional mean using the notation $\hat{Y}_i$ rather than $\hat\mu_{Y \vert X_i}$.
 
 $$
-e_i = Y_i - \hat{Y}_i
+\hat{Y}_i = \hat\beta_0 + \hat\beta_1(X_i)
 $$
 
-Each observation's observed residual is the difference between that observation's observed outcome and its predicted value (given it's $X$-value). 
+This "y-hat" notation indicates that the summary measure is an estimate of the parameter that resulted from fitting the model to the data, and is typically referred to as the *fitted regression equation*. Before illustrating these ideas using a dataset, note that we can also use the estimated regression coefficients to get estimates for the residuals, often referred to as the *observed residuals*,
 
-# Regression Estimates Using R
+$$
+\hat\epsilon_i = Y_i - \hat{Y}_i
+$$
+
+Each observed residual is the difference between a case's observed outcome and its predicted value (given it's $X$-value and the estimated regression coefficients). Since $\hat{Y}_i$ is the conditional mean, the residual represents an observation's deviation from the mean $Y$-value given it's $X$-value.
+
+# Fitting a Regression Model to Data Using R
 
 To fit the regression model to data using R, we will use the `lm()` function. The syntax for this function looks like this:
 
@@ -309,11 +333,7 @@ Here the parameter estimates (or regression coefficients) are:
 - $\hat{\beta}_0 = 11.321$
 - $\hat{\beta}_1 = 2.651$
 
-Remember that these are estimates and need the hats. 
-
-\newpage
-
-The fitted regression equation is:
+Remember that these are estimates and need the hats. The fitted regression equation is:
 
 $$
 \hat{\mathrm{Income}} = 11.321 + 2.651(\mathrm{Education~Level})
@@ -321,7 +341,7 @@ $$
 
 ## Intercept Interpretation
 
-The estimate for the intercept was 11.321. Graphically, this value indicates the $y$-value where the line passes through the $y$-axis (i.e., $y$-intercept). As such, it gives the predicted value of $Y$ when $X = 0$. Algebraically we get the same thing if we substitute 0 in for $X_i$ in the estimated regression equation.
+The estimate for the intercept was 11.321. Graphically, this value indicates the $y$-value where the line passes through the $y$-axis (i.e., $y$-intercept). As such, it gives the $\hat{Y}_i$ or predicted value when $X = 0$. Algebraically we get the same thing if we substitute 0 in for $X_i$ in the fitted regression equation.
 
 $$
 \begin{split}
@@ -330,32 +350,44 @@ $$
 \end{split}
 $$
 
-To interpret this value, we use that same idea. Namely, the predicted income for all employees that have an education level of 0 years is 11.321 thousand dollars. Or, directly,
+To interpret this value, remember that $\hat{Y}_i$ is a conditional mean. In this case, it represents the predicted mean income for all employees that have an education level of 0 years. Graphically this looks like the following.
+
+```{r echo=FALSE, out.width='3.5in', out.height='3.5in', fig.align='center', fig.pos='H', fig.cap="Plot displaying conditional distribution of $Y$ at $X=0$. The OLS fitted regression line (dotted) is also shown. The red points show the mean value of $Y$ for this conditional distribution---which corresponfds to the intercept value of the regression line."}
+include_graphics("images/conditional-means-intercept.png")
+```
+
+Interpreting the intercept coefficient from our example,
 
 \begin{mdframed}[style=mystyle2]
-The predicted income for all employees that have an education level of 0 years is \$11,321.
+The predicted mean income for all employees that have an education level of 0 years is \$11,321.
 \end{mdframed}
 
 
 ## Slope Interpretation
 
-Recall from algebra that the slope of a line describes the change in $Y$ versus the change in $X$. In regression, the slope describes the *predicted* change in $\hat{Y}$ for a one-unit difference in $X$. 
+Recall from algebra that the slope of a line describes the change in $Y$ versus the change in $X$. In regression, the slope describes the *predicted* change in $\hat{Y}$ for a one-unit difference in $X$. In our example,
 
 $$
 \hat{\beta}_1 = \frac{\Delta\hat{Y}}{\Delta X} = \frac{2.651}{1}
 $$
 
-In our example, each one-year difference in education level is associated with a 2.651 thousand dollar  difference in predicted income. Or directly, 
+Again, because $\hat{Y}$ is a conditional mean, the slope represents the difference in predicted mean incomes for each one-year difference in education level. Graphically,
+
+```{r echo=FALSE, out.width='3.5in', out.height='3.5in', fig.align='center', fig.pos='H', fig.cap="Plot displaying conditional distribution of $Y$ at $X=0$ and $X=1$. The OLS fitted regression line (dotted) is also shown. The red points show the mean value of $Y$ for these conditional distributions---the relative change which corresponds to the slope value of the regression line."}
+include_graphics("images/conditional-means-slope.png")
+```
+
+Interpreting the slope coefficient in our example, 
 
 \begin{mdframed}[style=mystyle2]
-Each one-year difference in education level is associated with a \$2,651 difference in predicted income.
+Each one-year difference in education level is associated with a \$2,651 difference in predicted mean income.
 \end{mdframed}
 
-To better understand this, consider three city employees. The first employee has an education level of 10 years. The second has an education level of 11 years, and the third has an education level of 12 years. Now let's compute each employee's predicted income.
+To better understand this, consider the mean income for city employees with three different education levels. The first set of employees have an education level of 10 years. The second set have an education level of 11 years, and the third set have an education level of 12 years. Now let's compute each set of employees' predicted mean income.
 
 $$
 \begin{split}
-\mathbf{Employee~1:~}\hat{\mathrm{Income}} &= 11.321 + 2.651(10) \\
+\mathbf{Education=10:~}\hat{\mathrm{Income}} &= 11.321 + 2.651(10) \\
 &= 37.831
 \end{split}
 $$
@@ -364,7 +396,7 @@ $$
 
 $$
 \begin{split}
-\mathbf{Employee~2:~}\hat{\mathrm{Income}} &= 11.321 + 2.651(11) \\
+\mathbf{Education=11:~}\hat{\mathrm{Income}} &= 11.321 + 2.651(11) \\
 &= 40.482
 \end{split}
 $$
@@ -372,107 +404,58 @@ $$
 
 $$
 \begin{split}
-\mathbf{Employee~3:~}\hat{\mathrm{Income}} &= 11.321 + 2.651(10) \\
+\mathbf{Education=12:~}\hat{\mathrm{Income}} &= 11.321 + 2.651(12) \\
 &= 43.133
 \end{split}
 $$
 
-Each of the employee's education levels differ by one year (10 to 11 to 12). The difference in predicted incomes for these employees differs by 2.651 thousand dollars. 
+Each set of employees' education levels differ by one year (10 to 11 to 12). The difference in predicted mean incomes for these employees differs by 2.651 thousand dollars. 
 
 # Using the Regression Equation
 
-Consider the twelfth case in the data frame.
+Consider the 25th case in the data frame.
 
 ```{r}
 city %>%
   filter(row_number() == 12)
 ```
 
-This employee has an education level of fourteen years ($X_{12}=14$). His income is 64.926 thousand dollars ($Y_{12}=64.926$). Using the fitted equation, we can compute that employee's predicted income as,
+This employee (Employee 25) has an education level of 20 years ($X_{25}=20$). Her income is 54.672 thousand dollars ($Y_{25}=54.672$). Using the fitted regression equation, we can compute the predicted mean income for employees with 20 years of education as,
 
 ```{r}
 # Y_hat = b0 + b1 * X
-11.321 + 2.651 * 14
+11.321 + 2.651 * 20
 ```
 
-$\hat{Y}_{12} = 48.435$. 
+$\hat{Y}_{25} = \hat\mu_{Y \vert X=20} = 64.341$. 
 
-Given his education level of 14 years, this employee has a predicted income of \$48,435. We can also compute that employee's residual.
+We can also compute Employee 25's residual.
 
 ```{r}
 # e = Y - Y_hat
-64.926 - 48.435
+54.672 - 64.341
 ```
 
 
-The positive residual, $e_{12} = 16.491$, suggests that this employee earns \$16,491 more than would be expected for a city employee with 14 years of formal education. We can also represent these values graphically.
+The negative residual, $\hat\epsilon_{25} = -9.669$, suggests that this employee earns \$9,669 less than the average predicted income for employees with 20 years of education. We can also represent these values graphically.
 
-```{r echo=FALSE, fig.width=6, fig.height=6, out.width='3in', fig.cap="Plot displaying the OLS fitted regression line (blue) between employee education levels and incomes. The 12th employee's observed data (black dot) is plotted, and a visual representation of the employee's residual (red line) is also displayed.", fig.pos='H', fig.align='center'}
+```{r echo=FALSE, fig.width=6, fig.height=6, out.width='3in', fig.cap="Plot displaying the OLS fitted regression line (blue) between employee education levels and incomes. The 25th employee's observed data (black dot) is plotted, and a visual representation of the employee's residual (red line) is also displayed.", fig.pos='H', fig.align='center'}
 ggplot(data = city, aes(x = education, y = income)) +
-  geom_segment(x = 14, xend = 14, y = 48.435, yend = 64.926, color = "darkred") +
-  geom_point(x = 14, y = 64.926, size = 4) +
+  geom_segment(x = 20, xend = 20, y = 64.341, yend = 54.672, color = "darkred") +
+  geom_point(x = 20, y = 54.672, size = 4) +
   geom_smooth(method = "lm", se = FALSE) +
-  geom_point(x = 14, y = 48.435, color = "blue", size = 4) +
-  annotate("text", x = 15, y = 48.435, label = "hat(Y)[12]", parse = TRUE) +
-  annotate("text", x = 15, y = 64.926, label = "Y[12]", parse = TRUE) +
-  annotate("text", x = 15, y = 56.6805, label = "hat(epsilon)[12]", parse = TRUE) +
+  geom_point(x = 20, y = 64.341, color = "blue", size = 4) +
+  annotate("text", x = 21, y = 64.341, label = "hat(Y)[25]", parse = TRUE) +
+  annotate("text", x = 21, y = 54.672, label = "Y[25]", parse = TRUE) +
+  annotate("text", x = 21, y = 59.5065, label = "hat(epsilon)[25]", parse = TRUE) +
   theme_bw() +
   xlab("Education (in years)") +
   ylab("Income (in U.S. dollars)")
 ```
 
-\newpage
 
-# Conditional Averages
-
-Recall that another way to think about the predicted value ($\hat{Y}$) is it describes the mean value of $Y$ for *all* cases with a particular $X$ value. For example, using the values from the previous example we found that $\hat{Y}_{12} = 48.435$ when $X_{12}=14$. Using the idea of conditional means, we could interpret this as,
-
-\begin{mdframed}[style=mystyle2]
-The estimated average income for all city employees having 14 years of education is \$48,435.
-\end{mdframed}
-
-To help better understand the idea of conditional means, consider the following plot:
-
-```{r echo=FALSE, out.width='3.5in', out.height='3.5in', fig.align='center', fig.pos='H', fig.cap="Plot displaying conditional distribution of $Y$ at several $X$ values. The OLS fitted regression line (dotted) is also shown. The red points show the mean value of $Y$ for each conditional distribution."}
-include_graphics("images/conditional-means.png")
-```
-
-At each value of $X$ there is a distribution of $Y$. For example, there would be a distribution of incomes for the employees with an education level of 10 years (in the population). There would be another distribution of incomes for the employees with an education level of 11 years (in the population). And so on. 
-
-The regression equation describes the pattern of conditional means. As such, we write the fitted equation using means rather than $\hat{Y}$,
-
-$$
-\mu_{Y|X} = \beta_0 + \beta_1(X_i)
-$$
-
-The first part is read as, "the mean of $Y$ given $X$", or "the mean of $Y$ conditioned on $X$". Sometimes the mean of a population is denoted as $E(Y)$, or the expected value of $Y$. Then you might see the regression equation written as,
-
-$$
-E(Y|X) = \beta_0 + \beta_1(X_i)
-$$
-
-\newpage
-
-When we assume a linear functional form for the model, we are saying that *the mean value of $Y$ differs by a constant amount for each one-unit difference in $X$*. In other words, the difference between the mean income for those employees who have ten years of education and those that have 11 years of education *is the same as* the difference between the mean income for those employees who have 17 years of education and those that have 18 years of education.
-
-## Intercept (Re-visited)
-
-Using the idea of conditional means, we can re-visit the interpretation of the intercept, which we had said was the predicted $Y$ for a person with an $X$-value of zero. Now we can say that the intercept is the predicted mean income for all employees with zero years of formal education.
-
-```{r echo=FALSE, out.width='3.5in', out.height='3.5in', fig.align='center', fig.pos='H', fig.cap="Plot displaying conditional distribution of $Y$ at $X=0$. The OLS fitted regression line (dotted) is also shown. The red points show the mean value of $Y$ for this conditional distribution---which corresponfds to the intercept value of the regression line."}
-include_graphics("images/conditional-means-intercept.png")
-```
-
-## Slope (Re-visited)
-
-Using the idea of conditional means, we can also re-visit the interpretation of the slope, which we had said was the predicted difference in $Y$ for employees with a one-year difference in education. Now we can say that the slope is the predicted difference in mean incomes between employees with education levels that differ by one year.
-
-```{r echo=FALSE, out.width='3.5in', out.height='3.5in', fig.align='center', fig.pos='H', fig.cap="Plot displaying conditional distribution of $Y$ at $X=0$ and $X=1$. The OLS fitted regression line (dotted) is also shown. The red points show the mean value of $Y$ for these conditional distributions---the relative change which corresponds to the slope value of the regression line."}
-include_graphics("images/conditional-means-slope.png")
-```
-
-\begin{mdframed}[style=mystyle]
-In general, when interpreting the slope and intercept, you should use the conditional mean interpretations.
-\end{mdframed}
+<!-- \begin{mdframed}[style=mystyle] -->
+<!-- In general, when interpreting the slope and intercept, you should always use the conditional mean interpretations. -->
+<!-- \end{mdframed} -->
 
 

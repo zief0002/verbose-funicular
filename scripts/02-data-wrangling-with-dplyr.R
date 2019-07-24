@@ -11,7 +11,7 @@ library(readr)
 ### Read in data
 ##################################################
 
-city = read_csv("~/Documents/github/epsy-8251/data/riverside.csv")
+city = read_csv("~/Documents/github/epsy-8251/data/riverview.csv")
 
 head(city)
 tail(city)
@@ -89,7 +89,8 @@ city %>%
 
 # Rename a column
 city %>% 
-  select(edu = education, income, gender)
+  select(education, income, gender) %>%
+  rename(educ = education)
 
 
 
@@ -108,15 +109,15 @@ city %>%
 
 city %>% 
   mutate(
-    income2 = income / 1000
+    income2 = income * 1000
   )
 
 
 # Create multiple variables
 city %>% 
   mutate(
-    income2 = income / 1000,
-    educ_after_8 = education - 8
+    income2 = income * 1000,
+    cent_educ = education - mean(education)
   )
 
 

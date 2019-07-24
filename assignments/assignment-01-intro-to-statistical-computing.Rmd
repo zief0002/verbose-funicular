@@ -32,7 +32,6 @@ Open RStudio and install the following packages, if you have not already install
 
 - dplyr
 - ggplot2
-- sm
 
 Once these have been installed successfully, you should not need to install them again. 
 
@@ -79,7 +78,7 @@ Use Excel (or some other program) to enter these data into a spreadsheet. The fi
 
 1. Use the `sum()` function to find the total number of pages Andy read in 2018. Report this value.
 
-2. Use the `sm.density()` function from the **sm** package to create a density plot of the marginal distribution of `pages`. Be sure the plot has appropriate labels and has a caption. Include this plot in a word-processed document. Resize the plot so it does not take up any more space than neccesary.
+2. Use the `geom_density()` function from the **ggplot2** package to create a density plot of the marginal distribution of `pages`. You can see many examples of how to do this [here](https://ggplot2.tidyverse.org/reference/geom_density.html). Be sure the plot has appropriate labels and has a caption. Include this plot in a word-processed document. Resize the plot so it does not take up any more space than neccesary.
 
 3. Use the `mean()` function to compute the mean number of pages Andy read per month in 2018. Report this value.
 
@@ -113,8 +112,8 @@ Use RStudio to open the \textit{evaluations.csv} dataset (see the [data codebook
 
 In this section, you will again, work with the data in the `evaluations` object you created in Part III. 
 
-9. The variable `female` in the data set is a dummy variable indicating the gender of the professoer; 0 = male and 1 = female. Use **dplyr** syntax to create a new variable in the `evaluations` dataset called `sex` that has the levels `Male` and `Female` rather than 0 and 1. (There are many ways to do this. For example, see [http://www.theanalysisfactor.com/r-tutorial-recoding-values/](http://www.theanalysisfactor.com/r-tutorial-recoding-values/).) After you do this, copy-and paste the output from `head(evaluations)` into your word-processed document. Change the font of this output to a mono-spaced font. (Here is a [list of mono-spaced fonts](https://en.wikipedia.org/wiki/List_of_monospaced_typefaces).)
+9. The variable `tenured` in the data set is a dummy variable indicating whether the professor is tenured or not; 0 = not tenured and 1 = tenured. Use **dplyr** syntax to create a new variable in the `evaluations` dataset called `tenure_status` that has the levels `Not Tenured` and `Tenured` rather than 0 and 1. (There are many ways to do this. For example, see [http://www.theanalysisfactor.com/r-tutorial-recoding-values/](http://www.theanalysisfactor.com/r-tutorial-recoding-values/).) After you do this, copy-and paste the output from `head(evaluations)` into your word-processed document. Change the font of this output to a mono-spaced font. (Here is a [list of mono-spaced fonts](https://en.wikipedia.org/wiki/List_of_monospaced_typefaces).)
 
 
-10. Use `ggplot()` to again create a scatterplot of the relationship between professors' beauty ratings and their average course evaluation rating. This time, color the observations by sex. Change the point colors to some non-default palette of your choice. Also, facet the plot using sex. Finally, add a regression line to the faceted plot by including the layer `geom_smooth(method = "lm", se = FALSE)`. Be sure the plot has appropriate labels (on both axes, and on any legend included), and has a caption. Include this plot in a word-processed document. Resize the plot so it does not take up any more space than neccesary.
+10. Use `ggplot()` to again create a scatterplot of the relationship between professors' beauty ratings and their average course evaluation rating. This time, color the observations by tenure status. Change the point colors to some non-default palette of your choice. Also, facet the plot using tenure status. Be sure the plot has appropriate labels (on both axes, and on any legend included), and has a caption. Include this plot in a word-processed document. Resize the plot so it does not take up any more space than neccesary.
 

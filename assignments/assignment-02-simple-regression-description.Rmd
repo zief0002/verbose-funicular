@@ -30,6 +30,7 @@ This assignment is intended to give you experience fitting and interpreting regr
 Should more money be spent on public schools or should that money be spent elsewhere? Both sides of this ongoing public debate have been argued passionately, using a multitude of anecdotal evidence. Although we will not settle this debate, we will examine data akin to the types of data that policy makers use to make funding decisions. Specifically, we will examine whether teacher salaries are related to SAT scores at the state level. For this assignment, you will use the file *state-education.csv* (see the [data codebook](http://zief0002.github.io/epsy-8251/codebooks/state-education.html)).
 
 
+
 # Part I: Unstandardized Regression
 
 Before carrying out any analyses, create a predictor called `salary_thousand` that indicates the average state salary in thousands of dollars (e.g., salary = 52143; salary_thousand = 52.143). This variable (not `salary`) should be used in all analyses in Part I.
