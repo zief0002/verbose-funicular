@@ -1,0 +1,398 @@
+---
+title: "More Interaction Models"
+date: "`r Sys.Date()`"
+header-includes:
+   - \usepackage{xcolor}
+   - \usepackage[framemethod=tikz]{mdframed}
+   - \usepackage{graphicx}
+   - \usepackage{rotating}
+   - \usepackage{booktabs}
+   - \definecolor{umn}{RGB}{153, 0, 85}
+   - \definecolor{umn2}{rgb}{0.1843137, 0.4509804, 0.5372549}
+   - \definecolor{myorange}{HTML}{EA6153}
+output: 
+  pdf_document:
+    highlight: tango
+    fig_width: 6
+    fig_height: 6
+urlcolor: "umn2"
+bibliography: epsy8251.bib
+csl: apa-single-spaced.csl
+always_allow_html: yes
+---
+
+```{r knitr_init, echo=FALSE, cache=FALSE}
+library(knitr)
+library(rmdformats)
+
+## Global options
+options(max.print="75")
+opts_chunk$set(prompt=FALSE, comment=NA, message=FALSE, warning=FALSE, tidy=FALSE)
+opts_knit$set(width=85)
+options(scipen=5)
+```
+
+<!-- LaTeX definitions -->
+
+\mdfdefinestyle{mystyle}{userdefinedwidth=5in, align=center, backgroundcolor=yellow, roundcorner=10pt, skipabove=2em}
+
+\mdfdefinestyle{mystyle2}{userdefinedwidth=5.5in, align=center, skipabove=10pt, topline=false, bottomline=false, 
+linecolor=myorange, linewidth=5pt}
+
+\mdfdefinestyle{work}{userdefinedwidth=5in, linecolor=blue, align=center, roundcorner=10pt, skipabove=2em}
+
+
+# Preparation
+
+In this set of notes, you will continue to learn about interaction models. To do so, we will examine the question of whether there is a differential effect of beauty by age on course evaluation scores. The data we will use in this set of notes is collected from student evaluations of instructors' beauty and teaching quality for several courses at the University of Texas. The teaching evaluations were conducted at the end of the semester, and the beauty judgments were made later, by six students who had not attended the classes and were not aware of the course evaluations. The variables are:
+
+- `prof_id`: Professor ID number
+- `avg_eval`: Average course rating
+- `num_courses`: Number of courses for which the professor has evaluations
+- `num_students`: Number of students enrolled in the professor's courses
+- `perc_evaluating`: Average percentage of enrolled students who completed an evaluation
+- `beauty`: Measure of the professor's beauty composed  of the average score on six standardized beauty ratings
+- `tenured`: Is the professor tenured? (0 = non-tenured; 1 = tenured)
+- `native_english`: Is the professor a native English speaker? (0 = non-native English speaker; 1 = native English speaker)
+- `age`: Professor's age (in years)
+- `female`: Is the professor female? (0 = male; 1 = female)
+
+These source of these data is: Hamermesh, D. S. &amp; Parker, A. M. (2005). Beauty in the classroom: Instructors' pulchritude and putative pedagogical productivity. *Economics of Education Review, 24*, 369&ndash;376. The data were made available by: Gelman, A., &amp; Hill, J. (2007). *Data analysis using regression and multilevel/hierarchical models*. New York: Cambridge University Press. 
+
+
+```{r preparation, warning=FALSE, message=FALSE}
+# Load libraries
+library(broom)
+library(corrr)
+library(dotwhisker)
+library(dplyr)
+library(ggplot2)
+library(readr)
+library(sm)
+library(tidyr)
+
+# Read in data
+evals = read_csv(file = "~/Documents/github/epsy-8251/data/evaluations.csv")
+```
+
+# Interaction between Age and Beauty
+
+Typically, barring support for the interaction effect from theoretical/substantive findings, we would explore the sample data for empirical evidence of the interaction (generally via plots of the data). To explore an interaction effect between two quantitative variables poses some unique challenges. 
+
+To understand those challeneges consider how we explored the interaction between sex and beauty. We created a plot of the effect of beauty on average course evaluation score for males and females, and asked whether the regression line for males and females were parallel. In other words, we need to examine the relationship between $X1$ and $Y$ for different levels of $X2$.
+
+If we are examining an interaction between age and beauty on course evaluation scores, we need to again examine the effect of beauty on average course evaluation score at different levels of age. But, since age is continuous, we have to choose the levels of age; they aren't pre-specified like males and females. In general, researchers would probably choose a high and low (or high, medium, and low) value of age. 
+
+So, we are going to examine the relationship between beauty and course evaluation scores for a low, medium, and high age. Empirically, we can choose these values based on the `summary()` output.
+
+```{r}
+summary(evals)
+```
+
+
+
+
+Here we might choose ages of 40 (low), 50 (medium), and 60 (high). after choosing particular values of age, we run into another challenge. That is, there are typically only a few observations that have those ages.
+
+```{r}
+evals_2 = evals %>% filter(age == 40 | age == 50 | age == 60)
+nrow(evals_2)
+```
+
+There are only 7 cases (out of 94) that are at those three ages. Ideally, we want to use the entire data set to examine effects, otherwise, we might see a spurious relationship. 
+
+\newpage
+
+## Cutting the Age Variable into Categories
+
+For plotting purposes, what is usually done is to "cut" the continuous predictor into discrete categories (e.g., low ages, medium ages, and high ages). This is ONLY done for plotting. When we fit the actual interaction, we use the continuous predictor.
+
+There are several R functions to dicretize a continuous variable. We will use the `cut()` function. This function takes the name of the variable you want to cut, and an argument `break=` which specifies the number of levels you want the variable cut into. (Note: you can also specify the cutpoints in the `breaks=` argument; see `cut()`'s help menu.)
+
+```{r}
+evals = evals %>%
+  mutate(
+    age_discrete = cut(age, breaks = 3)
+  )
+
+summary(evals)
+```
+
+Now we have cut age into three levels: low ages (43.7 or younger), medium ages (older than 43.7, and younger than or equal to 58.3), and high ages (older than 58.3). We can use our new variable to now examine the potential interaction.
+
+```{r message=FALSE, warning=FALSE, fig.width=13, fig.height = 4, out.width='5.5in'}
+ggplot(data = evals, aes(x = beauty, y = avg_eval, color = age_discrete)) +
+  geom_point(alpha = 0.4) +
+  geom_smooth(method = "lm", se = FALSE) +
+	theme_bw() +
+	xlab("Beauty rating") +
+	ylab("Average course evaluation score") +
+  scale_color_brewer(palette = "Set2") +
+  facet_wrap(~age_discrete)
+```
+
+# Fit the Interaction Model
+
+
+To fit the interaction model, use the consituent main effects and the interaction term to predict course evaluation scores. VERY IMPORTANT---Use the original quantitative age predictor, not the discretized variable in the model. We will also use the colon (`:`) notation to fit the model. The colon implicitly creates the product term and includes it in the model. 
+
+```{r}
+# Fit model
+lm.1 = lm(avg_eval ~ 1 + beauty + age + beauty:age, data = evals)
+
+# Model-level output
+glance(lm.1)
+
+# Coefficient-level output
+tidy(lm.1)
+```
+
+The interaction effect is not statistically significant, indicating there is likely not an interaction between age and beauty on course evaluation scores in the population. 
+
+
+## Plot of the Interaction Model
+
+Although, in practice, we would not interpret a non-significant interaction, we will continue as if it were significant for a pedagogical exercise.
+
+When we plot the model results, we will choose specific values for age and include them in our `crossing()` function along with a sequence of beauty ratings (and sex).
+
+```{r fig.width=8, fig.height=6, out.width='4.5in'}
+# Create new data set with main effects
+plot_data = crossing(
+  beauty = seq(from = -1.6, to = 1.9, by = 0.1),
+  age = c(40, 50, 60)
+)
+
+# Use fitted model to compute fitted values for the data
+plot_data = plot_data %>% 
+  mutate(
+    yhat = predict(lm.1, newdata = plot_data)
+  )
+
+head(plot_data)
+
+# Plot the fitted model
+ggplot(data = plot_data, aes(x = beauty, y = yhat, color = factor(age))) +
+  geom_line() +
+  theme_bw() +
+  xlab("Beauty score") +
+  ylab("Predicted average course evaluation score") +
+  scale_color_brewer(
+    name = "Age", 
+    palette = "Set1", 
+    labels = c("40 years old", "50 years old", "60 years old")
+    ) +
+  ylim(0, 5)
+```
+
+Based on the plot, we can see there is a *disordinal interaction* between age and beauty (the lines cross in our plot). The effect of beauty on average course evaluation score varies across the three ages. There largest effect of beauty on average course evaluation score is for older professors (highest slope), while the effect of beauty for younger professors is smaller (lower slopes).
+
+Similarly, the effect of age on average course evaluation score varies across beauty rating. For professors who were percieved as having a less than average beauty rating ($<0$) younger professors tend to receive higher course evaluation ratings than older professors. However, this trend reverses itself for professors who were percieved as having a higher than average beauty rating. For those professors, older professors tend to be given higher course evaluation ratings than younger professors.
+
+## Compute the Fitted Equations
+
+We can also compute the fitted equations for professors whose age varies. To do this, substitute in the age values in the fitted regression equation. For young, male professors (age = 40),
+
+$$
+\begin{split}
+\hat{\mathrm{course~eval}}_i &= 3.77 - 0.25(\mathrm{beauty}_i) + 0.003(\mathrm{age}_i) + 0.008(\mathrm{beauty}_i)(\mathrm{age}_i) \\
+&= 3.77 - 0.25(\mathrm{beauty}_i) + 0.003(40) + 0.008(\mathrm{beauty}_i)(40) \\
+&= 3.77 - 0.25(\mathrm{beauty}_i) + 0.12 + 0.32(\mathrm{beauty}_i) \\
+&= 3.89 + 0.07(\mathrm{beauty}_i) \\
+\end{split}
+$$
+
+For 50 year old professors,
+
+$$
+\begin{split}
+\hat{\mathrm{course~eval}}_i &= 3.77 - 0.25(\mathrm{beauty}_i) + 0.003(\mathrm{age}_i) + 0.008(\mathrm{beauty}_i)(\mathrm{age}_i) \\
+&= 3.77 - 0.25(\mathrm{beauty}_i) + 0.003(50) + 0.008(\mathrm{beauty}_i)(50) \\
+&= 3.77 - 0.25(\mathrm{beauty}_i) + 0.15 + 0.40(\mathrm{beauty}_i) \\
+&= 3.92 + 0.15(\mathrm{beauty}_i) \\
+\end{split}
+$$
+
+\newpage
+
+And, finally, for 60 year old professors,
+
+$$
+\begin{split}
+\hat{\mathrm{course~eval}}_i &= 3.77 - 0.25(\mathrm{beauty}_i) + 0.003(\mathrm{age}_i) + 0.008(\mathrm{beauty}_i)(\mathrm{age}_i) \\
+&= 3.77 - 0.25(\mathrm{beauty}_i) + 0.003(60) + 0.008(\mathrm{beauty}_i)(60) \\
+&= 3.77 - 0.25(\mathrm{beauty}_i) + 0.18 + 0.48(\mathrm{beauty}_i) \\
+&= 3.95 + 0.23(\mathrm{beauty}_i) \\
+\end{split}
+$$
+
+This tells us the same thing we saw in the plot, but helps us see the difference in slopes numerically.
+
+
+## Interpreting the Individual Effects from the tidy() Output
+
+```{r}
+tidy(lm.1)
+```
+
+In practice, use the plot of the results to interpret interaction effects. In simple models, we can actually interpret the coefficients more directly. To do this, write out the fitted equations for professors who differ in age by 1 year. We will do this for professors who are 0 years old and professors who are 1 year old. (Do the substitution yourself to verify these equations.)
+
+$$
+\begin{split}
+\mathbf{0~year~olds:~}\hat{\mathrm{course~eval}_i} &= 3.77 - 0.25(\mathrm{beauty}_i) \\
+\mathbf{1~year~olds:~}\hat{\mathrm{course~eval}_i} &= \left[3.77 + 0.003 \right] + \left[ -0.25 + 0.008 \right](\mathrm{beauty}_i)\\
+\end{split}
+$$
+
+
+- The intercept ($3.77$) is the average course evaluation score for professors with a 0 beauty rating who are 0 years old (extrapolation). 
+- The coefficient associated with beauty ($-0.25$) is the effect of beauty for professors who are 0 years old. 
+- The coefficient associated with age ($0.003$) is the difference in average course evaluation between professors with beauty rating = 0 whose age differs by one year. 
+- The coefficient associated with the interaction term ($0.008$) is the difference in slopes (effect of beauty on course evaluation) between professors whose age differs by one year. 
+
+Note that although we can interpret the coefficients directly, the plot is typically more informative and far less complicated to make sense of.
+
+\newpage
+
+# Adding Covariates
+
+Is there an interaction between age and beauty on average course evaluations after we control for gender differences?
+
+```{r}
+# Fit model
+lm.2 = lm(avg_eval ~ 1 + beauty + age + female + beauty:age, data = evals)
+
+# Model-level output
+glance(lm.2)
+
+# Coefficient-level output
+tidy(lm.2)
+```
+
+Yes. The interaction term is statsitically significant after we include sex of the professor in the model. To understand this model, plot it.
+
+```{r fig.width=8, fig.height=6, out.width='4.5in'}
+# Create new data set with main effects
+plot_data = crossing(
+  beauty = seq(from = -1.6, to = 1.9, by = 0.1),
+  age = c(40, 50, 60),
+  female = c(0, 1)
+)
+
+# Use fitted model to compute fitted values for the data
+plot_data = plot_data %>% 
+  mutate(
+    yhat = predict(lm.2, newdata = plot_data),
+    age = factor(age),
+    female = factor(female, levels = c(0, 1), labels = c("Male", "Female"))
+  )
+
+head(plot_data)
+
+# Plot the fitted model
+ggplot(data = plot_data, aes(x = beauty, y = yhat, color = age)) +
+  geom_line() +
+  theme_bw() +
+  xlab("Beauty score") +
+  ylab("Predicted average course evaluation score") +
+  scale_color_brewer(
+    name = "Age", 
+    palette = "Set1", 
+    labels = c("40 years old", "50 years old", "60 years old")
+    ) +
+  ylim(0, 5) +
+  facet_wrap(~female)
+```
+
+
+The plot shows that the effect of beauty on average course evaluation varies for professors with different ages. In general, there is a greater effect of beauty for older professors. This interaction is THE SAME for males and females, although on average, females have lower course evaluations than males for the same beauty rating and age.
+
+As an exercise, compute the fitted equations for males who are 0 and 1 years old (one year difference) and for females who are 0 and 1 years old (four total equations). Then go back to the `tidy()` output and use your equations to help interpret the regression coefficients.
+
+# Higher Order Interactions
+
+Interactions between two predictors (e.g., age and beauty) are referred to as *first order* interactions. In the previous section, the model we fitted included a main-effect of gender and a first order interaction between age and beauty. The main-effect of sex in this model suggested that the first order interaction between beauty and age was THE SAME for males and females.
+
+We could also fit a model that posits that the first order interaction between beauty and age IS DIFFERENT for males and females. This is technically an interaction between sex and the first order interaction between beauty and age. It is an interaction of an interaction. This is called a *second order* interaction.
+
+To fit such a model, we would need to include the second order interaction between gender, beauty and age; the product of the three main effects. Since we have an interaction, we need to include all constituent main effects AND since it is a higher order interaction, we need to include all constituent lower order interactions; in this case all constituent first order interactions. As such the predictors would include:
+
+- **Main-Effects:** `beauty` and `age` and `female`
+- **First Order Interactions:** `beauty:age` and `beauty:female` and `age:female`
+- **Second Order Interaction:** `beauty:age:female`
+
+We fit the model below.
+
+```{r}
+# Fit model
+lm.3 = lm(avg_eval ~ 1 + beauty + age + female + 
+            beauty:age + beauty:female + female:age + 
+            beauty:age:female, data = evals)
+
+# Model-level output
+glance(lm.3)
+
+# Coefficient-level output
+tidy(lm.3)
+```
+
+The second order interaction term is statistically significant. To interpret this, plot the model results.
+
+
+```{r fig.width=9, fig.height=6, out.width='5in'}
+# Create new data set with main effects
+plot_data = crossing(
+  beauty = seq(from = -1.6, to = 1.9, by = 0.1),
+  age = c(40, 60),
+  female = c(0, 1)
+)
+
+# Use fitted model to compute fitted values for the data
+plot_data = plot_data %>% 
+  mutate(
+    yhat = predict(lm.3, newdata = plot_data)
+    )
+
+# Convert female and age into factors for better plotting
+plot_data = plot_data %>%
+  mutate(
+    Sex = factor(female, levels = c(0, 1), labels = c("Males", "Females")),
+    Age = factor(age, levels = c(40, 60), labels = c("40 year olds", "60 year olds"))
+  )
+
+head(plot_data)
+
+# Plot the fitted model
+ggplot(data = plot_data, aes(x = beauty, y = yhat, color = Age)) +
+  geom_line() +
+  theme_bw() +
+  xlab("Beauty score") +
+  ylab("Predicted average course evaluation score") +
+  scale_color_brewer(name = "Age", palette = "Set1") +
+  facet_wrap(~Sex)
+```
+
+- The plots show that the interaction between age and beauty on course evaluation scores DIFFERS for males and females.
+- This also suggests that the interaction between beauty and sex on course evaluation scores DIFFERS for professors of different ages
+
+```{r fig.width=9, fig.height=6, out.width='5in'}
+ggplot(data = plot_data, aes(x = beauty, y = yhat, color = Sex)) +
+  geom_line() +
+  theme_bw() +
+  xlab("Beauty score") +
+  ylab("Predicted average course evaluation score") +
+  scale_color_brewer(name = "Age", palette = "Set1") +
+  facet_wrap(~Age)
+```
+
+Lastly, it also implies that the interaction between sex and age on course evaluation scores DIFFERS for professors with different beauty ratings (not shown; left as an exercise for the reader).
+
+
+# Some Advice for Fitting Interaction Models
+
+In general, only fit interaction terms that include focal predictors. Do not fit interaction terms that are composed of all control predictors. This has the implication that if you do not have a focal predictor (i.e., the analysis is purely exploratory) you should probably not fit interaction terms.
+
+A second piece of advice is that unless there is specific theoretical reason to fit higher order interactions with your focal predictors, avoid them. This also is good advice for first order interaction terms as well.
+
+
+

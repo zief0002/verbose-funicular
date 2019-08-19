@@ -791,8 +791,8 @@ img {
 
 <div id="content">
 <p>As part of the course, there are several articles, papers and technical reports that you will need to read during the semester. Most of the articles themselves are accessible through the University of Minnesota library website (<a href="http://www.lib.umn.edu" class="uri">http://www.lib.umn.edu</a>). In order to access the full text of some of the articles, you will need to log in using your University x500 username and password. More detailed information, including references or links to specific readings, are given below.</p>
-<div id="welcome" class="section level2">
-<h2>Welcome to EPsy 8251</h2>
+<div id="welcome" class="section level1">
+<h1>Welcome to EPsy 8251</h1>
 <p><strong>Required</strong></p>
 <p>Download and read through the course syllabus.</p>
 <ul>
@@ -862,11 +862,20 @@ img {
 <p><strong>Required</strong></p>
 <ul>
 <li>Lewis-Beck &amp; Lewis-Beck [Chap. 1]</li>
-<li><a href="https://github.com/drsimonj/corrr">corrr Package Vignette</a></li>
+</ul>
+<hr />
+</div>
+<div id="corr" class="section level2">
+<h2>Correlation and Standardized Regression</h2>
+<p><strong>Required</strong></p>
+<ul>
+<li><a href="https://www.datanovia.com/en/blog/easy-correlation-matrix-analysis-in-r-using-corrr-package/">Easy Correlation Matrix Analysis in R Using Corrr Package</a></li>
 </ul>
 <p><strong>Additional Resources</strong></p>
 <ul>
+<li><a href="https://github.com/tidymodels/corrr">corrr Package Vignette</a></li>
 <li><a href="http://guessthecorrelation.com/">Guess the Correlation Game</a> [fun game]</li>
+<li>Bring, J. (1994). <a href="https://amstat.tandfonline.com/doi/abs/10.1080/00031305.1994.10476059">How to standardize regression coefficients.</a> <em>The American Statistician, 48</em>(3), 209–213.</li>
 </ul>
 <hr />
 </div>
@@ -878,11 +887,11 @@ img {
 <p><strong>Required</strong></p>
 <ul>
 <li>Lewis-Beck &amp; Lewis-Beck [Chap. 2]</li>
+<li>Amrhein, V., Greenland, S., &amp; McShane, B. (2019). <a href="https://www.nature.com/articles/d41586-019-00857-9">Comment: Retire statistical significance.</a> <em>Nature, 567</em>, 305–307.</li>
 </ul>
 <p><strong>Additional Resources</strong></p>
 <ul>
 <li><a href="https://www.youtube.com/watch?v=ez4DgdurRPg">Dance of the p-values</a> [video]</li>
-<li><a href="https://xkcd.com/1478/">xkcd: p-values</a> [cartoon]</li>
 </ul>
 <hr />
 </div>
@@ -890,7 +899,7 @@ img {
 <div id="unit-04-multiple-linear-regression-and-statistical-control" class="section level1">
 <h1>Unit 04: Multiple Linear Regression and Statistical Control</h1>
 <div id="multreg" class="section level2">
-<h2>Multiple Regression</h2>
+<h2>Introduction to Multiple Regression</h2>
 <p><strong>Required</strong></p>
 <ul>
 <li>Lewis-Beck &amp; Lewis-Beck [Chap. 3]</li>
@@ -904,6 +913,8 @@ img {
 </div>
 <div id="assump" class="section level1">
 <h1>Unit 05: Model Assumptions</h1>
+<div id="reg-assump" class="section level2">
+<h2>Assumptions of the Regression Model</h2>
 <p><strong>Required</strong></p>
 <ul>
 <li>Re-read Lewis-Beck &amp; Lewis-Beck [Chap. 3]</li>
@@ -915,20 +926,14 @@ img {
 </ul>
 <hr />
 </div>
+</div>
 <div id="unit-06-categorical-predictors" class="section level1">
 <h1>Unit 06: Categorical Predictors</h1>
-<div id="dummy-coding-a-categorical-predictor" class="section level2">
-<h2>Dummy Coding a Categorical Predictor</h2>
+<div id="coding-a-categorical-predictor" class="section level2">
+<h2>Coding a Categorical Predictor</h2>
 <p><strong>Required</strong></p>
 <ul>
 <li><a href="https://stats.idre.ucla.edu/other/mult-pkg/faq/general/faqwhat-is-dummy-coding/">What is Dummy Coding?</a> [web article]</li>
-</ul>
-<hr />
-</div>
-<div id="effects-coding-a-categorical-predictor" class="section level2">
-<h2>Effects Coding a Categorical Predictor</h2>
-<p><strong>Required</strong></p>
-<ul>
 <li><a href="https://stats.idre.ucla.edu/other/mult-pkg/faq/general/faqwhat-is-effect-coding/">What is Effect Coding?</a> [web article]</li>
 </ul>
 <hr />
@@ -942,7 +947,6 @@ img {
 <p><strong>Additional Resources</strong></p>
 <ul>
 <li>Gelman, A., Hill, J., &amp; Yajima, M. (2012). <a href="http://www.stat.columbia.edu/~gelman/research/published/multiple2f.pdf">Why we (usually) don’t have to worry about multiple comparisons</a>. <em>Journal of Research on Educational Effectiveness, 5</em>, 189–211.</li>
-<li><a href="http://www.sthda.com/english/wiki/add-p-values-and-significance-levels-to-ggplots">Add p-Values and Significance Levels to ggplots</a> [web article]</li>
 <li><a href="https://fivethirtyeight.com/features/science-isnt-broken/#part1">Science isn’t Broken</a> [web article]</li>
 </ul>
 <hr />
@@ -954,8 +958,7 @@ img {
 <ul>
 <li>Brambor, T., Clark, W. R., &amp; Golder, M. (2006). <a href="http://mattgolder.com/files/research/pa_final.pdf">Understanding interaction models: Improving empirical analyses</a>. <em>Political Analysis, 14</em>, 63–82.</li>
 </ul>
-<p><strong>Optional</strong></p>
-<p>Additional resources:</p>
+<p><strong>Additional resources</strong></p>
 <ul>
 <li>Frost, J. (2018). <a href="http://statisticsbyjim.com/regression/interaction-effects/">Understanding Interaction Effects in Statistics</a>. [blog post]</li>
 </ul>

@@ -1,0 +1,9 @@
+base
+knitr
+rmdformats
+broom
+ggplot2
+readr
+sm
+kableExtra
+dplyr

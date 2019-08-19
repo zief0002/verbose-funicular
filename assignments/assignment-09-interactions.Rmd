@@ -1,0 +1,86 @@
+---
+title: "Assignment 08"
+author: "Interaction Models"
+header-includes:
+   - \usepackage{xcolor}
+   - \definecolor{umn}{RGB}{153, 0, 85}
+output: pdf_document
+urlcolor: "umn"
+---
+
+In this assignment, you are going to focus on the question of whether there are differences in the average in-state tuition across the five states. Please submit your responses to each of the questions below in a printed document. Also, please adhere to the following guidelines for further formatting your assignment: 
+
+- All graphics should be resized so that they do not take up more room than necessary and should have an appropriate caption and labels. 
+- Any typed mathematics (equations, matrices, vectors, etc.) should be appropriately typeset within the document using Equation Editor, Markdown, or \LaTeX. 
+
+This assignment is worth 16 points. Each question is worth one point unless otherwise noted. 
+
+\rule{0.5\linewidth}{\linethickness}
+
+For this assignment, you will use the file *colleges-bordering-mn.csv*. This file contains institutional data for 104 colleges and universities in the five state area (MN, IA, WI, ND, and SD). These data were collected by the Department of Education for the [2013 College Score Card](https://collegescorecard.ed.gov/). The variables are:
+
+- `name`: Name of college/university
+- `tuition_in_state`: In-state tuition and fees
+- `tuition_out_state`: Out-of-state tuition and fees
+- `state`: State postal abbreviation (IA = Iowa, MN = Minnesota, ND = North Dakota, SD = South Dakota, WI = Wisconsin)
+- `public`: Is this a public school? (1 = yes, 0 = no)
+- `main`: Is this the main campus? (1 = yes, 0 = no)
+- `admission`: Admission rate
+- `act75`: 75th percentile of the ACT cumulative scores
+- `avg_fac_salary`: Average faculty salary (per month)
+- `completion`: Four-year completion rate for first-time, full-time students
+- `pct_pell`: Percentage of undergraduates who receive a Pell grant
+
+\rule{0.5\linewidth}{\linethickness}
+
+# Preparation: Fitting Models
+
+Fit the following regression models using R. You will use the output from the fitted models to answer the questions in the assignment. For all models, use the average in-state tuition as the response variable.
+
+- **Model 1:** Main effects of `public`, `act75`, and `admission` 
+- **Model 2:** Main effects of `public`, `act75`, and `admission`; and an interaction effect between `public` and `act75`
+- **Model 3:** Main effects of `public`, `act75`, and `admission`; and an interaction effect between `public` and `admission`
+- **Model 4:** Main effects of `public`, `act75`, and `admission`; and an interaction effect between `admission` and `act75`
+
+\pagebreak
+
+# Description
+
+1. Create a table of pairwise correlations between average in-state tuition, sector (public), 75th-percentile ACT score, and admission rate.
+
+2. Based on the correlation table, can you infer whether or not there will be an interaction between between 75th-percentile ACT score and admission rate in the sample? Explain.
+
+# Table of Regression Results
+
+3. Create a table to display the four models' regression results. This table should be similar in structure to Table 2 from Garcia, D. R., McIlroy, L., &amp; Barber, R. T. (2008). Starting Behind: A Comparative Analysis of the Academic Standing of Students Entering Charter Schools. _Social Science Quarterly, 89_(1), 199&ndash;216. Re-create this table as closely as you can (including the caption) using the output from the models you fitted above. **(2pts.)**
+
+
+# Model 2
+
+4. Write the fitted regression equation based on the `summary()` output for Model 2. Write the regression equation using Equation Editor (or some other program that correctly types mathematical expressions).
+
+5. Based on the inferential results from fitting this model, is there an interaction effect between sector (public/private) and ACT scores? Explain.
+
+6. Interpret the coefficient associated with the interaction effect between sector (public/private) and ACT scores.
+
+7. Using the `ggplot()` function, create a plot of the fitted model showing the pertinent results from Model 2. Be sure to appropriately differentiate between lines that you include in the plot (e.g., do not differentiate by color unless you plan to print in color). Include the plot (with an appropriate caption) in your word-processed document. 
+
+# Model 3
+
+8. Write the fitted regression equation based on the `summary()` output for Model 3. Write the regression equation using Equation Editor (or some other program that correctly types mathematical expressions).
+
+9. Based on the inferential results from fitting this model, is there an interaction effect between sector and admission rate? Explain.
+
+10. Interpret the coefficient associated with the interaction effect between sector and admission rate.
+
+11. Write the fitted regression equations for both public and private schools using Equation Editor (or some other program that correctly types mathematical expressions). Be sure each equation is labeled with the appropriate subgroup.
+
+# Model 4
+
+12. Write the fitted regression equation based on the `summary()` output for Model 4. Write the regression equation using Equation Editor (or some other program that correctly types mathematical expressions).
+
+13. Based on the inferential results from fitting this model, is there an interaction effect between ACT score and admission rate? Explain.
+
+14. Using the `ggplot()` function, create a plot of the fitted model that allows you to interpret the interaction between ACT score and admission rate. Be sure to appropriately differentiate between lines that you include in the plot (e.g., do not differentiate by color unless you plan to print in color). Include the plot (with an appropriate caption) in your word-processed document.
+
+15. Using the plot you just created, interpret the interaction effect between ACT score and admission rate. 

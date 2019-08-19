@@ -42,14 +42,16 @@ Fit the following regression models using R. You will use the output from the fi
 
 1. Create a correlation table that indicates the pairwise correlations between the outcome and each of the predictors, and between each set of predictors. Model this table after Table 7.2 (p. 43) in the *Presenting Your Findings* book. Make sure the table you create also has an appropriate caption.
 
-2. Examine the structure and formatting of Table 2 in the article: Garcia, D. R., McIlroy, L., \& Barber, R. T. (2008). Starting behind: A comparative analysis of the academic standing of students entering charter schools. *Social Science Quarterly, 89*(1), 199--216. Notice that models are presented in columns (in the article 6 models are presented). Predictors used in the models are presented in rows, and so are the model-level summaries (e.g., $N$, $F$, $R^2$). Also note that the intercept ('Constant') is the last term presented in the table, generally because it is the least important coefficient. Blank cells indicate that the model does not include that particular predictor. Mimic the format and structure of this table to create a table to present the numerical information from the three models you fitted in this assignment. Re-create the formatting of Table 1 as closely as you can, but do not include any stars for statistical significance. Instead of giving the adjusted $R^2$ value, provide the unadjusted $R^2$ value. Make sure the table you create also has an appropriate caption. If the table is too wide, change the page orientation in your word processing program to ``Landscape'', rather than changing the size of the font. **(2pts.)**
+2. Examine the structure and formatting of Table 9 at http://zief0002.github.io/epsy-8251/misc/creating-tables/creating-tables.html. Mimic the format and structure of this table to create a table to present the numerical information from the three models you fitted in this assignment. Make sure the table you create also has an appropriate caption. If the table is too wide, change the page orientation in your word processing program to ``Landscape'', rather than changing the size of the font. **(2pts.)**
 
 3. Create a coefficient plot that graphically presents the coefficient estimates and the uncertainty (as 95\% confidence intervals) for the coefficients included in the three fitted models. Be sure that the figure is appropriately captioned. **(2pts.)**
 
-4. Based on results presented in the regression table and from the coefficient plot, explain why it would be appropriate to adopt Model 2.
+4. Based on results presented in the regression table and from the coefficient plot, explain, by referring to the uncertainty in the parameter estimates, why it would be appropriate to adopt Model 2. Note: Do not base this on a *p*-value.
 
 
-\vspace {2em}
+
+\newpage
+
 **Use the results from Model 2 to answer the remainder of the questions on this assignment.**
 \vspace {2em}
 
@@ -63,10 +65,10 @@ Fit the following regression models using R. You will use the output from the fi
 
 8. Using symbols, write the omnibus null hypothesis that is tested by the *F*-statistic in this analysis in two different manners: (1) using the coefficient parameters used in the regression model, and (2) using the variance accounted for parameter.
 
-9. Based on the results of the *F*-test, does the model seem to explain variation in course evaluations? Explain.
+9. Based on the results of the *F*-test, does the model seem to explain variation in course evaluations? Explain. Note: Here you can use the *p*-value as evidence, but do not compare this to 0.05.
 
 10. Interpret the estimated coefficient value associated with the beauty predictor.
 
-11. Based on the results of the *t*-test, what do the data suggest about the partial effect of beauty on course evaluations? Explain.
+11. Based on the 95% confidence interval for the partial effect of beauty on course evaluations, which parameter values are reasonably compatible with the empirical data? Explain. 
 
-12. Create a publication quality plot that displays the results from Model 2. For this plot, put the beauty predictor on the *x*-axis. Show two separate lines to show the effect of the number of courses (a small and large number of courses based on the data). The two lines should have different linetypes or use different colors so that they can easily be differentiated. **(2pts.)**
+12. Create a publication quality plot that displays the results from Model 2. For this plot, put the beauty predictor on the *x*-axis. Show two separate lines to show the effect of the number of courses (a small and large number of courses based on the data). The two lines should easily be differentiatedhave different linetypes or use different colors so that they can . **(2pts.)**

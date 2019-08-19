@@ -165,30 +165,6 @@ The plot suggests a relationship (at least for these employees) between level of
 - Observations that do not fit the trend (outliers)
 
 
-### Correlation
-
-To numerically summarize relationships between variables, we typically compute correlation coefficients. The correlation coefficient is a quantification of the direction and strength of the relationship. (It is important to note that the correlation coefficient is only an appropriate summarization of the relationship if the functional form of the relationship is linear.) 
-
-To compute the correlation coefficient, we use the `correlate()` function from the **corrr** package. We can use the dplyr-type syntax to select the variables we want correlations between, and then pipe that into the `correlate()` function. Typically the response (or outcome) variable is the first variable provided in the `select()` function, followed by the predictor.
-
-```{r}
-city %>%
-  select(income, education) %>%
-  correlate()
-```
-
-When reporting the correlation coefficient is is conventional to use a lower-case $r$ and report the value to two decimal places. Subscripts are also generally used to indicate the variables. For example,
-
-$$
-r_{\mathrm{education,~income}} = 0.79
-$$
-
-Combining the information culled from the scatterplot with that of the correlation analysis, we could summarize the relationship between education level and income as,
-
-\begin{mdframed}[style=mystyle2]
-There is a strong, positive, linear relationship between education level and income ($r = .79$). This suggests that city employees with lower education levels tend to have lower incomes, on average, than employees with higher education levels.
-\end{mdframed}
-
 
 # Statistical Model
 

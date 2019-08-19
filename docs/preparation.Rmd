@@ -27,7 +27,7 @@ opts_knit$set(width=75)
 As part of the course, there are several articles, papers and technical reports that you will need to read during the semester. Most of the articles themselves are accessible through the University of Minnesota library website (http://www.lib.umn.edu). In order to access the full text of some of the articles, you will need to log in using your University x500 username and password. More detailed information, including references or links to specific readings, are given below.
 
 
-## Welcome to EPsy 8251 {#welcome}
+# Welcome to EPsy 8251 {#welcome}
 
 **Required**
 
@@ -100,16 +100,29 @@ Here are two videos to watch that will help you learn ggplot2:
 
 # Unit 02: Introduction to Linear Regression
 
+
 ## Simple Linear Regression: Description {#ols-description}
 
 **Required**
 
 - Lewis-Beck &amp; Lewis-Beck [Chap. 1]
-- [corrr Package Vignette](https://github.com/drsimonj/corrr)
+
+
+
+---
+
+## Correlation and Standardized Regression {#corr}
+
+**Required**
+
+- [Easy Correlation Matrix Analysis in R Using Corrr Package](https://www.datanovia.com/en/blog/easy-correlation-matrix-analysis-in-r-using-corrr-package/)
 
 **Additional Resources**
 
+- [corrr Package Vignette](https://github.com/tidymodels/corrr)
 - [Guess the Correlation Game](http://guessthecorrelation.com/) [fun game]
+- Bring, J. (1994). [How to standardize regression coefficients.](https://amstat.tandfonline.com/doi/abs/10.1080/00031305.1994.10476059) *The American Statistician, 48*(3), 209&ndash;213. 
+
 
 ---
 
@@ -120,17 +133,19 @@ Here are two videos to watch that will help you learn ggplot2:
 **Required**
 
 - Lewis-Beck &amp; Lewis-Beck [Chap. 2]
+- Amrhein, V., Greenland, S., &amp; McShane, B. (2019). [Comment: Retire statistical significance.](https://www.nature.com/articles/d41586-019-00857-9) *Nature, 567*, 305&ndash;307.
+
 
 **Additional Resources**
 
 - [Dance of the p-values](https://www.youtube.com/watch?v=ez4DgdurRPg) [video]
-- [xkcd: p-values](https://xkcd.com/1478/) [cartoon]
+
 
 ---
 
 # Unit 04: Multiple Linear Regression and Statistical Control
 
-## Multiple Regression {#multreg}
+## Introduction to Multiple Regression {#multreg}
 
 **Required**
 
@@ -143,6 +158,8 @@ Here are two videos to watch that will help you learn ggplot2:
 ---
 
 # Unit 05: Model Assumptions {#assump}
+
+## Assumptions of the Regression Model {#reg-assump}
 
 **Required**
 
@@ -157,18 +174,11 @@ Here are two videos to watch that will help you learn ggplot2:
 
 # Unit 06: Categorical Predictors
 
-## Dummy Coding a Categorical Predictor
+## Coding a Categorical Predictor
 
 **Required**
 
 - [What is Dummy Coding?](https://stats.idre.ucla.edu/other/mult-pkg/faq/general/faqwhat-is-dummy-coding/) [web article]
-
----
-
-## Effects Coding a Categorical Predictor
-
-**Required**
-
 - [What is Effect Coding?](https://stats.idre.ucla.edu/other/mult-pkg/faq/general/faqwhat-is-effect-coding/) [web article]
 
 ---
@@ -182,7 +192,6 @@ Here are two videos to watch that will help you learn ggplot2:
 **Additional Resources**
 
 - Gelman, A., Hill, J., & Yajima, M. (2012). [Why we (usually) don’t have to worry about multiple comparisons](http://www.stat.columbia.edu/~gelman/research/published/multiple2f.pdf). _Journal of Research on Educational Effectiveness, 5_, 189&ndash;211.
-- [Add p-Values and Significance Levels to ggplots](http://www.sthda.com/english/wiki/add-p-values-and-significance-levels-to-ggplots) [web article]
 - [Science isn't Broken](https://fivethirtyeight.com/features/science-isnt-broken/#part1) [web article]
 
 ---
@@ -194,9 +203,7 @@ Here are two videos to watch that will help you learn ggplot2:
 - Brambor, T., Clark, W. R., &amp; Golder, M. (2006). [Understanding interaction models:
 Improving empirical analyses](http://mattgolder.com/files/research/pa_final.pdf). *Political Analysis, 14*, 63&ndash;82.
 
-**Optional**
-
-Additional resources:
+**Additional resources**
 
 - Frost, J. (2018). [Understanding Interaction Effects in Statistics](http://statisticsbyjim.com/regression/interaction-effects/). [blog post]
 

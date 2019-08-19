@@ -65,7 +65,7 @@ Jonathan Brown ([brow3019@umn.edu](mailto://brow3019@umn.edu))  <br />
 
 The statistical content for EPsy 8251 includes rigorous coverage of estimation and hypothesis testing with a particular focus on ANOVA and multiple linear regression.
 
-- The course syllabus is available  [here](https://github.com/zief0002/epsy-8251/raw/master/syllabus/syllabus-8251-f19.pdf).
+- The course syllabus is available  [here](https://github.com/zief0002/epsy-8251/raw/master/syllabus/f19-8251-syllabus.pdf).
 
 <br />
 
