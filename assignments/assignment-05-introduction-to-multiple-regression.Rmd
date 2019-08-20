@@ -27,7 +27,7 @@ This assignment is intended to give you experience fitting and interpreting mult
 
 \rule{0.5\linewidth}{\linethickness}
 
-Research. Teaching. Service. The trifecta upon which that almost every university instructor is evaluated, and, ultimately compensated. There has been substantial research to indicate that higher quality teaching is associated with increased faculty salararies. One way which academic administrators judge teaching quality is through teachers' course evaluations. While we know evaluation scores are not perfectly measures of teaching quality, nonetheless, they do play a role in the tenure and promotion process. For this assignment, you will use the file *evaluations.csv* (see the [data codebook](http://zief0002.github.io/epsy-8251/codebooks/evaluations.html)).
+Research. Teaching. Service. The trifecta upon which that almost every university instructor is evaluated, and, ultimately compensated. There has been substantial research to indicate that higher quality teaching is associated with increased faculty salararies. One way which academic administrators judge teaching quality is through teachers' course evaluations. While we know evaluation scores are not perfectly measures of teaching quality, nonetheless, they do play a role in the tenure and promotion process. Unfortunately, many other variables are also associated with evaluation scores (e.g., professor's ethnicity, professor's sex)  For this assignment, you will use the file *evaluations.csv* (see the [data codebook](http://zief0002.github.io/epsy-8251/codebooks/evaluations.html)).
 
 
 # Preparation

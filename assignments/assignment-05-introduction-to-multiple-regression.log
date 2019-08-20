@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019) (preloaded format=xelatex 2019.7.5)  19 AUG 2019 20:05
+This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019) (preloaded format=xelatex 2019.7.5)  19 AUG 2019 20:37
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1182,15 +1182,15 @@ LaTeX Font Info:    Font shape `TU/Sabon(0)/m/n' will be
 LaTeX Font Info:    Font shape `TU/Sabon(0)/m/it' will be
 (Font)              scaled to size 11.35968pt on input line 101.
 LaTeX Font Info:    Font shape `TU/Sabon(0)/m/it' will be
-(Font)              scaled to size 9.4664pt on input line 122.
+(Font)              scaled to size 9.4664pt on input line 124.
 LaTeX Font Info:    Font shape `TU/Sabon(0)/m/n' will be
-(Font)              scaled to size 13.87462pt on input line 127.
+(Font)              scaled to size 13.87462pt on input line 129.
 LaTeX Font Info:    Font shape `TU/Sabon(0)/bx/n' will be
-(Font)              scaled to size 13.66148pt on input line 127.
+(Font)              scaled to size 13.66148pt on input line 129.
 LaTeX Font Info:    Font shape `TU/Inconsolata(0)/m/n' will be
-(Font)              scaled to size 9.4873pt on input line 135.
+(Font)              scaled to size 9.4873pt on input line 137.
 Font mapping `tex-ansi.tec' for font `Inconsolata' not found.
-LaTeX Font Info:    Try loading font information for OT1+lmr on input line 157.
+LaTeX Font Info:    Try loading font information for OT1+lmr on input line 159.
 
 (/Users/zief0002/Library/TinyTeX/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
@@ -1200,41 +1200,41 @@ oman.cfg
 File: mt-LatinModernRoman.cfg 2013/03/13 v1.0 microtype config. file: Latin Mod
 ern Roman (RS)
 )
-LaTeX Font Info:    Try loading font information for OML+lmm on input line 157.
+LaTeX Font Info:    Try loading font information for OML+lmm on input line 159.
 
 (/Users/zief0002/Library/TinyTeX/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 157
+LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 159
 .
 (/Users/zief0002/Library/TinyTeX/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMX+lmex on input line 157
+LaTeX Font Info:    Try loading font information for OMX+lmex on input line 159
 .
 (/Users/zief0002/Library/TinyTeX/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 157.
+(Font)              <10> on input line 159.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 157.
+(Font)              <7> on input line 159.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 157.
-LaTeX Font Info:    Try loading font information for U+msa on input line 157.
+(Font)              <5> on input line 159.
+LaTeX Font Info:    Try loading font information for U+msa on input line 159.
 (/Users/zief0002/Library/TinyTeX/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 ) (/Users/zief0002/Library/TinyTeX/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 157.
+LaTeX Font Info:    Try loading font information for U+msb on input line 159.
 (/Users/zief0002/Library/TinyTeX/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) (/Users/zief0002/Library/TinyTeX/texmf-dist/tex/latex/microtype/mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
 LaTeX Font Info:    Font shape `TU/Sabon(0)/bx/n' will be
-(Font)              scaled to size 9.48715pt on input line 163.
+(Font)              scaled to size 9.48715pt on input line 165.
 [1
 
 ]
@@ -1246,12 +1246,12 @@ See the caption package documentation for explanation.
 Package caption Warning: Unused \captionsetup[figure] on input line 97.
 See the caption package documentation for explanation.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 223.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 225.
 [2]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 223.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 225.
 (./assignment-05-introduction-to-multiple-regression.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 223.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 223.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 225.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 225.
 Package rerunfilecheck Info: File `assignment-05-introduction-to-multiple-regre
 ssion.out' has not changed.
 (rerunfilecheck)             Checksum: D59602878781B46A0B55C879B052138E.

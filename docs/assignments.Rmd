@@ -11,7 +11,6 @@ Below are the due dates for the assignments, as well as links to the RMD and PDF
 <th style="width:50%;">Assignment</th>
 <th style="width:15%;">Due Date (T/R)</th>
 <th style="width:15%;">Due Date (M/W)</th>
-<!-- <th style="width:10%;text-align:center">RMD</th> -->
 <th style="width:10%;text-align:center">PDF</th>
 </tr>
 </thead>
@@ -22,10 +21,6 @@ Below are the due dates for the assignments, as well as links to the RMD and PDF
 <td>Assignment \#1: *Introduction to Statistical Computing*</td>
 <td>Sept. 19</td>
 <td>Sept. 23</td>
-<!-- <td align="center" style="vertical-align:middle;"> -->
-<!--   <a href="https://github.com/zief0002/epsy-8251/raw/master/assignments/assignment-01-intro-to-statistical-computing.Rmd">     <span class="fab fa-markdown" style="color: #ff2600; font-size: 20px;"></span> -->
-<!--   </a> -->
-<!-- </td> -->
 <td align="center" style="vertical-align:middle;">
   <a href="https://github.com/zief0002/epsy-8251/raw/master/assignments/assignment-01-intro-to-statistical-computing.pdf">
     <span class="fa fa-file-pdf" style="color: #ff2600; font-size: 20px;"></span>
@@ -39,10 +34,6 @@ Below are the due dates for the assignments, as well as links to the RMD and PDF
 <td>Assignment \#2: *Simple Regression: Description*</td>
 <td>Sept. 26</td>
 <td>Sept. 30</td>
-<!-- <td align="center" style="vertical-align:middle;"> -->
-<!--   <a href="https://github.com/zief0002/epsy-8251/raw/master/assignments/assignment-02-simple-regression-description.Rmd">     <span class="fab fa-markdown" style="color: #ff2600; font-size: 20px;"></span> -->
-<!--   </a> -->
-<!-- </td> -->
 <td align="center" style="vertical-align:middle;">
   <a href="https://github.com/zief0002/epsy-8251/raw/master/assignments/assignment-02-simple-regression-description.pdf">
     <span class="fa fa-file-pdf" style="color: #ff2600; font-size: 20px;"></span>
@@ -54,10 +45,6 @@ Below are the due dates for the assignments, as well as links to the RMD and PDF
 <td>Assignment \#3: *Correlation and Standardized Regression*</td>
 <td>Oct. 08</td>
 <td>Oct. 09</td>
-<!-- <td align="center" style="vertical-align:middle;"> -->
-<!--   <a href="https://github.com/zief0002/epsy-8251/raw/master/assignments/assignment-03-correlation-and-standardized-regression.pdf">     <span class="fab fa-markdown" style="color: #ff2600; font-size: 20px;"></span> -->
-<!--   </a> -->
-<!-- </td> -->
 <td align="center" style="vertical-align:middle;">
   <a href="https://github.com/zief0002/epsy-8251/raw/master/assignments/assignment-03-correlation-and-standardized-regression.pdf">
     <span class="fa fa-file-pdf" style="color: #ff2600; font-size: 20px;"></span>
@@ -69,10 +56,6 @@ Below are the due dates for the assignments, as well as links to the RMD and PDF
 <td>Assignment \#4: *Simple Regression: Inference*</td>
 <td>Oct. 22</td>
 <td>Oct. 23</td>
-<!-- <td align="center" style="vertical-align:middle;"> -->
-<!--   <a href="https://github.com/zief0002/epsy-8251/raw/master/assignments/s19-assignment-04-evidence-and-model-selection.Rmd">     <span class="fab fa-markdown" style="color: #ff2600; font-size: 20px;"></span> -->
-<!--   </a> -->
-<!-- </td> -->
 <td align="center" style="vertical-align:middle;">
   <a href="https://github.com/zief0002/epsy-8251/raw/master/assignments/assignment-04-simple-regression-inference.pdf">
     <span class="fa fa-file-pdf" style="color: #ff2600; font-size: 20px;"></span>
@@ -80,83 +63,63 @@ Below are the due dates for the assignments, as well as links to the RMD and PDF
 </td>
 </tr>
 
-<tr>
-<td>Assignment \#5: *Introduction to Multiple Regression*</td>
-<td>Oct. 31</td>
-<td>Nov. 04</td>
+<!-- <tr> -->
+<!-- <td>Assignment \#5: *Introduction to Multiple Regression*</td> -->
+<!-- <td>Oct. 31</td> -->
+<!-- <td>Nov. 04</td> -->
 <!-- <td align="center" style="vertical-align:middle;"> -->
-<!--   <a href="https://github.com/zief0002/epsy-8251/raw/master/assignments/s19-assignment-05-mixed-effects-models.Rmd">     <span class="fab fa-markdown" style="color: #ff2600; font-size: 20px;"></span> -->
+<!--   <a href="https://github.com/zief0002/epsy-8251/raw/master/assignments/assignment-05-introduction-to-multiple-regression.pdf"> -->
+<!--     <span class="fa fa-file-pdf" style="color: #ff2600; font-size: 20px;"></span> -->
 <!--   </a> -->
 <!-- </td> -->
-<td align="center" style="vertical-align:middle;">
-  <a href="https://github.com/zief0002/epsy-8251/raw/master/assignments/assignment-05-introduction-to-multiple-regression.pdf">
-    <span class="fa fa-file-pdf" style="color: #ff2600; font-size: 20px;"></span>
-  </a>
-</td>
-</tr>
+<!-- </tr> -->
 
-<tr>
-<td>Assignment \#6: *Regression Assumptions*</td>
-<td>Nov. 12</td>
-<td>Nov. 13</td>
+<!-- <tr> -->
+<!-- <td>Assignment \#6: *Regression Assumptions*</td> -->
+<!-- <td>Nov. 12</td> -->
+<!-- <td>Nov. 13</td> -->
 <!-- <td align="center" style="vertical-align:middle;"> -->
-<!--   <a href="https://github.com/zief0002/epsy-8251/raw/master/assignments/s19-assignment-06-longitudinal-models.Rmd">     <span class="fab fa-markdown" style="color: #ff2600; font-size: 20px;"></span> -->
+<!--   <a href="https://github.com/zief0002/epsy-8251/raw/master/assignments/assignment-06-regression-assumptions.pdf"> -->
+<!--     <span class="fa fa-file-pdf" style="color: #ff2600; font-size: 20px;"></span> -->
 <!--   </a> -->
 <!-- </td> -->
-<td align="center" style="vertical-align:middle;">
-  <a href="https://github.com/zief0002/epsy-8251/raw/master/assignments/assignment-06-regression-assumptions.pdf">
-    <span class="fa fa-file-pdf" style="color: #ff2600; font-size: 20px;"></span>
-  </a>
-</td>
-</tr>
+<!-- </tr> -->
 
 
 
-<tr>
-<td>Assignment \#7: *Analysis of Covariance Using Multiple Regression*</td>
-<td>Nov. 19</td>
-<td>Nov. 20</td>
+<!-- <tr> -->
+<!-- <td>Assignment \#7: *Analysis of Covariance Using Multiple Regression*</td> -->
+<!-- <td>Nov. 19</td> -->
+<!-- <td>Nov. 20</td> -->
 <!-- <td align="center" style="vertical-align:middle;"> -->
-<!--   <a href="https://github.com/zief0002/epsy-8251/raw/master/assignments/s19-assignment-07-logistic-regression.Rmd">     <span class="fab fa-markdown" style="color: #ff2600; font-size: 20px;"></span> -->
+<!--   <a href="https://github.com/zief0002/epsy-8251/raw/master/assignments/assignment-07-ancova.pdf"> -->
+<!--     <span class="fa fa-file-pdf" style="color: #ff2600; font-size: 20px;"></span> -->
 <!--   </a> -->
 <!-- </td> -->
-<td align="center" style="vertical-align:middle;">
-  <a href="https://github.com/zief0002/epsy-8251/raw/master/assignments/assignment-07-ancova.pdf">
-    <span class="fa fa-file-pdf" style="color: #ff2600; font-size: 20px;"></span>
-  </a>
-</td>
-</tr>
+<!-- </tr> -->
 
 
-<tr>
-<td>Assignment \#8: *Analysis of Covariance Using Multiple Regression: Part II*</td>
-<td>Dec. 03</td>
-<td>Dec. 02</td>
+<!-- <tr> -->
+<!-- <td>Assignment \#8: *Analysis of Covariance Using Multiple Regression: Part II*</td> -->
+<!-- <td>Dec. 03</td> -->
+<!-- <td>Dec. 02</td> -->
 <!-- <td align="center" style="vertical-align:middle;"> -->
-<!--   <a href="https://github.com/zief0002/epsy-8251/raw/master/assignments/s19-assignment-08-poisson-regression.Rmd">     <span class="fab fa-markdown" style="color: #ff2600; font-size: 20px;"></span> -->
+<!--   <a href="https://github.com/zief0002/epsy-8251/raw/master/assignments/assignment-08-ancova-part-ii.pdf"> -->
+<!--     <span class="fa fa-file-pdf" style="color: #ff2600; font-size: 20px;"></span> -->
 <!--   </a> -->
 <!-- </td> -->
-<td align="center" style="vertical-align:middle;">
-  <a href="https://github.com/zief0002/epsy-8251/raw/master/assignments/assignment-08-ancova-part-ii.pdf">
-    <span class="fa fa-file-pdf" style="color: #ff2600; font-size: 20px;"></span>
-  </a>
-</td>
-</tr>
+<!-- </tr> -->
 
 
-<tr>
-<td>Assignment \#9: *Interaction Models*</td>
-<td colspan='2' align='center'>Dec. 13 <br/> (due at 12:00pm in EdSciB 250)</td>
+<!-- <tr> -->
+<!-- <td>Assignment \#9: *Interaction Models*</td> -->
+<!-- <td colspan='2' align='center'>Dec. 13 <br/> (due at 12:00pm in EdSciB 250)</td> -->
 <!-- <td align="center" style="vertical-align:middle;"> -->
-<!--   <a href="https://github.com/zief0002/epsy-8251/raw/master/assignments/s19-assignment-08-poisson-regression.Rmd">     <span class="fab fa-markdown" style="color: #ff2600; font-size: 20px;"></span> -->
+<!--   <a href="https://github.com/zief0002/epsy-8251/raw/master/assignments/assignment-09-interactions.pdf"> -->
+<!--     <span class="fa fa-file-pdf" style="color: #ff2600; font-size: 20px;"></span> -->
 <!--   </a> -->
 <!-- </td> -->
-<td align="center" style="vertical-align:middle;">
-  <a href="https://github.com/zief0002/epsy-8251/raw/master/assignments/assignment-09-interactions.pdf">
-    <span class="fa fa-file-pdf" style="color: #ff2600; font-size: 20px;"></span>
-  </a>
-</td>
-</tr>
+<!-- </tr> -->
 
 </tbody>
 </table>
