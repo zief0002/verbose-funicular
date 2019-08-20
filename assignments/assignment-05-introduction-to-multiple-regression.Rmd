@@ -26,7 +26,7 @@ always_allow_html: yes
 This assignment is intended to give you experience fitting and interpreting multiple regression models. Submit your responses to each of the questions below in a printed document. All graphics should be resized so that they do not take up more room than necessary and also should have an appropriate caption. This assignment is worth 15 points. (Each question is worth 1 point unless otherwise noted.)
 
 \rule{0.5\linewidth}{\linethickness}
-p
+
 Research. Teaching. Service. The trifecta upon which that almost every university instructor is evaluated, and, ultimately compensated. There has been substantial research to indicate that higher quality teaching is associated with increased faculty salararies. One way which academic administrators judge teaching quality is through teachers' course evaluations. While we know evaluation scores are not perfectly measures of teaching quality, nonetheless, they do play a role in the tenure and promotion process. For this assignment, you will use the file *evaluations.csv* (see the [data codebook](http://zief0002.github.io/epsy-8251/codebooks/evaluations.html)).
 
 
