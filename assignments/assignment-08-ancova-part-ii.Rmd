@@ -1,39 +1,33 @@
 ---
-title: "Assignment 07"
+title: "Assignment 08"
 author: "Analysis of Covariance Using Multiple Regression: Part II"
 header-includes:
    - \usepackage{xcolor}
-   - \definecolor{umn}{rgb}{0.1843137, 0.4509804, 0.5372549}
+   - \definecolor{umn}{HTML}{FF2D21}
+   - \usepackage{caption}
+   - \captionsetup[table]{textfont={it}, labelfont={}, singlelinecheck=false, labelsep=newline}
+   - \captionsetup[figure]{textfont={}, labelfont={it}, singlelinecheck=false, labelsep=period}
+   - \usepackage{xfrac}
 output: 
   pdf_document:
     highlight: tango
+    latex_engine: xelatex
+    fig_width: 6
+    fig_height: 6
+mainfont: "Sabon"
+sansfont: "Helvetica Neue UltraLight"
+monofont: Inconsolata
 urlcolor: "umn"
+always_allow_html: yes
 ---
 
-In this assignment, you are going to focus on the question of whether there are differences in the average in-state tuition across the five states. Please submit your responses to each of the questions below in a printed document. Also, please adhere to the following guidelines for further formatting your assignment: 
+\frenchspacing
 
-- All graphics should be resized so that they do not take up more room than necessary and should have an appropriate caption and labels. 
-- Any typed mathematics (equations, matrices, vectors, etc.) should be appropriately typeset within the document using Equation Editor, Markdown, or \LaTeX. 
-
-This assignment is worth 15 points. Each question is worth one point unless otherwise noted. 
+This assignment is intended to give you more experience fitting and interpreting regression models with categorical predictors. Submit your responses to each of the questions below in a printed document. All graphics should be resized so that they do not take up more room than necessary and also should have an appropriate caption. This assignment is worth 15 points. (Each question is worth 1 point unless otherwise noted.)
 
 \rule{0.5\linewidth}{\linethickness}
 
-For this assignment, you will use the file *colleges-bordering-mn.csv*. This file contains institutional data for 104 colleges and universities in the five state area (MN, IA, WI, ND, and SD). These data were collected by the Department of Education for the [2013 College Score Card](https://collegescorecard.ed.gov/). The variables are:
-
-- `name`: Name of college/university
-- `tuition_in_state`: In-state tuition and fees
-- `tuition_out_state`: Out-of-state tuition and fees
-- `state`: State postal abbreviation (IA = Iowa, MN = Minnesota, ND = North Dakota, SD = South Dakota, WI = Wisconsin)
-- `public`: Is this a public school? (1 = yes, 0 = no)
-- `main`: Is this the main campus? (1 = yes, 0 = no)
-- `admission`: Admission rate
-- `act75`: 75th percentile of the ACT cumulative scores
-- `avg_fac_salary`: Average faculty salary (per month)
-- `completion`: Four-year completion rate for first-time, full-time students
-- `pct_pell`: Percentage of undergraduates who receive a Pell grant
-
-\rule{0.5\linewidth}{\linethickness}
+For this assignment, you will examine whether there are differences in average in-state tuition between Minnesota and its bordering states. To do so, you will use the file *colleges-bordering-mn.csv* (see the [data codebook](http://zief0002.github.io/epsy-8251/codebooks/colleges-bordering-mn.html)).
 
 
 # Preparation: Create Dummy Variables
@@ -86,7 +80,7 @@ Again, fit the regression model that uses the dummy predictors for state to pred
 
 14. Based on the Benjamini--Hochberg adjusted _p_-values, which states have a statistically reliable difference in their average in-state tuition after controlling for the other predictors in the model?
 
-15. Create a heatmap of the information that you reported in the table in Question 8. You can see an example of a [heatmap for correlations here](https://developer.ibm.com/predictiveanalytics/wp-content/uploads/sites/48/2011/12/heatmap_corr1.png). We want to create a heatmap that shows the *p*-value for each mean comparison instead of the correlation between variables. So for example, the heatmap we want to create should be a 5x5 grid (the rows and columns would represent states) and the intersecting cells would include the *p*-value for the comparison (rather than the correlation coefficient). Color will be used to indicate the magnitude of the *p*-values. You may want to include different levels of color depending on the degree of significance ($<.05$, $<.01$, etc. At the very least, make sure it is clear whether each comparison is statistically significant or not. Feel free to use any software tool you want to create this heatmap.
+15. Create a heatmap of the information that you reported in the table in Question 8. You can see an example of a [heatmap for correlations here](https://developer.ibm.com/predictiveanalytics/wp-content/uploads/sites/48/2011/12/heatmap_corr1.png). We want to create a heatmap that shows the *p*-value for each mean comparison instead of the correlation between variables. So for example, the heatmap we want to create should be a 5x5 grid (the rows and columns would represent states) and the intersecting cells would include the *p*-value for the comparison (rather than the correlation coefficient). Color will be used to indicate the magnitude of the *p*-values. You may want to include different levels of color depending on the degree of significance ($<.05$, $<.01$, etc. Feel free to use any software tool you want to create this heatmap.
 
 
 

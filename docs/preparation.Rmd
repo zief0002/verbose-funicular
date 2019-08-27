@@ -63,6 +63,8 @@ Watch the following video:
 - [RStudio Keyboard Shortcuts](https://support.rstudio.com/hc/en-us/articles/200711853-Keyboard-Shortcuts)
 - [R Cookbook](https://primo.lib.umn.edu/primo-explore/fulldisplay?docid=UMN_ALMA51642131760001701&context=L&vid=TWINCITIES&search_scope=mncat_discovery&tab=article_discovery&lang=en_US) [book; UMN Library]
 - [tidy data video](https://vimeo.com/33727555) [video]
+- [Teacups, Giraffes, and Statistics](https://tinystats.github.io/teacups-giraffes-and-statistics/): Learn statistics & R coding through a series of modules that teach in an intuitive, playful, and approachable way
+
 
 ---
 
@@ -78,6 +80,7 @@ Here is an R vignette that will help you learn dplyr:
 
 - [dplyr Cheatsheet](https://www.rstudio.com/wp-content/uploads/2015/02/data-wrangling-cheatsheet.pdf)
 - [tidy data video](https://vimeo.com/33727555) [video]
+- Create tidyverse inspired clothing. See how [Amelia McNamara created a tidyverse dress](https://www.amelia.mn/blog/misc/2019/08/17/Tidy-Dress.html) and make your own clothing, shower curtain, etc. with the [Spoonflower printed fabric](https://www.spoonflower.com/profiles/ameliamn) she made available. 
 
 ---
 
