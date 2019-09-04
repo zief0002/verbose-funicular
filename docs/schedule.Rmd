@@ -135,7 +135,7 @@ Below is the tenative schedule for the class. The dates are subject to change at
 </td>
 <td style="vertical-align:middle;" rowspan="2">Simple Linear Regression: Description</td>
 <td align="center" style="vertical-align:middle;" rowspan="2">
-  <a href="http://zief0002.github.io/epsy-8251/raw/master/notes/04-simple-regression-description.pdf">
+  <a href="https://github.com/zief0002/epsy-8251/raw/master/notes/04-simple-regression-description.pdf">
     <span class="fa fa-file-pdf" style="color: #ff2600; font-size: 20px;"></span>
   </a>
 </td>
@@ -161,7 +161,7 @@ Below is the tenative schedule for the class. The dates are subject to change at
 </td>
 <td>Least Squares Estimation</td>
 <td align="center" style="vertical-align:middle;">
-  <a href="http://zief0002.github.io/epsy-8251/raw/master/notes/05-least-squares-estimation.pdf">
+  <a href="https://github.com/zief0002/epsy-8251/raw/master/notes/05-least-squares-estimation.pdf">
     <span class="fa fa-file-pdf" style="color: #ff2600; font-size: 20px;"></span>
   </a>
 </td>
@@ -183,7 +183,7 @@ Below is the tenative schedule for the class. The dates are subject to change at
 </td>
 <td style="vertical-align:middle;" rowspan="2">Correlation and Standardized Regression</td>
 <td align="center" style="vertical-align:middle;" rowspan="2">
-  <a href="http://zief0002.github.io/epsy-8251/raw/master/notes/06-correlation.pdf">
+  <a href="https://github.com/zief0002/epsy-8251/raw/master/notes/06-correlation.pdf">
     <span class="fa fa-file-pdf" style="color: #ff2600; font-size: 20px;"></span>
   </a>
 </td>
@@ -219,7 +219,7 @@ Below is the tenative schedule for the class. The dates are subject to change at
 </td>
 <td style="vertical-align:middle;" rowspan="2">Coefficient-Level Inference</td>
 <td align="center" style="vertical-align:middle;" rowspan="2">
-  <a href="http://zief0002.github.io/epsy-8251/raw/master/notes/07-coefficient-level-inference.pdf">
+  <a href="https://github.com/zief0002/epsy-8251/raw/master/notes/07-coefficient-level-inference.pdf">
     <span class="fa fa-file-pdf" style="color: #ff2600; font-size: 20px;"></span>
   </a>
 </td>
@@ -245,7 +245,7 @@ Below is the tenative schedule for the class. The dates are subject to change at
 </td>
 <td style="vertical-align:middle;" rowspan="2">Model-Level Inference</td>
 <td align="center" style="vertical-align:middle;" rowspan="2">
-  <a href="http://zief0002.github.io/epsy-8251/raw/master/notes/08-model-level-inference.pdf">
+  <a href="https://github.com/zief0002/epsy-8251/raw/master/notes/08-model-level-inference.pdf">
     <span class="fa fa-file-pdf" style="color: #ff2600; font-size: 20px;"></span>
   </a>
 </td>
@@ -279,7 +279,7 @@ Below is the tenative schedule for the class. The dates are subject to change at
 </td>
 <td style="vertical-align:middle;" rowspan="2">Introduction to Multiple Linear Regression</td>
 <td align="center" style="vertical-align:middle;" rowspan="2">
-  <a href="http://zief0002.github.io/epsy-8251/raw/master/notes/09-introduction-to-multiple-regression.pdf">
+  <a href="https://github.com/zief0002/epsy-8251/raw/master/notes/09-introduction-to-multiple-regression.pdf">
     <span class="fa fa-file-pdf" style="color: #ff2600; font-size: 20px;"></span>
   </a>
 </td>
@@ -305,7 +305,7 @@ Below is the tenative schedule for the class. The dates are subject to change at
 </td>
 <td style="vertical-align:middle;" rowspan="2">Understanding Statistical Control</td>
 <td align="center" style="vertical-align:middle;" rowspan="2">
-  <a href="http://zief0002.github.io/epsy-8251/raw/master/notes/10-understanding-statistical-control.pdf">
+  <a href="https://github.com/zief0002/epsy-8251/raw/master/notes/10-understanding-statistical-control.pdf">
     <span class="fa fa-file-pdf" style="color: #ff2600; font-size: 20px;"></span>
   </a>
 </td>
@@ -341,7 +341,7 @@ Below is the tenative schedule for the class. The dates are subject to change at
 </td>
 <td style="vertical-align:middle;" rowspan="2">Assumptions of the Regression Model</td>
 <td align="center" style="vertical-align:middle;" rowspan="2">
-  <a href="http://zief0002.github.io/epsy-8251/raw/master/notes/11-assumptions-of-the-regression-model.pdf">
+  <a href="https://github.com/zief0002/epsy-8251/raw/master/notes/11-assumptions-of-the-regression-model.pdf">
     <span class="fa fa-file-pdf" style="color: #ff2600; font-size: 20px;"></span>
   </a>
 </td>

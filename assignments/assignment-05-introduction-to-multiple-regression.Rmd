@@ -1,5 +1,5 @@
 ---
-title: "Assignment 04"
+title: "Assignment 05"
 author: "Introduction to Multiple Regression"
 header-includes:
    - \usepackage{xcolor}
@@ -32,10 +32,10 @@ Research. Teaching. Service. The trifecta upon which that almost every universit
 
 # Preparation
 
-Fit the following regression models using R. You will use the output from the fitted models to answer the questions in the assignment.
+Fit the regression models corresponding to the following scientific models. You will use the output from the fitted models to answer the questions in the assignment.
 
-- Model 1: `avg_eval ~ 1 + beauty`
-- Model 2: `avg_eval ~ 1 + beauty + num_courses`
+- Model 1: Students' perceptions of a professor's beauty are positively related to course evaluation scores.
+- Model 2: Students' perceptions of a professor's beauty are positively related to course evaluation scores, even after acounting for the number of courses
 - Model 3: `avg_eval ~ 1 + beauty + num_courses + perc_evaluating`
 
 # Part I
