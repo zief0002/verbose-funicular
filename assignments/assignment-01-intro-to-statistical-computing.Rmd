@@ -94,12 +94,11 @@ Use RStudio to open the \textit{goodreads.csv} dataset and assign it into an obj
 5. Use **dplyr** to select only the books on the "read" bookshelf; these are the books that Andy actually finished reading. Assign these books into a new object and count the number of rows in this object. Report this value along with the dplyr syntax you used to obtain this value.
 
 6. Using the data frame object that only includes the books Andy finished reading, compute the following three summaries: (a) the total number of pages read each month; (b) the average number of pages read each month; and (c) the standard deviation of the number of pages read each month. (Hint: Group by month and then use summarize to make your computations.) Report these values in a word-processed table. 
-    - *To format this table:* Examine the structure and formatting of Table 1 in the article: Snedker, K. A., Herting, J. R., \& Watson, E. (2009). [Contextual effects and adolescent substance use: Exploring the role of neighborhoods](https://primo.lib.umn.edu/primo-explore/fulldisplay?docid=TN_wj10.1111/j.1540-6237.2009.00677.x&context=PC&vid=TWINCITIES&search_scope=mncat_discovery&tab=article_discovery&lang=en_US). *Social Science Quarterly, 90*(5), 1272--1296.
-    - Notice that variables are presented in rows and summary statistics are presented in columns. Mimic the format and structure of this table to create a table to present the numerical summary information asked for in this question. Re-create the formatting of Table 1 as closely as you can. Finally, make sure the table you create also has an appropriate caption.
+
+    - *To format this table:* Examine the structure and formatting of Table 1 at http://zief0002.github.io/epsy-8251/misc/creating-tables/creating-tables.html. Notice that variables are presented in rows and summary statistics are presented in columns. Mimic the format and structure of this table to create a table to present the numerical summary information asked for in this question. Mimic the format and structure of this table to create a table to present the summary information. Finally, make sure the table you create also has an appropriate caption.
 
 7. Which two months did Andy read the most pages? Explain why this might be the case. (Hint: Consider the academic schedule.)
 
-\newpage
 
 # Part III
 

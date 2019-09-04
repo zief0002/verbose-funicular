@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019) (preloaded format=xelatex 2019.5.24)  28 JUN 2019 16:31
+This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019) (preloaded format=xelatex 2019.7.5)  4 SEP 2019 13:57
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1365,28 +1365,28 @@ File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
 LaTeX Font Info:    Font shape `TU/Sabon(0)/bx/n' will be
 (Font)              scaled to size 9.48715pt on input line 218.
-[2] [3]
+[2]
 
 Package caption Warning: Unused \captionsetup[figure] on input line 112.
 See the caption package documentation for explanation.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 346.
-[4]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 346.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 340.
+[3]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 340.
 (./assignment-01-intro-to-statistical-computing.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 346.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 346.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 340.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 340.
 Package rerunfilecheck Info: File `assignment-01-intro-to-statistical-computing
 .out' has not changed.
 (rerunfilecheck)             Checksum: D8933CFF6E9C715AF78646B7C96B8E9A.
  ) 
 Here is how much of TeX's memory you used:
- 26596 strings out of 494894
- 492287 string characters out of 6173843
- 616503 words of memory out of 5000000
+ 26594 strings out of 494894
+ 492161 string characters out of 6176154
+ 620503 words of memory out of 5000000
  30209 multiletter control sequences out of 15000+600000
  545307 words of font info for 73 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  53i,9n,116p,841b,446s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on assignment-01-intro-to-statistical-computing.pdf (4 pages).
+Output written on assignment-01-intro-to-statistical-computing.pdf (3 pages).
