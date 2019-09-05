@@ -54,7 +54,6 @@ In this set of notes, you will begin your foray into regression analysis. To do 
 
 ```{r preparation, warning=FALSE, message=FALSE}
 # Load libraries
-library(corrr)
 library(dplyr)
 library(ggplot2)
 library(readr)
@@ -112,7 +111,7 @@ We will also examine the distribution of the education level variable.
 
 ```{r fig.width=6, fig.height=6, out.width='50%', fig.cap="Density plot of employee education levels.", fig.pos='H', fig.align='center'}
 # Plot
-ggplot(data = city, aes(x = income)) +
+ggplot(data = city, aes(x = education)) +
   geom_histogram(aes(y = ..density..), color = "black", fill = "yellow") +
   stat_density(geom = "line") +
   theme_bw() +

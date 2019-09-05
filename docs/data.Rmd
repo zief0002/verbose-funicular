@@ -40,7 +40,7 @@ Below are the links to the data sets and data codebooks used in the notes, scrip
   </a>
 </td>
 <td align="center" style="vertical-align:middle;">
-  <a href="codebook/goodreads.html" target="_blank">
+  <a href="codebooks/goodreads.html" target="_blank">
     <span class="fas fa-book-open" style="color: #ff2600; font-size: 20px;"></span>
   </a>
 </td>
@@ -68,7 +68,7 @@ Below are the links to the data sets and data codebooks used in the notes, scrip
   </a>
 </td>
 <td align="center" style="vertical-align:middle;">
-  <a href="codebook/mn-schools.html" target="_blank">
+  <a href="codebooks/mn-schools.html" target="_blank">
     <span class="fas fa-book-open" style="color: #ff2600; font-size: 20px;"></span>
   </a>
 </td>
@@ -96,7 +96,7 @@ Below are the links to the data sets and data codebooks used in the notes, scrip
   </a>
 </td>
 <td align="center" style="vertical-align:middle;">
-  <a href="codebook/state-education.html" target="_blank">
+  <a href="codebooks/state-education.html" target="_blank">
     <span class="fas fa-book-open" style="color: #ff2600; font-size: 20px;"></span>
   </a>
 </td>
@@ -111,7 +111,7 @@ Below are the links to the data sets and data codebooks used in the notes, scrip
   </a>
 </td>
 <td align="center" style="vertical-align:middle;">
-  <a href="codebook/waffle-house.html" target="_blank">
+  <a href="codebooks/waffle-house.html" target="_blank">
     <span class="fas fa-book-open" style="color: #ff2600; font-size: 20px;"></span>
   </a>
 </td>

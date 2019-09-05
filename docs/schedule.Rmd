@@ -63,13 +63,11 @@ Below is the tenative schedule for the class. The dates are subject to change at
 <td>Introduction to R and RStudio</td>
 <td align="center" style="vertical-align:middle;">
   <a href="http://zief0002.github.io/epsy-8251/misc/01-introduction-to-r.html">
-    <span class="fas fa-link" style="color: #ff2600; font-size: 20px;"></span>
+    <span class="fas fa-link" style="color: #f1f1f1; font-size: 20px;"></span>
   </a>
 </td>
 <td align="center" style="vertical-align:middle;">
-  <a href="https://github.com/zief0002/epsy-8251/raw/master/scripts/03-log-transformations-outcome.R">
-    <span class="fab fa-r-project" style="color: #ff2600; font-size: 20px;"></span>
-  </a>
+  <span class="fab fa-r-project" style="color: #f1f1f1; font-size: 20px;"></span>
 </td>
 </tr>
 
