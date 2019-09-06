@@ -4,7 +4,7 @@
     <title>Introduction to R and RStudio</title>
     <meta charset="utf-8" />
     <meta name="author" content="Andrew Zieffler&quot;" />
-    <meta name="date" content="2019-06-05" />
+    <meta name="date" content="2019-09-06" />
     <link href="css/remark-css/default.css" rel="stylesheet" />
     <link href="css/remark-css/metropolis.css" rel="stylesheet" />
     <link href="css/remark-css/metropolis-fonts.css" rel="stylesheet" />
@@ -17,7 +17,7 @@ class: center, middle, inverse, title-slide
 # Introduction to R and RStudio
 ## EPsy 8251
 ### Andrew Zieffler"
-### 2019-06-05
+### 2019-09-06
 
 ---
 
@@ -694,14 +694,13 @@ Install the following packages:
 
 - **dplyr**
 - **ggplot2**
-- **sm**
 
-Download the *riverside.csv* data set from the course website to your computer. Import the data into RStudio. If all goes well, the data frame should have six columns (variables) and 32 rows (cases).  Open a new script file and record and comment on the syntax for each of the following:
+Download the *riverview.csv* data set from the course website to your computer. Import the data into RStudio. If all goes well, the data frame should have six columns (variables) and 32 rows (cases).  Open a new script file and record and comment on the syntax for each of the following:
 
 - Compute the mean income for the 32 employees.
 - Compute the standard deviation of incomes for the 32 employees.
-- Load the **sm** package and use the `sm.density()` function to plot the incomes for the 32 employees. 
-- Export the plot of incomes you just created as a PDF file and import that PDF into a word-processing program.
+- Use the `summary()` function to summarize the variables in the dataset. Do this by giving this function the object name of the data as its input. For example, if you assigned the name `river` to the data when you imported it, you would use `summary(river)`.
+- Load the **dplyr** and **ggplot2** packages using the `library()` function and make sure there are no errors when you load either package.
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
