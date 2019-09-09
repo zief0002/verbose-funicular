@@ -3,6 +3,7 @@
 Below are the due dates for the assignments, as well as links to the RMD and PDF files for each assignment. The due dates may change at the instructor's discretion. Any revised due dates will be announced in class and posted to the website.
 
 <br />
+<!-- <img src="img/update.png" width="20px" height="20px"> -->
 
 <table class="table">
 
@@ -18,7 +19,9 @@ Below are the due dates for the assignments, as well as links to the RMD and PDF
 <tbody>
 
 <tr>
-<td>Assignment \#1: *Introduction to Statistical Computing*</td>
+<td>Assignment \#1: *Introduction to Statistical Computing* <br />
+  <span style="margin-left:20px; color:red;">*[Updated 09-09-2019]*</span>
+</td>
 <td>Sept. 19</td>
 <td>Sept. 23</td>
 <td align="center" style="vertical-align:middle;">
@@ -53,7 +56,9 @@ Below are the due dates for the assignments, as well as links to the RMD and PDF
 </tr>
 
 <tr>
-<td>Assignment \#4: *Simple Regression: Inference*</td>
+<td>Assignment \#4: *Simple Regression: Inference*<br />
+  <span style="margin-left:20px; color:red;">*[Updated 09-09-2019]*</span>
+</td>
 <td>Oct. 22</td>
 <td>Oct. 23</td>
 <td align="center" style="vertical-align:middle;">

@@ -44,15 +44,17 @@ Before carrying out any analyses, create a predictor called `salary_thousand` th
 
 5. Compute and interpret the 95\% compatibility interval for the slope.
 
+6. Create a plot that displays the regression line from the unstandardized regression analysis. This plot should also include a confidence envelope (uncertainty) for the regression line. Be sure to give your plot an appropriate caption.
+
+
 # Part II: Centering a Predictor
 
 Center the `salary_thousand` predictor by subtracting the mean teacher salary from each value. Call this new variable `center_salary_thousand` This variable should be used in all analyses in Part II. Regress the SAT scores on the centered salaries.
 
-6. The results of the *F*-test for this analysis are identical to the results of the *F*-test for the analysis in Part I. Explain why this is expected by referring to and comparing the hypothesis being tested in both sets of analyses.
+7. The results of the *F*-test for this analysis are identical to the results of the *F*-test for the analysis in Part I. Explain why this is expected by referring to and comparing the hypothesis being tested in both sets of analyses.
 
-7. The results of the *t*-test for the intercept in this analysis are different than the results of the *t*-test for the intercept in the analysis in Part I. Explain why this is expected by referring to and comparing the hypothesis being tested (and what that means) in both sets of analyses.
+8. The results of the *t*-test for the intercept in this analysis are different than the results of the *t*-test for the intercept in the analysis in Part I. Explain why this is expected by referring to and comparing the hypothesis being tested (and what that means) in both sets of analyses.
 
-8. Compare and contrast the plots from the two analyses. What is the same? What is different?
 
 # Part III: Standardized Regression
 
