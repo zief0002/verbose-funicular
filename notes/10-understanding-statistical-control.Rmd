@@ -63,7 +63,6 @@ In this set of notes, we will return again to examine the question of whether ti
 # Load libraries
 library(broom)
 library(corrr)
-library(dotwhisker)
 library(dplyr)
 library(ggplot2)
 library(readr)

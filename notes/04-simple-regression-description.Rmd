@@ -1,24 +1,15 @@
 ---
 title: "Simple Linear Regression---Description"
 date: "`r Sys.Date()`"
-header-includes:
-   - \usepackage{xcolor}
-   - \definecolor{umn}{HTML}{FF2D21}
-   - \definecolor{myorange}{HTML}{EA6153}
-   - \usepackage[framemethod=tikz]{mdframed}
-   - \usepackage{graphicx}
-   - \usepackage{rotating}
-   - \usepackage{booktabs}
-   - \usepackage{float}
-   - \usepackage{caption}
-   - \captionsetup[table]{textfont={it}, labelfont={}, singlelinecheck=false, labelsep=newline}
-   - \captionsetup[figure]{textfont={}, labelfont={it}, singlelinecheck=false, labelsep=period}  
 output: 
   pdf_document:
     latex_engine: xelatex
     highlight: zenburn
     fig_width: 6
     fig_height: 6
+    includes: 
+      in_header: preamble.tex
+      before_body: doc-prefix.tex
 mainfont: "Sabon"
 sansfont: "Futura"
 monofont: Inconsolata    
@@ -27,14 +18,7 @@ bibliography: epsy8251.bib
 csl: apa-single-spaced.csl
 ---
 
-\frenchspacing
 
-<!-- LaTeX definitions -->
-
-\mdfdefinestyle{mystyle}{userdefinedwidth=5in, align=center, backgroundcolor=yellow, roundcorner=10pt, skipabove=2em}
-
-\mdfdefinestyle{mystyle2}{userdefinedwidth=5.5in, align=center, skipabove=10pt, topline=false, bottomline=false, 
-linecolor=myorange, linewidth=5pt}
 
 ```{r knitr_init, echo=FALSE, cache=FALSE}
 library(knitr)
@@ -173,8 +157,6 @@ $$
 Y_i = \beta_0 + \beta_1(X_i) + \epsilon_i
 $$
 
-\newpage
-
 In this equation,
 
 - $Y_i$ is the outcome/response value; it has an $i$ subscript because it can vary across cases/individuals.
@@ -233,6 +215,8 @@ $$
 \epsilon_i = Y_i - \mu_{Y \vert X_i}
 $$
 
+\newpage
+
 To compute an observation's residual, we compute the difference between the observation's $Y$-value and its conditional mean value. When the observed value of $Y$ is larger than the conditional mean value of $Y$ the residual term will be positive (underprediction). If the observed value of $Y$ is smaller than the conditional mean value of $Y$ the residual term will be negative (overprediction).
 
 ### Why is there an error term in the statistical model?
@@ -252,6 +236,8 @@ ggplot( data = city, aes(x = education, y = income) ) +
 Consider all the employees that have an education level of 10 years. For all three of them we would predict an income of approximately \$37,800. This is denoted by the blue point on the line. The error term allows for discrepancy between the predicted $Y$ and the observed $Y$, which allows us to recover our observed value of the response variable from the model.
 
 Graphically, the residual is represented by the vertical distance between the line and a given point on the scatterplot. Some of those points are above the line (they have a positive residual) and some are below the line (they have a negative residual). Also note that for some observations the error term is smaller than for others.
+
+\newpage
 
 ## Fitted Regression Model
 
@@ -286,6 +272,8 @@ $$
 $$
 
 Each observed residual is the difference between a case's observed outcome and its predicted value (given it's $X$-value and the estimated regression coefficients). Since $\hat{Y}_i$ is the conditional mean, the residual represents an observation's deviation from the mean $Y$-value given it's $X$-value.
+
+\newpage
 
 # Fitting a Regression Model to Data Using R
 
@@ -325,6 +313,8 @@ $$
 \end{split}
 $$
 
+\newpage
+
 To interpret this value, remember that $\hat{Y}_i$ is a conditional mean. In this case, it represents the predicted mean income for all employees that have an education level of 0 years. Graphically this looks like the following.
 
 ```{r echo=FALSE, out.width='3.5in', out.height='3.5in', fig.align='center', fig.pos='H', fig.cap="Plot displaying conditional distribution of $Y$ at $X=0$. The OLS fitted regression line (dotted) is also shown. The red points show the mean value of $Y$ for this conditional distribution---which corresponfds to the intercept value of the regression line."}
@@ -345,6 +335,8 @@ Recall from algebra that the slope of a line describes the change in $Y$ versus 
 $$
 \hat{\beta}_1 = \frac{\Delta\hat{Y}}{\Delta X} = \frac{2.651}{1}
 $$
+
+\newpage
 
 Again, because $\hat{Y}$ is a conditional mean, the slope represents the difference in predicted mean incomes for each one-year difference in education level. Graphically,
 
@@ -386,13 +378,15 @@ $$
 
 Each set of employees' education levels differ by one year (10 to 11 to 12). The difference in predicted mean incomes for these employees differs by 2.651 thousand dollars. 
 
+\newpage
+
 # Using the Regression Equation
 
 Consider the 25th case in the data frame.
 
 ```{r}
 city %>%
-  filter(row_number() == 12)
+  filter(row_number() == 25)
 ```
 
 This employee (Employee 25) has an education level of 20 years ($X_{25}=20$). Her income is 54.672 thousand dollars ($Y_{25}=54.672$). Using the fitted regression equation, we can compute the predicted mean income for employees with 20 years of education as,
@@ -429,8 +423,6 @@ ggplot(data = city, aes(x = education, y = income)) +
 ```
 
 
-<!-- \begin{mdframed}[style=mystyle] -->
-<!-- In general, when interpreting the slope and intercept, you should always use the conditional mean interpretations. -->
-<!-- \end{mdframed} -->
+
 
 

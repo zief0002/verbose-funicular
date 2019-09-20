@@ -12,7 +12,7 @@ library(readr)
 ### Read in data
 ##################################################
 
-city = read_csv(file = "~/Documents/github/epsy-8251/data/riverside.csv") 
+city = read_csv(file = "~/Documents/github/epsy-8251/data/riverview.csv") 
 
 head(city)
 tail(city)
@@ -22,6 +22,14 @@ tail(city)
 ##################################################
 ### Examine outcome/response
 ##################################################
+
+ggplot(data = city, aes(x = income)) +
+  geom_histogram(color = "black", fill = "yellow", bins = 20)
+
+
+ggplot(data = city, aes(x = income)) +
+  #geom_density()
+  stat_density(geom = "line")
 
 ggplot(data = city, aes(x = income)) +
   geom_histogram(aes(y = ..density..), color = "black", fill = "yellow") +
@@ -55,13 +63,14 @@ ggplot(data = city, aes(x = education)) +
 city %>% 
   summarize(
     M = mean(education), 
-    SD = sd(education)
+    SD = sd(education),
+    Med = median(education)
     )
 
 
 
 ##################################################
-### Examine conditional distribution of income given edu
+### Examine conditional distribution of income given education
 ##################################################
 
 ggplot(data = city, aes(x = education, y = income)) + 
@@ -69,16 +78,6 @@ ggplot(data = city, aes(x = education, y = income)) +
   theme_bw() +
   xlab("Education (in years)") +
   ylab("Income (in U.S. dollars)")
-
-
-
-##################################################
-### Correlation
-##################################################
-
-city %>%
-  select(income, education) %>%
-  correlate()
 
 
 
@@ -97,15 +96,20 @@ lm.1
 
 # See the 12th observation's data
 city %>%
-  filter(row_number() == 12)
+  filter(row_number() == 25)
 
 
 # Compute the predicted income using the regression equation
-11321 + 2651 * 14
+11321 + 2651 * 20
 
 
 # Compute the residual
 64926 - 48435
+
+
+
+
+
 
 
 

@@ -1,9 +1,9 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019) (preloaded format=xelatex 2019.5.24)  5 JUL 2019 15:55
+This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019) (preloaded format=xelatex 2019.9.16)  17 SEP 2019 07:48
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**09-understanding-statistical-control.tex
-(./09-understanding-statistical-control.tex
+**10-understanding-statistical-control.tex
+(./10-understanding-statistical-control.tex
 LaTeX2e <2018-12-01>
 (/Users/zief0002/Library/TinyTeX/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2018/09/03 v1.4i Standard LaTeX document class
@@ -135,21 +135,21 @@ Already applied: [0000/00/00] Old fixltx2e package on input line 53.
 Package: mathspec 2016/12/22 v0.2b LaTeX Package (Mathematics font selection fo
 r XeLaTeX)
 (/Users/zief0002/Library/TinyTeX/texmf-dist/tex/latex/etoolbox/etoolbox.sty
-Package: etoolbox 2018/08/19 v2.5f e-TeX tools for LaTeX (JAW)
+Package: etoolbox 2019/09/09 v2.5g e-TeX tools for LaTeX (JAW)
 \etb@tempcnta=\count100
 ) (/Users/zief0002/Library/TinyTeX/texmf-dist/tex/latex/fontspec/fontspec.sty
 (/Users/zief0002/Library/TinyTeX/texmf-dist/tex/latex/l3packages/xparse/xparse.
 sty (/Users/zief0002/Library/TinyTeX/texmf-dist/tex/latex/l3kernel/expl3.sty
-Package: expl3 2019-05-09 L3 programming layer (loader) 
+Package: expl3 2019-09-08 L3 programming layer (loader) 
 (/Users/zief0002/Library/TinyTeX/texmf-dist/tex/latex/l3kernel/expl3-code.tex
-Package: expl3 2019-05-09 L3 programming layer (code)
+Package: expl3 2019-09-08 L3 programming layer (code)
 \c_max_int=\count101
 \l_tmpa_int=\count102
 \l_tmpb_int=\count103
 \g_tmpa_int=\count104
 \g_tmpb_int=\count105
 \g__kernel_prg_map_int=\count106
-\c__ior_term_ior=\count107
+\c__ior_term_noprompt_ior=\count107
 \c_log_iow=\count108
 \l_iow_line_count_int=\count109
 \l__iow_line_target_int=\count110
@@ -199,49 +199,50 @@ Package: expl3 2019-05-09 L3 programming layer (code)
 \l__sort_A_int=\count135
 \l__sort_B_int=\count136
 \l__sort_C_int=\count137
-\l__tl_analysis_normal_int=\count138
-\l__tl_analysis_index_int=\count139
-\l__tl_analysis_nesting_int=\count140
-\l__tl_analysis_type_int=\count141
-\l__regex_internal_a_int=\count142
-\l__regex_internal_b_int=\count143
-\l__regex_internal_c_int=\count144
-\l__regex_balance_int=\count145
-\l__regex_group_level_int=\count146
-\l__regex_mode_int=\count147
-\c__regex_cs_in_class_mode_int=\count148
-\c__regex_cs_mode_int=\count149
-\l__regex_catcodes_int=\count150
-\l__regex_default_catcodes_int=\count151
-\c__regex_catcode_L_int=\count152
-\c__regex_catcode_O_int=\count153
-\c__regex_catcode_A_int=\count154
-\c__regex_all_catcodes_int=\count155
-\l__regex_show_lines_int=\count156
-\l__regex_min_state_int=\count157
-\l__regex_max_state_int=\count158
-\l__regex_left_state_int=\count159
-\l__regex_right_state_int=\count160
-\l__regex_capturing_group_int=\count161
-\l__regex_min_pos_int=\count162
-\l__regex_max_pos_int=\count163
-\l__regex_curr_pos_int=\count164
-\l__regex_start_pos_int=\count165
-\l__regex_success_pos_int=\count166
-\l__regex_curr_char_int=\count167
-\l__regex_curr_catcode_int=\count168
-\l__regex_last_char_int=\count169
-\l__regex_case_changed_char_int=\count170
-\l__regex_curr_state_int=\count171
-\l__regex_step_int=\count172
-\l__regex_min_active_int=\count173
-\l__regex_max_active_int=\count174
-\l__regex_replacement_csnames_int=\count175
-\l__regex_match_count_int=\count176
-\l__regex_min_submatch_int=\count177
-\l__regex_submatch_int=\count178
-\l__regex_zeroth_submatch_int=\count179
-\g__regex_trace_regex_int=\count180
+\l__str_internal_int=\count138
+\l__tl_analysis_normal_int=\count139
+\l__tl_analysis_index_int=\count140
+\l__tl_analysis_nesting_int=\count141
+\l__tl_analysis_type_int=\count142
+\l__regex_internal_a_int=\count143
+\l__regex_internal_b_int=\count144
+\l__regex_internal_c_int=\count145
+\l__regex_balance_int=\count146
+\l__regex_group_level_int=\count147
+\l__regex_mode_int=\count148
+\c__regex_cs_in_class_mode_int=\count149
+\c__regex_cs_mode_int=\count150
+\l__regex_catcodes_int=\count151
+\l__regex_default_catcodes_int=\count152
+\c__regex_catcode_L_int=\count153
+\c__regex_catcode_O_int=\count154
+\c__regex_catcode_A_int=\count155
+\c__regex_all_catcodes_int=\count156
+\l__regex_show_lines_int=\count157
+\l__regex_min_state_int=\count158
+\l__regex_max_state_int=\count159
+\l__regex_left_state_int=\count160
+\l__regex_right_state_int=\count161
+\l__regex_capturing_group_int=\count162
+\l__regex_min_pos_int=\count163
+\l__regex_max_pos_int=\count164
+\l__regex_curr_pos_int=\count165
+\l__regex_start_pos_int=\count166
+\l__regex_success_pos_int=\count167
+\l__regex_curr_char_int=\count168
+\l__regex_curr_catcode_int=\count169
+\l__regex_last_char_int=\count170
+\l__regex_case_changed_char_int=\count171
+\l__regex_curr_state_int=\count172
+\l__regex_step_int=\count173
+\l__regex_min_active_int=\count174
+\l__regex_max_active_int=\count175
+\l__regex_replacement_csnames_int=\count176
+\l__regex_match_count_int=\count177
+\l__regex_min_submatch_int=\count178
+\l__regex_submatch_int=\count179
+\l__regex_zeroth_submatch_int=\count180
+\g__regex_trace_regex_int=\count181
 \c_empty_box=\box29
 \l_tmpa_box=\box30
 \l_tmpb_box=\box31
@@ -285,19 +286,19 @@ Package: expl3 2019-05-09 L3 programming layer (code)
 \l__coffin_display_offset_dim=\dimen141
 \l__coffin_display_x_dim=\dimen142
 \l__coffin_display_y_dim=\dimen143
-\g__file_internal_ior=\read1
-\l__seq_internal_a_int=\count181
-\l__seq_internal_b_int=\count182
-\c__deprecation_minus_one=\count183
-) (/Users/zief0002/Library/TinyTeX/texmf-dist/tex/latex/l3kernel/l3xdvipdfmx.de
-f
-File: l3xdvipdfmx.def 2019-04-06 v L3 Experimental driver: xdvipdfmx
-\l__driver_internal_box=\box47
-\g__driver_graphics_int=\count184
-\g__driver_pdf_object_int=\count185
-\g__driver_pdf_annotation_int=\count186
+\g__char_data_ior=\read1
+\l__seq_internal_a_int=\count182
+\l__seq_internal_b_int=\count183
+)
+(/Users/zief0002/Library/TinyTeX/texmf-dist/tex/latex/l3backend/l3backend-xdvip
+dfmx.def
+File: l3backend-xdvipdfmx.def 2019-04-06 v L3 backend support: xdvipdfmx
+\g__graphics_track_int=\count184
+\l__pdf_internal_box=\box47
+\g__pdf_backend_object_int=\count185
+\g__pdf_backend_annotation_int=\count186
 ))
-Package: xparse 2019-05-03 L3 Experimental document command parser
+Package: xparse 2019-05-28 L3 Experimental document command parser
 \l__xparse_current_arg_int=\count187
 \g__xparse_grabber_int=\count188
 \l__xparse_m_args_int=\count189
@@ -590,7 +591,7 @@ Package ifvtex Info: VTeX not detected.
 \Gm@layoutvoffset=\dimen155
 \Gm@dimlist=\toks23
 ) (/Users/zief0002/Library/TinyTeX/texmf-dist/tex/latex/hyperref/hyperref.sty
-Package: hyperref 2018/11/30 v6.88e Hypertext links for LaTeX
+Package: hyperref 2019/09/12 v6.88i Hypertext links for LaTeX
 
 (/Users/zief0002/Library/TinyTeX/texmf-dist/tex/generic/oberdiek/hobsub-hyperre
 f.sty
@@ -610,7 +611,7 @@ Package hobsub Info: Skipping package `ifpdf' (already loaded).
 Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
 Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
 Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
-Package: pdftexcmds 2018/09/10 v0.29 Utility functions of pdfTeX for LuaTeX (HO
+Package: pdftexcmds 2019/07/25 v0.30 Utility functions of pdfTeX for LuaTeX (HO
 )
 Package pdftexcmds Info: LuaTeX not detected.
 Package pdftexcmds Info: pdfTeX >= 1.30 not detected.
@@ -640,47 +641,47 @@ Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
 \Hy@linkcounter=\count277
 \Hy@pagecounter=\count278
 (/Users/zief0002/Library/TinyTeX/texmf-dist/tex/latex/hyperref/pd1enc.def
-File: pd1enc.def 2018/11/30 v6.88e Hyperref: PDFDocEncoding definition (HO)
+File: pd1enc.def 2019/09/12 v6.88i Hyperref: PDFDocEncoding definition (HO)
 )
 \Hy@SavedSpaceFactor=\count279
 (/Users/zief0002/Library/TinyTeX/texmf-dist/tex/latex/latexconfig/hyperref.cfg
 File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
 )
-Package hyperref Info: Hyper figures OFF on input line 4519.
-Package hyperref Info: Link nesting OFF on input line 4524.
-Package hyperref Info: Hyper index ON on input line 4527.
-Package hyperref Info: Plain pages OFF on input line 4534.
-Package hyperref Info: Backreferencing OFF on input line 4539.
+Package hyperref Info: Hyper figures OFF on input line 4550.
+Package hyperref Info: Link nesting OFF on input line 4555.
+Package hyperref Info: Hyper index ON on input line 4558.
+Package hyperref Info: Plain pages OFF on input line 4565.
+Package hyperref Info: Backreferencing OFF on input line 4570.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
-Package hyperref Info: Bookmarks ON on input line 4772.
+Package hyperref Info: Bookmarks ON on input line 4803.
 \c@Hy@tempcnt=\count280
 (/Users/zief0002/Library/TinyTeX/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip17
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
-LaTeX Info: Redefining \url on input line 5125.
+LaTeX Info: Redefining \url on input line 5156.
 \XeTeXLinkMargin=\dimen157
 \Fld@menulength=\count281
 \Field@Width=\dimen158
 \Fld@charsize=\dimen159
-Package hyperref Info: Hyper figures OFF on input line 6380.
-Package hyperref Info: Link nesting OFF on input line 6385.
-Package hyperref Info: Hyper index ON on input line 6388.
-Package hyperref Info: backreferencing OFF on input line 6395.
-Package hyperref Info: Link coloring OFF on input line 6400.
-Package hyperref Info: Link coloring with OCG OFF on input line 6405.
-Package hyperref Info: PDF/A mode OFF on input line 6410.
-LaTeX Info: Redefining \ref on input line 6450.
-LaTeX Info: Redefining \pageref on input line 6454.
+Package hyperref Info: Hyper figures OFF on input line 6411.
+Package hyperref Info: Link nesting OFF on input line 6416.
+Package hyperref Info: Hyper index ON on input line 6419.
+Package hyperref Info: backreferencing OFF on input line 6426.
+Package hyperref Info: Link coloring OFF on input line 6431.
+Package hyperref Info: Link coloring with OCG OFF on input line 6436.
+Package hyperref Info: PDF/A mode OFF on input line 6441.
+LaTeX Info: Redefining \ref on input line 6481.
+LaTeX Info: Redefining \pageref on input line 6485.
 \Hy@abspage=\count282
 \c@Item=\count283
 \c@Hfootnote=\count284
 )
 Package hyperref Info: Driver (autodetected): hxetex.
 (/Users/zief0002/Library/TinyTeX/texmf-dist/tex/latex/hyperref/hxetex.def
-File: hxetex.def 2018/11/30 v6.88e Hyperref driver for XeTeX
+File: hxetex.def 2019/09/12 v6.88i Hyperref driver for XeTeX
 (/Users/zief0002/Library/TinyTeX/texmf-dist/tex/latex/hyperref/puenc.def
-File: puenc.def 2018/11/30 v6.88e Hyperref: PDF Unicode definition (HO)
+File: puenc.def 2019/09/12 v6.88i Hyperref: PDF Unicode definition (HO)
 ) (/Users/zief0002/Library/TinyTeX/texmf-dist/tex/generic/oberdiek/stringenc.st
 y
 Package: stringenc 2016/05/16 v1.11 Convert strings between diff. encodings (HO
@@ -806,7 +807,7 @@ Package: array 2018/12/30 v2.4k Tabular extension package (FMi)
 \backup@length=\skip62
 \ar@cellbox=\box55
 ) (/Users/zief0002/Library/TinyTeX/texmf-dist/tex/latex/multirow/multirow.sty
-Package: multirow 2019/01/01 v2.4 Span multiple rows of a table
+Package: multirow 2019/05/31 v2.5 Span multiple rows of a table
 \multirow@colwidth=\skip63
 \multirow@cntb=\count301
 \multirow@dima=\skip64
@@ -992,9 +993,9 @@ Package: everyshi 2001/05/15 v3.00 EveryShipout Package (MS)
 (/Users/zief0002/Library/TinyTeX/texmf-dist/tex/generic/pgf/utilities/pgfrcs.co
 de.tex (/Users/zief0002/Library/TinyTeX/texmf-dist/tex/generic/pgf/pgf.revision
 .tex)
-Package: pgfrcs 2019/05/09 v3.1.3 (3.1.3)
+Package: pgfrcs 2019/08/03 v3.1.4b (3.1.4b)
 ))
-Package: pgf 2019/05/09 v3.1.3 (3.1.3)
+Package: pgf 2019/08/03 v3.1.4b (3.1.4b)
 
 (/Users/zief0002/Library/TinyTeX/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.st
 y
@@ -1002,7 +1003,7 @@ y
 y
 (/Users/zief0002/Library/TinyTeX/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.
 code.tex
-Package: pgfsys 2019/05/09 v3.1.3 (3.1.3)
+Package: pgfsys 2019/08/03 v3.1.4b (3.1.4b)
 
 (/Users/zief0002/Library/TinyTeX/texmf-dist/tex/generic/pgf/utilities/pgfkeys.c
 ode.tex
@@ -1035,37 +1036,37 @@ ltered.code.tex
 \pgf@sys@id@count=\count319
 
 (/Users/zief0002/Library/TinyTeX/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg
-File: pgf.cfg 2019/05/09 v3.1.3 (3.1.3)
+File: pgf.cfg 2019/08/03 v3.1.4b (3.1.4b)
 )
 Driver file for pgf: pgfsys-xetex.def
 
 (/Users/zief0002/Library/TinyTeX/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-
 xetex.def
-File: pgfsys-xetex.def 2019/05/09 v3.1.3 (3.1.3)
+File: pgfsys-xetex.def 2019/08/03 v3.1.4b (3.1.4b)
 
 (/Users/zief0002/Library/TinyTeX/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-
 dvipdfmx.def
-File: pgfsys-dvipdfmx.def 2019/05/09 v3.1.3 (3.1.3)
+File: pgfsys-dvipdfmx.def 2019/08/03 v3.1.4b (3.1.4b)
 
 (/Users/zief0002/Library/TinyTeX/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-
 common-pdf.def
-File: pgfsys-common-pdf.def 2019/05/09 v3.1.3 (3.1.3)
+File: pgfsys-common-pdf.def 2019/08/03 v3.1.4b (3.1.4b)
 )
 \pgfsys@objnum=\count320
 )))
 (/Users/zief0002/Library/TinyTeX/texmf-dist/tex/generic/pgf/systemlayer/pgfsyss
 oftpath.code.tex
-File: pgfsyssoftpath.code.tex 2019/05/09 v3.1.3 (3.1.3)
+File: pgfsyssoftpath.code.tex 2019/08/03 v3.1.4b (3.1.4b)
 \pgfsyssoftpath@smallbuffer@items=\count321
 \pgfsyssoftpath@bigbuffer@items=\count322
 )
 (/Users/zief0002/Library/TinyTeX/texmf-dist/tex/generic/pgf/systemlayer/pgfsysp
 rotocol.code.tex
-File: pgfsysprotocol.code.tex 2019/05/09 v3.1.3 (3.1.3)
+File: pgfsysprotocol.code.tex 2019/08/03 v3.1.4b (3.1.4b)
 ))
 (/Users/zief0002/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.
 code.tex
-Package: pgfcore 2019/05/09 v3.1.3 (3.1.3)
+Package: pgfcore 2019/08/03 v3.1.4b (3.1.4b)
 
 (/Users/zief0002/Library/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmath.code.t
 ex
@@ -1108,7 +1109,7 @@ ode.tex
 x)
 (/Users/zief0002/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcorep
 oints.code.tex
-File: pgfcorepoints.code.tex 2019/05/09 v3.1.3 (3.1.3)
+File: pgfcorepoints.code.tex 2019/08/03 v3.1.4b (3.1.4b)
 \pgf@picminx=\dimen269
 \pgf@picmaxx=\dimen270
 \pgf@picminy=\dimen271
@@ -1126,19 +1127,19 @@ File: pgfcorepoints.code.tex 2019/05/09 v3.1.3 (3.1.3)
 )
 (/Users/zief0002/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcorep
 athconstruct.code.tex
-File: pgfcorepathconstruct.code.tex 2019/05/09 v3.1.3 (3.1.3)
+File: pgfcorepathconstruct.code.tex 2019/08/03 v3.1.4b (3.1.4b)
 \pgf@path@lastx=\dimen283
 \pgf@path@lasty=\dimen284
 )
 (/Users/zief0002/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcorep
 athusage.code.tex
-File: pgfcorepathusage.code.tex 2019/05/09 v3.1.3 (3.1.3)
+File: pgfcorepathusage.code.tex 2019/08/03 v3.1.4b (3.1.4b)
 \pgf@shorten@end@additional=\dimen285
 \pgf@shorten@start@additional=\dimen286
 )
 (/Users/zief0002/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcores
 copes.code.tex
-File: pgfcorescopes.code.tex 2019/05/09 v3.1.3 (3.1.3)
+File: pgfcorescopes.code.tex 2019/08/03 v3.1.4b (3.1.4b)
 \pgfpic=\box70
 \pgf@hbox=\box71
 \pgf@layerbox@main=\box72
@@ -1146,83 +1147,83 @@ File: pgfcorescopes.code.tex 2019/05/09 v3.1.3 (3.1.3)
 )
 (/Users/zief0002/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreg
 raphicstate.code.tex
-File: pgfcoregraphicstate.code.tex 2019/05/09 v3.1.3 (3.1.3)
+File: pgfcoregraphicstate.code.tex 2019/08/03 v3.1.4b (3.1.4b)
 \pgflinewidth=\dimen287
 )
 (/Users/zief0002/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcoret
 ransformations.code.tex
-File: pgfcoretransformations.code.tex 2019/05/09 v3.1.3 (3.1.3)
+File: pgfcoretransformations.code.tex 2019/08/03 v3.1.4b (3.1.4b)
 \pgf@pt@x=\dimen288
 \pgf@pt@y=\dimen289
 \pgf@pt@temp=\dimen290
 )
 (/Users/zief0002/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreq
 uick.code.tex
-File: pgfcorequick.code.tex 2019/05/09 v3.1.3 (3.1.3)
+File: pgfcorequick.code.tex 2019/08/03 v3.1.4b (3.1.4b)
 )
 (/Users/zief0002/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreo
 bjects.code.tex
-File: pgfcoreobjects.code.tex 2019/05/09 v3.1.3 (3.1.3)
+File: pgfcoreobjects.code.tex 2019/08/03 v3.1.4b (3.1.4b)
 )
 (/Users/zief0002/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcorep
 athprocessing.code.tex
-File: pgfcorepathprocessing.code.tex 2019/05/09 v3.1.3 (3.1.3)
+File: pgfcorepathprocessing.code.tex 2019/08/03 v3.1.4b (3.1.4b)
 )
 (/Users/zief0002/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcorea
 rrows.code.tex
-File: pgfcorearrows.code.tex 2019/05/09 v3.1.3 (3.1.3)
+File: pgfcorearrows.code.tex 2019/08/03 v3.1.4b (3.1.4b)
 \pgfarrowsep=\dimen291
 )
 (/Users/zief0002/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcores
 hade.code.tex
-File: pgfcoreshade.code.tex 2019/05/09 v3.1.3 (3.1.3)
+File: pgfcoreshade.code.tex 2019/08/03 v3.1.4b (3.1.4b)
 \pgf@max=\dimen292
 \pgf@sys@shading@range@num=\count326
 \pgf@shadingcount=\count327
 )
 (/Users/zief0002/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcorei
 mage.code.tex
-File: pgfcoreimage.code.tex 2019/05/09 v3.1.3 (3.1.3)
+File: pgfcoreimage.code.tex 2019/08/03 v3.1.4b (3.1.4b)
 
 (/Users/zief0002/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcoree
 xternal.code.tex
-File: pgfcoreexternal.code.tex 2019/05/09 v3.1.3 (3.1.3)
+File: pgfcoreexternal.code.tex 2019/08/03 v3.1.4b (3.1.4b)
 \pgfexternal@startupbox=\box73
 ))
 (/Users/zief0002/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcorel
 ayers.code.tex
-File: pgfcorelayers.code.tex 2019/05/09 v3.1.3 (3.1.3)
+File: pgfcorelayers.code.tex 2019/08/03 v3.1.4b (3.1.4b)
 )
 (/Users/zief0002/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcoret
 ransparency.code.tex
-File: pgfcoretransparency.code.tex 2019/05/09 v3.1.3 (3.1.3)
+File: pgfcoretransparency.code.tex 2019/08/03 v3.1.4b (3.1.4b)
 )
 (/Users/zief0002/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcorep
 atterns.code.tex
-File: pgfcorepatterns.code.tex 2019/05/09 v3.1.3 (3.1.3)
+File: pgfcorepatterns.code.tex 2019/08/03 v3.1.4b (3.1.4b)
 )
 (/Users/zief0002/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcorer
 df.code.tex
-File: pgfcorerdf.code.tex 2019/05/09 v3.1.3 (3.1.3)
+File: pgfcorerdf.code.tex 2019/08/03 v3.1.4b (3.1.4b)
 )))
 (/Users/zief0002/Library/TinyTeX/texmf-dist/tex/generic/pgf/modules/pgfmodulesh
 apes.code.tex
-File: pgfmoduleshapes.code.tex 2019/05/09 v3.1.3 (3.1.3)
+File: pgfmoduleshapes.code.tex 2019/08/03 v3.1.4b (3.1.4b)
 \pgfnodeparttextbox=\box74
 )
 (/Users/zief0002/Library/TinyTeX/texmf-dist/tex/generic/pgf/modules/pgfmodulepl
 ot.code.tex
-File: pgfmoduleplot.code.tex 2019/05/09 v3.1.3 (3.1.3)
+File: pgfmoduleplot.code.tex 2019/08/03 v3.1.4b (3.1.4b)
 )
 (/Users/zief0002/Library/TinyTeX/texmf-dist/tex/latex/pgf/compatibility/pgfcomp
 -version-0-65.sty
-Package: pgfcomp-version-0-65 2019/05/09 v3.1.3 (3.1.3)
+Package: pgfcomp-version-0-65 2019/08/03 v3.1.4b (3.1.4b)
 \pgf@nodesepstart=\dimen293
 \pgf@nodesepend=\dimen294
 )
 (/Users/zief0002/Library/TinyTeX/texmf-dist/tex/latex/pgf/compatibility/pgfcomp
 -version-1-18.sty
-Package: pgfcomp-version-1-18 2019/05/09 v3.1.3 (3.1.3)
+Package: pgfcomp-version-1-18 2019/08/03 v3.1.4b (3.1.4b)
 )) (/Users/zief0002/Library/TinyTeX/texmf-dist/tex/latex/pgf/utilities/pgffor.s
 ty
 (/Users/zief0002/Library/TinyTeX/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty
@@ -1234,7 +1235,7 @@ h.sty
 ex))
 (/Users/zief0002/Library/TinyTeX/texmf-dist/tex/generic/pgf/utilities/pgffor.co
 de.tex
-Package: pgffor 2019/05/09 v3.1.3 (3.1.3)
+Package: pgffor 2019/08/03 v3.1.4b (3.1.4b)
 
 (/Users/zief0002/Library/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmath.code.t
 ex)
@@ -1245,11 +1246,11 @@ ex)
 ))
 (/Users/zief0002/Library/TinyTeX/texmf-dist/tex/generic/pgf/frontendlayer/tikz/
 tikz.code.tex
-Package: tikz 2019/05/09 v3.1.3 (3.1.3)
+Package: tikz 2019/08/03 v3.1.4b (3.1.4b)
 
 (/Users/zief0002/Library/TinyTeX/texmf-dist/tex/generic/pgf/libraries/pgflibrar
 yplothandlers.code.tex
-File: pgflibraryplothandlers.code.tex 2019/05/09 v3.1.3 (3.1.3)
+File: pgflibraryplothandlers.code.tex 2019/08/03 v3.1.4b (3.1.4b)
 \pgf@plot@mark@count=\count328
 \pgfplotmarksize=\dimen297
 )
@@ -1257,8 +1258,10 @@ File: pgflibraryplothandlers.code.tex 2019/05/09 v3.1.3 (3.1.3)
 \tikz@lasty=\dimen299
 \tikz@lastxsaved=\dimen300
 \tikz@lastysaved=\dimen301
-\tikzleveldistance=\dimen302
-\tikzsiblingdistance=\dimen303
+\tikz@lastmovetox=\dimen302
+\tikz@lastmovetoy=\dimen303
+\tikzleveldistance=\dimen304
+\tikzsiblingdistance=\dimen305
 \tikz@figbox=\box75
 \tikz@figbox@bg=\box76
 \tikz@tempbox=\box77
@@ -1270,7 +1273,7 @@ File: pgflibraryplothandlers.code.tex 2019/05/09 v3.1.3 (3.1.3)
 
 (/Users/zief0002/Library/TinyTeX/texmf-dist/tex/generic/pgf/modules/pgfmodulema
 trix.code.tex
-File: pgfmodulematrix.code.tex 2019/05/09 v3.1.3 (3.1.3)
+File: pgfmodulematrix.code.tex 2019/08/03 v3.1.4b (3.1.4b)
 \pgfmatrixcurrentrow=\count333
 \pgfmatrixcurrentcolumn=\count334
 \pgf@matrix@numberofcolumns=\count335
@@ -1279,7 +1282,7 @@ File: pgfmodulematrix.code.tex 2019/05/09 v3.1.3 (3.1.3)
 
 (/Users/zief0002/Library/TinyTeX/texmf-dist/tex/generic/pgf/frontendlayer/tikz/
 libraries/tikzlibrarytopaths.code.tex
-File: tikzlibrarytopaths.code.tex 2019/05/09 v3.1.3 (3.1.3)
+File: tikzlibrarytopaths.code.tex 2019/08/03 v3.1.4b (3.1.4b)
 ))) (/Users/zief0002/Library/TinyTeX/texmf-dist/tex/latex/mdframed/md-frame-1.m
 df
 File: md-frame-1.mdf 2013/07/01\ 1.9b: md-frame-1
@@ -1338,17 +1341,17 @@ Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
 \rot@float@box=\box84
 \rot@mess@toks=\toks46
 ) (/Users/zief0002/Library/TinyTeX/texmf-dist/tex/latex/caption/caption.sty
-Package: caption 2018/10/06 v3.3-154 Customizing captions (AR)
+Package: caption 2019/09/01 v3.3d Customizing captions (AR)
 (/Users/zief0002/Library/TinyTeX/texmf-dist/tex/latex/caption/caption3.sty
-Package: caption3 2018/09/12 v1.8c caption3 kernel (AR)
+Package: caption3 2019/09/01 v1.8d caption3 kernel (AR)
 Package caption3 Info: TeX engine: e-TeX on input line 64.
-\captionmargin=\dimen304
-\captionmargin@=\dimen305
-\captionwidth=\dimen306
-\caption@tempdima=\dimen307
-\caption@indent=\dimen308
-\caption@parindent=\dimen309
-\caption@hangindent=\dimen310
+\captionmargin=\dimen306
+\captionmargin@=\dimen307
+\captionwidth=\dimen308
+\caption@tempdima=\dimen309
+\caption@indent=\dimen310
+\caption@parindent=\dimen311
+\caption@hangindent=\dimen312
 )
 \c@caption@flags=\count343
 \c@ContinuedFloat=\count344
@@ -1356,7 +1359,7 @@ Package caption Info: float package is loaded.
 Package caption Info: hyperref package is loaded.
 Package caption Info: longtable package is loaded.
 (/Users/zief0002/Library/TinyTeX/texmf-dist/tex/latex/caption/ltcaption.sty
-Package: ltcaption 2018/08/26 v1.4-95 longtable captions (AR)
+Package: ltcaption 2018/08/26 v1.4a longtable captions (AR)
 )
 Package caption Info: rotating package is loaded.
 Package caption Info: threeparttable package is loaded.
@@ -1366,32 +1369,32 @@ Package caption Info: wrapfig package is loaded.
 y
 (/Users/zief0002/Library/TinyTeX/texmf-dist/tex/latex/l3packages/l3keys2e/l3key
 s2e.sty
-Package: l3keys2e 2019-05-03 LaTeX2e option processing using LaTeX3 keys
+Package: l3keys2e 2019-05-28 LaTeX2e option processing using LaTeX3 keys
 )
 (/Users/zief0002/Library/TinyTeX/texmf-dist/tex/latex/l3packages/xtemplate/xtem
 plate.sty
-Package: xtemplate 2019-05-03 L3 Experimental prototype document functions
-\l__xtemplate_tmp_dim=\dimen311
+Package: xtemplate 2019-05-28 L3 Experimental prototype document functions
+\l__xtemplate_tmp_dim=\dimen313
 \l__xtemplate_tmp_int=\count345
 \l__xtemplate_tmp_muskip=\muskip18
 \l__xtemplate_tmp_skip=\skip138
 )
-Package: xfrac 2019-05-03 L3 Experimental split-level fractions
+Package: xfrac 2019-05-28 L3 Experimental split-level fractions
 \l__xfrac_slash_box=\box85
 \l__xfrac_tmp_box=\box86
-\l__xfrac_denominator_bot_sep_dim=\dimen312
-\l__xfrac_numerator_bot_sep_dim=\dimen313
-\l__xfrac_numerator_top_sep_dim=\dimen314
-\l__xfrac_slash_left_sep_dim=\dimen315
-\l__xfrac_slash_right_sep_dim=\dimen316
+\l__xfrac_denominator_bot_sep_dim=\dimen314
+\l__xfrac_numerator_bot_sep_dim=\dimen315
+\l__xfrac_numerator_top_sep_dim=\dimen316
+\l__xfrac_slash_left_sep_dim=\dimen317
+\l__xfrac_slash_right_sep_dim=\dimen318
 \l__xfrac_slash_left_muskip=\muskip19
 \l__xfrac_slash_right_muskip=\muskip20
 
 Package xtemplate Info: Declaring object type 'xfrac' taking 3 argument(s) on
 (xtemplate)             line 79.
 
-) (./09-understanding-statistical-control.aux)
-\openout1 = `09-understanding-statistical-control.aux'.
+) (./10-understanding-statistical-control.aux)
+\openout1 = `10-understanding-statistical-control.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 160.
 LaTeX Font Info:    ... okay on input line 160.
@@ -1750,7 +1753,7 @@ Package microtype Warning: Unknown slot number of character
 \AtBeginShipoutBox=\box87
 Package hyperref Info: Link coloring ON on input line 160.
 (/Users/zief0002/Library/TinyTeX/texmf-dist/tex/latex/hyperref/nameref.sty
-Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
+Package: nameref 2019/09/12 v2.45 Cross-referencing by name of section
 
 (/Users/zief0002/Library/TinyTeX/texmf-dist/tex/generic/oberdiek/gettitlestring
 .sty
@@ -1761,10 +1764,10 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 LaTeX Info: Redefining \ref on input line 160.
 LaTeX Info: Redefining \pageref on input line 160.
 LaTeX Info: Redefining \nameref on input line 160.
-(./09-understanding-statistical-control.out) (./09-understanding-statistical-co
+(./10-understanding-statistical-control.out) (./10-understanding-statistical-co
 ntrol.out)
 \@outlinefile=\write5
-\openout5 = `09-understanding-statistical-control.out'.
+\openout5 = `10-understanding-statistical-control.out'.
 
 ABD: EveryShipout initializing macros
 Package caption Info: Begin \AtBeginDocument code.
@@ -1788,12 +1791,12 @@ Font mapping `tex-ansi.tec' for font `Inconsolata' not found.
 Package xcolor Warning: Incompatible color definition on input line 187.
 
 
-Package xcolor Warning: Incompatible color definition on input line 201.
+Package xcolor Warning: Incompatible color definition on input line 200.
 
 
-Package xcolor Warning: Incompatible color definition on input line 201.
+Package xcolor Warning: Incompatible color definition on input line 200.
 
-LaTeX Font Info:    Try loading font information for OT1+lmr on input line 224.
+LaTeX Font Info:    Try loading font information for OT1+lmr on input line 223.
 
 (/Users/zief0002/Library/TinyTeX/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
@@ -1803,174 +1806,174 @@ oman.cfg
 File: mt-LatinModernRoman.cfg 2013/03/13 v1.0 microtype config. file: Latin Mod
 ern Roman (RS)
 )
-LaTeX Font Info:    Try loading font information for OML+lmm on input line 224.
+LaTeX Font Info:    Try loading font information for OML+lmm on input line 223.
 
 (/Users/zief0002/Library/TinyTeX/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 224
+LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 223
 .
 (/Users/zief0002/Library/TinyTeX/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMX+lmex on input line 224
+LaTeX Font Info:    Try loading font information for OMX+lmex on input line 223
 .
 (/Users/zief0002/Library/TinyTeX/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 224.
+(Font)              <10> on input line 223.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 224.
+(Font)              <7> on input line 223.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 224.
-LaTeX Font Info:    Try loading font information for U+msa on input line 224.
+(Font)              <5> on input line 223.
+LaTeX Font Info:    Try loading font information for U+msa on input line 223.
 (/Users/zief0002/Library/TinyTeX/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 ) (/Users/zief0002/Library/TinyTeX/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 224.
+LaTeX Font Info:    Try loading font information for U+msb on input line 223.
 (/Users/zief0002/Library/TinyTeX/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) (/Users/zief0002/Library/TinyTeX/texmf-dist/tex/latex/microtype/mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
 
-Package xcolor Warning: Incompatible color definition on input line 240.
+Package xcolor Warning: Incompatible color definition on input line 239.
 
 [1
 
 ]
 
-Package xcolor Warning: Incompatible color definition on input line 246.
+Package xcolor Warning: Incompatible color definition on input line 245.
 
 
-Package xcolor Warning: Incompatible color definition on input line 246.
+Package xcolor Warning: Incompatible color definition on input line 245.
 
 [2] [3]
 LaTeX Font Info:    Font shape `TU/Sabon(0)/bx/n' will be
-(Font)              scaled to size 9.48715pt on input line 442.
+(Font)              scaled to size 9.48715pt on input line 441.
 
-Package xcolor Warning: Incompatible color definition on input line 476.
+Package xcolor Warning: Incompatible color definition on input line 475.
 
 [4]
 
-Package xcolor Warning: Incompatible color definition on input line 487.
+Package xcolor Warning: Incompatible color definition on input line 486.
 
 
-Package xcolor Warning: Incompatible color definition on input line 487.
+Package xcolor Warning: Incompatible color definition on input line 486.
 
-File: 09-understanding-statistical-control_files/figure-latex/unnamed-chunk-5-1
+File: 10-understanding-statistical-control_files/figure-latex/unnamed-chunk-5-1
 .pdf Graphic file (type pdf)
-<use 09-understanding-statistical-control_files/figure-latex/unnamed-chunk-5-1.
+<use 10-understanding-statistical-control_files/figure-latex/unnamed-chunk-5-1.
 pdf>
 
-Package xcolor Warning: Incompatible color definition on input line 506.
+Package xcolor Warning: Incompatible color definition on input line 505.
 
 
-Package xcolor Warning: Incompatible color definition on input line 517.
+Package xcolor Warning: Incompatible color definition on input line 516.
 
 
-Package xcolor Warning: Incompatible color definition on input line 517.
+Package xcolor Warning: Incompatible color definition on input line 516.
 
-File: 09-understanding-statistical-control_files/figure-latex/unnamed-chunk-6-1
+File: 10-understanding-statistical-control_files/figure-latex/unnamed-chunk-6-1
 .pdf Graphic file (type pdf)
-<use 09-understanding-statistical-control_files/figure-latex/unnamed-chunk-6-1.
+<use 10-understanding-statistical-control_files/figure-latex/unnamed-chunk-6-1.
 pdf>
 [5]
 
-Package xcolor Warning: Incompatible color definition on input line 539.
+Package xcolor Warning: Incompatible color definition on input line 538.
 
 
-Package xcolor Warning: Incompatible color definition on input line 553.
+Package xcolor Warning: Incompatible color definition on input line 552.
 
 
-Package xcolor Warning: Incompatible color definition on input line 553.
+Package xcolor Warning: Incompatible color definition on input line 552.
 
-File: 09-understanding-statistical-control_files/figure-latex/unnamed-chunk-7-1
+File: 10-understanding-statistical-control_files/figure-latex/unnamed-chunk-7-1
 .pdf Graphic file (type pdf)
-<use 09-understanding-statistical-control_files/figure-latex/unnamed-chunk-7-1.
+<use 10-understanding-statistical-control_files/figure-latex/unnamed-chunk-7-1.
 pdf>
 [6] [7]
 
 Package hyperref Warning: Difference (2) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 591.
+(hyperref)                than one, level fixed on input line 590.
 
 LaTeX Font Info:    Font shape `TU/Sabon(0)/m/n' will be
-(Font)              scaled to size 6.74461pt on input line 617.
+(Font)              scaled to size 6.74461pt on input line 616.
 LaTeX Font Info:    Font shape `TU/Sabon(0)/m/n' will be
-(Font)              scaled to size 4.81758pt on input line 617.
+(Font)              scaled to size 4.81758pt on input line 616.
 
-Package xcolor Warning: Incompatible color definition on input line 648.
-
-
-Package xcolor Warning: Incompatible color definition on input line 683.
+Package xcolor Warning: Incompatible color definition on input line 647.
 
 
-Package xcolor Warning: Incompatible color definition on input line 683.
+Package xcolor Warning: Incompatible color definition on input line 682.
 
 
-Package xcolor Warning: Incompatible color definition on input line 683.
+Package xcolor Warning: Incompatible color definition on input line 682.
+
+
+Package xcolor Warning: Incompatible color definition on input line 682.
 
 [8]
 
-Package xcolor Warning: Incompatible color definition on input line 683.
+Package xcolor Warning: Incompatible color definition on input line 682.
 
 
-Package xcolor Warning: Incompatible color definition on input line 683.
+Package xcolor Warning: Incompatible color definition on input line 682.
 
-File: 09-understanding-statistical-control_files/figure-latex/unnamed-chunk-10-
+File: 10-understanding-statistical-control_files/figure-latex/unnamed-chunk-10-
 1.pdf Graphic file (type pdf)
-<use 09-understanding-statistical-control_files/figure-latex/unnamed-chunk-10-1
+<use 10-understanding-statistical-control_files/figure-latex/unnamed-chunk-10-1
 .pdf>
 LaTeX Font Info:    Font shape `TU/Sabon(0)/bx/n' will be
-(Font)              scaled to size 11.38458pt on input line 696.
+(Font)              scaled to size 11.38458pt on input line 695.
 [9]
 
-Package xcolor Warning: Incompatible color definition on input line 729.
+Package xcolor Warning: Incompatible color definition on input line 728.
 
 
-Package xcolor Warning: Incompatible color definition on input line 761.
+Package xcolor Warning: Incompatible color definition on input line 760.
 
 
-Package xcolor Warning: Incompatible color definition on input line 761.
+Package xcolor Warning: Incompatible color definition on input line 760.
 
-File: 09-understanding-statistical-control_files/figure-latex/unnamed-chunk-11-
+File: 10-understanding-statistical-control_files/figure-latex/unnamed-chunk-11-
 1.pdf Graphic file (type pdf)
-<use 09-understanding-statistical-control_files/figure-latex/unnamed-chunk-11-1
+<use 10-understanding-statistical-control_files/figure-latex/unnamed-chunk-11-1
 .pdf>
 [10]
 
-Package xcolor Warning: Incompatible color definition on input line 798.
+Package xcolor Warning: Incompatible color definition on input line 797.
 
 
-Package xcolor Warning: Incompatible color definition on input line 807.
+Package xcolor Warning: Incompatible color definition on input line 806.
 
 
-Package xcolor Warning: Incompatible color definition on input line 807.
+Package xcolor Warning: Incompatible color definition on input line 806.
 
-File: 09-understanding-statistical-control_files/figure-latex/unnamed-chunk-12-
+File: 10-understanding-statistical-control_files/figure-latex/unnamed-chunk-12-
 1.pdf Graphic file (type pdf)
-<use 09-understanding-statistical-control_files/figure-latex/unnamed-chunk-12-1
+<use 10-understanding-statistical-control_files/figure-latex/unnamed-chunk-12-1
 .pdf>
 [11]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 819.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 819.
-(./09-understanding-statistical-control.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 819.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 819.
-Package rerunfilecheck Info: File `09-understanding-statistical-control.out' ha
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 818.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 818.
+(./10-understanding-statistical-control.aux)
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 818.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 818.
+Package rerunfilecheck Info: File `10-understanding-statistical-control.out' ha
 s not changed.
 (rerunfilecheck)             Checksum: A48931553C16B8068017CA0638BF3479.
  ) 
 Here is how much of TeX's memory you used:
- 38127 strings out of 494894
- 744619 string characters out of 6173843
- 869674 words of memory out of 5000000
- 41468 multiletter control sequences out of 15000+600000
+ 38647 strings out of 494894
+ 756221 string characters out of 6176153
+ 882474 words of memory out of 5000000
+ 41995 multiletter control sequences out of 15000+600000
  578146 words of font info for 109 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 72i,17n,116p,833b,446s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 72i,17n,116p,833b,429s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on 09-understanding-statistical-control.pdf (11 pages).
+Output written on 10-understanding-statistical-control.pdf (11 pages).
