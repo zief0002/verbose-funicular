@@ -77,7 +77,7 @@ lm.1
 The fitted regression equation is
 
 $$
-\hat{\mathrm{Income}} = 11.321 + 2.651(\mathrm{Education~Level})
+\hat{\mathrm{Income}_i} = 11.321 + 2.651(\mathrm{Education~Level}_i)
 $$
 
 # Ordinary Least Squares Estimation
@@ -194,7 +194,7 @@ In the vocabulary of statistical estimation, the process we just used to adopt M
 In our example we used the SSE as the quantification of model fit, and then we optimized by selecting the model with the lower SSE. When we use `lm()` to fit a regression analysis to the data, R needs to consider not just two models like we did in our example, but all potential models (i.e., any intercept and slope). The model coefficeints that `lm()` returns are the "best" in that no other values for intercept or slope would produce a lower SSE. The model returned has the lowest SSE possible \ldots thus *least squares*. For our toy dataset, the model that produces the smallest residuals is
 
 $$
-\hat{Y} = 28.682 + 8.614(X)
+\hat{Y}_i = 28.682 + 8.614(X_i)
 $$
 
 This model gives the following predicted values and residuals:
@@ -323,7 +323,7 @@ lm.0
 The fitted regression equation for the intercept-only model can be written as,
 
 $$
-\hat{\mathrm{Income}} = 53.742
+\hat{\mathrm{Income}_i} = 53.742
 $$
 
 Graphically, the fitted line is a flat line crossing the $y$-axis at 53.742 (see plot below).

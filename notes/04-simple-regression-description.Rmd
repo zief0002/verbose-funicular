@@ -299,7 +299,7 @@ Here the parameter estimates (or regression coefficients) are:
 Remember that these are estimates and need the hats. The fitted regression equation is:
 
 $$
-\hat{\mathrm{Income}} = 11.321 + 2.651(\mathrm{Education~Level})
+\hat{\mathrm{Income}_i} = 11.321 + 2.651(\mathrm{Education~Level}_i)
 $$
 
 ## Intercept Interpretation
