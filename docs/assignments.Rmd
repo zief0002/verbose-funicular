@@ -35,8 +35,8 @@ Below are the due dates for the assignments, as well as links to the RMD and PDF
 
 <tr>
 <td>Assignment \#2: *Simple Regression: Description*</td>
-<td>Sept. 26</td>
-<td>Sept. 30</td>
+<td>Oct. 01</td>
+<td>Oct. 02</td>
 <td align="center" style="vertical-align:middle;">
   <a href="https://github.com/zief0002/epsy-8251/raw/master/assignments/assignment-02-simple-regression-description.pdf">
     <span class="fa fa-file-pdf" style="color: #ff2600; font-size: 20px;"></span>

@@ -21,7 +21,7 @@ options(pillar.sigfig = 6)
 ### Read in data
 ##################################################
 
-city = read_csv(file = "~/Documents/github/epsy-8251/data/riverside.csv") 
+city = read_csv(file = "~/Documents/github/epsy-8251/data/riverview.csv") 
 
 head(city)
 tail(city)
@@ -43,13 +43,13 @@ lm.1
 
 # Step 1: Compute the predicted values of Y
 city %>%
-  mutate(y_hat = 11321 + 2651 * education)
+  mutate(y_hat = 11.321 + 2.651 * education)
 
 
 # Step 2: Compute the residuals
 city %>%
   mutate(
-    y_hat = 11321 + 2651 * education,
+    y_hat = 11.321 + 2.651 * education,
     errors = income - y_hat
     )
 
@@ -57,7 +57,7 @@ city %>%
 # Step 3: Compute the squared residuals
 city %>%
   mutate(
-    y_hat = 11321 + 2651 * education,
+    y_hat = 11.321 + 2.651 * education,
     errors = income - y_hat,
     sq_errors = errors ^ 2
   )
@@ -66,7 +66,7 @@ city %>%
 # Step 4: Compute the sum of the squared residuals
 city %>%
   mutate(
-    y_hat = 11321 + 2651 * education,
+    y_hat = 11.321 + 2.651 * education,
     errors = income - y_hat,
     sq_errors = errors ^ 2
   ) %>%
@@ -81,14 +81,15 @@ city %>%
 ##################################################
 
 # Fit intercept-only model
-lm.0 = lm(income ~ 1, data = city)
+lm.0 = lm(income ~ 1,             data = city)
 lm.0
 
 
 # Plot of the intercept-only model
 ggplot(data = city, aes(x = education, y = income)) +
   geom_point() +
-  geom_hline(yintercept = 53742, color = "blue") +
+  geom_hline(yintercept = 53.742, color = "blue") +
+  #geom_abline(intercept = 11.321, slope = 2.651) +
   xlab("Education (in years)") +
   ylab("Income") +
   theme_bw()
@@ -97,7 +98,7 @@ ggplot(data = city, aes(x = education, y = income)) +
 # Compute SSE for intercept-only (baseline) model
 city %>%
   mutate(
-    y_hat = 53742,
+    y_hat = 53.742,
     errors = income - y_hat,
     sq_errors = errors ^ 2
   ) %>%

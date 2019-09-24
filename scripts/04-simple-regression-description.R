@@ -9,6 +9,14 @@ library(readr)
 
 
 ##################################################
+### Set options so up to 6 significant digits print
+##################################################
+
+options(pillar.sigfig = 6)
+
+
+
+##################################################
 ### Read in data
 ##################################################
 
@@ -94,17 +102,17 @@ lm.1
 ### Using the regression equation
 ##################################################
 
-# See the 12th observation's data
+# See the 25th observation's data
 city %>%
   filter(row_number() == 25)
 
 
 # Compute the predicted income using the regression equation
-11321 + 2651 * 20
+11.321 + 2.651 * 20
 
 
 # Compute the residual
-64926 - 48435
+54.672 - 64.341
 
 
 

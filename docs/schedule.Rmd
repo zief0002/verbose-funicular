@@ -158,7 +158,8 @@ Below is the tenative schedule for the class. The dates are subject to change at
 <td align="center" style="vertical-align:middle;">
   <span class="fa fa-book" style="color: #f1f1f1; font-size: 20px;"></span>
 </td>
-<td>Least Squares Estimation</td>
+<td>Least Squares Estimation<br />
+  <span style="margin-left:5px; color:#5a067d;font-size:12px;">*[Script file updated 09-24-2019]*</span></td>
 <td align="center" style="vertical-align:middle;">
   <a href="https://github.com/zief0002/epsy-8251/raw/master/notes/05-least-squares-estimation.pdf">
     <span class="fa fa-file-pdf" style="color: #ff2600; font-size: 20px;"></span>

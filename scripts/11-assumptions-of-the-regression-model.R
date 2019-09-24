@@ -22,7 +22,7 @@ options(pillar.sigfig = 6)
 ### Read in data
 ##################################################
 
-city = read_csv(file = "~/Documents/github/epsy-8251/data/riverside.csv") 
+city = read_csv(file = "~/Documents/github/epsy-8251/data/riverview.csv") 
 
 head(city)
 tail(city)
