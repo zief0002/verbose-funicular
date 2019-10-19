@@ -2,7 +2,6 @@
 ### Load libraries
 ##################################################
 
-library(corrr)
 library(dplyr)
 library(ggplot2)
 library(readr)
@@ -81,13 +80,14 @@ city %>%
 ##################################################
 
 # Fit intercept-only model
-lm.0 = lm(income ~ 1,             data = city)
+
+lm.0 = lm(income ~ 1, data = city)
 lm.0
 
 
 # Plot of the intercept-only model
 ggplot(data = city, aes(x = education, y = income)) +
-  geom_point() +
+  geom_point(size = 5) +
   geom_hline(yintercept = 53.742, color = "blue") +
   #geom_abline(intercept = 11.321, slope = 2.651) +
   xlab("Education (in years)") +
@@ -113,19 +113,12 @@ city %>%
 ##################################################
 
 # pre = (sse.0 - sse.1) / sse.0
-(6565527426 - 2418197826) / 6565527426
+(6565.53 - 2418.20) / 6565.53
 
-
-# Correlation ^ 2
-city %>% 
-  select(income, education) %>%
-  correlate() 
-
-0.7947847 ^ 2
 
 
 # Unexplained variation
-1 - 0.63168271935409
+1 - 0.632
 
 
 

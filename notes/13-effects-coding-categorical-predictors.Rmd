@@ -1,0 +1,346 @@
+---
+title: "Effects Coding a Categorical Predictor"
+date: "`r Sys.Date()`"
+output: 
+  pdf_document:
+    latex_engine: xelatex
+    highlight: zenburn
+    fig_width: 6
+    fig_height: 6
+    includes: 
+      in_header: preamble.tex
+      before_body: doc-prefix.tex
+mainfont: Sabon
+sansfont: Futura
+monofont: Inconsolata 
+urlcolor: "umn"
+bibliography: epsy8251.bib
+csl: apa-single-spaced.csl
+---
+
+```{r knitr_init, echo=FALSE, cache=FALSE, message=FALSE}
+library(knitr)
+library(kableExtra)
+library(rmdformats)
+
+# knitr options
+opts_chunk$set(prompt=FALSE, comment=NA, message=FALSE, warning=FALSE, tidy=FALSE, fig.width=6, fig.height=6,
+               fig.pos='H', fig.align='center')
+opts_knit$set(width = 85)
+
+# Global options
+options(scipen = 5, max.print = "75")
+```
+
+
+
+
+## Preparation
+
+In this set of notes, we will examine the question of whether there is an effect of activity-based learning on course grade points. To do so, we will use the *activity-based-courses.csv* data (see the [data codebook](http://zief0002.github.io/epsy-8251/codebooks/activity-based-courses.html)). To begin, we will load several libraries and import the data into an object called `activity`. ^[The `tidyverse` library is a meta-package that loads dplyr, forcats, ggplot2, purrr, readr, stringr, tibble, and tidyr.]
+
+
+
+
+```{r message=FALSE}
+# Load packages
+library(broom)
+library(corrr)
+library(tidyverse)
+library(educate)
+library(ggridges)
+library(ungeviz)
+
+# Read in data
+activity = read_csv(file = "~/Documents/github/epsy-8251/data/activity-based-courses.csv")
+head(activity)
+```
+
+
+
+## Exploration
+
+Initially, we plot the data and compute summary statistics (means, standard deviations, and sample sizes) to compare the grade points for the two conditions. (Note: The syntax to examine the summary statistics is not shown.) Rather than looking at a scatterplot, we compare the density plots of the two distributions using the `geom_density_ridges()` function from the **ggridges** package. (In this function, the `x=` aesthetic mapping must be to a continuous variable.)
+
+```{r fig.width=8, fig.height=6, out.width="3in", fig.cap='Density plots of the grade points conditioned on experimental treatment.'}
+ggplot(data = activity, aes(x = grade_points, y = condition)) +
+  geom_density_ridges() +
+  theme_bw() +
+  ylab("Experimental Condition") +
+  xlab("Grade points")
+```
+
+```{r echo=FALSE}
+tab_01 = activity %>% 
+  group_by(condition) %>%
+  summarize(
+  M = mean(grade_points),
+  SD = sd(grade_points),
+  N = n()
+  ) %>%
+  rename(Condition = condition)
+
+kable(tab_01, 
+      format = "latex",
+      booktabs = TRUE,
+      caption = 'Mean (M), Standard Deviation (SD), and Sample Size (N) of the Grade Points for Activity-Based (Treatment) and Lecture-Based (Control) Sections of a Course', 
+      digits = 2
+      ) %>%
+  kable_styling(latex_options =c("hold_position"))
+```
+
+
+The two distributions of grade points seem quite similar. Students in the activity-based section seem to have a slightly higher average grade point than students in the lecture-based section (0.3 grade points higher). 
+
+
+## Treatment Differences in ACT Scores
+
+In theory, the randomization to conditions should "equalize" the groups on all possible covariates; it is why random assignment to groups is the Gold Standard in creating equivalent groups. With small samples, it is often worthwhile checking to see that the random assignment worked to "equalize" the covariates. Here we will check that the distribution of ACT scores is equivalent for the students in the two conditions. (The syntax to examine the summary statistics is not shown.)
+
+```{r fig.width=8, fig.height=6, out.width="3in", fig.cap='Density plots of the ACT scores conditioned on experimental treatment.'}
+ggplot(data = activity, aes(x = act, y = condition)) +
+  geom_density_ridges() +
+  theme_bw() +
+  ylab("Experimental Condition") +
+  xlab("ACT score")
+```
+
+
+```{r echo=FALSE}
+tab_01 = activity %>% 
+  group_by(condition) %>%
+  summarize(
+  M = mean(act),
+  SD = sd(act),
+  N = n()
+  ) %>%
+  rename(Condition = condition)
+
+kable(tab_01, 
+      format = "latex",
+      booktabs = TRUE,
+      caption = 'Mean (M), Standard Deviation (SD), and Sample Size (N) of the ACT sSores for Activity-Based (Treatment) and Lecture-Based (Control) Sections of a Course', 
+      digits = 2
+      ) %>%
+  kable_styling(latex_options =c("hold_position"))
+```
+
+We can also carry out a hypothesis test to see if there are differences in the mean ACT scores between the two conditions. To do this, we `mutate()` a new column (called `treatment`) into our dataset that takes the value of 0 if condition is `Control` and 1 if condition is `Treatment`. Here we use the `if_else()` function to carry out this logic.
+
+```{r}
+# Create new column that dummy-codes condition
+activity = activity %>%
+  mutate(
+    treatment = if_else(condition == "Control", 0, 1)
+  )
+
+head(activity)
+```
+
+We can then use this new column as the predictor in our regression model.
+
+```{r}
+lm.act = lm(act ~ 1 + treatment, data = activity)
+tidy(lm.act)
+```
+
+
+The empirical evidence suggests that although there is a sample difference in average ACT scores (the activity-based section has an average ACT score that is 0.29-points lower than the students in the lecture-based section), the sampling uncertainty associated with this difference ($SE = 0.58$) suggests that the observed difference may be entirely due to chance ($p=.617$). The empirical evidence here is consistent with the null hypothesis of no difference in the average ACT score between the two experimental conditions.
+
+All of this analysis suggests that the students in the two conditions have "statistically equivalent" ACT scores. This implies that the randomization was effective in creating "equal" groups (at least on ACT scores) and that we can rule out differences in ACT scores as a reason the two groups may differ on grade points.
+
+
+## Treatment Differences in Grade Points
+
+To examine whether the observed difference in average grade point between the lecture and activity-based courses is more than we would expect because of chance, we can fit a regression model using condition to predict variation in grade point. We can again use the dummy-coded `treatment` column as a predictor in a regression model that predicts variation in students' grade-points.
+
+```{r}
+# Fit model
+lm.2 = lm(grade_points ~ 1 + treatment, data = activity)
+
+# Model-level output
+glance(lm.2)
+
+# Coefficient-level output
+tidy(lm.2)
+```
+
+The output indicates that differences in experimental condition explain roughly 2.5\% of the variation in students' grade-points. The estimated slope coefficient is 0.305 which indicates that the average grade-point for students in the activity-based section is 0.305-points higher than the average grade-point for students in the activity-based section. The $p$-value associated with the effect of experimental condition is .0995. This evidence is consistent with the null hypothesis that there are no differences in average grade-point between students taking the lecture-based and the activity-based sections of the course.
+
+## Controlling for ACT Differences: Adding Statistical Power
+
+Although we believe that the distributions of ACT scores are statistically equivalent, it doesn't prevent us from including ACT as a covariate in our model. Many times, if you have an important covariate, it should be included in the model. This helps in two ways. First, in the case of any sample differences in the covariate it equates the two groups by controlling for those differences in the model. Secondly, controlling for major covariates often increases statistical power for the effect of treatment (produces less uncertainty). We illustrate this by fitting a model that includes not only the effect of treatment, but also the effect of ACT score to predict variation in students' grade-points.
+
+```{r}
+# Fit model
+lm.3 = lm(grade_points ~ 1 + treatment + act, data = activity)
+
+# Model-level output
+glance(lm.3)
+
+# Coefficient-level output
+tidy(lm.3)
+```
+
+
+The output indicates that differences in experimental condition and ACT scores explain roughly 3.36\% of the variation in students' grade-points. The estimated partial slope coefficient for treatment is 0.357 which indicates that the average grade-point for students in the activity-based section is 0.35-points higher than the average grade-point for students in the activity-based section, after controllng for differences in ACT score. The $p$-value associated with the effect of experimental condition is now .0.021, which reflects the decrease in uncertainty after controlling for differences in ACT ($SE=0.153$, a reduction from the previous SE of 0.581). The smaller SE and $p$-value reflect the increased statistical power. 
+
+The empirical evidence now is much less consistent with the null hypothesis that there are no differences in average grade-point between students taking the lecture-based and the activity-based sections of the course. 
+
+
+## Effects-Coding Experimental Condition
+
+Recall that how we numerically code the categories is irrelevant to the results we get. We will obtain the same results no matter how we code the predictor. What changes is the interpretation of the coefficients. One useful coding scheme, especially for experimental data, is to use *effects-coding*. Effects-coding for a binary categorical variable uses the values $+1$ and $-1$ rather than 0 and 1 to encode the categories. Here I will encode the control group using $-1$ and the treatment group using $+1$.
+
+```{r}
+# Create new column that effect-codes condition
+activity = activity %>%
+  mutate(
+    effect = if_else(condition == "Control", -1, 1)
+  )
+
+head(activity)
+```
+
+We then fit the regression model using this new `effect` predictor. Initially we will fit the simple regression model using `effect` to predict variation in students' grade-points (without including ACT scores).
+
+```{r}
+# Fit model using effects-coded predictor
+lm.4 = lm(grade_points ~ 1 + effect, data = activity)
+
+# Model-level output
+glance(lm.4)
+
+# Coefficient-level output
+tidy(lm.4)
+```
+
+The model-level information is identical to when we used the dummy-coded predictor, namely that that differences in experimental condition explain roughly 2.5\% of the variation in students' grade-points. The $F$-value and $p$-value for the model (not shown) would also be identical to those from the dummy-coded model.
+
+Because we used a different coding scheme, the estimates of the coefficients and standard errors of those estimates are different. However the inferential evidence ($t$- and $p$-value) for the effect of experimental condition is the same. We would come to the same conclusion about whether there is a difference in the average grade-points between the two course styles.
+
+The fitted equation is now:
+
+$$
+\hat{\mathrm{Grade\mbox{-}Point}}_i = 2.37 + 0.15(\mathrm{Effect}_i)
+$$
+
+Interpeting these coefficients:
+
+- The model predicted average grade-point for students in the experimental condition coded as 0 is 2.37.
+- Each one-unit difference in `Effect` is associated with a grade-point difference of 0.15, on average.
+
+While we did not explicitly code either one of the experimental conditions as 0, this nonetheless can be interpreted. It turns out that 2.37 is the marginal mean grade-point.
+
+```{r}
+activity %>%
+  summarize(
+    M = mean(grade_points)
+  )
+```
+
+The slope estimate now represents the difference in average grade-points between the marginal mean (an $x$-value of 0) and the treatment group (an $x$-value of 1). This is often referred to as the *effect of treatment* in an experimental study; how much more does the treatment give you above and beyond the mean.
+
+In our study, the effect of treatment is 0.15. That is, the students who are in the activity-based course have an average grade-point that is 0.15 higher than the mean grade-point for all students. Similarly, students who are in the lecture-based course have an average grade-point that is 0.15 lower than the mean grade-point for all students.
+
+We can verify this by computing the conditional mean grade-point for both groups. To do so, we substitute the appropriate predictor values into the fitted equation:
+
+$$
+\begin{split}
+\mathbf{Control:~}\hat{\mathrm{Grade\mbox{-}Point}}_i &= 2.37 + 0.15(-1) \\
+&= 2.22 \\[1em]
+\mathbf{Treatment:~}\hat{\mathrm{Grade\mbox{-}Point}}_i &= 2.37 + 0.15(1) \\
+&= 2.52
+\end{split}
+$$
+
+These are the same values we obtained earlier when we computed the conditional mean grade-point for each condition.
+
+# Statistical Model for the ANOVA
+
+In an experimental design class, you would be introduced to the method of ANOVA for testing mean differences. The statistical model that is presented for this methodology is:
+
+$$
+Y_i = \mu + \alpha_j + \epsilon_{ij}
+$$
+
+where 
+
+- $Y_i$ is the outcome for person $i$; 
+- $\mu$ is the marginal mean of $Y$;
+- $\alpha_j$ is the effect on $Y$ for condition $j$; and
+- $\epsilon_{ij}$ is the error for person $i$ in condition $j$
+
+This is model is the same as  the regression model, but with different notation,
+
+$$
+Y_i = \beta_0 + \beta_1(X_i) + \epsilon_{ij}
+$$
+
+When we use effects-coding to encode the predictor and substitute them in to the regression model, this can be simplified to:
+
+
+$$
+\begin{split}
+\mathbf{Control:~}Y_i &= \beta_0 + \beta_1(-1) + \epsilon_{ij} \\
+&= \beta_0 - \beta_1 + \epsilon_{ij} \\[1em]
+\mathbf{Treatment:~}Y_i &= \beta_0 + \beta_1(1) + \epsilon_{ij} \\
+&= \beta_0 + \beta_1 + \epsilon_{ij} 
+\end{split}
+$$
+
+In this representation, the intercept parameter is equivalent to the mu parameter from the ANOVA model and the slope parameter is equivalent to the alpha parameter from the ANOVA model. The two models are identical when we use effects-coding in the regression model!
+
+### Inference for the ANOVA Model
+
+Under the ANOVA model, the primary null hupothesis of interest is:
+
+$$
+H_0: \alpha_j = 0 \quad \mathrm{for~all~} j
+$$
+
+In words, there is no effect on Y (beyond the marginal mean) for any condition. Looking at the coefficient-level output we find that for the slope, $t(107)=1.66$, $p=.0995$. This implies that the empirical evidence is consistent with the null hypothesis of no effect on grade-points for any of the conditions. In other words, the average for students in the activity-based course and that for the students in the lecture-based course does not seem to be statistically different than the marginal average. 
+
+
+## Controlling for Differences in ACT Scores
+
+Again, because ACT score is an important covariate when it comes to predicting students' grade-points, we will control for ACT score in our regression model. In the experimental design literature this is called an Analysis of Covariance (ANCOVA). The statistical model for ANCOVA is:
+
+$$
+Y_i = \mu + \alpha_j + \beta_1(X_{ij}) + \epsilon_{ij}
+$$
+
+where 
+
+- $Y_i$ is the outcome for person $i$; 
+- $\mu$ is the marginal mean of $Y$;
+- $\alpha_j$ is the effect on $Y$ for condition $j$;
+- $X_{ij}$ is the value of covariate $X$ for person $i$ in condition $j$;
+- $\beta_1$ is the effect of covariate $X$ on $Y$; and
+- $\epsilon_{ij}$ is the error for person $i$ in condition $j$
+
+This is again absolutely equivalent to the regression model:
+
+$$
+Y_i = \beta_0 + \beta_1(X_{1i}) + \beta_2(X_{2i}) + \epsilon_{ij}
+$$
+
+where 
+
+```{r}
+# Fit model using effects-coded predictor
+lm.5 = lm(grade_points ~ 1 + effect + act, data = activity)
+
+# Model-level output
+glance(lm.5)
+
+# Coefficient-level output
+tidy(lm.5)
+```
+
+
+The output of the indicates that differences in experimental condition and ACT scores explain roughly 3.36\% of the variation in students' grade-points, $F(2,107)=27.04$, $p<.001$. The estimated partial slope coefficient for treatment is 0.178 which indicates that the average grade-point for students in the activity-based section is 0.178-points higher than the average grade-point for all students, after controllng for differences in ACT score. The $p$-value associated with the effect of experimental condition is 0.021, which reflects the decrease in uncertainty after controlling for differences in ACT. The smaller $p$-value reflects the increased statistical power. The empirical evidence is not very consistent with the null hypothesis that there is no effect of treatment on average grade-points, after controlling for ACT scores. 
+
+
+
+

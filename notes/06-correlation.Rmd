@@ -372,7 +372,7 @@ lm.z
 The fitted regression equation is:
 
 $$
-\hat{z}_{\mathrm{GPA}} = 0 + 0.327(z_{\mathrm{Homework}})
+\hat{z}_{\mathrm{GPA}_i} = 0 + 0.327(z_{\mathrm{Homework}_i})
 $$
 
 Here is a scatterplot of the standardized variables along with the fitted standardized regression line.

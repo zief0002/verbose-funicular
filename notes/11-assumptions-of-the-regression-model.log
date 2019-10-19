@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019) (preloaded format=xelatex 2019.9.17)  17 SEP 2019 18:44
+This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019) (preloaded format=xelatex 2019.9.17)  24 SEP 2019 18:01
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1390,32 +1390,32 @@ Package: makecell 2009/08/03 V0.1e Managing of Tab Column Heads and Cells
 ) (./11-assumptions-of-the-regression-model.aux)
 \openout1 = `11-assumptions-of-the-regression-model.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 161.
-LaTeX Font Info:    ... okay on input line 161.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 161.
-LaTeX Font Info:    ... okay on input line 161.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 161.
-LaTeX Font Info:    ... okay on input line 161.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 161.
-LaTeX Font Info:    ... okay on input line 161.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 161.
-LaTeX Font Info:    ... okay on input line 161.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 161.
-LaTeX Font Info:    ... okay on input line 161.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 161.
-LaTeX Font Info:    ... okay on input line 161.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 161.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 161.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 165.
+LaTeX Font Info:    ... okay on input line 165.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 165.
+LaTeX Font Info:    ... okay on input line 165.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 165.
+LaTeX Font Info:    ... okay on input line 165.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 165.
+LaTeX Font Info:    ... okay on input line 165.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 165.
+LaTeX Font Info:    ... okay on input line 165.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 165.
+LaTeX Font Info:    ... okay on input line 165.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 165.
+LaTeX Font Info:    ... okay on input line 165.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 165.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 165.
 
 (/Users/zief0002/Library/TinyTeX/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 161.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 161.
-LaTeX Font Info:    ... okay on input line 161.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 161.
-LaTeX Font Info:    ... okay on input line 161.
-LaTeX Info: Redefining \microtypecontext on input line 161.
+LaTeX Font Info:    ... okay on input line 165.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 165.
+LaTeX Font Info:    ... okay on input line 165.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 165.
+LaTeX Font Info:    ... okay on input line 165.
+LaTeX Info: Redefining \microtypecontext on input line 165.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using protrusion set `basicmath'.
 Package microtype Info: No adjustment of tracking.
@@ -1745,7 +1745,7 @@ Package microtype Warning: Unknown slot number of character
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 \AtBeginShipoutBox=\box87
-Package hyperref Info: Link coloring ON on input line 161.
+Package hyperref Info: Link coloring ON on input line 165.
 (/Users/zief0002/Library/TinyTeX/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2019/09/12 v2.45 Cross-referencing by name of section
 
@@ -1755,9 +1755,9 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count346
 )
-LaTeX Info: Redefining \ref on input line 161.
-LaTeX Info: Redefining \pageref on input line 161.
-LaTeX Info: Redefining \nameref on input line 161.
+LaTeX Info: Redefining \ref on input line 165.
+LaTeX Info: Redefining \pageref on input line 165.
+LaTeX Info: Redefining \nameref on input line 165.
 (./11-assumptions-of-the-regression-model.out) (./11-assumptions-of-the-regress
 ion-model.out)
 \@outlinefile=\write5
@@ -1773,43 +1773,43 @@ Package caption Info: threeparttable package is loaded.
 Package caption Info: wrapfig package is loaded.
 Package caption Info: End \AtBeginDocument code.
 LaTeX Font Info:    Font shape `TU/Sabon(0)/m/n' will be
-(Font)              scaled to size 19.98332pt on input line 162.
+(Font)              scaled to size 19.98332pt on input line 166.
 LaTeX Font Info:    Font shape `TU/Sabon(0)/m/n' will be
-(Font)              scaled to size 11.5622pt on input line 162.
+(Font)              scaled to size 11.5622pt on input line 166.
 LaTeX Font Info:    Font shape `TU/Sabon(0)/m/it' will be
-(Font)              scaled to size 11.35968pt on input line 162.
+(Font)              scaled to size 11.35968pt on input line 166.
 LaTeX Font Info:    Font shape `TU/Sabon(0)/m/n' will be
-(Font)              scaled to size 13.87462pt on input line 207.
+(Font)              scaled to size 13.87462pt on input line 211.
 LaTeX Font Info:    Font shape `TU/Sabon(0)/bx/n' will be
-(Font)              scaled to size 13.66148pt on input line 207.
+(Font)              scaled to size 13.66148pt on input line 211.
 LaTeX Font Info:    Font shape `TU/Sabon(0)/m/it' will be
-(Font)              scaled to size 9.4664pt on input line 211.
+(Font)              scaled to size 9.4664pt on input line 215.
 
 Package microtype Warning: Unknown slot number of character
 (microtype)                `\k A'
 (microtype)                in font encoding `TU' in inheritance list
-(microtype)                `11-assumptions-of-the-regression-model.tex/203(prot
+(microtype)                `11-assumptions-of-the-regression-model.tex/207(prot
 rusion)'.
 
 
 Package microtype Warning: Unknown slot number of character
 (microtype)                `\k a'
 (microtype)                in font encoding `TU' in inheritance list
-(microtype)                `11-assumptions-of-the-regression-model.tex/203(prot
+(microtype)                `11-assumptions-of-the-regression-model.tex/207(prot
 rusion)'.
 
 
 Package microtype Warning: Unknown slot number of character
 (microtype)                `\'C'
 (microtype)                in font encoding `TU' in inheritance list
-(microtype)                `11-assumptions-of-the-regression-model.tex/203(prot
+(microtype)                `11-assumptions-of-the-regression-model.tex/207(prot
 rusion)'.
 
 
 Package microtype Warning: Unknown slot number of character
 (microtype)                `\'c'
 (microtype)                in font encoding `TU' in inheritance list
-(microtype)                `11-assumptions-of-the-regression-model.tex/203(prot
+(microtype)                `11-assumptions-of-the-regression-model.tex/207(prot
 rusion)'.
 
 Package microtype Info: Character `\dj ' is missing
@@ -1819,97 +1819,97 @@ Package microtype Info: Character `\dj ' is missing
 Package microtype Warning: Unknown slot number of character
 (microtype)                `\k E'
 (microtype)                in font encoding `TU' in inheritance list
-(microtype)                `11-assumptions-of-the-regression-model.tex/203(prot
+(microtype)                `11-assumptions-of-the-regression-model.tex/207(prot
 rusion)'.
 
 
 Package microtype Warning: Unknown slot number of character
 (microtype)                `\k e'
 (microtype)                in font encoding `TU' in inheritance list
-(microtype)                `11-assumptions-of-the-regression-model.tex/203(prot
+(microtype)                `11-assumptions-of-the-regression-model.tex/207(prot
 rusion)'.
 
 
 Package microtype Warning: Unknown slot number of character
 (microtype)                `\'N'
 (microtype)                in font encoding `TU' in inheritance list
-(microtype)                `11-assumptions-of-the-regression-model.tex/203(prot
+(microtype)                `11-assumptions-of-the-regression-model.tex/207(prot
 rusion)'.
 
 
 Package microtype Warning: Unknown slot number of character
 (microtype)                `\'n'
 (microtype)                in font encoding `TU' in inheritance list
-(microtype)                `11-assumptions-of-the-regression-model.tex/203(prot
+(microtype)                `11-assumptions-of-the-regression-model.tex/207(prot
 rusion)'.
 
 
 Package microtype Warning: Unknown slot number of character
 (microtype)                `\'S'
 (microtype)                in font encoding `TU' in inheritance list
-(microtype)                `11-assumptions-of-the-regression-model.tex/203(prot
+(microtype)                `11-assumptions-of-the-regression-model.tex/207(prot
 rusion)'.
 
 
 Package microtype Warning: Unknown slot number of character
 (microtype)                `\'s'
 (microtype)                in font encoding `TU' in inheritance list
-(microtype)                `11-assumptions-of-the-regression-model.tex/203(prot
+(microtype)                `11-assumptions-of-the-regression-model.tex/207(prot
 rusion)'.
 
 
 Package microtype Warning: Unknown slot number of character
 (microtype)                `\'Z'
 (microtype)                in font encoding `TU' in inheritance list
-(microtype)                `11-assumptions-of-the-regression-model.tex/203(prot
+(microtype)                `11-assumptions-of-the-regression-model.tex/207(prot
 rusion)'.
 
 
 Package microtype Warning: Unknown slot number of character
 (microtype)                `\.Z'
 (microtype)                in font encoding `TU' in inheritance list
-(microtype)                `11-assumptions-of-the-regression-model.tex/203(prot
+(microtype)                `11-assumptions-of-the-regression-model.tex/207(prot
 rusion)'.
 
 
 Package microtype Warning: Unknown slot number of character
 (microtype)                `\'z'
 (microtype)                in font encoding `TU' in inheritance list
-(microtype)                `11-assumptions-of-the-regression-model.tex/203(prot
+(microtype)                `11-assumptions-of-the-regression-model.tex/207(prot
 rusion)'.
 
 
 Package microtype Warning: Unknown slot number of character
 (microtype)                `\.z'
 (microtype)                in font encoding `TU' in inheritance list
-(microtype)                `11-assumptions-of-the-regression-model.tex/203(prot
+(microtype)                `11-assumptions-of-the-regression-model.tex/207(prot
 rusion)'.
 
 LaTeX Font Info:    Font shape `TU/Inconsolata(0)/m/n' will be
-(Font)              scaled to size 9.4873pt on input line 214.
+(Font)              scaled to size 9.4873pt on input line 218.
 Font mapping `tex-ansi.tec' for font `Inconsolata' not found.
 
-Package xcolor Warning: Incompatible color definition on input line 219.
+Package xcolor Warning: Incompatible color definition on input line 223.
 
 
-Package xcolor Warning: Incompatible color definition on input line 233.
+Package xcolor Warning: Incompatible color definition on input line 237.
 
 
-Package xcolor Warning: Incompatible color definition on input line 233.
+Package xcolor Warning: Incompatible color definition on input line 237.
 
 
-Package xcolor Warning: Incompatible color definition on input line 247.
+Package xcolor Warning: Incompatible color definition on input line 251.
 
 
-Package xcolor Warning: Incompatible color definition on input line 252.
+Package xcolor Warning: Incompatible color definition on input line 256.
 
 
-Package xcolor Warning: Incompatible color definition on input line 252.
+Package xcolor Warning: Incompatible color definition on input line 256.
 
 [1
 
 ]
-LaTeX Font Info:    Try loading font information for OT1+lmr on input line 261.
+LaTeX Font Info:    Try loading font information for OT1+lmr on input line 265.
 
 (/Users/zief0002/Library/TinyTeX/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
@@ -1919,34 +1919,34 @@ oman.cfg
 File: mt-LatinModernRoman.cfg 2013/03/13 v1.0 microtype config. file: Latin Mod
 ern Roman (RS)
 )
-LaTeX Font Info:    Try loading font information for OML+lmm on input line 261.
+LaTeX Font Info:    Try loading font information for OML+lmm on input line 265.
 
 (/Users/zief0002/Library/TinyTeX/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 261
+LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 265
 .
 (/Users/zief0002/Library/TinyTeX/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMX+lmex on input line 261
+LaTeX Font Info:    Try loading font information for OMX+lmex on input line 265
 .
 (/Users/zief0002/Library/TinyTeX/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 261.
+(Font)              <10> on input line 265.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 261.
+(Font)              <7> on input line 265.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 261.
-LaTeX Font Info:    Try loading font information for U+msa on input line 261.
+(Font)              <5> on input line 265.
+LaTeX Font Info:    Try loading font information for U+msa on input line 265.
 (/Users/zief0002/Library/TinyTeX/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 ) (/Users/zief0002/Library/TinyTeX/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 261.
+LaTeX Font Info:    Try loading font information for U+msb on input line 265.
 (/Users/zief0002/Library/TinyTeX/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) (/Users/zief0002/Library/TinyTeX/texmf-dist/tex/latex/microtype/mt-msb.cfg
@@ -1955,10 +1955,10 @@ File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 File: images/regression-assumptions.pdf Graphic file (type pdf)
 <use images/regression-assumptions.pdf>
 LaTeX Font Info:    Font shape `TU/Sabon(0)/bx/n' will be
-(Font)              scaled to size 9.48715pt on input line 300.
+(Font)              scaled to size 9.48715pt on input line 304.
 [2]
 LaTeX Font Info:    Font shape `TU/Sabon(0)/bx/n' will be
-(Font)              scaled to size 11.38458pt on input line 321.
+(Font)              scaled to size 11.38458pt on input line 325.
 File: images/regression-assumptions-residuals.pdf Graphic file (type pdf)
 <use images/regression-assumptions-residuals.pdf>
 [3]
@@ -1966,13 +1966,13 @@ File: images/linearity-assumption.pdf Graphic file (type pdf)
 <use images/linearity-assumption.pdf>
 [4]
 
-Package xcolor Warning: Incompatible color definition on input line 493.
+Package xcolor Warning: Incompatible color definition on input line 497.
 
 
-Package xcolor Warning: Incompatible color definition on input line 501.
+Package xcolor Warning: Incompatible color definition on input line 505.
 
 
-Package xcolor Warning: Incompatible color definition on input line 501.
+Package xcolor Warning: Incompatible color definition on input line 505.
 
 [5]
 File: 11-assumptions-of-the-regression-model_files/figure-latex/unnamed-chunk-5
@@ -1980,13 +1980,13 @@ File: 11-assumptions-of-the-regression-model_files/figure-latex/unnamed-chunk-5
 <use 11-assumptions-of-the-regression-model_files/figure-latex/unnamed-chunk-5-
 1.pdf>
 
-Package xcolor Warning: Incompatible color definition on input line 552.
+Package xcolor Warning: Incompatible color definition on input line 556.
 
 
-Package xcolor Warning: Incompatible color definition on input line 561.
+Package xcolor Warning: Incompatible color definition on input line 565.
 
 
-Package xcolor Warning: Incompatible color definition on input line 561.
+Package xcolor Warning: Incompatible color definition on input line 565.
 
 File: 11-assumptions-of-the-regression-model_files/figure-latex/unnamed-chunk-6
 -1.pdf Graphic file (type pdf)
@@ -1994,13 +1994,13 @@ File: 11-assumptions-of-the-regression-model_files/figure-latex/unnamed-chunk-6
 1.pdf>
 [6] [7]
 
-Package xcolor Warning: Incompatible color definition on input line 625.
+Package xcolor Warning: Incompatible color definition on input line 629.
 
 
-Package xcolor Warning: Incompatible color definition on input line 634.
+Package xcolor Warning: Incompatible color definition on input line 638.
 
 
-Package xcolor Warning: Incompatible color definition on input line 634.
+Package xcolor Warning: Incompatible color definition on input line 638.
 
 File: 11-assumptions-of-the-regression-model_files/figure-latex/unnamed-chunk-7
 -1.pdf Graphic file (type pdf)
@@ -2008,13 +2008,13 @@ File: 11-assumptions-of-the-regression-model_files/figure-latex/unnamed-chunk-7
 1.pdf>
 [8]
 
-Package xcolor Warning: Incompatible color definition on input line 681.
+Package xcolor Warning: Incompatible color definition on input line 685.
 
 
-Package xcolor Warning: Incompatible color definition on input line 700.
+Package xcolor Warning: Incompatible color definition on input line 704.
 
 
-Package xcolor Warning: Incompatible color definition on input line 700.
+Package xcolor Warning: Incompatible color definition on input line 704.
 
 File: 11-assumptions-of-the-regression-model_files/figure-latex/unnamed-chunk-8
 -1.pdf Graphic file (type pdf)
@@ -2026,34 +2026,34 @@ File: 11-assumptions-of-the-regression-model_files/figure-latex/unnamed-chunk-8
 2.pdf>
 [9]
 
-Package xcolor Warning: Incompatible color definition on input line 729.
+Package xcolor Warning: Incompatible color definition on input line 733.
 
 
-Package xcolor Warning: Incompatible color definition on input line 734.
+Package xcolor Warning: Incompatible color definition on input line 738.
 
 
-Package xcolor Warning: Incompatible color definition on input line 734.
+Package xcolor Warning: Incompatible color definition on input line 738.
 
 File: images/multiple-regression-assumptions.pdf Graphic file (type pdf)
 <use images/multiple-regression-assumptions.pdf>
 [10]
 
-Package xcolor Warning: Incompatible color definition on input line 802.
+Package xcolor Warning: Incompatible color definition on input line 806.
 
 
-Package xcolor Warning: Incompatible color definition on input line 811.
+Package xcolor Warning: Incompatible color definition on input line 815.
 
 
-Package xcolor Warning: Incompatible color definition on input line 811.
+Package xcolor Warning: Incompatible color definition on input line 815.
 
 
-Package xcolor Warning: Incompatible color definition on input line 826.
+Package xcolor Warning: Incompatible color definition on input line 830.
 
 
-Package xcolor Warning: Incompatible color definition on input line 845.
+Package xcolor Warning: Incompatible color definition on input line 849.
 
 
-Package xcolor Warning: Incompatible color definition on input line 845.
+Package xcolor Warning: Incompatible color definition on input line 849.
 
 File: 11-assumptions-of-the-regression-model_files/figure-latex/unnamed-chunk-1
 2-1.pdf Graphic file (type pdf)
@@ -2065,13 +2065,13 @@ File: 11-assumptions-of-the-regression-model_files/figure-latex/unnamed-chunk-1
 -2.pdf>
 [11] [12]
 
-Package xcolor Warning: Incompatible color definition on input line 893.
+Package xcolor Warning: Incompatible color definition on input line 897.
 
 
-Package xcolor Warning: Incompatible color definition on input line 903.
+Package xcolor Warning: Incompatible color definition on input line 907.
 
 
-Package xcolor Warning: Incompatible color definition on input line 903.
+Package xcolor Warning: Incompatible color definition on input line 907.
 
 File: 11-assumptions-of-the-regression-model_files/figure-latex/unnamed-chunk-1
 3-1.pdf Graphic file (type pdf)
@@ -2079,22 +2079,22 @@ File: 11-assumptions-of-the-regression-model_files/figure-latex/unnamed-chunk-1
 -1.pdf>
 [13]
 
-Package xcolor Warning: Incompatible color definition on input line 945.
+Package xcolor Warning: Incompatible color definition on input line 949.
 
 
-Package xcolor Warning: Incompatible color definition on input line 953.
+Package xcolor Warning: Incompatible color definition on input line 957.
 
 
-Package xcolor Warning: Incompatible color definition on input line 953.
+Package xcolor Warning: Incompatible color definition on input line 957.
 
 
-Package xcolor Warning: Incompatible color definition on input line 968.
+Package xcolor Warning: Incompatible color definition on input line 972.
 
 
-Package xcolor Warning: Incompatible color definition on input line 980.
+Package xcolor Warning: Incompatible color definition on input line 984.
 
 
-Package xcolor Warning: Incompatible color definition on input line 980.
+Package xcolor Warning: Incompatible color definition on input line 984.
 
 File: 11-assumptions-of-the-regression-model_files/figure-latex/unnamed-chunk-1
 4-1.pdf Graphic file (type pdf)
@@ -2102,13 +2102,13 @@ File: 11-assumptions-of-the-regression-model_files/figure-latex/unnamed-chunk-1
 -1.pdf>
 [14]
 
-Package xcolor Warning: Incompatible color definition on input line 1003.
+Package xcolor Warning: Incompatible color definition on input line 1007.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1023.
+Package xcolor Warning: Incompatible color definition on input line 1027.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1023.
+Package xcolor Warning: Incompatible color definition on input line 1027.
 
 File: 11-assumptions-of-the-regression-model_files/figure-latex/unnamed-chunk-1
 5-1.pdf Graphic file (type pdf)
@@ -2116,27 +2116,27 @@ File: 11-assumptions-of-the-regression-model_files/figure-latex/unnamed-chunk-1
 -1.pdf>
 [15]
 
-Package caption Warning: Unused \captionsetup[table] on input line 139.
+Package caption Warning: Unused \captionsetup[table] on input line 143.
 See the caption package documentation for explanation.
 
 [16]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1035.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1035.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1062.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1062.
 (./11-assumptions-of-the-regression-model.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 1035.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1035.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 1062.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1062.
 
 Package rerunfilecheck Info: File `11-assumptions-of-the-regression-model.out' 
 has not changed.
-(rerunfilecheck)             Checksum: BC4F5AD4B9EB5F96E284DEFD5E9D21F6.
+(rerunfilecheck)             Checksum: 40706D750101BE048E34666D0B7A07F9.
  ) 
 Here is how much of TeX's memory you used:
- 38626 strings out of 494894
- 758502 string characters out of 6173843
- 884998 words of memory out of 5000000
- 41971 multiletter control sequences out of 15000+600000
+ 38628 strings out of 494894
+ 758533 string characters out of 6173843
+ 885045 words of memory out of 5000000
+ 41973 multiletter control sequences out of 15000+600000
  545299 words of font info for 72 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 72i,6n,116p,835b,429s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 72i,9n,116p,835b,429s stack positions out of 5000i,500n,10000p,200000b,80000s
 
 Output written on 11-assumptions-of-the-regression-model.pdf (16 pages).

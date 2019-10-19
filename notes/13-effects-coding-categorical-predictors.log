@@ -1,14 +1,14 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019) (preloaded format=xelatex 2019.9.17)  18 SEP 2019 12:02
+This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019) (preloaded format=xelatex 2019.10.9)  19 OCT 2019 08:42
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**12-coding-a-categorical-predictor.tex
-(./12-coding-a-categorical-predictor.tex
-LaTeX2e <2018-12-01>
+**13-effects-coding-categorical-predictors.tex
+(./13-effects-coding-categorical-predictors.tex
+LaTeX2e <2019-10-01>
 (/Users/zief0002/Library/TinyTeX/texmf-dist/tex/latex/base/article.cls
-Document Class: article 2018/09/03 v1.4i Standard LaTeX document class
+Document Class: article 2019/08/27 v1.4j Standard LaTeX document class
 (/Users/zief0002/Library/TinyTeX/texmf-dist/tex/latex/base/size10.clo
-File: size10.clo 2018/09/03 v1.4i Standard LaTeX file (size option)
+File: size10.clo 2019/08/27 v1.4j Standard LaTeX file (size option)
 )
 \c@part=\count80
 \c@section=\count81
@@ -62,10 +62,11 @@ Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 \@emptytoks=\toks14
 \symAMSa=\mathgroup4
 \symAMSb=\mathgroup5
+LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
 )) (/Users/zief0002/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amsmath.sty
-Package: amsmath 2018/12/01 v2.17b AMS math features
+Package: amsmath 2019/04/01 v2.17c AMS math features
 \@mathmargin=\skip43
 For additional information on amsmath, use the `?' option.
 (/Users/zief0002/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amstext.sty
@@ -81,20 +82,20 @@ Package: amsbsy 1999/11/29 v1.2d Bold Symbols
 Package: amsopn 2016/03/08 v2.02 operator names
 )
 \inf@bad=\count88
-LaTeX Info: Redefining \frac on input line 223.
+LaTeX Info: Redefining \frac on input line 227.
 \uproot@=\count89
 \leftroot@=\count90
-LaTeX Info: Redefining \overline on input line 385.
+LaTeX Info: Redefining \overline on input line 389.
 \classnum@=\count91
 \DOTSCASE@=\count92
-LaTeX Info: Redefining \ldots on input line 482.
-LaTeX Info: Redefining \dots on input line 485.
-LaTeX Info: Redefining \cdots on input line 606.
+LaTeX Info: Redefining \ldots on input line 486.
+LaTeX Info: Redefining \dots on input line 489.
+LaTeX Info: Redefining \cdots on input line 610.
 \Mathstrutbox@=\box27
 \strutbox@=\box28
 \big@size=\dimen105
-LaTeX Font Info:    Redeclaring font encoding OML on input line 729.
-LaTeX Font Info:    Redeclaring font encoding OMS on input line 730.
+LaTeX Font Info:    Redeclaring font encoding OML on input line 733.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 734.
 \macc@depth=\count93
 \c@MaxMatrixCols=\count94
 \dotsspace@=\muskip10
@@ -115,8 +116,8 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 730.
 \multlinegap=\skip44
 \multlinetaggap=\skip45
 \mathdisplay@stack=\toks19
-LaTeX Info: Redefining \[ on input line 2844.
-LaTeX Info: Redefining \] on input line 2845.
+LaTeX Info: Redefining \[ on input line 2855.
+LaTeX Info: Redefining \] on input line 2856.
 ) (/Users/zief0002/Library/TinyTeX/texmf-dist/tex/generic/ifxetex/ifxetex.sty
 Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 ) (/Users/zief0002/Library/TinyTeX/texmf-dist/tex/generic/oberdiek/ifluatex.sty
@@ -135,26 +136,28 @@ Already applied: [0000/00/00] Old fixltx2e package on input line 53.
 Package: mathspec 2016/12/22 v0.2b LaTeX Package (Mathematics font selection fo
 r XeLaTeX)
 (/Users/zief0002/Library/TinyTeX/texmf-dist/tex/latex/etoolbox/etoolbox.sty
-Package: etoolbox 2019/09/09 v2.5g e-TeX tools for LaTeX (JAW)
+Package: etoolbox 2019/09/21 v2.5h e-TeX tools for LaTeX (JAW)
 \etb@tempcnta=\count100
 ) (/Users/zief0002/Library/TinyTeX/texmf-dist/tex/latex/fontspec/fontspec.sty
 (/Users/zief0002/Library/TinyTeX/texmf-dist/tex/latex/l3packages/xparse/xparse.
 sty (/Users/zief0002/Library/TinyTeX/texmf-dist/tex/latex/l3kernel/expl3.sty
-Package: expl3 2019-09-08 L3 programming layer (loader) 
+Package: expl3 2019-10-02 L3 programming layer (loader) 
 (/Users/zief0002/Library/TinyTeX/texmf-dist/tex/latex/l3kernel/expl3-code.tex
-Package: expl3 2019-09-08 L3 programming layer (code)
+Package: expl3 2019-10-02 L3 programming layer (code)
 \c_max_int=\count101
 \l_tmpa_int=\count102
 \l_tmpb_int=\count103
 \g_tmpa_int=\count104
 \g_tmpb_int=\count105
-\g__kernel_prg_map_int=\count106
-\c__ior_term_noprompt_ior=\count107
-\c_log_iow=\count108
-\l_iow_line_count_int=\count109
-\l__iow_line_target_int=\count110
-\l__iow_one_indent_int=\count111
-\l__iow_indent_int=\count112
+\l__seq_internal_a_int=\count106
+\l__seq_internal_b_int=\count107
+\g__kernel_prg_map_int=\count108
+\c__ior_term_noprompt_ior=\count109
+\c_log_iow=\count110
+\l_iow_line_count_int=\count111
+\l__iow_line_target_int=\count112
+\l__iow_one_indent_int=\count113
+\l__iow_indent_int=\count114
 \c_zero_dim=\dimen112
 \c_max_dim=\dimen113
 \l_tmpa_dim=\dimen114
@@ -173,76 +176,76 @@ Package: expl3 2019-09-08 L3 programming layer (code)
 \l_tmpb_muskip=\muskip14
 \g_tmpa_muskip=\muskip15
 \g_tmpb_muskip=\muskip16
-\l_keys_choice_int=\count113
-\l__intarray_loop_int=\count114
+\l_keys_choice_int=\count115
+\l__intarray_loop_int=\count116
 \c__intarray_sp_dim=\dimen118
-\g__intarray_font_int=\count115
-\c__fp_leading_shift_int=\count116
-\c__fp_middle_shift_int=\count117
-\c__fp_trailing_shift_int=\count118
-\c__fp_big_leading_shift_int=\count119
-\c__fp_big_middle_shift_int=\count120
-\c__fp_big_trailing_shift_int=\count121
-\c__fp_Bigg_leading_shift_int=\count122
-\c__fp_Bigg_middle_shift_int=\count123
-\c__fp_Bigg_trailing_shift_int=\count124
-\g__fp_array_int=\count125
-\l__fp_array_loop_int=\count126
-\l__sort_length_int=\count127
-\l__sort_min_int=\count128
-\l__sort_top_int=\count129
-\l__sort_max_int=\count130
-\l__sort_true_max_int=\count131
-\l__sort_block_int=\count132
-\l__sort_begin_int=\count133
-\l__sort_end_int=\count134
-\l__sort_A_int=\count135
-\l__sort_B_int=\count136
-\l__sort_C_int=\count137
-\l__str_internal_int=\count138
-\l__tl_analysis_normal_int=\count139
-\l__tl_analysis_index_int=\count140
-\l__tl_analysis_nesting_int=\count141
-\l__tl_analysis_type_int=\count142
-\l__regex_internal_a_int=\count143
-\l__regex_internal_b_int=\count144
-\l__regex_internal_c_int=\count145
-\l__regex_balance_int=\count146
-\l__regex_group_level_int=\count147
-\l__regex_mode_int=\count148
-\c__regex_cs_in_class_mode_int=\count149
-\c__regex_cs_mode_int=\count150
-\l__regex_catcodes_int=\count151
-\l__regex_default_catcodes_int=\count152
-\c__regex_catcode_L_int=\count153
-\c__regex_catcode_O_int=\count154
-\c__regex_catcode_A_int=\count155
-\c__regex_all_catcodes_int=\count156
-\l__regex_show_lines_int=\count157
-\l__regex_min_state_int=\count158
-\l__regex_max_state_int=\count159
-\l__regex_left_state_int=\count160
-\l__regex_right_state_int=\count161
-\l__regex_capturing_group_int=\count162
-\l__regex_min_pos_int=\count163
-\l__regex_max_pos_int=\count164
-\l__regex_curr_pos_int=\count165
-\l__regex_start_pos_int=\count166
-\l__regex_success_pos_int=\count167
-\l__regex_curr_char_int=\count168
-\l__regex_curr_catcode_int=\count169
-\l__regex_last_char_int=\count170
-\l__regex_case_changed_char_int=\count171
-\l__regex_curr_state_int=\count172
-\l__regex_step_int=\count173
-\l__regex_min_active_int=\count174
-\l__regex_max_active_int=\count175
-\l__regex_replacement_csnames_int=\count176
-\l__regex_match_count_int=\count177
-\l__regex_min_submatch_int=\count178
-\l__regex_submatch_int=\count179
-\l__regex_zeroth_submatch_int=\count180
-\g__regex_trace_regex_int=\count181
+\g__intarray_font_int=\count117
+\c__fp_leading_shift_int=\count118
+\c__fp_middle_shift_int=\count119
+\c__fp_trailing_shift_int=\count120
+\c__fp_big_leading_shift_int=\count121
+\c__fp_big_middle_shift_int=\count122
+\c__fp_big_trailing_shift_int=\count123
+\c__fp_Bigg_leading_shift_int=\count124
+\c__fp_Bigg_middle_shift_int=\count125
+\c__fp_Bigg_trailing_shift_int=\count126
+\g__fp_array_int=\count127
+\l__fp_array_loop_int=\count128
+\l__sort_length_int=\count129
+\l__sort_min_int=\count130
+\l__sort_top_int=\count131
+\l__sort_max_int=\count132
+\l__sort_true_max_int=\count133
+\l__sort_block_int=\count134
+\l__sort_begin_int=\count135
+\l__sort_end_int=\count136
+\l__sort_A_int=\count137
+\l__sort_B_int=\count138
+\l__sort_C_int=\count139
+\l__str_internal_int=\count140
+\l__tl_analysis_normal_int=\count141
+\l__tl_analysis_index_int=\count142
+\l__tl_analysis_nesting_int=\count143
+\l__tl_analysis_type_int=\count144
+\l__regex_internal_a_int=\count145
+\l__regex_internal_b_int=\count146
+\l__regex_internal_c_int=\count147
+\l__regex_balance_int=\count148
+\l__regex_group_level_int=\count149
+\l__regex_mode_int=\count150
+\c__regex_cs_in_class_mode_int=\count151
+\c__regex_cs_mode_int=\count152
+\l__regex_catcodes_int=\count153
+\l__regex_default_catcodes_int=\count154
+\c__regex_catcode_L_int=\count155
+\c__regex_catcode_O_int=\count156
+\c__regex_catcode_A_int=\count157
+\c__regex_all_catcodes_int=\count158
+\l__regex_show_lines_int=\count159
+\l__regex_min_state_int=\count160
+\l__regex_max_state_int=\count161
+\l__regex_left_state_int=\count162
+\l__regex_right_state_int=\count163
+\l__regex_capturing_group_int=\count164
+\l__regex_min_pos_int=\count165
+\l__regex_max_pos_int=\count166
+\l__regex_curr_pos_int=\count167
+\l__regex_start_pos_int=\count168
+\l__regex_success_pos_int=\count169
+\l__regex_curr_char_int=\count170
+\l__regex_curr_catcode_int=\count171
+\l__regex_last_char_int=\count172
+\l__regex_case_changed_char_int=\count173
+\l__regex_curr_state_int=\count174
+\l__regex_step_int=\count175
+\l__regex_min_active_int=\count176
+\l__regex_max_active_int=\count177
+\l__regex_replacement_csnames_int=\count178
+\l__regex_match_count_int=\count179
+\l__regex_min_submatch_int=\count180
+\l__regex_submatch_int=\count181
+\l__regex_zeroth_submatch_int=\count182
+\g__regex_trace_regex_int=\count183
 \c_empty_box=\box29
 \l_tmpa_box=\box30
 \l_tmpb_box=\box31
@@ -287,9 +290,11 @@ Package: expl3 2019-09-08 L3 programming layer (code)
 \l__coffin_display_x_dim=\dimen142
 \l__coffin_display_y_dim=\dimen143
 \g__char_data_ior=\read1
-\l__seq_internal_a_int=\count182
-\l__seq_internal_b_int=\count183
-)
+
+(/Users/zief0002/Library/TinyTeX/texmf-dist/tex/latex/l3kernel/l3deprecation.de
+f
+File: l3deprecation.def 2019-04-06 v L3 Deprecated functions
+))
 (/Users/zief0002/Library/TinyTeX/texmf-dist/tex/latex/l3backend/l3backend-xdvip
 dfmx.def
 File: l3backend-xdvipdfmx.def 2019-04-06 v L3 backend support: xdvipdfmx
@@ -591,7 +596,7 @@ Package ifvtex Info: VTeX not detected.
 \Gm@layoutvoffset=\dimen155
 \Gm@dimlist=\toks23
 ) (/Users/zief0002/Library/TinyTeX/texmf-dist/tex/latex/hyperref/hyperref.sty
-Package: hyperref 2019/09/12 v6.88i Hypertext links for LaTeX
+Package: hyperref 2019/09/28 v7.00a Hypertext links for LaTeX
 
 (/Users/zief0002/Library/TinyTeX/texmf-dist/tex/generic/oberdiek/hobsub-hyperre
 f.sty
@@ -641,47 +646,47 @@ Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
 \Hy@linkcounter=\count277
 \Hy@pagecounter=\count278
 (/Users/zief0002/Library/TinyTeX/texmf-dist/tex/latex/hyperref/pd1enc.def
-File: pd1enc.def 2019/09/12 v6.88i Hyperref: PDFDocEncoding definition (HO)
+File: pd1enc.def 2019/09/28 v7.00a Hyperref: PDFDocEncoding definition (HO)
 )
 \Hy@SavedSpaceFactor=\count279
 (/Users/zief0002/Library/TinyTeX/texmf-dist/tex/latex/latexconfig/hyperref.cfg
 File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
 )
-Package hyperref Info: Hyper figures OFF on input line 4550.
-Package hyperref Info: Link nesting OFF on input line 4555.
-Package hyperref Info: Hyper index ON on input line 4558.
-Package hyperref Info: Plain pages OFF on input line 4565.
-Package hyperref Info: Backreferencing OFF on input line 4570.
+Package hyperref Info: Hyper figures OFF on input line 4540.
+Package hyperref Info: Link nesting OFF on input line 4545.
+Package hyperref Info: Hyper index ON on input line 4548.
+Package hyperref Info: Plain pages OFF on input line 4555.
+Package hyperref Info: Backreferencing OFF on input line 4560.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
-Package hyperref Info: Bookmarks ON on input line 4803.
+Package hyperref Info: Bookmarks ON on input line 4793.
 \c@Hy@tempcnt=\count280
 (/Users/zief0002/Library/TinyTeX/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip17
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
-LaTeX Info: Redefining \url on input line 5156.
+LaTeX Info: Redefining \url on input line 5152.
 \XeTeXLinkMargin=\dimen157
 \Fld@menulength=\count281
 \Field@Width=\dimen158
 \Fld@charsize=\dimen159
-Package hyperref Info: Hyper figures OFF on input line 6411.
-Package hyperref Info: Link nesting OFF on input line 6416.
-Package hyperref Info: Hyper index ON on input line 6419.
-Package hyperref Info: backreferencing OFF on input line 6426.
-Package hyperref Info: Link coloring OFF on input line 6431.
-Package hyperref Info: Link coloring with OCG OFF on input line 6436.
-Package hyperref Info: PDF/A mode OFF on input line 6441.
-LaTeX Info: Redefining \ref on input line 6481.
-LaTeX Info: Redefining \pageref on input line 6485.
+Package hyperref Info: Hyper figures OFF on input line 6423.
+Package hyperref Info: Link nesting OFF on input line 6428.
+Package hyperref Info: Hyper index ON on input line 6431.
+Package hyperref Info: backreferencing OFF on input line 6438.
+Package hyperref Info: Link coloring OFF on input line 6443.
+Package hyperref Info: Link coloring with OCG OFF on input line 6448.
+Package hyperref Info: PDF/A mode OFF on input line 6453.
+LaTeX Info: Redefining \ref on input line 6493.
+LaTeX Info: Redefining \pageref on input line 6497.
 \Hy@abspage=\count282
 \c@Item=\count283
 \c@Hfootnote=\count284
 )
 Package hyperref Info: Driver (autodetected): hxetex.
 (/Users/zief0002/Library/TinyTeX/texmf-dist/tex/latex/hyperref/hxetex.def
-File: hxetex.def 2019/09/12 v6.88i Hyperref driver for XeTeX
+File: hxetex.def 2019/09/28 v7.00a Hyperref driver for XeTeX
 (/Users/zief0002/Library/TinyTeX/texmf-dist/tex/latex/hyperref/puenc.def
-File: puenc.def 2019/09/12 v6.88i Hyperref: PDF Unicode definition (HO)
+File: puenc.def 2019/09/28 v7.00a Hyperref: PDF Unicode definition (HO)
 ) (/Users/zief0002/Library/TinyTeX/texmf-dist/tex/generic/oberdiek/stringenc.st
 y
 Package: stringenc 2016/05/16 v1.11 Convert strings between diff. encodings (HO
@@ -739,14 +744,14 @@ Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
 ) (/Users/zief0002/Library/TinyTeX/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 2017/06/01 v1.1a Enhanced LaTeX Graphics (DPC,SPQR)
 (/Users/zief0002/Library/TinyTeX/texmf-dist/tex/latex/graphics/graphics.sty
-Package: graphics 2017/06/25 v1.2c Standard LaTeX Graphics (DPC,SPQR)
+Package: graphics 2019/07/20 v1.3b Standard LaTeX Graphics (DPC,SPQR)
 (/Users/zief0002/Library/TinyTeX/texmf-dist/tex/latex/graphics/trig.sty
 Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
 )
 (/Users/zief0002/Library/TinyTeX/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
-Package graphics Info: Driver file: xetex.def on input line 99.
+Package graphics Info: Driver file: xetex.def on input line 105.
 )
 \Gin@req@height=\dimen164
 \Gin@req@width=\dimen165
@@ -1274,25 +1279,29 @@ Package: xfrac 2019-05-28 L3 Experimental split-level fractions
 Package xtemplate Info: Declaring object type 'xfrac' taking 3 argument(s) on
 (xtemplate)             line 79.
 
+)
+(/Users/zief0002/Library/TinyTeX/texmf-dist/tex/latex/marginnote/marginnote.sty
+Package: marginnote 2018/08/09 v1.4b non floating margin notes for LaTeX
+\c@mn@abspage=\count330
 ) (/Users/zief0002/Library/TinyTeX/texmf-dist/tex/latex/tools/longtable.sty
-Package: longtable 2014/10/28 v4.11 Multi-page Table package (DPC)+ FMi change
+Package: longtable 2019/02/06 v4.12 Multi-page Table package (DPC)
 \LTleft=\skip127
 \LTright=\skip128
 \LTpre=\skip129
 \LTpost=\skip130
-\LTchunksize=\count330
+\LTchunksize=\count331
 \LTcapwidth=\dimen298
 \LT@head=\box71
 \LT@firsthead=\box72
 \LT@foot=\box73
 \LT@lastfoot=\box74
-\LT@cols=\count331
-\LT@rows=\count332
-\c@LT@tables=\count333
-\c@LT@chunks=\count334
+\LT@cols=\count332
+\LT@rows=\count333
+\c@LT@tables=\count334
+\c@LT@chunks=\count335
 \LT@p@ftn=\toks39
 ) (/Users/zief0002/Library/TinyTeX/texmf-dist/tex/latex/tools/array.sty
-Package: array 2018/12/30 v2.4k Tabular extension package (FMi)
+Package: array 2019/08/31 v2.4l Tabular extension package (FMi)
 \col@sep=\dimen299
 \ar@mcellbox=\box75
 \extrarowheight=\dimen300
@@ -1303,13 +1312,13 @@ Package: array 2018/12/30 v2.4k Tabular extension package (FMi)
 ) (/Users/zief0002/Library/TinyTeX/texmf-dist/tex/latex/multirow/multirow.sty
 Package: multirow 2019/05/31 v2.5 Span multiple rows of a table
 \multirow@colwidth=\skip133
-\multirow@cntb=\count335
+\multirow@cntb=\count336
 \multirow@dima=\skip134
 \bigstrutjot=\dimen301
 ) (/Users/zief0002/Library/TinyTeX/texmf-dist/tex/latex/wrapfig/wrapfig.sty
 \wrapoverhang=\dimen302
 \WF@size=\dimen303
-\c@WF@wrappedlines=\count336
+\c@WF@wrappedlines=\count337
 \WF@box=\box77
 \WF@everypar=\toks41
 Package: wrapfig 2003/01/31  v 3.6
@@ -1329,16 +1338,16 @@ Package: tabu 2019/01/11 v2.9 - flexible LaTeX tabulars (FC+tabu-fixed)
 (/Users/zief0002/Library/TinyTeX/texmf-dist/tex/latex/varwidth/varwidth.sty
 Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
 \@vwid@box=\box78
-\sift@deathcycles=\count337
+\sift@deathcycles=\count338
 \@vwid@loff=\dimen304
 \@vwid@roff=\dimen305
 )
-\c@taburow=\count338
-\tabu@nbcols=\count339
-\tabu@cnt=\count340
-\tabu@Xcol=\count341
-\tabu@alloc=\count342
-\tabu@nested=\count343
+\c@taburow=\count339
+\tabu@nbcols=\count340
+\tabu@cnt=\count341
+\tabu@Xcol=\count342
+\tabu@alloc=\count343
+\tabu@nested=\count344
 \tabu@target=\dimen306
 \tabu@spreadtarget=\dimen307
 \tabu@naturalX=\dimen308
@@ -1377,7 +1386,7 @@ Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
 \UL@skip=\skip138
 \UL@hook=\toks45
 \UL@height=\dimen315
-\UL@pe=\count344
+\UL@pe=\count345
 \UL@pixel=\dimen316
 \ULC@box=\box86
 Package: ulem 2012/05/18
@@ -1385,37 +1394,37 @@ Package: ulem 2012/05/18
 ) (/Users/zief0002/Library/TinyTeX/texmf-dist/tex/latex/makecell/makecell.sty
 Package: makecell 2009/08/03 V0.1e Managing of Tab Column Heads and Cells
 \rotheadsize=\dimen318
-\c@nlinenum=\count345
+\c@nlinenum=\count346
 \TeXr@lab=\toks46
-) (./12-coding-a-categorical-predictor.aux)
-\openout1 = `12-coding-a-categorical-predictor.aux'.
+) (./13-effects-coding-categorical-predictors.aux)
+\openout1 = `13-effects-coding-categorical-predictors.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 161.
-LaTeX Font Info:    ... okay on input line 161.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 161.
-LaTeX Font Info:    ... okay on input line 161.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 161.
-LaTeX Font Info:    ... okay on input line 161.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 161.
-LaTeX Font Info:    ... okay on input line 161.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 161.
-LaTeX Font Info:    ... okay on input line 161.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 161.
-LaTeX Font Info:    ... okay on input line 161.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 161.
-LaTeX Font Info:    ... okay on input line 161.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 161.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 161.
-
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 166.
+LaTeX Font Info:    ... okay on input line 166.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 166.
+LaTeX Font Info:    ... okay on input line 166.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 166.
+LaTeX Font Info:    ... okay on input line 166.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 166.
+LaTeX Font Info:    ... okay on input line 166.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 166.
+LaTeX Font Info:    ... okay on input line 166.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 166.
+LaTeX Font Info:    ... okay on input line 166.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 166.
+LaTeX Font Info:    ... okay on input line 166.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 166.
+LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 1
+66.
 (/Users/zief0002/Library/TinyTeX/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 161.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 161.
-LaTeX Font Info:    ... okay on input line 161.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 161.
-LaTeX Font Info:    ... okay on input line 161.
-LaTeX Info: Redefining \microtypecontext on input line 161.
+LaTeX Font Info:    ... okay on input line 166.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 166.
+LaTeX Font Info:    ... okay on input line 166.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 166.
+LaTeX Font Info:    ... okay on input line 166.
+LaTeX Info: Redefining \microtypecontext on input line 166.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using protrusion set `basicmath'.
 Package microtype Info: No adjustment of tracking.
@@ -1745,23 +1754,23 @@ Package microtype Warning: Unknown slot number of character
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 \AtBeginShipoutBox=\box87
-Package hyperref Info: Link coloring ON on input line 161.
+Package hyperref Info: Link coloring ON on input line 166.
 (/Users/zief0002/Library/TinyTeX/texmf-dist/tex/latex/hyperref/nameref.sty
-Package: nameref 2019/09/12 v2.45 Cross-referencing by name of section
+Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
 
 (/Users/zief0002/Library/TinyTeX/texmf-dist/tex/generic/oberdiek/gettitlestring
 .sty
 Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
-\c@section@level=\count346
+\c@section@level=\count347
 )
-LaTeX Info: Redefining \ref on input line 161.
-LaTeX Info: Redefining \pageref on input line 161.
-LaTeX Info: Redefining \nameref on input line 161.
-(./12-coding-a-categorical-predictor.out) (./12-coding-a-categorical-predictor.
-out)
+LaTeX Info: Redefining \ref on input line 166.
+LaTeX Info: Redefining \pageref on input line 166.
+LaTeX Info: Redefining \nameref on input line 166.
+(./13-effects-coding-categorical-predictors.out) (./13-effects-coding-categoric
+al-predictors.out)
 \@outlinefile=\write5
-\openout5 = `12-coding-a-categorical-predictor.out'.
+\openout5 = `13-effects-coding-categorical-predictors.out'.
 
 ABD: EveryShipout initializing macros
 Package caption Info: Begin \AtBeginDocument code.
@@ -1773,132 +1782,23 @@ Package caption Info: threeparttable package is loaded.
 Package caption Info: wrapfig package is loaded.
 Package caption Info: End \AtBeginDocument code.
 LaTeX Font Info:    Font shape `TU/Sabon(0)/m/n' will be
-(Font)              scaled to size 19.98332pt on input line 162.
+(Font)              scaled to size 19.98332pt on input line 167.
 LaTeX Font Info:    Font shape `TU/Sabon(0)/m/n' will be
-(Font)              scaled to size 11.5622pt on input line 162.
+(Font)              scaled to size 11.5622pt on input line 167.
 LaTeX Font Info:    Font shape `TU/Sabon(0)/m/it' will be
-(Font)              scaled to size 11.35968pt on input line 162.
-LaTeX Font Info:    Font shape `TU/Sabon(0)/m/n' will be
-(Font)              scaled to size 13.87462pt on input line 206.
+(Font)              scaled to size 11.35968pt on input line 167.
 LaTeX Font Info:    Font shape `TU/Sabon(0)/bx/n' will be
-(Font)              scaled to size 13.66148pt on input line 206.
+(Font)              scaled to size 11.38458pt on input line 211.
 LaTeX Font Info:    Font shape `TU/Sabon(0)/m/it' will be
-(Font)              scaled to size 9.4664pt on input line 210.
-
-Package microtype Warning: Unknown slot number of character
-(microtype)                `\k A'
-(microtype)                in font encoding `TU' in inheritance list
-(microtype)                `12-coding-a-categorical-predictor.tex/203(protrusio
-n)'.
-
-
-Package microtype Warning: Unknown slot number of character
-(microtype)                `\k a'
-(microtype)                in font encoding `TU' in inheritance list
-(microtype)                `12-coding-a-categorical-predictor.tex/203(protrusio
-n)'.
-
-
-Package microtype Warning: Unknown slot number of character
-(microtype)                `\'C'
-(microtype)                in font encoding `TU' in inheritance list
-(microtype)                `12-coding-a-categorical-predictor.tex/203(protrusio
-n)'.
-
-
-Package microtype Warning: Unknown slot number of character
-(microtype)                `\'c'
-(microtype)                in font encoding `TU' in inheritance list
-(microtype)                `12-coding-a-categorical-predictor.tex/203(protrusio
-n)'.
-
-Package microtype Info: Character `\dj ' is missing
-(microtype)             in font `\TU/Sabon(0)/m/it/10'.
-(microtype)             Ignoring protrusion settings for this character.
-
-Package microtype Warning: Unknown slot number of character
-(microtype)                `\k E'
-(microtype)                in font encoding `TU' in inheritance list
-(microtype)                `12-coding-a-categorical-predictor.tex/203(protrusio
-n)'.
-
-
-Package microtype Warning: Unknown slot number of character
-(microtype)                `\k e'
-(microtype)                in font encoding `TU' in inheritance list
-(microtype)                `12-coding-a-categorical-predictor.tex/203(protrusio
-n)'.
-
-
-Package microtype Warning: Unknown slot number of character
-(microtype)                `\'N'
-(microtype)                in font encoding `TU' in inheritance list
-(microtype)                `12-coding-a-categorical-predictor.tex/203(protrusio
-n)'.
-
-
-Package microtype Warning: Unknown slot number of character
-(microtype)                `\'n'
-(microtype)                in font encoding `TU' in inheritance list
-(microtype)                `12-coding-a-categorical-predictor.tex/203(protrusio
-n)'.
-
-
-Package microtype Warning: Unknown slot number of character
-(microtype)                `\'S'
-(microtype)                in font encoding `TU' in inheritance list
-(microtype)                `12-coding-a-categorical-predictor.tex/203(protrusio
-n)'.
-
-
-Package microtype Warning: Unknown slot number of character
-(microtype)                `\'s'
-(microtype)                in font encoding `TU' in inheritance list
-(microtype)                `12-coding-a-categorical-predictor.tex/203(protrusio
-n)'.
-
-
-Package microtype Warning: Unknown slot number of character
-(microtype)                `\'Z'
-(microtype)                in font encoding `TU' in inheritance list
-(microtype)                `12-coding-a-categorical-predictor.tex/203(protrusio
-n)'.
-
-
-Package microtype Warning: Unknown slot number of character
-(microtype)                `\.Z'
-(microtype)                in font encoding `TU' in inheritance list
-(microtype)                `12-coding-a-categorical-predictor.tex/203(protrusio
-n)'.
-
-
-Package microtype Warning: Unknown slot number of character
-(microtype)                `\'z'
-(microtype)                in font encoding `TU' in inheritance list
-(microtype)                `12-coding-a-categorical-predictor.tex/203(protrusio
-n)'.
-
-
-Package microtype Warning: Unknown slot number of character
-(microtype)                `\.z'
-(microtype)                in font encoding `TU' in inheritance list
-(microtype)                `12-coding-a-categorical-predictor.tex/203(protrusio
-n)'.
-
+(Font)              scaled to size 9.4664pt on input line 215.
 LaTeX Font Info:    Font shape `TU/Inconsolata(0)/m/n' will be
-(Font)              scaled to size 9.4873pt on input line 214.
+(Font)              scaled to size 9.4873pt on input line 218.
 Font mapping `tex-ansi.tec' for font `Inconsolata' not found.
 
-Package xcolor Warning: Incompatible color definition on input line 216.
+Package xcolor Warning: Incompatible color definition on input line 218.
 
-
-Package xcolor Warning: Incompatible color definition on input line 231.
-
-
-Package xcolor Warning: Incompatible color definition on input line 231.
-
-LaTeX Font Info:    Try loading font information for OT1+lmr on input line 248.
-
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 2
+18.
 (/Users/zief0002/Library/TinyTeX/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
@@ -1907,299 +1807,234 @@ oman.cfg
 File: mt-LatinModernRoman.cfg 2013/03/13 v1.0 microtype config. file: Latin Mod
 ern Roman (RS)
 )
-LaTeX Font Info:    Try loading font information for OML+lmm on input line 248.
-
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 2
+18.
 (/Users/zief0002/Library/TinyTeX/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 248
-.
+LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
+218.
 (/Users/zief0002/Library/TinyTeX/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMX+lmex on input line 248
-.
+LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
+218.
 (/Users/zief0002/Library/TinyTeX/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 248.
+(Font)              <10> on input line 218.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 248.
+(Font)              <7> on input line 218.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 248.
-LaTeX Font Info:    Try loading font information for U+msa on input line 248.
+(Font)              <5> on input line 218.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 218
+.
 (/Users/zief0002/Library/TinyTeX/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 ) (/Users/zief0002/Library/TinyTeX/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 248.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 218
+.
 (/Users/zief0002/Library/TinyTeX/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) (/Users/zief0002/Library/TinyTeX/texmf-dist/tex/latex/microtype/mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
+LaTeX Font Info:    Font shape `TU/Sabon(0)/m/n' will be
+(Font)              scaled to size 6.74461pt on input line 218.
+LaTeX Font Info:    Font shape `TU/Sabon(0)/m/n' will be
+(Font)              scaled to size 7.70813pt on input line 220.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <8> on input line 220.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <6> on input line 220.
+LaTeX Font Info:    Font shape `TU/Sabon(0)/m/n' will be
+(Font)              scaled to size 5.7811pt on input line 220.
+LaTeX Font Info:    Font shape `TU/Inconsolata(0)/m/n' will be
+(Font)              scaled to size 7.58984pt on input line 220.
+Font mapping `tex-ansi.tec' for font `Inconsolata' not found.
 
-Package xcolor Warning: Incompatible color definition on input line 253.
+Package xcolor Warning: Incompatible color definition on input line 222.
 
 
-Package xcolor Warning: Incompatible color definition on input line 261.
+Package xcolor Warning: Incompatible color definition on input line 236.
 
 
-Package xcolor Warning: Incompatible color definition on input line 261.
+Package xcolor Warning: Incompatible color definition on input line 236.
 
-File: 12-coding-a-categorical-predictor_files/figure-latex/unnamed-chunk-2-1.pd
-f Graphic file (type pdf)
-<use 12-coding-a-categorical-predictor_files/figure-latex/unnamed-chunk-2-1.pdf
->
+LaTeX Font Info:    Font shape `TU/Sabon(0)/bx/n' will be
+(Font)              scaled to size 9.48715pt on input line 258.
+
+Package xcolor Warning: Incompatible color definition on input line 262.
+
+
+Package xcolor Warning: Incompatible color definition on input line 270.
+
+
+Package xcolor Warning: Incompatible color definition on input line 270.
+
+File: "13-effects-coding-categorical-predictors_files/figure-latex/""unnamed-ch
+unk-2-1".pdf Graphic file (type pdf)
+<use "13-effects-coding-categorical-predictors_files/figure-latex/""unnamed-chu
+nk-2-1".pdf>
 [1
 
 ]
 
-Package xcolor Warning: Incompatible color definition on input line 276.
+Package xcolor Warning: Incompatible color definition on input line 312.
 
 
-Package xcolor Warning: Incompatible color definition on input line 286.
+Package xcolor Warning: Incompatible color definition on input line 320.
 
 
-Package xcolor Warning: Incompatible color definition on input line 286.
+Package xcolor Warning: Incompatible color definition on input line 320.
 
+File: "13-effects-coding-categorical-predictors_files/figure-latex/""unnamed-ch
+unk-4-1".pdf Graphic file (type pdf)
+<use "13-effects-coding-categorical-predictors_files/figure-latex/""unnamed-chu
+nk-4-1".pdf>
 [2]
 
-Package xcolor Warning: Incompatible color definition on input line 316.
+Package xcolor Warning: Incompatible color definition on input line 352.
 
 
-Package xcolor Warning: Incompatible color definition on input line 323.
+Package xcolor Warning: Incompatible color definition on input line 362.
 
 
-Package xcolor Warning: Incompatible color definition on input line 323.
+Package xcolor Warning: Incompatible color definition on input line 362.
 
 
-Package xcolor Warning: Incompatible color definition on input line 344.
+Package xcolor Warning: Incompatible color definition on input line 379.
 
 
-Package xcolor Warning: Incompatible color definition on input line 350.
+Package xcolor Warning: Incompatible color definition on input line 384.
 
 
-Package xcolor Warning: Incompatible color definition on input line 350.
-
-
-Package xcolor Warning: Incompatible color definition on input line 360.
-
-
-Package xcolor Warning: Incompatible color definition on input line 364.
-
-
-Package xcolor Warning: Incompatible color definition on input line 364.
+Package xcolor Warning: Incompatible color definition on input line 384.
 
 [3]
-LaTeX Font Info:    Font shape `TU/Sabon(0)/bx/n' will be
-(Font)              scaled to size 11.38458pt on input line 397.
 
-Package xcolor Warning: Incompatible color definition on input line 402.
+Package xcolor Warning: Incompatible color definition on input line 420.
 
 
-Package xcolor Warning: Incompatible color definition on input line 406.
+Package xcolor Warning: Incompatible color definition on input line 428.
 
 
-Package xcolor Warning: Incompatible color definition on input line 406.
+Package xcolor Warning: Incompatible color definition on input line 428.
+
+
+Package xcolor Warning: Incompatible color definition on input line 438.
+
+
+Package xcolor Warning: Incompatible color definition on input line 443.
+
+
+Package xcolor Warning: Incompatible color definition on input line 443.
 
 [4]
 
-Package xcolor Warning: Incompatible color definition on input line 483.
+Package xcolor Warning: Incompatible color definition on input line 479.
 
 
-Package xcolor Warning: Incompatible color definition on input line 489.
+Package xcolor Warning: Incompatible color definition on input line 487.
 
 
-Package xcolor Warning: Incompatible color definition on input line 489.
+Package xcolor Warning: Incompatible color definition on input line 487.
 
 
-Package xcolor Warning: Incompatible color definition on input line 507.
+Package xcolor Warning: Incompatible color definition on input line 497.
 
 
-Package xcolor Warning: Incompatible color definition on input line 525.
+Package xcolor Warning: Incompatible color definition on input line 502.
 
 
-Package xcolor Warning: Incompatible color definition on input line 525.
+Package xcolor Warning: Incompatible color definition on input line 502.
 
-File: 12-coding-a-categorical-predictor_files/figure-latex/unnamed-chunk-11-1.p
-df Graphic file (type pdf)
-<use 12-coding-a-categorical-predictor_files/figure-latex/unnamed-chunk-11-1.pd
-f>
-File: 12-coding-a-categorical-predictor_files/figure-latex/unnamed-chunk-11-2.p
-df Graphic file (type pdf)
-<use 12-coding-a-categorical-predictor_files/figure-latex/unnamed-chunk-11-2.pd
-f>
+
+Package xcolor Warning: Incompatible color definition on input line 543.
+
 [5]
-LaTeX Font Info:    Font shape `TU/Sabon(0)/bx/n' will be
-(Font)              scaled to size 9.48715pt on input line 548.
 
 Package xcolor Warning: Incompatible color definition on input line 553.
 
 
-Package xcolor Warning: Incompatible color definition on input line 579.
+Package xcolor Warning: Incompatible color definition on input line 553.
 
 
-Package xcolor Warning: Incompatible color definition on input line 579.
+Package xcolor Warning: Incompatible color definition on input line 572.
 
 
-Package xcolor Warning: Incompatible color definition on input line 579.
+Package xcolor Warning: Incompatible color definition on input line 580.
+
+
+Package xcolor Warning: Incompatible color definition on input line 580.
+
+
+Package xcolor Warning: Incompatible color definition on input line 590.
+
+
+Package xcolor Warning: Incompatible color definition on input line 595.
+
+
+Package xcolor Warning: Incompatible color definition on input line 595.
 
 [6]
 
-Package xcolor Warning: Incompatible color definition on input line 579.
+Package xcolor Warning: Incompatible color definition on input line 640.
 
 
-Package xcolor Warning: Incompatible color definition on input line 579.
-
-File: 12-coding-a-categorical-predictor_files/figure-latex/unnamed-chunk-12-1.p
-df Graphic file (type pdf)
-<use 12-coding-a-categorical-predictor_files/figure-latex/unnamed-chunk-12-1.pd
-f>
-File: 12-coding-a-categorical-predictor_files/figure-latex/unnamed-chunk-12-2.p
-df Graphic file (type pdf)
-<use 12-coding-a-categorical-predictor_files/figure-latex/unnamed-chunk-12-2.pd
-f>
-
-Package xcolor Warning: Incompatible color definition on input line 609.
+Package xcolor Warning: Incompatible color definition on input line 647.
 
 
-Package xcolor Warning: Incompatible color definition on input line 616.
+Package xcolor Warning: Incompatible color definition on input line 647.
 
-
-Package xcolor Warning: Incompatible color definition on input line 616.
-
+LaTeX Font Info:    Font shape `TU/Sabon(0)/m/n' will be
+(Font)              scaled to size 13.87462pt on input line 686.
+LaTeX Font Info:    Font shape `TU/Sabon(0)/bx/n' will be
+(Font)              scaled to size 13.66148pt on input line 686.
 [7]
 
-Package xcolor Warning: Incompatible color definition on input line 642.
-
-
-Package xcolor Warning: Incompatible color definition on input line 649.
-
-
-Package xcolor Warning: Incompatible color definition on input line 649.
-
-
-Package xcolor Warning: Incompatible color definition on input line 663.
-
-
-Package xcolor Warning: Incompatible color definition on input line 668.
-
-
-Package xcolor Warning: Incompatible color definition on input line 668.
+Package hyperref Warning: Difference (2) between bookmark levels is greater 
+(hyperref)                than one, level fixed on input line 736.
 
 [8]
 
-Package xcolor Warning: Incompatible color definition on input line 742.
+Package xcolor Warning: Incompatible color definition on input line 793.
 
 
-Package xcolor Warning: Incompatible color definition on input line 747.
+Package xcolor Warning: Incompatible color definition on input line 801.
 
 
-Package xcolor Warning: Incompatible color definition on input line 747.
+Package xcolor Warning: Incompatible color definition on input line 801.
 
 
-Package xcolor Warning: Incompatible color definition on input line 753.
+Package xcolor Warning: Incompatible color definition on input line 811.
 
 
-Package xcolor Warning: Incompatible color definition on input line 758.
+Package xcolor Warning: Incompatible color definition on input line 816.
 
 
-Package xcolor Warning: Incompatible color definition on input line 758.
-
-
-Package xcolor Warning: Incompatible color definition on input line 764.
-
-
-Package xcolor Warning: Incompatible color definition on input line 769.
-
-
-Package xcolor Warning: Incompatible color definition on input line 769.
-
-
-Package xcolor Warning: Incompatible color definition on input line 775.
-
-
-Package xcolor Warning: Incompatible color definition on input line 780.
-
-
-Package xcolor Warning: Incompatible color definition on input line 780.
-
-
-Package xcolor Warning: Incompatible color definition on input line 819.
+Package xcolor Warning: Incompatible color definition on input line 816.
 
 [9]
-
-Package xcolor Warning: Incompatible color definition on input line 826.
-
-
-Package xcolor Warning: Incompatible color definition on input line 826.
-
-
-Package xcolor Warning: Incompatible color definition on input line 860.
-
-
-Package xcolor Warning: Incompatible color definition on input line 867.
-
-
-Package xcolor Warning: Incompatible color definition on input line 867.
-
-
-Package xcolor Warning: Incompatible color definition on input line 881.
-
-
-Package xcolor Warning: Incompatible color definition on input line 886.
-
-
-Package xcolor Warning: Incompatible color definition on input line 886.
-
-
-Package xcolor Warning: Incompatible color definition on input line 921.
-
-[10]
-
-Package xcolor Warning: Incompatible color definition on input line 927.
-
-
-Package xcolor Warning: Incompatible color definition on input line 927.
-
-
-Package xcolor Warning: Incompatible color definition on input line 942.
-
-
-Package xcolor Warning: Incompatible color definition on input line 961.
-
-
-Package xcolor Warning: Incompatible color definition on input line 961.
-
-File: 12-coding-a-categorical-predictor_files/figure-latex/unnamed-chunk-22-1.p
-df Graphic file (type pdf)
-<use 12-coding-a-categorical-predictor_files/figure-latex/unnamed-chunk-22-1.pd
-f>
-File: 12-coding-a-categorical-predictor_files/figure-latex/unnamed-chunk-22-2.p
-df Graphic file (type pdf)
-<use 12-coding-a-categorical-predictor_files/figure-latex/unnamed-chunk-22-2.pd
-f>
-[11] [12] [13]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1041.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1041.
-(./12-coding-a-categorical-predictor.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 1041.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1041.
-
-Package rerunfilecheck Info: File `12-coding-a-categorical-predictor.out' has n
-ot changed.
-(rerunfilecheck)             Checksum: 5309463CC63B057A3A97DC41C4D03E4F.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 842.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 842.
+(./13-effects-coding-categorical-predictors.aux)
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 842.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 842.
+Package rerunfilecheck Info: File `13-effects-coding-categorical-predictors.out
+' has not changed.
+(rerunfilecheck)             Checksum: 8702665FEBD121B0B28ACECBF8FF2AE0.
  ) 
 Here is how much of TeX's memory you used:
- 38591 strings out of 494894
- 756279 string characters out of 6173843
- 882729 words of memory out of 5000000
- 41944 multiletter control sequences out of 15000+600000
- 545299 words of font info for 72 fonts, out of 8000000 for 9000
+ 39000 strings out of 494467
+ 758335 string characters out of 6172701
+ 896479 words of memory out of 5000000
+ 42768 multiletter control sequences out of 15000+600000
+ 562171 words of font info for 89 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 72i,11n,116p,830b,429s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 78i,18n,116p,837b,438s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on 12-coding-a-categorical-predictor.pdf (13 pages).
+Output written on 13-effects-coding-categorical-predictors.pdf (9 pages).

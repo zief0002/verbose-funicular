@@ -132,7 +132,7 @@ Below is the tenative schedule for the class. The dates are subject to change at
   </a>
 </td>
 <td style="vertical-align:middle;" rowspan="2">Simple Linear Regression: Description<br />
-  <span style="margin-left:5px; color:#5a067d;font-size:12px;">*[Notes and script file updated 09-20-2019]*</span></td>
+  <span style="margin-left:5px; color:#5a067d;font-size:12px;">*[Notes and script file updated 09-24-2019]*</span></td>
 <td align="center" style="vertical-align:middle;" rowspan="2">
   <a href="https://github.com/zief0002/epsy-8251/raw/master/notes/04-simple-regression-description.pdf">
     <span class="fa fa-file-pdf" style="color: #ff2600; font-size: 20px;"></span>
@@ -151,26 +151,36 @@ Below is the tenative schedule for the class. The dates are subject to change at
 <td>Sept. 23</td>
 </tr>
 
+<!-- LEAST SQUARES ESTIMATION -->
+
 <tr>
 <td align="center" style="vertical-align:middle;"></td>
 <td>Sept. 24</td>
 <td>Sept. 25</td>
-<td align="center" style="vertical-align:middle;">
+<td align="center" style="vertical-align:middle;" rowspan="2">
   <span class="fa fa-book" style="color: #f1f1f1; font-size: 20px;"></span>
 </td>
-<td>Least Squares Estimation<br />
-  <span style="margin-left:5px; color:#5a067d;font-size:12px;">*[Script file updated 09-24-2019]*</span></td>
-<td align="center" style="vertical-align:middle;">
+<td style="vertical-align:middle;" rowspan="2">Least Squares Estimation<br />
+  <span style="margin-left:5px; color:#5a067d;font-size:12px;">*[Notes and Script file updated 09-24-2019]*</span></td>
+<td align="center" style="vertical-align:middle;" rowspan="2">
   <a href="https://github.com/zief0002/epsy-8251/raw/master/notes/05-least-squares-estimation.pdf">
     <span class="fa fa-file-pdf" style="color: #ff2600; font-size: 20px;"></span>
   </a>
 </td>
-<td align="center" style="vertical-align:middle;">
+<td align="center" style="vertical-align:middle;" rowspan="2">
   <a href="https://github.com/zief0002/epsy-8251/raw/master/scripts/05-least-squares-estimation.R">
     <span class="fab fa-r-project" style="color: #ff2600; font-size: 20px;"></span>
   </a>
 </td>
 </tr>
+
+<tr>
+<td align="center" style="vertical-align:middle;"></td>
+<td>Sept. 26</td>
+<td>Sept. 30</td>
+</tr>
+
+<!-- CORRELATION & STANDARDIZED REGRESSION -->
 
 <tr>
 <td align="center" style="vertical-align:middle;"></td>
@@ -230,11 +240,16 @@ Below is the tenative schedule for the class. The dates are subject to change at
 </td>
 </tr>
 
+
 <tr>
 <td align="center" style="vertical-align:middle;"></td>
 <td>Oct. 08</td>
 <td>Oct. 09</td>
 </tr>
+
+
+<!-- MODEL-LEVEL INFERENCE -->
+
 
 <tr>
 <td align="center" style="vertical-align:middle;"></td>
@@ -256,17 +271,21 @@ Below is the tenative schedule for the class. The dates are subject to change at
 </td>
 </tr>
 
+
 <tr>
 <td align="center" style="vertical-align:middle;"></td>
 <td>Oct. 15</td>
-<td>Oct. 16</td>
+<td>Oct. 26</td>
 </tr>
 
+
 <!-- Unit 04: Multiple Linear Regression and Statistical Control -->
+
 
 <tr>
 <td colspan="7"><b>Unit 04: Multiple Linear Regression and Statistical Control</b></td>
 </tr>
+
 
 <tr>
 <td align="center" style="vertical-align:middle;"></td>
@@ -295,6 +314,8 @@ Below is the tenative schedule for the class. The dates are subject to change at
 <td>Oct. 22</td>
 <td>Oct. 23</td>
 </tr>
+
+<!-- UNDERSTANDING STATISTICAL CONTROL -->
 
 <tr>
 <td align="center" style="vertical-align:middle;"></td>
@@ -357,6 +378,75 @@ Below is the tenative schedule for the class. The dates are subject to change at
 <td>Nov. 05</td>
 <td>Nov. 06</td>
 </tr>
+
+
+<!-- Unit 06: Categorical Predictors -->
+
+<tr>
+<td colspan="7"><b>Unit 06: Categorical Predictors</b></td>
+</tr>
+
+
+<!-- CODING A CATEGORICAL PREDICTOR -->
+
+<tr>
+<td align="center" style="vertical-align:middle;"></td>
+<td>Nov. 07</td>
+<td>Nov. 11</td>
+<td align="center" style="vertical-align:middle;" rowspan="2">
+  <a href="preparation.html#dummy">
+    <span class="fa fa-book" style="color: #ff2600; font-size: 20px;"></span>
+  </a>
+</td>
+<td style="vertical-align:middle;" rowspan="2">Dummy Coding Categorical Predictors</td>
+<td align="center" style="vertical-align:middle;" rowspan="2">
+  <a href="https://github.com/zief0002/epsy-8251/raw/master/notes/12-dummy-coding-categorical-predictors.pdf">
+    <span class="fa fa-file-pdf" style="color: #ff2600; font-size: 20px;"></span>
+  </a>
+</td>
+<td align="center" style="vertical-align:middle;" rowspan="2">
+  <a href="https://github.com/zief0002/epsy-8251/raw/master/scripts/12-dummy-coding-categorical-predictors.R">
+    <span class="fab fa-r-project" style="color: #ff2600; font-size: 20px;"></span>
+  </a>
+</td>
+</tr>
+
+<tr>
+<td align="center" style="vertical-align:middle;"></td>
+<td>Nov. 12</td>
+<td>Nov. 13</td>
+</tr>
+
+
+<tr>
+<td align="center" style="vertical-align:middle;"></td>
+<td>Nov. 14</td>
+<td>Nov. 18</td>
+<td align="center" style="vertical-align:middle;">
+  <a href="preparation.html#effect">
+    <span class="fa fa-book" style="color: #ff2600; font-size: 20px;"></span>
+  </a>
+</td>
+<td style="vertical-align:middle;">Effects Coding Categorical Predictors</td>
+<td align="center" style="vertical-align:middle;">
+  <a href="https://github.com/zief0002/epsy-8251/raw/master/notes/13-effects-coding-categorical-predictors.pdf">
+    <span class="fa fa-file-pdf" style="color: #ff2600; font-size: 20px;"></span>
+  </a>
+</td>
+<td align="center" style="vertical-align:middle;">
+  <a href="https://github.com/zief0002/epsy-8251/raw/master/scripts/13-effects-coding-categorical-predictors.R">
+    <span class="fab fa-r-project" style="color: #ff2600; font-size: 20px;"></span>
+  </a>
+</td>
+</tr>
+
+
+
+
+
+
+
+
 
 </tbody>
 </table>    

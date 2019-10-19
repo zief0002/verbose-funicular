@@ -167,7 +167,7 @@ The marginal distributions of GPA and time spent on homework are both unimodal. 
 
 \newpage
 
-We will also fit a model by regressing income on education level and storing those results in an object called `lm.1`.
+We will also fit a model by regressing GPA on time spent on homework and storing those results in an object called `lm.1`.
 
 ```{r}
 # Fit regression model
@@ -178,7 +178,7 @@ lm.1
 The fitted equation is:
 
 $$
-\hat{\mathrm{GPA}} = 74.29 + 1.21(\mathrm{Time~spent~on~homework}),
+\hat{\mathrm{GPA}_i} = 74.29 + 1.21(\mathrm{Time~spent~on~homework}_i),
 $$
 
 Summarizing this,
@@ -189,7 +189,7 @@ This model estimated mean GPA for all 8th-grade students who spend 0 hours a wee
 
 ## Statistical Inference
 
-What if we want to understand the relationship between education level and income for a larger population of 8th-grade students, say all of them in the district? The problem is that if we had drawn a different sample of $n=100$ 8th-grade students, all the regression estimates ($\hat\beta_0, \hat\beta_1,$ and $R^2$) would be different than the ones we obtained from our sample. This makes it difficult to say, for example, how does the conditional mean GPA differs for students with differing amounts of time spent on homework. In our observed sample, $\hat\beta_1$ was 1.21. But, had we sampled different students, we might have found that $\hat\beta_1$ was 2.03. And a different random sample of employees we might have produced a $\hat\beta_1$ of 0.96.
+What if we want to understand the relationship between time spent on homework and GPA for a larger population of 8th-grade students, say all of them in the district? The problem is that if we had drawn a different sample of $n=100$ 8th-grade students, all the regression estimates ($\hat\beta_0, \hat\beta_1,$ and $R^2$) would be different than the ones we obtained from our sample. This makes it difficult to say, for example, how does the conditional mean GPA differs for students with differing amounts of time spent on homework. In our observed sample, $\hat\beta_1$ was 1.21. But, had we sampled different students, we might have found that $\hat\beta_1$ was 2.03. And a different random sample of employees we might have produced a $\hat\beta_1$ of 0.96.
 
 This variation in the estimates arises because of the random nature of the sampling. One of the key findings in statistical theory is that the amount of variation in estimates under random sampling is completely predictable (this variation is called *sampling error*). Being able to quantify the sampling error allows us to provide a more informative answer to the research question. For example, it turns out that based on the quantification of sampling error in our example, we believe that the actual $\beta_1$ is between 0.51 and 1.92.
 
@@ -575,7 +575,7 @@ The remainder of the syntax is making the plot pretty. The `scale_fill_gradient(
 
 There are several variations of this plot. For example, below I omit the intercept from this plot. To do this, I use the `filter()` function to omit the row in the `tidy()` output that includes the intercept. I also change the limits on the *x*-axis to better fit the homework interval. Here I also dropped the `fill = stat(ndensity)` from the aesthetic mapping in the `stat_confidence_density()` layer, which gives a greyscale plot.
 
-```{r fig.width=6, fig.height = 3, out.width='4in', fig.cap='Coefficient plot for the model regressing income on education. Uncertainty based on the 95\\% confidence interval is displayed. Note that the intercept has been omitted.', fig.pos='H', echo=TRUE}
+```{r fig.width=6, fig.height = 3, out.width='4in', fig.cap='Coefficient plot for the model regressing GPA on time spent on homework. Uncertainty based on the 95\\% confidence interval is displayed. Note that the intercept has been omitted.', fig.pos='H', echo=TRUE}
 # Omit intercept
 my_coefs = tidy(lm.1) %>%
   filter(term != "(Intercept)")

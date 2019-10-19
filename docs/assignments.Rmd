@@ -46,8 +46,8 @@ Below are the due dates for the assignments, as well as links to the RMD and PDF
 
 <tr>
 <td>Assignment \#3: *Correlation and Standardized Regression*</td>
-<td>Oct. 08</td>
-<td>Oct. 09</td>
+<td>Oct. 10</td>
+<td>Oct. 14</td>
 <td align="center" style="vertical-align:middle;">
   <a href="https://github.com/zief0002/epsy-8251/raw/master/assignments/assignment-03-correlation-and-standardized-regression.pdf">
     <span class="fa fa-file-pdf" style="color: #ff2600; font-size: 20px;"></span>
@@ -68,27 +68,27 @@ Below are the due dates for the assignments, as well as links to the RMD and PDF
 </td>
 </tr>
 
-<!-- <tr> -->
-<!-- <td>Assignment \#5: *Introduction to Multiple Regression*</td> -->
-<!-- <td>Oct. 31</td> -->
-<!-- <td>Nov. 04</td> -->
-<!-- <td align="center" style="vertical-align:middle;"> -->
-<!--   <a href="https://github.com/zief0002/epsy-8251/raw/master/assignments/assignment-05-introduction-to-multiple-regression.pdf"> -->
-<!--     <span class="fa fa-file-pdf" style="color: #ff2600; font-size: 20px;"></span> -->
-<!--   </a> -->
-<!-- </td> -->
-<!-- </tr> -->
+<tr>
+<td>Assignment \#5: *Introduction to Multiple Regression*</td>
+<td>Oct. 31</td>
+<td>Nov. 04</td>
+<td align="center" style="vertical-align:middle;">
+  <a href="https://github.com/zief0002/epsy-8251/raw/master/assignments/assignment-05-introduction-to-multiple-regression.pdf">
+    <span class="fa fa-file-pdf" style="color: #ff2600; font-size: 20px;"></span>
+  </a>
+</td>
+</tr>
 
-<!-- <tr> -->
-<!-- <td>Assignment \#6: *Regression Assumptions*</td> -->
-<!-- <td>Nov. 12</td> -->
-<!-- <td>Nov. 13</td> -->
-<!-- <td align="center" style="vertical-align:middle;"> -->
-<!--   <a href="https://github.com/zief0002/epsy-8251/raw/master/assignments/assignment-06-regression-assumptions.pdf"> -->
-<!--     <span class="fa fa-file-pdf" style="color: #ff2600; font-size: 20px;"></span> -->
-<!--   </a> -->
-<!-- </td> -->
-<!-- </tr> -->
+<tr>
+<td>Assignment \#6: *Regression Assumptions*</td>
+<td>Nov. 12</td>
+<td>Nov. 13</td>
+<td align="center" style="vertical-align:middle;">
+  <a href="https://github.com/zief0002/epsy-8251/raw/master/assignments/assignment-06-regression-assumptions.pdf">
+    <span class="fa fa-file-pdf" style="color: #ff2600; font-size: 20px;"></span>
+  </a>
+</td>
+</tr>
 
 
 

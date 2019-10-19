@@ -177,11 +177,17 @@ Here are two videos to watch that will help you learn ggplot2:
 
 # Unit 06: Categorical Predictors
 
-## Coding a Categorical Predictor
+## Dummy Coding a Categorical Predictor {#dummy}
 
 **Required**
 
 - [What is Dummy Coding?](https://stats.idre.ucla.edu/other/mult-pkg/faq/general/faqwhat-is-dummy-coding/) [web article]
+
+
+## Effect Coding a Categorical Predictor {#effect}
+
+**Required**
+
 - [What is Effect Coding?](https://stats.idre.ucla.edu/other/mult-pkg/faq/general/faqwhat-is-effect-coding/) [web article]
 
 ---

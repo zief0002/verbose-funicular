@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019) (preloaded format=xelatex 2019.7.5)  9 SEP 2019 08:08
+This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019) (preloaded format=xelatex 2019.9.17)  8 OCT 2019 10:21
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -135,21 +135,21 @@ Already applied: [0000/00/00] Old fixltx2e package on input line 53.
 Package: mathspec 2016/12/22 v0.2b LaTeX Package (Mathematics font selection fo
 r XeLaTeX)
 (/Users/zief0002/Library/TinyTeX/texmf-dist/tex/latex/etoolbox/etoolbox.sty
-Package: etoolbox 2018/08/19 v2.5f e-TeX tools for LaTeX (JAW)
+Package: etoolbox 2019/09/09 v2.5g e-TeX tools for LaTeX (JAW)
 \etb@tempcnta=\count100
 ) (/Users/zief0002/Library/TinyTeX/texmf-dist/tex/latex/fontspec/fontspec.sty
 (/Users/zief0002/Library/TinyTeX/texmf-dist/tex/latex/l3packages/xparse/xparse.
 sty (/Users/zief0002/Library/TinyTeX/texmf-dist/tex/latex/l3kernel/expl3.sty
-Package: expl3 2019-05-09 L3 programming layer (loader) 
+Package: expl3 2019-09-08 L3 programming layer (loader) 
 (/Users/zief0002/Library/TinyTeX/texmf-dist/tex/latex/l3kernel/expl3-code.tex
-Package: expl3 2019-05-09 L3 programming layer (code)
+Package: expl3 2019-09-08 L3 programming layer (code)
 \c_max_int=\count101
 \l_tmpa_int=\count102
 \l_tmpb_int=\count103
 \g_tmpa_int=\count104
 \g_tmpb_int=\count105
 \g__kernel_prg_map_int=\count106
-\c__ior_term_ior=\count107
+\c__ior_term_noprompt_ior=\count107
 \c_log_iow=\count108
 \l_iow_line_count_int=\count109
 \l__iow_line_target_int=\count110
@@ -199,49 +199,50 @@ Package: expl3 2019-05-09 L3 programming layer (code)
 \l__sort_A_int=\count135
 \l__sort_B_int=\count136
 \l__sort_C_int=\count137
-\l__tl_analysis_normal_int=\count138
-\l__tl_analysis_index_int=\count139
-\l__tl_analysis_nesting_int=\count140
-\l__tl_analysis_type_int=\count141
-\l__regex_internal_a_int=\count142
-\l__regex_internal_b_int=\count143
-\l__regex_internal_c_int=\count144
-\l__regex_balance_int=\count145
-\l__regex_group_level_int=\count146
-\l__regex_mode_int=\count147
-\c__regex_cs_in_class_mode_int=\count148
-\c__regex_cs_mode_int=\count149
-\l__regex_catcodes_int=\count150
-\l__regex_default_catcodes_int=\count151
-\c__regex_catcode_L_int=\count152
-\c__regex_catcode_O_int=\count153
-\c__regex_catcode_A_int=\count154
-\c__regex_all_catcodes_int=\count155
-\l__regex_show_lines_int=\count156
-\l__regex_min_state_int=\count157
-\l__regex_max_state_int=\count158
-\l__regex_left_state_int=\count159
-\l__regex_right_state_int=\count160
-\l__regex_capturing_group_int=\count161
-\l__regex_min_pos_int=\count162
-\l__regex_max_pos_int=\count163
-\l__regex_curr_pos_int=\count164
-\l__regex_start_pos_int=\count165
-\l__regex_success_pos_int=\count166
-\l__regex_curr_char_int=\count167
-\l__regex_curr_catcode_int=\count168
-\l__regex_last_char_int=\count169
-\l__regex_case_changed_char_int=\count170
-\l__regex_curr_state_int=\count171
-\l__regex_step_int=\count172
-\l__regex_min_active_int=\count173
-\l__regex_max_active_int=\count174
-\l__regex_replacement_csnames_int=\count175
-\l__regex_match_count_int=\count176
-\l__regex_min_submatch_int=\count177
-\l__regex_submatch_int=\count178
-\l__regex_zeroth_submatch_int=\count179
-\g__regex_trace_regex_int=\count180
+\l__str_internal_int=\count138
+\l__tl_analysis_normal_int=\count139
+\l__tl_analysis_index_int=\count140
+\l__tl_analysis_nesting_int=\count141
+\l__tl_analysis_type_int=\count142
+\l__regex_internal_a_int=\count143
+\l__regex_internal_b_int=\count144
+\l__regex_internal_c_int=\count145
+\l__regex_balance_int=\count146
+\l__regex_group_level_int=\count147
+\l__regex_mode_int=\count148
+\c__regex_cs_in_class_mode_int=\count149
+\c__regex_cs_mode_int=\count150
+\l__regex_catcodes_int=\count151
+\l__regex_default_catcodes_int=\count152
+\c__regex_catcode_L_int=\count153
+\c__regex_catcode_O_int=\count154
+\c__regex_catcode_A_int=\count155
+\c__regex_all_catcodes_int=\count156
+\l__regex_show_lines_int=\count157
+\l__regex_min_state_int=\count158
+\l__regex_max_state_int=\count159
+\l__regex_left_state_int=\count160
+\l__regex_right_state_int=\count161
+\l__regex_capturing_group_int=\count162
+\l__regex_min_pos_int=\count163
+\l__regex_max_pos_int=\count164
+\l__regex_curr_pos_int=\count165
+\l__regex_start_pos_int=\count166
+\l__regex_success_pos_int=\count167
+\l__regex_curr_char_int=\count168
+\l__regex_curr_catcode_int=\count169
+\l__regex_last_char_int=\count170
+\l__regex_case_changed_char_int=\count171
+\l__regex_curr_state_int=\count172
+\l__regex_step_int=\count173
+\l__regex_min_active_int=\count174
+\l__regex_max_active_int=\count175
+\l__regex_replacement_csnames_int=\count176
+\l__regex_match_count_int=\count177
+\l__regex_min_submatch_int=\count178
+\l__regex_submatch_int=\count179
+\l__regex_zeroth_submatch_int=\count180
+\g__regex_trace_regex_int=\count181
 \c_empty_box=\box29
 \l_tmpa_box=\box30
 \l_tmpb_box=\box31
@@ -285,19 +286,19 @@ Package: expl3 2019-05-09 L3 programming layer (code)
 \l__coffin_display_offset_dim=\dimen141
 \l__coffin_display_x_dim=\dimen142
 \l__coffin_display_y_dim=\dimen143
-\g__file_internal_ior=\read1
-\l__seq_internal_a_int=\count181
-\l__seq_internal_b_int=\count182
-\c__deprecation_minus_one=\count183
-) (/Users/zief0002/Library/TinyTeX/texmf-dist/tex/latex/l3kernel/l3xdvipdfmx.de
-f
-File: l3xdvipdfmx.def 2019-04-06 v L3 Experimental driver: xdvipdfmx
-\l__driver_internal_box=\box47
-\g__driver_graphics_int=\count184
-\g__driver_pdf_object_int=\count185
-\g__driver_pdf_annotation_int=\count186
+\g__char_data_ior=\read1
+\l__seq_internal_a_int=\count182
+\l__seq_internal_b_int=\count183
+)
+(/Users/zief0002/Library/TinyTeX/texmf-dist/tex/latex/l3backend/l3backend-xdvip
+dfmx.def
+File: l3backend-xdvipdfmx.def 2019-04-06 v L3 backend support: xdvipdfmx
+\g__graphics_track_int=\count184
+\l__pdf_internal_box=\box47
+\g__pdf_backend_object_int=\count185
+\g__pdf_backend_annotation_int=\count186
 ))
-Package: xparse 2019-05-03 L3 Experimental document command parser
+Package: xparse 2019-05-28 L3 Experimental document command parser
 \l__xparse_current_arg_int=\count187
 \g__xparse_grabber_int=\count188
 \l__xparse_m_args_int=\count189
@@ -592,7 +593,7 @@ Package ifvtex Info: VTeX not detected.
 \Gm@layoutvoffset=\dimen155
 \Gm@dimlist=\toks23
 ) (/Users/zief0002/Library/TinyTeX/texmf-dist/tex/latex/hyperref/hyperref.sty
-Package: hyperref 2018/11/30 v6.88e Hypertext links for LaTeX
+Package: hyperref 2019/09/12 v6.88i Hypertext links for LaTeX
 
 (/Users/zief0002/Library/TinyTeX/texmf-dist/tex/generic/oberdiek/hobsub-hyperre
 f.sty
@@ -612,7 +613,7 @@ Package hobsub Info: Skipping package `ifpdf' (already loaded).
 Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
 Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
 Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
-Package: pdftexcmds 2018/09/10 v0.29 Utility functions of pdfTeX for LuaTeX (HO
+Package: pdftexcmds 2019/07/25 v0.30 Utility functions of pdfTeX for LuaTeX (HO
 )
 Package pdftexcmds Info: LuaTeX not detected.
 Package pdftexcmds Info: pdfTeX >= 1.30 not detected.
@@ -642,47 +643,47 @@ Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
 \Hy@linkcounter=\count277
 \Hy@pagecounter=\count278
 (/Users/zief0002/Library/TinyTeX/texmf-dist/tex/latex/hyperref/pd1enc.def
-File: pd1enc.def 2018/11/30 v6.88e Hyperref: PDFDocEncoding definition (HO)
+File: pd1enc.def 2019/09/12 v6.88i Hyperref: PDFDocEncoding definition (HO)
 )
 \Hy@SavedSpaceFactor=\count279
 (/Users/zief0002/Library/TinyTeX/texmf-dist/tex/latex/latexconfig/hyperref.cfg
 File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
 )
-Package hyperref Info: Hyper figures OFF on input line 4519.
-Package hyperref Info: Link nesting OFF on input line 4524.
-Package hyperref Info: Hyper index ON on input line 4527.
-Package hyperref Info: Plain pages OFF on input line 4534.
-Package hyperref Info: Backreferencing OFF on input line 4539.
+Package hyperref Info: Hyper figures OFF on input line 4550.
+Package hyperref Info: Link nesting OFF on input line 4555.
+Package hyperref Info: Hyper index ON on input line 4558.
+Package hyperref Info: Plain pages OFF on input line 4565.
+Package hyperref Info: Backreferencing OFF on input line 4570.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
-Package hyperref Info: Bookmarks ON on input line 4772.
+Package hyperref Info: Bookmarks ON on input line 4803.
 \c@Hy@tempcnt=\count280
 (/Users/zief0002/Library/TinyTeX/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip17
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
-LaTeX Info: Redefining \url on input line 5125.
+LaTeX Info: Redefining \url on input line 5156.
 \XeTeXLinkMargin=\dimen157
 \Fld@menulength=\count281
 \Field@Width=\dimen158
 \Fld@charsize=\dimen159
-Package hyperref Info: Hyper figures OFF on input line 6380.
-Package hyperref Info: Link nesting OFF on input line 6385.
-Package hyperref Info: Hyper index ON on input line 6388.
-Package hyperref Info: backreferencing OFF on input line 6395.
-Package hyperref Info: Link coloring OFF on input line 6400.
-Package hyperref Info: Link coloring with OCG OFF on input line 6405.
-Package hyperref Info: PDF/A mode OFF on input line 6410.
-LaTeX Info: Redefining \ref on input line 6450.
-LaTeX Info: Redefining \pageref on input line 6454.
+Package hyperref Info: Hyper figures OFF on input line 6411.
+Package hyperref Info: Link nesting OFF on input line 6416.
+Package hyperref Info: Hyper index ON on input line 6419.
+Package hyperref Info: backreferencing OFF on input line 6426.
+Package hyperref Info: Link coloring OFF on input line 6431.
+Package hyperref Info: Link coloring with OCG OFF on input line 6436.
+Package hyperref Info: PDF/A mode OFF on input line 6441.
+LaTeX Info: Redefining \ref on input line 6481.
+LaTeX Info: Redefining \pageref on input line 6485.
 \Hy@abspage=\count282
 \c@Item=\count283
 \c@Hfootnote=\count284
 )
 Package hyperref Info: Driver (autodetected): hxetex.
 (/Users/zief0002/Library/TinyTeX/texmf-dist/tex/latex/hyperref/hxetex.def
-File: hxetex.def 2018/11/30 v6.88e Hyperref driver for XeTeX
+File: hxetex.def 2019/09/12 v6.88i Hyperref driver for XeTeX
 (/Users/zief0002/Library/TinyTeX/texmf-dist/tex/latex/hyperref/puenc.def
-File: puenc.def 2018/11/30 v6.88e Hyperref: PDF Unicode definition (HO)
+File: puenc.def 2019/09/12 v6.88i Hyperref: PDF Unicode definition (HO)
 ) (/Users/zief0002/Library/TinyTeX/texmf-dist/tex/generic/oberdiek/stringenc.st
 y
 Package: stringenc 2016/05/16 v1.11 Convert strings between diff. encodings (HO
@@ -753,9 +754,9 @@ Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
 Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
 ) (/Users/zief0002/Library/TinyTeX/texmf-dist/tex/latex/caption/caption.sty
-Package: caption 2018/10/06 v3.3-154 Customizing captions (AR)
+Package: caption 2019/09/01 v3.3d Customizing captions (AR)
 (/Users/zief0002/Library/TinyTeX/texmf-dist/tex/latex/caption/caption3.sty
-Package: caption3 2018/09/12 v1.8c caption3 kernel (AR)
+Package: caption3 2019/09/01 v1.8d caption3 kernel (AR)
 Package caption3 Info: TeX engine: e-TeX on input line 64.
 \captionmargin=\dimen162
 \captionmargin@=\dimen163
@@ -773,17 +774,17 @@ Package caption Info: hyperref package is loaded.
 y
 (/Users/zief0002/Library/TinyTeX/texmf-dist/tex/latex/l3packages/l3keys2e/l3key
 s2e.sty
-Package: l3keys2e 2019-05-03 LaTeX2e option processing using LaTeX3 keys
+Package: l3keys2e 2019-05-28 LaTeX2e option processing using LaTeX3 keys
 )
 (/Users/zief0002/Library/TinyTeX/texmf-dist/tex/latex/l3packages/xtemplate/xtem
 plate.sty
-Package: xtemplate 2019-05-03 L3 Experimental prototype document functions
+Package: xtemplate 2019-05-28 L3 Experimental prototype document functions
 \l__xtemplate_tmp_dim=\dimen169
 \l__xtemplate_tmp_int=\count291
 \l__xtemplate_tmp_muskip=\muskip18
 \l__xtemplate_tmp_skip=\skip56
 )
-Package: xfrac 2019-05-03 L3 Experimental split-level fractions
+Package: xfrac 2019-05-28 L3 Experimental split-level fractions
 \l__xfrac_slash_box=\box49
 \l__xfrac_tmp_box=\box50
 \l__xfrac_denominator_bot_sep_dim=\dimen170
@@ -1157,7 +1158,7 @@ Package microtype Warning: Unknown slot number of character
 \AtBeginShipoutBox=\box51
 Package hyperref Info: Link coloring ON on input line 100.
 (/Users/zief0002/Library/TinyTeX/texmf-dist/tex/latex/hyperref/nameref.sty
-Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
+Package: nameref 2019/09/12 v2.45 Cross-referencing by name of section
 
 (/Users/zief0002/Library/TinyTeX/texmf-dist/tex/generic/oberdiek/gettitlestring
 .sty
@@ -1212,12 +1213,12 @@ t' has not changed.
 (rerunfilecheck)             Checksum: 93B4CF5A2317786D331E5902495CBD31.
  ) 
 Here is how much of TeX's memory you used:
- 25149 strings out of 494894
- 475218 string characters out of 6176154
- 606908 words of memory out of 5000000
- 28877 multiletter control sequences out of 15000+600000
+ 25656 strings out of 494894
+ 486769 string characters out of 6173843
+ 618080 words of memory out of 5000000
+ 29389 multiletter control sequences out of 15000+600000
  532938 words of font info for 55 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 53i,5n,116p,838b,446s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 53i,5n,116p,838b,429s stack positions out of 5000i,500n,10000p,200000b,80000s
 
 Output written on assignment-04-simple-regression-inference.pdf (2 pages).

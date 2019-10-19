@@ -108,7 +108,7 @@ So if we restate the assumptions in terms of the residuals and the conditional d
 These assumptions can also be expressed mathematically as,
 
 $$
-\epsilon_{|X} \sim \mathrm{i.i.d~} \mathcal{N}\left(0, \sigma^2\right)
+\epsilon_{i|X} \sim \mathrm{i.i.d~} \mathcal{N}\left(0, \sigma^2\right)
 $$
 
 The "i.i.d" stands for *independent and identically distributed*. The mathematical expression says the residuals conditioned on $X$ are independent and identically normally distributed with a mean of 0 and some variance, represented as $\sigma^2$.
@@ -384,6 +384,22 @@ ggplot(data = extreme, aes(x = .fitted, y = .std.resid)) +
   ylab("Studentized residuals")
 ```
 
+## Regression Model
+
+To date we have been writing the regression model as a mathematical expression of the relationship between some outcome ($Y$) and a set of predictors ($X_1,X_2,\ldots,X_k$), namely as,
+
+$$
+Y_i = \beta_0 + \beta_1(X_{1i}) + \beta_2(X_{2i}) + \ldots + \beta_k(X_{ki}) + \epsilon_i
+$$
+
+This is partially correct. A statistical model needs to represent the data generating process, which also embodies the set of underlying assumptions. This implies that the regression model encompasses both the mathematical relationship and the underlying assumptions:
+
+$$
+\begin{gathered}
+Y_i = \beta_0 + \beta_1(X_{1i}) + \beta_2(X_{2i}) + \ldots + \beta_k(X_{ki}) + \epsilon_i \\
+\mathrm{where}~\quad\epsilon_{i|X} \overset{\mathrm{i.i.d~}}{\sim}  \mathcal{N}\left(0, \sigma^2\right)
+\end{gathered}
+$$
 
 
 <!-- # References -->

@@ -7,6 +7,7 @@
 <meta charset="utf-8" />
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
 
@@ -268,7 +269,6 @@ code {
 }
 img {
   max-width:100%;
-  height: auto;
 }
 .tabbed-pane {
   padding-top: 12px;
@@ -341,18 +341,6 @@ summary {
   display: none;
 }
 </style>
-
-<script>
-$(document).ready(function () {
-  window.buildTabsets("TOC");
-});
-
-$(document).ready(function () {
-  $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open')
-  });
-});
-</script>
 
 <!-- code folding -->
 
@@ -525,7 +513,7 @@ Sept. 18
 <a href="preparation.html#ols-description"> <span class="fa fa-book" style="color: #ff2600; font-size: 20px;"></span> </a>
 </td>
 <td style="vertical-align:middle;" rowspan="2">
-Simple Linear Regression: Description<br /> <span style="margin-left:20px; color:red;"><em>[Notes and script file updated 09-20-2019]</em></span>
+Simple Linear Regression: Description<br /> <span style="margin-left:5px; color:#5a067d;font-size:12px;"><em>[Notes and script file updated 09-24-2019]</em></span>
 </td>
 <td align="center" style="vertical-align:middle;" rowspan="2">
 <a href="https://github.com/zief0002/epsy-8251/raw/master/notes/04-simple-regression-description.pdf"> <span class="fa fa-file-pdf" style="color: #ff2600; font-size: 20px;"></span> </a>
@@ -544,6 +532,7 @@ Sept. 19
 Sept. 23
 </td>
 </tr>
+<!-- LEAST SQUARES ESTIMATION -->
 <tr>
 <td align="center" style="vertical-align:middle;">
 </td>
@@ -553,19 +542,30 @@ Sept. 24
 <td>
 Sept. 25
 </td>
-<td align="center" style="vertical-align:middle;">
+<td align="center" style="vertical-align:middle;" rowspan="2">
 <span class="fa fa-book" style="color: #f1f1f1; font-size: 20px;"></span>
 </td>
-<td>
-Least Squares Estimation
+<td style="vertical-align:middle;" rowspan="2">
+Least Squares Estimation<br /> <span style="margin-left:5px; color:#5a067d;font-size:12px;"><em>[Notes and Script file updated 09-24-2019]</em></span>
 </td>
-<td align="center" style="vertical-align:middle;">
+<td align="center" style="vertical-align:middle;" rowspan="2">
 <a href="https://github.com/zief0002/epsy-8251/raw/master/notes/05-least-squares-estimation.pdf"> <span class="fa fa-file-pdf" style="color: #ff2600; font-size: 20px;"></span> </a>
 </td>
-<td align="center" style="vertical-align:middle;">
+<td align="center" style="vertical-align:middle;" rowspan="2">
 <a href="https://github.com/zief0002/epsy-8251/raw/master/scripts/05-least-squares-estimation.R"> <span class="fab fa-r-project" style="color: #ff2600; font-size: 20px;"></span> </a>
 </td>
 </tr>
+<tr>
+<td align="center" style="vertical-align:middle;">
+</td>
+<td>
+Sept. 26
+</td>
+<td>
+Sept. 30
+</td>
+</tr>
+<!-- CORRELATION & STANDARDIZED REGRESSION -->
 <tr>
 <td align="center" style="vertical-align:middle;">
 </td>
@@ -636,6 +636,7 @@ Oct. 08
 Oct. 09
 </td>
 </tr>
+<!-- MODEL-LEVEL INFERENCE -->
 <tr>
 <td align="center" style="vertical-align:middle;">
 </td>
@@ -665,7 +666,7 @@ Model-Level Inference
 Oct. 15
 </td>
 <td>
-Oct. 16
+Oct. 26
 </td>
 </tr>
 <!-- Unit 04: Multiple Linear Regression and Statistical Control -->
@@ -706,6 +707,7 @@ Oct. 22
 Oct. 23
 </td>
 </tr>
+<!-- UNDERSTANDING STATISTICAL CONTROL -->
 <tr>
 <td align="center" style="vertical-align:middle;">
 </td>
@@ -776,6 +778,67 @@ Nov. 05
 Nov. 06
 </td>
 </tr>
+<!-- Unit 06: Categorical Predictors -->
+<tr>
+<td colspan="7">
+<b>Unit 06: Categorical Predictors</b>
+</td>
+</tr>
+<!-- CODING A CATEGORICAL PREDICTOR -->
+<tr>
+<td align="center" style="vertical-align:middle;">
+</td>
+<td>
+Nov. 07
+</td>
+<td>
+Nov. 11
+</td>
+<td align="center" style="vertical-align:middle;" rowspan="2">
+<span class="fa fa-book" style="color: #f1f1f1; font-size: 20px;"></span>
+</td>
+<td style="vertical-align:middle;" rowspan="2">
+Dummy Coding a Categorical Predictor
+</td>
+<td align="center" style="vertical-align:middle;" rowspan="2">
+<a href="https://github.com/zief0002/epsy-8251/raw/master/notes/10-understanding-statistical-control.pdf"> <span class="fa fa-file-pdf" style="color: #ff2600; font-size: 20px;"></span> </a>
+</td>
+<td align="center" style="vertical-align:middle;" rowspan="2">
+<a href="https://github.com/zief0002/epsy-8251/raw/master/scripts/10-understanding-statistical-control.R"> <span class="fab fa-r-project" style="color: #ff2600; font-size: 20px;"></span> </a>
+</td>
+</tr>
+<tr>
+<td align="center" style="vertical-align:middle;">
+</td>
+<td>
+Nov. 12
+</td>
+<td>
+Nov. 13
+</td>
+</tr>
+<tr>
+<td align="center" style="vertical-align:middle;">
+</td>
+<td>
+Nov. 14
+</td>
+<td>
+Nov. 18
+</td>
+<td align="center" style="vertical-align:middle;">
+<span class="fa fa-book" style="color: #f1f1f1; font-size: 20px;"></span>
+</td>
+<td style="vertical-align:middle;">
+Effects Coding a Categorical Predictor
+</td>
+<td align="center" style="vertical-align:middle;">
+<a href="https://github.com/zief0002/epsy-8251/raw/master/notes/10-understanding-statistical-control.pdf"> <span class="fa fa-file-pdf" style="color: #ff2600; font-size: 20px;"></span> </a>
+</td>
+<td align="center" style="vertical-align:middle;">
+<a href="https://github.com/zief0002/epsy-8251/raw/master/scripts/10-understanding-statistical-control.R"> <span class="fab fa-r-project" style="color: #ff2600; font-size: 20px;"></span> </a>
+</td>
+</tr>
 </tbody>
 </table>
 </div>
@@ -798,6 +861,23 @@ $(document).ready(function () {
 
 
 </script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
 
 <!-- dynamically load mathjax for compatibility with self-contained -->
 <script>

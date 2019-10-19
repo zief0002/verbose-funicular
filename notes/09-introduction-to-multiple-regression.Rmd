@@ -100,7 +100,7 @@ tidy(lm.1)
 The fitted equation,
 
 $$
-\hat{\mathrm{Income}} = 11.321 + 2.651(\mathrm{Education~Level}),
+\hat{\mathrm{Income}_i} = 11.321 + 2.651(\mathrm{Education~Level}_i),
 $$
 
 suggests that the estimated mean income for employees with education levels that differ by one year varies by 2.651 thousand dollars, on average. We also found that differences in education level explained 63.2\% of the variation in income, and that the empirical evidence is inconsistent with the hypothesis that education level explains none of the variation in incomes ($p<.001$). All this suggests that education level is likely related to income.
@@ -202,7 +202,7 @@ tidy(lm.2)
 The fitted equation,
 
 $$
-\hat{\mathrm{Income}} = 35.690 + 1.219(\mathrm{Seniority~Level}),
+\hat{\mathrm{Income}_i} = 35.690 + 1.219(\mathrm{Seniority~Level}_i),
 $$
 
 suggests that the estimated mean income for employees with seniority levels that differ by one year varies by 1.219 thousand dollars. We also find that differences in seniority level explain 33.9\% of the variation in income, and that this empirical evidence is inconsistent with the hypothesis that seniority explains none of the variation in incomes ($p<.001$).
@@ -261,7 +261,7 @@ tidy(lm.3)
 First we will write the fitted multiple regression equation,
 
 $$
-\hat{\mathrm{Income}} = 6.769 + 2.252(\mathrm{Education~Level}) + .739(\mathrm{Seniority~Level}).
+\hat{\mathrm{Income}_i} = 6.769 + 2.252(\mathrm{Education~Level}_i) + .739(\mathrm{Seniority~Level}_i).
 $$
 
 The slopes (of which there are now more than one) are referred to as *partial regression slopes* or *partial effects*. They represent the effect of the predictor *AFTER* accounting for the effects of the other predictors included in the model. For example,

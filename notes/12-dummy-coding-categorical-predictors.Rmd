@@ -1,5 +1,5 @@
 ---
-title: "Coding a Categorical Predictor"
+title: "Dummy Coding Categorical Predictors"
 date: "`r Sys.Date()`"
 output: 
   pdf_document:
@@ -46,6 +46,7 @@ library(educate)
 library(ggplot2)
 library(readr)
 library(tidyr)
+library(ungeviz)
 
 # Read in data
 mn = read_csv(file = "~/Documents/github/epsy-8251/data/mn-schools.csv")
@@ -379,7 +380,7 @@ The $t$-test associated with the partial slope coefficient for `public` suggests
 ## Assumption Checking for the Final Model
 
 ```{r}
-# Use fortify() to obtain the fitted values and residuals
+# Augment the model
 lm.3_output = augment(lm.3)
 head(lm.3_output)
 ```
@@ -406,7 +407,7 @@ ggplot(data = lm.3_output, aes(x = .fitted, y = .std.resid)) +
 
 The marginal distribution of the residuals shows minor evidence of mis-fit with the normality assumption. Homoskedasticity looks tenable from this plot. However, the scatterplot of the residuals versus the fitted values suggests problems with the tenability of the linearity assumption---at low fitted values more of the residuals are negative than we would expect (over-estimation); at moderate fitted values the residuals tend to be positive (under-estimation); and at high fitted values the residuals tend to the negative again (over-estimation). For now we will ignore this (although in practice this is a BIG problem). 
 
-<!-- \newpage -->
+\newpage
 
 # Taxonomy of Models
 
@@ -417,7 +418,7 @@ library(stargazer)
 stargazer(lm.public, lm.2, lm.3, dep.var.labels = "Six-year graduation rate", covariate.labels = c("Educational Sector", "Median SAT score", "Tuition"), keep.stat = c("rsq", "ser", "f"), notes = "Educational Sector: 0 = Private; 1 = Public", notes.align = "l", notes.append = TRUE, header = FALSE)
 ```
 
-\begin{table}[!htbp] \centering
+\begin{table}[H] \centering
 \caption{Taxonomy of Models Examining the Effect of Educational Sector on Six-Year Graduation Rates for Minnesota Colleges and Universities ($n=33$)}
 \begin{tabular}{@{\extracolsep{5pt}}lccc}
 \\[-1.8ex]\hline
@@ -426,16 +427,16 @@ stargazer(lm.public, lm.2, lm.3, dep.var.labels = "Six-year graduation rate", co
 \cline{2-4}
 \\[-1.8ex] & (1) & (2) & (3)\\
 \hline \\[-1.8ex]
- Public institution$^{\dagger}$ & $-$14.235$^{**}$ & $-$8.378$^{***}$ & $-$0.647 \\
+ Public institution$^{\dagger}$ & $-$14.235 & $-$8.378 & $-$0.647 \\
   & (5.912) & (2.648) & (4.716) \\
   & & & \\
- Median SAT score &  & 0.127$^{***}$ & 0.104$^{***}$ \\
+ Median SAT score &  & 0.127 & 0.104 \\
   &  & (0.011) & (0.016) \\
   & & & \\
- Tuition &  &  & 0.0005$^{*}$ \\
+ Tuition &  &  & 0.0005 \\
   &  &  & (0.0002) \\
   & & & \\
- Constant & 65.265$^{***}$ & $-$76.057$^{***}$ & $-$68.297$^{***}$ \\
+ Constant & 65.265 & $-$76.057 & $-$68.297 \\
   & (3.255) & (12.452) & (12.564) \\
   & & & \\
 \hline \\[-1.8ex]
@@ -443,8 +444,7 @@ R$^{2}$ & 0.158 & 0.843 & 0.861 \\
 RMSE & 15.61 & 6.86 & 6.56 \\
 \hline
 \hline \\[-1.8ex]
-\multicolumn{4}{l}{\textit{Note:} $^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01.} \\
-\multicolumn{4}{l}{$^{\dagger}$Public institution was dummy coded: 0 = Private; 1 = Public} \\
+\multicolumn{4}{l}{\textit{Note:} $^{\dagger}$Public institution was dummy coded: 0 = Private; 1 = Public} \\
 \end{tabular}
 \end{table}
 
@@ -454,72 +454,66 @@ The presentation of the models help us build an evidence-based narrative about t
 
 This narrative suggests that the initial differences we saw in graduation rates between the two sectors is really just a function of differences in SAT scores and tuition, and not really a public/private school difference. As with many non-experimental results, the answer to the question about group differences change as we control for different covariates. It may be, that once we control for other covariates, the narrative might change yet again. This is an important lesson, and one that cannot be emphasized enough---the magnitude and statistical importance of predictors change when the model is changed.
 
-<!-- ## Plots to Display Model Results -->
+## Plots to Display Model Results
 
-<!-- There are two plots we may want to consider creating to accompany the data narrative: (1) a coefficient plot to emphasize the public--private institution difference (i.e., effect of sector), and (2) a plot of the final fitted model, again emphasizing the public--private institution difference. -->
+There are two plots we may want to consider creating to accompany the data narrative: (1) a coefficient plot to emphasize the public--private institution difference (i.e., effect of sector), and (2) a plot of the final fitted model, again emphasizing the public--private institution difference.
 
-<!-- ### Coefficient Plot -->
+### Coefficient Plot
 
-<!-- ```{r fig.width=8, fig.height=6, out.width='5in', fig.pos='H', fig.cap='Plot displaying the fitted coefficient estimates and 95\\% confidence intervals for three models regressing graduation rate on educational sector (public) and two institutional covariates.'} -->
-<!-- # Create tidy model objects -->
-<!-- m1 = tidy(lm_public) %>% mutate(model = "Model 1") -->
-<!-- m2 = tidy(lm.2) %>% mutate(model = "Model 2") -->
-<!-- m3 = tidy(lm.3) %>% mutate(model = "Model 3") -->
+```{r fig.width=9, fig.height=3, out.width='6in', fig.cap='Coefficient plot for three models regressing six-year graduation rates on educational sector. Uncertainty based on the 95\\% confidence intervals are displayed. (The intercept is not displayed.)', fig.pos='H', fig.align='center'}
+# Create tidy() objects and identify each with a model column
+m1 = tidy(lm_public) %>% mutate(model = "Model 1")
+m2 = tidy(lm.2) %>% mutate(model = "Model 2")
+m3 = tidy(lm.3) %>% mutate(model = "Model 3")
 
-<!-- # Bind into a single object -->
-<!-- all_models = rbind(m1, m2, m3) -->
+# Combine all three tidy() outputs, filter out intercepts, and drop missing values
+all_models = rbind(m1, m2, m3) %>%
+  filter(term != "(Intercept)") %>%
+  drop_na()
 
-<!-- # Coefficient plot -->
-<!-- dw_plot(all_models, show_intercept = FALSE) + -->
-<!--   theme_bw() + -->
-<!--   theme( -->
-<!--     panel.grid.major.x = element_blank(), -->
-<!--     panel.grid.minor.x = element_blank() -->
-<!--   ) + -->
-<!--   geom_vline(xintercept = 0, linetype = "dashed", alpha = 0.4) + -->
-<!--   scale_y_discrete( -->
-<!--     name = "",  -->
-<!--     labels = c("Tuition", "Median SAT score", "Public") -->
-<!--   ) + -->
-<!--   scale_color_manual( -->
-<!--     name = "",  -->
-<!--     labels = c("Model 1", "Model 2", "Model 3"), -->
-<!--     values = c("#999999", "#e69f00", "#56b4e9") -->
-<!--   ) -->
-<!-- ``` -->
-
+# Create coefficient plots
+ggplot(data = all_models, aes(x = estimate, y = term)) +
+  stat_confidence_density(aes(moe = std.error, confidence = 0.68, fill = stat(ndensity)), 
+                          height = 0.15) +
+  geom_point(aes(x = estimate), size = 2) +
+  scale_fill_gradient(low = "#eff3ff", high = "#6baed6") +
+  theme_bw() +
+  theme(
+    panel.grid.major = element_blank(),
+    panel.grid.minor = element_blank()
+    ) +
+  scale_x_continuous(name = "Estimate", limits = c(-25, 5)) +
+  scale_y_discrete(name = "Coefficients", labels = c("Public institution", "Median SAT score", "Tuition")) +
+  facet_wrap(~model)
+```
 
 
-<!-- ### Plot of the Final Fitted Model -->
 
-<!-- ```{r fig.width=8, fig.height=6, out.width='5in', fig.pos='H', fig.cap='Predicted graduation rate as a function of median SAT scores for public and private institutions in Minnesota. Tuition rate is controlled for by fixing the value to the marginal average tuition value.'} -->
-<!-- # Set up the data to plot -->
-<!-- plot_data = crossing( -->
-<!--   sat = seq(from = 890, to = 1400, by = 10),  -->
-<!--   public = c(0, 1), -->
-<!--   tuition = mean(mn$tuition) -->
-<!--   )  -->
+### Plot of the Final Fitted Model (Model 3)
 
-<!-- plot_data %>% -->
-<!--   mutate( -->
-<!--     # Get predicted values -->
-<!--     yhat = predict(lm.3, newdata = plot_data), -->
-<!--     # Change public into a factor -->
-<!--     sector = factor(public,  -->
-<!--                     levels = c(0, 1),  -->
-<!--                     labels = c("Public institution", "Private institution") -->
-<!--                     ) -->
-<!--     ) %>% -->
-<!--   # Create plot -->
-<!--   ggplot(aes(x = sat, y = yhat, group = sector, color = sector)) + -->
-<!--       geom_line() + -->
-<!--       theme_bw() +  -->
-<!--       xlab("Median SAT score") +  -->
-<!--       ylab("Predicted graduation rate") + -->
-<!--       scale_color_viridis_d(name = "") -->
+Here we will plot model predicted graduation rate as a function of median SAT scores for both public and private institutions. We will control for tuition rate by fixing it to its mean value of 32.25. Substituting this into the fitted equation, along with the appropriate dummy-coded public value reuslts in two equations that we can plot.
 
-<!-- ``` -->
+$$
+\begin{split}
+\mathbf{Public:}\quad\hat{\mathrm{Graduation~Rate}_i} &= -68.30 - 0.65(1) + 0.10(\mathrm{Median~SAT}_i) + 0.0005(32.25)\\
+&= -68.93 + 0.10(\mathrm{Median~SAT}_i) \\[1em]
+\mathbf{Private:}\quad\hat{\mathrm{Graduation~Rate}_i} &= -68.30 - 0.65(0) + 0.10(\mathrm{Median~SAT}_i) + 0.0005(32.25)\\
+&= -68.28 + 0.10(\mathrm{Median~SAT}_i) 
+\end{split}
+$$
 
-<!-- In my opinion, the coefficient plot corresponds better to the data narrative than the plot of the fitted model, so in a publication that is what I would present along with the table of model results.  -->
+
+```{r fig.width=8, fig.height=6, out.width='5in', fig.pos='H', fig.cap='Predicted graduation rate as a function of median SAT scores for public (orange, solid line) and private (blue, dashed line) institutions in Minnesota. Tuition rate is controlled for by fixing the value to the marginal average tuition value.'}
+ggplot(data = mn, aes(x = sat, y = grad)) +
+  geom_point(alpha = 0) +
+  geom_abline(intercept = -68.93, slope = 0.10, color = "#e69f00", linetype = "solid") +
+  geom_abline(intercept = -68.28, slope = 0.10, color = "#56b4e9", linetype = "dashed") +
+  theme_bw() +
+  xlab("Median SAT score") +
+  ylab("Predicted graduation rate")
+
+```
+
+In my opinion, the coefficient plot corresponds better to the data narrative than the plot of the fitted model, so in a publication that is what I would present along with the table of model results.
 
 

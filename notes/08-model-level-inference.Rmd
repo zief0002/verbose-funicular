@@ -66,7 +66,6 @@ library(broom)
 library(dplyr)
 library(ggplot2)
 library(readr)
-library(educate)
 
 # Read in data
 keith = read_csv(file = "~/Documents/github/epsy-8251/data/keith-gpa.csv")
@@ -329,7 +328,7 @@ tidy(lm.1)
 ```
 
 
-That is because the model is composed of a single predictor, so asking whether the model accounts for variation in income level **is the same as** asking whether income level is different, on average, for employees with a one-unit difference in education level. *Once we have multiple predictors in the model, the model-level results and predictor-level results will not be the same.*
+That is because the model is composed of a single predictor, so asking whether the model accounts for variation in GPA **is the same as** asking whether GPA is different, on average, for students who spend a one-hour difference in time on homework. *Once we have multiple predictors in the model, the model-level results and predictor-level results will not be the same.*
 
 
 ## Confidence Envelope for the Model
@@ -362,6 +361,10 @@ install_github("zief0002/educate")
 Once **educate** is installed and loaded we have access to the `stat_watercolor_smooth()` function. This function, which we will use as a layer in `ggplot()` will be used to create the confidence enevelope. We also include the argument `method="lm"` in this layer. Finally, we add the regression line from the observed data using `geom_abline()`.
 
 ```{r fig.width=6, fig.height=6, out.width='4in', fig.align='center', fig.pos='H', fig.cap="GPA plotted as a function of time spent on homework. The OLS regression line (black) and regression lines for 700 bootstrapped samples (blue) are also displayed."}
+# Load educate library
+library(educate)
+
+# Create plot
 ggplot(data = keith, aes(x = homework, y = gpa)) +
   stat_watercolor_smooth(method = "lm") +
   geom_abline(intercept = 74.3, slope = 1.21) +
