@@ -1,0 +1,911 @@
+substance_use,family_structure,female,gpa
+-0.1286596744123045,Two-parent family,1,3.8
+0.014305876850010854,Two-parent family,0,2.5
+-0.5939776626441561,Two-parent family,1,2.8
+-0.4388716665668722,Single-parent family,0,3.5
+-0.28376567048958834,Two-parent family,1,3.3
+-0.28376567048958834,Two-parent family,0,2.5
+-0.5939776626441561,Two-parent family,1,2.3
+-0.28376567048958834,Two-parent family,1,2.5
+3.2131049861681826,Two-parent family,0,3
+-0.5939776626441561,Two-parent family,0,3
+-0.4388716665668722,Two-parent family,0,4
+-0.5939776626441561,Two-parent family,0,2.8
+-0.1286596744123045,Two-parent family,0,2.8
+-0.42485178400732454,Two-parent family,1,4
+-0.5939776626441561,Two-parent family,0,3
+-0.4388716665668722,Two-parent family,1,2.3
+-0.28376567048958834,Two-parent family,1,4
+-0.09267024914114576,Two-parent family,1,3.5
+-0.4388716665668722,Two-parent family,0,4
+-0.4388716665668722,Two-parent family,0,2.3
+0.6468703059741149,Single-parent family,1,1.6
+-0.28376567048958834,Two-parent family,0,3.3
+-0.4388716665668722,"One-parent, one guardian",0,2.1
+-0.28376567048958834,Two-parent family,0,4
+-0.5939776626441561,Two-parent family,0,2.8
+-0.4388716665668722,Single-parent family,0,2.5
+3.2131049861681826,Two-parent family,0,1.8
+0.9365602839879039,Single-parent family,0,1.8
+-0.1286596744123045,"One-parent, one guardian",0,3
+-0.4388716665668722,Two-parent family,1,4
+-0.4388716665668722,Two-parent family,0,3.5
+-0.1286596744123045,Two-parent family,1,3.3
+-0.38279213632868153,Two-parent family,0,1.9
+-0.28376567048958834,Two-parent family,1,3.5
+-0.5939776626441561,Two-parent family,1,3.3
+-0.28376567048958834,Two-parent family,0,1.5
+-0.28376567048958834,Two-parent family,0,3
+0.3605072942757374,Two-parent family,1,2.3
+0.19745163804639007,Two-parent family,1,1
+-0.10669013170069341,Two-parent family,0,2.8
+0.6468703059741149,Two-parent family,1,2.8
+-0.5939776626441561,"One-parent, one guardian",0,1.8
+-0.4388716665668722,Two-parent family,1,3
+-0.4388716665668722,Two-parent family,1,2.3
+-0.4388716665668722,"One-parent, one guardian",1,3
+-0.1286596744123045,Two-parent family,1,4
+-0.28376567048958834,Two-parent family,0,3.8
+-0.28376567048958834,Two-parent family,0,4
+-0.4388716665668722,Two-parent family,0,2.8
+0.3605072942757374,Two-parent family,1,2
+-0.28376567048958834,Two-parent family,1,2.8
+-0.11463979185275681,Two-parent family,1,2.8
+-0.28376567048958834,Two-parent family,1,3
+-0.5939776626441561,Two-parent family,1,9.8
+-0.5939776626441561,Two-parent family,0,3.5
+-0.5939776626441561,Two-parent family,1,3
+0.19745163804639007,Two-parent family,1,3
+-0.11463979185275681,Two-parent family,1,3.3
+-0.4388716665668722,Two-parent family,0,3.5
+0.37452717683528497,Single-parent family,0,2.5
+-0.4388716665668722,Single-parent family,0,2
+-0.28376567048958834,Two-parent family,0,3.5
+-0.4388716665668722,Single-parent family,1,3
+-0.10061990929320914,Two-parent family,0,1.8
+-0.5939776626441561,Two-parent family,1,2.3
+3.2131049861681826,"One-parent, one guardian",0,1.8
+0.014305876850010854,Single-parent family,1,2.3
+-0.4388716665668722,Two-parent family,1,2.8
+-0.5939776626441561,Two-parent family,0,3.5
+-0.28376567048958834,Single-parent family,0,2.3
+1.0636265149460924,Single-parent family,0,3
+-0.1286596744123045,Single-parent family,0,3.3
+0.3605072942757374,Single-parent family,1,2
+-0.4388716665668722,Two-parent family,0,3.5
+0.21147152060593774,Two-parent family,0,2.5
+0.1834317554868424,Two-parent family,0,1.8
+3.2131049861681826,"One-parent, one guardian",1,3.5
+-0.25572590537049306,Two-parent family,1,2.3
+-0.5939776626441561,Two-parent family,1,4
+0.1834317554868424,Two-parent family,0,2.8
+-0.5939776626441561,Two-parent family,1,2.8
+-0.5238782498464177,Two-parent family,0,2.5
+-0.4388716665668722,Two-parent family,0,2.5
+-0.2898358928970726,Two-parent family,1,3
+3.2131049861681826,Two-parent family,1,3.3
+-0.28376567048958834,Two-parent family,1,3.8
+-0.5939776626441561,Two-parent family,1,4
+-0.5939776626441561,Two-parent family,1,1.5
+0.37452717683528497,Single-parent family,0,1.6
+-0.28376567048958834,Two-parent family,0,1.8
+3.2131049861681826,Two-parent family,1,1.4
+-0.28376567048958834,Two-parent family,0,3
+-0.28376567048958834,Single-parent family,0,3.8
+-0.5659378975250607,Two-parent family,0,2.5
+1.881216143011155,Two-parent family,0,2.5
+0.020376099257495128,"One-parent, one guardian",0,4
+-0.24777624521842964,Two-parent family,1,2.3
+-0.4388716665668722,Two-parent family,1,3.8
+-0.4388716665668722,Two-parent family,1,3.3
+-0.4388716665668722,Two-parent family,1,2.5
+0.1834317554868424,Two-parent family,0,3.3
+-0.28376567048958834,Two-parent family,0,2
+-0.4388716665668722,Two-parent family,0,2.8
+-0.1286596744123045,"One-parent, one guardian",0,2.5
+-0.28376567048958834,Single-parent family,1,2.3
+1.839156495332512,Two-parent family,0,3.5
+-0.10061990929320914,Two-parent family,1,3.3
+-0.28376567048958834,Single-parent family,0,3.5
+-0.4388716665668722,Two-parent family,0,3.3
+-0.28376567048958834,Two-parent family,0,4
+-0.13472989681978872,Two-parent family,1,3.5
+0.6468703059741149,"One-parent, one guardian",1,3
+-0.28376567048958834,Two-parent family,1,2.5
+-0.28376567048958834,"One-parent, one guardian",0,3
+1.839156495332512,Single-parent family,0,1.9
+-0.4388716665668722,Two-parent family,0,3
+-0.28376567048958834,"One-parent, one guardian",1,2.5
+-0.28376567048958834,Two-parent family,0,3
+-0.4388716665668722,Single-parent family,1,2.8
+0.020376099257495128,Single-parent family,1,3.3
+-0.1286596744123045,Single-parent family,1,2.5
+-0.28376567048958834,"One-parent, one guardian",0,2.8
+-0.28376567048958834,Two-parent family,1,3.3
+-0.28376567048958834,Two-parent family,0,2
+0.020376099257495128,"One-parent, one guardian",0,2.5
+-0.5939776626441561,Two-parent family,1,1.8
+-0.28376567048958834,Single-parent family,1,2.8
+-0.13472989681978872,Two-parent family,0,3
+-0.4388716665668722,Two-parent family,1,3.3
+-0.4388716665668722,"One-parent, one guardian",1,3
+-0.28376567048958834,Two-parent family,0,3.3
+0.21147152060593774,Two-parent family,0,3
+-0.4388716665668722,Single-parent family,1,1.5
+-0.4388716665668722,Two-parent family,1,3
+-0.1286596744123045,Two-parent family,0,4
+-0.11463979185275681,"One-parent, one guardian",1,3.3
+-0.11463979185275681,Two-parent family,1,4
+-0.5939776626441561,"One-parent, one guardian",0,2.5
+-0.5939776626441561,Single-parent family,0,2.5
+-0.4388716665668722,Two-parent family,0,2.5
+-0.11463979185275681,"One-parent, one guardian",0,2.5
+0.020376099257495128,Two-parent family,1,3.8
+-0.1286596744123045,"One-parent, one guardian",1,1
+-0.28376567048958834,Two-parent family,1,3
+-0.28376567048958834,Two-parent family,1,2.3
+-0.28376567048958834,Two-parent family,0,3
+-0.26974578793004067,Two-parent family,0,2.8
+-0.4388716665668722,Single-parent family,1,2
+-0.28376567048958834,Single-parent family,0,4
+-0.4388716665668722,Single-parent family,0,3.3
+-0.26974578793004067,Two-parent family,0,1.8
+-0.11463979185275681,Two-parent family,1,2.5
+-0.1286596744123045,Two-parent family,1,2.3
+-0.28376567048958834,Two-parent family,0,2.3
+-0.13472989681978872,Two-parent family,1,2.8
+-0.5939776626441561,Single-parent family,0,3.3
+-0.1286596744123045,"One-parent, one guardian",1,2
+-0.26974578793004067,Two-parent family,0,3.3
+0.21147152060593774,Two-parent family,0,2.5
+0.048415864376590456,Single-parent family,1,4
+-0.28376567048958834,Two-parent family,1,2.5
+0.37452717683528497,Two-parent family,1,3.3
+-0.4388716665668722,Two-parent family,1,3.5
+0.22549140316548535,Two-parent family,0,3
+-0.5939776626441561,Two-parent family,1,3.8
+-0.28376567048958834,Two-parent family,1,3.3
+-0.28376567048958834,Two-parent family,0,3.3
+-0.28376567048958834,Single-parent family,0,4
+-0.28376567048958834,Two-parent family,1,3.5
+0.06243574693613812,Two-parent family,1,2.3
+0.6468703059741149,Two-parent family,1,2.8
+-0.4388716665668722,Two-parent family,1,3.3
+-0.28376567048958834,Two-parent family,1,3.8
+-0.28376567048958834,Two-parent family,1,4
+-0.1286596744123045,Two-parent family,0,2.5
+-0.4388716665668722,Two-parent family,1,3
+-0.28376567048958834,Two-parent family,0,2.3
+0.6468703059741149,Two-parent family,1,3
+-0.4388716665668722,Two-parent family,1,3.5
+-0.4388716665668722,Two-parent family,1,1
+-0.5939776626441561,Two-parent family,1,3.5
+-0.4388716665668722,Two-parent family,1,3.3
+-0.11463979185275681,Two-parent family,1,3
+-0.28376567048958834,Two-parent family,1,2.8
+-0.28376567048958834,Two-parent family,0,3.8
+-0.26974578793004067,Two-parent family,1,3.3
+-0.5939776626441561,Two-parent family,0,3
+-0.26974578793004067,Two-parent family,0,3.8
+-0.28376567048958834,Two-parent family,1,3
+-0.24170602281094541,"One-parent, one guardian",1,4
+-0.5939776626441561,"One-parent, one guardian",1,3.5
+-0.2617961277779773,Two-parent family,0,2.3
+3.2131049861681826,Single-parent family,0,9.8
+-0.4388716665668722,Single-parent family,1,2.5
+-0.4388716665668722,Two-parent family,1,3.5
+-0.28376567048958834,Two-parent family,1,4
+3.2131049861681826,Single-parent family,0,2.1
+-0.4388716665668722,Two-parent family,1,3
+3.2131049861681826,Single-parent family,0,1.5
+-0.28376567048958834,"One-parent, one guardian",0,3.3
+3.2131049861681826,Two-parent family,0,2.4
+0.37452717683528497,"One-parent, one guardian",0,3.8
+-0.4388716665668722,Two-parent family,1,3.3
+0.3184476465970944,Two-parent family,1,2
+-0.5939776626441561,Single-parent family,0,3.3
+0.3184476465970944,Two-parent family,0,2.5
+-0.1286596744123045,"One-parent, one guardian",0,2.5
+-0.28376567048958834,Two-parent family,1,4
+-0.4388716665668722,Single-parent family,0,2.3
+-0.28376567048958834,Two-parent family,1,3
+-0.4388716665668722,"One-parent, one guardian",1,2.3
+-0.4388716665668722,Two-parent family,0,3
+0.020376099257495128,Two-parent family,0,3
+0.8379657273225575,Two-parent family,0,2
+-0.4388716665668722,Two-parent family,0,3
+-0.4388716665668722,Single-parent family,0,3.5
+0.07645562949568577,"One-parent, one guardian",0,2.8
+3.2131049861681826,Two-parent family,0,2.5
+-0.4388716665668722,Two-parent family,0,2.3
+-0.4388716665668722,Two-parent family,0,3.5
+-0.4388716665668722,"One-parent, one guardian",1,2.8
+-0.4388716665668722,Two-parent family,1,3.3
+0.034395981817042794,Two-parent family,0,2.8
+-0.4388716665668722,"One-parent, one guardian",0,2.8
+-0.4388716665668722,Two-parent family,0,2.5
+-0.28376567048958834,Single-parent family,1,3.3
+-0.5939776626441561,Two-parent family,0,3
+-0.4388716665668722,Two-parent family,0,3.5
+-0.5939776626441561,Single-parent family,0,4
+-0.4388716665668722,Two-parent family,0,3.5
+-0.13472989681978872,"One-parent, one guardian",1,2.5
+-0.28376567048958834,Two-parent family,0,2
+-0.5939776626441561,Two-parent family,1,3
+-0.4388716665668722,Single-parent family,0,3.5
+-0.4388716665668722,Two-parent family,1,2.8
+3.2131049861681826,Two-parent family,0,3
+-0.5939776626441561,Two-parent family,1,4
+-0.10669013170069341,Two-parent family,1,2.8
+0.020376099257495128,Single-parent family,1,3.3
+-0.4388716665668722,Single-parent family,0,4
+-0.4388716665668722,"One-parent, one guardian",1,2.5
+-0.4388716665668722,"One-parent, one guardian",1,4
+-0.28376567048958834,Two-parent family,0,2.8
+-0.5939776626441561,Single-parent family,0,3.3
+-0.5939776626441561,Two-parent family,0,3.3
+-0.4388716665668722,"One-parent, one guardian",0,3
+-0.2898358928970726,Single-parent family,0,2
+-0.1286596744123045,Single-parent family,0,2.8
+-0.28376567048958834,Single-parent family,1,3
+0.020376099257495128,"One-parent, one guardian",1,4
+-0.10061990929320914,"One-parent, one guardian",1,2.8
+-0.28376567048958834,Single-parent family,0,2.8
+-0.5939776626441561,Two-parent family,0,2.3
+-0.4388716665668722,"One-parent, one guardian",1,2.8
+-0.11463979185275681,"One-parent, one guardian",1,3.3
+0.6468703059741149,Two-parent family,1,3.8
+3.2131049861681826,Two-parent family,0,1.8
+-0.5939776626441561,Two-parent family,0,3.3
+-0.4388716665668722,Two-parent family,1,4
+-0.11463979185275681,Single-parent family,1,2.5
+-0.10061990929320914,"One-parent, one guardian",0,2.5
+-0.28376567048958834,Two-parent family,0,4
+-0.28376567048958834,Two-parent family,1,4
+-0.28376567048958834,"One-parent, one guardian",0,2.3
+-0.4388716665668722,Two-parent family,0,4
+-0.4388716665668722,Two-parent family,1,3.8
+-0.25572590537049306,Two-parent family,1,9.8
+-0.4388716665668722,"One-parent, one guardian",0,2.5
+0.048415864376590456,Single-parent family,0,2.5
+-0.1286596744123045,Two-parent family,0,2.5
+-0.13472989681978872,"One-parent, one guardian",0,2.3
+-0.4388716665668722,Two-parent family,1,3.3
+-0.28376567048958834,Two-parent family,1,3.5
+-0.4388716665668722,Two-parent family,1,4
+3.2131049861681826,Single-parent family,1,3.5
+0.6468703059741149,Two-parent family,1,2.5
+0.020376099257495128,Two-parent family,0,2.5
+-0.5939776626441561,Two-parent family,1,3.3
+-0.28376567048958834,Two-parent family,0,3
+-0.1286596744123045,Two-parent family,1,2.5
+-0.4388716665668722,Single-parent family,1,9.8
+0.7534145227915247,Two-parent family,0,2.5
+0.034395981817042794,Two-parent family,0,3.8
+-0.1286596744123045,Single-parent family,1,3.5
+-0.4388716665668722,Single-parent family,0,3.8
+-0.28376567048958834,Two-parent family,0,3.3
+3.2131049861681826,"One-parent, one guardian",0,2.8
+-0.4388716665668722,Two-parent family,0,2.8
+0.020376099257495128,Two-parent family,0,1.6
+3.2131049861681826,Two-parent family,0,3
+-0.28376567048958834,Two-parent family,1,3.5
+-0.5939776626441561,Two-parent family,0,2
+-0.4388716665668722,Two-parent family,1,1.6
+-0.28376567048958834,Two-parent family,1,3.3
+-0.13472989681978872,"One-parent, one guardian",0,2.5
+-0.26974578793004067,Two-parent family,0,4
+-0.28376567048958834,Two-parent family,0,2.3
+-0.1286596744123045,Two-parent family,1,3
+-0.28376567048958834,"One-parent, one guardian",1,1.8
+0.6468703059741149,Single-parent family,1,2.8
+-0.5939776626441561,Two-parent family,0,3.8
+0.048415864376590456,Two-parent family,0,3.3
+3.2131049861681826,"One-parent, one guardian",0,2.8
+-0.5939776626441561,Two-parent family,1,4
+-0.5939776626441561,Two-parent family,1,3.3
+3.2131049861681826,Single-parent family,1,2.5
+-0.4388716665668722,Two-parent family,0,3
+-0.28376567048958834,Two-parent family,0,3
+-0.5939776626441561,Two-parent family,1,3
+-0.4388716665668722,Two-parent family,1,4
+3.2131049861681826,Single-parent family,1,4
+-0.28376567048958834,Two-parent family,0,3.3
+-0.5939776626441561,Two-parent family,0,2.3
+0.38854705939483264,Two-parent family,0,3.8
+-0.28376567048958834,Two-parent family,0,2.8
+-0.28376567048958834,Two-parent family,1,4
+-0.28376567048958834,Two-parent family,0,3
+-0.4388716665668722,Two-parent family,0,4
+-0.1286596744123045,Single-parent family,0,9.8
+3.2131049861681826,Two-parent family,1,3
+-0.28376567048958834,Two-parent family,1,3.3
+-0.5939776626441561,Two-parent family,1,3.8
+-0.4388716665668722,Two-parent family,1,4
+-0.1286596744123045,"One-parent, one guardian",0,4
+1.8531763778920596,Two-parent family,0,2.1
+0.7959060796439146,Two-parent family,0,3
+0.034395981817042794,Two-parent family,1,3.3
+-0.28376567048958834,Two-parent family,1,4
+0.014305876850010854,"One-parent, one guardian",0,3
+-0.5939776626441561,Two-parent family,1,3.8
+0.020376099257495128,Two-parent family,1,3.5
+-0.11463979185275681,Two-parent family,1,3.5
+-0.4388716665668722,Single-parent family,1,3
+-0.4388716665668722,Two-parent family,0,2.4
+-0.5939776626441561,Two-parent family,1,4
+-0.5939776626441561,Two-parent family,0,3
+-0.28376567048958834,Two-parent family,0,3
+0.7959060796439146,"One-parent, one guardian",0,2.8
+-0.26974578793004067,Two-parent family,1,2.8
+0.05636552452865382,"One-parent, one guardian",1,2.8
+-0.26974578793004067,Two-parent family,1,3.5
+-0.4388716665668722,Two-parent family,0,4
+0.16941187292729473,Single-parent family,0,3.3
+-0.1286596744123045,Two-parent family,1,3.3
+-0.28376567048958834,Two-parent family,1,4
+-0.28376567048958834,Two-parent family,0,3.3
+1.839156495332512,Two-parent family,0,3.3
+3.2131049861681826,Two-parent family,0,2.8
+-0.5939776626441561,Two-parent family,1,4
+1.839156495332512,Two-parent family,0,1.9
+-0.28376567048958834,Two-parent family,0,2.5
+-0.26974578793004067,Two-parent family,1,1.8
+-0.28376567048958834,Two-parent family,0,2.5
+-0.11463979185275681,"One-parent, one guardian",1,2.3
+-0.4388716665668722,Two-parent family,1,4
+-0.4388716665668722,Two-parent family,1,4
+-0.28376567048958834,Two-parent family,1,3.5
+0.020376099257495128,Two-parent family,1,4
+-0.4388716665668722,Two-parent family,1,3.8
+-0.5939776626441561,Two-parent family,1,3.5
+-0.5939776626441561,Two-parent family,0,2.8
+3.2131049861681826,Single-parent family,0,9.8
+-0.4388716665668722,Two-parent family,0,2.3
+-0.4388716665668722,"One-parent, one guardian",0,3
+-0.1286596744123045,Two-parent family,1,2.8
+-0.28376567048958834,Two-parent family,0,3.8
+0.6468703059741149,Two-parent family,0,3.3
+-0.5939776626441561,Two-parent family,1,2.5
+-0.28376567048958834,Two-parent family,1,3.8
+-0.4388716665668722,Two-parent family,1,3.3
+-0.28376567048958834,Two-parent family,1,3.7
+0.6468703059741149,Two-parent family,0,2
+-0.1286596744123045,Two-parent family,0,3
+-0.28376567048958834,Two-parent family,0,2.8
+-0.5939776626441561,"One-parent, one guardian",0,4
+-0.28376567048958834,Two-parent family,0,4
+-0.28376567048958834,Single-parent family,0,3.8
+-0.28376567048958834,Two-parent family,1,3.3
+0.020376099257495128,"One-parent, one guardian",0,3.8
+0.7799708281915145,Two-parent family,0,1.9
+-0.1286596744123045,Two-parent family,0,2.8
+0.034395981817042794,Single-parent family,0,3
+-0.1286596744123045,Two-parent family,0,1.9
+-0.28376567048958834,Two-parent family,1,3.3
+0.034395981817042794,Single-parent family,1,2.5
+-0.5939776626441561,Two-parent family,0,3.5
+0.16941187292729473,Two-parent family,0,3.5
+0.09047551205523345,Two-parent family,0,2.5
+-0.28376567048958834,Two-parent family,1,2.5
+0.16941187292729473,Two-parent family,1,3.3
+-0.5939776626441561,"One-parent, one guardian",0,1.5
+-0.4388716665668722,Two-parent family,1,2.8
+-0.5939776626441561,Two-parent family,0,3.5
+3.2131049861681826,"One-parent, one guardian",0,2.3
+-0.5939776626441561,Two-parent family,0,3.8
+-0.5939776626441561,Two-parent family,0,3.8
+-0.4388716665668722,Two-parent family,1,4
+3.2131049861681826,Two-parent family,0,9.8
+-0.5939776626441561,Two-parent family,1,3.5
+-0.4388716665668722,Two-parent family,1,3.3
+-0.1286596744123045,Single-parent family,0,2.5
+-0.28376567048958834,Two-parent family,1,4
+-0.4388716665668722,Two-parent family,0,2
+3.2131049861681826,Two-parent family,0,2.3
+-0.4388716665668722,Single-parent family,1,3
+-0.5939776626441561,Two-parent family,1,4
+0.16941187292729473,Single-parent family,1,4
+0.19745163804639007,Single-parent family,1,2
+-0.28376567048958834,Two-parent family,1,4
+0.020376099257495128,Single-parent family,0,2
+3.2131049861681826,Single-parent family,1,2.4
+-0.28376567048958834,Two-parent family,1,3.3
+1.0901828203460824,Two-parent family,0,4
+0.6468703059741149,Two-parent family,1,3.5
+-0.28376567048958834,Two-parent family,0,3.5
+-0.4388716665668722,Two-parent family,1,3.8
+-0.4388716665668722,Two-parent family,0,3.8
+-0.5939776626441561,"One-parent, one guardian",0,2.5
+3.2131049861681826,Two-parent family,0,4
+-0.28376567048958834,Two-parent family,1,3.8
+0.048415864376590456,Two-parent family,0,2.5
+-0.28376567048958834,"One-parent, one guardian",1,3.5
+-0.4388716665668722,Two-parent family,1,2
+0.1834317554868424,Two-parent family,1,2
+-0.28376567048958834,Two-parent family,1,4
+-0.4388716665668722,Two-parent family,0,2.8
+-0.5939776626441561,Two-parent family,1,2.3
+-0.4388716665668722,Two-parent family,1,3.5
+-0.28376567048958834,Two-parent family,0,3.5
+-0.28376567048958834,Two-parent family,0,3.8
+-0.28376567048958834,Two-parent family,0,0.8
+-0.28376567048958834,Two-parent family,0,3.8
+-0.4388716665668722,Single-parent family,0,3.8
+-0.13472989681978872,"One-parent, one guardian",1,3.5
+0.020376099257495128,Single-parent family,1,2.3
+-0.4388716665668722,Two-parent family,0,4
+-0.5939776626441561,Single-parent family,1,2.8
+-0.4388716665668722,Two-parent family,1,3.8
+-0.28376567048958834,Two-parent family,0,1.1
+-0.4388716665668722,Two-parent family,1,3
+-0.28376567048958834,Two-parent family,1,3.5
+-0.12071001426024107,Two-parent family,1,4
+3.2131049861681826,Single-parent family,0,2.3
+3.2131049861681826,Two-parent family,0,3.5
+-0.5939776626441561,Two-parent family,1,3.8
+0.16941187292729473,Two-parent family,0,3.5
+-0.4388716665668722,Two-parent family,0,1.8
+-0.5939776626441561,Two-parent family,0,3.8
+-0.5939776626441561,Two-parent family,0,2.3
+0.21147152060593774,Single-parent family,0,2.3
+-0.4388716665668722,Two-parent family,0,1.8
+-0.4388716665668722,Two-parent family,0,3
+-0.4388716665668722,Two-parent family,1,4
+-0.5939776626441561,"One-parent, one guardian",0,2.8
+-0.13472989681978872,Single-parent family,1,2.5
+0.014305876850010854,Single-parent family,0,3.5
+0.16941187292729473,Two-parent family,0,3.5
+-0.5939776626441561,"One-parent, one guardian",1,4
+0.3184476465970944,"One-parent, one guardian",1,3
+0.16941187292729473,Single-parent family,1,4
+-0.28376567048958834,Single-parent family,1,3
+-0.28376567048958834,Two-parent family,0,1.5
+3.2131049861681826,Two-parent family,0,9.8
+3.2131049861681826,Two-parent family,0,3.5
+-0.4388716665668722,Two-parent family,0,3.3
+-0.4388716665668722,Two-parent family,1,3.8
+-0.1286596744123045,Two-parent family,0,4
+-0.4388716665668722,Two-parent family,0,1.5
+-0.13472989681978872,Two-parent family,0,2.5
+-0.5939776626441561,Two-parent family,0,4
+-0.13472989681978872,Two-parent family,0,2
+-0.28376567048958834,Two-parent family,0,3.5
+-0.28376567048958834,Two-parent family,1,3.5
+-0.5939776626441561,Two-parent family,0,3.3
+0.048415864376590456,Single-parent family,0,2.8
+-0.28376567048958834,Two-parent family,0,3.5
+-0.5939776626441561,Two-parent family,1,4
+-0.1286596744123045,Two-parent family,0,4
+-0.24170602281094541,Two-parent family,1,2.8
+-0.4388716665668722,Two-parent family,0,9.8
+-0.11463979185275681,"One-parent, one guardian",0,3
+-0.0866000267336615,Two-parent family,0,2.5
+-0.28376567048958834,Two-parent family,1,2.8
+-0.5939776626441561,Two-parent family,0,3.5
+-0.4388716665668722,Two-parent family,1,3.8
+0.3605072942757374,"One-parent, one guardian",0,2.3
+-0.1286596744123045,Two-parent family,1,3.8
+3.2131049861681826,Two-parent family,1,4
+0.020376099257495128,Two-parent family,1,3.5
+-0.13472989681978872,Two-parent family,0,1.9
+1.0636265149460924,Single-parent family,0,2.3
+-0.28376567048958834,Two-parent family,0,2.8
+-0.4388716665668722,Two-parent family,0,3.3
+-0.4388716665668722,Two-parent family,1,3
+-0.4388716665668722,Two-parent family,1,3.8
+-0.5939776626441561,Single-parent family,0,4
+-0.11463979185275681,Two-parent family,0,3.8
+0.02832575940955852,Single-parent family,1,2.8
+0.6468703059741149,Two-parent family,1,3.5
+-0.1286596744123045,"One-parent, one guardian",1,1.8
+-0.11463979185275681,Two-parent family,1,2.5
+3.2131049861681826,Two-parent family,1,3.3
+3.2131049861681826,Two-parent family,1,3.8
+3.2131049861681826,"One-parent, one guardian",1,3
+0.34648741171618974,Two-parent family,1,3
+-0.28376567048958834,Two-parent family,1,4
+3.2131049861681826,Two-parent family,1,2.3
+-0.4388716665668722,Two-parent family,1,4
+0.048415864376590456,Single-parent family,1,3.3
+0.16941187292729473,Two-parent family,1,2.5
+-0.12071001426024107,Single-parent family,1,2.8
+-0.4388716665668722,Two-parent family,0,2.8
+-0.5939776626441561,Two-parent family,0,4
+-0.4388716665668722,Two-parent family,1,4
+-0.4388716665668722,Two-parent family,0,2.8
+-0.1286596744123045,"One-parent, one guardian",1,2.5
+-0.28376567048958834,Two-parent family,1,2.8
+-0.1286596744123045,Two-parent family,1,4
+-0.4388716665668722,Two-parent family,1,3.8
+-0.1286596744123045,Single-parent family,0,4
+0.17736153307935817,Two-parent family,0,2.5
+-0.4388716665668722,Two-parent family,0,3.5
+0.05636552452865382,Two-parent family,0,3
+-0.4388716665668722,Two-parent family,1,3.3
+-0.26974578793004067,Single-parent family,1,3.5
+-0.1286596744123045,Two-parent family,0,3.5
+0.6468703059741149,Two-parent family,0,3.8
+-0.5939776626441561,Two-parent family,0,4
+-0.28376567048958834,Two-parent family,0,2
+0.3184476465970944,Single-parent family,1,3
+0.944941853313714,Two-parent family,1,3
+-0.12071001426024107,Two-parent family,0,3.3
+-0.1286596744123045,Two-parent family,0,4
+0.23951128572503302,Single-parent family,0,2
+-0.1286596744123045,Two-parent family,0,3.5
+-0.5939776626441561,Two-parent family,0,3
+-0.28376567048958834,Two-parent family,0,3.7
+-0.4388716665668722,Two-parent family,1,4
+-0.11463979185275681,Two-parent family,1,4
+-0.28376567048958834,Two-parent family,1,3.5
+-0.5939776626441561,Two-parent family,0,3.8
+-0.28376567048958834,Two-parent family,0,2.8
+-0.4388716665668722,Single-parent family,0,3
+0.048415864376590456,Two-parent family,0,2.5
+-0.5939776626441561,Two-parent family,1,3.5
+-0.5939776626441561,Two-parent family,1,3
+-0.1286596744123045,Single-parent family,0,1.6
+-0.5939776626441561,Two-parent family,0,4
+3.2131049861681826,Single-parent family,0,2.5
+1.839156495332512,"One-parent, one guardian",0,2.5
+-0.5939776626441561,Two-parent family,1,4
+-0.13472989681978872,Two-parent family,0,1.3
+1.0636265149460924,Two-parent family,1,2.8
+-0.1127603541081777,Single-parent family,1,2
+-0.28376567048958834,Two-parent family,1,4
+-0.28376567048958834,Two-parent family,1,3.5
+-0.28376567048958834,"One-parent, one guardian",1,2.3
+-0.24170602281094541,Two-parent family,1,2.8
+-0.26974578793004067,Two-parent family,0,3.5
+-0.5939776626441561,Two-parent family,1,3
+-0.5939776626441561,Two-parent family,0,2.8
+-0.4388716665668722,"One-parent, one guardian",0,2.3
+-0.4388716665668722,"One-parent, one guardian",1,3.5
+-0.28376567048958834,Two-parent family,1,4
+-0.11463979185275681,Two-parent family,0,3.3
+0.3184476465970944,"One-parent, one guardian",1,2.1
+0.20540129819845346,Two-parent family,1,2.4
+-0.5939776626441561,Single-parent family,1,3
+-0.1286596744123045,Two-parent family,1,2.3
+3.2131049861681826,Two-parent family,0,1.5
+-0.28376567048958834,Two-parent family,1,4
+-0.2898358928970726,Two-parent family,1,2.8
+-0.4388716665668722,Single-parent family,0,2
+-0.4388716665668722,Two-parent family,1,3.3
+-0.5939776626441561,Two-parent family,1,3.3
+-0.26974578793004067,Two-parent family,1,2.5
+0.050295302121169616,Two-parent family,1,2.8
+0.020376099257495128,Single-parent family,1,3.8
+-0.28376567048958834,Two-parent family,1,3.5
+-0.28376567048958834,Two-parent family,1,3.5
+3.2131049861681826,Two-parent family,0,3.8
+-0.5939776626441561,Single-parent family,0,3
+-0.4388716665668722,Single-parent family,1,3
+-0.5939776626441561,Two-parent family,0,0.8
+-0.5939776626441561,Single-parent family,1,4
+-0.28376567048958834,Two-parent family,1,4
+-0.1286596744123045,Two-parent family,0,3.8
+-0.4388716665668722,Single-parent family,1,3.5
+-0.13472989681978872,Single-parent family,0,2.8
+-0.5939776626441561,Single-parent family,0,1.6
+-0.4388716665668722,"One-parent, one guardian",1,2.3
+-0.28376567048958834,Single-parent family,0,9.8
+-0.4388716665668722,Single-parent family,1,3.3
+-0.28376567048958834,Single-parent family,0,1.6
+-0.5939776626441561,Two-parent family,1,3.8
+3.2131049861681826,Single-parent family,0,0.5
+-0.28376567048958834,Two-parent family,1,3.5
+-0.28376567048958834,Two-parent family,1,3
+-0.10061990929320914,"One-parent, one guardian",0,2.3
+-0.4388716665668722,Single-parent family,0,1.3
+-0.28376567048958834,Two-parent family,0,1.6
+-0.4388716665668722,Single-parent family,1,3.5
+-0.1286596744123045,Two-parent family,0,2.3
+-0.2898358928970726,Two-parent family,1,3
+-0.28376567048958834,"One-parent, one guardian",1,3.5
+-0.4388716665668722,Two-parent family,1,3.8
+1.839156495332512,"One-parent, one guardian",0,1.6
+-0.2898358928970726,Single-parent family,1,2
+-0.4388716665668722,Single-parent family,1,4
+-0.4388716665668722,Two-parent family,1,3.3
+-0.28376567048958834,Two-parent family,1,3.5
+-0.4388716665668722,Single-parent family,0,3.5
+-0.28376567048958834,"One-parent, one guardian",0,3.3
+3.2131049861681826,Two-parent family,0,2.3
+0.3184476465970944,Single-parent family,1,3.3
+-0.5939776626441561,Single-parent family,0,2.3
+-0.4388716665668722,Single-parent family,0,2.8
+-0.5939776626441561,Two-parent family,1,4
+0.3184476465970944,Single-parent family,0,2.3
+3.2131049861681826,"One-parent, one guardian",1,2.5
+3.2131049861681826,Two-parent family,0,2.5
+-0.13472989681978872,Two-parent family,0,3
+-0.1286596744123045,Two-parent family,0,4
+-0.1286596744123045,"One-parent, one guardian",0,3.3
+-0.28376567048958834,Two-parent family,0,1.3
+-0.28376567048958834,Two-parent family,1,2.8
+-0.5939776626441561,Two-parent family,1,3.3
+-0.28376567048958834,Two-parent family,1,2.3
+-0.4388716665668722,Two-parent family,1,4
+-0.28376567048958834,"One-parent, one guardian",1,2.8
+-0.28376567048958834,Two-parent family,0,2
+-0.1286596744123045,Two-parent family,0,4
+0.1633416505198105,Two-parent family,0,1.6
+-0.0786503665815981,Two-parent family,0,0.6
+1.839156495332512,Two-parent family,1,3
+0.020376099257495128,Two-parent family,0,2.1
+-0.4388716665668722,"One-parent, one guardian",1,1.4
+-0.5939776626441561,Two-parent family,1,3
+-0.1286596744123045,"One-parent, one guardian",1,3
+0.19745163804639007,Single-parent family,1,2.5
+1.881216143011155,Single-parent family,1,2.3
+-0.4388716665668722,Single-parent family,0,2
+3.2131049861681826,Two-parent family,1,3.8
+3.2131049861681826,Single-parent family,0,3.3
+-0.5939776626441561,Two-parent family,1,3
+-0.5939776626441561,Single-parent family,0,3.3
+1.8952360255707024,Single-parent family,0,3.8
+-0.1286596744123045,Two-parent family,0,2.5
+-0.27581601033752495,Two-parent family,0,3
+-0.4388716665668722,"One-parent, one guardian",1,2.5
+-0.4388716665668722,Two-parent family,1,4
+-0.28376567048958834,Two-parent family,1,3.5
+-0.13472989681978872,Single-parent family,0,3.5
+-0.4388716665668722,Two-parent family,0,3
+-0.5939776626441561,Single-parent family,1,3
+-0.5939776626441561,Two-parent family,0,2.8
+-0.28376567048958834,Two-parent family,1,4
+-0.4388716665668722,Single-parent family,0,4
+-0.41083190144777687,Two-parent family,0,3.3
+-0.28376567048958834,Two-parent family,0,1.6
+-0.28376567048958834,Two-parent family,1,3.5
+-0.28376567048958834,Two-parent family,0,2.2
+-0.5939776626441561,"One-parent, one guardian",0,2.8
+-0.140800119227273,Single-parent family,1,2
+-0.28376567048958834,Two-parent family,0,3.8
+-0.5939776626441561,Single-parent family,0,2.5
+-0.10669013170069341,Two-parent family,1,2
+1.839156495332512,"One-parent, one guardian",0,1.9
+-0.4388716665668722,Two-parent family,0,3.5
+-0.1286596744123045,Two-parent family,1,4
+-0.1286596744123045,Two-parent family,1,3.3
+0.9085205188688086,"One-parent, one guardian",1,3
+-0.4388716665668722,Two-parent family,1,3
+0.16941187292729473,Two-parent family,0,3.3
+0.014305876850010854,Two-parent family,0,3.3
+-0.13472989681978872,Single-parent family,1,2.3
+-0.28376567048958834,Single-parent family,0,1.5
+0.16941187292729473,Two-parent family,1,3
+-0.4388716665668722,Two-parent family,0,2
+-0.5939776626441561,Two-parent family,1,2.8
+-0.13472989681978872,Two-parent family,1,1
+0.6608901885336625,Single-parent family,1,3
+-0.28376567048958834,Two-parent family,1,3
+3.2131049861681826,Two-parent family,0,2.3
+-0.4388716665668722,Two-parent family,0,4
+-0.28376567048958834,Two-parent family,0,3.5
+0.3184476465970944,Two-parent family,1,0.9
+0.6468703059741149,"One-parent, one guardian",0,2
+-0.5939776626441561,Two-parent family,1,3.5
+-0.13472989681978872,"One-parent, one guardian",0,0.5
+0.020376099257495128,Two-parent family,0,2.8
+-0.4388716665668722,Two-parent family,0,3
+-0.28376567048958834,Two-parent family,0,4
+-0.5939776626441561,Two-parent family,0,2.3
+-0.1286596744123045,Two-parent family,1,3.8
+-0.28376567048958834,Two-parent family,1,3
+-0.28376567048958834,Two-parent family,1,3.5
+-0.28376567048958834,Two-parent family,1,2.5
+0.042345641969106174,Two-parent family,0,3
+-0.28376567048958834,Two-parent family,1,3.3
+-0.28376567048958834,Two-parent family,0,2.8
+0.3184476465970944,Two-parent family,0,3.5
+-0.0786503665815981,Single-parent family,1,2.1
+-0.1286596744123045,Two-parent family,0,3.3
+-0.1286596744123045,Two-parent family,0,3
+0.048415864376590456,Single-parent family,0,1.9
+-0.4388716665668722,Two-parent family,0,2.3
+-0.09267024914114576,Single-parent family,0,2.3
+-0.28376567048958834,Two-parent family,0,2.8
+-0.28376567048958834,Two-parent family,0,3.5
+-0.1286596744123045,"One-parent, one guardian",0,2.8
+-0.1286596744123045,Two-parent family,1,3.3
+-0.28376567048958834,Two-parent family,1,2.8
+-0.28376567048958834,Two-parent family,0,3.5
+-0.4388716665668722,Two-parent family,0,2.5
+-0.28376567048958834,Two-parent family,0,3.8
+-0.4388716665668722,"One-parent, one guardian",1,3
+-0.5939776626441561,Two-parent family,0,2.8
+-0.24170602281094541,Two-parent family,0,2.8
+-0.4388716665668722,Single-parent family,1,4
+-0.28376567048958834,Two-parent family,0,2.5
+0.020376099257495128,Two-parent family,1,2.5
+-0.1286596744123045,Two-parent family,0,3.8
+-0.28376567048958834,Two-parent family,1,9.8
+-0.5939776626441561,Two-parent family,1,4
+0.020376099257495128,Two-parent family,1,3.5
+-0.28376567048958834,Two-parent family,0,3
+-0.4388716665668722,Two-parent family,1,3.5
+0.19745163804639007,Two-parent family,1,3.3
+0.22549140316548535,Two-parent family,1,2.5
+-0.1286596744123045,"One-parent, one guardian",0,2.3
+-0.28376567048958834,Two-parent family,0,2.5
+-0.28376567048958834,Two-parent family,1,3.8
+-0.1286596744123045,"One-parent, one guardian",0,2.5
+-0.4388716665668722,Two-parent family,1,3.5
+-0.13472989681978872,Two-parent family,1,3.5
+3.2131049861681826,Single-parent family,0,2.5
+-0.2898358928970726,Single-parent family,1,3.5
+0.37452717683528497,Two-parent family,1,3.5
+-0.28376567048958834,Single-parent family,0,3
+0.16941187292729473,Two-parent family,0,3
+-0.4388716665668722,Single-parent family,0,2.8
+-0.1286596744123045,Two-parent family,0,4
+-0.28376567048958834,Two-parent family,1,2.8
+-0.28376567048958834,Two-parent family,0,3
+-0.1286596744123045,Two-parent family,0,9.8
+-0.5939776626441561,Two-parent family,1,2.5
+-0.28376567048958834,Two-parent family,0,3.3
+-0.4388716665668722,Single-parent family,1,3.8
+-0.5939776626441561,Single-parent family,1,4
+-0.28376567048958834,Two-parent family,0,3.3
+-0.5939776626441561,Two-parent family,0,3.8
+0.020376099257495128,Two-parent family,0,3.3
+-0.4388716665668722,Single-parent family,0,2
+3.2131049861681826,Two-parent family,0,4
+-0.42485178400732454,Single-parent family,0,2
+-0.28376567048958834,Two-parent family,1,3.3
+-0.28376567048958834,Two-parent family,1,3.8
+-0.28376567048958834,Two-parent family,1,3.3
+-0.1286596744123045,Two-parent family,1,3
+0.22549140316548535,Two-parent family,0,2.3
+-0.4388716665668722,Two-parent family,0,3.8
+-0.4388716665668722,Two-parent family,0,3.8
+0.37452717683528497,Single-parent family,1,2.5
+-0.5939776626441561,Two-parent family,1,2.8
+-0.1286596744123045,Two-parent family,0,3
+-0.28376567048958834,Two-parent family,1,3.8
+-0.5939776626441561,Two-parent family,0,3
+-0.13472989681978872,Two-parent family,0,3.8
+-0.22768614025139775,Two-parent family,1,3
+-0.28376567048958834,Single-parent family,0,3
+-0.28376567048958834,Two-parent family,1,9.8
+-0.1286596744123045,Two-parent family,0,3.3
+-0.42485178400732454,Two-parent family,1,4
+-0.5939776626441561,Two-parent family,0,2.3
+-0.28376567048958834,Two-parent family,1,3.8
+-0.4388716665668722,Two-parent family,1,2.5
+-0.1286596744123045,"One-parent, one guardian",0,2.3
+-0.25572590537049306,"One-parent, one guardian",1,3.5
+0.014305876850010854,Single-parent family,1,2.8
+-0.24170602281094541,Two-parent family,1,1.6
+-0.28376567048958834,"One-parent, one guardian",1,4
+3.2131049861681826,Two-parent family,0,3
+0.02832575940955852,Two-parent family,1,2.8
+-0.1286596744123045,"One-parent, one guardian",0,1
+3.2131049861681826,Two-parent family,0,3.8
+-0.5939776626441561,Single-parent family,0,1.5
+-0.4388716665668722,Two-parent family,0,2.8
+-0.13472989681978872,Two-parent family,0,2.5
+0.16941187292729473,"One-parent, one guardian",0,3
+0.3184476465970944,Single-parent family,0,1.1
+-0.28376567048958834,"One-parent, one guardian",1,3.3
+-0.5939776626441561,Two-parent family,1,3.3
+-0.5939776626441561,Two-parent family,1,3.8
+-0.28376567048958834,Two-parent family,1,3.8
+-0.5939776626441561,Two-parent family,0,3.5
+-0.5939776626441561,Two-parent family,1,2.5
+-0.28376567048958834,Single-parent family,0,3.5
+0.020376099257495128,"One-parent, one guardian",0,3.3
+-0.28376567048958834,Two-parent family,1,3
+-0.28376567048958834,Single-parent family,1,3
+-0.5939776626441561,Two-parent family,0,4
+0.020376099257495128,Two-parent family,0,2
+-0.5939776626441561,Two-parent family,1,4
+0.16941187292729473,Two-parent family,1,3.8
+-0.1286596744123045,Two-parent family,1,2.5
+-0.5939776626441561,Two-parent family,1,4
+-0.28376567048958834,Two-parent family,0,4
+-0.5939776626441561,Two-parent family,1,3
+-0.28376567048958834,Single-parent family,1,2.1
+-0.1286596744123045,Two-parent family,0,3
+0.16941187292729473,Two-parent family,1,3.5
+-0.13472989681978872,Two-parent family,1,3.5
+-0.4388716665668722,"One-parent, one guardian",0,3
+1.839156495332512,Two-parent family,0,4
+-0.44494188897435644,Two-parent family,0,1.6
+-0.4388716665668722,Two-parent family,1,3
+-0.5939776626441561,Two-parent family,0,3.5
+0.6468703059741149,Single-parent family,0,2.3
+-0.5939776626441561,Two-parent family,1,3.8
+-0.5939776626441561,Two-parent family,0,4
+-0.4388716665668722,Two-parent family,1,3.5
+0.6468703059741149,"One-parent, one guardian",0,2.3
+-0.4388716665668722,Two-parent family,0,3.8
+0.6468703059741149,Two-parent family,0,3.5
+-0.25572590537049306,Single-parent family,1,1.9
+-0.4388716665668722,Two-parent family,1,4
+-0.5939776626441561,Two-parent family,0,3
+0.34648741171618974,Two-parent family,0,1.3
+-0.4388716665668722,Two-parent family,1,2.3
+-0.5939776626441561,Two-parent family,1,4
+-0.5939776626441561,Two-parent family,1,3.3
+-0.5939776626441561,Single-parent family,1,3.5
+-0.4388716665668722,Two-parent family,1,3.3
+-0.5939776626441561,"One-parent, one guardian",1,4
+-0.28376567048958834,Two-parent family,1,3.5
+0.16941187292729473,Two-parent family,1,1.8
+0.3605072942757374,Single-parent family,1,2.3
+-0.28376567048958834,Two-parent family,1,3
+-0.07258014417411385,Single-parent family,0,3
+-0.28376567048958834,Two-parent family,1,3
+-0.28376567048958834,Single-parent family,1,4
+-0.28376567048958834,Single-parent family,0,2.5
+0.6468703059741149,Two-parent family,1,3.3
+-0.4388716665668722,Two-parent family,0,4
+-0.4388716665668722,Two-parent family,1,3.8
+-0.1286596744123045,Two-parent family,1,2.5
+-0.28376567048958834,Two-parent family,0,2.8
+-0.10061990929320914,Two-parent family,1,2.5
+-0.1286596744123045,Two-parent family,0,1.9
+0.020376099257495128,Two-parent family,0,3
+-0.5939776626441561,Two-parent family,1,3.3
+-0.28376567048958834,"One-parent, one guardian",0,3
+-0.13472989681978872,Single-parent family,0,2.8
+-0.4388716665668722,Two-parent family,1,4
+-0.4388716665668722,Two-parent family,0,3.3
+-0.5939776626441561,Two-parent family,0,2.3
+-0.5939776626441561,Two-parent family,1,4
+-0.1286596744123045,Two-parent family,0,2.5
+0.21147152060593774,Single-parent family,0,1.8
+-0.28376567048958834,Two-parent family,1,2.8
+-0.1286596744123045,Two-parent family,0,2
+-0.1286596744123045,Two-parent family,0,1.8
+-0.4388716665668722,Two-parent family,0,3
+-0.4388716665668722,Two-parent family,1,3.5
+-0.28376567048958834,Two-parent family,0,3.5
+-0.1286596744123045,Two-parent family,0,1.3
+-0.28376567048958834,"One-parent, one guardian",1,1.5
+-0.4388716665668722,Two-parent family,1,2.4
+-0.1286596744123045,Two-parent family,0,9.8
+0.19745163804639007,"One-parent, one guardian",1,3
+-0.28376567048958834,Two-parent family,1,4
+0.22549140316548535,Two-parent family,1,3.5
+-0.28376567048958834,Two-parent family,0,2.5
+-0.13472989681978872,Single-parent family,0,2.5
+-0.28376567048958834,Two-parent family,0,3.8
+0.9085205188688086,Two-parent family,1,4
+0.7534145227915247,Single-parent family,0,2.5
+-0.28376567048958834,Two-parent family,1,3.5
+-0.28376567048958834,Two-parent family,1,3.3
+-0.4388716665668722,Two-parent family,0,4
+-0.28376567048958834,"One-parent, one guardian",1,3.8
+0.16941187292729473,Two-parent family,1,1.2
+-0.4388716665668722,Two-parent family,0,4
+-0.28376567048958834,Two-parent family,0,2
+-0.5939776626441561,Two-parent family,0,3.5
+-0.4388716665668722,"One-parent, one guardian",0,3.8
+-0.28376567048958834,Single-parent family,0,3.8
+-0.4388716665668722,Two-parent family,0,3.8
+-0.28376567048958834,Two-parent family,0,2.8
+-0.28376567048958834,Two-parent family,1,3
+0.6468703059741149,Two-parent family,0,2.5
+-0.28376567048958834,Single-parent family,1,3
+-0.1286596744123045,Single-parent family,1,3
+3.2131049861681826,Two-parent family,0,3.5
+3.2131049861681826,Two-parent family,0,3.5
+-0.5939776626441561,Two-parent family,1,3.3
+-0.5939776626441561,Two-parent family,0,3.8
+3.2131049861681826,Single-parent family,1,2.5
+-0.5939776626441561,Two-parent family,0,2.8
+-0.11463979185275681,Two-parent family,0,3.8
+0.048415864376590456,Two-parent family,1,4
+-0.28376567048958834,Two-parent family,1,3.3
+-0.5939776626441561,Two-parent family,1,3.5
+-0.28376567048958834,Two-parent family,0,2.8
+0.020376099257495128,Two-parent family,1,3.8
+0.16941187292729473,Single-parent family,0,2.5
+0.16941187292729473,Two-parent family,0,3.3
+-0.5939776626441561,Two-parent family,1,3.5
+0.6468703059741149,Two-parent family,1,4

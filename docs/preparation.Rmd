@@ -192,7 +192,7 @@ Here are two videos to watch that will help you learn ggplot2:
 
 ---
 
-## More than Two Levels of a Categorical Predictor
+## Polychotompus Categorical Predictora {#poly}
 
 **Required**
 

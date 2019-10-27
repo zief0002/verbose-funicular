@@ -18,6 +18,34 @@ Below are the links to the data sets and data codebooks used in the notes, scrip
 <tbody>
 
 <tr>
+<td>activity-based-courses.csv</td>
+<td align="center" style="vertical-align:middle;">
+  <a href="https://github.com/zief0002/epsy-8251/raw/master/data/activity-based-courses.csv">
+    <span class="fas fa-file-csv" style="color: #ff2600; font-size: 20px;"></span>
+  </a>
+</td>
+<td align="center" style="vertical-align:middle;">
+  <a href="codebooks/activity-based-courses.html" target="_blank">
+    <span class="fas fa-book-open" style="color: #ff2600; font-size: 20px;"></span>
+  </a>
+</td>
+</tr>
+
+<tr>
+<td>colleges-bordering-mn.csv</td>
+<td align="center" style="vertical-align:middle;">
+  <a href="https://github.com/zief0002/epsy-8251/raw/master/data/colleges-bordering-mn.csv">
+    <span class="fas fa-file-csv" style="color: #ff2600; font-size: 20px;"></span>
+  </a>
+</td>
+<td align="center" style="vertical-align:middle;">
+  <a href="codebooks/colleges-bordering-mn.html" target="_blank">
+    <span class="fas fa-book-open" style="color: #ff2600; font-size: 20px;"></span>
+  </a>
+</td>
+</tr>
+
+<tr>
 <td>evaluations.csv</td>
 <td align="center" style="vertical-align:middle;">
   <a href="https://github.com/zief0002/epsy-8251/raw/master/data/evaluations.csv">
@@ -110,6 +138,20 @@ Below are the links to the data sets and data codebooks used in the notes, scrip
 </td>
 <td align="center" style="vertical-align:middle;">
   <a href="codebooks/state-education.html" target="_blank">
+    <span class="fas fa-book-open" style="color: #ff2600; font-size: 20px;"></span>
+  </a>
+</td>
+</tr>
+
+<tr>
+<td>substance-family.csv</td>
+<td align="center" style="vertical-align:middle;">
+  <a href="https://github.com/zief0002/epsy-8251/raw/master/data/substance-family.csv">
+    <span class="fas fa-file-csv" style="color: #ff2600; font-size: 20px;"></span>
+  </a>
+</td>
+<td align="center" style="vertical-align:middle;">
+  <a href="codebooks/substance-family.html" target="_blank">
     <span class="fas fa-book-open" style="color: #ff2600; font-size: 20px;"></span>
   </a>
 </td>

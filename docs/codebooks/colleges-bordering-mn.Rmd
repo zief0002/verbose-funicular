@@ -1,0 +1,52 @@
+---
+title: "colleges-bordering-mn.csv"
+output: 
+  rmdformats::html_docco:
+    css: 'codebooks.css'
+bibliography: '../../notes/epsy8251.bib'
+csl: '../../notes/apa-single-spaced.csl'
+---
+
+
+```{r knitr_init, echo=FALSE, cache=FALSE}
+library(knitr)
+library(rmdformats)
+library(fontawesome)
+
+## Global options
+options(max.print="75")
+opts_chunk$set(echo=FALSE,
+	             cache=TRUE,
+               prompt=FALSE,
+               tidy=TRUE,
+               comment=NA,
+               message=FALSE,
+               warning=FALSE)
+opts_knit$set(width=75)
+```
+
+
+The data in [colleges-bordering-mn.csv](https://github.com/zief0002/epsy-8251/raw/master/data/colleges-bordering-mn.csv) contains institutional data for 104 colleges and universities in the five state area (MN, IA, WI, ND, and SD). These data were collected by the Department of Education for the [2013 College Score Card](https://collegescorecard.ed.gov/). The variables are:
+
+- `name`: Name of college/university
+- `tuition_in_state`: In-state tuition and fees
+- `tuition_out_state`: Out-of-state tuition and fees
+- `state`: State postal abbreviation (IA = Iowa, MN = Minnesota, ND = North Dakota, SD = South Dakota, WI = Wisconsin)
+- `public`: Dummy-coded variable indicating educational sector (1 = public school, 0 = private school)
+- `main`: Dummy-coded variable indicating whether the campus is the school's main campus? (1 = yes, 0 = no)
+- `admission`: Admission rate
+- `act75`: 75th percentile of the ACT cumulative scores
+- `avg_fac_salary`: Average faculty salary (per month)
+- `completion`: Four-year completion rate for first-time, full-time students
+- `pct_pell`: Percentage of undergraduates who receive a Pell grant
+
+
+### Preview
+
+```{r}
+colleges = readr::read_csv(file = "~/Documents/github/epsy-8251/data/colleges-bordering-mn.csv")
+head(colleges)
+```
+
+
+### References

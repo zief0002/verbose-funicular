@@ -92,39 +92,39 @@ Below are the due dates for the assignments, as well as links to the RMD and PDF
 
 
 
-<!-- <tr> -->
-<!-- <td>Assignment \#7: *Analysis of Covariance Using Multiple Regression*</td> -->
-<!-- <td>Nov. 19</td> -->
-<!-- <td>Nov. 20</td> -->
-<!-- <td align="center" style="vertical-align:middle;"> -->
-<!--   <a href="https://github.com/zief0002/epsy-8251/raw/master/assignments/assignment-07-ancova.pdf"> -->
-<!--     <span class="fa fa-file-pdf" style="color: #ff2600; font-size: 20px;"></span> -->
-<!--   </a> -->
-<!-- </td> -->
-<!-- </tr> -->
+<tr>
+<td>Assignment \#7: *Dichotomous Categorical Predictors*</td>
+<td>Nov. 19</td>
+<td>Nov. 20</td>
+<td align="center" style="vertical-align:middle;">
+  <a href="https://github.com/zief0002/epsy-8251/raw/master/assignments/assignment-07-dichotomous-categorical-predictors.pdf">
+    <span class="fa fa-file-pdf" style="color: #ff2600; font-size: 20px;"></span>
+  </a>
+</td>
+</tr>
 
 
-<!-- <tr> -->
-<!-- <td>Assignment \#8: *Analysis of Covariance Using Multiple Regression: Part II*</td> -->
-<!-- <td>Dec. 03</td> -->
-<!-- <td>Dec. 02</td> -->
-<!-- <td align="center" style="vertical-align:middle;"> -->
-<!--   <a href="https://github.com/zief0002/epsy-8251/raw/master/assignments/assignment-08-ancova-part-ii.pdf"> -->
-<!--     <span class="fa fa-file-pdf" style="color: #ff2600; font-size: 20px;"></span> -->
-<!--   </a> -->
-<!-- </td> -->
-<!-- </tr> -->
+<tr>
+<td>Assignment \#8: *Polychotomous Categorical Predictors*</td>
+<td>Dec. 03</td>
+<td>Dec. 02</td>
+<td align="center" style="vertical-align:middle;">
+  <a href="https://github.com/zief0002/epsy-8251/raw/master/assignments/assignment-08-polychotomous-categorical-predictors.pdf">
+    <span class="fa fa-file-pdf" style="color: #ff2600; font-size: 20px;"></span>
+  </a>
+</td>
+</tr>
 
 
-<!-- <tr> -->
-<!-- <td>Assignment \#9: *Interaction Models*</td> -->
-<!-- <td colspan='2' align='center'>Dec. 13 <br/> (due at 12:00pm in EdSciB 250)</td> -->
-<!-- <td align="center" style="vertical-align:middle;"> -->
-<!--   <a href="https://github.com/zief0002/epsy-8251/raw/master/assignments/assignment-09-interactions.pdf"> -->
-<!--     <span class="fa fa-file-pdf" style="color: #ff2600; font-size: 20px;"></span> -->
-<!--   </a> -->
-<!-- </td> -->
-<!-- </tr> -->
+<tr>
+<td>Assignment \#9: *Interaction Models*</td>
+<td colspan='2' align='center'>Dec. 13 <br/> (due at 12:00pm in EdSciB 250)</td>
+<td align="center" style="vertical-align:middle;">
+  <a href="https://github.com/zief0002/epsy-8251/raw/master/assignments/assignment-09-interactions.pdf">
+    <span class="fa fa-file-pdf" style="color: #ff2600; font-size: 20px;"></span>
+  </a>
+</td>
+</tr>
 
 </tbody>
 </table>
