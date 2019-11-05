@@ -36,6 +36,9 @@ head(keith)
 
 lm.1 = lm(gpa ~ 1 + homework, data = keith)
 
+glance(lm.1)
+tidy(lm.1)
+
 
 
 ##################################################
