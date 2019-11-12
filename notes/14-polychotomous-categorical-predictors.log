@@ -1,9 +1,9 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019) (preloaded format=xelatex 2019.10.26)  27 OCT 2019 15:37
+This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019) (preloaded format=xelatex 2019.10.26)  5 NOV 2019 13:20
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**14-more-categorical-predictors.tex
-(./14-more-categorical-predictors.tex
+**14-polychotomous-categorical-predictors.tex
+(./14-polychotomous-categorical-predictors.tex
 LaTeX2e <2019-10-01>
 (/Users/zief0002/Library/TinyTeX/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2019/08/27 v1.4j Standard LaTeX document class
@@ -1396,8 +1396,8 @@ Package: makecell 2009/08/03 V0.1e Managing of Tab Column Heads and Cells
 \rotheadsize=\dimen318
 \c@nlinenum=\count346
 \TeXr@lab=\toks46
-) (./14-more-categorical-predictors.aux)
-\openout1 = `14-more-categorical-predictors.aux'.
+) (./14-polychotomous-categorical-predictors.aux)
+\openout1 = `14-polychotomous-categorical-predictors.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 166.
 LaTeX Font Info:    ... okay on input line 166.
@@ -1767,9 +1767,10 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 LaTeX Info: Redefining \ref on input line 166.
 LaTeX Info: Redefining \pageref on input line 166.
 LaTeX Info: Redefining \nameref on input line 166.
-(./14-more-categorical-predictors.out) (./14-more-categorical-predictors.out)
+(./14-polychotomous-categorical-predictors.out) (./14-polychotomous-categorical
+-predictors.out)
 \@outlinefile=\write5
-\openout5 = `14-more-categorical-predictors.out'.
+\openout5 = `14-polychotomous-categorical-predictors.out'.
 
 ABD: EveryShipout initializing macros
 Package caption Info: Begin \AtBeginDocument code.
@@ -1825,14 +1826,14 @@ Package xcolor Warning: Incompatible color definition on input line 275.
 
 Package xcolor Warning: Incompatible color definition on input line 275.
 
-File: "14-more-categorical-predictors_files/figure-latex/""unnamed-chunk-1-1".p
-df Graphic file (type pdf)
-<use "14-more-categorical-predictors_files/figure-latex/""unnamed-chunk-1-1".pd
-f>
-File: "14-more-categorical-predictors_files/figure-latex/""unnamed-chunk-1-2".p
-df Graphic file (type pdf)
-<use "14-more-categorical-predictors_files/figure-latex/""unnamed-chunk-1-2".pd
-f>
+File: "14-polychotomous-categorical-predictors_files/figure-latex/""unnamed-chu
+nk-1-1".pdf Graphic file (type pdf)
+<use "14-polychotomous-categorical-predictors_files/figure-latex/""unnamed-chun
+k-1-1".pdf>
+File: "14-polychotomous-categorical-predictors_files/figure-latex/""unnamed-chu
+nk-1-2".pdf Graphic file (type pdf)
+<use "14-polychotomous-categorical-predictors_files/figure-latex/""unnamed-chun
+k-1-2".pdf>
 
 Package xcolor Warning: Incompatible color definition on input line 286.
 
@@ -2050,21 +2051,21 @@ Package xcolor Warning: Incompatible color definition on input line 1077.
 [12] [13] [14]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1267.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 1267.
-(./14-more-categorical-predictors.aux)
+(./14-polychotomous-categorical-predictors.aux)
 Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 1267.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1267.
 
-Package rerunfilecheck Info: File `14-more-categorical-predictors.out' has not 
-changed.
+Package rerunfilecheck Info: File `14-polychotomous-categorical-predictors.out'
+ has not changed.
 (rerunfilecheck)             Checksum: ED744E0A6FED14333B9D34E7B3BDF8AD.
  ) 
 Here is how much of TeX's memory you used:
  39051 strings out of 494467
- 759317 string characters out of 6172700
- 898677 words of memory out of 5000000
+ 759551 string characters out of 6172700
+ 898740 words of memory out of 5000000
  42816 multiletter control sequences out of 15000+600000
  554913 words of font info for 91 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 78i,19n,116p,827b,440s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 78i,19n,116p,836b,440s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on 14-more-categorical-predictors.pdf (14 pages).
+Output written on 14-polychotomous-categorical-predictors.pdf (14 pages).

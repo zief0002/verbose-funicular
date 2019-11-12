@@ -105,7 +105,9 @@ Below are the due dates for the assignments, as well as links to the RMD and PDF
 
 
 <tr>
-<td>Assignment \#8: *Polychotomous Categorical Predictors*</td>
+<td>Assignment \#8: *Polychotomous Categorical Predictors*<br />
+  <span style="margin-left:20px; color:red;">*[Updated 11-12-2019]*</span>
+  </td>
 <td>Dec. 03</td>
 <td>Dec. 02</td>
 <td align="center" style="vertical-align:middle;">

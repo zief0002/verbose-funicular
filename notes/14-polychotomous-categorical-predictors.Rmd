@@ -36,7 +36,7 @@ options(scipen=5)
 
 # Preparation
 
-In this set of notes, we will examine the question of whether family structure affects adolescents' use of illegal substances (cigarettes, alcohol, and marijuana). In particular we will evaluate whether adolescents from intact families use these substances at different rates than adolescents from non-intact families. To do so, we will use the *substance-family.csv* data (see the [data codebook](http://zief0002.github.io/epsy-8251/codebooks/substance-afamily.html)). To begin, we will load several libraries and import the data into an object called `family`. 
+In this set of notes, we will examine the question of whether family structure affects adolescents' use of illegal substances (cigarettes, alcohol, and marijuana). In particular we will evaluate whether adolescents from intact families use these substances at different rates than adolescents from non-intact families. To do so, we will use the *substance-family.csv* data (see the [data codebook](http://zief0002.github.io/epsy-8251/codebooks/substance-family.html)). To begin, we will load several libraries and import the data into an object called `family`. 
 
 
 ```{r preparation, warning=FALSE, message=FALSE}

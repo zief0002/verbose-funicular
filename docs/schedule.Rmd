@@ -471,7 +471,40 @@ Below is the tenative schedule for the class. The dates are subject to change at
 </tr>
 
 
+<!-- Unit 07: Interaction Models -->
 
+<tr>
+<td colspan="7"><b>Unit 07: Interaction Models</b></td>
+</tr>
+
+<tr>
+<td align="center" style="vertical-align:middle;"></td>
+<td>Nov. 26</td>
+<td>Dec. 02</td>
+<td align="center" style="vertical-align:middle;" rowspan="2">
+  <a href="preparation.html#intmodel">
+    <span class="fa fa-book" style="color: #ff2600; font-size: 20px;"></span>
+  </a>
+</td>
+<td style="vertical-align:middle;" rowspan="2">Introduction to Interaction Models</td>
+<td align="center" style="vertical-align:middle;" rowspan="2">
+  <a href="https://github.com/zief0002/epsy-8251/raw/master/notes/15-introduction-to-interaction-models.pdf">
+    <span class="fa fa-file-pdf" style="color: #ff2600; font-size: 20px;"></span>
+  </a>
+</td>
+<td align="center" style="vertical-align:middle;" rowspan="2">
+  <a href="https://github.com/zief0002/epsy-8251/raw/master/scripts/15-introduction-to-interaction-models.R">
+    <span class="fab fa-r-project" style="color: #ff2600; font-size: 20px;"></span>
+  </a>
+</td>
+</tr>
+
+
+<tr>
+<td align="center" style="vertical-align:middle;"></td>
+<td>Dec. 03</td>
+<td>Dec. 04</td>
+</tr>
 
 </tbody>
 </table>    

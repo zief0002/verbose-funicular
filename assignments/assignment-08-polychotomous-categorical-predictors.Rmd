@@ -45,7 +45,7 @@ Fit the regression model that uses the dummy predictors for state to predict var
 
 3. Write the fitted regression equation.
 
-4. Which states, if any, differ from Minnesota in the average in-state tuition (more than we expect because of sampling variation) after controlling for these other predictors? Explain
+4. Which states, if any, differ from Minnesota in the average in-state tuition (more than we expect because of sampling variation)? Explain
 
 5. Report and interpret the $R^2$ value for this model.
 

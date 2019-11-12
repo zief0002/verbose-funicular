@@ -1,0 +1,17 @@
+base
+knitr
+kableExtra
+rmdformats
+broom
+corrr
+educate
+gridExtra
+tidyverse
+ggplot2
+tibble
+tidyr
+readr
+purrr
+dplyr
+stringr
+forcats

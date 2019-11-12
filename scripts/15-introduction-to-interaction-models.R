@@ -4,12 +4,9 @@
 
 library(broom)
 library(corrr)
-library(dotwhisker)
-library(dplyr)
-library(ggplot2)
-library(readr)
-library(sm)
-library(tidyr)
+library(educate)
+library(gridExtra)
+library(tidyverse)
 
 
 
@@ -17,21 +14,22 @@ library(tidyr)
 ### Read in the data
 ###################################################
 
-evals = read_csv(file = "~/Documents/github/epsy-8251/data/evaluations.csv")
-head(evals)
-
-
+work = read_csv(file = "~/Documents/github/epsy-8251/data/work-demands.csv")
+head(work)
 
 
 
 ##################################################
-### Fit main-effects model
+### Fit main-effects models
 ##################################################
 
-lm.1 = lm(avg_eval ~ 1 + beauty + tenured, data = evals)
+# Fit models
+lm.1 = lm(guilt ~ 1 + bound_span_work, data = work)
+lm.2 = lm(guilt ~ 1 + bound_span_work + female, data = work)
 
-glance(lm.1)
+# Coefficient-level output
 tidy(lm.1)
+tidy(lm.2)
 
 
 
@@ -39,77 +37,27 @@ tidy(lm.1)
 ### Plot main-effects model results
 ##################################################
 
-# Set up dataframe
-profs = crossing(
-  beauty = seq(from = -1.6, to = 1.9, by = 0.1), 
-  tenured = c(0, 1)
-)
-
-
-# Add y-hat values and plot
-profs %>% mutate(
-  yhat = predict(lm.1, newdata = profs), # Get y-hat values
-  tenured = factor( # Make tenured a factor for better plotting
-    tenured, levels = c(0, 1), 
-    labels = c("Non-Tenured", "Tenured")
-    ) 
-  ) %>%
-  ggplot(aes(x = beauty, y = yhat, color = tenured)) +
-    geom_line() +
-    theme_bw() +
-    xlab("Beauty rating") +
-    ylab("Predicted average course evaluation score") + 
-    scale_color_brewer(name = "", palette = "Set1")
-
+ggplot(data = work, aes(x = bound_span_work, y = guilt)) +
+  geom_point(alpha = 0) +
+  theme_bw() +
+  xlab("Amount of boundary-spanning work") +
+  ylab("Predicted guilt") +
+  geom_abline(intercept = 3.09, slope = -.003, linetype = "dashed", color = "darkblue") +
+  geom_abline(intercept = (3.09 + 0.52), slope = -.003, linetype = "solid", color = "darkorange")
 
 
 
 ##################################################
-### Explore data for differential effects between beauty and tenure
+### Explore data for differential effects between boundary-spanning work and gender
 ##################################################
 
-ggplot(data = evals, aes(x = beauty, y = avg_eval, color = factor(tenured))) + 
-  geom_point() +
+ggplot(data = work, aes(x = bound_span_work, y = guilt, color = factor(female))) +
+  geom_jitter() +
   geom_smooth(method = "lm", se = FALSE) +
   theme_bw() +
-  xlab("Beauty rating") +
-  ylab("Predicted average course evaluation score") +
-  scale_color_brewer(name = "", palette = "Set1", labels = c("Non-Tenured", "Tenured")) + 
-  facet_wrap(~tenured)
-
-
-
-##################################################
-### Fit interaction model
-##################################################
-
-# Create interaction term
-evals = evals %>% 
-  mutate(
-    beauty_tenured = beauty * tenured 
-    )
-
-head(evals)
-
-
-# Fit interaction model
-lm.2 = lm(avg_eval ~ 1 + beauty + tenured + beauty_tenured, data = evals) 
-
-tidy(lm.2)
-
-
-
-##################################################
-### Explore data for differential effects between beauty and female
-##################################################
-
-ggplot(data = evals, aes(x = beauty, y = avg_eval, color = factor(female))) + 
-  geom_point() +
-  geom_smooth(method = "lm", se = FALSE) +
-  theme_bw() +
-  xlab("Beauty score") +
-  ylab("Predicted average course evaluation score") +
-  scale_color_brewer(name = "", palette = "Set1", labels = c("Male", "Female")) + 
+  xlab("Amount of boundary-spanning work") +
+  ylab("Predicted guilt") +
+  scale_color_manual(name = "", values = c("darkblue", "darkorange")) +
   facet_wrap(~female)
 
 
@@ -118,19 +66,45 @@ ggplot(data = evals, aes(x = beauty, y = avg_eval, color = factor(female))) +
 ### Fit interaction model
 ##################################################
 
-# Create interaction predictor
-evals = evals %>% 
+# Create interaction term
+work = work %>%
   mutate(
-    beauty_female = beauty * female 
-    )
+    bound_work_female = bound_span_work * female
+  )
 
-head(evals)
+# View data
+head(work)
 
 
 # Fit interaction model
-lm.3 = lm(avg_eval ~ 1 + beauty + female + beauty_female, data = evals) 
+lm.3 = lm(guilt ~ 1 + bound_span_work + female + bound_work_female, data = work)
 
 tidy(lm.3)
+
+
+
+##################################################
+### Plot the differential effects from the fitted equation
+##################################################
+
+ggplot(data = work, aes(x = bound_span_work, y = guilt)) +
+  geom_point(alpha = 0) +
+  theme_bw() +
+  xlab("Amount of boundary-spanning work") +
+  ylab("Predicted guilt") +
+  geom_abline(intercept = 3.54, slope = -0.23, color = "darkblue", linetype = "dashed") +
+  geom_abline(intercept = 3.37, slope = 0.13, color = "darkorange", linetype = "solid")
+
+
+
+##################################################
+### Add covariate(s)
+##################################################
+
+# Fit interaction model with covariate
+lm.4 = lm(guilt ~ 1 + authority + bound_span_work + female + bound_work_female, data = work)
+
+tidy(lm.4)
 
 
 
@@ -138,26 +112,25 @@ tidy(lm.3)
 ### Plot interaction model results
 ##################################################
 
-# Create new data set with main effects
-profs = crossing(
-  beauty = seq(from = -1.6, to = 1.9, by = 0.1), female = c(0, 1)
-  ) %>%
-  mutate(
-    beauty_female = beauty * female 
-    )
+p1 = ggplot(data = work, aes(x = bound_span_work, y = guilt)) +
+  geom_point(alpha = 0) +
+  theme_bw() +
+  xlab("Amount of boundary-spanning work") +
+  ylab("Predicted guilt") +
+  geom_abline(intercept = 3.84, slope = -0.22, color = "darkblue", linetype = "dashed") +
+  geom_abline(intercept = 3.65, slope = 0.15, color = "darkorange", linetype = "dashed") +
+  ggtitle("No authority")
 
-# Compute fitted values for the data, and plot
-profs %>% mutate(
-  yhat = predict(lm.3, newdata = profs),
-  female = factor(female, levels = c(0, 1), labels = c("Male", "Female")) 
-  ) %>%
-  ggplot(aes(x = beauty, y = yhat, color = female)) + 
-    geom_line() +
-    theme_bw() +
-    xlab("Beauty rating") +
-    ylab("Predicted average course evaluation score") + 
-    scale_color_brewer(name = "", palette = "Set1") + 
-    ylim(0, 5)
+p2 = ggplot(data = work, aes(x = bound_span_work, y = guilt)) +
+  geom_point(alpha = 0) +
+  theme_bw() +
+  xlab("Amount of boundary-spanning work") +
+  ylab("Predicted guilt") +
+  geom_abline(intercept = 3.20, slope = -0.22, color = "darkblue", linetype = "solid") +
+  geom_abline(intercept = 3.01, slope = 0.15, color = "darkorange", linetype = "solid") +
+  ggtitle("Highest level of authority")
+
+grid.arrange(p1, p2, nrow = 1)
 
 
 
@@ -165,56 +138,64 @@ profs %>% mutate(
 ### Examine model assumptions
 ##################################################
 
-# Create fortified data
-out.3 = augment(lm.3) 
-head(out.3)
+# Create augmented data
+out.4 = augment(lm.4)
 
 
 # Examine normality assumption
-sm.density(out.3$.std.resid, model = "normal", xlab = "Studentized Residuals")
-
+ggplot(data = out.4, aes(x = .std.resid)) +
+  stat_watercolor_density(model = "normal") +
+  stat_density(geom = "line") +
+  theme_bw() +
+  xlab("Standardized Residuals")
 
 # Examine other assumptions
-ggplot(data = out.3, aes(x = .fitted, y = .std.resid)) + 
-  geom_point() +
+ggplot(data = out.4, aes(x = .fitted, y = .std.resid)) +
+  geom_jitter() +
   geom_hline(yintercept = 0) +
-  geom_hline(yintercept = c(-2, 2), linetype = "dotted") + 
-  #geom_smooth() +
+  geom_hline(yintercept = c(-2, 2), linetype = "dotted") +
   theme_bw() +
-  xlab("Fitted Values") + 
-  ylab("Studentized Residuals")
+  xlab("Fitted Values") +
+  ylab("Standardized Residuals")
 
 
 
 ##################################################
-### Fit one last model
+### Fit distress model
 ##################################################
 
-lm.4 = lm(avg_eval ~ 1 + beauty + female + tenured + beauty_tenured, data = evals)
-tidy(lm.4)
+lm.5 = lm(distress ~ 1 + authority + bound_span_work + female + bound_work_female, data = work)
+
+tidy(lm.5)
 
 
-# Create new data set with main effects
-profs = crossing(
-  beauty = seq(from = -1.6, to = 1.9, by = 0.1), 
-  female = c(0, 1),
-  tenured = c(0, 1)
-  ) %>%
-  mutate(
-    beauty_tenured = beauty * tenured 
-  )
+# Plot results controlling for authority (set to median value)
+ggplot(data = work, aes(x = bound_span_work, y = distress)) +
+  geom_point(alpha = 0) +
+  theme_bw() +
+  xlab("Amount of boundary-spanning work") +
+  ylab("Predicted psychological distress") +
+  geom_abline(intercept = 14.81, slope = -0.70, color = "darkblue", linetype = "dashed") +
+  geom_abline(intercept = 14.47, slope = 0.65, color = "darkorange", linetype = "solid")
 
-# Compute fitted values for the data, and plot
-profs %>% mutate(
-  yhat = predict(lm.4, newdata = profs),
-  female = factor(female, levels = c(0, 1), labels = c("Male", "Female")), 
-  tenured = factor(tenured, levels = c(0, 1), labels = c("Non-tenured", "Tenured"))
-  ) %>%
-  ggplot(aes(x = beauty, y = yhat, color = tenured)) + 
-    geom_line() +
-    theme_bw() +
-    xlab("Beauty rating") +
-    ylab("Predicted average course evaluation score") + 
-    scale_color_brewer(name = "", palette = "Set1") + 
-    ylim(0, 5) +
-    facet_wrap(~female)
+
+# Create augmented data
+out.5 = augment(lm.5)
+
+# Examine normality assumption
+ggplot(data = out.5, aes(x = .std.resid)) +
+  stat_watercolor_density(model = "normal") +
+  stat_density(geom = "line") +
+  theme_bw() +
+  xlab("Standardized Residuals")
+
+# Examine other assumptions
+ggplot(data = out.5, aes(x = .fitted, y = .std.resid)) +
+  geom_jitter() +
+  geom_hline(yintercept = 0) +
+  geom_hline(yintercept = c(-3, 3), linetype = "dotted") +
+  theme_bw() +
+  xlab("Fitted Values") +
+  ylab("Standardized Residuals")
+
+
