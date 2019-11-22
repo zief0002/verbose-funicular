@@ -4,12 +4,8 @@
 
 library(broom)
 library(corrr)
-library(dotwhisker)
-library(dplyr)
-library(ggplot2)
-library(readr)
-library(sm)
-library(tidyr)
+library(gridExtra)
+library(tidyverse)
 
 
 
@@ -17,41 +13,41 @@ library(tidyr)
 ### Read in the data
 ###################################################
 
-evals = read_csv(file = "~/Documents/github/epsy-8251/data/evaluations.csv")
-head(evals)
+fert = read_csv(file = "~/Documents/github/epsy-8251/data/fertility.csv")
+head(fert)
 
 
 
 ##################################################
-### Examine data
+### Explore data for interaction b/w female education level and contraceptive use
 ##################################################
 
-summary(evals)
+summary(fert)
 
 
-# Discretize the age variable into 3 categories
-evals = evals %>%
+# Discretize female education level
+fert = fert %>%
   mutate(
-    age_discrete = cut(age, breaks = 3)
+    female_educ_discrete = case_when(
+      educ_female < 4.8 ~ "Quartile 1",
+      educ_female >= 4.8 & educ_female < 8 ~ "Quartile 2",
+      educ_female >= 8 & educ_female < 10.25 ~ "Quartile 3",
+      educ_female >= 10.25 ~ "Quartile 4"
+    )
   )
 
-summary(evals)
+head(fert)
 
-
-
-
-##################################################
-### Examine effect of age
-##################################################
-
-ggplot(data = evals, aes(x = beauty, y = avg_eval, color = age_discrete)) +
+# Plot data
+ggplot(data = fert, aes(x = contraceptive, y = fertility_rate, color = female_educ_discrete)) +
   geom_point(alpha = 0.4) +
   geom_smooth(method = "lm", se = FALSE) +
   theme_bw() +
-  xlab("Beauty rating") +
-  ylab("Average course evaluation score") +
+  xlab("Contraception use") +
+  ylab("Fertility rate") +
   scale_color_brewer(palette = "Set2") +
-  facet_wrap(~age_discrete)
+  facet_wrap(~female_educ_discrete, nrow = 1) +
+  guides(color = FALSE)
 
 
 
@@ -60,7 +56,7 @@ ggplot(data = evals, aes(x = beauty, y = avg_eval, color = age_discrete)) +
 ##################################################
 
 # Fit model
-lm.1 = lm(avg_eval ~ 1 + beauty + age + beauty:age, data = evals)
+lm.1 = lm(fertility_rate ~ 1 + educ_female + contraceptive + educ_female:contraceptive, data = fert)
 
 # Model-level output
 glance(lm.1)
@@ -70,37 +66,18 @@ tidy(lm.1)
 
 
 
-
 ##################################################
-### Plot interaction model results
+### Plot results from interaction model
 ##################################################
 
-# Create new data set with main effects
-plot_data = crossing(
-  beauty = seq(from = -1.6, to = 1.9, by = 0.1),
-  age = c(40, 50, 60)
-)
-
-# Use fitted model to compute fitted values for the data
-plot_data = plot_data %>% 
-  mutate(
-    yhat = predict(lm.1, newdata = plot_data)
-  )
-
-head(plot_data)
-
-# Plot the fitted model
-ggplot(data = plot_data, aes(x = beauty, y = yhat, color = factor(age))) +
-  geom_line() +
+ggplot(data = fert, aes(x = contraceptive, y = fertility_rate)) +
+  geom_point(alpha = 0) +
+  geom_abline(intercept = 4.79, slope = -0.03, color = "#095b67", linetype = "dotted") +
+  geom_abline(intercept = 3.56, slope = -0.018, color = "#d82f5a", linetype = "dashed") +
+  geom_abline(intercept = 2.74, slope = -0.01, color = "#8dd444", linetype = "solid") +
   theme_bw() +
-  xlab("Beauty score") +
-  ylab("Predicted average course evaluation score") +
-  scale_color_brewer(
-    name = "Age", 
-    palette = "Set1", 
-    labels = c("40 years old", "50 years old", "60 years old")
-  ) +
-  ylim(0, 5)
+  xlab("Contraceptive use") +
+  ylab("Fertility rate")
   
   
 
@@ -117,7 +94,7 @@ tidy(lm.1)
 ##################################################
 
 # Fit model
-lm.2 = lm(avg_eval ~ 1 + beauty + age + female + beauty:age, data = evals)
+lm.2 = lm(fertility_rate ~ 1 + educ_female + contraceptive + infant_mortality + educ_female:contraceptive, data = fert)
 
 # Model-level output
 glance(lm.2)
@@ -131,36 +108,28 @@ tidy(lm.2)
 ### Plot the model results
 ##################################################
 
-# Create new data set with main effects
-plot_data = crossing(
-  beauty = seq(from = -1.6, to = 1.9, by = 0.1),
-  age = c(40, 50, 60),
-  female = c(0, 1)
-)
-
-# Use fitted model to compute fitted values for the data
-plot_data = plot_data %>% 
-  mutate(
-    yhat = predict(lm.2, newdata = plot_data),
-    age = factor(age),
-    female = factor(female, levels = c(0, 1), labels = c("Male", "Female"))
-  )
-
-head(plot_data)
-
-# Plot the fitted model
-ggplot(data = plot_data, aes(x = beauty, y = yhat, color = age)) +
-  geom_line() +
+# Plot the fitted model (infant mortality rate = 7)
+p1 = ggplot(data = fert, aes(x = contraceptive, y = fertility_rate)) +
+  geom_point(alpha = 0) +
+  geom_abline(intercept = 3.61, slope = -0.02, color = "#095b67", linetype = "solid") +
+  geom_abline(intercept = 2.25, slope = -0.01, color = "#d82f5a", linetype = "dashed") +
   theme_bw() +
-  xlab("Beauty score") +
-  ylab("Predicted average course evaluation score") +
-  scale_color_brewer(
-    name = "Age", 
-    palette = "Set1", 
-    labels = c("40 years old", "50 years old", "60 years old")
-  ) +
-  ylim(0, 5) +
-  facet_wrap(~female)                                                                                                                                    
+  xlab("Contraceptive use") +
+  ylab("Fertility rate") +
+  ggtitle("Infant mortality rate at the first quartile (7%)")
+
+# Plot the fitted model (infant mortality rate = 41)
+p2 = ggplot(data = fert, aes(x = contraceptive, y = fertility_rate)) +
+  geom_point(alpha = 0) +
+  geom_abline(intercept = 4.29, slope = -0.02, color = "#095b67", linetype = "solid") +
+  geom_abline(intercept = 2.93, slope = -0.01, color = "#d82f5a", linetype = "dashed") +
+  theme_bw() +
+  xlab("Contraceptive use") +
+  ylab("Fertility rate") +
+  ggtitle("Infant mortality rate at the third quartile (41%)")
+
+# Layout side-by-side plot
+grid.arrange(p1, p2, nrow = 1)                                                                                                                                   
 
 
 
@@ -169,9 +138,10 @@ ggplot(data = plot_data, aes(x = beauty, y = yhat, color = age)) +
 ##################################################
 
 # Fit model
-lm.3 = lm(avg_eval ~ 1 + beauty + age + female + 
-            beauty:age + beauty:female + female:age + 
-            beauty:age:female, data = evals)
+# Fit model
+lm.3 = lm(fertility_rate ~ 1 + educ_female + contraceptive + infant_mortality + 
+            educ_female:contraceptive + infant_mortality:contraceptive + educ_female:infant_mortality +
+            educ_female:contraceptive:infant_mortality, data = fert)
 
 # Model-level output
 glance(lm.3)
@@ -185,43 +155,25 @@ tidy(lm.3)
 ### Plot the model results
 ##################################################
 
-# Create new data set with main effects
-plot_data = crossing(
-  beauty = seq(from = -1.6, to = 1.9, by = 0.1),
-  age = c(40, 60),
-  female = c(0, 1)
-)
-
-# Use fitted model to compute fitted values for the data
-plot_data = plot_data %>% 
-  mutate(
-    yhat = predict(lm.3, newdata = plot_data)
-  )
-
-# Convert female and age into factors for better plotting
-plot_data = plot_data %>%
-  mutate(
-    Sex = factor(female, levels = c(0, 1), labels = c("Males", "Females")),
-    Age = factor(age, levels = c(40, 60), labels = c("40 year olds", "60 year olds"))
-  )
-
-head(plot_data)
-
-# Plot the fitted model
-ggplot(data = plot_data, aes(x = beauty, y = yhat, color = Age)) +
-  geom_line() +
+# Plot the fitted model (infant mortality rate = 7)
+p1 = ggplot(data = fert, aes(x = contraceptive, y = fertility_rate)) +
+  geom_point(alpha = 0) +
+  geom_abline(intercept = 4.49, slope = -0.04, color = "#095b67", linetype = "solid") +
+  geom_abline(intercept = 2.09, slope = -0.005, color = "#d82f5a", linetype = "dashed") +
   theme_bw() +
-  xlab("Beauty score") +
-  ylab("Predicted average course evaluation score") +
-  scale_color_brewer(name = "Age", palette = "Set1") +
-  facet_wrap(~Sex)
+  xlab("Contraceptive use") +
+  ylab("Fertility rate") +
+  ggtitle("Infant mortality rate at the first quartile (7%)")
 
-# Plot 2
-ggplot(data = plot_data, aes(x = beauty, y = yhat, color = Sex)) +
-  geom_line() +
+# Plot the fitted model (infant mortality rate = 41)
+p2 = ggplot(data = fert, aes(x = contraceptive, y = fertility_rate)) +
+  geom_point(alpha = 0) +
+  geom_abline(intercept = 4.65, slope = -0.02, color = "#095b67", linetype = "solid") +
+  geom_abline(intercept = 3.02, slope = -0.008, color = "#d82f5a", linetype = "dashed") +
   theme_bw() +
-  xlab("Beauty score") +
-  ylab("Predicted average course evaluation score") +
-  scale_color_brewer(name = "Age", palette = "Set1") +
-  facet_wrap(~Age)
+  xlab("Contraceptive use") +
+  ylab("Fertility rate") +
+  ggtitle("Infant mortality rate at the third quartile (41%)")
 
+# Layout side-by-side plot
+grid.arrange(p1, p2, nrow = 1)

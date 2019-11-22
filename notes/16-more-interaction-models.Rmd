@@ -1,144 +1,140 @@
 ---
 title: "More Interaction Models"
 date: "`r Sys.Date()`"
-header-includes:
-   - \usepackage{xcolor}
-   - \usepackage[framemethod=tikz]{mdframed}
-   - \usepackage{graphicx}
-   - \usepackage{rotating}
-   - \usepackage{booktabs}
-   - \definecolor{umn}{RGB}{153, 0, 85}
-   - \definecolor{umn2}{rgb}{0.1843137, 0.4509804, 0.5372549}
-   - \definecolor{myorange}{HTML}{EA6153}
 output: 
   pdf_document:
-    highlight: tango
+    latex_engine: xelatex
+    highlight: zenburn
     fig_width: 6
     fig_height: 6
-urlcolor: "umn2"
+    includes: 
+      in_header: preamble.tex
+      before_body: doc-prefix.tex
+mainfont: "Sabon"
+sansfont: "Futura"
+monofont: Inconsolata    
+urlcolor: "umn"
 bibliography: epsy8251.bib
 csl: apa-single-spaced.csl
-always_allow_html: yes
 ---
 
-```{r knitr_init, echo=FALSE, cache=FALSE}
+```{r knitr_init, echo=FALSE, cache=FALSE, message=FALSE}
 library(knitr)
+library(kableExtra)
 library(rmdformats)
 
 ## Global options
 options(max.print="75")
-opts_chunk$set(prompt=FALSE, comment=NA, message=FALSE, warning=FALSE, tidy=FALSE)
+opts_chunk$set(prompt=FALSE, comment=NA, message=FALSE, warning=FALSE, tidy=FALSE, fig.width=6, fig.height=6,
+               fig.pos='H', fig.align='center')
 opts_knit$set(width=85)
 options(scipen=5)
 ```
 
-<!-- LaTeX definitions -->
-
-\mdfdefinestyle{mystyle}{userdefinedwidth=5in, align=center, backgroundcolor=yellow, roundcorner=10pt, skipabove=2em}
-
-\mdfdefinestyle{mystyle2}{userdefinedwidth=5.5in, align=center, skipabove=10pt, topline=false, bottomline=false, 
-linecolor=myorange, linewidth=5pt}
-
-\mdfdefinestyle{work}{userdefinedwidth=5in, linecolor=blue, align=center, roundcorner=10pt, skipabove=2em}
-
-
 # Preparation
 
-In this set of notes, you will continue to learn about interaction models. To do so, we will examine the question of whether there is a differential effect of beauty by age on course evaluation scores. The data we will use in this set of notes is collected from student evaluations of instructors' beauty and teaching quality for several courses at the University of Texas. The teaching evaluations were conducted at the end of the semester, and the beauty judgments were made later, by six students who had not attended the classes and were not aware of the course evaluations. The variables are:
-
-- `prof_id`: Professor ID number
-- `avg_eval`: Average course rating
-- `num_courses`: Number of courses for which the professor has evaluations
-- `num_students`: Number of students enrolled in the professor's courses
-- `perc_evaluating`: Average percentage of enrolled students who completed an evaluation
-- `beauty`: Measure of the professor's beauty composed  of the average score on six standardized beauty ratings
-- `tenured`: Is the professor tenured? (0 = non-tenured; 1 = tenured)
-- `native_english`: Is the professor a native English speaker? (0 = non-native English speaker; 1 = native English speaker)
-- `age`: Professor's age (in years)
-- `female`: Is the professor female? (0 = male; 1 = female)
-
-These source of these data is: Hamermesh, D. S. &amp; Parker, A. M. (2005). Beauty in the classroom: Instructors' pulchritude and putative pedagogical productivity. *Economics of Education Review, 24*, 369&ndash;376. The data were made available by: Gelman, A., &amp; Hill, J. (2007). *Data analysis using regression and multilevel/hierarchical models*. New York: Cambridge University Press. 
+In this set of notes, you will continue to learn about interaction models---twith emphasis on interactions between two continuous predictors. To do so, we will revisit the *fertility.csv* (see the [data codebook](http://zief0002.github.io/epsy-8251/codebooks/fertility.html)) dataset you explored in Assignment 05. In that assignment, we found that contraception use in a country was negatively associated with fertility rates, even after controlling for differences in the country's female education level and infant mortality rate. Now we will explore whether the effect of contraception on fertility rates is a function of female's education level (i.e., Is there an interaction between contraception use and female education level?).
 
 
 ```{r preparation, warning=FALSE, message=FALSE}
 # Load libraries
 library(broom)
 library(corrr)
-library(dotwhisker)
-library(dplyr)
-library(ggplot2)
-library(readr)
-library(sm)
-library(tidyr)
+library(gridExtra)
+library(tidyverse)
 
 # Read in data
-evals = read_csv(file = "~/Documents/github/epsy-8251/data/evaluations.csv")
-```
-
-# Interaction between Age and Beauty
-
-Typically, barring support for the interaction effect from theoretical/substantive findings, we would explore the sample data for empirical evidence of the interaction (generally via plots of the data). To explore an interaction effect between two quantitative variables poses some unique challenges. 
-
-To understand those challeneges consider how we explored the interaction between sex and beauty. We created a plot of the effect of beauty on average course evaluation score for males and females, and asked whether the regression line for males and females were parallel. In other words, we need to examine the relationship between $X1$ and $Y$ for different levels of $X2$.
-
-If we are examining an interaction between age and beauty on course evaluation scores, we need to again examine the effect of beauty on average course evaluation score at different levels of age. But, since age is continuous, we have to choose the levels of age; they aren't pre-specified like males and females. In general, researchers would probably choose a high and low (or high, medium, and low) value of age. 
-
-So, we are going to examine the relationship between beauty and course evaluation scores for a low, medium, and high age. Empirically, we can choose these values based on the `summary()` output.
-
-```{r}
-summary(evals)
+fert = read_csv(file = "~/Documents/github/epsy-8251/data/fertility.csv")
 ```
 
 
+# Exploring the Data for an Interaction between Contracpetion Use and Female Education Level
 
+Ideally, we would only include an interaction effect in the model if there is support for this in the theoretical/substantive literature. However, barring this support, we might explore the sample data for empirical evidence of the interaction (generally via plots of the data). To explore an interaction effect between two quantitative variables poses some unique challenges. 
 
-Here we might choose ages of 40 (low), 50 (medium), and 60 (high). after choosing particular values of age, we run into another challenge. That is, there are typically only a few observations that have those ages.
+To understand those challenges consider how we explored the interaction between sex and boundary-spanning work on guilt in a previous set of notes. We created a separate plot of the effect of boundary-spanning work on guilt for males and females, and asked whether the fitted line for males and females were parallel. In other words, we need to examine the relationship between $X1$ and $Y$ for different levels of $X2$.
 
-```{r}
-evals_2 = evals %>% filter(age == 40 | age == 50 | age == 60)
-nrow(evals_2)
-```
-
-There are only 7 cases (out of 94) that are at those three ages. Ideally, we want to use the entire data set to examine effects, otherwise, we might see a spurious relationship. 
+If we are examining an interaction between contraception use and female education level on fertility rates, we need to examine the effect of contraception use on fertility rates at different levels of female education. But, since female education is continuous (there are a lot of levels!), to explore this, we have to choose a small number of levels of female education. Another challenge is that in continuous variables, there are typically very few observations at a specific value of that variable, so instead of selecting specific values, we typically cut the variable into distinct ranges of values.
 
 \newpage
 
-## Cutting the Age Variable into Categories
-
-For plotting purposes, what is usually done is to "cut" the continuous predictor into discrete categories (e.g., low ages, medium ages, and high ages). This is ONLY done for plotting. When we fit the actual interaction, we use the continuous predictor.
-
-There are several R functions to dicretize a continuous variable. We will use the `cut()` function. This function takes the name of the variable you want to cut, and an argument `break=` which specifies the number of levels you want the variable cut into. (Note: you can also specify the cutpoints in the `breaks=` argument; see `cut()`'s help menu.)
+Here we empirically identify distinct ranges for female education, by examining the `summary()` output associated with that variable.
 
 ```{r}
-evals = evals %>%
-  mutate(
-    age_discrete = cut(age, breaks = 3)
-  )
-
-summary(evals)
+summary(fert)
 ```
 
-Now we have cut age into three levels: low ages (43.7 or younger), medium ages (older than 43.7, and younger than or equal to 58.3), and high ages (older than 58.3). We can use our new variable to now examine the potential interaction.
 
-```{r message=FALSE, warning=FALSE, fig.width=13, fig.height = 4, out.width='5.5in'}
-ggplot(data = evals, aes(x = beauty, y = avg_eval, color = age_discrete)) +
+
+
+Here, based on the quartiles, we might choose female education ranges of:
+
+- Female education level $< 4.8$
+- $4.8 \leq$ Female education level $< 8$
+- $8 \leq$ Female education level $< 10.25$
+- $10.25 \leq$ Female education level
+
+Note that you will want to use the entire range of data to explore effects, otherwise, we might see a spurious relationship. Also, and this is VERY IMPORTANT, _**This discretizing is ONLY carried out to create the plot. When we fit the actual interaction in the regression model, we use the continuous predictor.**_
+
+There are several R functions that can be employed to dicretize a continuous variable. We will use the `case_when()` function from **dplyr** to create a new variable that has four different categories, one for each quartile. 
+
+```{r eval=FALSE}
+# Discretize female education level
+fert = fert %>%
+  mutate(
+    female_educ_discrete = case_when(
+      educ_female < 4.8 ~ "Quartile 1",
+      educ_female >= 4.8 & educ_female < 8 ~ "Quartile 2",
+      educ_female >= 8 & educ_female < 10.25 ~ "Quartile 3",
+      educ_female >= 10.25 ~ "Quartile 4"
+      )
+  )
+
+head(fert)
+```
+
+\newpage
+
+```{r echo=FALSE}
+# Discretize female education level
+fert = fert %>%
+  mutate(
+    female_educ_discrete = case_when(
+      educ_female < 4.8 ~ "Quartile 1",
+      educ_female >= 4.8 & educ_female < 8 ~ "Quartile 2",
+      educ_female >= 8 & educ_female < 10.25 ~ "Quartile 3",
+      educ_female >= 10.25 ~ "Quartile 4"
+      )
+  )
+
+head(fert)
+```
+
+Now we have discretized female education level, we can use our new discretized variable to examine the potential interaction with contraception use.
+
+```{r message=FALSE, warning=FALSE, fig.width=12, fig.height = 3, out.width='6in'}
+ggplot(data = fert, aes(x = contraceptive, y = fertility_rate, color = female_educ_discrete)) +
   geom_point(alpha = 0.4) +
   geom_smooth(method = "lm", se = FALSE) +
 	theme_bw() +
-	xlab("Beauty rating") +
-	ylab("Average course evaluation score") +
+	xlab("Contraception use") +
+	ylab("Fertility rate") +
   scale_color_brewer(palette = "Set2") +
-  facet_wrap(~age_discrete)
+  facet_wrap(~female_educ_discrete, nrow = 1) +
+  guides(color = FALSE)
 ```
+
+The empirical evidence is consistent with there being an interaction effect between contraception use and female education level on fertility rate in the sample; the effect of contraception use on fertility rate differs depending on the level of female education. It looks like the absolute magnitude of the effect of contraception use on fertility rate decreases for higher levels of female edcuation.
+
 
 # Fit the Interaction Model
 
 
-To fit the interaction model, use the consituent main effects and the interaction term to predict course evaluation scores. VERY IMPORTANT---Use the original quantitative age predictor, not the discretized variable in the model. We will also use the colon (`:`) notation to fit the model. The colon implicitly creates the product term and includes it in the model. 
+To fit the interaction model, use the consituent main effects and the interaction term to predict fertility rates. VERY IMPORTANT---Use the original quantitative female education level predictor, not the discretized variable in the model. We will also use the colon (`:`) notation to include the interaction term in the model. The colon implicitly creates the product term and includes it in the model.
 
 ```{r}
 # Fit model
-lm.1 = lm(avg_eval ~ 1 + beauty + age + beauty:age, data = evals)
+lm.1 = lm(fertility_rate ~ 1 + educ_female + contraceptive + educ_female:contraceptive, data = fert)
 
 # Model-level output
 glance(lm.1)
@@ -147,245 +143,262 @@ glance(lm.1)
 tidy(lm.1)
 ```
 
-The interaction effect is not statistically significant, indicating there is likely not an interaction between age and beauty on course evaluation scores in the population. 
+The interaction model explains 70.9\% of the variation in fertility rates which is not very consistent with the null hypothesis that the model explains no variation ($F_{3,120}=97.23$, $p<.001$).
+
+To examine whether there is an interaction effect, we evaluate the evidence from the coefficeint-level output. The *p*-value associated with the interaction term ($p=.0007$) suggests that the empirical evidence is inconsistent with the hypothesis of no interaction effect. We do believe that there is an interaction between contraceptive use and female level of education. Because the interaction effect is statistically relevant, we do not interpret any of the constituent main-effects in the model.
 
 
 ## Plot of the Interaction Model
 
-Although, in practice, we would not interpret a non-significant interaction, we will continue as if it were significant for a pedagogical exercise.
+To further understand the nature of the interaction, we will create a plot of the effect of contraception use on fertility rates for different levels of female education. (Or, you could create a plot of the effect of female education level on fertility rates for different values of contraception use.) Here I will choose female education values of 5, 8, and 10 (the nearest integer values to the 25th, 50th, and 75th percentile values) to create my plot. First we will substitute these values into the fitted equation to find the partial equation for each selected female education level.
 
-When we plot the model results, we will choose specific values for age and include them in our `crossing()` function along with a sequence of beauty ratings (and sex).
+### Female education level of 5
 
-```{r fig.width=8, fig.height=6, out.width='4.5in'}
-# Create new data set with main effects
-plot_data = crossing(
-  beauty = seq(from = -1.6, to = 1.9, by = 0.1),
-  age = c(40, 50, 60)
-)
+$$
+\begin{split}
+\hat{\mathrm{Fertility~rate}_i} &= 6.84 - 0.41(5) - 0.05(\mathrm{Contraceptive~use}_i) + 0.004(5)(\mathrm{Contraceptive~use}_i)\\
+&= 6.84 - 2.05 - 0.05(\mathrm{Contraceptive~use}_i) + 0.02(\mathrm{Contraceptive~use}_i) \\
+&= 4.79 - 0.03(\mathrm{Contraceptive~use}_i)
+\end{split}
+$$
 
-# Use fitted model to compute fitted values for the data
-plot_data = plot_data %>% 
-  mutate(
-    yhat = predict(lm.1, newdata = plot_data)
-  )
+### Female education level of 8
 
-head(plot_data)
+$$
+\begin{split}
+\hat{\mathrm{Fertility~rate}_i} &= 6.84 - 0.41(8) - 0.05(\mathrm{Contraceptive~use}_i) + 0.004(8)(\mathrm{Contraceptive~use}_i)\\
+&= 6.84 - 3.28 - 0.05(\mathrm{Contraceptive~use}_i) + 0.032(\mathrm{Contraceptive~use}_i) \\
+&= 3.56 - 0.018(\mathrm{Contraceptive~use}_i)
+\end{split}
+$$
 
+### Female education level of 10
+
+$$
+\begin{split}
+\hat{\mathrm{Fertility~rate}_i} &= 6.84 - 0.41(10) - 0.05(\mathrm{Contraceptive~use}_i) + 0.004(10)(\mathrm{Contraceptive~use}_i)\\
+&= 6.84 - 4.1 - 0.05(\mathrm{Contraceptive~use}_i) + 0.04(\mathrm{Contraceptive~use}_i) \\
+&= 2.74 - 0.01(\mathrm{Contraceptive~use}_i)
+\end{split}
+$$
+
+Now we can create out plot of fertility rates versus contraception use and add the three partial regression lines.
+
+
+```{r fig.width=6, fig.height=6, out.width='4.5in', fig.cap='Plot of fertility rate as a function of contraceptive use and female education level. Partial regression lines are displayed for female education levels of 5th grade (blue, dotted line), 8th grade (red, dashed line) and 10th grade (green, solid line).', fig.pos='H'}
 # Plot the fitted model
-ggplot(data = plot_data, aes(x = beauty, y = yhat, color = factor(age))) +
-  geom_line() +
+ggplot(data = fert, aes(x = contraceptive, y = fertility_rate)) +
+  geom_point(alpha = 0) +
+  geom_abline(intercept = 4.79, slope = -0.03, color = "#095b67", linetype = "dotted") +
+  geom_abline(intercept = 3.56, slope = -0.018, color = "#d82f5a", linetype = "dashed") +
+  geom_abline(intercept = 2.74, slope = -0.01, color = "#8dd444", linetype = "solid") +
   theme_bw() +
-  xlab("Beauty score") +
-  ylab("Predicted average course evaluation score") +
-  scale_color_brewer(
-    name = "Age", 
-    palette = "Set1", 
-    labels = c("40 years old", "50 years old", "60 years old")
-    ) +
-  ylim(0, 5)
+  xlab("Contraceptive use") +
+  ylab("Fertility rate")
 ```
-
-Based on the plot, we can see there is a *disordinal interaction* between age and beauty (the lines cross in our plot). The effect of beauty on average course evaluation score varies across the three ages. There largest effect of beauty on average course evaluation score is for older professors (highest slope), while the effect of beauty for younger professors is smaller (lower slopes).
-
-Similarly, the effect of age on average course evaluation score varies across beauty rating. For professors who were percieved as having a less than average beauty rating ($<0$) younger professors tend to receive higher course evaluation ratings than older professors. However, this trend reverses itself for professors who were percieved as having a higher than average beauty rating. For those professors, older professors tend to be given higher course evaluation ratings than younger professors.
-
-## Compute the Fitted Equations
-
-We can also compute the fitted equations for professors whose age varies. To do this, substitute in the age values in the fitted regression equation. For young, male professors (age = 40),
-
-$$
-\begin{split}
-\hat{\mathrm{course~eval}}_i &= 3.77 - 0.25(\mathrm{beauty}_i) + 0.003(\mathrm{age}_i) + 0.008(\mathrm{beauty}_i)(\mathrm{age}_i) \\
-&= 3.77 - 0.25(\mathrm{beauty}_i) + 0.003(40) + 0.008(\mathrm{beauty}_i)(40) \\
-&= 3.77 - 0.25(\mathrm{beauty}_i) + 0.12 + 0.32(\mathrm{beauty}_i) \\
-&= 3.89 + 0.07(\mathrm{beauty}_i) \\
-\end{split}
-$$
-
-For 50 year old professors,
-
-$$
-\begin{split}
-\hat{\mathrm{course~eval}}_i &= 3.77 - 0.25(\mathrm{beauty}_i) + 0.003(\mathrm{age}_i) + 0.008(\mathrm{beauty}_i)(\mathrm{age}_i) \\
-&= 3.77 - 0.25(\mathrm{beauty}_i) + 0.003(50) + 0.008(\mathrm{beauty}_i)(50) \\
-&= 3.77 - 0.25(\mathrm{beauty}_i) + 0.15 + 0.40(\mathrm{beauty}_i) \\
-&= 3.92 + 0.15(\mathrm{beauty}_i) \\
-\end{split}
-$$
 
 \newpage
 
-And, finally, for 60 year old professors,
+Based on the plot, we can see there is an *ordinal interaction* between contraceptive use and female education level (the lines do not cross in our plot). The effect of contraceptive use on fertility rate varies by level of female education. The largest effect of contraceptive use on fertility rate (highest absolute slope) is for countries that have the lowest female education level. This effect diminishes for countries with higher levels of female education (the magnitude of the slopes get smaller).
 
-$$
-\begin{split}
-\hat{\mathrm{course~eval}}_i &= 3.77 - 0.25(\mathrm{beauty}_i) + 0.003(\mathrm{age}_i) + 0.008(\mathrm{beauty}_i)(\mathrm{age}_i) \\
-&= 3.77 - 0.25(\mathrm{beauty}_i) + 0.003(60) + 0.008(\mathrm{beauty}_i)(60) \\
-&= 3.77 - 0.25(\mathrm{beauty}_i) + 0.18 + 0.48(\mathrm{beauty}_i) \\
-&= 3.95 + 0.23(\mathrm{beauty}_i) \\
-\end{split}
-$$
-
-This tells us the same thing we saw in the plot, but helps us see the difference in slopes numerically.
-
+Similarly, the effect of female education level on fertility rate varies for different levels of contraceptive use. For countries with low rates of contraceptive use, there are large differences between the predicted average fertility rates by female education level (the distance between the lines is large). These differences diminish for countries with higher levels of contraceptive use.
 
 ## Interpreting the Individual Effects from the tidy() Output
 
-```{r}
-tidy(lm.1)
-```
-
-In practice, use the plot of the results to interpret interaction effects. In simple models, we can actually interpret the coefficients more directly. To do this, write out the fitted equations for professors who differ in age by 1 year. We will do this for professors who are 0 years old and professors who are 1 year old. (Do the substitution yourself to verify these equations.)
+In practice, it is enough to say there is an interaction, and to use the plot of the results to interpret the nature of the interaction effects rather than to interpret the actual coefficient values estimated by the `lm()` function. This being said, in simple models, we can actually interpret the coefficients more directly. To do this, write out the fitted equations for countries that differ in female education level by 1 year. We will write the fitted equations for countries that have a female education level of 0 years and those with a female education level of 1 year. (Do the substitution yourself to verify these equations.)
 
 $$
 \begin{split}
-\mathbf{0~year~olds:~}\hat{\mathrm{course~eval}_i} &= 3.77 - 0.25(\mathrm{beauty}_i) \\
-\mathbf{1~year~olds:~}\hat{\mathrm{course~eval}_i} &= \left[3.77 + 0.003 \right] + \left[ -0.25 + 0.008 \right](\mathrm{beauty}_i)\\
+\mathbf{0~years:~}\hat{\mathrm{Fertility~rate}_i} &= 6.84 - 0.048(\mathrm{Contraceptive~use}_i) \\
+\mathbf{1~year:~}\hat{\mathrm{Fertility~rate}_i} &= \left[6.84 -0.408 \right] + \left[ -0.0479 + 0.00350 \right](\mathrm{Contraceptive~use}_i)\\
 \end{split}
 $$
 
 
-- The intercept ($3.77$) is the average course evaluation score for professors with a 0 beauty rating who are 0 years old (extrapolation). 
-- The coefficient associated with beauty ($-0.25$) is the effect of beauty for professors who are 0 years old. 
-- The coefficient associated with age ($0.003$) is the difference in average course evaluation between professors with beauty rating = 0 whose age differs by one year. 
-- The coefficient associated with the interaction term ($0.008$) is the difference in slopes (effect of beauty on course evaluation) between professors whose age differs by one year. 
+- The intercept ($6.84$) is the average fertility rate for countries with a female education level of 0 years and contraception use of 0. (extrapolation).
+- The coefficient associated with contraceptive use ($-0.048$) is the effect of contraceptive use on fertility rate for countries with a female education level of 0 years.
+- The coefficient associated with female education ($-0.408$) is the difference in average fertility rates between countries with contraceptive use = 0 and countries with contraceptive use = 1. Alternatively, it is the difference in intercepts between countries whose female education level differs by one year.
+- The coefficient associated with the interaction term ($0.00350$) is the difference in slopes (effect of contraceptive use on fertility rate) between countries whose female education level differs by one year.
 
-Note that although we can interpret the coefficients directly, the plot is typically more informative and far less complicated to make sense of.
+It cannot be iterated enough that although we can interpret the coefficients directly, in practice, the plot of the interaction model is much more informative and far less complicated for readers to understand.
 
-\newpage
 
 # Adding Covariates
 
-Is there an interaction between age and beauty on average course evaluations after we control for gender differences?
+Is there an interaction between contraception use and female education level on fertility rates after we control for differences in infant mortality rate?
 
 ```{r}
 # Fit model
-lm.2 = lm(avg_eval ~ 1 + beauty + age + female + beauty:age, data = evals)
+lm.2 = lm(fertility_rate ~ 1 + educ_female + contraceptive + infant_mortality + educ_female:contraceptive, data = fert)
+```
 
-# Model-level output
-glance(lm.2)
+\newpage
 
+```{r}
 # Coefficient-level output
 tidy(lm.2)
 ```
 
-Yes. The interaction term is statsitically significant after we include sex of the professor in the model. To understand this model, plot it.
+To examine whether there is an interaction effect, we again evaluate the evidence from the coefficient-level output. Based on the *p*-value associated with the interaction term ($p=.012$), the empirical evidence is consistent with there being an interaction effect between contraceptive use and female level of education after controlling for differences in countrys' infant mortality rates. 
 
-```{r fig.width=8, fig.height=6, out.width='4.5in'}
-# Create new data set with main effects
-plot_data = crossing(
-  beauty = seq(from = -1.6, to = 1.9, by = 0.1),
-  age = c(40, 50, 60),
-  female = c(0, 1)
-)
+How would we interpret the effects in the model?
 
-# Use fitted model to compute fitted values for the data
-plot_data = plot_data %>% 
-  mutate(
-    yhat = predict(lm.2, newdata = plot_data),
-    age = factor(age),
-    female = factor(female, levels = c(0, 1), labels = c("Male", "Female"))
-  )
+- **Female education level:** Since this effect is part of an interaction term, we would interpret the interaction, namely, controlling for differences in infant mortality rates, the effect of female education level on fertility rates depends on contraceptive use.
+- **Contraceptive use:** Since this effect is part of an interaction term, we would only interpret the interaction, namely, controlling for differences in infant mortality rates, the effect of contraceptive use on fertility rates depends on female education level.
+- **Infant mortality:** Since this is not part of any interaction term, we interpret this as we would any other effect included in a multiple regression model, anmely, controlling for differences in female education level and contraceptive use, each one-perecentage point difference in infant mortality rate is associated with a 0.02-unit difference in fertility rates, on average.
 
-head(plot_data)
 
-# Plot the fitted model
-ggplot(data = plot_data, aes(x = beauty, y = yhat, color = age)) +
-  geom_line() +
+To better understand the nature of the effects, especially the interaction, we will plot the fitted model. We choose female education values of 5, and 10 (the nearest integer values to the 25th and 75th percentile values) to create my plot. We also choose infant mortality values of 7 and 41 (the nearest integer values to the 25th and 75th percentile values) to show the effect of infant mortality rate.
+
+### Female education level of 5; Infant mortality rate of 7
+
+$$
+\begin{split}
+\hat{\mathrm{Fertility~rate}_i} &= 4.82 - 0.271(5) - 0.03(\mathrm{Contraceptive~use}_i) + 0.02(7) + 0.002(5)(\mathrm{Contraceptive~use}_i)\\
+&= 3.61 - 0.02(\mathrm{Contraceptive~use}_i)
+\end{split}
+$$
+
+### Female education level of 5; Infant mortality rate of 41
+
+$$
+\begin{split}
+\hat{\mathrm{Fertility~rate}_i} &= 4.82 - 0.271(5) - 0.03(\mathrm{Contraceptive~use}_i) + 0.02(41) + 0.002(5)(\mathrm{Contraceptive~use}_i)\\
+&= 4.29 - 0.02(\mathrm{Contraceptive~use}_i)
+\end{split}
+$$
+
+### Female education level of 10; Infant mortality rate of 7
+
+$$
+\begin{split}
+\hat{\mathrm{Fertility~rate}_i} &= 4.82 - 0.271(10) - 0.03(\mathrm{Contraceptive~use}_i) + 0.02(7) + 0.002(10)(\mathrm{Contraceptive~use}_i)\\
+&= 2.25 - 0.01(\mathrm{Contraceptive~use}_i)
+\end{split}
+$$
+
+### Female education level of 10; Infant mortality rate of 41
+
+$$
+\begin{split}
+\hat{\mathrm{Fertility~rate}_i} &= 4.82 - 0.271(10) - 0.03(\mathrm{Contraceptive~use}_i) + 0.02(41) + 0.002(10)(\mathrm{Contraceptive~use}_i)\\
+&= 2.93 - 0.01(\mathrm{Contraceptive~use}_i)
+\end{split}
+$$
+
+
+Now we can create out plot of fertility rates versus contraception use and add the four partial regression lines.
+
+
+```{r fig.width=10, fig.height=5, out.width='6in', fig.cap="Plot of fertility rate as a function of contraceptive use, female education level, and infant mortality rate. Partial regression lines are displayed for female education levels of 5th grade (blue, solid line), 8th grade (red, dashed line) for countries with infant mortality rates at the first (7\\%) and third (41\\%) quartile values.", fig.pos='H'}
+# Plot the fitted model (infant mortality rate = 7)
+p1 = ggplot(data = fert, aes(x = contraceptive, y = fertility_rate)) +
+  geom_point(alpha = 0) +
+  geom_abline(intercept = 3.61, slope = -0.02, color = "#095b67", linetype = "solid") +
+  geom_abline(intercept = 2.25, slope = -0.01, color = "#d82f5a", linetype = "dashed") +
   theme_bw() +
-  xlab("Beauty score") +
-  ylab("Predicted average course evaluation score") +
-  scale_color_brewer(
-    name = "Age", 
-    palette = "Set1", 
-    labels = c("40 years old", "50 years old", "60 years old")
-    ) +
-  ylim(0, 5) +
-  facet_wrap(~female)
+  xlab("Contraceptive use") +
+  ylab("Fertility rate") +
+  ggtitle("Infant mortality rate at the first quartile (7%)")
+
+# Plot the fitted model (infant mortality rate = 41)
+p2 = ggplot(data = fert, aes(x = contraceptive, y = fertility_rate)) +
+  geom_point(alpha = 0) +
+  geom_abline(intercept = 4.29, slope = -0.02, color = "#095b67", linetype = "solid") +
+  geom_abline(intercept = 2.93, slope = -0.01, color = "#d82f5a", linetype = "dashed") +
+  theme_bw() +
+  xlab("Contraceptive use") +
+  ylab("Fertility rate") +
+  ggtitle("Infant mortality rate at the third quartile (41%)")
+
+# Layout side-by-side plot
+grid.arrange(p1, p2, nrow = 1)
 ```
-
-
-The plot shows that the effect of beauty on average course evaluation varies for professors with different ages. In general, there is a greater effect of beauty for older professors. This interaction is THE SAME for males and females, although on average, females have lower course evaluations than males for the same beauty rating and age.
-
-As an exercise, compute the fitted equations for males who are 0 and 1 years old (one year difference) and for females who are 0 and 1 years old (four total equations). Then go back to the `tidy()` output and use your equations to help interpret the regression coefficients.
 
 # Higher Order Interactions
 
-Interactions between two predictors (e.g., age and beauty) are referred to as *first order* interactions. In the previous section, the model we fitted included a main-effect of gender and a first order interaction between age and beauty. The main-effect of sex in this model suggested that the first order interaction between beauty and age was THE SAME for males and females.
+Interactions between two predictors (e.g., female education level and contraceptive use) are referred to as *first order* interactions. In the previous section, the model we fitted included a main-effect of infant mortality rate and a first order interaction between female education level and contraceptive use. The main-effect of infant mortality rate in this model suggested that the first order interaction between female education level and contraceptive use was THE SAME for every level of infant mortality rate.
 
-We could also fit a model that posits that the first order interaction between beauty and age IS DIFFERENT for males and females. This is technically an interaction between sex and the first order interaction between beauty and age. It is an interaction of an interaction. This is called a *second order* interaction.
+We could also fit a model that posits that the first order interaction between female education level and contraceptive use IS DIFFERENT for different levels of infant mortality rate. This is technically an interaction between infant mortality rate and the first order interaction between female education level and contraceptive use. It is an interaction of an interaction. This is called a *second order* interaction.
 
-To fit such a model, we would need to include the second order interaction between gender, beauty and age; the product of the three main effects. Since we have an interaction, we need to include all constituent main effects AND since it is a higher order interaction, we need to include all constituent lower order interactions; in this case all constituent first order interactions. As such the predictors would include:
+To fit such a model, we would need to include the second order interaction between infant mortality rate, female education level and contraceptive use; the product of the three main effects. Since we are including an interaction, we need to include all three constituent main effects AND since it is a higher order interaction, we need to include all constituent lower order interactions; in this case all constituent first order interactions. As such the predictors would include:
 
-- **Main-Effects:** `beauty` and `age` and `female`
-- **First Order Interactions:** `beauty:age` and `beauty:female` and `age:female`
-- **Second Order Interaction:** `beauty:age:female`
+- **Main-Effects:** 
+  + `educ_female`
+  + `contraceptive`
+  + `infant_mortality`
+- **First Order Interactions:** 
+  + `educ_female:contraceptive`
+  + `educ_female:infant_mortality`
+  + `contraceptive:infant_mortality`
+- **Second Order Interaction:** 
+  + `educ_female:contraceptive:infant_mortality`
 
 We fit the model below.
 
 ```{r}
 # Fit model
-lm.3 = lm(avg_eval ~ 1 + beauty + age + female + 
-            beauty:age + beauty:female + female:age + 
-            beauty:age:female, data = evals)
-
-# Model-level output
-glance(lm.3)
+lm.3 = lm(fertility_rate ~ 1 + educ_female + contraceptive + infant_mortality + 
+            educ_female:contraceptive + infant_mortality:contraceptive + educ_female:infant_mortality +
+            educ_female:contraceptive:infant_mortality, data = fert)
 
 # Coefficient-level output
 tidy(lm.3)
 ```
 
-The second order interaction term is statistically significant. To interpret this, plot the model results.
+The fitted equation is:
 
+$$
+\begin{split}
+\hat{\mathrm{Fertility~rate}_i} &= 7.02 - 0.512(\mathrm{Female~education}_i) - 0.08(\mathrm{Contraceptive~use}_i) - 0.02(\mathrm{Infant~mortality}_i) + \\
+& 0.007(\mathrm{Female~education}_i)(\mathrm{Contraceptive~use}_i) + 0.001(\mathrm{Contraceptive~use}_i)(\mathrm{Infant~mortality}_i) + \\
+& 0.005(\mathrm{Female~education}_i)(\mathrm{Infant~mortality}_i) \\
+&- 0.0001(\mathrm{Female~education}_i)(\mathrm{Contraceptive~use}_i)(\mathrm{Infant~mortality}_i)
+\end{split}
+$$
 
-```{r fig.width=9, fig.height=6, out.width='5in'}
+The *p*-value associated with the second order interaction term ($p=.0469$) suggests that there is a second order intraction effect between female education level, contraceptive use, and infant mortality rate on fertility rates. To interpret this, plot the model results. Again, pick values for female education level and infant mortality rate, substitute them into the fitted equation, and reduce it. I again used 5 and 10 for female education level and 7 and 41 for infant mortality rate. (Note: Algebra not shown.)
+
+```{r echo=FALSE, eval=FALSE}
 # Create new data set with main effects
-plot_data = crossing(
-  beauty = seq(from = -1.6, to = 1.9, by = 0.1),
-  age = c(40, 60),
-  female = c(0, 1)
-)
-
-# Use fitted model to compute fitted values for the data
-plot_data = plot_data %>% 
+crossing(
+  inf_mort = c(7, 41),
+  educ_female = c(5, 10)
+) %>% 
   mutate(
-    yhat = predict(lm.3, newdata = plot_data)
+    b0 = 7.02 -0.512*educ_female - 0.0182*inf_mort + 0.00455*educ_female*inf_mort,
+    b1 = -0.0754 + 0.00706*educ_female + 0.000962*inf_mort - 0.000104*educ_female*inf_mort
     )
-
-# Convert female and age into factors for better plotting
-plot_data = plot_data %>%
-  mutate(
-    Sex = factor(female, levels = c(0, 1), labels = c("Males", "Females")),
-    Age = factor(age, levels = c(40, 60), labels = c("40 year olds", "60 year olds"))
-  )
-
-head(plot_data)
-
-# Plot the fitted model
-ggplot(data = plot_data, aes(x = beauty, y = yhat, color = Age)) +
-  geom_line() +
-  theme_bw() +
-  xlab("Beauty score") +
-  ylab("Predicted average course evaluation score") +
-  scale_color_brewer(name = "Age", palette = "Set1") +
-  facet_wrap(~Sex)
 ```
 
-- The plots show that the interaction between age and beauty on course evaluation scores DIFFERS for males and females.
-- This also suggests that the interaction between beauty and sex on course evaluation scores DIFFERS for professors of different ages
-
-```{r fig.width=9, fig.height=6, out.width='5in'}
-ggplot(data = plot_data, aes(x = beauty, y = yhat, color = Sex)) +
-  geom_line() +
+```{r fig.width=10, fig.height=5, out.width='6in', fig.cap="Plot of fertility rate as a function of contraceptive use, female education level, and infant mortality rate. Partial regression lines are displayed for female education levels of 5th grade (blue, solid line), 8th grade (red, dashed line) for countries with infant mortality rates at the first (7\\%) and third (41\\%) quartile values.", fig.pos='H'}
+# Plot the fitted model (infant mortality rate = 7)
+p1 = ggplot(data = fert, aes(x = contraceptive, y = fertility_rate)) +
+  geom_point(alpha = 0) +
+  geom_abline(intercept = 4.49, slope = -0.04, color = "#095b67", linetype = "solid") +
+  geom_abline(intercept = 2.09, slope = -0.005, color = "#d82f5a", linetype = "dashed") +
   theme_bw() +
-  xlab("Beauty score") +
-  ylab("Predicted average course evaluation score") +
-  scale_color_brewer(name = "Age", palette = "Set1") +
-  facet_wrap(~Age)
+  xlab("Contraceptive use") +
+  ylab("Fertility rate") +
+  ggtitle("Infant mortality rate at the first quartile (7%)")
+
+# Plot the fitted model (infant mortality rate = 41)
+p2 = ggplot(data = fert, aes(x = contraceptive, y = fertility_rate)) +
+  geom_point(alpha = 0) +
+  geom_abline(intercept = 4.65, slope = -0.02, color = "#095b67", linetype = "solid") +
+  geom_abline(intercept = 3.02, slope = -0.008, color = "#d82f5a", linetype = "dashed") +
+  theme_bw() +
+  xlab("Contraceptive use") +
+  ylab("Fertility rate") +
+  ggtitle("Infant mortality rate at the third quartile (41%)")
+
+# Layout side-by-side plot
+grid.arrange(p1, p2, nrow = 1)
 ```
 
-Lastly, it also implies that the interaction between sex and age on course evaluation scores DIFFERS for professors with different beauty ratings (not shown; left as an exercise for the reader).
+- The plots show that the interaction between contraceptive use and female education level on fertility rates DIFFERS by infant mortality rate.
+- This also suggests that the interaction between contraceptive use and infant mortality rate on fertility rates DIFFERS by level of female education.
+- Finally, it also implies that the interaction between female education level and infant mortality rate on fertility rates DIFFERS by level of contraceptive use.
 
 
 # Some Advice for Fitting Interaction Models
