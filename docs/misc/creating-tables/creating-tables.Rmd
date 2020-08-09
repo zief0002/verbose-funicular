@@ -34,9 +34,22 @@ library(readr)
 library(tidyr)
 
 # Read in data
-ed = read_csv(file = "~/Documents/github/epsy-8252/data/ed-schools-2018.csv") %>% drop_na()
+ed = read_csv(file = "https://raw.githubusercontent.com/zief0002/epsy-8252/master/data/usnews.csv") %>% drop_na()
 riverview = read_csv(file = "~/Documents/github/epsy-8252/data/riverview.csv")
 ```
+
+This document presents some advice for creating tables of statistical summaries. It does not follow a particular style guide (e.g., APA), but rather is intended to include more general guidelines and advice. Here are a couple other resources that you may want to also read if you want to improve your presentation of statistical information in tables:
+
+- Nicol, A. A. M., &amp; Pexman, P. M. (1999). *Presenting your findings: A practical guide for creating tables.* American Psychological Association.
+- Schwabish, J. A. (2020). Ten guidelines for better tables. *Journal of Benefit-Cost Analysis, 11*(2), 151&ndash;178. https://doi.org/10.1017/bca.2020.11
+- LabWrite Resources (2004). Designing tables. North Carolina State University. https://labwrite.ncsu.edu/res/gh/gh-tables.html
+
+Or consider turning your table into a graph:
+
+- Gelman, A., Pasarica, C., &amp; Dodhia, R. (2002). Let's practice what we preach: Turning tables into graphs. *The American Statistician, 56*(2), 121&ndash;130. https://doi.org/10.1198/000313002317572790
+
+
+
 
 # Presenting Summary Statistics
 
@@ -53,21 +66,21 @@ data.frame(
     col.names = c("Measure", "*M*", "*SD*"),
     align = c("l", "r", "r"),
     digits = 1,
-    caption = "Table 1<br /><br />*Means and Standard Deviations of Five Measures of Graduate Programs of Education* ($N=122$)"
+    caption = "**Table 1.** *Means and standard deviations of five measures of graduate programs of education. ($N=122$)*"
     ) %>%
   row_spec(row = 0, align = "center")
 ```
 
 Here are a few things to note about the table:
 
-- It is numbered/named as "Table X". As per the *APA Publication Manual*, this is done in normal text.
-- It has a caption. As per the *APA Publication Manual*, this is done in italic text and it uses title-case.
+- It is numbered/named as "Table X". 
+- It has a descriptive caption. Table captions can be composed of several sentences.
 - The different variables being summarized are presented in the table rows. These are given names that readers can understand. (They are **not** the variable names used in the dataset which have shortened names like `doc_accept` and `peer`.)
-- The different statistics being used to summarize the data are presented in the table columns. These are given abbreiviated names as suggested in the *APA Publication Manual*. In general, statistics are italicized (this is also done in the text of your manuscript).
+- The different statistics being used to summarize the data are presented in the table columns. Many common statistics are abbreviated or represented using symbols in scientific papers (e.g., *M* = mean). Many times these are italicized (this is also done in the text of your manuscript).
 - In each column where numbers are presented, the decimal point should be vertically aligned. (Note that not all the variables need to have the same number of decimal places.)
-- There are no vertical borders in an APA-formatted table. There are horizontal borders above and below the header row, and at the bottom of the table. Other horizontal borders can be included to help readers if the table is particularly long.
+- There are no vertical borders in the table. There are horizontal borders above and below the header row, and at the bottom of the table. Other horizontal borders can be included to help readers if the table is particularly long.
 
-Here is another table presenting the same summarizations, but this time the statistical sumamries are conditioned on sex.
+Here is another table presenting the same statistics, but this time the statistical summaries are conditioned on sex.
 
 
 ```{r echo=FALSE, eval=FALSE}
@@ -99,17 +112,16 @@ data.frame(
     col.names = c("Measure", "*M*", "*SD*", "*M*", "*SD*"),
     align = c("l", "r", "r", "r", "r"),
     digits = 0,
-    caption = "Table 2<br /><br />*Means and Standard Deviations of Three Measures of Riverview Employees Conditioned on Sex*"
+    caption = "**Table 2.** *Means and standard deviations of three attributes of Riverview employees conditioned on sex.*"
     ) %>%
   row_spec(row = 0, align = "center")  %>%
   add_header_above(
     header = c(" " = 1, "Females" = 2, "Males" = 2)
-    ) %>%
-  save_kable(file = "~/Desktop/creating-tables/table_2.html", self_contained = FALSE)
+    )
 ```
 
 <table>
-<caption>Table 2<br><br>*Means and Standard Deviations of Three Measures of Riverview Employees Conditioned on Sex*</caption>
+<caption>**Table 2.** *Means and standard deviations of three attributes of Riverview employees conditioned on sex.*</caption>
  <thead>
 <tr>
 <th style="border-bottom:hidden" colspan="1"></th>
@@ -166,7 +178,7 @@ data.frame(
     col.names = c("Measure", "*M* (*SD*)", "95% CI", "*M* (*SD*)", "95% CI"),
     align = c("l", "c", "c", "c", "c"),
     digits = 0,
-    caption = "Table 3<br /><br />*Means, Standard Deviations, and Confidence Intervals (CIs) of Three Measures of Riverview Employees Conditioned on Sex*"
+    caption = "**Table 3.** *Means, standard deviations, and confidence intervals (CIs) of three attributes of Riverview employees conditioned on sex.*"
     ) %>%
   row_spec(row = 0, align = "center")  %>%
   add_header_above(
@@ -176,7 +188,7 @@ data.frame(
 ```
 
 <table>
-<caption>Table 3<br><br>*Means, Standard Deviations, and Confidence Intervals (CIs) of Three Measures of Riverview Employees Conditioned on Sex*</caption>
+<caption>**Table 3.** *Means, standard deviations, and confidence intervals (CIs) of three attributes of Riverview employees conditioned on sex.*</caption>
  <thead>
 <tr>
 <th style="border-bottom:hidden" colspan="1"></th>
@@ -227,11 +239,12 @@ ed %>%
   correlate() %>%
   shave(upper = TRUE) %>%
   fashion(decimals = 2, na_print = "—") %>%
+  data.frame() %>%
   mutate(
     rowname = c("1. Peer rating", "2. Acceptance rate for Ph.D. students", "3. Enrollment", "4. GRE score (verbal)", "5. GRE score (quantitative)")
   ) %>%
   kable(
-    caption = "Table 4<br /><br />*Intercorrelations between Five Measures of Graduate Programs of Education*",
+    caption = "**Table 4**. *Intercorrelations between five measures of graduate programs of education.*",
     col.names = c("Measure", "1", "2", "3", "4", "5"),
     align = c("l", "r", "r", "r", "r", "r")
   ) %>%
@@ -242,9 +255,9 @@ Here are a few things to note about the table:
 
 - The correlation coefficients are generally rounded to two decimal places.
 - In each column where numbers are presented, the decimal point should be vertically aligned.
-- If the correlation table is to support a regression analysis, typically the outcome variable is the first variable presented in the table (in this case, peer rating). If there is a focal predictor (i.e., a predictor germaine to your research question), this should be the second variable presented in the table, etc. Otherwise present the predictors alphabetically.
-- p-values should not be presented in a table of correlations. There are many issues related to p-values in a table of correlations, not the least of which is that of multiple tests. It is better to save any presentation of p-values for tables of the regression results.
-- Do not indicate "statistical significance" with stars as per the recommendation of the *American Statistical Association*.
+- If the correlation table is to support a regression analysis, typically the outcome variable is the first variable presented in the table (in this case, peer rating). If there is a focal predictor (i.e., a predictor germane to your research question), this should be the second variable presented in the table, etc. Otherwise present the predictors alphabetically.
+- *p*-values should not be presented in a table of correlations. There are many issues related to *p*-values in a table of correlations, not the least of which is that of increased type I error rate due to the multiple tests being presented. It is better to save any presentation of p-values for tables of the regression results.
+- Do not indicate "statistical significance" with stars. This is per the recommendation of the *American Statistical Association*.
 
 Here is an alternative table presenting both the summary statistics of each variable and the intercorrelations. Combining the information into a single table can be useful when trying to save space in a manuscript.
 
@@ -253,20 +266,21 @@ tab_05 = ed %>%
   select(peer, doc_accept, enroll, gre_verbal, gre_quant) %>%
   correlate() %>%
   shave(upper = TRUE) %>%
-  fashion(decimals = 2, na_print = "—")
+  fashion(decimals = 2, na_print = "—") %>%
+  data.frame()
 
 tab_05[1, 2] = "3.3 (0.5)"
-tab_05[2, 3] = "40.1 (20.2)" 
-tab_05[3, 4] = "970 (665)" 
-tab_05[4, 5] = "154.9 (3.7)" 
-tab_05[5, 6] = "151.0 (4.4)" 
-  
-tab_05 %>% 
+tab_05[2, 3] = "40.1 (20.2)"
+tab_05[3, 4] = "970 (665)"
+tab_05[4, 5] = "154.9 (3.7)"
+tab_05[5, 6] = "151.0 (4.4)"
+
+tab_05 %>%
   mutate(
     rowname = c("1. Peer rating", "2. Acceptance rate for Ph.D. students", "3. Enrollment", "4. GRE score (verbal)", "5. GRE score (quantitative)")
   ) %>%
   kable(
-    caption = "Table 5<br /><br />*Intercorrelations between Five Measures of Graduate Programs of Education. Means and Standard Deviations are Presented Along the Main Diagonal*",
+    caption = "**Table 5.** *Intercorrelations between five measures of graduate programs of education. Means and standard deviations are presented along the main diagonal.*",
     col.names = c("Measure", "1", "2", "3", "4", "5"),
     align = c("l", "c", "c", "c", "c", "c")
   ) %>%
@@ -279,16 +293,16 @@ Typically the results of the "final" adopted model are presented in a table. How
 
 ```{r echo=FALSE}
 tab_06 = lm(peer ~ 1 + doc_accept + enroll + gre_verbal + gre_quant, data = ed) %>%
-  broom::tidy() %>% 
+  broom::tidy() %>%
   mutate(
     term = c("Constant", "Acceptance rate for Ph.D. students", "Enrollment", "GRE score (verbal)", "GRE score (quantitative)")
-  ) 
+  )
 
 tab_06 = tab_06[c(2:5, 1), ]
 
 tab_06 %>%
   kable(
-    caption = "Table 6<br /><br />*Coefficient-Level Estimates for a Model Fitted to Estimate Variation in Peer Ratings ($N=129$; $R^2=0.387$)*",
+    caption = "**Table 6.** *Unstandardized coefficients and standard errors for predictors in a model fitted to estimate variation in peer ratings ($N=129$; $R^2=0.387$).*",
     col.names = c("Predictor", "*B*", "*SE*", "*t*", "*p*"),
     digits = c(0, 2, 3, 2, 3),
     align = c("l", "r", "r", "r", "r")
@@ -298,10 +312,10 @@ tab_06 %>%
 
 Here are a few things to note about the table:
 
-- The intercept term of the model (Constant), is relegated to the bootom of the table as it is not typically susbstantively interesting.
+- The intercept term of the model (Constant), is often placed in the bottom row of the table as it is not typically substantively interesting.
 - The different coefficients are presented in the table rows (when the table includes only one model). These are given names that readers can understand. (They are **not** the variable names used in the dataset which have shortened names like `doc_accept` and `peer`.)
 - There are no stars indicating statistical significance as per the *American Statistical Association's* recommendation.
-- The sample size ($N$) and variance accounted for ($R^2$) estimates could be added to a footnote instead of the caption.
+- The sample size ($N$) and variance accounted for ($R^2$) estimates could be added to a footnote instead of the caption, or as rows in the table.
 
 
 Alternatively, a regression table can include the confidence interval for each of the coefficients in addition to (or in place of!) the *p*-values. This addresses the uncertainty in the estimates.
@@ -314,12 +328,13 @@ tab_06 %>%
   ) %>%
   select(term, estimate, std.error, CI)  %>%
   kable(
-    caption = "Table 7<br /><br />*Coefficient-Level Estimates and Uncertainty for a Model Fitted to Estimate Variation in Peer Ratings ($N=129$; $R^2=0.387$)*",
+    caption = "**Table 7.** *Unstandardized coefficients and standard errors for predictors in a model fitted to estimate variation in peer ratings. The 95% CIs are also presented.*",
     col.names = c("Predictor", "*B*", "*SE*", "95% CI"),
     digits = c(0, 2, 2, 0),
     align = c("l", "r", "r", "r")
   ) %>%
-  row_spec(row = 0, align = "center")
+  row_spec(row = 0, align = "center") %>%
+  footnote(general = "$N=129$; $R^2=0.387$")
 ```
 
 
@@ -335,7 +350,7 @@ tab_06 %>%
   ) %>%
   select(term, estimate, std.error, CI, Beta)  %>%
   kable(
-    caption = "Table 8<br /><br />*Coefficient-Level Estimates (Unstandardized and Standardized) and Uncertainty for a Model Fitted to Estimate Variation in Peer Ratings ($N=129$; $R^2=0.387$)*",
+    caption = "**Table 8.** *Unstandardized coefficients and standard errors for predictors in a model fitted to estimate variation in peer ratings. The 95% CIs and standardized coefficients ($\\beta$) are also presented.*",
     col.names = c("Predictor", "*B*", "*SE*", "95% CI", "$\\beta$"),
     digits = c(0, 2, 2, 0, 2),
     align = c("l", "r", "r", "r", "r")
@@ -368,14 +383,14 @@ stargazer(lm.1, lm.2, lm.3,
   star.cutoffs = NA,
   header = FALSE,
   table.placement = 'H',
-  title = "Unstandardized Coefficients and Confidence Intervals for a Series of Regression Models Fitted to Data from $n=129$ Graduate Schools of Education to Predict Variation in Peer Ratings",
+  title = "Unstandardized coefficients and 95% confidence intervals for predictors from a series of regression models fitted to predict variation in peer ratings using data from $n=129$ graduate schools of education. R-squared values and root mean square errors (RMSE) are also presented for each model.",
   omit.table.layout = "n"
   )
 ```
 
 
 <table style="text-align:center">
-<caption>Table 9<br /><br /><i>Unstandardized Coefficients and Confidence Intervals from a Series of Regression Models Fitted to Predict Variation in Peer Ratings for n=129 Graduate Schools of Education</i></caption>
+<caption><b>Table 9.</b> <i>Unstandardized coefficients and 95% confidence intervals for predictors from a series of regression models fitted to predict variation in peer ratings using data from $n=129$ graduate schools of education. R-squared values and root mean square errors (RMSE) are also presented for each model.</i></caption>
 <tr><td colspan="4" style="border-bottom: 1px solid black"></td></tr>
 <tr><td style="text-align:left; border-bottom: 1px solid black"></td><td style="border-bottom: 1px solid black">Model 1</td><td style="border-bottom: 1px solid black">Model 2</td><td style="border-bottom: 1px solid black">Model 3</td></tr>
 <tr><td style="text-align:left">GRE score (verbal)</td><td>0.011</td><td></td><td>0.001</td></tr>
@@ -394,18 +409,18 @@ stargazer(lm.1, lm.2, lm.3,
 <tr><td style="text-align:left"></td><td>(-8.683, -2.294)</td><td>(3.572, 3.967)</td><td>(-5.054, 1.340)</td></tr>
 <tr><td style="text-align:left"></td><td></td><td></td><td></td></tr>
 <tr><td colspan="4" style="border-bottom: 1px solid black"></td></tr><tr><td style="text-align:left">R<sup>2</sup></td><td>0.243</td><td>0.300</td><td>0.390</td></tr>
-<tr><td style="text-align:left">Residual Std. Error</td><td>0.429</td><td>0.413</td><td>0.389</td></tr>
+<tr><td style="text-align:left">RMSE</td><td>0.429</td><td>0.413</td><td>0.389</td></tr>
 <tr><td colspan="4" style="border-bottom: 1px solid black"></td></tr></table>
 
 
 Here are a few things to note about the table:
 
-- When presenting the results from multiple models, the goal is to often compare how coefficients differ from model-to-model. Because of this we typically present each model in a column and each coefficient in a row&emdash;this way you compare by reading horizontally.
+- When presenting the results from multiple models, the goal is to often compare how coefficients (and SEs) differ from model-to-model. Because of this we typically present each model in a column and each coefficient in a row&emdash;this way you compare by reading horizontally.
 - If a model does not include a particular coefficient, leave that cell blank.
-- The intercept term of the model (Constant), is relegated to the bootom of the table as it is not typically susbstantively interesting.
+- The intercept term of the model (Constant), is placed in the bottom row of the table as it is not typically substantively interesting.
 - Use predictor names that readers can understand. (They are **not** the variable names used in the dataset which have shortened names like `doc_accept` and `peer`.)
 - Model-level estimates are also included in the table, typically below the coefficient-level estimates. Sometimes a horizontal line is added to the table as a separator.
-- The sample size ($N$) could be added to a footnote instead of the caption.
+- The sample size ($N$) could be added to a footnote instead of the caption, or omitted from the table if it is given in the text of the manuscript.
 
 If you have many models to present, use a landscape orientation on your page.
 
@@ -425,14 +440,14 @@ stargazer(lm.1, lm.2, lm.3,
   star.cutoffs = NA,
   header = FALSE,
   table.placement = 'H',
-  title = "Unstandardized Coefficients and Confidence Intervals for a Series of Regression Models Fitted to Data from $n=129$ Graduate Schools of Education to Predict Variation in Peer Ratings",
+  title = "Unstandardized coefficients and 95% confidence intervals for predictors from a series of regression models fitted to predict variation in peer ratings using data from $n=129$ graduate schools of education.",
   omit.table.layout = "n"
   )
 ```
 
 
 <table style="text-align:center">
-<caption>Table 10<br /><br /><i>Unstandardized Coefficients (Standard Errors) and p-Values for a Series of Regression Models Fitted to Data from n=129 Graduate Schools of Education to Predict Variation in Peer Ratings</i></caption>
+<caption><b>Table 10.</b> <i>Unstandardized coefficients (standard errors), and p-values for predictors from a series of regression models fitted to predict variation in peer ratings using data from $n=129$ graduate schools of education. R-squared values and root mean square errors (RMSE) are also presented for each model.</i></caption>
 <tr><td colspan="4" style="border-bottom: 1px solid black"></td></tr>
 <tr><td style="text-align:left; border-bottom: 1px solid black"></td><td style="border-bottom: 1px solid black">Model 1</td><td style="border-bottom: 1px solid black">Model 2</td><td style="border-bottom: 1px solid black">Model 3</td></tr>
 <tr><td style="text-align:left">GRE score (verbal)</td><td>0.011</td><td></td><td>0.001</td></tr>
@@ -456,14 +471,14 @@ stargazer(lm.1, lm.2, lm.3,
 <tr><td style="text-align:left"></td><td>p = 0.002</td><td>p = 0.000</td><td>p = 0.258</td></tr>
 <tr><td style="text-align:left"></td><td></td><td></td><td></td></tr>
 <tr><td colspan="4" style="border-bottom: 1px solid black"></td></tr><tr><td style="text-align:left">R<sup>2</sup></td><td>0.243</td><td>0.300</td><td>0.390</td></tr>
-<tr><td style="text-align:left">Residual Std. Error</td><td>0.429</td><td>0.413</td><td>0.389</td></tr>
+<tr><td style="text-align:left">RMSE</td><td>0.429</td><td>0.413</td><td>0.389</td></tr>
 <tr><td colspan="4" style="border-bottom: 1px solid black"></td></tr></table>
 
 
 An alternative presentation puts the coefficient and standard error in the same row.
 
 <table style="text-align:center">
-<caption>Table 11<br /><br /><i>Unstandardized Coefficients (Standard Errors) and p-Values for a Series of Regression Models Fitted to Data from n=129 Graduate Schools of Education to Predict Variation in Peer Ratings</i></caption>
+<caption><b>Table 11.</b> <i>Unstandardized coefficients (standard errors), and p-values for predictors from a series of regression models fitted to predict variation in peer ratings using data from $n=129$ graduate schools of education. R-squared values and root mean square errors (RMSE) are also presented for each model.</i></caption>
 <tr><td colspan="4" style="border-bottom: 1px solid black"></td></tr>
 <tr><td style="text-align:left; border-bottom: 1px solid black"></td><td style="border-bottom: 1px solid black">Model 1</td><td style="border-bottom: 1px solid black">Model 2</td><td style="border-bottom: 1px solid black">Model 3</td></tr>
 <tr><td style="text-align:left">GRE score (verbal)</td><td>0.011 (0.018)</td><td></td><td>0.001 (0.016)</td></tr>
@@ -487,7 +502,7 @@ An alternative presentation puts the coefficient and standard error in the same 
 <tr><td style="text-align:left"></td><td></td><td></td><td></td></tr>
 
 <tr><td colspan="4" style="border-bottom: 1px solid black"></td></tr><tr><td style="text-align:left">R<sup>2</sup></td><td>0.243</td><td>0.300</td><td>0.390</td></tr>
-<tr><td style="text-align:left">Residual Std. Error</td><td>0.429</td><td>0.413</td><td>0.389</td></tr>
+<tr><td style="text-align:left">RMSE</td><td>0.429</td><td>0.413</td><td>0.389</td></tr>
 <tr><td colspan="4" style="border-bottom: 1px solid black"></td></tr></table>
 
 

@@ -23,9 +23,7 @@ always_allow_html: yes
 
 \frenchspacing
 
-This assignment is intended to give you experience fitting and interpreting multiple regression models. Submit your responses to each of the questions below in a printed document. All graphics should be resized so that they do not take up more room than necessary and also should have an appropriate caption. This assignment is worth 16 points. (Each question is worth 1 point unless otherwise noted.)
-
-\rule{0.5\linewidth}{\linethickness}
+This goal of this assignment is to give you experience fitting and interpreting multiple regression models. Submit your responses to each of the questions below in a printed document. All graphics should be resized so that they do not take up more room than necessary and also should have an appropriate caption. This assignment is worth 16 points. (Each question is worth 1 point unless otherwise noted.)
 
 Human overpopulation is a growing concern and has been associated with depletion of Earth’s natural resources (water is a big one that ) and degredation of the environment. This, in turn, has social and economic consequences such as global tension over resources such as water and food, higher cost of living and higher unemployment rates. 
 

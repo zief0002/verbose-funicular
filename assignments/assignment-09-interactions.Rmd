@@ -1,5 +1,5 @@
 ---
-title: "Assignment 08"
+title: "Assignment 09"
 author: "Interaction Models"
 header-includes:
    - \usepackage{xcolor}
@@ -23,7 +23,7 @@ always_allow_html: yes
 
 \frenchspacing
 
-This assignment is intended to give you more experience fitting and interpreting regression models with categorical predictors. Submit your responses to each of the questions below in a printed document. All graphics should be resized so that they do not take up more room than necessary and also should have an appropriate caption. This assignment is worth 16 points. (Each question is worth 1 point unless otherwise noted.)
+This goal of this assignment is to give you more experience fitting and interpreting regression models with categorical predictors. Submit your responses to each of the questions below in a printed document. All graphics should be resized so that they do not take up more room than necessary and also should have an appropriate caption. This assignment is worth 16 points. (Each question is worth 1 point unless otherwise noted.)
 
 For this assignment, you will examine whether there are differences in average in-state tuition between Minnesota and its bordering states. To do so, you will use the file *colleges-bordering-mn.csv* (see the [data codebook](http://zief0002.github.io/epsy-8251/codebooks/colleges-bordering-mn.html)).
 

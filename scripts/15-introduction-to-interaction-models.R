@@ -152,6 +152,7 @@ ggplot(data = out.4, aes(x = .std.resid)) +
 # Examine other assumptions
 ggplot(data = out.4, aes(x = .fitted, y = .std.resid)) +
   geom_jitter() +
+  geom_smooth(se = TRUE) +
   geom_hline(yintercept = 0) +
   geom_hline(yintercept = c(-2, 2), linetype = "dotted") +
   theme_bw() +
@@ -198,4 +199,26 @@ ggplot(data = out.5, aes(x = .fitted, y = .std.resid)) +
   xlab("Fitted Values") +
   ylab("Standardized Residuals")
 
+
+
+
+lm.6 = lm(distress ~ 1 + authority + bound_span_work + female + 
+             + bound_span_work:female + authority:female, 
+          data = work)
+
+tidy(lm.6)
+
+crossing(
+  bound_span_work = seq(from = 0, to = 5, by = 1),
+  authority = c(0, 4),
+  female = c(0, 1)
+) %>%
+  mutate(
+    yhat = predict(lm.6, newdata = .),
+    female = ifelse(female == 1, "female", "male"),
+    authority = ifelse(authority == 0, "Low", "High"),
+  ) %>%
+  ggplot(aes(x = bound_span_work, y = yhat, color = female)) +
+  geom_line() +
+  facet_wrap(~authority)
 

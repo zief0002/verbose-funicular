@@ -23,12 +23,10 @@ always_allow_html: yes
 
 \frenchspacing
 
-This assignment is intended to give you more experience fitting and interpreting regression models. Submit your responses to each of the questions below in a printed document. All graphics should be resized so that they do not take up more room than necessary and also should have an appropriate caption. This assignment is worth 10 points. (Each question is worth 1 point unless otherwise noted.)
+This goal of this assignment is to give you more experience fitting and interpreting regression models. Submit your responses to each of the questions below in a printed document. All graphics should be resized so that they do not take up more room than necessary and also should have an appropriate caption. This assignment is worth 10 points. (Each question is worth 1 point unless otherwise noted.)
 
 Should more money be spent on public schools or should that money be spent elsewhere? Both sides of this ongoing public debate have been argued passionately, using a multitude of anecdotal evidence. Although we will not settle this debate, we will examine data akin to the types of data that policy makers use to make funding decisions. Specifically, we will examine whether teacher salaries are related to SAT scores at the state level. For this assignment, you will use the file *state-education.csv* (see the [data codebook](http://zief0002.github.io/epsy-8251/codebooks/state-education.html)).
 
-
-\rule{0.5\linewidth}{\linethickness}
 
 # Part I: Unstandardized Regression
 
