@@ -1,34 +1,34 @@
-name,grad,public,sat,tuition
-Augsburg College,65.2,0,1030,39.294
-Bemidji State University,42.3,1,1010,18.057
-Bethany Lutheran College,52.6,0,1065,30.48
-"Bethel University, Saint Paul, MN",73.3,0,1145,39.4
-Carleton College,92.6,0,1400,54.265
-College of Saint Benedict,81.1,0,1185,43.198
-Concordia College at Moorhead,69.4,0,1145,36.59
-Concordia University-Saint Paul,47.9,0,990,37.795
-Crossroads College,26.9,0,970,25.345
-Crown College,51.3,0,1030,33.21
-Gustavus Adolphus College,81.7,0,1225,43.8
-Hamline University,67.8,0,1090,41.085
-Macalester College,87.2,0,1355,50.984
-Martin Luther College,72.8,0,1125,19.45
-Minneapolis College of Art and Design,69.6,0,1105,41.42
-Minnesota State University Moorhead,44.7,1,1030,16.8
-Minnesota State University-Mankato,49.6,1,1030,16.294
-North Central University,40.4,0,1010,25.698
-"Northwestern College, Saint Paul, MN",63.6,0,1105,35.4
-Oak Hills Christian College,27.3,0,890,24.805
-Saint Cloud State University,48.5,1,1010,17.05
-Saint Johns University,79.9,0,1185,41.92
-Saint Mary's University of Minnesota,62.4,0,1070,35.7
-Southwest Minnesota State University,39.5,1,1010,18.102
-St Catherine University,65.4,0,1050,41.876
-St Olaf College,84.9,0,1285,47.2
-The College of Saint Scholastica,63.5,0,1030,38.756
-University of Minnesota-Crookston,46.4,1,1010,19.897
-University of Minnesota-Duluth,54.8,1,1110,21.404
-University of Minnesota-Morris,60.3,1,1165,21.722
-University of Minnesota-Twin Cities,70.2,1,1245,23.058
-"University of St Thomas, Saint Paul, MN",74.3,0,1165,44.63
-Winona State University,54,1,1070,19.67
+name,grad,sector,sat,tuition
+Augsburg College,65.2,Private,1030,39.294
+Bethany Lutheran College,52.6,Private,1065,30.48
+"Bethel University, Saint Paul, MN",73.3,Private,1145,39.4
+Carleton College,92.6,Private,1400,54.265
+College of Saint Benedict,81.1,Private,1185,43.198
+Concordia College at Moorhead,69.4,Private,1145,36.59
+Concordia University-Saint Paul,47.9,Private,990,37.795
+Crossroads College,26.9,Private,970,25.345
+Crown College,51.3,Private,1030,33.21
+Gustavus Adolphus College,81.7,Private,1225,43.8
+Hamline University,67.8,Private,1090,41.085
+Macalester College,87.2,Private,1355,50.984
+Martin Luther College,72.8,Private,1125,19.45
+Minneapolis College of Art and Design,69.6,Private,1105,41.42
+North Central University,40.4,Private,1010,25.698
+"Northwestern College, Saint Paul, MN",63.6,Private,1105,35.4
+Oak Hills Christian College,27.3,Private,890,24.805
+Saint Johns University,79.9,Private,1185,41.92
+Saint Mary's University of Minnesota,62.4,Private,1070,35.7
+St Catherine University,65.4,Private,1050,41.876
+St Olaf College,84.9,Private,1285,47.2
+The College of Saint Scholastica,63.5,Private,1030,38.756
+"University of St Thomas, Saint Paul, MN",74.3,Private,1165,44.63
+Bemidji State University,42.3,Public,1010,18.057
+Minnesota State University Moorhead,44.7,Public,1030,16.8
+Minnesota State University-Mankato,49.6,Public,1030,16.294
+Saint Cloud State University,48.5,Public,1010,17.05
+Southwest Minnesota State University,39.5,Public,1010,18.102
+University of Minnesota-Crookston,46.4,Public,1010,19.897
+University of Minnesota-Duluth,54.8,Public,1110,21.404
+University of Minnesota-Morris,60.3,Public,1165,21.722
+University of Minnesota-Twin Cities,70.2,Public,1245,23.058
+Winona State University,54,Public,1070,19.67

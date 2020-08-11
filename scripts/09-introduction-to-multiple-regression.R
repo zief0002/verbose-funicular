@@ -4,11 +4,10 @@
 
 library(broom)
 library(corrr)
+library(dotwhisker)
 library(dplyr)
 library(ggplot2)
 library(readr)
-library(tidyr)
-library(ungeviz)
 
 
 
@@ -24,7 +23,7 @@ options(pillar.sigfig = 6)
 ### Read in data
 ##################################################
 
-city = read_csv(file = "~/Documents/github/epsy-8251/data/riverview.csv")
+city = read_csv(file = "https://raw.githubusercontent.com/zief0002/modeling/master/data/riverview.csv")
 head(city)
 
 
@@ -33,10 +32,10 @@ head(city)
 ### Fit regression model
 ##################################################
 
-lm.1 = lm(income ~ 1 + education, data = city)
+lm.a = lm(income ~ 1 + education, data = city)
 
-glance(lm.1) # Model-level results
-tidy(lm.1)   # Coefficient-level results
+glance(lm.a) # Model-level results
+tidy(lm.a)   # Coefficient-level results
 
 
 
@@ -47,7 +46,6 @@ tidy(lm.1)   # Coefficient-level results
 
 # Examine the marginal distribution
 ggplot(data = city, aes(x = seniority)) +
-  geom_histogram(aes(y = ..density..), fill = "yellow", color = "black") +
   stat_density(geom = "line") +
   theme_bw() +
   xlab("Seniority level (in years)") +
@@ -86,10 +84,10 @@ city %>%
 ### Regress income on seniority
 ##################################################
 
-lm.2 = lm(income ~ 1 + seniority, data = city) 
+lm.b = lm(income ~ 1 + seniority, data = city) 
 
-glance(lm.2) # Model-level results
-tidy(lm.2)   # Coefficient-level results
+glance(lm.b) # Model-level results
+tidy(lm.b)   # Coefficient-level results
 
 
 
@@ -98,14 +96,28 @@ tidy(lm.2)   # Coefficient-level results
 ### Fit the multiple regression model
 ##################################################
 
-lm.3 = lm(income ~ 1 + education + seniority, data = city) 
+lm.c = lm(income ~ 1 + education + seniority, data = city) 
 
-glance(lm.3) # Model-level results
-tidy(lm.3)   # Coefficient-level results
+glance(lm.c) # Model-level results
+tidy(lm.c)   # Coefficient-level results
 
 
 # Partitioning the sums of squares
-anova(lm.3)
+anova(lm.c)
+
+
+
+##################################################
+### Changing the order of the predictors
+##################################################
+
+# Fit model with different predictor order
+lm.d = lm(income ~ 1 + seniority + education, data = city)
+
+
+anova(lm.d)  # ANOVA decomposition
+glance(lm.d) # Model-level output
+tidy(lm.d)   # Coefficient-level output
 
 
 
@@ -113,56 +125,28 @@ anova(lm.3)
 ### Coefficient plot 1
 ##################################################
 
-# Obtain tidy() output and filter out the intercept
-coef_output = tidy(lm.3) %>%
-  filter(term != "(Intercept)") 
+# Create tidy() data frames with model names
+mod_1 = tidy(lm.a) %>%
+  mutate(model = "Model A")
+
+mod_2 = tidy(lm.b) %>%
+  mutate(model = "Model B")
+
+mod_3 = tidy(lm.c) %>%
+  mutate(model = "Model C")
 
 
-# Plot
-ggplot(data = coef_output, aes(x = estimate, y = term)) +
-  stat_confidence_density(aes(moe = std.error, confidence = 0.68, 
-                              fill = stat(ndensity)), height = 0.15) +
-  geom_point(aes(x = estimate), size = 2) +
-  scale_fill_gradient(low = "#eff3ff", high = "#6baed6") +
+# Combine into single data frame
+all_models = rbind(mod_1, mod_2, mod_3)
+
+
+# Create plot
+dwplot(all_models, show_intercept = FALSE) +
   theme_bw() +
-  theme(
-    panel.grid.major = element_blank(),
-    panel.grid.minor = element_blank()
-  ) +
-  scale_x_continuous(name = "Estimate", limits = c(-1, 4)) +
-  scale_y_discrete(name = "Coefficients", labels = c("Education level", "Seniority"))
-
-
-
-##################################################
-### Coefficient plots from multiple models
-##################################################
-
-# Create tidy() objects and identify each with a model column
-m1 = tidy(lm.1) %>% mutate(model = "Model 1")
-m2 = tidy(lm.2) %>% mutate(model = "Model 2")
-m3 = tidy(lm.3) %>% mutate(model = "Model 3")
-
-
-# Combine all three tidy() outputs, filter out intercepts, and drop missing values
-all_models = rbind(m1, m2, m3) %>%
-  filter(term != "(Intercept)") %>%
-  drop_na()
-
-
-# Create coefficient plots
-ggplot(data = all_models, aes(x = estimate, y = term)) +
-  stat_confidence_density(aes(moe = std.error, confidence = 0.68, 
-                              fill = stat(ndensity)), height = 0.15) +
-  geom_point(aes(x = estimate), size = 2) +
-  scale_fill_gradient(low = "#eff3ff", high = "#6baed6") +
-  theme_bw() +
-  theme(
-    panel.grid.major = element_blank(),
-    panel.grid.minor = element_blank()
-  ) +
-  scale_x_continuous(name = "Estimate", limits = c(-1, 4)) +
-  scale_y_discrete(name = "Coefficients", labels = c("Education level", "Seniority")) +
-  facet_wrap(~model)
+  scale_color_manual(name = "Model", values = c("#c62f4b", "#c62f4b", "#c62f4b")) +
+  scale_x_continuous(name = "Estimate") +
+  scale_y_discrete(name = "Coefficients", labels = c("Seniority", "Education")) +
+  facet_wrap(~model) +
+  guides(color = FALSE)
 
 

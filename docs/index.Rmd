@@ -41,43 +41,45 @@ Welcome to *EPsy 8251: Methods in Data Analysis for Educational Research I*. Thi
 ### Instructor {-}
 
 Andrew Zieffler ([zief0002@umn.edu](mailto://zief0002@umn.edu)) <br />
-**Office:** [Education Sciences Building 178](https://www.google.com/maps/place/Education+Sciences+Building/@44.9784043,-93.2394586,15z/data=!4m2!3m1!1s0x0:0x45656dac481b9150)  <br />
-**Office Hours:** Tuesday 9:00 AM&ndash;10:00 AM; and by appointment
+**Virtual Office:** Zoom  <br />
+<!-- **Physical Office:** [Education Sciences Building 178](https://www.google.com/maps/place/Education+Sciences+Building/@44.9784043,-93.2394586,15z/data=!4m2!3m1!1s0x0:0x45656dac481b9150)  <br /> -->
+**Office Hours:** Wednesday 9:00 AM&ndash;10:00 AM; and by appointment
 
 
 ### Teaching Assistant {-}
 
-Mireya Smith ([mart1799@umn.edu](mailto://mart1799@umn.edu))  <br />
-**Office:** [Education Sciences Building 192](https://www.google.com/maps/place/Education+Sciences+Building/@44.9784043,-93.2394586,15z/data=!4m2!3m1!1s0x0:0x45656dac481b9150)  <br />
-**Office Hours:** Thursdays 9:00 AM&ndash;11:00 AM; and by appointment
+Corissa Ruhloff ([wurth005@umn.edu ](mailto://wurth005@umn.edu ))  <br />
+**Virtual Office:** Zoom  <br />
+<!-- **Physical Office:** [Education Sciences Building 192](https://www.google.com/maps/place/Education+Sciences+Building/@44.9784043,-93.2394586,15z/data=!4m2!3m1!1s0x0:0x45656dac481b9150)  <br /> -->
+**Office Hours:** TBA <!-- Thursdays 9:00 AM&ndash;11:00 AM; and by appointment -->
 
 <br />
 
+
 ### Classroom
 
-- Monday/Wednesday (2:30&ndash;3:45): [Ford Hall 150](http://campusmaps.umn.edu/ford-hall)
-- Tuesday/Thursday (11:15&ndash;12:30): [Ford Hall B15](http://campusmaps.umn.edu/ford-hall)
+- Monday/Wednesday (2:30&ndash;3:45): [Zoom](https://umn.zoom.us/j/94255043570?pwd=blBRQUk2UU9DeE8vdXFJR0xDVGx0dz09)
+
 
 <br />
 
 
 ### Course Content and Syllabus {-}
 
-The statistical content for EPsy 8251 includes rigorous coverage of estimation and hypothesis testing with a particular focus on ANOVA and multiple linear regression.
+- The course syllabus is available  [here](https://github.com/zief0002/epsy-8251/raw/master/syllabus/f20-8251-syllabus.pdf).
 
-- The course syllabus is available  [here](https://github.com/zief0002/epsy-8251/raw/master/syllabus/f19-8251-syllabus.pdf).
+<img src="img/units.png" />
+
 
 <br />
 
+
 ### Textbooks {-}
 
-The primary course textbook is available via the University of Minnesota library.
+The course textbook is available via the University of Minnesota library.
 
 - [Applied regression: An introduction](https://primo.lib.umn.edu/primo-explore/fulldisplay?docid=UMN_ALMA21533776460001701&context=L&vid=TWINCITIES&search_scope=mncat_discovery&tab=article_discovery&lang=en_US) [required]
 
-The secondary course textbook (available via Amazon) is
-
-- [Presenting your findings: A practical guide for creating tables](https://www.amazon.com/Presenting-Your-Findings-Practical-Creating/dp/143380705X) [required] 
 
 <br />
 

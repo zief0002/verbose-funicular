@@ -5,11 +5,11 @@
 library(broom)
 library(corrr)
 library(dplyr)
+library(dotwhisker)
 library(educate)
 library(ggplot2)
+library(patchwork)
 library(readr)
-library(tidyr)
-library(ungeviz)
 
 
 
@@ -25,9 +25,8 @@ options(pillar.sigfig = 6)
 ### Read in data
 ##################################################
 
-mn = read_csv(file = "~/Documents/github/epsy-8251/data/mn-schools.csv")
+mn = read_csv(file = "https://raw.githubusercontent.com/zief0002/modeling/master/data/mn-schools.csv")
 head(mn)
-
 
 
 
@@ -35,17 +34,33 @@ head(mn)
 ### Exploration
 ##################################################
 
+# Density plot of graduation rates
+ggplot(data = mn, aes(x = grad)) +
+  stat_density(geom = "line", color = "#c62f4b") +
+  theme_bw() +
+  xlab("Six-year graduation rate") +
+  ylab("Probability density")
+
+
+# Bar plot of education sector
+ggplot(data = mn, aes(x = sector)) +
+  geom_bar(fill = "#c62f4b") +
+  theme_bw() +
+  xlab("Educational sector") +
+  ylab("Frequency")
+
+
 # Scatterplot
-ggplot(data = mn, aes(x = as.factor(public), y = grad)) +
+ggplot(data = mn, aes(x = sector, y = grad)) +
   geom_point() +
   theme_bw() +
-  scale_x_discrete(name = "Educational sector", labels = c("Private", "Public")) +
+  xlab("Educational sector") +
   ylab("Six-year graduation rate")
 
 
-# Descriptive statistics
+# Summary statistics
 mn %>% 
-  group_by(public) %>%
+  group_by(sector) %>%
   summarize(
     M = mean(grad),
     SD = sd(grad),
@@ -53,23 +68,124 @@ mn %>%
   )
 
 
-# Correlation matrix
+
+##################################################
+### Indicator variables: 5 and 10
+##################################################
+
+# Create indicator variable
+mn = mn %>%
+  mutate(
+    indicator = if_else(sector == "Public", 5, 10)
+  )
+
+
+# Examine data frame
+head(mn)
+
+
+# Correlation
+mn %>%
+  select(grad, indicator) %>%
+  correlate() %>%
+  fashion(decimals = 3)
+
+
+# Fit regression model
+lm.a = lm(grad ~ 1 + indicator, data = mn)
+
+print(glance(lm.a), width = Inf) # Model-level output
+tidy(lm.a)                       # Coefficient-level output
+
+
+
+##################################################
+### Indicator variables: 2 and 7
+##################################################
+
+# Create indicator variable
+mn = mn %>%
+  mutate(
+    indicator_2 = if_else(sector == "Public", 2, 7)
+  )
+
+
+# Examine data frame
+head(mn)
+
+
+# Correlation
+mn %>%
+  select(grad, indicator_2) %>%
+  correlate() %>%
+  fashion(decimals = 3)
+
+
+# Fit regression model
+lm.b = lm(grad ~ 1 + indicator_2, data = mn)
+
+print(glance(lm.b), width = Inf) # Model-level output
+tidy(lm.b)                       # Coefficient-level output
+
+
+
+##################################################
+### Dummy indicator variables: 0 and 1 (private)
+##################################################
+
+# Create indicator variable
+mn = mn %>%
+  mutate(
+    private = if_else(sector == "Private", 1, 0)
+  )
+
+
+# Examine data frame
+head(mn)
+
+
+# Correlation
+mn %>%
+  select(grad, private) %>%
+  correlate() %>%
+  fashion(decimals = 3)
+
+
+# Fit regression model
+lm.c = lm(grad ~ 1 + private, data = mn)
+
+print(glance(lm.c), width = Inf) # Model-level output
+tidy(lm.c)                       # Coefficient-level output
+
+
+
+##################################################
+### Private schools as reference group
+##################################################
+
+# Create indicator variable
+mn = mn %>%
+  mutate(
+    public = if_else(sector == "Public", 1, 0)
+  )
+
+
+# Examine data frame
+head(mn)
+
+
+# Correlation
 mn %>%
   select(grad, public) %>%
   correlate() %>%
   fashion(decimals = 3)
 
 
+# Fit regression model
+lm.d = lm(grad ~ 1 + public, data = mn)
 
-##################################################
-### Fit regression model
-##################################################
-
-lm_public = lm(grad ~ 1 + public, data = mn)
-
-glance(lm_public)
-tidy(lm_public)
-
+print(glance(lm.d), width = Inf) # Model-level output
+tidy(lm.d)                       # Coefficient-level output
 
 
 
@@ -77,27 +193,30 @@ tidy(lm_public)
 ### Examine assumptions
 ##################################################
 
-# Augment the model
-model_output = augment(lm_public)
-head(model_output)
+# Obtain the fitted values and residuals
+aug_d = augment(lm.d)
+
+
+# View augmented data frame
+head(aug_d)
 
 
 # Density plot of the marginal standardized residuals
-ggplot(data = model_output, aes(x = .std.resid)) +
-  stat_watercolor_density(model = "normal") +
-  stat_density(geom = "line") +
+ggplot(data = aug_d, aes(x = .std.resid)) +
+  stat_density_confidence(model ="normal") +
+  stat_density(geom = "line", color = "#c62f4b") +
   theme_bw() +
-  xlab("Studentized residuals") +
+  xlab("Standardized residual") +
   ylab("Probability density")
 
 
-# Scatterplot of the studentized residuals versus the fitted values
-ggplot(data = model_output, aes(x = .fitted, y = .std.resid)) +
+# Scatterplot of the standardized residuals versus the fitted values
+ggplot(data = aug_d, aes(x = .fitted, y = .std.resid)) +
   geom_point() +
   geom_hline(yintercept = 0) +
   theme_bw() +
-  xlab("Fitted values") +
-  ylab("Studentized residuals")
+  xlab("Fitted value") +
+  ylab("Standardized residual")
 
 
 
@@ -105,27 +224,31 @@ ggplot(data = model_output, aes(x = .fitted, y = .std.resid)) +
 ### Examine assumptions by sector
 ##################################################
 
-model_output_private = model_output %>% 
+# Get private schools
+aug_private = aug_d %>% 
   filter(public == 0)
 
+
 # Get public schools
-model_output_public = model_output %>% 
+aug_public = aug_d %>% 
   filter(public == 1)
 
-# Density plot of the private schools' sttudentized residuals
-ggplot(data = model_output_private, aes(x = .std.resid)) +
-  stat_watercolor_density(model = "normal") +
-  stat_density(geom = "line") +
+
+# Density plot of the private schools' standardized residuals
+ggplot(data = aug_private, aes(x = .std.resid)) +
+  stat_density_confidence(model = "normal") +
+  stat_density(geom = "line", color = "#c62f4b") +
   theme_bw() +
-  xlab("Studentized residuals") +
+  xlab("Standardized residual") +
   ylab("Probability density")
 
-# Density plot of the public schools' sttudentized residuals
-ggplot(data = model_output_public, aes(x = .std.resid)) +
-  stat_watercolor_density(model = "normal") +
-  stat_density(geom = "line") +
+
+# Density plot of the public schools' standardized residuals
+ggplot(data = aug_public, aes(x = .std.resid)) +
+  stat_density_confidence(model = "normal") +
+  stat_density(geom = "line", color = "#c62f4b") +
   theme_bw() +
-  xlab("Studentized residuals") +
+  xlab("Standardized residual") +
   ylab("Probability density")
 
 
@@ -136,19 +259,16 @@ ggplot(data = model_output_public, aes(x = .std.resid)) +
 
 # Correlation matrix
 mn %>%
-  select(grad, public, sat) %>%
+  select(grad, private, sat) %>%
   correlate() %>%
   fashion(decimals = 3)
 
 
 # Fit regression model
-lm.2 = lm(grad ~ 1 + public + sat, data = mn)
+lm.e = lm(grad ~ 1 + sat + private, data = mn)
 
-# Model-level info
-glance(lm.2)
-
-# Coefficient-level info
-tidy(lm.2)
+print(glance(lm.e), width = Inf) # Model-level
+tidy(lm.e)                       # Coefficient-level info
 
 
 
@@ -157,67 +277,67 @@ tidy(lm.2)
 ##################################################
 
 # Compute mean SAT
-mean(mn$sat)
+mn %>%
+  summarize(
+    M = mean(sat)
+    )
+
 
 # Compute adjusted mean for private schools
--76.1 - 8.4*0 + 0.127*1101.2
+-84.4 + 0.127*1101.2 + 8.4*1
+
 
 # Compute adjusted mean for public schools
--76.1 - 8.4*1 + 0.127*1101.2
+-84.4 + 0.127*1101.2 + 8.4*0
+
 
 # Compute adjusted mean difference
-63.7 - 55.4
+63.9 - 55.5
 
 
 
 ##################################################
-### Fit ANCOVA model 2
+### One last model
 ##################################################
 
 # Correlation matrix
 mn %>%
-  select(grad, public, sat, tuition) %>%
+  select(grad, private, sat, tuition) %>%
   correlate() %>%
   fashion(decimals = 3)
 
+
 # Fit regression model
-lm.3 = lm(grad ~ 1 + public + sat + tuition, data = mn)
+lm.f = lm(grad ~ 1 + sat + tuition + private, data = mn)
 
-# Model-level info
-glance(lm.3)
-
-# Coefficient-level info
-tidy(lm.3)
+print(glance(lm.f), width = Inf) # Model-level
+tidy(lm.f)                       # Coefficient-level info
 
 
-
-##################################################
-### Check assumptions
-##################################################
-
-# Augment the model
-lm.3_output = augment(lm.3)
-
-head(lm.3_output)
+# Obtain the fitted values and residuals
+aug_f = augment(lm.f)
 
 
-# Density plot of the marginal studentized residuals
-ggplot(data = lm.3_output, aes(x = .std.resid)) +
-  stat_watercolor_density(model = "normal") +
-  stat_density(geom = "line") +
+# View augmented data frame
+head(aug_f)
+
+
+# Density plot of the marginal standardized residuals
+ggplot(data = aug_f, aes(x = .std.resid)) +
+  stat_density_confidence(model ="normal") +
+  stat_density(geom = "line", color = "#c62f4b") +
   theme_bw() +
-  xlab("Studentized residuals") +
+  xlab("Standardized residual") +
   ylab("Probability density")
 
 
-# Scatterplot of the studentized residuals versus the fitted values
-ggplot(data = lm.3_output, aes(x = .fitted, y = .std.resid)) +
-  geom_point(size = 4) +
-  geom_smooth(se = TRUE) +
+# Scatterplot of the standardized residuals versus the fitted values
+ggplot(data = aug_f, aes(x = .fitted, y = .std.resid)) +
+  geom_point() +
   geom_hline(yintercept = 0) +
   theme_bw() +
-  xlab("Fitted values") +
-  ylab("Standardized residuals")
+  xlab("Fitted value") +
+  ylab("Standardized residual")
 
 
 
@@ -226,46 +346,39 @@ ggplot(data = lm.3_output, aes(x = .fitted, y = .std.resid)) +
 ##################################################
 
 # Create tidy() objects and identify each with a model column
-m1 = tidy(lm_public) %>% mutate(model = "Model 1")
-m2 = tidy(lm.2) %>% mutate(model = "Model 2")
-m3 = tidy(lm.3) %>% mutate(model = "Model 3")
+m1 = tidy(lm.c) %>% mutate(model = "Model A")
+m2 = tidy(lm.e) %>% mutate(model = "Model B")
+m3 = tidy(lm.f) %>% mutate(model = "Model C")
 
 
 # Combine all three tidy() outputs, filter out intercepts, and drop missing values
-all_models = rbind(m1, m2, m3) %>%
-  filter(term != "(Intercept)") %>%
-  drop_na()
+all_models = rbind(m1, m2, m3)
 
 
-# Create coefficient plots
-ggplot(data = all_models, aes(x = estimate, y = term)) +
-  stat_confidence_density(aes(moe = std.error, confidence = 0.68, fill = stat(ndensity)), 
-                          height = 0.15) +
-  geom_point(aes(x = estimate), size = 2) +
-  scale_fill_gradient(low = "#eff3ff", high = "#6baed6") +
+# Create plot
+dwplot(all_models, show_intercept = FALSE) +
   theme_bw() +
-  theme(
-    panel.grid.major = element_blank(),
-    panel.grid.minor = element_blank()
-  ) +
-  scale_x_continuous(name = "Estimate", limits = c(-25, 5)) +
+  scale_color_manual(name = "Model", values = c("#c62f4b", "#c62f4b", "#c62f4b")) +
+  scale_x_continuous(name = "Estimate") +
   scale_y_discrete(
     name = "Coefficients", 
-    labels = c("Public institution", "Median SAT score", "Tuition")
-    ) +
+    labels = c("Tuition", "Median SAT score", "Private institution\n(dummy coded)")
+  ) +
+  guides(color = FALSE) +
   facet_wrap(~model)
 
 
 
 ##################################################
-### Plot of the fitted model (lm.3)
+### Plot of the fitted model (mean tuition rate)
 ##################################################
 
 ggplot(data = mn, aes(x = sat, y = grad)) +
   geom_point(alpha = 0) +
-  geom_abline(intercept = -68.93, slope = 0.10, color = "#e69f00", linetype = "solid") +
-  geom_abline(intercept = -68.28, slope = 0.10, color = "#56b4e9", linetype = "dashed") +
+  geom_abline(intercept = -53.7, slope = 0.10, color = "#e69f00", linetype = "solid") +
+  geom_abline(intercept = -53.0, slope = 0.10, color = "#56b4e9", linetype = "dashed") +
   theme_bw() +
   xlab("Median SAT score") +
   ylab("Predicted graduation rate")
+
 

@@ -1,5 +1,9 @@
+body {
+  background-color: #fff;
+}
+
 .header-panel {
-  background-image: url("img/umn.jpg");
+  background-image: url("img/watercolor.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-color: #9c27b0;

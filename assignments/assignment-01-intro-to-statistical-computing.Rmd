@@ -85,7 +85,7 @@ Use Excel (or some other program) to enter these data into a spreadsheet. The fi
 
 3. Use the `mean()` function to compute the mean number of pages Andy read per month in 2019. Report this value.
 
-4. Use the `sd()` function to compute the standard deviation of number of pages Andy read in 2019. Report this value.
+4. Use the `sd()` function to compute the standard deviation of number of pages Andy read per month in 2019. Report this value.
 
 \newpage
 

@@ -4,7 +4,9 @@
 
 library(broom)
 library(corrr)
+library(dotwhisker)
 library(dplyr)
+library(ggExtra)
 library(ggplot2)
 library(readr)
 
@@ -22,8 +24,7 @@ options(pillar.sigfig = 6)
 ### Read in data
 ##################################################
 
-keith = read_csv(file = "~/Documents/github/epsy-8251/data/keith-gpa.csv")
-
+keith = read_csv(file = "https://raw.githubusercontent.com/zief0002/modeling/master/data/keith-gpa.csv")
 head(keith)
 
 
@@ -32,32 +33,16 @@ head(keith)
 ### Exploration
 ##################################################
 
-# Density plots of the marginal distribution of homework
-ggplot(data = keith, aes(x = gpa)) +
-  geom_histogram(aes(y = ..density..), color = "black", fill = "yellow") +
-  stat_density(geom = "line") +
-  theme_bw() +
-  xlab("GPA (on a 100-pt. scale)") +
-  ylab("Probability density") +
-  ggtitle("Outcome: GPA")
-
-
-# Density plots of the marginal distribution of homework
-ggplot(data = keith, aes(x = homework)) +
-  geom_histogram(aes(y = ..density..), color = "black", fill = "yellow") +
-  stat_density(geom = "line") +
-  theme_bw() +
-  xlab("Time spent on homework per week (in hours)") +
-  ylab("Probability density")  +
-  ggtitle("Predictor: Homework")
-
-
 # Scatterplot
-ggplot( data = keith, aes(x = homework, y = gpa) ) +
+p1 = ggplot( data = keith, aes(x = homework, y = gpa) ) +
   geom_point() +
   theme_bw() +
   xlab("Time spent on homework per week (in hours)") +
   ylab("GPA (on a 100-pt. scale)")
+
+
+# Plot scatterplot and density plots on single graph
+ggMarginal(p1, margins = "both", type = "density")
 
 
 # Summary statistics
@@ -81,8 +66,8 @@ keith %>%
 ### Fit regression model
 ##################################################
 
-lm.1 = lm(gpa ~ 1 + homework, data = keith)
-lm.1
+lm.a = lm(gpa ~ 1 + homework, data = keith)
+lm.a
 
 
 
@@ -90,7 +75,7 @@ lm.1
 ### Coefficient-level output
 ##################################################
 
-tidy(lm.1)
+tidy(lm.a)
 
 
 
@@ -98,40 +83,47 @@ tidy(lm.1)
 ### Interval estimates of the regression parameters
 ##################################################
 
-confint(lm.1, level = 0.95)
+tidy(lm.a, conf.int = TRUE, conf.level = 0.95)
 
 
 
 ##################################################
-### Coefficient plot
+### Coefficient plot -- All coefficients
 ##################################################
 
-# Install ungeviz package (only need to do this once)
-# library(devtools)
-# install_github("wilkelab/ungeviz")
-
-
-# Load ungeviz library
-library(ungeviz)
+# Store output from tidy
+mod_1 = tidy(lm.a) %>%
+  mutate(model = "Model A")
 
 
 # Create plot
-ggplot(data = tidy(lm.1), aes(x = estimate, y = term)) +
-  stat_confidence_density(aes(moe = std.error, confidence = 0.68, fill = stat(ndensity)), 
-                          height = 0.15) +
-  geom_point(aes(x = estimate), size = 2) +
-  scale_fill_gradient(low = "#eff3ff", high = "#6baed6") +
+dwplot(mod_1, show_intercept = TRUE) +
   theme_bw() +
-  theme(
-    panel.grid.major = element_blank(),
-    panel.grid.minor = element_blank()
+  scale_color_manual(
+    name = "Model", 
+    values = c("#c62f4b")
+    ) +
+  scale_x_continuous(name = "Estimate") +
+  scale_y_discrete(
+    name = "Coefficients", 
+    labels = c("Time spent\non homework", "Intercept")
+    )
+
+
+
+##################################################
+### Coefficient plot -- Omit intercept
+##################################################
+
+dwplot(mod_1, show_intercept = FALSE) +
+  theme_bw() +
+  scale_color_manual(
+    name = "Model", 
+    values = c("#c62f4b")
   ) +
-  scale_x_continuous(name = "Estimate", limits = c(0, 80)) +
-  scale_y_discrete(name = "Coefficients", labels = c("Intercept", "Time spent\non homework"))
-
-
-
-
-
-
+  scale_x_continuous(name = "Estimate") +
+  scale_y_discrete(
+    name = "Coefficients", 
+    labels = c("Time spent\non homework", "Intercept")
+  )
 

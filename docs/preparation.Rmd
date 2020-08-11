@@ -31,17 +31,15 @@ As part of the course, there are several articles, papers and technical reports 
 
 **Required**
 
-Download and read through the course syllabus.
-
-- [Course Syllabus](https://github.com/zief0002/epsy-8251/raw/master/f19-8251-syllabus.pdf) [pdf]
+- Download and read through the [course syllabus](https://github.com/zief0002/epsy-8251/raw/master/f20-8251-syllabus.pdf)
+- Read [Preface for Statistical Modeling and Computation for Educational Scientists](https://zief0002.github.io/modeling/preface.html#preface)
 
 
 **Optional**
 
 Download and install R and RStudio:
 
-- Download R from the [R Project website](https://www.r-project.org/) and install it on your computer. The course syllabus includes instructions ito do this.
-- Download the free version of RStudio from the [RStudio website](https://www.rstudio.com/) and install it on your computer.
+- Download both R and the free version of RStudio, and install them on your computer. See [R and RStudio Installation and Setp](https://zief0002.github.io/toolkit/r-and-rstudio-installation-and-setup.html#r-and-rstudio-installation-and-setup) for help.
 
 ---
 
@@ -52,9 +50,9 @@ Download and install R and RStudio:
 
 **Required**
 
-Watch the following video:
+Read the following:
 
-- [R for Starters: R and R Studio Workspace](https://www.youtube.com/watch?v=uKyQyfenfvM) [video]
+- [Getting Started with R](https://zief0002.github.io/toolkit/getting-started-with-r.html#getting-started-with-r)
 
 
 **Additional Resources**
@@ -79,7 +77,10 @@ Here is an R vignette that will help you learn dplyr:
 **Additional Resources**
 
 - [dplyr Cheatsheet](https://www.rstudio.com/wp-content/uploads/2015/02/data-wrangling-cheatsheet.pdf)
-- [tidy data video](https://vimeo.com/33727555) [video]
+- [Data Wrangling Part 1: Basic to Advanced Ways to Select Columns](https://suzan.rbind.io/2018/01/dplyr-tutorial-1/)
+- [Data Wrangling Part 2: Transforming your columns into the right shape](https://suzan.rbind.io/2018/02/dplyr-tutorial-2/)
+- [Data Wrangling Part 3: Basic and more advanced ways to filter rows](https://suzan.rbind.io/2018/02/dplyr-tutorial-3/)
+- [Data Wrangling Part 4: Summarizing and slicing your data](https://suzan.rbind.io/2018/04/dplyr-tutorial-4/)
 - Create tidyverse inspired clothing. See how [Amelia McNamara created a tidyverse dress](https://www.amelia.mn/blog/misc/2019/08/17/Tidy-Dress.html) and make your own clothing, shower curtain, etc. with the [Spoonflower printed fabric](https://www.spoonflower.com/profiles/ameliamn) she made available. 
 
 ---
@@ -101,7 +102,7 @@ Here are two videos to watch that will help you learn ggplot2:
 
 ---
 
-# Unit 02: Introduction to Linear Regression
+# Unit 02: Regression Basics
 
 
 ## Simple Linear Regression: Description {#ols-description}
@@ -109,6 +110,16 @@ Here are two videos to watch that will help you learn ggplot2:
 **Required**
 
 - Lewis-Beck &amp; Lewis-Beck [Chap. 1]
+
+
+---
+
+
+## Ordinary Least Squares (OLS) Estimation {#ols}
+
+**Required**
+
+- [Ordinary Least Squares Regression: Explained Visually](https://setosa.io/ev/ordinary-least-squares-regression/)
 
 
 
@@ -123,13 +134,12 @@ Here are two videos to watch that will help you learn ggplot2:
 **Additional Resources**
 
 - [corrr Package Vignette](https://github.com/tidymodels/corrr)
+- [Exploring correlations in R with corrr](https://drsimonj.svbtle.com/exploring-correlations-in-r-with-corrr)
 - [Guess the Correlation Game](http://guessthecorrelation.com/) [fun game]
 - Bring, J. (1994). [How to standardize regression coefficients.](https://amstat.tandfonline.com/doi/abs/10.1080/00031305.1994.10476059) *The American Statistician, 48*(3), 209&ndash;213. 
 
 
 ---
-
-# Unit 03: Statistical Uncertainty and Inference
 
 ## Coefficient-Level Inference {#coefinf}
 
@@ -139,16 +149,25 @@ Here are two videos to watch that will help you learn ggplot2:
 - Amrhein, V., Greenland, S., &amp; McShane, B. (2019). [Comment: Retire statistical significance.](https://www.nature.com/articles/d41586-019-00857-9) *Nature, 567*, 305&ndash;307.
 
 
+
 **Additional Resources**
 
 - [Dance of the p-values](https://www.youtube.com/watch?v=ez4DgdurRPg) [video]
 
+---
+
+## Model-Level Inference {#modinf}
+
+**Required**
+
+- [The Boy Who Cried Type I Error](https://datacolumn.wordpress.ncsu.edu/blog/2019/12/10/the-boy-who-cried-type-i-error-wolf/)
+- [Type I and Type II Errors Simplified](https://flowingdata.com/2014/05/09/type-i-and-ii-errors-simplified/)
 
 ---
 
-# Unit 04: Multiple Linear Regression and Statistical Control
+# Unit 03: Deeper Understanding
 
-## Introduction to Multiple Regression {#multreg}
+## Introduction to Multiple Linear Regression {#multreg}
 
 **Required**
 
@@ -160,9 +179,16 @@ Here are two videos to watch that will help you learn ggplot2:
 
 ---
 
-# Unit 05: Model Assumptions {#assump}
+## Understanding Statistical Control {#control}
 
-## Assumptions of the Regression Model {#reg-assump}
+**Required**
+
+- Pourhoseingholi, M. A.Baghestani, A. R., &amp; Vahedi, M. (). [How to control confounding effects by statistical analysis](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4017459/). *Gastroenterology and hepatology from bed to bench, 5*(2), 79&ndash;83.
+
+---
+
+
+## Distributional Assumptions Underlying the Regression Model {#reg-assump}
 
 **Required**
 
@@ -175,37 +201,41 @@ Here are two videos to watch that will help you learn ggplot2:
 
 ---
 
-# Unit 06: Categorical Predictors
+# Unit 04: Extending the Regression Model
 
-## Dummy Coding a Categorical Predictor {#dummy}
+## Dichotomous Categorical Predictors {#dummy}
 
 **Required**
 
 - [What is Dummy Coding?](https://stats.idre.ucla.edu/other/mult-pkg/faq/general/faqwhat-is-dummy-coding/) [web article]
 
 
-## Effect Coding a Categorical Predictor {#effect}
+<!-- ## Effect Coding a Categorical Predictor {#effect} -->
 
-**Required**
+<!-- **Required** -->
 
-- [What is Effect Coding?](https://stats.idre.ucla.edu/other/mult-pkg/faq/general/faqwhat-is-effect-coding/) [web article]
+<!-- - [What is Effect Coding?](https://stats.idre.ucla.edu/other/mult-pkg/faq/general/faqwhat-is-effect-coding/) [web article] -->
+
+<!-- --- -->
 
 ---
 
-## Polychotompus Categorical Predictora {#poly}
+## Polychotomous Categorical Predictors {#poly}
 
 **Required**
 
-- Veazie, P. J. (2006). [When to combine hypotheses and adjust for multiple Tests](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1713204/). _Health Services Research, 41_(3 Pt 1), 804&ndash;818. doi:  10.1111/j.1475-6773.2006.00512.x 
+- [Technical Methods Report: Guidelines for Multiple Testing in Impact Evaluations ](https://ies.ed.gov/ncee/pdf/20084018.pdf)
+
 
 **Additional Resources**
 
 - Gelman, A., Hill, J., & Yajima, M. (2012). [Why we (usually) don’t have to worry about multiple comparisons](http://www.stat.columbia.edu/~gelman/research/published/multiple2f.pdf). _Journal of Research on Educational Effectiveness, 5_, 189&ndash;211.
 - [Science isn't Broken](https://fivethirtyeight.com/features/science-isnt-broken/#part1) [web article]
+- Veazie, P. J. (2006). [When to combine hypotheses and adjust for multiple Tests](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1713204/). _Health Services Research, 41_(3 Pt 1), 804&ndash;818. doi:  10.1111/j.1475-6773.2006.00512.x 
 
 ---
 
-# Unit 07: Interaction Models {#intmodel}
+## Introduction to Interaction Effects {#interaction-1}
 
 **Required**
 
@@ -215,4 +245,12 @@ Improving empirical analyses](http://mattgolder.com/files/research/pa_final.pdf)
 **Additional resources**
 
 - Frost, J. (2018). [Understanding Interaction Effects in Statistics](http://statisticsbyjim.com/regression/interaction-effects/). [blog post]
+
+---
+
+## More Interaction Effects {#interaction-2}
+
+**Required**
+
+-Williams, R. (2015). [Interpreting interaction effects; interaction effects and centering](https://www3.nd.edu/~rwilliam/stats2/l53.pdf). 
 

@@ -32,7 +32,7 @@ The data in [mnSchools.csv](https://github.com/zief0002/epsy-8251/raw/master/dat
 
 - `name`: College/university name
 - `grad`: Six-year graduation rate (as a percentage)
-- `public`: Sector (1 = public college/university, 0 = private college/university)
+- `sector`: Educational sector (Public; Private)
 - `sat`: Estimated median composite SAT score (in hundreds)
 - `tuition`: Amount of tuition and required fees covering a full academic year for a typical student (in thousands of U.S. dollars)
 

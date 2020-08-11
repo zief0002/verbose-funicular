@@ -2,7 +2,8 @@
 ### Load libraries
 ##################################################
 
-library(broom)
+library(broom) #v0.7.0.9 or higher
+library(corrr)
 library(dplyr)
 library(ggplot2)
 library(readr)
@@ -21,7 +22,7 @@ options(pillar.sigfig = 6)
 ### Read in data
 ##################################################
 
-keith = read_csv(file = "~/Documents/github/epsy-8251/data/keith-gpa.csv")
+keith = read_csv(file = "https://raw.githubusercontent.com/zief0002/modeling/master/data/keith-gpa.csv")
 head(keith)
 
 
@@ -30,7 +31,7 @@ head(keith)
 ### Fit regression model
 ##################################################
 
-lm.1 = lm(gpa ~ 1 + homework, data = keith)
+lm.a = lm(gpa ~ 1 + homework, data = keith)
 
 
 
@@ -38,7 +39,7 @@ lm.1 = lm(gpa ~ 1 + homework, data = keith)
 ### Model-level output
 ##################################################
 
-glance(lm.1)
+glance(lm.a)
 
 
 
@@ -46,7 +47,25 @@ glance(lm.1)
 ### ANOVA decomposition
 ##################################################
 
-anova(lm.1)
+anova(lm.a)
+
+
+
+##################################################
+### Understanding the ANOVA decomposition
+##################################################
+
+# Variance of outcome variable
+keith %>%
+  summarize(V_gpa = var(gpa))
+
+
+# Fit intercept-only model
+lm.0 = lm(gpa ~ 1, data = keith)
+
+
+# ANOVA decomposition
+anova(lm.0)
 
 
 
@@ -54,17 +73,12 @@ anova(lm.1)
 ### Plot of the fitted model and the model uncertainty
 ##################################################
 
-# Install educate package (only need to do this once)
-# library(devtools)
-# install_github("zief0002/educate")
-
-# Load educate package
-library(educate)
-
-# Create plot with regression line and confidence envelope
 ggplot(data = keith, aes(x = homework, y = gpa)) +
-  stat_watercolor_smooth(method = "lm") +
-  geom_abline(intercept = 74.3, slope = 1.21) +
+  geom_smooth(
+    method = "lm", 
+    color = "#c62f4b", 
+    fill = "#696969"
+    ) +
   xlab("Time spent on homework") +
   ylab("GPA (on a 100-pt. scale)") +
   theme_bw()
