@@ -32,7 +32,7 @@ This data, stored in [substance-family.csv](https://github.com/zief0002/epsy-825
 
 - `substance_use`: Composite based on student-reported use of cigarettes (How many cigarettes smoked per day), alcohol (In lifetime, number of times had alcohol to drink), and marijuana (In lifetime, number of times used marijuana). To compute this composite index, the three self-reported values were standardized and then averaged. 
 - `family_structure`: Adult composition of the household with three levels (`Two-parent family`, `One-parent, one guardian`, and`Single-parent family`)
-- `female`: Dummy-coded sex variable (0 = male; 1 = female)
+- `female`: Dummy-coded sex variable (0 = Not female; 1 = Female)
 - `gpa`: Composite GPA on a 10-pt scale
 
 

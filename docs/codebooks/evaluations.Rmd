@@ -16,7 +16,7 @@ library(fontawesome)
 ## Global options
 options(max.print="75")
 opts_chunk$set(echo=FALSE,
-	             cache=TRUE,
+	             cache=FALSE,
                prompt=FALSE,
                tidy=TRUE,
                comment=NA,
@@ -37,14 +37,14 @@ The data in [evaluations.csv](https://github.com/zief0002/epsy-8251/raw/master/d
 - `tenured`: Is the professor tenured? (0 = non-tenured; 1 = tenured)
 - `native_english`: Is the professor a native English speaker? (0 = non-native English speaker; 1 = native English speaker)
 - `age`: Professor's age (in years)
-- `female`: Is the professor female? (0 = male; 1 = female)
+- `female`: Is the professor female? (0 = not female; 1 = female)
 
 
 ### Preview
 
 ```{r}
 evaluations = readr::read_csv(file = "~/Documents/github/epsy-8251/data/evaluations.csv")
-head(evaluations)
+print(head(evaluations), width = Inf)
 ```
 
 

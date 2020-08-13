@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<html lang="" xml:lang="">
   <head>
     <title>Introduction to R and RStudio</title>
     <meta charset="utf-8" />
     <meta name="author" content="Andrew Zieffler&quot;" />
-    <meta name="date" content="2019-09-06" />
+    <meta name="date" content="2020-08-11" />
     <link href="css/remark-css/default.css" rel="stylesheet" />
     <link href="css/remark-css/metropolis.css" rel="stylesheet" />
     <link href="css/remark-css/metropolis-fonts.css" rel="stylesheet" />
@@ -17,7 +17,7 @@ class: center, middle, inverse, title-slide
 # Introduction to R and RStudio
 ## EPsy 8251
 ### Andrew Zieffler"
-### 2019-09-06
+### 2020-08-11
 
 ---
 
@@ -345,7 +345,7 @@ Comments are indicated using the hashtag (\#). These can be placed on their own 
 
 Syntax in the script file can be executed by highlighting it and pressing the `Run` button in the toolbar.
 
-&lt;img src="images/notes-01-run-button.png" width="1347" /&gt;
+![](images/notes-01-run-button.png)&lt;!-- --&gt;
 
 ---
 
@@ -353,7 +353,7 @@ Syntax in the script file can be executed by highlighting it and pressing the `R
 
 R functions are stored in packages (or libraries). There over 12,000 different packages available on CRAN (as of June 2018), and more on github, webpages, etc. 
 
-&lt;img src="images/notes-01-packages.png" width="971" /&gt;
+![](images/notes-01-packages.png)&lt;!-- --&gt;
 
 ---
 
@@ -565,8 +565,7 @@ mean(sex)
 ```
 
 ```
-## Warning in mean.default(sex): argument is not numeric or logical: returning
-## NA
+## Warning in mean.default(sex): argument is not numeric or logical: returning NA
 ```
 
 ```
@@ -587,7 +586,7 @@ Data frames and tibbles have a tabular (rectangular) structure made up of rows (
   &lt;tr&gt;
    &lt;th style="text-align:left;"&gt; name &lt;/th&gt;
    &lt;th style="text-align:right;"&gt; grad &lt;/th&gt;
-   &lt;th style="text-align:right;"&gt; public &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; sector &lt;/th&gt;
    &lt;th style="text-align:right;"&gt; sat &lt;/th&gt;
    &lt;th style="text-align:right;"&gt; tuition &lt;/th&gt;
   &lt;/tr&gt;
@@ -596,44 +595,44 @@ Data frames and tibbles have a tabular (rectangular) structure made up of rows (
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; Augsburg College &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 65.2 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Private &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 1030 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 39.294 &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; Bemidji State University &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 42.3 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 1010 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 18.057 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; Bethany Lutheran College &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 52.6 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Private &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 1065 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 30.480 &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; Bethel University, Saint Paul, MN &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 73.3 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Private &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 1145 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 39.400 &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; Carleton College &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 92.6 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Private &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 1400 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 54.265 &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; College of Saint Benedict &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 81.1 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Private &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 1185 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 43.198 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Concordia College at Moorhead &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 69.4 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Private &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1145 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 36.590 &lt;/td&gt;
   &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
@@ -746,9 +745,25 @@ if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
     }
     deleted = true;
   });
-})();</script>
-
-<script>
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
 (function() {
   var links = document.getElementsByTagName('a');
   for (var i = 0; i < links.length; i++) {
@@ -757,7 +772,23 @@ if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
     }
   }
 })();
-</script>
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
 
 <script>
 slideshow._releaseMath = function(el) {

@@ -16,7 +16,7 @@ library(fontawesome)
 ## Global options
 options(max.print="75")
 opts_chunk$set(echo=FALSE,
-	             cache=TRUE,
+	             cache=FALSE,
                prompt=FALSE,
                tidy=TRUE,
                comment=NA,
@@ -32,7 +32,6 @@ The data in [riverview.csv](https://github.com/zief0002/epsy-8251/raw/master/dat
 - `income`: Annual income (in thousands of U.S. dollars)
 - `seniority`: Years of seniority
 - `gender`: Employee's gender
-- `male`: Dummy coded gender variable (0 = Female, 1 = Male)
 - `party`: Political party affiliation
 
 
