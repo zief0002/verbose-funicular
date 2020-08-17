@@ -32,7 +32,7 @@ As part of the course, there are several articles, papers and technical reports 
 **Required**
 
 - Download and read through the [course syllabus](https://github.com/zief0002/epsy-8251/raw/master/syllabus/f20-8251-syllabus.pdf)
-- Read [Preface for Statistical Modeling and Computation for Educational Scientists](https://zief0002.github.io/modeling/preface.html#preface)
+- Read [Preface for Statistical Modeling and Computation for Educational Scientists](https://zief0002.github.io/modeling/preface.html#preface) [*Computational Toolkit*]
 
 
 **Optional**
@@ -52,7 +52,9 @@ Download and install R and RStudio:
 
 Read the following:
 
-- [Getting Started with R](https://zief0002.github.io/toolkit/getting-started-with-r.html#getting-started-with-r)
+- [Getting Started with R](https://zief0002.github.io/toolkit/getting-started-with-r.html#getting-started-with-r) [*Computational Toolkit*]
+- If you will be using your computer for statistical computing (rather than the RStudio server), download and install R and RStudio onto your personal computer. See [R and RStudio Installation and Setp](https://zief0002.github.io/toolkit/r-and-rstudio-installation-and-setup.html#r-and-rstudio-installation-and-setup) for help.
+- [Data Structures in R](https://zief0002.github.io/toolkit/data-structures-in-r.html#data-structures-in-r) [*Computational Toolkit*]
 
 
 **Additional Resources**
@@ -70,9 +72,7 @@ Read the following:
 
 **Required**
 
-Here is an R vignette that will help you learn dplyr:
-
-- [dplyr Tutorial](http://genomicsclass.github.io/book/pages/dplyr_tutorial.html)
+- [Data Wrangling with dplyr](https://zief0002.github.io/toolkit/dplyr.html#dplyr) [*Computational Toolkit*]
 
 **Additional Resources**
 
