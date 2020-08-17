@@ -31,7 +31,7 @@ As part of the course, there are several articles, papers and technical reports 
 
 **Required**
 
-- Download and read through the [course syllabus](https://github.com/zief0002/epsy-8251/raw/master/f20-8251-syllabus.pdf)
+- Download and read through the [course syllabus](https://github.com/zief0002/epsy-8251/raw/master/syllabus/f20-8251-syllabus.pdf)
 - Read [Preface for Statistical Modeling and Computation for Educational Scientists](https://zief0002.github.io/modeling/preface.html#preface)
 
 
@@ -175,7 +175,7 @@ Here are two videos to watch that will help you learn ggplot2:
 
 **Additional Resources**
 
-- [Confounding Variables](http://www.icpsr.umich.edu/icpsrweb/instructors/setups2008/exercises/notes/confounding.jsp) [short web article]
+- McDonald, J. H. (2014). [Confounding variables](http://www.biostathandbook.com/confounding.html). In *Handbook of biological statistics* (3rd ed., pp. 24&ndash;28). Sparky House Publishing.
 
 ---
 
@@ -183,7 +183,7 @@ Here are two videos to watch that will help you learn ggplot2:
 
 **Required**
 
-- Pourhoseingholi, M. A.Baghestani, A. R., &amp; Vahedi, M. (). [How to control confounding effects by statistical analysis](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4017459/). *Gastroenterology and hepatology from bed to bench, 5*(2), 79&ndash;83.
+- Pourhoseingholi, M. A.Baghestani, A. R., &amp; Vahedi, M. (2012). [How to control confounding effects by statistical analysis](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4017459/). *Gastroenterology and hepatology from bed to bench, 5*(2), 79&ndash;83.
 
 ---
 
@@ -197,7 +197,7 @@ Here are two videos to watch that will help you learn ggplot2:
 **Additional Resources**
 
 - [Visualizing Residuals](https://drsimonj.svbtle.com/visualising-residuals) [blog post]
-- Osborne, J. W., &amp; Overbay, A. (2004). [The power of outliers (and why researchers should ALWAYS check for them)](http://pareonline.net/getvn.asp?v=9&n=6). _Practical Assessment, Research &amp; Evaluation, 9_(6).
+- Osborne, J. W., &amp; Overbay, A. (2004). [The power of outliers (and why researchers should ALWAYS check for them)](https://scholarworks.umass.edu/pare/vol9/iss1/6/). _Practical Assessment, Research &amp; Evaluation, 9_(6).
 
 ---
 
