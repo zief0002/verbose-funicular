@@ -34,7 +34,7 @@ Before carrying out any analyses, create a predictor called `salary_thousand` th
 
 1. Using symbols, write the null hypothesis that is tested by the *F*-statistic in this analysis.
 
-2. Write no more than three sentences (to be included in a publication) that summarizes the results of the omnibus analysis. A summarization of the results includes a written description of what is being tested by the *F*-test and the statistical results. At a minimum report the *F*-statistic, *df*, and *p*-value. A summary should also indicate what the statistical results suggest about the compatibility of the empirical data to the null hypothesis and what this means about the potential relationship between states' average teacher salaries and avergae SAT scores.
+2. Write no more than three sentences (to be included in a publication) that summarizes the results of the omnibus analysis. A summarization of the results includes a written description of what is being tested by the *F*-test and the statistical results. At a minimum report the *F*-statistic, *df*, and *p*-value. A summary should also indicate what the statistical results suggest about the compatibility of the empirical data to the null hypothesis and what this means about the potential relationship between states' average teacher salaries and average SAT scores.
 
 3. Using symbols, write the null hypothesis that is tested by the *t*-statistic for the slope.
 

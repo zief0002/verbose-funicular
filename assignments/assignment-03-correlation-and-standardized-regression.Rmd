@@ -52,7 +52,7 @@ $$
 \hat\beta_1 = r_{XY} \times \left( \frac{SD_{Y}}{SD_{X}}\right)
 $$
 
-6. Explain how the intercept of the uncenteredregression you found in the previous assignment will compare to the intercept of the regression if we regressed SAT scores on the centered teacher salaries by making reference to the values in the mathematical formula for intercept, which is:
+6. Explain how the intercept of the uncentered regression you found in the previous assignment will compare to the intercept of the regression if we regressed SAT scores on the centered teacher salaries by making reference to the values in the mathematical formula for intercept, which is:
 
 $$
 \hat\beta_0 = \bar{Y} - \beta_1(\bar{X})
