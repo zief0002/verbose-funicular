@@ -35,6 +35,9 @@ Welcome to *EPsy 8251: Methods in Data Analysis for Educational Research I*. Thi
 <!-- - **Syllabus, assignments, data, and script files:** [github repository](https://github.com/zief0002/epsy-8251) -->
 <!-- - **Course notes and readings:** [website](https://zief0002.github.io/book-8252/) | [github repository](https://github.com/zief0002/book-8252) -->
 
+*Note that the Zoom links for the class meetings and for office hours are different.* The links given in the contact information are for office hours and that in the classroom information is for the synchronous portion of the class.
+
+
 
 <br />
 
