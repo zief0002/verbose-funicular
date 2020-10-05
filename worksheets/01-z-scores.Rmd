@@ -1,0 +1,63 @@
+---
+title: "Using RStudio Worksheet"
+author: "Breakout Group"
+date: "September 10, 2020"
+output:
+  prettydoc::html_pretty:
+    theme: lumen
+    highlight: github
+---
+
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+## Directions
+
+Complete the problems on this worksheet with your break out group. You will have no more than 20 minutes.
+
+
+## Problem Set I
+
+Consider the distribution of the following six observations: $X = \{1, 2, 2,3,4,12\}$.
+
+
+1. Plot these values. (Don't bother using R, just create a dot plot by hand.) 
+
+2. Describe the shape of the distribution.
+
+3. Compute the mean of the distribution.
+
+4. Compute the standard deviation of the distribution.
+
+
+
+
+# Problem Set II
+
+Mean center the values of $X$ by subtracting the mean from each observation.
+
+
+5. Plot the mean centered values. (Don't bother using R, just create a dot plot by hand.)
+
+6. Describe the shape of the distribution.
+
+7. Compute the mean of the distribution.
+
+8. Compute the standard deviation of the distribution.
+
+
+
+
+# Problem Set III
+
+Standardize the values of $X$ (create $z$-scores) by subtracting the mean from each observation and dividing by the standard deviation.
+
+5. Plot the standardized values. (Don't bother using R, just create a dot plot by hand.)
+
+6. Describe the shape of the distribution.
+
+7. Compute the mean of the distribution.
+
+8. Compute the standard deviation of the distribution.
+
