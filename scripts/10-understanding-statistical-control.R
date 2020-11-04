@@ -53,7 +53,7 @@ tidy(lm.b)
 ##################################################
 
 ggplot(data = keith, aes(x = homework, y = gpa)) +
-  geom_point(alpha = 0) +
+  geom_point(alpha = 0.1) +
   theme_bw() +
   xlab("Time spent on homework") +
   ylab("Model predicted GPA") +
