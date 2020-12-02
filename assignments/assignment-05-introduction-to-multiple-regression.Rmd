@@ -34,8 +34,6 @@ Fertility rate is a measure directly linked to population and has been useful to
 - Model 3: Contraception use is really a function of educating women, so after controlling for education there is no/little effect of contracption use on fertility rate. In this model we will also still control for infant mortality rates.
 
 
-
-
 # Preparation
 
 Begin by standardizing the fertility rate variable (outcome) and each of the three predictors used in the models listed above. Use the standardized variables to fit the regression models corresponding to each of the three models. You will use the output from the fitted models to answer the questions in the assignment.
@@ -52,9 +50,8 @@ Begin by standardizing the fertility rate variable (outcome) and each of the thr
 
 4. Based on results presented in the regression table and from the coefficient plot comment on the size and direction of the effect of contraceptive rate on fertility rate. Do this by referring to the standardized coefficient and the uncertainty in the parameter estimates. Note: Do not base your response on a *p*-value.
 
+\vspace{5em}
 
-
-\newpage
 
 **Use the results from Model 3 to answer the remainder of the questions on this assignment.**
 \vspace {2em}
@@ -67,9 +64,9 @@ Begin by standardizing the fertility rate variable (outcome) and each of the thr
 
 7. Interpret the value of the model $R^2$ using the context of the data.
 
-8. Using symbols, write the omnibus null hypothesis that is tested by the *F*-statistic in this analysis in two different manners: (1) using the coefficient parameters used in the regression model, and (2) using the variance accounted for parameter.
+8. Using symbols, write the omnibus null hypothesis that is tested by the model-level *F*-statistic in this analysis in two different manners: (1) using the coefficient parameters used in the regression model, and (2) using the variance accounted for parameter.
 
-9. Based on the results of the *F*-test, does the model seem to explain variation in fertility rates? Explain. Note: Here you can use the *p*-value as evidence, but do not compare this to 0.05.
+9. Based on the results of the model-level *F*-test, does the model seem to explain variation in fertility rates? Explain. Note: Here you can use the *p*-value as evidence, but do not compare this to 0.05.
 
 10. Interpret the estimated coefficient value associated with the partial effect of contraception.
 
