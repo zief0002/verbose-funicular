@@ -73,8 +73,8 @@ work %>%
 ##################################################
 
 # Fit models
-lm.a = lm(guilt ~ 1 + bound_span_work, data = work)
-lm.b = lm(guilt ~ 1 + bound_span_work + female, data = work)
+lm.a = lm(guilt ~ 1 + bound_span_work,                                data = work)
+lm.b = lm(guilt ~ 1 + bound_span_work + female,                       data = work)
 lm.c = lm(guilt ~ 1 + bound_span_work + female + authority + married, data = work)
 
 
