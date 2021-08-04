@@ -1,0 +1,75 @@
+---
+title: "broadband.csv"
+output: 
+  rmdformats::html_docco:
+    css: 'codebooks.css'
+bibliography: '../../notes/epsy8251.bib'
+csl: '../../notes/apa-single-spaced.csl'
+---
+
+
+```{r knitr_init, echo=FALSE, cache=FALSE}
+library(knitr)
+library(rmdformats)
+library(fontawesome)
+
+## Global options
+options(max.print="75")
+opts_chunk$set(echo=FALSE,
+               prompt=FALSE,
+               tidy=TRUE,
+               comment=NA,
+               message=FALSE,
+               warning=FALSE)
+opts_knit$set(width=75)
+```
+
+Russell Brandom and William Joel in an article for [The Verge](https://www.theverge.com/22418074/broadband-gap-america-map-county-microsoft-data) wrote, 
+
+> "If broadband access was a problem before 2020, the pandemic turned it into a crisis. As everyday businesses moved online, city council meetings or court proceedings became near-inaccessible to anyone whose connection couldn’t support a Zoom call." 
+
+But, who in America has access to broadband internet? As part of their ongoing work to improve software and service performance and security, Microsoft collected router speed data from individuals who accessed their cloud services. After aggregating and anonomyzing these data, they made these data available publicly to help researchers and policymakers understand and improve problems related to broadband access. These data give us much better insight as to the true broadband access (defined as internet download speeds of at least 25 Mbps) of Americans as, to date, most studies of broadband access have use data collated by the FCC that is based on individual Internet Service Providers' descriptions of the areas they serve. To better contextualize this, the data have also been augmented with several county-level poverty and education indicators. The variables are:
+
+- `state`: State postal code
+- `county`: County name
+- `fips`: Five-digit Federal Information Processing Standards code which uniquely identified counties and county equivalents in the United States
+- `rural_urban`: Rural-urban continuum code
+    + `1`: Metropolitan - Counties in metropolitan areas of 1 million population or more
+    + `2`: Metropolitan - Counties in metropolitan areas of 250,000 to 1 million population
+    + `3`: Metropolitan - Counties in metropolitan areas of fewer than 250,000 population
+    + `4`: Nonmetropolitan - Urban population of 20,000 or more, adjacent to a metropolitan area
+    + `5`: Nonmetropolitan - Urban population of 20,000 or more, not adjacent to a metropolitan area
+    + `6`: Nonmetropolitan - Urban population of 2,500 to 19,999, adjacent to a metropolitan area
+    + `7`: Nonmetropolitan - Urban population of 2,500 to 19,999, not adjacent to a metropolitan area
+    + `8`: Nonmetropolitan - Completely rural or less than 2,500 urban population, adjacent to a metropolitan area
+    + `9`: Nonmetropolitan - Completely rural or less than 2,500 urban population, not adjacent to a metropolitan area
+- `metro`: Classification of the county as metropolitan (`metro`) or nonmetropolitan (`nonmetro`) based on the rural-urban continuum code
+- `fcc_availability`: Percent of people in the county with access to fixed terrestrial broadband at speeds of 25 Mbps/3 Mbps as of the end of 2019 as measured by the FCC
+- `microsoft_useage`: Percent of people in the county that use the internet at broadband speeds estimated by Microsoft
+- `pct_poverty`: Estimate of the percentage of people (of all ages) in the county living in poverty in 2019
+- `median_income`: Estimate of median household income in the county in 2019
+- `lt_hs_2019`: Percentage of the county with less than a high school diploma (2015--2019)
+- `hs_2019`: Percentage of the county with a high school diploma (2015--2019)
+- `some_college_2019`: Percentage of the county with some college or an associate's degree (2015--2019)
+- `college_2019`: Percentage of the county with a bachelor's degree, or higher (2015--2019)
+
+
+
+
+### Preview
+
+```{r}
+broadband = readr::read_csv(file = "~/Documents/github/epsy-8251/data/broadband.csv")
+print(broadband, width = Inf)
+```
+
+
+### References
+
+
+Brandom, R., &amp; Joel, W. (2021, May 10). [This is a map of America's broadband problem: A county-by-county look at the broadband gap.](https://www.theverge.com/22418074/broadband-gap-america-map-county-microsoft-data) *The Verge.*
+
+Economic Research Service, U.S. Department of Agriculture. (2021). [County-Level Data Sets.](https://www.ers.usda.gov/data-products/county-level-data-sets/download-data/)
+
+Microsoft. (2021). [United States Broadband Usage Percentages Dataset.](https://github.com/microsoft/USBroadbandUsagePercentages) Github repository.
+

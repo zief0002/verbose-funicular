@@ -1,0 +1,231 @@
+# Readings
+
+
+As part of the course, there are several articles, papers and technical reports that you will need to read during the semester. Most of the articles themselves are accessible through the University of Minnesota library website (http://www.lib.umn.edu). In order to access the full text of some of the articles, you will need to log in using your University x500 username and password. More detailed information, including references or links to specific readings, are given below.
+
+
+## Welcome to EPsy 8251 {#welcome}
+
+**Required**
+
+- Download and read through the [course syllabus](https://github.com/zief0002/epsy-8251/raw/master/syllabus/f21-8251-syllabus.pdf)
+- Read [Preface for Statistical Modeling and Computation for Educational Scientists](https://zief0002.github.io/modeling/preface.html#preface) [*Computational Toolkit*]
+
+
+---
+
+<!-- Unit 01: Introduction to Statistical Computing -->
+
+
+## Introduction to R and RStudio {#rstudio}
+
+**Required**
+
+Read the following:
+
+- [Getting Started with R](https://zief0002.github.io/toolkit/getting-started-with-r.html#getting-started-with-r) [*Computational Toolkit*]
+- If you will be using your computer for statistical computing (rather than the RStudio server), download and install the most recent versions of [R (version 4.1.1; *Kick Things*)](https://www.r-project.org/) and [RStudio Desktop (version 1.4.1717)](https://www.rstudio.com/) on your computer.
+
+
+R and RStudio onto your personal computer. See [R and RStudio Installation and Setup](https://zief0002.github.io/toolkit/r-and-rstudio-installation-and-setup.html#r-and-rstudio-installation-and-setup) for help.
+- [Data Structures in R](https://zief0002.github.io/toolkit/data-structures-in-r.html#data-structures-in-r) [*Computational Toolkit*]
+
+
+**Additional Resources**
+
+- [RStudio Cheatsheets](https://www.rstudio.com/resources/cheatsheets/)
+- [RStudio Keyboard Shortcuts](https://support.rstudio.com/hc/en-us/articles/200711853-Keyboard-Shortcuts)
+- [R Cookbook](https://primo.lib.umn.edu/primo-explore/fulldisplay?docid=UMN_ALMA51642131760001701&context=L&vid=TWINCITIES&search_scope=mncat_discovery&tab=article_discovery&lang=en_US) [book; UMN Library]
+- [tidy data video](https://vimeo.com/33727555) [video]
+- [Teacups, Giraffes, and Statistics](https://tinystats.github.io/teacups-giraffes-and-statistics/): Learn statistics & R coding through a series of modules that teach in an intuitive, playful, and approachable way
+
+
+---
+
+## Data Wrangling with dplyr {#dplyr}
+
+**Required**
+
+- [Data Wrangling with dplyr](https://zief0002.github.io/toolkit/dplyr.html#dplyr) [*Computational Toolkit*]
+
+**Additional Resources**
+
+- [dplyr Cheatsheet](https://www.rstudio.com/wp-content/uploads/2015/02/data-wrangling-cheatsheet.pdf)
+- [Data Wrangling Part 1: Basic to Advanced Ways to Select Columns](https://suzan.rbind.io/2018/01/dplyr-tutorial-1/)
+- [Data Wrangling Part 2: Transforming your columns into the right shape](https://suzan.rbind.io/2018/02/dplyr-tutorial-2/)
+- [Data Wrangling Part 3: Basic and more advanced ways to filter rows](https://suzan.rbind.io/2018/02/dplyr-tutorial-3/)
+- [Data Wrangling Part 4: Summarizing and slicing your data](https://suzan.rbind.io/2018/04/dplyr-tutorial-4/)
+- Create tidyverse inspired clothing. See how [Amelia McNamara created a tidyverse dress](https://www.amelia.mn/blog/misc/2019/08/17/Tidy-Dress.html) and make your own clothing, shower curtain, etc. with the [Spoonflower printed fabric](https://www.spoonflower.com/profiles/ameliamn) she made available. 
+
+---
+
+## Plotting with ggplot2 {#ggplot}
+
+**Required**
+
+Here are two videos to watch that will help you learn ggplot2:
+
+- [Plotting with ggplot: Part 1](https://www.youtube.com/watch?v=HeqHMM4ziXA) [video]
+- [Plotting with ggplot: Part 2](https://www.youtube.com/watch?v=n8kYa9vu1l8) [video]
+
+**Additional Resources**
+
+- [ggplot2 Cheatsheet](https://www.rstudio.com/wp-content/uploads/2015/08/ggplot2-cheatsheet.pdf)
+- [ggplot2 Extensions](http://ggplot2-exts.github.io/index.html)
+- [Cookbook for R: Graphs](http://www.cookbook-r.com/Graphs/)
+
+---
+
+<!-- Unit 02: Regression Basics -->
+
+
+## Simple Linear Regression: Description {#ols-description}
+
+**Required**
+
+- Lewis-Beck &amp; Lewis-Beck [Chap. 1]
+- Clayton, A. (2020, Oct. 28). [How eugenics shaped statistics: Exposing the damned lies of three science pioneers.](https://nautil.us/issue/92/frontiers/how-eugenics-shaped-statistics) *Nautilus, 92 (Frontiers)*.
+
+
+---
+
+
+## Ordinary Least Squares (OLS) Estimation {#ols}
+
+**Required**
+
+- [Ordinary Least Squares Regression: Explained Visually](https://setosa.io/ev/ordinary-least-squares-regression/)
+
+
+
+---
+
+## Correlation and Standardized Regression {#corr}
+
+**Required**
+
+- [Easy Correlation Matrix Analysis in R Using Corrr Package](https://www.datanovia.com/en/blog/easy-correlation-matrix-analysis-in-r-using-corrr-package/)
+
+**Additional Resources**
+
+- [corrr Package Vignette](https://github.com/tidymodels/corrr)
+- [Exploring correlations in R with corrr](https://drsimonj.svbtle.com/exploring-correlations-in-r-with-corrr)
+- [Guess the Correlation Game](http://guessthecorrelation.com/) [fun game]
+- Bring, J. (1994). [How to standardize regression coefficients.](https://amstat.tandfonline.com/doi/abs/10.1080/00031305.1994.10476059) *The American Statistician, 48*(3), 209&ndash;213. 
+
+
+---
+
+## Coefficient-Level Inference {#coefinf}
+
+**Required**
+
+- Lewis-Beck &amp; Lewis-Beck [Chap. 2]
+- Amrhein, V., Greenland, S., &amp; McShane, B. (2019). [Comment: Retire statistical significance.](https://www.nature.com/articles/d41586-019-00857-9) *Nature, 567*, 305&ndash;307.
+
+
+
+**Additional Resources**
+
+- [Dance of the p-values](https://www.youtube.com/watch?v=ez4DgdurRPg) [video]
+
+---
+
+## Model-Level Inference {#modinf}
+
+**Required**
+
+- [The Boy Who Cried Type I Error](https://datacolumn.wordpress.ncsu.edu/blog/2019/12/10/the-boy-who-cried-type-i-error-wolf/)
+- [Type I and Type II Errors Simplified](https://flowingdata.com/2014/05/09/type-i-and-ii-errors-simplified/)
+
+---
+
+<!-- Unit 03: Deeper Understanding -->
+
+## Introduction to Multiple Linear Regression {#multreg}
+
+**Required**
+
+- Lewis-Beck &amp; Lewis-Beck [Chap. 3]
+
+**Additional Resources**
+
+- McDonald, J. H. (2014). [Confounding variables](http://www.biostathandbook.com/confounding.html). In *Handbook of biological statistics* (3rd ed., pp. 24&ndash;28). Sparky House Publishing.
+
+---
+
+## Understanding Statistical Control {#control}
+
+**Required**
+
+- Pourhoseingholi, M. A.Baghestani, A. R., &amp; Vahedi, M. (2012). [How to control confounding effects by statistical analysis](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4017459/). *Gastroenterology and hepatology from bed to bench, 5*(2), 79&ndash;83.
+
+---
+
+
+## Distributional Assumptions Underlying the Regression Model {#reg-assump}
+
+**Required**
+
+- Re-read Lewis-Beck &amp; Lewis-Beck [Chap. 3]
+
+**Additional Resources**
+
+- [Visualizing Residuals](https://drsimonj.svbtle.com/visualising-residuals) [blog post]
+- Osborne, J. W., &amp; Overbay, A. (2004). [The power of outliers (and why researchers should ALWAYS check for them)](https://scholarworks.umass.edu/pare/vol9/iss1/6/). _Practical Assessment, Research &amp; Evaluation, 9_(6).
+
+---
+
+<!-- Unit 04: Extending the Regression Model -->
+
+## Dichotomous Categorical Predictors {#dummy}
+
+**Required**
+
+- [What is Dummy Coding?](https://stats.idre.ucla.edu/other/mult-pkg/faq/general/faqwhat-is-dummy-coding/) [web article]
+
+
+<!-- ## Effect Coding a Categorical Predictor {#effect} -->
+
+<!-- **Required** -->
+
+<!-- - [What is Effect Coding?](https://stats.idre.ucla.edu/other/mult-pkg/faq/general/faqwhat-is-effect-coding/) [web article] -->
+
+<!-- --- -->
+
+---
+
+## Polychotomous Categorical Predictors {#poly}
+
+**Required**
+
+- [Technical Methods Report: Guidelines for Multiple Testing in Impact Evaluations ](https://ies.ed.gov/ncee/pdf/20084018.pdf)
+
+
+**Additional Resources**
+
+- Gelman, A., Hill, J., & Yajima, M. (2012). [Why we (usually) don’t have to worry about multiple comparisons](http://www.stat.columbia.edu/~gelman/research/published/multiple2f.pdf). _Journal of Research on Educational Effectiveness, 5_, 189&ndash;211.
+- [Science isn't Broken](https://fivethirtyeight.com/features/science-isnt-broken/#part1) [web article]
+- Veazie, P. J. (2006). [When to combine hypotheses and adjust for multiple Tests](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1713204/). _Health Services Research, 41_(3 Pt 1), 804&ndash;818. doi:  10.1111/j.1475-6773.2006.00512.x 
+
+---
+
+## Introduction to Interaction Effects {#interaction-1}
+
+**Required**
+
+- Brambor, T., Clark, W. R., &amp; Golder, M. (2006). [Understanding interaction models:
+Improving empirical analyses](http://mattgolder.com/files/research/pa_final.pdf). *Political Analysis, 14*, 63&ndash;82.
+
+**Additional resources**
+
+- Frost, J. (2018). [Understanding Interaction Effects in Statistics](http://statisticsbyjim.com/regression/interaction-effects/). [blog post]
+
+---
+
+## More Interaction Effects {#interaction-2}
+
+**Required**
+
+- Williams, R. (2015). [Interpreting interaction effects; interaction effects and centering](https://www3.nd.edu/~rwilliam/stats2/l53.pdf). 
+
