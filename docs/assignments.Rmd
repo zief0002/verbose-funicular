@@ -25,7 +25,7 @@ Below are the due dates for the assignments, as well as links to the PDF file fo
 <!-- <td>Sept. 19</td> -->
 <td>Sept. 27</td>
 <td align="center" style="vertical-align:middle;">
-  [<span class="fas fa-link" style="color: #ff2600; font-size: 20px;"></span>](assignments/f21-assignment-01-intoroduction-to-statistical-computing.html)
+  [<span class="fas fa-link" style="color: #ff2600; font-size: 20px;"></span>](assignments/f21-assignment-01-introduction-to-statistical-computing.html)
 </td>
 </tr>
 
