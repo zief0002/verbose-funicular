@@ -1,0 +1,36 @@
+---
+title: "Hospitalizations and Astrological Sign"
+author: "Breakout Group"
+date: "November 04, 2020"
+output:
+  prettydoc::html_pretty:
+    theme: lumen
+    highlight: github
+---
+
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+## Directions
+
+Discuss the following study with your group. Do you believe the findings? Why or why not? 
+
+
+<br />
+
+**Methods**
+
+A study was conducted of 5,337,472 residents of Ontario aged between 18 and 100 years in 2000 using the Registered Person's Database. These residents were classified according to their astrological sign. The researchers then searched through 223 of the most common diagnoses for hospitalization and identified 72 (32.3%) for which residents born under one astrological sign had a significantly higher probability of hospitalization compared to residents born under the other astrological signs combined. For example, Libras were 1.37 times more likely to be hospitalized for a fractured pelvis than people born under other astrological signs ($p=.0108$).
+
+
+The *p*-values for the 72 significant associations ranged from 0.0003 to 0.0488. The two most frequently occurring diagnoses for which each astrological sign had a higher probability of hospitalization compared to the other astrological signs combined are described in Table 1.
+
+
+```{r echo=FALSE}
+knitr::include_graphics("figs/table-01.png")
+```
+
+
+
+

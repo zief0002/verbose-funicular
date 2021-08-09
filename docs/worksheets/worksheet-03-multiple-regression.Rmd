@@ -1,0 +1,41 @@
+---
+title: "Displaying Effects from a Multiple Regression Model"
+author: "Breakout Group"
+date: "November 04, 2020"
+output:
+  prettydoc::html_pretty:
+    theme: lumen
+    highlight: github
+---
+
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+## Directions
+
+Complete the problems on this worksheet with your break out group.
+
+
+<br />
+
+Open the *mn-schools.csv* data and fit a model to explain variation in graduation rates using the predictors of median SAT score and tuition.
+
+
+1. Write the fitted equation.
+
+2. Interpret both effects in the model.
+
+3. Create a plot to show the effects. Put SAT score on the *x*-axis and display lines corresponding to an "inexpensive" and an "expensive" school. (Use the data to choose those values.)
+    - Make sure the lines are displayed in different colors and linetypes;
+    - Play around with labelling the lines using text in the plot; Google `geom_text()` for help.
+
+
+4. Explain how we can use the plot to interpret the effect of SAT.
+
+5. Explain how we can use the plot to interpret the effect of tuition.
+
+6. Create the same plot, but this time separate the "inexpensive" and "expensive" schools into separate panels (i.e., create a diptych plot.)
+
+
+

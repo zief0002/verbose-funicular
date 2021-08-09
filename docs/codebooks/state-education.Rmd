@@ -32,10 +32,17 @@ This data, stored in [state-education.csv](https://github.com/zief0002/epsy-8251
 
 - `state`: State name
 - `postal`: State postal code
-- `region`: Region of the country (Midwest, Northeast, South, West)
-- `salary`: Average teacher salary in the state
-- `sat`: Average SAT score in the state
-- `participation`: Percentage of students in the state who took the SAT
+- `region`: Region of the country identified by the National Education Association (Far West, Great Lakes, Mid East, New England, Plains, Rocky Mountains, Southeast, Southwest)
+- `sat_participate`: Percentage of students in the state who took the SAT.
+- `sat_ebrw`: Average score on the Evidence-Based Reading and Writing (EBRW) scale in the state.
+- `sat_math`: Average score on the math scale in the state.
+- `sat_total`: Average total SAT score in the state.
+- `salary_2020_21`: Average 2020--2021 public teacher salary in the state.
+
+
+Note: All of the SAT data is based on students in the class of 2020 who took the current SAT during high school. The SAT is made up of three sections: (1) Reading, (2) Writing and Language (also just called Writing), and (3) Math. The Math section is scored on a scale of 200--800. The Reading and Writing sections are combined to give a Evidence-Based Reading and Writing (EBRW) score, also ranging from 200--800. By combining the Math and EBRW scores, we get a total SAT score ranging from 400--1600.
+
+
 
 
 ### Preview
@@ -43,10 +50,13 @@ This data, stored in [state-education.csv](https://github.com/zief0002/epsy-8251
 ```{r}
 options(dplyr.width = Inf, width = 85)
 state_educ = readr::read_csv(file = "~/Documents/github/epsy-8251/data/state-education.csv")
-head(state_educ)
+print(state_educ, width = Inf)
 ```
 
 
-<!-- ### References -->
+### References
 
+College Board. (2020). [SAT suite of assessments annual report](https://reports.collegeboard.org/pdf/2020-total-group-sat-suite-assessments-annual-report.pdf). Author.
+
+NEA Research. (2021). [Rankings of the states 2020 and estimates of school statistics 2021](https://www.nea.org/sites/default/files/2021-04/2021%20Rankings_and_Estimates_Report.pdf). National Education Association.
 

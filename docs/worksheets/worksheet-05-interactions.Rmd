@@ -1,0 +1,41 @@
+---
+title: "Interactions"
+author: "Breakout Group"
+date: "December 09, 2020"
+output:
+  prettydoc::html_pretty:
+    theme: lumen
+    highlight: github
+---
+
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+## Directions
+
+Use the [fertility.csv](https://raw.githubusercontent.com/zief0002/modeling/master/data/fertility.csv) data to fit an interaction model that uses the effects of female education level and the dummy-coded GNI predictor (`high_gni`) to explain variation in infant mortality rates. Remember, to fit an interaction model you need to create the interaction term and then include the consituent main effects AND the interaction term in the `lm()`.
+
+
+<br />
+
+**Questions**
+
+1. Fit the interaction model and write out the fitted equation.
+
+2. Give a general interpretation about what it means to have an interaction effect between female education level and GNI on infant mortality rates. (No need to look at anyoutput for this.)
+
+3. Based on the coefficient-level output, is there an interaction effect between female education level and GNI on infant mortality rates?
+
+4. Write out the fitted equation for low GNI countries.
+
+5. Write out the fitted equation for high GNI countries.
+
+6. Plot the two fitted equations. 
+
+7. Is this an ordinal or disordinal interaction? Explain.
+
+8. Use the plot and the coefficient estimates to add to the general interpretation of the interaction effect you gave previously in Question 3. You should be able to give a more nuanced interpretation, including quantifying some findings.
+
+9. Remember that every interaction can be interpreted in two manners. You gave one of those interpretations in Question 3 (and 8). What is another way we can interpret the interaction effect between female education level and GNI on infant mortality rates.
+

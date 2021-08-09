@@ -1,0 +1,721 @@
+---
+title: "Data Wrangling with dplyr"
+subtitle: "EPsy 8251"
+author: Andrew Zieffler"
+date: "`r Sys.Date()`"
+output:
+  xaringan::moon_reader:
+    lib_dir: "css"
+    css: ["default", "metropolis", "metropolis-fonts", "css/extra.css"]
+    nature:
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE, servr.daemon = TRUE, scipen = 999)
+```
+
+
+# Preparation
+
+```{r message=FALSE}
+# Load libraries
+library(dplyr)
+library(readr)
+
+# Load the city data 
+city = read_csv("~/Documents/github/epsy-8251/data/riverview.csv")
+
+# View data
+city
+```
+
+
+---
+
+# Piping: The Key to Using dplyr
+
+.pull-left[
+Recall that functions work by taking arguments as inputs and then producing an output. For example, the `summary()` function, displayed below, takes the `city` dataframe as its input.
+
+```{r eval=FALSE}
+summary(city)
+```
+
+]
+
+.pull-right[
+We could get the same result by using the *piping* operator (`%>%`). This operator takes a DATA FRAME (given immediately before the operator) and uses it as the FIRST argument in the function that comes immediately after the operator.
+
+```{r eval=FALSE}
+city %>% summary()
+```
+
+Note since the `summary()` function did NOT include any additional arguments, we do not include anything between the parentheses after we pipe.
+]
+
+---
+
+# A Couple More Examples
+
+Here are two more examples of using piping.
+
+.pull-left[
+
+```{r eval=FALSE}
+nrow(city)
+
+# Can be written as...
+
+city %>% nrow()
+```
+]
+
+.pull-right[
+
+```{r eval=FALSE}
+filter(city, gender == "female")
+
+# Can be written as...
+
+city %>% filter(gender == "female")
+```
+]
+
+Here, since the `filter()` function included a second argument, we include that argument in the function that the data is piped into. What is piped into the function will be automatically inputted into the FIRST argument.
+
+---
+
+# Using dply for Data Wrangling
+
+Here are some common operations that researchers use to prepare data for analysis (i.e., data preparation, data wrangling, data cleaning) and the corresponding **dplyr** functions.
+
+Data Operation                                           | **dplyr**
+---------------------------------------------------------|-------------------
+Filter a subset of rows from a data frame.               | `filter()`
+Select a subset of columns from a data frame.            | `select()`
+Add new columns that are functions of existing columns.  | `mutate()`
+Sort and re-order data in a data frame.                  | `arrange()`
+Compute summaries of a data frame.                       | `summarize()`
+Group the data to carry out computations for each group. | `group_by()`
+
+---
+
+# Filter a Subset of Rows
+
+.pull-left[
+To filter a subset of rows, we will use the `filter()` function. The argument(s) for this function are logical expressions that filter the data frame.
+
+```{r eval=FALSE}
+# Filter the female employees
+city %>% 
+  filter(gender == "female")
+```
+
+Here we are selecting only the rows where the gender variable is equal to (`==`) the string "female". Recall that a single equals sign (`=`) is the assignment operator and that to say "is equal to", we need to use two equals signs (`==`).
+]
+
+.pull-right[
+.small[
+
+```{r echo=FALSE, message=FALSE}
+library(huxtable)
+city2 = city[1:15, ]
+
+as_hux(city2) %>% 
+  set_background_color(where(city2$gender == "female"), everywhere, 'yellow') %>%
+  add_colnames() %>%
+  #insert_row(rep('&#8942;', 6), after = 16) %>%
+  set_bold(1, everywhere, TRUE) %>%
+  set_bottom_border(1, everywhere, 1) %>%
+  set_top_border(1, everywhere, 1) %>%
+  set_caption('First 15 Rows of the Riverview Data') 
+```
+
+]
+]
+
+---
+
+.pull-left[
+```{r eval=FALSE}
+# Filter the female employees
+city %>% 
+  filter(gender == "female")
+```
+]
+
+.pull-right[
+.small[
+```{r echo=FALSE}
+# Filter the female employees
+city %>% 
+  filter(gender == "female")
+```
+]
+]
+
+---
+
+.pull-left[
+
+Note the output is just printed to the screen. If you want to keep the filtered data or operate on it further, you need to assign the output into an object.
+
+```{r}
+# Filter the female employees
+females = city %>% filter(gender == "female")
+
+# Count the number of rows (females)
+nrow(females)
+```
+]
+
+.pull-right[
+We could have found the same result exclusively using piping; without the interim assignment. 
+
+```{r}
+city %>% 
+  filter(gender == "female") %>%
+  nrow()
+```
+
+]
+
+---
+
+.pull-left[
+Here we use `filter()` to select the employees that have less than a high school level of education and then count the rows.
+
+```{r}
+city %>% 
+  filter(education < 12) %>%
+  nrow()
+```
+
+]
+
+.pull-right[
+.small[
+```{r echo=FALSE, message=FALSE}
+as_hux(city2) %>% 
+  set_background_color(where(city2$education < 12), everywhere, 'yellow') %>%
+  add_colnames() %>%
+  #insert_row(rep('&#8942;', 6), after = 16) %>%
+  set_bold(1, everywhere, TRUE) %>%
+  set_bottom_border(1, everywhere, 1) %>%
+  set_top_border(1, everywhere, 1) %>%
+  set_caption('First 15 Rows of the Riverview Data') 
+```
+]
+]
+
+---
+
+# Filtering on Multiple Attributes
+
+.pull-left[
+You can filter on multiple attributes by including multiple logical arguments in the `filter()` function. For example, the syntax below counts the number of female employees with less than a high school level of education.
+
+```{r}
+city %>% 
+  filter(gender == "female", education < 12) %>%
+  nrow()
+```
+]
+
+.pull-right[
+.small[
+```{r echo=FALSE, message=FALSE}
+as_hux(city2) %>% 
+  set_background_color(where(city2$education < 12 & city2$gender == "female"), everywhere, 'yellow') %>%
+  add_colnames() %>%
+  #insert_row(rep('&#8942;', 6), after = 16) %>%
+  set_bold(1, everywhere, TRUE) %>%
+  set_bottom_border(1, everywhere, 1) %>%
+  set_top_border(1, everywhere, 1) %>%
+  set_caption('First 15 Rows of the Riverview Data') 
+```
+]
+]
+
+---
+
+# Linking Logical Expressions: AND
+
+.pull-left[
+When we include multiple logical expressions in the `filter()` function, they are linked using the AND (`&`) operator. This means that both expressions have to evaluate as `TRUE` to be included.
+
+```{r eval=FALSE}
+city %>% 
+  filter(gender == "female", education < 12)
+
+# Is equivalent to...
+
+city %>% 
+  filter(gender == "female" & education < 12)
+```
+]
+
+.pull-right[
+.small[
+```{r echo=FALSE, message=FALSE}
+as_hux(city2) %>% 
+  set_background_color(where(city2$education < 12 & city2$gender == "female"), everywhere, 'yellow') %>%
+  add_colnames() %>%
+  #insert_row(rep('&#8942;', 6), after = 16) %>%
+  set_bold(1, everywhere, TRUE) %>%
+  set_bottom_border(1, everywhere, 1) %>%
+  set_top_border(1, everywhere, 1) %>%
+  set_caption('First 15 Rows of the Riverview Data') 
+```
+]
+]
+
+---
+
+# Linking Logical Expressions: OR
+
+.pull-left[
+We can also `filter()` using the OR (`|`) operator. This means that if EITHER expression evaluates as TRUE it is included.
+
+```{r eval=FALSE}
+city %>% 
+  filter(gender == "female" | education < 12)
+```
+
+This would select any employee that is either female OR has an education less than 12 years.
+]
+
+.pull-right[
+.small[
+```{r echo=FALSE, message=FALSE}
+as_hux(city2) %>% 
+  set_background_color(where(city2$education < 12 | city2$gender == "female"), everywhere, 'yellow') %>%
+  add_colnames() %>%
+  #insert_row(rep('&#8942;', 6), after = 16) %>%
+  set_bold(1, everywhere, TRUE) %>%
+  set_bottom_border(1, everywhere, 1) %>%
+  set_top_border(1, everywhere, 1) %>%
+  set_caption('First 15 Rows of the Riverview Data') 
+```
+]
+]
+
+
+---
+
+# Select a Subset of Columns
+
+.pull-left[
+To select a subset of columns, we will use the `select()` function. The argument(s) for this function are column names of the data frame that you want to select.
+
+
+```{r eval=FALSE}
+city %>% 
+  select(education, income, gender)
+```
+]
+
+.pull-right[
+.small[
+```{r echo=FALSE, message=FALSE}
+
+city2 = city %>% 
+  select(education, income, gender) %>%
+  head(15)
+
+as_hux(city2) %>% 
+  add_colnames() %>%
+  #insert_row(rep('&#8942;', 3), after = 16) %>%
+  set_bold(1, everywhere, TRUE) %>%
+  set_bottom_border(1, everywhere, 1) %>%
+  set_top_border(1, everywhere, 1) %>%
+  set_caption('First 15 Rows of the Riverview Data after Selecting') 
+```
+]
+]
+
+---
+
+# Renaming Columns
+
+.pull-left[
+You can rename a column by using the `rename()` function. Here we rename the `education` column to `educ`.
+
+
+```{r eval=FALSE}
+city %>% 
+  select(education, income, gender) %>%
+  rename(educ = education)
+```
+]
+
+.pull-right[
+.small[
+```{r echo=FALSE, message=FALSE}
+
+city2 = city %>% 
+  select(education, income, gender)  %>%
+  rename(educ = education) %>%
+  head(10)
+
+as_hux(city2) %>% 
+  add_colnames() %>%
+  #insert_row(rep('&#8942;', 3), after = 11) %>%
+  set_bold(1, everywhere, TRUE) %>%
+  set_bottom_border(1, everywhere, 1) %>%
+  set_top_border(1, everywhere, 1) %>%
+  set_caption('First 10 Rows of the Riverview Data after Selecting and Renaming') 
+```
+]
+]
+
+
+
+---
+
+# Helper Functions
+
+.pull-left[
+There are a number of helper functions you can use within `select()`. For example, `starts_with()`, `ends_with()`, and `contains()`. These let you quickly match larger blocks of variables that meet some criterion.
+
+```{r eval=FALSE}
+city %>% 
+  select(ends_with("e"))
+```
+]
+
+.pull-right[
+.small[
+
+```{r echo=FALSE, message=FALSE}
+city2 = city %>% 
+  select(ends_with("e")) %>%
+  head(10)
+
+as_hux(city2) %>% 
+  add_colnames() %>%
+  #insert_row(rep('&#8942;', 2), after = 11) %>%
+  set_bold(1, everywhere, TRUE) %>%
+  set_bottom_border(1, everywhere, 1) %>%
+  set_top_border(1, everywhere, 1) %>%
+  set_caption('First 10 Rows of the Riverview Data after Selecting the Columns that End with E') 
+```
+]
+]
+
+---
+
+# Create New Columns
+
+.pull-left[
+To create new columns, we will use the `mutate()` function.
+
+```{r eval=FALSE}
+city %>% 
+  mutate(
+    income2 = income * 1000
+    )
+```
+
+]
+
+.pull-right[
+.small[
+```{r echo=FALSE}
+city2 = city %>% 
+  mutate(
+    income2 = income * 1000
+    ) %>%
+  head(10)
+
+as_hux(city2) %>% 
+  add_colnames() %>%
+  #insert_row(rep('&#8942;', 7), after = 11) %>%
+  set_bold(1, everywhere, TRUE) %>%
+  set_bottom_border(1, everywhere, 1) %>%
+  set_top_border(1, everywhere, 1) %>%
+  set_caption('First 10 Rows of the Riverview Data after Mutating on a New Column')
+```
+]
+
+Note the scientific notation in the `income2` column. For example `3.74e+04` is equivalent to:
+
+$$3.74 \times 10^4 = 37400$$
+]
+
+
+
+---
+
+# Create Multiple New Columns
+
+.pull-left[
+Create multiple columns by including each new column as an argument in the  `mutate()` function.
+
+```{r eval=FALSE}
+city %>% 
+  mutate(
+    income2 = income * 1000,
+    cent_educ = education - mean(education)
+    )
+```
+
+]
+
+.pull-right[
+.smaller[
+```{r echo=FALSE}
+city2 = city %>% 
+  mutate(
+    income2 = income * 1000,
+    cent_educ = education - mean(education)
+    ) %>%
+  head(10)
+
+as_hux(city2) %>% 
+  add_colnames() %>%
+  #insert_row(rep('&#8942;', 8), after = 11) %>%
+  set_bold(1, everywhere, TRUE) %>%
+  set_bottom_border(1, everywhere, 1) %>%
+  set_top_border(1, everywhere, 1) %>%
+  set_caption('First 10 Rows of the Riverview Data after Mutating Two New Columns')
+```
+]
+]
+
+---
+
+# Sorting the Data within a Column
+
+.pull-left[
+The `arrange()` function sorts the data. The data is ordered based on the column name provided in the argument(s). 
+
+```{r eval=FALSE}
+city %>% 
+  arrange(income)
+```
+
+]
+
+.pull-right[
+.small[
+```{r echo=FALSE}
+city2 = city %>% 
+  arrange(income) %>%
+  head(10)
+
+as_hux(city2) %>% 
+  add_colnames() %>%
+  #insert_row(rep('&#8942;', 8), after = 11) %>%
+  set_bold(1, everywhere, TRUE) %>%
+  set_bottom_border(1, everywhere, 1) %>%
+  set_top_border(1, everywhere, 1) %>%
+  set_caption('First 10 Rows of the Riverview Data Arranged by Income')
+```
+]
+]
+
+---
+
+# Sorting the Data by Multiple Columns
+
+.pull-left[
+Giving the `arrange()` function multiple arguments sort first by the first argument, and then by the subsequent arguments. 
+
+```{r eval=FALSE}
+city %>% 
+  arrange(gender, income)
+```
+
+]
+
+.pull-right[
+.small[
+```{r echo=FALSE}
+city2 = city %>% 
+  arrange(gender, income) %>%
+  head(10)
+
+as_hux(city2) %>% 
+  add_colnames() %>%
+  #insert_row(rep('&#8942;', 8), after = 11) %>%
+  set_bold(1, everywhere, TRUE) %>%
+  set_bottom_border(1, everywhere, 1) %>%
+  set_top_border(1, everywhere, 1) %>%
+  set_caption('First 10 Rows of the Riverview Data Arranged by Gender and then Income')
+```
+]
+]
+
+---
+
+# Sort the Data in Descending Order
+
+.pull-left[
+Use the `desc()` function on a column to sort the data in descending order. 
+
+```{r eval=FALSE}
+city %>% 
+  arrange(gender, desc(income))
+```
+
+]
+
+.pull-right[
+.small[
+```{r echo=FALSE}
+city2 = city %>% 
+  arrange(gender, desc(income)) %>%
+  head(10)
+
+as_hux(city2) %>% 
+  add_colnames() %>%
+  #insert_row(rep('&#8942;', 8), after = 11) %>%
+  set_bold(1, everywhere, TRUE) %>%
+  set_bottom_border(1, everywhere, 1) %>%
+  set_top_border(1, everywhere, 1) %>%
+  set_caption('First 10 Rows of the Riverview Data Arranged by Gender and then Descending Income')
+```
+]
+]
+
+---
+
+# Summarizing Data
+
+.pull-left[
+The `summarize()` function is used to compute summaries of data. It collapses a data frame to a single row.  
+
+```{r eval=FALSE}
+city %>% 
+  summarize(
+    M = mean(income)
+    )
+```
+
+]
+
+.pull-right[
+.small[
+```{r echo=FALSE}
+city2 = city %>% 
+  summarize(
+    M = mean(income)
+    )
+
+as_hux(city2) %>% 
+  add_colnames() %>%
+  #insert_row(rep('&#8942;', 8), after = 11) %>%
+  set_bold(1, everywhere, TRUE) %>%
+  set_bottom_border(1, everywhere, 1) %>%
+  set_top_border(1, everywhere, 1) %>%
+  set_caption('Mean Income')
+```
+]
+]
+
+---
+
+# Multiple Summaries of the Data
+
+.pull-left[
+Multiple summaries can be computed by providing more than one argument to the `summarize()` function. The output is still a single row data frame, but now there will be multiple columns, one for each summary computation. 
+
+```{r eval=FALSE}
+city %>% 
+  summarize(
+    M  = mean(income),
+    SD = sd(income)
+    )
+```
+
+
+]
+
+.pull-right[
+.small[
+```{r echo=FALSE}
+
+city2 = city %>% 
+  summarize(
+    M  = mean(income),
+    SD = sd(income)
+    )
+
+ht = as_hux(city2) %>% 
+  add_colnames() %>%
+  #insert_row(rep('&#8942;', 8), after = 11) %>%
+  set_bold(1, everywhere, TRUE) %>%
+  set_bottom_border(1, everywhere, 1) %>%
+  set_top_border(1, everywhere, 1) %>%
+  set_caption('Mean, Standard Deviation, and Sample Size for the Income Variable')
+
+set_number_format(ht, 2, 1:2, 2)
+
+```
+]
+]
+
+---
+
+# Summaries by Group
+
+.pull-left[
+The `group_by()` function groups the data by a specified variable. By itself, it does nothing, but it is powerful when the grouped output is chained to other functions, such as `summarize()`.
+
+```{r eval=FALSE}
+city %>% 
+  group_by(gender) %>%
+  summarize(
+    M  = mean(income),
+    SD = sd(income)
+    )
+```
+
+
+]
+
+.pull-right[
+.small[
+```{r echo=FALSE}
+
+city2 = city %>% 
+  group_by(gender) %>%
+  summarize(
+    M  = mean(income),
+    SD = sd(income)
+    )
+
+ht = as_hux(city2) %>% 
+  add_colnames() %>%
+  #insert_row(rep('&#8942;', 8), after = 11) %>%
+  set_bold(1, everywhere, TRUE) %>%
+  set_bottom_border(1, everywhere, 1) %>%
+  set_top_border(1, everywhere, 1) %>%
+  set_caption('Mean, Standard Deviation, and Sample Size for the Income Variable')
+
+set_number_format(ht, 2:3, 2:3, 2)
+
+```
+]
+]
+
+
+---
+
+# dplyr Resources
+
+- **dplyr Cheatsheet:** A one-page (front and back) cheatsheet of **dplyr** syntax with pictures https://www.rstudio.com/wp-content/uploads/2015/02/data-wrangling-cheatsheet.pdf
+
+- **Introduction to dplyr:** Web-based tutorial with examples https://cran.rstudio.com/web/packages/dplyr/vignettes/introduction.html
+
+- **tidy data paper:** A paper that outlines how to tidy/clean data for analysis. http://vita.had.co.nz/papers/tidy-data.html
+
+
+
+
+
+
+

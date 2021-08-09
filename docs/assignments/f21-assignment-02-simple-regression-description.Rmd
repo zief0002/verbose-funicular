@@ -1,0 +1,105 @@
+---
+title: "Assignment 01"
+subtitle: "INTRODUCTION TO STATISTICAL COMPUTING"
+author: 
+output: 
+  html_document:
+    highlight: zenburn
+    css: ['style/assignment-style.css', 'style/syntax.css']
+---
+
+
+
+The goal of this assignment is to give you experience working with the R statistical computing environment. In this assignment, you will use the data from the file *broadband.csv* to examine broadband access in the United States.
+
+
+
+- [[CSV]](https://raw.githubusercontent.com/zief0002/epsy-8251/master/data/broadband.csv)
+- [[Data Codebook]](http://zief0002.github.io/epsy-8251/codebooks/broadband.html)
+
+
+```{r echo=FALSE, out.width="60%", fig.align='center'}
+knitr::include_graphics("figs/assign-01.png")
+```
+
+## Instructions
+
+Submit a printed document of your responses to the following questions. Please adhere to the following guidelines for further formatting your assignment:
+
+- All plots should be resized so that they do not take up more room than necessary. 
+- All figures and tables should have a name (e.g., Figure 1) *and* an appropriate caption.
+
+This assignment is worth 14 points.
+
+
+<br />
+
+
+
+## Preparation
+
+If you have not already installed them, you will need to install the `{dplyr}` and `{ggplot2}` packages to complete this assignment. Once these have been installed successfully, you should not need to install them again. Remember: Install once; load every session.
+
+Open a new script file. Save the script file as `Assignment-01.R`. Save all of the R syntax you use to answer the questions on this assignment in this script file. 
+
+Denote each question in the script file using comments. For example,
+
+
+
+```
+##################################################
+### Question 1
+##################################################
+
+<< syntax >>
+```
+
+
+Add comments throughout your syntax as liberally as you feel is necessary to help you recall what the syntax does in the future. Although you do *not need to submit this in with your assignment*, it will be useful for building good coding habits and potentially for future assignments.
+
+<br />
+
+
+## Part I: Minnesota Broadband Access
+
+After importing the broadband data into RStudio, create a new data frame object that only includes counties in Minnesota (postal code for Minnesota is MN). Hint: Use `filter()`. Assign the Minnesota broadband data into a new object called `mn`. Use the `mn` data to answer the following questions.
+
+1. Use the `geom_density()` function from the `{ggplot2}` package to create a density plot of the distribution of the `microsoft_useage` variable for all 87 counties in Minnesota. You can see many examples of how to do this [here](https://ggplot2.tidyverse.org/reference/geom_density.html). Include this plot in a word-processed document. Resize the plot so it does not take up any more space than necessary. Be sure the plot has appropriate labels and has a caption.
+
+2. Use the `geom_density()` function from the `{ggplot2}` package to create a density plot of the distribution of the `microsoft_useage` variable for the counties in Minnesota, but this time use `color=` or `fill=` to color by whether the county is a metropolitan or non-metropolitan county. (Hint: You shoul get two density plots.). Include this plot in a word-processed document. Resize the plot so it does not take up any more space than necessary. Be sure the plot has appropriate labels and has a caption. 
+
+3. Compute the mean and the standard deviation of the `microsoft_useage` variable for metro and no-metro counties. Report these values.
+
+4. By referring to the values, and the plots, what can you say about broadband access in Minnesota? Is there a broadband access gap?
+
+
+<br />
+
+
+## Part II: State-Level Broadband Access
+
+In this section, you will use all the data in *broadband.csv* to create state-level summaries of the `microsoft_useage` and the `fcc_availability` variables. Use this state-level data to answer the following questions.
+
+7. Use functions from the `{dplyr}` package to group the data by state and compute the mean and standard deviation of the Microsoft and FCC estimates of broadband access for each state. Report the dplyr syntax you used to obtain this value. Change the font of your syntax to a mono-spaced font in your word-processed document. (Here is a [list of mono-spaced fonts](https://en.wikipedia.org/wiki/List_of_monospaced_typefaces).)
+
+8. Based on the Microsoft and FCC esrtimates, does it seem that the FCC estimates (which are provided by the ISPs) are "underestimating" America's broadband access? Explain.
+
+9. Which states have the best and worst broadband access based on the means? Which states are the most and least homogenous (across counties) in terms of their broadband access?
+
+10. Create a table that includes the Microsoft and FCC estimates of broadband access you computed for the states in bordering Minnesota: Minnesota (MN), Iowa (IA), South Dakota (SD), North Dakota (ND), and Wisconsin (WI). Report these values in a word-processed table alphabetically by state. *To format this table:* Examine the structure and formatting of Table 2 at http://zief0002.github.io/epsy-8251/misc/creating-tables/creating-tables.html. Notice that variables are presented in rows and summary statistics are presented in columns. Mimic the format and structure of this table to create a table to present the numerical summary information asked for in this question. Finally, give your table a name (e.g., Table 1) and an appropriate caption.
+
+
+<br />
+
+
+## Part III: State-Level Broadband Access versus Poverty
+
+In this section, you will use all the data in *broadband.csv* to create state-level means of the `microsoft_useage` and the `pct_poverty` variables. (Hint: Make sure that every state has mean values when you are done!) Use this state-level data to answer the following questions. 
+
+11. Use `ggplot()` to create a scatterplot of the relationship between the percentage of users with access to broadband and the percentage of people living in poverty using the state-level data. (Put the percentage living in poverty on the *x*-axis.) Change the axis labels so that both the _x_- and _y_-axis have labels that suitably describe the variables being plotted. (For help on this, read the *Axes* page of the [Cookbook for R website](http://www.cookbook-r.com/Graphs/).) Include this plot in a word-processed document. Resize the plot so it does not take up any more space than necessary. Finally, give your figure a name (e.g., Figure 1) and an appropriate caption.
+
+12. Based on these data, describe the relationship between poverty and broadband access. 
+
+13. Identify Minnesota on your plot. (You do not have to use R to do this; you can use an image editor, or do it by hand.) You can either create a new plot or just include Minnesota on the plot you include for Question 11.
+
+14. Based on its location in the plot, how does Minnesota compare to the other states in terms of broadband access? What about in terms of poverty? Explain.

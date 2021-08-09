@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+  <head>
+    <title>Plotting with ggplot2</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Andrew Zieffler&quot;" />
+    <meta name="date" content="2019-06-05" />
+    <link href="css/remark-css/default.css" rel="stylesheet" />
+    <link href="css/remark-css/metropolis.css" rel="stylesheet" />
+    <link href="css/remark-css/metropolis-fonts.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/extra.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Plotting with ggplot2
+## EPsy 8251
+### Andrew Zieffler"
+### 2019-06-05
+
+---
+
+
+
+
+
+# Preparation
+
+
+```r
+# Load libraries
+library(dplyr)
+library(ggplot2)
+library(readr)
+
+# Import and view the city data 
+city = read_csv("~/Documents/github/epsy-8251/data/riverview.csv")
+head(city)
+```
+
+```
+## # A tibble: 6 x 6
+##   education income seniority gender  male party      
+##       &lt;dbl&gt;  &lt;dbl&gt;     &lt;dbl&gt; &lt;chr&gt;  &lt;dbl&gt; &lt;chr&gt;      
+## 1         8   37.4         7 male       1 Democrat   
+## 2         8   26.4         9 female     0 Independent
+## 3        10   47.0        14 male       1 Democrat   
+## 4        10   34.2        16 female     0 Independent
+## 5        10   25.5         1 female     0 Republican 
+## 6        12   46.5        11 female     0 Democrat
+```
+
+
+---
+
+# Understanding the Basic Syntax
+
+Plots are built by *layering* different components. 
+
+
+```r
+ggplot(data = city, aes(x = education, y = income)) + 
+  geom_point() +
+  theme_bw()
+```
+
+In this syntax there are three layers:
+
+1. a global layer, 
+2. a geometric layer, and 
+3. a theme layer. 
+
+The layers are literally *summed* together to form the plot.
+
+
+---
+
+# The Global Layer
+
+The first layer (referred to as the global layer) is always `ggplot()`. It contains reference to the source data (data frame object) and any *global aesthetic mappings*. The first layer only sets up the plot, it doesn’t actually plot anything. (In the subsequent layers, we add geometric objects (e.g., points, boxplots), themes, etc.)
+
+
+```r
+ggplot(data = city, aes(x = education, y = income)) +
+```
+
+- The `data=` argument indicates the source data frame.
+- The `aes=` argument sets the aesthetic mapping(s).
+
+---
+
+# Adding Geometric Objects
+
+Geometric objects are features that are actually drawn on plot (e.g., lines, points). They are specified using the prefix `geom_` and a suffix that names the feature to be plotted.
+
+.pull-left[.smallish[
+
+```r
+ggplot(data = city, aes(x = education, y = income)) + 
+  geom_point()
+```
+
+- **Points** specified with `geom_point()`
+- **Jittered points** specified with `geom_jitter()`
+- **Lines** specified with `geom_line()`
+- **Boxplots** specified with `geom_boxplot()`
+]]
+
+.pull-right[
+![](03-plotting-with-ggplot2_files/figure-html/unnamed-chunk-5-1.png)&lt;!-- --&gt;
+]
+
+---
+
+# Aesthetic Mappings
+
+Aesthetic mappings describe how variables in the data are **mapped to visual properties** (aesthetics) in the plot. They are used to define visual properties such as: position (e.g., `\(x\)`-dimension, `\(y\)`-dimension), size, color, fill, and groupings.
+
+
+```r
+ggplot(data = city, aes(x = education, y = income)) +
+  geom_point()
+```
+
+In this example there are two aesthetic mappings.
+
+1. Education values from the data are mapped to the `\(x\)`-position for each observation.
+2. Income values from the data are mapped to the `\(y\)`-position for each observation.
+
+All aesthetic mappings (data mapped to visual property) need to be specified in the `aes()` function. Mappings apply different values for the visual property based on the data. The geometric objects (in this example, points) are plotted based on the aesthetic mappings specified in the global layer. For example, the syntax above draws points at the ordered pairs of employees’ education ($x$-position) and incomes ($y$-position) as specified in the `city` data.
+
+---
+
+# Adding Layers
+
+When layers are added they are "stacked" on top of previous layers. Imagine drawings on separate transparencies, and then those transparencies are stacked. 
+
+.pull-left[.smallish[
+
+```r
+ggplot(data = city, aes(x = education, y = income)) + 
+  geom_point() + 
+  geom_smooth()
+```
+
+Here the `geom_smooth()` layer (which adds a loess smoother) is drawn ON TOP of the points, which are added in the `geom_point()` layer.
+
+]]
+
+.pull-right[
+![](03-plotting-with-ggplot2_files/figure-html/unnamed-chunk-8-1.png)&lt;!-- --&gt;
+]
+
+---
+
+# Good Syntactic Habits
+
+As we add multiple layers to build up our plot, it is a good habit to use multiple lines for the syntax. Generally we put one layer on each line. 
+
+
+```r
+ggplot(data = city, aes(x = education, y = income)) + 
+  geom_point() + 
+  geom_smooth() +
+  theme_bw()
+```
+
+The `+` sign needs to be at the end of the line (not at the beginning). If you are using a script file (which you should be), highlight ALL layers in the plot and click `Run` to create the plot.
+
+---
+
+# Global vs. Local Aesthetic Mappings
+
+Aesthetic mappings can be set globally (in `ggplot()` layer) or locally (set in a specific layer). Aesthetic mappings that are set in the `ggplot()` layer are applied to *all layers* in the plot; they are global. Aesthetic mappings set in a specific layer only apply to that particular layer.
+
+.pull-left[.smallisher[
+
+```r
+ggplot(data = city, aes(x = education, y = income, color = gender)) + 
+  geom_point() +
+  geom_smooth()
+```
+
+&lt;img src="03-plotting-with-ggplot2_files/figure-html/unnamed-chunk-11-1.png" width="90%" /&gt;
+
+]]
+
+
+.pull-right[.smallisher[
+
+```r
+ggplot(data = city, aes(x = education, y = income)) + 
+  geom_point(aes(color = gender)) +
+  geom_smooth()
+```
+
+&lt;img src="03-plotting-with-ggplot2_files/figure-html/unnamed-chunk-13-1.png" width="90%" /&gt;
+]]
+
+
+---
+
+# Fixed Aesthetics
+
+Fixed aesthetics assign the exact same value for the visual property for **all** the observations; it is not based on the data. Fixed aesthetics are specified outside the `aes()` function. For example, the following syntax uses the data to assign the `\(x\)`- and `\(y\)`-positions (aesthetic mapping), but then colors *all of the observations* red and makes *all of the observations* size 4 (default is `size=3`).
+
+.pull-left[.smallish[
+
+```r
+ggplot(data = city, aes(x = education, y = income)) + 
+  geom_point(color = "red", size = 4) +
+  theme_bw()
+```
+]]
+
+.pull-right[
+&lt;img src="03-plotting-with-ggplot2_files/figure-html/unnamed-chunk-15-1.png" width="90%" /&gt;
+]
+---
+
+# Your Turn
+
+
+```r
+ggplot(data = city, aes(x = education, y = income, color = gender)) +
+  geom_point() +
+  geom_smooth(color = "yellow", fill = "darkblue")
+```
+
+
+.pull-left[.smallish[
+- What are the aesthetics in the following plot?
+- Which aesthetics are mapped to the data and which are fixed?
+- Which aesthetics are global and which are local?
+- What are the geometric objects?
+]]
+
+.pull-right[
+&lt;img src="03-plotting-with-ggplot2_files/figure-html/unnamed-chunk-17-1.png" width="90%" /&gt;
+]
+
+---
+
+# Your Turn
+
+- Write the syntax to create this scatterplot.
+- How would we color the points by political party?
+
+&lt;img src="03-plotting-with-ggplot2_files/figure-html/unnamed-chunk-18-1.png" width="50%" /&gt;
+
+---
+
+# Useful Point Aesthetics
+
+Two other useful aesthetics for points are `shape=` and `size=` for plotting the shapes and sizes of points, respectively. 
+
+.pull-left[.smallish[
+
+```r
+ggplot(data = city, aes(x = education, y = income)) +
+  geom_point(aes(color = party, shape = gender), size = 4)
+```
+]]
+
+.pull-right[
+![](03-plotting-with-ggplot2_files/figure-html/unnamed-chunk-20-1.png)&lt;!-- --&gt;
+]
+
+Notice when we use non-positional aesthetic mappings (e.g., color, shape) a legend will be automatically added to our plot for each aesthetic mapping.
+
+---
+
+# Faceting: Separate Plots for Subgroups
+
+.pull-left[
+Faceting creates a separate plot for each subgroup declared. To facet on a single predictor use the `facet_wrap()` layer. The wiggle/tilde (`~`) sets the predictor for facetting on.
+
+.smallish[
+
+```r
+ggplot(data = city, aes(x = education, y = income)) +
+  geom_point() +
+  facet_wrap(~ party, nrow = 2)
+```
+]
+
+
+]
+
+.pull-right[
+![](03-plotting-with-ggplot2_files/figure-html/unnamed-chunk-22-1.png)&lt;!-- --&gt;
+]
+---
+
+# Facetting on Multiple Variables
+
+.pull-left[
+When facetting on multiple predictors, use `facet_grid(rows ~ columns)`
+
+.smallish[
+
+```r
+ggplot(data = city, aes(x = education, y = income)) +
+  geom_point() +
+  facet_grid(party ~ gender)
+```
+]
+]
+
+.pull-right[
+&lt;img src="03-plotting-with-ggplot2_files/figure-html/unnamed-chunk-24-1.png" width="90%" /&gt;
+]
+
+---
+
+# Changing the Axis Label
+
+The layers `xlab()` and `ylab()` can be used to change the label on the `\(x\)`- and `\(y\)`-axes, respectively.
+
+.pull-left[
+.smallish[
+
+```r
+ggplot(data = city, aes(x = education, y = income)) +
+  geom_point() +
+  xlab("Education level (in years)") +
+  ylab("Income level (in U.S. dollars)")
+```
+]
+]
+
+.pull-right[
+![](03-plotting-with-ggplot2_files/figure-html/unnamed-chunk-26-1.png)&lt;!-- --&gt;
+]
+
+---
+
+# Changing the Axis Limits
+
+The layers `xlim()` and `ylim()` are used to set the limits on the `\(x\)`-axis and `\(y\)`-axis, respectively. The first value provided is the minimum, and the second value given is the maximum.
+
+.pull-left[
+.smallish[
+
+```r
+ggplot(data = city, aes(x = education, y = income)) +
+  geom_point() +
+  xlab("Education level (in years)") +
+  ylab("Income level (in U.S. dollars)") +
+  xlim(0, 30) +
+  ylim(0, 100000)
+```
+]
+]
+
+.pull-right[
+![](03-plotting-with-ggplot2_files/figure-html/unnamed-chunk-28-1.png)&lt;!-- --&gt;
+]
+
+---
+
+# Fine-Tuning Axis Scales
+
+The `xlab()`, `ylab()`, `xlim()` and `ylim()` functions we used are shortcuts to using scaling layers. The use of scaling layers allows much more fine-tuning and control of the axis scales. There are four different scaling functions you can use depending on which axis ($x$ or `\(y\)`) you want to control and whether the variable plotted along that axis is *continuous* or *discrete*. The four functions are: (1) `scale_x_continuous()`, (2) `scale_x_discrete()`, (2) `scale_y_continuous()`, and (4) `scale_y_discrete()`.
+
+
+```r
+ggplot(data = city, aes(x = education, y = income)) +
+  geom_point() +
+  scale_x_continuous(
+    name = "Education level (in years)",
+    breaks = c(10, 12, 14, 16, 18, 20, 22, 24)
+  )
+```
+
+The `name=` option labels the scale (it is the same as the `xlab()` layer in this case). The `breaks=` option adds break lines on the axis. There are several other options including `labels=` for labelling the break lines, etc.
+
+---
+
+# Customizing the Color
+
+Scaling functions can also be used to fine-tune colors and fills. For these you need to specify either color or fill, and also the palette you want to use. For example, `scale_color_manual()` can be used to manually set the colors when the `color=` aesthetic mapping is used. 
+
+.pull-left[
+.smallish[
+
+```r
+ggplot(data = city, aes(x = seniority, y = education)) +
+  geom_point(aes(color = party)) +
+  scale_color_manual(
+    values = c("#00afbb", "#e7b800", "#fc4e07")
+  )
+```
+]
+
+Here, `scale_color_manual()` allows you to manually set the attributes associated with the `color=` aesthetic mapping. The `values=` argument sets the color values for each level of the party variable. 
+]
+
+.pull-right[
+![](03-plotting-with-ggplot2_files/figure-html/unnamed-chunk-31-1.png)&lt;!-- --&gt;
+]
+
+---
+
+# Customizing the Legend
+
+Scaling functions can also be used to change the name and labels in the legend. 
+
+.pull-left[
+.smallish[
+
+```r
+ggplot(data = city, aes(x = seniority, y = education)) +
+  geom_point(aes(color = party)) +
+  scale_color_manual(
+    name = "Political affiliation",
+    values = c("#00afbb", "#e7b800", "#fc4e07"),
+    labels = c("Dem", "Ind", "Rep")
+  )
+```
+]
+
+The `name=` argument changes the title of the legend, and the `labels=` argument allows you to modify the labels. 
+]
+
+.pull-right[
+![](03-plotting-with-ggplot2_files/figure-html/unnamed-chunk-33-1.png)&lt;!-- --&gt;
+]
+
+---
+
+# Specifying Colors: Named Colors
+
+
+The function `colors()` (with no arguments) will provide a list of all the named colors available in R. These names can be used to specify color. 
+
+
+```r
+colors()
+```
+
+
+```
+##  [1] "white"          "aliceblue"      "antiquewhite"   "antiquewhite1" 
+##  [5] "antiquewhite2"  "antiquewhite3"  "antiquewhite4"  "aquamarine"    
+##  [9] "aquamarine1"    "aquamarine2"    "aquamarine3"    "aquamarine4"   
+## [13] "azure"          "azure1"         "azure2"         "azure3"        
+## [17] "azure4"         "beige"          "bisque"         "bisque1"       
+## [21] "bisque2"        "bisque3"        "bisque4"        "black"         
+## [25] "blanchedalmond" "blue"           "blue1"          "blue2"         
+## [29] "blue3"          "blue4"          "blueviolet"     "brown"         
+## [33] "brown1"         "brown2"         "brown3"         "brown4"        
+## [37] "burlywood"      "burlywood1"     "burlywood2"     "burlywood3"    
+## [41] "burlywood4"     "cadetblue"      "cadetblue1"     "cadetblue2"    
+## [45] "cadetblue3"     "cadetblue4"     "chartreuse"     "chartreuse1"
+```
+
+---
+
+# Specifying Colors: HEX
+
+Colors can also be defined using HEX notation. HEX notation is always preceeded by a hashtag (\#).
+
+&lt;img src="images/notes-03-hex-color-palette.png" width="2832" /&gt;
+
+---
+
+# Choosing a Color Palette
+
+.pull-left[
+Choosing a color palette can be challenging. It should be aesthetically pleasing, but needs to convey the differences and nuances in the data that you are using color to display. In addition, roughly 8% of males and 0.5% of females have some form of color vision deficiency which will affect how they see and interpret the plot. Here are a few resources for thinking about color palettes:
+
+- [Finding the Right Color Palettes for Data Visualizations](https://blog.graphiq.com/finding-the-right-color-palettes-for-data-visualizations-fcd4e707a283)
+- [Picking a Colour Scale for Scientific Graphics](https://betterfigures.org/2015/06/23/picking-a-colour-scale-for-scientific-graphics/)
+- [Color Universal Design (CUD): How to Make Figures and Presentations that are Friendly to Colorblind People](http://jfly.iam.u-tokyo.ac.jp/color/)
+]
+
+.pull-right[
+Many organizations have official colors associated with their brand. For example, the University of Minnesota's two official primary colors in HEX (for electronic display) are:
+
+- `#ffcc33` (gold)
+- `#7a0019` (maroon)
+
+You can read more at https://university-relations.umn.edu/resources/colors-and-type
+
+]
+---
+
+# Pre-Selected Color Palettes
+
+There are several "built-in" palettes available for use in ggplot.
+
+Fill Scale	          | Color Scale	            | Description
+--------------------- | ----------------------- | -------------------------------------------
+`scale_fill_hue()`	  | `scale_color_hue()`	    | Colors evenly spaced around the color wheel
+`scale_fill_grey()`	  | `scale_color_grey()` 	  | Grey scale palette
+`scale_fill_brewer()`	| `scale_color_brewer()`	| ColorBrewer palettes
+
+---
+
+# Grey Scale Color Palette
+
+The `scale_color_grey()` and `scale_fill_grey()` functions use a greyscale color palette. This is a useful palette if you are printing in black-and-white.
+
+.pull-left[
+.smallish[
+
+```r
+ggplot(data = city, aes(x = education, y = income)) +
+  geom_point(aes(color = party)) +
+  scale_color_grey(
+    name = "Political affiliation"
+    )
+```
+]
+]
+
+.pull-right[
+![](03-plotting-with-ggplot2_files/figure-html/unnamed-chunk-38-1.png)&lt;!-- --&gt;
+]
+
+---
+
+# Color Brewer Palettes
+
+Cynthia Brewer chose color palettes that not only are aesthetically pleasing, but also based on how humans perceive the colors that are displayed. See http://www.colorbrewer2.org
+
+
+.pull-left[
+She has palettes for three different types of data
+
+- **Qualitative/Categorical:** Colors do not have a perceived order
+- **Sequential:** Colors have a perceived order and perceived difference between successive colors is uniform
+- **Diverging:** Two back-to-back sequential palettes starting from a common color (e.g., for Likert scale data)
+]
+
+.pull-right[
+&lt;img src="images/notes-03-color-brewer-palette.png" width="608" /&gt;
+]
+
+There is a very readable introduction to color brewer palettes at http://mkweb.bcgsc.ca/brewer/
+
+---
+
+# Color Brewer Palette in Action
+
+The `scale_color_brewer()` and `scale_fill_brewer()` functions use a Cynthia Brewer's color palettes. You need to specify a palette using the `palette=` argument.
+
+.pull-left[
+.smallish[
+
+```r
+ggplot(data = city, aes(x = education, y = income)) +
+  geom_point(aes(color = party)) +
+  scale_color_brewer(
+    name = "Political affiliation",
+    palette = "Set2"
+    )
+```
+]
+]
+
+.pull-right[
+![](03-plotting-with-ggplot2_files/figure-html/unnamed-chunk-41-1.png)&lt;!-- --&gt;
+]
+
+---
+
+# Themes
+
+There are several "built-in" themes that you can use to change the look of your plot: `theme_grey()`, `theme_bw()`, `theme_linedraw()`, `theme_light()`, `theme_dark()`, `theme_minimal()`, `theme_classic()`, `theme_void()`, and `theme_test()`. The default theme is `theme_grey()`.
+
+.pull-left[
+.smallish[
+
+```r
+ggplot(data = city, aes(x = education, y = income)) +
+  geom_point() +
+  theme_bw()
+```
+]
+
+The `theme_bw()` layer is a "built-in" theme that uses a black-and-white background (rather than grey).
+]
+
+.pull-right[
+![](03-plotting-with-ggplot2_files/figure-html/unnamed-chunk-43-1.png)&lt;!-- --&gt;
+]
+
+---
+
+# Fine-Tuning the Theme
+
+The `theme()` function can be used to change every element in the plot (e.g., grid lines, font, color, etc.). See http://docs.ggplot2.org/current/theme.html
+
+.pull-left[
+.smallisher[
+
+```r
+ggplot(data = city, aes(x = education, y = income)) +
+  geom_point() +
+  theme_bw() +
+  theme(
+    axis.title.x = element_text(face = "bold", color = "blue"),
+    axis.title.y = element_text(face = "italic")
+  )
+```
+]
+]
+
+.pull-right[
+![](03-plotting-with-ggplot2_files/figure-html/unnamed-chunk-45-1.png)&lt;!-- --&gt;
+]
+
+---
+
+# The ggthemes Package
+
+The **ggthemes** package includes 20 additional themes that you can use to style your plot. See https://jrnold.github.io/ggthemes/. Here I use a theme similar to that from plots that appear in the Wall Street Journal.
+
+.pull-left[
+.smallish[
+
+```r
+# Load ggthemes package
+library(ggthemes)
+
+ggplot(data = city, aes(x = education, y = income)) +
+  geom_point() +
+  theme_wsj()
+```
+]
+]
+
+.pull-right[
+![](03-plotting-with-ggplot2_files/figure-html/unnamed-chunk-47-1.png)&lt;!-- --&gt;
+]
+
+---
+
+# The scales Package
+
+We can get other options for labeling axes using the **scales** package. For example, we can add commas to separate by thousands in long numerical values, or add the `$` for monetary values.
+
+.pull-left[
+.smallish[
+
+```r
+# Load the scales package
+library(scales)
+
+ggplot(data = city, aes(x = education, y = income)) +
+  geom_point() +
+  scale_y_continuous(
+    name = "Annual income",
+    labels = dollar
+  )
+```
+]
+
+The `labels=dollar` option is a built-in formatter from the **scales** package that adds the dollar sign and commas to the labels on a specified axis. Read more at http://www.rdocumentation.org/packages/scales/versions/0.4.0
+]
+
+.pull-right[
+![](03-plotting-with-ggplot2_files/figure-html/unnamed-chunk-49-1.png)&lt;!-- --&gt;
+]
+
+---
+
+# Other ggplot Extension Packages
+
+Like the **ggthemes** package, there are many other packages that extend ggplot's functionality. Many of them are listed at https://www.ggplot2-exts.org/
+
+&lt;img src="images/notes-03-ggplot-gallery.png" width="3997" /&gt;
+
+---
+
+# Your Turn
+
+Make a rough sketch of the plot you think this syntax will produce. 
+
+
+```r
+# Load scales library
+library(scales) # To format $ in the labels
+
+ggplot(data = city, aes(x = education, y = income)) +
+  geom_point(aes(color = party), size = 4) +
+  scale_color_manual(
+    name = "Political affiliation", 
+    values = c("#00afbb", "#e7b800", "#fc4e07")
+    ) +
+  xlab("Education level (in years)") +
+  scale_y_continuous(
+    name = "Annual income (in U.S. dollars)", 
+    labels = dollar
+    ) +
+  theme_bw() +
+  facet_wrap(~ gender)
+```
+
+---
+
+*Figure 1.* Relationship between annual income (in U.S. dollars) and years of education for n=32 employees of the City of Riverview. This relationship is shown for both males and females.
+
+![](03-plotting-with-ggplot2_files/figure-html/unnamed-chunk-52-1.png)&lt;!-- --&gt;
+
+
+`#protip:` It is easier to use a word-processor (e.g., MS Word) to add the figure title and caption than to try and get it formatted correctly using R. 
+
+---
+
+# Combining ggplot with dplyr
+
+Since output from **dplyr** piping operator produces a data frame, we can pipe the data into the `ggplot()` global layer rather than using the argument `data=`.
+
+.pull-left[
+.smallish[
+
+```r
+city %&gt;%
+  filter(gender == "female") %&gt;%
+  ggplot(aes(x = education, y = income)) +
+    geom_point()
+```
+]
+]
+
+.pull-right[
+
+*Figure 2.* Relationship between annual income (in U.S. dollars) and years of education for n=18 female employees of the City of Riverview.
+
+&lt;img src="03-plotting-with-ggplot2_files/figure-html/unnamed-chunk-54-1.png" width="70%" /&gt;
+]
+
+---
+
+# ggplot2 Resources
+
+- **ggplot2 Cheatsheet:** A one-page (front and back) cheatsheet of ggplot2 syntax with pictures https://www.rstudio.com/wp-content/uploads/2015/08/ggplot2-cheatsheet.pdf
+
+- **ggplot2 Extensions:** Third-party and user contributed extensions for some pretty cool plots http://www.ggplot2-exts.org/index.html
+
+- **Cookbook for R:** Web-based version of Winston Chang's R Graphics Cookbook http://www.cookbook-r.com/Graphs/ (The UMN library has electronic access to the actual book. Just search for "R Graphics Cookbook" and log-in with your x500.)
+
+- **extrafonts package:** Use almost any font on your computer in your plots. http://blog.revolutionanalytics.com/2012/09/how-to-use-your-favorite-fonts-in-r-charts.html
+
+- **paletteer package:** A comprehensive collection of color palettes in R using a common interface https://github.com/EmilHvitfeldt/paletteer
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();</script>
+
+<script>
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

@@ -1,0 +1,70 @@
+---
+title: "Using RStudio Worksheet"
+author: "Breakout Group"
+date: "September 10, 2020"
+output:
+  prettydoc::html_pretty:
+    theme: lumen
+    highlight: github
+---
+
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+## Directions
+
+Complete the problems on this worksheet with your break out group. You may want to refer to the *Getting Started with R* and *Data Structures in R* chapters in the [Computational Toolkit for Educational Scientists](https://zief0002.github.io/toolkit) and the sections you read in the Fox book.
+
+
+## Problem Set I
+
+Use R to compute the answer to the following problems. You can (for now) work in the console or use a script file. This problem set will focus on skills and ideas you learn in *Getting Started with R*.
+
+
+1. Compute: $2 + 3 \times 5$. Does R follow order of operations or not? 
+
+2. Compute: $(3 \times5^2 \div 15)-(5-2^2)$
+
+3. Compute: $\sqrt{~\left\vert3-4\right\vert~}$
+
+4. Create a sequence of the numbers 1 and 5. Store this in an object called `one_five`.
+
+5. Create a sequence of all integers between 10 and 1. This sequence should begin at 10 and end at 1. (e.g., $10,9,8,7,\ldots,1$). Store this in an object called `my_num`.
+
+6. Use the `length()` function to count the number of elements in the `one_five` object. Also use it to count the number of elements in `my_num`.
+
+7. Compute $\mathtt{one\_five}+\mathtt{my\_num}$. Explain how R is using the two objects to obtain the result it did.
+
+8. Install the following three packages from CRAN: **dplyr**, **ggplot2** and **remotes**.
+
+9. Load the **remotes** package.
+
+9. Install the **educate** package from GitHub. 
+
+
+
+# Problem Set II
+
+Use R to compute the answer to the following problems. For these problems, please work in a script file. This problem set will focus on skills and ideas you learn in *Data Structures in R*.
+
+
+10. Create a new script file. Save it on your computer. When you do this give it a name other than *Untitled*.
+
+11. Use the `c()` function to create a vector that includes the number of pets each person in your breakout group has. Name this vector `Pets`.
+
+13. Create a data frame that includes two columns. The first column will be the first names of everyone in your breakout room. Call this column `Names`. The second column will be the number of credits each person in your breakout room is taking this semester. Call this column `Credits`. Assign this data frame a name so that you can compute on it later. (Feel free to make it a three column data frame by adding the `Pets` column.)
+
+
+# Problem Set III
+
+Use R to compute the answer to the following problems. For these problems, please continue to work in the script file. This problem set will focus on skills and ideas you learn in *Data Structures in R*.
+
+14. Import the [goodreads.csv](https://raw.githubusercontent.com/zief0002/epsy-8251/master/data/goodreads.csv) data into R. Assign this to an object called `GR`. If you use the `Import` button to do this, make sure you copy the syntax into your script file.
+
+15. Examine the [codebook for the goodreads data](https://zief0002.github.io/epsy-8251/codebooks/goodreads.html). 
+
+16. Run the syntax `View(GR)`. This should display the imported data in a tab. Find the title of at least one book that Andy gave five stars to.
+
+17. Run the syntax `mean(my_rating)`. You should get an error. Try to figure out why you are getting this error. (Hint: Look at the objects in your environment.)
+
