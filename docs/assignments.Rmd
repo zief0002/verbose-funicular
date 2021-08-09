@@ -36,9 +36,7 @@ Below are the due dates for the assignments, as well as links to the PDF file fo
 <!-- <td>Oct. 01</td> -->
 <td>Oct. 06</td>
 <td align="center" style="vertical-align:middle;">
-  <a href="https://github.com/zief0002/epsy-8251/raw/master/assignments/assignment-02-simple-regression-description.pdf">
-    <span class="fa fa-file-pdf" style="color: #ff2600; font-size: 20px;"></span>
-  </a>
+  [<span class="fas fa-link" style="color: #ff2600; font-size: 20px;"></span>](assignments/f21-assignment-02-simple-regression-description.html)
 </td>
 </tr>
 
@@ -47,9 +45,9 @@ Below are the due dates for the assignments, as well as links to the PDF file fo
 <!-- <td>Oct. 10</td> -->
 <td>Oct. 13</td>
 <td align="center" style="vertical-align:middle;">
-  <a href="https://github.com/zief0002/epsy-8251/raw/master/assignments/assignment-03-correlation-and-standardized-regression.pdf">
-    <span class="fa fa-file-pdf" style="color: #ff2600; font-size: 20px;"></span>
-  </a>
+  <!-- <a href="https://github.com/zief0002/epsy-8251/raw/master/assignments/assignment-03-correlation-and-standardized-regression.pdf"> -->
+  <!--   <span class="fa fa-file-pdf" style="color: #ff2600; font-size: 20px;"></span> -->
+  <!-- </a> -->
 </td>
 </tr>
 
@@ -58,9 +56,9 @@ Below are the due dates for the assignments, as well as links to the PDF file fo
 <!-- <td>Oct. 22</td> -->
 <td>Oct. 27</td>
 <td align="center" style="vertical-align:middle;">
-  <a href="https://github.com/zief0002/epsy-8251/raw/master/assignments/assignment-04-simple-regression-inference.pdf">
-    <span class="fa fa-file-pdf" style="color: #ff2600; font-size: 20px;"></span>
-  </a>
+  <!-- <a href="https://github.com/zief0002/epsy-8251/raw/master/assignments/assignment-04-simple-regression-inference.pdf"> -->
+  <!--   <span class="fa fa-file-pdf" style="color: #ff2600; font-size: 20px;"></span> -->
+  <!-- </a> -->
 </td>
 </tr>
 
@@ -69,9 +67,9 @@ Below are the due dates for the assignments, as well as links to the PDF file fo
 <!-- <td>Oct. 31</td> -->
 <td>Nov. 08</td>
 <td align="center" style="vertical-align:middle;">
-  <a href="https://github.com/zief0002/epsy-8251/raw/master/assignments/assignment-05-introduction-to-multiple-regression.pdf">
-    <span class="fa fa-file-pdf" style="color: #ff2600; font-size: 20px;"></span>
-  </a>
+  <!-- <a href="https://github.com/zief0002/epsy-8251/raw/master/assignments/assignment-05-introduction-to-multiple-regression.pdf"> -->
+  <!--   <span class="fa fa-file-pdf" style="color: #ff2600; font-size: 20px;"></span> -->
+  <!-- </a> -->
 </td>
 </tr>
 
@@ -80,9 +78,9 @@ Below are the due dates for the assignments, as well as links to the PDF file fo
 <!-- <td>Nov. 12</td> -->
 <td>Nov. 22</td>
 <td align="center" style="vertical-align:middle;">
-  <a href="https://github.com/zief0002/epsy-8251/raw/master/assignments/assignment-06-regression-assumptions.pdf">
-    <span class="fa fa-file-pdf" style="color: #ff2600; font-size: 20px;"></span>
-  </a>
+<!--   <a href="https://github.com/zief0002/epsy-8251/raw/master/assignments/assignment-06-regression-assumptions.pdf"> -->
+<!--     <span class="fa fa-file-pdf" style="color: #ff2600; font-size: 20px;"></span> -->
+<!--   </a> -->
 </td>
 </tr>
 
@@ -93,9 +91,9 @@ Below are the due dates for the assignments, as well as links to the PDF file fo
 <!-- <td>Nov. 19</td> -->
 <td>Nov. 29</td>
 <td align="center" style="vertical-align:middle;">
-  <a href="https://github.com/zief0002/epsy-8251/raw/master/assignments/assignment-07-dichotomous-categorical-predictors.pdf">
-    <span class="fa fa-file-pdf" style="color: #ff2600; font-size: 20px;"></span>
-  </a>
+  <!-- <a href="https://github.com/zief0002/epsy-8251/raw/master/assignments/assignment-07-dichotomous-categorical-predictors.pdf"> -->
+  <!--   <span class="fa fa-file-pdf" style="color: #ff2600; font-size: 20px;"></span> -->
+  <!-- </a> -->
 </td>
 </tr>
 
@@ -107,9 +105,9 @@ Below are the due dates for the assignments, as well as links to the PDF file fo
 <!-- <td>Dec. 03</td> -->
 <td>Dec. 06</td>
 <td align="center" style="vertical-align:middle;">
-  <a href="https://github.com/zief0002/epsy-8251/raw/master/assignments/assignment-08-polychotomous-categorical-predictors.pdf">
-    <span class="fa fa-file-pdf" style="color: #ff2600; font-size: 20px;"></span>
-  </a>
+  <!-- <a href="https://github.com/zief0002/epsy-8251/raw/master/assignments/assignment-08-polychotomous-categorical-predictors.pdf"> -->
+  <!--   <span class="fa fa-file-pdf" style="color: #ff2600; font-size: 20px;"></span> -->
+  <!-- </a> -->
 </td>
 </tr>
 
@@ -118,9 +116,9 @@ Below are the due dates for the assignments, as well as links to the PDF file fo
 <td>Assignment \#9: *Interaction Models*</td>
 <td>Dec. 17 (due at 12:00pm)</td>
 <td align="center" style="vertical-align:middle;">
-  <a href="https://github.com/zief0002/epsy-8251/raw/master/assignments/assignment-09-interactions.pdf">
-    <span class="fa fa-file-pdf" style="color: #ff2600; font-size: 20px;"></span>
-  </a>
+  <!-- <a href="https://github.com/zief0002/epsy-8251/raw/master/assignments/assignment-09-interactions.pdf"> -->
+  <!--   <span class="fa fa-file-pdf" style="color: #ff2600; font-size: 20px;"></span> -->
+  <!-- </a> -->
 </td>
 </tr>
 
