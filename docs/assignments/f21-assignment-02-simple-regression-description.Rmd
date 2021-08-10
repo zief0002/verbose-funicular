@@ -47,7 +47,7 @@ Before carrying out any analyses, create a predictor called `salary_thousand` th
 
 1. Create a plot of the distribution of total SAT scores. Make sure your plot has a caption.
 
-2. Examine the structure and formatting of Table 1 at http://zief0002.github.io/epsy-8251/misc/creating-tables/creating-tables.html. Mimic the format and structure of this table to create a table to present the numerical summary information for the marginal distributions of SAT scores and salaries. Provide the same measures for these variables as is given in Table 1 in the article. Re-create the formatting of Table 1 as closely as you can. Finally, make sure the table you create also has an appropriate caption.
+2. Examine the structure and formatting of Table 1 at https://zief0002.github.io/musings/creating-tables-to-present-statistical-results.html. Mimic the format and structure of this table to create a table to present the numerical summary information for the marginal distributions of SAT scores and salaries. Provide the same measures for these variables as is given in Table 1 in the article. Re-create the formatting of Table 1 as closely as you can. Finally, make sure the table you create also has an appropriate caption.
 
 3. Create a scatterplot of the distribution of SAT scores (*Y*) *conditioned on* teacher salaries (*X*). Make sure your plot has a caption.
 

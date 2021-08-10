@@ -162,16 +162,14 @@ Below is the tenative schedule for the class. The dates are subject to change at
 <!-- <td>Sept. 26</td> -->
 <td>Oct. 04</td>
 <td align="center" style="vertical-align:middle;" rowspan="2">
-  <a href="preparation.html#corr">
-    <span class="fa fa-book" style="color: #ff2600; font-size: 20px;"></span>
-  </a>
+  [<span class="fa fa-book" style="color: #ff2600; font-size: 20px;"></span>](#readings)
 </td>
 <td style="vertical-align:middle;" rowspan="2">Correlation and Standardized Regression</td>
 <td align="center" style="vertical-align:middle;" rowspan="2">
-  [<span class="fas fa-link" style="color: #ff2600; font-size: 20px;"></span>](#readings)
+  [<span class="fas fa-link" style="color: #ff2600; font-size: 20px;"></span>](https://zief0002.github.io/modeling/cor.html#cor)
 </td>
 <td align="center" style="vertical-align:middle;" rowspan="2">
-  [<span class="fa fa-code" style="color: #ff2600; font-size: 20px;"></span>](https://github.com/zief0002/epsy-8251/raw/master/scripts/06-correlation-and-standrdized-regression.R)
+  [<span class="fa fa-code" style="color: #ff2600; font-size: 20px;"></span>](https://github.com/zief0002/epsy-8251/raw/master/scripts/06-correlation-and-standardized-regression.R)
 </td>
 </tr>
 

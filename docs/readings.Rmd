@@ -70,7 +70,7 @@ Here are two videos to watch that will help you learn ggplot2:
 
 **Additional Resources**
 
-- [ggplot2 Cheatsheet](https://www.rstudio.com/wp-content/uploads/2015/08/ggplot2-cheatsheet.pdf)
+- [Data Visualization with ggplot2 Cheatsheet](https://www.rstudio.com/resources/cheatsheets/)
 - [ggplot2 Extensions](http://ggplot2-exts.github.io/index.html)
 - [Cookbook for R: Graphs](http://www.cookbook-r.com/Graphs/)
 
