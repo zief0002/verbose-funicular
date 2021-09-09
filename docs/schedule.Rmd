@@ -87,7 +87,7 @@ Below is the tentative schedule for the class. The dates are subject to change a
 </td>
 <td>Data Wrangling with dplyr</td>
 <td align="center" style="vertical-align:middle;">
-  [<span class="fas fa-link" style="color: #ff2600; font-size: 20px;"></span>](http://zief0002.github.io/epsy-8251/misc/02-data-wrangling-with-dplyr.html)
+  [<span class="fas fa-link" style="color: #ff2600; font-size: 20px;"></span>](http://zief0002.github.io/epsy-8251/notes/02-data-wrangling-with-dplyr.html)
 </td>
 <td align="center" style="vertical-align:middle;">
   [<span class="fa fa-code" style="color: #ff2600; font-size: 20px;"></span>](https://github.com/zief0002/epsy-8251/raw/master/scripts/02-data-wrangling-with-dplyr.R)
@@ -103,7 +103,7 @@ Below is the tentative schedule for the class. The dates are subject to change a
 </td>
 <td>Plotting with ggplot2</td>
 <td align="center" style="vertical-align:middle;">
-  [<span class="fas fa-link" style="color: #ff2600; font-size: 20px;"></span>](http://zief0002.github.io/epsy-8251/misc/03-plotting-with-ggplot2.html)
+  [<span class="fas fa-link" style="color: #ff2600; font-size: 20px;"></span>](http://zief0002.github.io/epsy-8251/notes/03-plotting-with-ggplot2.html)
 </td>
 <td align="center" style="vertical-align:middle;">
   [<span class="fa fa-code" style="color: #ff2600; font-size: 20px;"></span>](https://github.com/zief0002/epsy-8251/raw/master/scripts/03-plotting-with-ggplot2.R)
