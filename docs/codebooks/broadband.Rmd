@@ -3,8 +3,8 @@ title: "broadband.csv"
 output: 
   rmdformats::html_docco:
     css: 'codebooks.css'
-bibliography: '../../notes/epsy8251.bib'
-csl: '../../notes/apa-single-spaced.csl'
+bibliography: '../notes/epsy8251.bib'
+csl: '../notes/apa-single-spaced.csl'
 ---
 
 
@@ -44,8 +44,8 @@ But, who in America has access to broadband internet? As part of their ongoing w
     + `8`: Nonmetropolitan - Completely rural or less than 2,500 urban population, adjacent to a metropolitan area
     + `9`: Nonmetropolitan - Completely rural or less than 2,500 urban population, not adjacent to a metropolitan area
 - `metro`: Classification of the county as metropolitan (`metro`) or nonmetropolitan (`nonmetro`) based on the rural-urban continuum code
-- `fcc_availability`: Percent of people in the county with access to fixed terrestrial broadband at speeds of 25 Mbps/3 Mbps as of the end of 2019 as measured by the FCC
-- `microsoft_useage`: Percent of people in the county that use the internet at broadband speeds estimated by Microsoft
+- `fcc_availability`: Proportion of people in the county with access to fixed terrestrial broadband at speeds of 25 Mbps/3 Mbps as of the end of 2019 as measured by the FCC
+- `microsoft_useage`: Proportion of people in the county that use the internet at broadband speeds estimated by Microsoft
 - `pct_poverty`: Estimate of the percentage of people (of all ages) in the county living in poverty in 2019
 - `median_income`: Estimate of median household income in the county in 2019
 - `lt_hs_2019`: Percentage of the county with less than a high school diploma (2015--2019)

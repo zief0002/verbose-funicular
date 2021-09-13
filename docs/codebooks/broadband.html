@@ -150,8 +150,8 @@
 <li><code>9</code>: Nonmetropolitan - Completely rural or less than 2,500 urban population, not adjacent to a metropolitan area</li>
 </ul></li>
 <li><code>metro</code>: Classification of the county as metropolitan (<code>metro</code>) or nonmetropolitan (<code>nonmetro</code>) based on the rural-urban continuum code</li>
-<li><code>fcc_availability</code>: Percent of people in the county with access to fixed terrestrial broadband at speeds of 25 Mbps/3 Mbps as of the end of 2019 as measured by the FCC</li>
-<li><code>microsoft_useage</code>: Percent of people in the county that use the internet at broadband speeds estimated by Microsoft</li>
+<li><code>fcc_availability</code>: Proportion of people in the county with access to fixed terrestrial broadband at speeds of 25 Mbps/3 Mbps as of the end of 2019 as measured by the FCC</li>
+<li><code>microsoft_useage</code>: Proportion of people in the county that use the internet at broadband speeds estimated by Microsoft</li>
 <li><code>pct_poverty</code>: Estimate of the percentage of people (of all ages) in the county living in poverty in 2019</li>
 <li><code>median_income</code>: Estimate of median household income in the county in 2019</li>
 <li><code>lt_hs_2019</code>: Percentage of the county with less than a high school diploma (2015–2019)</li>
@@ -161,31 +161,43 @@
 </ul>
 <div id="preview" class="section level3">
 <h3>Preview</h3>
-<pre><code># A tibble: 3,143 x 11
-   state county           fips fcc_availability microsoft_useage pct_poverty
-   &lt;chr&gt; &lt;chr&gt;           &lt;dbl&gt;            &lt;dbl&gt;            &lt;dbl&gt;       &lt;dbl&gt;
- 1 AL    Autauga County   1001             0.81             0.28        12.1
- 2 AL    Baldwin County   1003             0.88             0.3         10.1
- 3 AL    Barbour County   1005             0.59             0.18        27.1
- 4 AL    Bibb County      1007             0.29             0.07        20.3
- 5 AL    Blount County    1009             0.69             0.09        16.3
- 6 AL    Bullock County   1011             0.06             0.05        30  
- 7 AL    Butler County    1013             0.78             0.11        21.6
- 8 AL    Calhoun County   1015             0.93             0.32        17.2
- 9 AL    Chambers County  1017             0.82             0.34        19.6
-10 AL    Cherokee County  1019             0.99             0.1         15.9
-   median_income lt_hs_2019 hs_2019 some_college_2019 college_2019
-           &lt;dbl&gt;      &lt;dbl&gt;   &lt;dbl&gt;             &lt;dbl&gt;        &lt;dbl&gt;
- 1         58233       11.5    33.6              28.4         26.6
- 2         59871        9.2    27.7              31.3         31.9
- 3         35972       26.8    35.6              26           11.6
- 4         47918       20.9    44.9              23.8         10.4
- 5         52902       19.5    33.4              34           13.1
- 6         31906       25.3    40.3              22.3         12.1
- 7         39944       15      45.2              23.7         16.1
- 8         47747       15.6    32.8              33.2         18.5
- 9         42015       18.4    36.7              31.6         13.3
-10         45982       18.4    40.3              28.6         12.8
+<pre><code># A tibble: 3,143 × 13
+   state county           fips rural_urban metro    fcc_availability
+   &lt;chr&gt; &lt;chr&gt;           &lt;dbl&gt;       &lt;dbl&gt; &lt;chr&gt;               &lt;dbl&gt;
+ 1 AL    Autauga County   1001           2 Metro                0.81
+ 2 AL    Baldwin County   1003           3 Metro                0.88
+ 3 AL    Barbour County   1005           6 Nonmetro             0.59
+ 4 AL    Bibb County      1007           1 Metro                0.29
+ 5 AL    Blount County    1009           1 Metro                0.69
+ 6 AL    Bullock County   1011           6 Nonmetro             0.06
+ 7 AL    Butler County    1013           6 Nonmetro             0.78
+ 8 AL    Calhoun County   1015           3 Metro                0.93
+ 9 AL    Chambers County  1017           6 Nonmetro             0.82
+10 AL    Cherokee County  1019           6 Nonmetro             0.99
+   microsoft_useage pct_poverty median_income lt_hs_2019 hs_2019
+              &lt;dbl&gt;       &lt;dbl&gt;         &lt;dbl&gt;      &lt;dbl&gt;   &lt;dbl&gt;
+ 1             0.28        12.1         58233       11.5    33.6
+ 2             0.3         10.1         59871        9.2    27.7
+ 3             0.18        27.1         35972       26.8    35.6
+ 4             0.07        20.3         47918       20.9    44.9
+ 5             0.09        16.3         52902       19.5    33.4
+ 6             0.05        30           31906       25.3    40.3
+ 7             0.11        21.6         39944       15      45.2
+ 8             0.32        17.2         47747       15.6    32.8
+ 9             0.34        19.6         42015       18.4    36.7
+10             0.1         15.9         45982       18.4    40.3
+   some_college_2019 college_2019
+               &lt;dbl&gt;        &lt;dbl&gt;
+ 1              28.4         26.6
+ 2              31.3         31.9
+ 3              26           11.6
+ 4              23.8         10.4
+ 5              34           13.1
+ 6              22.3         12.1
+ 7              23.7         16.1
+ 8              33.2         18.5
+ 9              31.6         13.3
+10              28.6         12.8
 # … with 3,133 more rows</code></pre>
 </div>
 <div id="references" class="section level3">

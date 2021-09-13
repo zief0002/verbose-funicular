@@ -173,7 +173,7 @@ pre code {
 <li>All plots should be resized so that they do not take up more room than necessary.</li>
 <li>All figures and tables should have a name (e.g., Figure 1) <em>and</em> an appropriate caption.</li>
 </ul>
-<p>This assignment is worth 14 points.</p>
+<p>This assignment is worth 11 points.</p>
 <p><br /></p>
 </div>
 <div id="preparation" class="section level2">
@@ -194,19 +194,18 @@ pre code {
 <p>After importing the broadband data into RStudio, create a new data frame object that only includes counties in Minnesota (postal code for Minnesota is MN). Hint: Use <code>filter()</code>. Assign the Minnesota broadband data into a new object called <code>mn</code>. Use the <code>mn</code> data to answer the following questions.</p>
 <ol style="list-style-type: decimal">
 <li><p>Use the <code>geom_density()</code> function from the <code>{ggplot2}</code> package to create a density plot of the distribution of the <code>microsoft_useage</code> variable for all 87 counties in Minnesota. You can see many examples of how to do this <a href="https://ggplot2.tidyverse.org/reference/geom_density.html">here</a>. Include this plot in a word-processed document. Resize the plot so it does not take up any more space than necessary. Be sure the plot has appropriate labels and has a caption.</p></li>
-<li><p>Use the <code>geom_density()</code> function from the <code>{ggplot2}</code> package to create a density plot of the distribution of the <code>microsoft_useage</code> variable for the counties in Minnesota, but this time use <code>color=</code> or <code>fill=</code> to color by whether the county is a metropolitan or non-metropolitan county. (Hint: You shoul get two density plots.). Include this plot in a word-processed document. Resize the plot so it does not take up any more space than necessary. Be sure the plot has appropriate labels and has a caption.</p></li>
-<li><p>Compute the mean and the standard deviation of the <code>microsoft_useage</code> variable for metro and no-metro counties. Report these values.</p></li>
+<li><p>Use the <code>geom_density()</code> function from the <code>{ggplot2}</code> package to create a density plot of the distribution of the <code>microsoft_useage</code> variable for the counties in Minnesota, but this time use <code>color=</code> or <code>fill=</code> to color by whether the county is a metropolitan or non-metropolitan county. (Hint: You should get two density plots.). Include this plot in a word-processed document. Resize the plot so it does not take up any more space than necessary. Be sure the plot has appropriate labels and has a caption.</p></li>
+<li><p>Compute the mean and the standard deviation of the <code>microsoft_useage</code> variable for metro and non-metro counties. Report these values.</p></li>
 <li><p>By referring to the values, and the plots, what can you say about broadband access in Minnesota? Is there a broadband access gap?</p></li>
 </ol>
 <p><br /></p>
 </div>
 <div id="part-ii-state-level-broadband-access" class="section level2">
 <h2>Part II: State-Level Broadband Access</h2>
-<p>In this section, you will use all the data in <em>broadband.csv</em> to create state-level summaries of the <code>microsoft_useage</code> and the <code>fcc_availability</code> variables. Use this state-level data to answer the following questions.</p>
-<ol start="7" style="list-style-type: decimal">
-<li><p>Use functions from the <code>{dplyr}</code> package to group the data by state and compute the mean and standard deviation of the Microsoft and FCC estimates of broadband access for each state. Report the dplyr syntax you used to obtain this value. Change the font of your syntax to a mono-spaced font in your word-processed document. (Here is a <a href="https://en.wikipedia.org/wiki/List_of_monospaced_typefaces">list of mono-spaced fonts</a>.)</p></li>
-<li><p>Based on the Microsoft and FCC esrtimates, does it seem that the FCC estimates (which are provided by the ISPs) are “underestimating” America’s broadband access? Explain.</p></li>
-<li><p>Which states have the best and worst broadband access based on the means? Which states are the most and least homogenous (across counties) in terms of their broadband access?</p></li>
+<p>In this section, you will use all the data in <em>broadband.csv</em> to create state-level summaries (means and standard deviations) of the <code>microsoft_useage</code> and the <code>fcc_availability</code> variables. Filter out Washington DC so it is not included. (Hint: Make sure that every state has mean and standard deviation values when you are done!) Use this state-level data to answer the following questions.</p>
+<ol start="5" style="list-style-type: decimal">
+<li><p>Based on the Microsoft and FCC estimates, does it seem that the FCC estimates (which are provided by the ISPs) are “overestimating” America’s broadband access? Explain.</p></li>
+<li><p>Using the Microsoft estimates, which states have the best and worst broadband access based on the means? Which states are the most and least homogenous (across counties) in terms of their broadband access?</p></li>
 <li><p>Create a table that includes the Microsoft and FCC estimates of broadband access you computed for the states in bordering Minnesota: Minnesota (MN), Iowa (IA), South Dakota (SD), North Dakota (ND), and Wisconsin (WI). Report these values in a word-processed table alphabetically by state. <em>To format this table:</em> Examine the structure and formatting of Table 2 at <a href="https://zief0002.github.io/musings/creating-tables-to-present-statistical-results.html" class="uri">https://zief0002.github.io/musings/creating-tables-to-present-statistical-results.html</a>. Notice that variables are presented in rows and summary statistics are presented in columns. Mimic the format and structure of this table to create a table to present the numerical summary information asked for in this question. Finally, give your table a name (e.g., Table 1) and an appropriate caption.</p></li>
 </ol>
 <p><br /></p>
@@ -214,10 +213,10 @@ pre code {
 <div id="part-iii-state-level-broadband-access-versus-poverty" class="section level2">
 <h2>Part III: State-Level Broadband Access versus Poverty</h2>
 <p>In this section, you will use all the data in <em>broadband.csv</em> to create state-level means of the <code>microsoft_useage</code> and the <code>pct_poverty</code> variables. (Hint: Make sure that every state has mean values when you are done!) Use this state-level data to answer the following questions.</p>
-<ol start="11" style="list-style-type: decimal">
-<li><p>Use <code>ggplot()</code> to create a scatterplot of the relationship between the percentage of users with access to broadband and the percentage of people living in poverty using the state-level data. (Put the percentage living in poverty on the <em>x</em>-axis.) Change the axis labels so that both the <em>x</em>- and <em>y</em>-axis have labels that suitably describe the variables being plotted. (For help on this, read the <em>Axes</em> page of the <a href="http://www.cookbook-r.com/Graphs/">Cookbook for R website</a>.) Include this plot in a word-processed document. Resize the plot so it does not take up any more space than necessary. Finally, give your figure a name (e.g., Figure 1) and an appropriate caption.</p></li>
+<ol start="8" style="list-style-type: decimal">
+<li><p>Use <code>ggplot()</code> to create a scatterplot of the relationship between the proportion of users with access to broadband and the proportion of people living in poverty using the state-level data. (Put the proportion living in poverty on the <em>x</em>-axis.) Change the axis labels so that both the <em>x</em>- and <em>y</em>-axis have labels that suitably describe the variables being plotted. (For help on this, read the <em>Axes</em> page of the <a href="http://www.cookbook-r.com/Graphs/">Cookbook for R website</a>.) Include this plot in a word-processed document. Resize the plot so it does not take up any more space than necessary. Finally, give your figure a name (e.g., Figure 1) and an appropriate caption.</p></li>
 <li><p>Based on these data, describe the relationship between poverty and broadband access.</p></li>
-<li><p>Identify Minnesota on your plot. (You do not have to use R to do this; you can use an image editor, or do it by hand.) You can either create a new plot or just include Minnesota on the plot you include for Question 11.</p></li>
+<li><p>Identify Minnesota on your plot. (You do not have to use R to do this; you can use an image editor, or do it by hand.) You can either create a new plot or just include Minnesota on the plot you include for Question 8.</p></li>
 <li><p>Based on its location in the plot, how does Minnesota compare to the other states in terms of broadband access? What about in terms of poverty? Explain.</p></li>
 </ol>
 </div>
