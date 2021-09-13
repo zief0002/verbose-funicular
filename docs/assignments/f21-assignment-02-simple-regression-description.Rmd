@@ -47,11 +47,11 @@ Before carrying out any analyses, create a predictor called `salary_thousand` th
 
 1. Create a plot of the distribution of total SAT scores. Make sure your plot has a caption.
 
-2. Examine the structure and formatting of Table 1 at https://zief0002.github.io/musings/creating-tables-to-present-statistical-results.html. Mimic the format and structure of this table to create a table to present the numerical summary information for the marginal distributions of SAT scores and salaries. Provide the same measures for these variables as is given in Table 1 in the article. Re-create the formatting of Table 1 as closely as you can. Finally, make sure the table you create also has an appropriate caption.
+2. Examine the structure and formatting of Table 1 at https://zief0002.github.io/musings/creating-tables-to-present-statistical-results.html. Mimic the format and structure of this table to create a table to present the numerical summary information for the distributions of SAT total scores and salaries. Provide the same measures for these variables as is given in Table 1 in the article. Re-create the formatting of Table 1 as closely as you can. Finally, make sure the table you create also has an appropriate caption.
 
-3. Create a scatterplot of the distribution of SAT scores (*Y*) *conditioned on* teacher salaries (*X*). Make sure your plot has a caption.
+3. Create a scatterplot of the distribution of SAT total scores (*Y*) *conditioned on* teacher salaries (*X*). Make sure your plot has a caption.
 
-4. Describe the relationship between teacher salaries and SAT scores. Be sure to comment on the structural form, direction and strength of the relationship. Also comment on any potential observations that deviate from following this relationship (unusual observations or clusters of observations).
+4. Describe the relationship between teacher salaries and SAT total scores. Be sure to comment on the structural form, direction and strength of the relationship. Also comment on any potential observations that deviate from following this relationship (unusual observations or clusters of observations).
 
 5. Regress total SAT scores on teacher salaries. Write the *fitted equation* using Equation Editor (or some other program that correctly types mathematical expressions).
 
@@ -65,4 +65,4 @@ Before carrying out any analyses, create a predictor called `salary_thousand` th
 
 10. Compute and report the residual for Minnesota. Show your work for full credit.
 
-11. Explain what the sign and magnitude of the residual value you computed in Question 10 tells you about how Minnesota's mean SAT score compares to the mean SAT score for other states having the same average teacher salary?
+11. Explain what the sign and magnitude of the residual value you computed in Question 10 tells you about how Minnesota's mean SAT score compares to the mean SAT score for states having the same average teacher salary as Minnesota.
