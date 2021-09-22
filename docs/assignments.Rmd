@@ -45,9 +45,7 @@ Below are the due dates for the assignments, as well as links to each assignment
 <!-- <td>Oct. 10</td> -->
 <td>Oct. 13</td>
 <td align="center" style="vertical-align:middle;">
-  <!-- <a href="https://github.com/zief0002/epsy-8251/raw/master/assignments/assignment-03-correlation-and-standardized-regression.pdf"> -->
-  <!--   <span class="fa fa-file-pdf" style="color: #ff2600; font-size: 20px;"></span> -->
-  <!-- </a> -->
+  [<span class="fas fa-link" style="color: #ff2600; font-size: 20px;"></span>](assignments/f21-assignment-03-correlation-and-standardized-regression.html)
 </td>
 </tr>
 
@@ -56,9 +54,7 @@ Below are the due dates for the assignments, as well as links to each assignment
 <!-- <td>Oct. 22</td> -->
 <td>Oct. 27</td>
 <td align="center" style="vertical-align:middle;">
-  <!-- <a href="https://github.com/zief0002/epsy-8251/raw/master/assignments/assignment-04-simple-regression-inference.pdf"> -->
-  <!--   <span class="fa fa-file-pdf" style="color: #ff2600; font-size: 20px;"></span> -->
-  <!-- </a> -->
+  [<span class="fas fa-link" style="color: #ff2600; font-size: 20px;"></span>](assignments/f21-assignment-04-simple-regression-inference.html)
 </td>
 </tr>
 
