@@ -1,53 +1,52 @@
 state,postal,region,sat_participate,sat_ebrw,sat_math,sat_total,salary_2020_21
-Alabama,AL,Southeast,7,576,551,1127,"54,271"
-Alaska,AK,Far West,37,555,543,1098,"72,861"
-Arizona,AZ,Southwest,29,571,568,1139,"52,157"
-Arkansas,AR,Southeast,4,590,567,1157,"50,992"
-California,CA,Far West,67,527,522,1049,"85,892"
-Colorado,CO,Rocky Mountains,100,511,501,1012,"60,611"
-Connecticut,CT,New England,100,527,512,1039,"79,742"
-Delaware,DE,Mid East,100,497,481,978,"65,798"
-District of Columbia,DC,Mid East,100,498,482,979,"80,659"
-Florida,FL,Southeast,100,512,479,992,"49,583"
-Georgia,GA,Southeast,68,537,516,1053,"60,553"
-Hawaii,HI,Far West,51,549,546,1095,"70,922"
-Idaho,ID,Rocky Mountains,100,500,484,984,"51,817"
-Illinois,IL,Great Lakes,98,504,503,1007,"69,300"
-Indiana,IN,Great Lakes,64,540,534,1074,"52,194"
-Iowa,IA,Plains,3,611,609,1220,"58,911"
-Kansas,KS,Plains,4,617,620,1237,"53,932"
-Kentucky,KY,Southeast,4,609,598,1207,"54,384"
-Louisiana,LA,Southeast,5,597,573,1170,"51,851"
-Maine,ME,New England,98,504,491,995,"57,052"
-Maryland,MD,Mid East,88,522,507,1029,"74,514"
-Massachusetts,MA,New England,80,560,559,1119,"86,315"
-Michigan,MI,Great Lakes,100,503,495,998,"64,267"
-Minnesota,MN,Plains,4,624,633,1257,"59,069"
-Mississippi,MS,Southeast,3,610,593,1203,"47,655"
-Missouri,MO,Plains,4,610,603,1212,"51,557"
-Montana,MT,Rocky Mountains,10,598,587,1185,"52,894"
-Nebraska,NE,Plains,3,615,614,1229,"56,463"
-Nevada,NV,Far West,17,579,571,1150,"58,167"
-New Hampshire,NH,New England,93,531,524,1055,"61,789"
-New Jersey,NJ,Mid East,82,541,540,1081,"77,489"
-New Mexico,NM,Southwest,19,533,522,1055,"54,923"
-New York,NY,Mid East,79,528,530,1058,"87,738"
-North Carolina,NC,Southeast,48,553,544,1096,"54,392"
-North Dakota,ND,Plains,2,615,617,1231,"54,837"
-Ohio,OH,Great Lakes,21,536,534,1070,"61,687"
-Oklahoma,OK,Southwest,20,490,481,971,"54,256"
-Oregon,OR,Far West,51,557,547,1104,"68,671"
-Pennsylvania,PA,Mid East,67,543,534,1078,"71,281"
-Rhode Island,RI,New England,100,501,489,990,"75,966"
-South Carolina,SC,Southeast,68,524,503,1026,"53,361"
-South Dakota,SD,Plains,3,609,610,1218,"49,993"
-Tennessee,TN,Southeast,7,601,585,1186,"52,380"
-Texas,TX,Southwest,73,510,500,1010,"57,641"
-Utah,UT,Rocky Mountains,3,601,603,1204,"56,918"
-Vermont,VT,New England,63,559,545,1103,"61,547"
-Virginia,VA,Southeast,65,567,549,1116,"59,267"
-Washington,WA,Far West,69,539,534,1073,"79,529"
-West Virginia,WV,Southeast,98,480,456,936,"50,261"
-Wisconsin,WI,Great Lakes,3,615,628,1243,"60,038"
-Wyoming,WY,Rocky Mountains,2,614,606,1220,"60,357"
-,,,,,,,
+Alabama,AL,Southeast,7,576,551,1127,54271
+Alaska,AK,Far West,37,555,543,1098,72861
+Arizona,AZ,Southwest,29,571,568,1139,52157
+Arkansas,AR,Southeast,4,590,567,1157,50992
+California,CA,Far West,67,527,522,1049,85892
+Colorado,CO,Rocky Mountains,100,511,501,1012,60611
+Connecticut,CT,New England,100,527,512,1039,79742
+Delaware,DE,Mid East,100,497,481,978,65798
+District of Columbia,DC,Mid East,100,498,482,979,80659
+Florida,FL,Southeast,100,512,479,992,49583
+Georgia,GA,Southeast,68,537,516,1053,60553
+Hawaii,HI,Far West,51,549,546,1095,70922
+Idaho,ID,Rocky Mountains,100,500,484,984,51817
+Illinois,IL,Great Lakes,98,504,503,1007,69300
+Indiana,IN,Great Lakes,64,540,534,1074,52194
+Iowa,IA,Plains,3,611,609,1220,58911
+Kansas,KS,Plains,4,617,620,1237,53932
+Kentucky,KY,Southeast,4,609,598,1207,54384
+Louisiana,LA,Southeast,5,597,573,1170,51851
+Maine,ME,New England,98,504,491,995,57052
+Maryland,MD,Mid East,88,522,507,1029,74514
+Massachusetts,MA,New England,80,560,559,1119,86315
+Michigan,MI,Great Lakes,100,503,495,998,64267
+Minnesota,MN,Plains,4,624,633,1257,59069
+Mississippi,MS,Southeast,3,610,593,1203,47655
+Missouri,MO,Plains,4,610,603,1212,51557
+Montana,MT,Rocky Mountains,10,598,587,1185,52894
+Nebraska,NE,Plains,3,615,614,1229,56463
+Nevada,NV,Far West,17,579,571,1150,58167
+New Hampshire,NH,New England,93,531,524,1055,61789
+New Jersey,NJ,Mid East,82,541,540,1081,77489
+New Mexico,NM,Southwest,19,533,522,1055,54923
+New York,NY,Mid East,79,528,530,1058,87738
+North Carolina,NC,Southeast,48,553,544,1096,54392
+North Dakota,ND,Plains,2,615,617,1231,54837
+Ohio,OH,Great Lakes,21,536,534,1070,61687
+Oklahoma,OK,Southwest,20,490,481,971,54256
+Oregon,OR,Far West,51,557,547,1104,68671
+Pennsylvania,PA,Mid East,67,543,534,1078,71281
+Rhode Island,RI,New England,100,501,489,990,75966
+South Carolina,SC,Southeast,68,524,503,1026,53361
+South Dakota,SD,Plains,3,609,610,1218,49993
+Tennessee,TN,Southeast,7,601,585,1186,52380
+Texas,TX,Southwest,73,510,500,1010,57641
+Utah,UT,Rocky Mountains,3,601,603,1204,56918
+Vermont,VT,New England,63,559,545,1103,61547
+Virginia,VA,Southeast,65,567,549,1116,59267
+Washington,WA,Far West,69,539,534,1073,79529
+West Virginia,WV,Southeast,98,480,456,936,50261
+Wisconsin,WI,Great Lakes,3,615,628,1243,60038
+Wyoming,WY,Rocky Mountains,2,614,606,1220,60357
