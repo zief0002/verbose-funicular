@@ -63,9 +63,7 @@ Below are the due dates for the assignments, as well as links to each assignment
 <!-- <td>Oct. 31</td> -->
 <td>Nov. 08</td>
 <td align="center" style="vertical-align:middle;">
-  <!-- <a href="https://github.com/zief0002/epsy-8251/raw/master/assignments/assignment-05-introduction-to-multiple-regression.pdf"> -->
-  <!--   <span class="fa fa-file-pdf" style="color: #ff2600; font-size: 20px;"></span> -->
-  <!-- </a> -->
+  [<span class="fas fa-link" style="color: #ff2600; font-size: 20px;"></span>](assignments/f21-assignment-05-introduction-to-multiple-regression.html)
 </td>
 </tr>
 
@@ -74,9 +72,8 @@ Below are the due dates for the assignments, as well as links to each assignment
 <!-- <td>Nov. 12</td> -->
 <td>Nov. 22</td>
 <td align="center" style="vertical-align:middle;">
-<!--   <a href="https://github.com/zief0002/epsy-8251/raw/master/assignments/assignment-06-regression-assumptions.pdf"> -->
-<!--     <span class="fa fa-file-pdf" style="color: #ff2600; font-size: 20px;"></span> -->
-<!--   </a> -->
+  [<span class="fas fa-link" style="color: #ff2600; font-size: 20px;"></span>](assignments/f21-assignment-06-regression-assumptions.html)
+</td>
 </td>
 </tr>
 
