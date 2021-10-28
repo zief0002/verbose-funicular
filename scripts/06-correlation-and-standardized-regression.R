@@ -85,7 +85,7 @@ keith %>%
 keith = keith %>%
   mutate(
     z_gpa = (gpa - mean(gpa)) / sd(gpa),
-    z_homework = (homework - mean(homework)) / sd(homework),
+    z_homework = (homework - mean(homework)) / sd(homework)
   )
 
 head(keith)
