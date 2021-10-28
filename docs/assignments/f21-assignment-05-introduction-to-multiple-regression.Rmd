@@ -40,9 +40,9 @@ Begin by standardizing the fertility rate variable (outcome) and each of the thr
 
 # Part I
 
-1. Examine the structure and formatting of Table 4 at http://zief0002.github.io/epsy-8251/misc/creating-tables/creating-tables.html. Mimic the format and structure of this table to create a table to present the pairwise correlations between the outcome and each of the predictors, and between each set of predictors. Make sure the table you create also has an appropriate caption. **(2pts.)**
+1. Examine the structure and formatting of Table 4 at https://zief0002.github.io/musings/creating-tables-to-present-statistical-results.html. Mimic the format and structure of this table to create a table to present the pairwise correlations between the outcome and each of the predictors, and between each set of predictors. Make sure the table you create also has an appropriate caption. **(2pts.)**
 
-2. Examine the structure and formatting of Table 9 at http://zief0002.github.io/epsy-8251/misc/creating-tables/creating-tables.html. Mimic the format and structure of this table to create a table to present the numerical information from the three models you fitted in this assignment. Make sure the table you create also has an appropriate caption. If the table is too wide, change the page orientation in your word processing program to ``Landscape'', rather than changing the size of the font. **(2pts.)**
+2. Examine the structure and formatting of Table 9 at https://zief0002.github.io/musings/creating-tables-to-present-statistical-results.html. Mimic the format and structure of this table to create a table to present the numerical information from the three models you fitted in this assignment. Make sure the table you create also has an appropriate caption. If the table is too wide, change the page orientation in your word processing program to ``Landscape'', rather than changing the size of the font. **(2pts.)**
 
 3. Create a coefficient plot that graphically presents the coefficient estimates and the uncertainty (as 95% confidence intervals) for the coefficients included in the three fitted models. Be sure that the figure is appropriately captioned. **(2pts.)**
 
