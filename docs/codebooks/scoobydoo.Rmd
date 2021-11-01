@@ -1,0 +1,62 @@
+---
+title: "scoobydoo.csv"
+output: 
+  rmdformats::html_docco:
+    css: 'codebooks.css'
+bibliography: '../notes/epsy8251.bib'
+csl: '../notes/apa-single-spaced.csl'
+---
+
+
+```{r knitr_init, echo=FALSE, cache=FALSE}
+library(knitr)
+library(rmdformats)
+library(fontawesome)
+
+## Global options
+options(max.print="75")
+opts_chunk$set(echo=FALSE,
+	             cache=TRUE,
+               prompt=FALSE,
+               tidy=TRUE,
+               comment=NA,
+               message=FALSE,
+               warning=FALSE)
+opts_knit$set(width=75)
+```
+
+Scooby-Doo is a popular television and movie franchise in the United States which has been airing for over 50 years!  [Scoobypedia](https://scoobydoo.fandom.com/wiki/Scoobypedia) (an encylopedia of the franchise) describes the show as follows:
+
+> The show follows the iconic mystery solving detectives, know as Mystery Inc., as they set out to solve crime and unmask criminals, bent on revenge or committing criminal acts for their own personal gain. 
+
+Mystery Inc. are an amateur crime-solving group of friends composed of Fred Jones (the team's leader), Daphne Blake (fashionista and musician), Velma Dinkley (bespectacled resident genius), Shaggy Rogers (owner and best friend to Scooby-Doo), and Scooby-Doo (the talking dog mascot). 
+
+The data in [scoobydoo.csv](https://github.com/zief0002/epsy-8251/raw/master/data/scoobydoo.csv) are a subset of data collected by [plummye](https://www.kaggle.com/williamschooleman) who "[t]ook ~1 year to watch every Scooby-Doo iteration and track every variable." There are 372 cases in the data.
+
+The variables are:
+
+- `title`: Title of the episode or movie
+- `series_name`: Name of the series in which the episode takes place. For movies this is the grouping classification from Scoobypedia.
+- `date_aired`: Dated aired in United States.
+- `engagement`: Engagement measure based on the log-number of reviews on IMDb. Higher values indicate more engagement.
+- `caught_by`: Which Mystery Inc. members caught the villain
+  + `Fred/Daphne/Velma`: Villain caught by Fred Jones, Daphne Blake, Velma Dinkley, or some combination of these three Mystery Inc. members; 
+  + `Shaggy/Scooby`: Villain caught by either Shaggy Rogers, Scooby-Doo, or both; 
+  + `Combo`: Villain caught by a combination of the five Mystery Inc. members; 
+  + `Other`: Villain caught by non-Mystery Inc. member.
+- `imdb_rating`: Weighted average of all individual IMDb ratings (from 1 to 10)
+- `format`: Type of media (TV or Movie)
+- `catchphrase`: Number of times any catchphrase (e.g., zoinks, rooby rooby roo) was uttered in the episode or movie
+
+
+
+
+### Preview
+
+```{r}
+scoobydoo = readr::read_csv(file = "~/Documents/github/epsy-8251/data/scoobydoo.csv")
+print(scoobydoo, width = Inf)
+```
+
+
+

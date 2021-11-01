@@ -285,23 +285,8 @@ Below is the tentative schedule for the class. The dates are subject to change a
 
 <tr>
 <td align="center" style="vertical-align:middle;"></td>
-<!-- <td>Sept. 24</td> -->
-<td>Nov. 08</td>
-<td align="center" style="vertical-align:middle;">
-  <!-- <a href="preparation.html#control"> -->
-  <!--   <span class="fa fa-book" style="color: #ff2600; font-size: 20px;"></span> -->
-  <!-- </a> -->
-</td>
-<td style="vertical-align:middle;">*Article Discussion*
-<td align="center" style="vertical-align:middle;"></td>
-<td align="center" style="vertical-align:middle;"></td>
-</tr>
-
-
-<tr>
-<td align="center" style="vertical-align:middle;"></td>
 <!-- <td>Oct. 31</td> -->
-<td>Nov. 10</td>
+<td>Nov. 08</td>
 <td align="center" style="vertical-align:middle;" rowspan="2">
   [<span class="fa fa-book" style="color: #ff2600; font-size: 20px;"></span>](#readings)
 </td>
@@ -317,8 +302,11 @@ Below is the tentative schedule for the class. The dates are subject to change a
 <tr>
 <td align="center" style="vertical-align:middle;"></td>
 <!-- <td>Nov. 05</td> -->
-<td>Nov. 15</td>
+<td>Nov. 10</td>
 </tr>
+
+
+
 
 
 <!-- Unit 04: EXTENDING THE REGRESSION MODEL -->
@@ -331,7 +319,7 @@ Below is the tentative schedule for the class. The dates are subject to change a
 <tr>
 <td align="center" style="vertical-align:middle;"></td>
 <!-- <td>Nov. 07</td> -->
-<td>Nov. 17</td>
+<td>Nov. 15</td>
 <td align="center" style="vertical-align:middle;" rowspan="2">
   [<span class="fa fa-book" style="color: #ff2600; font-size: 20px;"></span>](#readings)
 </td>
@@ -347,22 +335,22 @@ Below is the tentative schedule for the class. The dates are subject to change a
 <tr>
 <td align="center" style="vertical-align:middle;"></td>
 <!-- <td>Nov. 12</td> -->
-<td>Nov. 22</td>
+<td>Nov. 17</td>
 </tr>
 
 
 <tr>
 <td align="center" style="vertical-align:middle;"></td>
 <!-- <td>Nov. 19</td> -->
-<td>Nov. 24</td>
-<td align="center" style="vertical-align:middle;" rowspan="2">
+<td>Nov. 22</td>
+<td align="center" style="vertical-align:middle;">
   [<span class="fa fa-book" style="color: #ff2600; font-size: 20px;"></span>](#readings)
 </td>
-<td style="vertical-align:middle;" rowspan="2">Polychotomous Categorical Predictors</td>
-<td align="center" style="vertical-align:middle;" rowspan="2">
+<td style="vertical-align:middle;">Polychotomous Categorical Predictors</td>
+<td align="center" style="vertical-align:middle;">
   [<span class="fas fa-link" style="color: #ff2600; font-size: 20px;"></span>](https://zief0002.github.io/modeling/polychotomous.html#polychotomous)
 </td>
-<td align="center" style="vertical-align:middle;" rowspan="2">
+<td align="center" style="vertical-align:middle;">
   [<span class="fa fa-code" style="color: #ff2600; font-size: 20px;"></span>](https://github.com/zief0002/epsy-8251/raw/master/scripts/14-polychotomous-categorical-predictors.R)
 </td>
 </tr>
@@ -370,8 +358,32 @@ Below is the tentative schedule for the class. The dates are subject to change a
 
 <tr>
 <td align="center" style="vertical-align:middle;"></td>
-<!-- <td>Nov. 21</td> -->
+<!-- <td>Sept. 24</td> -->
+<td>Nov. 24</td>
+<td align="center" style="vertical-align:middle;">
+  <!-- <a href="preparation.html#control"> -->
+  <!--   <span class="fa fa-book" style="color: #ff2600; font-size: 20px;"></span> -->
+  <!-- </a> -->
+</td>
+<td style="vertical-align:middle;">*NO CLASS&mdash;Mental Health Day*
+<td align="center" style="vertical-align:middle;"></td>
+<td align="center" style="vertical-align:middle;"></td>
+</tr>
+
+<tr>
+<td align="center" style="vertical-align:middle;"></td>
+<!-- <td>Nov. 19</td> -->
 <td>Nov. 29</td>
+<td align="center" style="vertical-align:middle;">
+  [<span class="fa fa-book" style="color: #ff2600; font-size: 20px;"></span>](#readings)
+</td>
+<td style="vertical-align:middle;">Polychotomous Categorical Predictors</td>
+<td align="center" style="vertical-align:middle;">
+  [<span class="fas fa-link" style="color: #ff2600; font-size: 20px;"></span>](https://zief0002.github.io/modeling/polychotomous.html#polychotomous)
+</td>
+<td align="center" style="vertical-align:middle;">
+  [<span class="fa fa-code" style="color: #ff2600; font-size: 20px;"></span>](https://github.com/zief0002/epsy-8251/raw/master/scripts/14-polychotomous-categorical-predictors.R)
+</td>
 </tr>
 
 

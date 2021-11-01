@@ -80,27 +80,23 @@ Below are the due dates for the assignments, as well as links to each assignment
 
 
 <tr>
-<td>Assignment \#7: *ANCOVA using Multiple Regression*</td>
+<td>Assignment \#7: *Dichotomous Categorical Predictors*</td>
 <!-- <td>Nov. 19</td> -->
 <td>Nov. 29</td>
 <td align="center" style="vertical-align:middle;">
-  <!-- <a href="https://github.com/zief0002/epsy-8251/raw/master/assignments/assignment-07-dichotomous-categorical-predictors.pdf"> -->
-  <!--   <span class="fa fa-file-pdf" style="color: #ff2600; font-size: 20px;"></span> -->
-  <!-- </a> -->
+  [<span class="fas fa-link" style="color: #ff2600; font-size: 20px;"></span>](assignments/f21-assignment-07-dichotomous-categorical-predictors.html)
 </td>
 </tr>
 
 
 <tr>
-<td>Assignment \#8: *ANCOVA using Multiple Regression - Part II*
+<td>Assignment \#8: *Polychotomous Categorical Predictors*
   <!-- <span style="margin-left:20px; color:red;">*[Updated 11-12-2019]*</span> -->
   </td>
 <!-- <td>Dec. 03</td> -->
 <td>Dec. 06</td>
 <td align="center" style="vertical-align:middle;">
-  <!-- <a href="https://github.com/zief0002/epsy-8251/raw/master/assignments/assignment-08-polychotomous-categorical-predictors.pdf"> -->
-  <!--   <span class="fa fa-file-pdf" style="color: #ff2600; font-size: 20px;"></span> -->
-  <!-- </a> -->
+  [<span class="fas fa-link" style="color: #ff2600; font-size: 20px;"></span>](assignments/f21-assignment-08-polychotomous-categorical-predictors.html)
 </td>
 </tr>
 
