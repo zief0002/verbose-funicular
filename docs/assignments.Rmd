@@ -105,9 +105,7 @@ Below are the due dates for the assignments, as well as links to each assignment
 <td>Assignment \#9: *Interaction Models*</td>
 <td>Dec. 17 (due at 12:00pm)</td>
 <td align="center" style="vertical-align:middle;">
-  <!-- <a href="https://github.com/zief0002/epsy-8251/raw/master/assignments/assignment-09-interactions.pdf"> -->
-  <!--   <span class="fa fa-file-pdf" style="color: #ff2600; font-size: 20px;"></span> -->
-  <!-- </a> -->
+  [<span class="fas fa-link" style="color: #ff2600; font-size: 20px;"></span>](assignments/f21-assignment-09-interactions.html)
 </td>
 </tr>
 
