@@ -135,6 +135,8 @@ head(work)
 
 # Fit interaction model
 lm.d = lm(guilt ~ 1 + bound_span_work + female + bound_work_female, data = work)
+lm.d = lm(guilt ~ 1 + bound_span_work + female + bound_span_work:female, data = work)
+
 
 tidy(lm.d)
 
@@ -149,8 +151,8 @@ ggplot(data = work, aes(x = bound_span_work, y = guilt)) +
   theme_bw() +
   xlab("Amount of boundary-spanning work") +
   ylab("Predicted home-life/work guilt") +
-  geom_abline(intercept = 0.24, slope = 0.72, linetype = "solid", color = "#424651") +
-  geom_abline(intercept = -0.32, slope = 0.56, linetype = "dashed", color = "#f5853f")
+  geom_abline(intercept = 0.24, slope = 0.72, linetype = "solid", color = "#424651", lwd = 2) +
+  geom_abline(intercept = -0.32, slope = 0.56, linetype = "dashed", color = "#f5853f", lwd = 2)
 
 
 
@@ -159,9 +161,18 @@ ggplot(data = work, aes(x = bound_span_work, y = guilt)) +
 ##################################################
 
 lm.e = lm(guilt ~ 1 + bound_span_work + female + authority + married + bound_work_female, data = work)
+lm.e = lm(guilt ~ 1 + bound_span_work + female + authority + married + 
+            bound_span_work:female, data = work)
+
+
 
 tidy(lm.e)
 
+
+lm.f = lm(guilt ~ 1 + bound_span_work + female + authority + married +
+            bound_span_work:female + bound_span_work:married, data = work)
+
+tidy(lm.f)
 
 
 ##################################################
